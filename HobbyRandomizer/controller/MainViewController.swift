@@ -62,9 +62,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            self.datasource.remove(at: indexPath.row)
+            self.datasource.remove(at: indexPath.row - 1)
             self.viewModel.saveModels(models: self.datasource)
-            self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            self.tableView.reloadData()
         }
     }
     
