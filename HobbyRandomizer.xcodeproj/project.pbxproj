@@ -7,23 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
+		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
+		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
+		ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3642542717209F0083D578 /* RandomizerUtil.xib */; };
+		ED364257271731D70083D578 /* BangButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364256271731D70083D578 /* BangButton.swift */; };
+		ED364259271735980083D578 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364258271735980083D578 /* TestViewController.swift */; };
+		ED36425B271735C90083D578 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425A271735C90083D578 /* MainViewController.swift */; };
+		ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425D2717363E0083D578 /* RandomViewController.swift */; };
+		ED36426127173F490083D578 /* HobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426027173F490083D578 /* HobbyCell.swift */; };
+		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
+		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
+		ED364269271757090083D578 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* MainViewModel.swift */; };
+		ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DF38827188A83007966EE /* CreateHobbyCell.swift */; };
+		ED5F112C271772E3006454AD /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112B271772E3006454AD /* CasinoView.swift */; };
+		ED5F112E27177470006454AD /* RouleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112D27177470006454AD /* RouleteView.swift */; };
+		ED5F1130271774E7006454AD /* RouleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5F112F271774E7006454AD /* RouleteView.xib */; };
+		ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11322717823F006454AD /* BaseRotatableView.swift */; };
+		ED5F11352717C689006454AD /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11342717C689006454AD /* extensions.swift */; };
+		ED5F11382717C963006454AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5F11372717C963006454AD /* Colors.xcassets */; };
+		ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11392717CC15006454AD /* CasinoSelectorView.swift */; };
 		ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */; };
 		ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */; };
-		ED6EEF642715C6D200D4EFE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF632715C6D200D4EFE9 /* ViewController.swift */; };
 		ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF652715C6D200D4EFE9 /* Main.storyboard */; };
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
+		ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */; };
+		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
+		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
+		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
+		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
+		ED3642542717209F0083D578 /* RandomizerUtil.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerUtil.xib; sourceTree = "<group>"; };
+		ED364256271731D70083D578 /* BangButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangButton.swift; sourceTree = "<group>"; };
+		ED364258271735980083D578 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		ED36425A271735C90083D578 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED36425D2717363E0083D578 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
+		ED36426027173F490083D578 /* HobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCell.swift; sourceTree = "<group>"; };
+		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
+		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		ED364268271757090083D578 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		ED4DF38827188A83007966EE /* CreateHobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyCell.swift; sourceTree = "<group>"; };
+		ED5F112B271772E3006454AD /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
+		ED5F112D27177470006454AD /* RouleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouleteView.swift; sourceTree = "<group>"; };
+		ED5F112F271774E7006454AD /* RouleteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouleteView.xib; sourceTree = "<group>"; };
+		ED5F11322717823F006454AD /* BaseRotatableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRotatableView.swift; sourceTree = "<group>"; };
+		ED5F11342717C689006454AD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		ED5F11372717C963006454AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		ED5F11392717CC15006454AD /* CasinoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoSelectorView.swift; sourceTree = "<group>"; };
 		ED6EEF5C2715C6D200D4EFE9 /* HobbyRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED6EEF632715C6D200D4EFE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED6EEF662715C6D200D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HobbyRandomizer/appComponents/Info.plist; sourceTree = SOURCE_ROOT; };
+		ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyModel.swift; sourceTree = "<group>"; };
+		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
+		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +81,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED36425C2717361D0083D578 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				ED364258271735980083D578 /* TestViewController.swift */,
+				ED36425A271735C90083D578 /* MainViewController.swift */,
+				ED36425D2717363E0083D578 /* RandomViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		ED3642642717536C0083D578 /* storage */ = {
+			isa = PBXGroup;
+			children = (
+				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
+			);
+			path = storage;
+			sourceTree = "<group>";
+		};
+		ED4DF3822718757F007966EE /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				ED364268271757090083D578 /* MainViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		ED4DF3832718758E007966EE /* appComponents */ = {
+			isa = PBXGroup;
+			children = (
+				ED6EEF6D2715C6D300D4EFE9 /* Info.plist */,
+				ED5F11372717C963006454AD /* Colors.xcassets */,
+				ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */,
+				ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */,
+				ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */,
+			);
+			path = appComponents;
+			sourceTree = "<group>";
+		};
+		ED4DF384271875C2007966EE /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				ED6EEF652715C6D200D4EFE9 /* Main.storyboard */,
+				ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		ED4DF385271875D1007966EE /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				ED5F11342717C689006454AD /* extensions.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		ED5F113127177A06006454AD /* rotatable */ = {
+			isa = PBXGroup;
+			children = (
+				ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */,
+				ED5F112B271772E3006454AD /* CasinoView.swift */,
+				ED5F11322717823F006454AD /* BaseRotatableView.swift */,
+			);
+			path = rotatable;
+			sourceTree = "<group>";
+		};
 		ED6EEF532715C6D200D4EFE9 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +165,44 @@
 		ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */ = {
 			isa = PBXGroup;
 			children = (
-				ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */,
-				ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */,
-				ED6EEF632715C6D200D4EFE9 /* ViewController.swift */,
-				ED6EEF652715C6D200D4EFE9 /* Main.storyboard */,
-				ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */,
-				ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */,
-				ED6EEF6D2715C6D300D4EFE9 /* Info.plist */,
+				ED4DF3832718758E007966EE /* appComponents */,
+				ED4DF385271875D1007966EE /* extension */,
+				ED4DF384271875C2007966EE /* storyboard */,
+				ED4DF3822718757F007966EE /* viewmodel */,
+				ED3642642717536C0083D578 /* storage */,
+				ED36425C2717361D0083D578 /* controller */,
+				ED6EEF742715C74000D4EFE9 /* model */,
+				ED6EEF732715C6FF00D4EFE9 /* view */,
 			);
 			path = HobbyRandomizer;
+			sourceTree = "<group>";
+		};
+		ED6EEF732715C6FF00D4EFE9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				ED5F113127177A06006454AD /* rotatable */,
+				EDA90D3C27167630009BDB20 /* SelectorView.swift */,
+				ED36424A2717121D0083D578 /* CreateIdeaView.swift */,
+				ED36424C271712BF0083D578 /* CreateIdeaView.xib */,
+				ED36425227171B770083D578 /* RandomizerUtil.swift */,
+				ED3642542717209F0083D578 /* RandomizerUtil.xib */,
+				ED364256271731D70083D578 /* BangButton.swift */,
+				ED36426027173F490083D578 /* HobbyCell.swift */,
+				ED36426227174FE80083D578 /* PrettyLabel.swift */,
+				ED5F112D27177470006454AD /* RouleteView.swift */,
+				ED5F112F271774E7006454AD /* RouleteView.xib */,
+				ED5F11392717CC15006454AD /* CasinoSelectorView.swift */,
+				ED4DF38827188A83007966EE /* CreateHobbyCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		ED6EEF742715C74000D4EFE9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +262,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */,
+				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
+				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
+				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +279,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED6EEF642715C6D200D4EFE9 /* ViewController.swift in Sources */,
+				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
+				ED364259271735980083D578 /* TestViewController.swift in Sources */,
+				ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */,
+				ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */,
+				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
+				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
+				EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */,
+				ED5F11352717C689006454AD /* extensions.swift in Sources */,
+				ED364269271757090083D578 /* MainViewModel.swift in Sources */,
+				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
+				ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */,
+				ED36426127173F490083D578 /* HobbyCell.swift in Sources */,
 				ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */,
+				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
+				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
+				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
+				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
+				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
+				ED364257271731D70083D578 /* BangButton.swift in Sources */,
+				ED36425B271735C90083D578 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -271,6 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -288,7 +450,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ84GAYU68;
-				INFOPLIST_FILE = HobbyRandomizer/Info.plist;
+				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +470,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ84GAYU68;
-				INFOPLIST_FILE = HobbyRandomizer/Info.plist;
+				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
