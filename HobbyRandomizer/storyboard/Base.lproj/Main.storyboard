@@ -64,7 +64,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-9s-6Bi" customClass="CreateIdeaView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
@@ -92,24 +92,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qAk-u0-hK6">
-                        <leftBarButtonItems>
-                            <barButtonItem image="wrench.fill" catalog="system" id="MvD-eR-qLS">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="cqd-6A-M7L" kind="show" id="OFD-FC-Ccx"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="questionmark.circle.fill" catalog="system" id="glo-Cu-3HX">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <segue destination="x1L-Tx-vWr" kind="show" id="iUI-YY-d2Q"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" image="suit.spade.fill" catalog="system" id="jy5-UO-Xk5">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="pmA-m7-jqA" kind="show" id="Y7d-sI-Agt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Push to random!" id="glo-Cu-3HX">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="iUR-TD-pjy" kind="show" id="cBs-aL-ic6"/>
+                                <segue destination="x1L-Tx-vWr" kind="show" id="iUI-YY-d2Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -179,16 +171,85 @@
             </objects>
             <point key="canvasLocation" x="1711.5942028985507" y="68.973214285714278"/>
         </scene>
-        <!--Test View Controller-->
+        <!--Settings-->
+        <scene sceneID="tiZ-qZ-vcd">
+            <objects>
+                <viewController id="pmA-m7-jqA" customClass="SettingsViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lxv-8s-jGu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-BJ-Ci4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Settings" id="mLG-ar-hva" customClass="SettingCell" customModule="HobbyRandomizer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="63.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mLG-ar-hva" id="15i-JL-xBy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzA-UT-tvz">
+                                                    <rect key="frame" x="15" y="15" width="33" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="1Gn-Uv-RKJ"/>
+                                                        <constraint firstAttribute="width" constant="33" id="1yF-fD-hst"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-X3-HCj">
+                                                    <rect key="frame" x="63" y="15" width="336" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="IzA-UT-tvz" secondAttribute="bottom" constant="15" id="CCS-aq-90L"/>
+                                                <constraint firstItem="IzA-UT-tvz" firstAttribute="top" secondItem="15i-JL-xBy" secondAttribute="top" constant="15" id="G4R-gX-Eb0"/>
+                                                <constraint firstItem="zFB-X3-HCj" firstAttribute="leading" secondItem="IzA-UT-tvz" secondAttribute="trailing" constant="15" id="Jc7-Gi-hnB"/>
+                                                <constraint firstItem="zFB-X3-HCj" firstAttribute="top" secondItem="15i-JL-xBy" secondAttribute="top" constant="15" id="Jzr-4F-5dT"/>
+                                                <constraint firstItem="IzA-UT-tvz" firstAttribute="leading" secondItem="15i-JL-xBy" secondAttribute="leading" constant="15" id="OBN-Aa-hth"/>
+                                                <constraint firstItem="zFB-X3-HCj" firstAttribute="trailing" secondItem="15i-JL-xBy" secondAttribute="trailing" constant="-15" id="cvX-uu-zGe"/>
+                                                <constraint firstAttribute="bottom" secondItem="zFB-X3-HCj" secondAttribute="bottomMargin" constant="23" id="sSI-18-H5o"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="settingIcon" destination="IzA-UT-tvz" id="Hkv-hY-Zhe"/>
+                                            <outlet property="settingLabel" destination="zFB-X3-HCj" id="UOd-N3-3Tt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K4a-SF-bJV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MXX-BJ-Ci4" firstAttribute="top" secondItem="K4a-SF-bJV" secondAttribute="top" id="gv7-tS-r7o"/>
+                            <constraint firstItem="MXX-BJ-Ci4" firstAttribute="trailing" secondItem="K4a-SF-bJV" secondAttribute="trailing" id="lFH-GT-55V"/>
+                            <constraint firstItem="MXX-BJ-Ci4" firstAttribute="bottom" secondItem="K4a-SF-bJV" secondAttribute="bottom" id="mo5-p6-ivm"/>
+                            <constraint firstItem="MXX-BJ-Ci4" firstAttribute="leading" secondItem="K4a-SF-bJV" secondAttribute="leading" id="vjh-WP-UaL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="3hT-SG-Lmu"/>
+                    <connections>
+                        <outlet property="tableView" destination="MXX-BJ-Ci4" id="9Mx-el-OqJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-iS-5IV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8.6956521739130448" y="-595.3125"/>
+        </scene>
+        <!--Debug-->
         <scene sceneID="Y82-UC-8l6">
             <objects>
-                <viewController id="cqd-6A-M7L" customClass="TestViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestViewController" id="cqd-6A-M7L" customClass="TestViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bm0-Xg-MfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-VM-o1t" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="314" y="538" width="50" height="21"/>
+                                <rect key="frame" x="314" y="494" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="x57-Fq-gOR"/>
                                 </constraints>
@@ -197,7 +258,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeH-W8-lUY" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="538" width="50" height="21"/>
+                                <rect key="frame" x="50" y="494" width="50" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="pxP-lG-VqU"/>
                                 </constraints>
@@ -206,13 +267,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e45-sR-REW" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="184" y="538" width="46.5" height="21"/>
+                                <rect key="frame" x="184" y="494" width="46.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-wl-Rcb" customClass="RandomizerUtil" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="CIe-Vc-cpe"/>
@@ -236,7 +297,7 @@
                             <constraint firstItem="tNE-wl-Rcb" firstAttribute="trailing" secondItem="fJJ-ig-iQh" secondAttribute="trailing" id="sAg-wn-lAv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LvW-3I-tqn" userLabel="Test"/>
+                    <navigationItem key="navigationItem" title="Debug" id="LvW-3I-tqn" userLabel="Test"/>
                     <connections>
                         <outlet property="countLabel" destination="e45-sR-REW" id="a4A-BK-lc6"/>
                         <outlet property="decrementLabel" destination="LgB-VM-o1t" id="Qoi-FI-wCB"/>
@@ -248,33 +309,33 @@
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="-595.3125"/>
         </scene>
-        <!--Casino View Controller-->
+        <!--Casino-->
         <scene sceneID="lrP-YC-CRq">
             <objects>
-                <viewController id="iUR-TD-pjy" customClass="CasinoViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CasinoViewController" id="iUR-TD-pjy" customClass="CasinoViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UgV-PO-NRl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-E6-vng" userLabel="BottomView">
-                                <rect key="frame" x="0.0" y="713" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="669" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="7Od-ev-2t8"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-p1-lIh" customClass="RouleteView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="uF4-bV-CCE"/>
                                 </constraints>
                             </view>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51y-rd-ud1">
-                                <rect key="frame" x="0.0" y="497" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="453" width="414" height="216"/>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-eo-MYV" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="496" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="452" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="gtL-qH-1gR"/>
@@ -298,7 +359,7 @@
                             <constraint firstItem="51y-rd-ud1" firstAttribute="leading" secondItem="erD-gq-Y9m" secondAttribute="leading" id="ryh-Un-Zqp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gOT-LT-vhC"/>
+                    <navigationItem key="navigationItem" title="Casino" id="gOT-LT-vhC"/>
                     <connections>
                         <outlet property="bottomView" destination="QCI-E6-vng" id="jcj-Ps-cwy"/>
                         <outlet property="picker" destination="51y-rd-ud1" id="kkg-vX-FdZ"/>
@@ -332,9 +393,7 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="questionmark.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="suit.spade.fill" catalog="system" width="128" height="124"/>
-        <image name="wrench.fill" catalog="system" width="128" height="125"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

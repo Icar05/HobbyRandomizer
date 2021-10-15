@@ -7,14 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class MainViewController: UIViewController  {
     
         
     @IBOutlet weak var tableView: UITableView!
     
-    
     fileprivate let viewModel = MainViewModel.shared
-    
     
     var datasource: [HobbyModel] = []
     
@@ -38,8 +36,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.viewModel.saveModels(models: self.datasource)
         self.tableView.reloadData()
     }
-    
-    
+}
+
+extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(indexPath.row == 0){
@@ -60,7 +59,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count + 1
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 170: 70
+    }
+}
+
+
+extension MainViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return indexPath.row == 0 ? UITableViewCell.EditingStyle.none : UITableViewCell.EditingStyle.delete
     }
@@ -72,9 +78,4 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.tableView.reloadData()
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row == 0 ? 170: 70
-    }
-    
 }

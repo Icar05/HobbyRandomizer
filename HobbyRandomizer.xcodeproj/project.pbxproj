@@ -20,6 +20,8 @@
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* MainViewModel.swift */; };
 		ED4A3CBC2719B26E00084BB8 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */; };
+		ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */; };
+		ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */; };
 		ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DF38827188A83007966EE /* CreateHobbyCell.swift */; };
 		ED5F112C271772E3006454AD /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112B271772E3006454AD /* CasinoView.swift */; };
 		ED5F112E27177470006454AD /* RouleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112D27177470006454AD /* RouleteView.swift */; };
@@ -52,6 +54,8 @@
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
+		ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		ED4DF38827188A83007966EE /* CreateHobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyCell.swift; sourceTree = "<group>"; };
 		ED5F112B271772E3006454AD /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		ED5F112D27177470006454AD /* RouleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouleteView.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				ED36425A271735C90083D578 /* MainViewController.swift */,
 				ED36425D2717363E0083D578 /* RandomViewController.swift */,
 				ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */,
+				ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -100,6 +105,15 @@
 				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
 			);
 			path = storage;
+			sourceTree = "<group>";
+		};
+		ED4A3CBF271A0A6B00084BB8 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED36426027173F490083D578 /* HobbyCell.swift */,
+				ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		ED4DF3822718757F007966EE /* viewmodel */ = {
@@ -183,6 +197,7 @@
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				ED4A3CBF271A0A6B00084BB8 /* cell */,
 				ED5F113127177A06006454AD /* rotatable */,
 				EDA90D3C27167630009BDB20 /* SelectorView.swift */,
 				ED36424A2717121D0083D578 /* CreateIdeaView.swift */,
@@ -190,7 +205,6 @@
 				ED36425227171B770083D578 /* RandomizerUtil.swift */,
 				ED3642542717209F0083D578 /* RandomizerUtil.xib */,
 				ED364256271731D70083D578 /* BangButton.swift */,
-				ED36426027173F490083D578 /* HobbyCell.swift */,
 				ED36426227174FE80083D578 /* PrettyLabel.swift */,
 				ED5F112D27177470006454AD /* RouleteView.swift */,
 				ED5F112F271774E7006454AD /* RouleteView.xib */,
@@ -284,6 +298,7 @@
 			files = (
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
 				ED364259271735980083D578 /* TestViewController.swift in Sources */,
+				ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */,
 				ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */,
 				ED4A3CBC2719B26E00084BB8 /* CasinoViewController.swift in Sources */,
 				ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */,
@@ -297,6 +312,7 @@
 				ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */,
 				ED36426127173F490083D578 /* HobbyCell.swift in Sources */,
 				ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */,
+				ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
