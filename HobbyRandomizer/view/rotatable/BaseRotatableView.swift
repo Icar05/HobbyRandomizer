@@ -10,6 +10,17 @@ import UIKit
 typealias RandomizerCallback = (_ winner: Int, _ winnerColor: UIColor) -> Void
 
 
+struct AngleOfSector{
+    let minAngle: Double
+    let maxAngle: Double
+}
+
+extension AngleOfSector{
+    func getMiddleAngle() -> Double{
+        return  (minAngle + maxAngle) / 2
+    }
+}
+
 class BaseRotatableView: UIView, CAAnimationDelegate {
     
     
@@ -55,7 +66,7 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
     }
     
     
-    func setup(){
+    fileprivate func setup(){
         self.layer.bounds.size = CGSize(width: CGFloat(sizeOfView), height: CGFloat(sizeOfView))
         self.layer.masksToBounds = true
         self.childSetup()
@@ -132,12 +143,32 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.newAngle = 0
     }
     
+    internal func rotate(index: Int){
+        let angle = searchAngle(index: index)
+        self.rotateWithAngle(randomAngle: angle)
+    }
+    
     internal func rotate(){
-        let randonAngle =  arc4random_uniform(361) + 360
+        let randomAngle =  arc4random_uniform(361) + 360
+        self.rotateWithAngle(randomAngle: Int(randomAngle))
+    }
+    
+    fileprivate func searchAngle(index: Int) ->  Int{
+        let angles = self.angles[index]
         
+        let rotationCount = Int.random(in: 1..<3)
+        let additionalRotationAngle = 360 * rotationCount
+    
+        let fullWinnerAngle = 90.0
+        let offsetAngle = fullWinnerAngle - angles.getMiddleAngle()
+                
+        return Int(offsetAngle) + additionalRotationAngle
+    }
+    
+    fileprivate func rotateWithAngle(randomAngle: Int){
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = Double(randonAngle) * Double.pi / 180.0
+        rotateAnimation.toValue = Double(randomAngle) * Double.pi / 180.0
         rotateAnimation.duration = 1
         rotateAnimation.repeatCount = 0
         rotateAnimation.isRemovedOnCompletion = false
@@ -145,7 +176,7 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         rotateAnimation.delegate = self
         
-        self.updateNewAngleValue(angle: Double(randonAngle))
+        self.updateNewAngleValue(angle: Double(randomAngle))
         
         self.layer.add(rotateAnimation, forKey: nil)
     }
@@ -219,19 +250,15 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
     }
     
     fileprivate func searchWinnerSector() -> Int{
-        let angleToSearch = 90.0
-        let searched = angleToSearch - newAngle
-        let target = searched < 0 ? searched + 360 : searched
+        let fullWinnerAngle = 90.0
+        let searched = fullWinnerAngle - newAngle
+        let correctAngle = searched < 0 ? searched + 360 : searched
         
         var output = 0
         
         for i in 0...angles.count - 1{
-            
-            //            print("searchied: \(target), current: \(i), [\(angles[i].minAngle) - \(angles[i].maxAngle)]")
-            
-            if(angles[i].minAngle < target && angles[i].maxAngle >= target){
+            if(angles[i].minAngle < correctAngle && angles[i].maxAngle >= correctAngle){
                 output = i
-                //                print("searchied: found : \(i)")
                 break
             }
         }

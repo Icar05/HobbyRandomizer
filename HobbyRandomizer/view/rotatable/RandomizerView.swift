@@ -9,10 +9,7 @@ import Foundation
 import UIKit
 
 
-struct AngleOfSector{
-    let minAngle: Double
-    let maxAngle: Double
-}
+
 
 @IBDesignable
 class RandomizerView: BaseRotatableView {

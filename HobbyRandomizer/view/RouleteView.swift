@@ -21,6 +21,8 @@ class RouleteView:  UIView {
     
     @IBOutlet weak var casinoSelectorView: CasinoSelectorView!
     
+    var targetIndex = -1
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +36,7 @@ class RouleteView:  UIView {
     }
     
     
-    func prepareView(){
+    fileprivate func prepareView(){
         
         let bundle = Bundle(for: RouleteView.self)
         bundle.loadNibNamed(String(describing: RouleteView.self), owner: self, options: nil)
@@ -59,7 +61,21 @@ class RouleteView:  UIView {
     }
     
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
+        
+        if(self.targetIndex != -1){
+            self.casinoView.rotate(index: targetIndex)
+            return
+        }
+        
         self.casinoView.rotate()
+    }
+    
+    func clearTargetIndex(){
+        self.targetIndex = -1
+    }
+    
+    func getDataSource() ->  [Int]{
+        return self.casinoView.datasource
     }
     
 }

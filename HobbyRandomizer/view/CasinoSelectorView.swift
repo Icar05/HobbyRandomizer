@@ -50,7 +50,7 @@ class CasinoSelectorView: UIView {
     }
     
     
-    func setup(){
+    fileprivate func setup(){
         self.layer.bounds.size = CGSize(width: CGFloat(viewHeith), height: CGFloat(viewHeith))
         self.layer.masksToBounds = true
         self.backgroundColor = .white.withAlphaComponent(0)
