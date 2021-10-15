@@ -144,13 +144,12 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
     }
     
     internal func rotate(index: Int){
-        let angle = searchAngle(index: index)
-        self.rotateWithAngle(randomAngle: angle)
+        self.rotateWithAngle(index: index)
     }
     
-    internal func rotate(){
-        let randomAngle =  arc4random_uniform(361) + 360
-        self.rotateWithAngle(randomAngle: Int(randomAngle))
+    internal func rotate(itemsCount: Int){
+        let randomIndex = Int.random(in: 1..<itemsCount)
+        self.rotateWithAngle(index: randomIndex)
     }
     
     fileprivate func searchAngle(index: Int) ->  Int{
@@ -165,10 +164,11 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         return Int(offsetAngle) + additionalRotationAngle
     }
     
-    fileprivate func rotateWithAngle(randomAngle: Int){
+    fileprivate func rotateWithAngle(index: Int){
+        let angle = searchAngle(index: index)
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = Double(randomAngle) * Double.pi / 180.0
+        rotateAnimation.toValue = Double(angle) * Double.pi / 180.0
         rotateAnimation.duration = 1
         rotateAnimation.repeatCount = 0
         rotateAnimation.isRemovedOnCompletion = false
@@ -176,7 +176,7 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         rotateAnimation.delegate = self
         
-        self.updateNewAngleValue(angle: Double(randomAngle))
+        self.updateNewAngleValue(angle: Double(angle))
         
         self.layer.add(rotateAnimation, forKey: nil)
     }

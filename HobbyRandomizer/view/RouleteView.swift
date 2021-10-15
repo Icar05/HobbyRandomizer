@@ -67,7 +67,7 @@ class RouleteView:  UIView {
             return
         }
         
-        self.casinoView.rotate()
+        self.casinoView.rotate(itemsCount: getDataSource().count)
     }
     
     func clearTargetIndex(){

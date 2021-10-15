@@ -71,7 +71,7 @@ class RandomizerUtil: UIView {
     }
     
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
-        self.randomView.rotate()
+        self.randomView.rotate(itemsCount: self.count)
     }
    
     
