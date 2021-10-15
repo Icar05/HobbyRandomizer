@@ -84,16 +84,16 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
      */
     func childSetup(){}
     
-    func didFoundWinner(value: Int){}
-    
-    func onDrawSection(startAngle: Double, endAngle: Double, i: Int, angleSector: Double){}
+    func didFoundWinner(value: Int){
+        fatalError("Not implemented")
+    }
     
     func getColorForSection(sectionId: Int) -> UIColor {
-        return UIColor.white
+        fatalError("Not implemented")
     }
     
     func getAttributedString(fontSize: CGFloat, item: Int) -> NSAttributedString {
-        return NSAttributedString()
+        fatalError("Not implemented")
     }
     
     
@@ -152,6 +152,16 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.rotateWithAngle(index: randomIndex)
     }
     
+    internal func getStartAngle(index: Int) ->  Double{
+        return self.angles[index].minAngle
+    }
+    
+    internal func deg2rad(_ number: Double) -> Double {
+        return number * .pi / 180
+    }
+    /**
+     PRIVATE ZONE
+     */
     fileprivate func searchAngle(index: Int) ->  Int{
         let angles = self.angles[index]
         
@@ -181,16 +191,6 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.layer.add(rotateAnimation, forKey: nil)
     }
     
-    internal func getStartAngle(index: Int) ->  Double{
-        return self.angles[index].minAngle
-    }
-    
-    internal func deg2rad(_ number: Double) -> Double {
-        return number * .pi / 180
-    }
-    /**
-     PRIVATE ZONE
-     */
     fileprivate func drawText(angle: Double, string: NSAttributedString){
         let centerPoint = CGPoint(x: self.sizeOfView / 2, y: self.sizeOfView / 2)
         let textSize: CGSize = string.size()
