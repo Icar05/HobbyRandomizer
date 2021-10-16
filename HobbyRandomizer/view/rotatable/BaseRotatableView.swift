@@ -194,9 +194,7 @@ class BaseRotatableView: UIView {
     
     fileprivate func rotateWithAngle(index: Int){
         let angle: Double = Double(searchAngle(index: index))
-//        let startValue: Double = Double(self.newAngle)
-//                let finishValue: Double = Double(self.newAngle + angle)
-        
+
         self.detectSectorUtil.updateNewAngleValue(newAngle: Double(angle))
         self.winnerIndex = index
         
