@@ -64,7 +64,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-9s-6Bi" customClass="CreateIdeaView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
@@ -92,7 +92,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qAk-u0-hK6">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" image="gearshape.fill" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <segue destination="pmA-m7-jqA" kind="show" id="Y7d-sI-Agt"/>
