@@ -21,8 +21,10 @@ class CasinoSelectorView: UIView {
     fileprivate var viewHeith: CGFloat = 400
     
     fileprivate let padding = 20
-
+    
     fileprivate var textLayer = CATextLayer()
+    
+    fileprivate var model: RandomizerModel? = nil
     
     
     override func prepareForInterfaceBuilder(){
@@ -63,74 +65,85 @@ class CasinoSelectorView: UIView {
         let start = CGPoint(x: padding, y: y)
         let end = CGPoint(x: Int(viewWidth) - padding, y: y)
         self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 50, color: UIColor.brown)
-
+        
         self.drawCircle(size: 16, color: .white, yOffset: Int(viewHeith) / 2 - 26 )
-        self.drawCircle(size: 40, color: .orange, yOffset: y - 20)
-
-        self.drawText(text: "?")
+        
+        if(model == nil){
+            self.drawCircle(size: 40, color: .orange, yOffset: y - 20)
+            self.drawText(text: "?")
+        }else{
+            self.displayWinner(model: self.model!)
+        }
+        
+        
     }
     
-    func getAttributedString(input: String) -> NSAttributedString{
+    fileprivate func getAttributedString(input: String) -> NSAttributedString{
         let dict:NSDictionary = [
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.strokeWidth: 5,
             NSAttributedString.Key.strokeColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "EuphemiaUCAS", size: 25)!
         ]
-       return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
+        return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
     }
-
-    func displayWinner(model: RandomizerModel){
+    
+    func updateModel(model: RandomizerModel){
+        self.model = model
+        self.displayWinner(model: model)
+    }
+    
+    fileprivate func displayWinner(model: RandomizerModel){
         let y = (Int(viewHeith) / 3 * 2) + 10
         self.drawCircle(size: 40, color: model.color, yOffset: y - 20)
         self.drawText(text: "\(model.index)")
     }
-
- 
-
-    func drawText(text: String){
-
+    
+    
+    
+    fileprivate func drawText(text: String){
+        
         let startX = Int(viewWidth / 2) - 25
         let startY = (Int(viewHeith) / 3 * 2) - 8
-
+        
         textLayer.removeFromSuperlayer()
         textLayer = CATextLayer()
         textLayer.string = getAttributedString(input:text)
         textLayer.alignmentMode = .center
         textLayer.frame = CGRect(x: Int(startX), y: startY, width: 50, height: 40)
-
+        
         layer.addSublayer(textLayer)
-
+        
     }
-
- 
     
-    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
+    
+    
+    fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
         self.path = UIBezierPath()
         path.move(to: start)
         path.addLine(to: end)
-
+        
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.lineWidth = lineWidth
-
+        
         self.layer.addSublayer(shapeLayer)
-
+        
     }
-
-    func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
-
+    
+    fileprivate func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
+        
         let point = (viewWidth - size) / 2
         let path = UIBezierPath(ovalIn:CGRect(x: point, y: CGFloat(yOffset), width: size, height: size))
         let circleLayer = CAShapeLayer()
         circleLayer.path = path.cgPath
         circleLayer.fillColor = color.cgColor
         circleLayer.strokeColor = UIColor.black.cgColor
-
+        
         layer.addSublayer(circleLayer)
     }
-
+    
     
     
 }

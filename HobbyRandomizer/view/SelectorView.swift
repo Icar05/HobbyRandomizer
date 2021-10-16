@@ -30,6 +30,8 @@ class SelectorView: UIView {
     fileprivate var textLayer = CATextLayer()
     
     fileprivate var circleLayer = CAShapeLayer()
+        
+    fileprivate var model: RandomizerModel? = nil
     
     
     override func prepareForInterfaceBuilder(){
@@ -66,7 +68,6 @@ class SelectorView: UIView {
     
     
     override func draw(_ rect: CGRect) {
-        
         var start = CGPoint(x: padding, y: Int(viewHeith) - padding)
         var end = CGPoint(x: Int(viewWidth) - padding, y: Int(viewHeith) - padding)
         self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 10)
@@ -104,12 +105,18 @@ class SelectorView: UIView {
         
         self.drawCircle(size: 60, color: .white)
         self.drawCircle(size: 50, color: acsentColor)
-        self.drawCircle(size: 50, color: .white, yOffset: Int(viewHeith) - 70)
         
-        self.drawText(text: "?")
+        if(model == nil){
+            self.drawCircle(size: 50, color: .white, yOffset: Int(viewHeith) - 70)
+            self.drawText(text: "?")
+        }else{
+            self.displayWinner(model: self.model!)
+        }
+        
+        
     }
     
-    func getAttributedString(input: String) -> NSAttributedString{
+    fileprivate func getAttributedString(input: String) -> NSAttributedString{
         let dict:NSDictionary = [
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.strokeWidth: 5,
@@ -119,12 +126,17 @@ class SelectorView: UIView {
        return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
     }
     
-    func displayWinner(model: RandomizerModel){
+    func updateModel(model: RandomizerModel){
+        self.model = model
+        self.displayWinner(model: model)
+    }
+    
+    fileprivate func displayWinner(model: RandomizerModel){
         self.drawCircle(size: 50, color: model.color, yOffset: Int(viewHeith) - 70)
         self.drawText(text: "\(model.index + 1)")
     }
     
-    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
+    fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
         self.path = UIBezierPath()
         path.move(to: start)
         path.addLine(to: end)
@@ -138,7 +150,7 @@ class SelectorView: UIView {
         
     }
     
-    func drawText(text: String){
+    fileprivate func drawText(text: String){
         
         let startX = (viewWidth / 2) - 25
         let startY = Int(viewHeith) - 60
@@ -153,12 +165,12 @@ class SelectorView: UIView {
         
     }
     
-    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat) {
+    fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat) {
         self.drawLineFromPointToPoint(start: start, end: end, lineWidth: lineWidth, color: .black)
     }
     
     
-    func drawCircle(size: CGFloat, color: UIColor){
+    fileprivate func drawCircle(size: CGFloat, color: UIColor){
         
         let point = (viewWidth - size) / 2
         self.path = UIBezierPath(ovalIn:CGRect(x: point, y: point, width: size, height: size))
@@ -170,7 +182,7 @@ class SelectorView: UIView {
         layer.addSublayer(shapeLayer)
     }
     
-    func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
+    fileprivate func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
         
         circleLayer.removeFromSuperlayer()
         

@@ -51,7 +51,7 @@ class RandomizerUtil: UIView {
 
 
         randomView.callback = { model in
-            self.selectorView.displayWinner(model: model)
+            self.selectorView.updateModel(model: model)
             self.delegate?(model)
         }
         randomView.setData(count: count)

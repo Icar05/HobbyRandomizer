@@ -51,7 +51,7 @@ class RouleteView:  UIView {
 
         
         self.casinoView.callback = {(model) in
-            self.casinoSelectorView.displayWinner(model: model)
+            self.casinoSelectorView.updateModel(model: model)
         }
         
         self.bangBtn.isUserInteractionEnabled = true
