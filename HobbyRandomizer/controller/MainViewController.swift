@@ -45,7 +45,6 @@ extension MainViewController: UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TC", for: indexPath) as! CreateHobbyCell
                 cell.modify()
                 cell.setupDelegate{ (model) in self.onModelCreated(model: model)}
-                cell.isUserInteractionEnabled = false
                 
             return cell
         }
