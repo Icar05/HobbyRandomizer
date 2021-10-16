@@ -39,8 +39,12 @@ class BaseRotatableView: UIView {
     internal var callback: RandomizerCallback? = nil
     
     fileprivate var animationDuration = 2.0
-        
+    
     fileprivate var detectSectorUtil: DetectSectorUtil = DetectSectorUtil()
+    
+    fileprivate var baseAnimationObserver = BaseAnimationObserver()
+    
+    fileprivate var winnerIndex = 0
     
     
     
@@ -74,6 +78,7 @@ class BaseRotatableView: UIView {
         self.layer.masksToBounds = true
         self.childSetup()
         self.detectSectorUtil.delegate = self
+        self.baseAnimationObserver.delegate = self
     }
     
     
@@ -119,7 +124,7 @@ class BaseRotatableView: UIView {
     internal func prepareSectors(){
         
         self.detectSectorUtil.setup(sectorAngle: getSectorAngle(), animationDuration: animationDuration)
-       
+        
         
         let minAngle = 0
         let maxAngle: Double = 360
@@ -170,14 +175,12 @@ class BaseRotatableView: UIView {
     /**
      PRIVATE ZONE
      */
-    fileprivate func searchAngle(index: Int) ->  Int{
-        let angles = self.angles[index]
-            
-        let fullWinnerAngle = 810.0
-        let currentMiddleAngle = newAngle + angles.getMiddleAngle()
-        let result = fullWinnerAngle - currentMiddleAngle
+    fileprivate func searchAngle(index: Int) ->  Double{
         
-        return Int(result)
+        let fullWinnerAngle = 810.0
+        let currentMiddleAngle = self.angles[index].getMiddleAngle()
+        
+        return fullWinnerAngle - currentMiddleAngle
     }
     
     fileprivate func getSectorAngle() -> Double{
@@ -187,34 +190,36 @@ class BaseRotatableView: UIView {
     
     fileprivate func rotateWithAngle(index: Int){
         let angle: Double = Double(searchAngle(index: index))
-        let startValue: Double = Double(self.newAngle)
-        let finishValue: Double = Double(self.newAngle + angle)
+//        let startValue: Double = Double(self.newAngle)
+//                let finishValue: Double = Double(self.newAngle + angle)
         
         self.detectSectorUtil.updateNewAngleValue(newAngle: Double(angle))
+        self.winnerIndex = index
         
-        let valueAnimator = ValueAnimator(from: startValue, to: finishValue, duration: animationDuration) { value in
-            let angle = Double(value) * Double.pi / 180.0
-            self.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
-            self.detectSectorUtil.itarate()
-        } onStop: { [weak self] in
-            self?.updateNewAngle(angle: angle)
-            self?.didFoundWinner(value: index)
-        }
-
-        valueAnimator.start()
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            rotateAnimation.fromValue = 0.0
+            rotateAnimation.toValue = Double(angle) * Double.pi / 180.0
+            rotateAnimation.duration = 2
+            rotateAnimation.repeatCount = 0
+            rotateAnimation.isRemovedOnCompletion = false
+            rotateAnimation.delegate = self
+            rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
+            rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        
+        self.layer.add(rotateAnimation, forKey: nil)
+        
+        self.updateNewAngle(angle: angle)
         
     }
     
     fileprivate func updateNewAngle(angle: Double){
         self.newAngle += angle
-                
+        
         if(self.newAngle > 360){
             while newAngle > 360 {
                 self.newAngle -= 360
             }
         }
-        
-        
     }
     
     fileprivate func drawText(angle: Double, string: NSAttributedString){
@@ -270,5 +275,23 @@ class BaseRotatableView: UIView {
 extension BaseRotatableView: DetectSectorUtilDelegate{
     func onDetectSector() {
         AudioServicesPlaySystemSoundWithCompletion(1157, nil)
+    }
+}
+
+extension BaseRotatableView: CAAnimationDelegate{
+    
+    func animationDidStart(_ anim: CAAnimation){
+        self.baseAnimationObserver.start()
+    }
+    
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool){
+        self.baseAnimationObserver.stop()
+        self.didFoundWinner(value: winnerIndex)
+    }
+}
+
+extension BaseRotatableView: BaseAnimationObserverOnUpdate{
+    func onUpdate(value: Double) {
+        self.detectSectorUtil.itarate()
     }
 }

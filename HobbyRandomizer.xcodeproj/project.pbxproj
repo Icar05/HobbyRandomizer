@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
 		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
 		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
 		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
 		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
 				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
+				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
 				ED364259271735980083D578 /* TestViewController.swift in Sources */,
