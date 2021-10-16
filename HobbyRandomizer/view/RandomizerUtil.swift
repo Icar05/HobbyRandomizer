@@ -12,7 +12,7 @@ import UIKit
 class RandomizerUtil: UIView {
     
     
-    fileprivate var count = 4
+    fileprivate var count = 7
     
     @IBOutlet weak var contentView: UIView!
     

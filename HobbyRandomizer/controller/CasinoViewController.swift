@@ -56,10 +56,10 @@ class CasinoViewController : UIViewController {
         self.picker.isHidden = !visible
         self.topView.isHidden = !visible
         self.bottomView.isHidden = !visible
+        self.rouleteView.shouldCleanTargetIndex = !visible
         
-        if(!visible){
-            self.rouleteView.clearTargetIndex()
-        }else{
+        
+        if(visible){
             self.rouleteView.targetIndex = self.currentSelectedIndex
         }
     }
