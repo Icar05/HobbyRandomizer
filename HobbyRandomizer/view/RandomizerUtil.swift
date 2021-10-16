@@ -12,7 +12,7 @@ import UIKit
 class RandomizerUtil: UIView {
     
     
-    fileprivate var count = 7
+    fileprivate var count = 4
     
     @IBOutlet weak var contentView: UIView!
     
@@ -71,7 +71,7 @@ class RandomizerUtil: UIView {
     }
     
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
-        self.randomView.rotate(itemsCount: self.count)
+        self.randomView.rotate()
     }
    
     

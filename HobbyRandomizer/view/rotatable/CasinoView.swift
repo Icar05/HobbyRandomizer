@@ -29,7 +29,7 @@ class CasinoView: BaseRotatableView {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: outerCircleSize, color: woodColor)
         
-        self.prepareSectors(itemsCount: datasource.count)
+        self.prepareSectors()
        
         
         self.drawCircle(size: (outerCircleSize / 1.5) + 4, color: woodColor)
@@ -73,6 +73,10 @@ class CasinoView: BaseRotatableView {
     
     override func getAttributedString(fontSize: CGFloat, item: Int) -> NSAttributedString {
         return getTextString(fontSize: fontSize, text: "\(datasource[item])")
+    }
+    
+    override func getItemsCount() -> Int {
+        return self.datasource.count
     }
     
     func drawCenter(){

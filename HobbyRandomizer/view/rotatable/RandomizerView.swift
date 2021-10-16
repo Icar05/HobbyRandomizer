@@ -30,12 +30,15 @@ class RandomizerView: BaseRotatableView {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: outerCircleSize, color: UIColor.black)
         
-        self.prepareSectors(itemsCount: datasource.count)
+        self.prepareSectors()
         
         self.drawCircle(size: self.sizeOfView / 4, color: .black)
         self.drawCircle(size: self.sizeOfView / 5, color: .white)
     }
     
+    override func getItemsCount() -> Int {
+        return self.datasource.count
+    }
     
     override func getColorForSection(sectionId: Int) -> UIColor {
         return self.datasource[sectionId]

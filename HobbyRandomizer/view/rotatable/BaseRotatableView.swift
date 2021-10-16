@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 typealias RandomizerCallback = (_ winner: Int, _ winnerColor: UIColor) -> Void
 
@@ -21,7 +22,7 @@ extension AngleOfSector{
     }
 }
 
-class BaseRotatableView: UIView, CAAnimationDelegate {
+class BaseRotatableView: UIView {
     
     
     
@@ -37,7 +38,9 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
     
     internal var callback: RandomizerCallback? = nil
     
-    
+    fileprivate var animationDuration = 2.0
+        
+    fileprivate var detectSectorUtil: DetectSectorUtil = DetectSectorUtil()
     
     
     
@@ -70,11 +73,7 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.layer.bounds.size = CGSize(width: CGFloat(sizeOfView), height: CGFloat(sizeOfView))
         self.layer.masksToBounds = true
         self.childSetup()
-    }
-    
-    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        let winnerIndex = searchWinnerSector()
-        self.didFoundWinner(value: winnerIndex)
+        self.detectSectorUtil.delegate = self
     }
     
     
@@ -96,6 +95,10 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         fatalError("Not implemented")
     }
     
+    func getItemsCount() -> Int{
+        fatalError("Not implemented")
+    }
+    
     
     /*
      PARENT METHODS
@@ -113,9 +116,14 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.path.fill()
     }
     
-    internal func prepareSectors(itemsCount: Int){
+    internal func prepareSectors(){
+        
+        self.detectSectorUtil.setup(sectorAngle: getSectorAngle(), animationDuration: animationDuration)
+       
+        
         let minAngle = 0
         let maxAngle: Double = 360
+        let itemsCount = getItemsCount()
         let sectorAngle: Double = maxAngle / Double(itemsCount)
         let fontSize = calculateFontSize(itemsCount: itemsCount)
         var startAngle: Double = Double(minAngle)
@@ -147,8 +155,8 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         self.rotateWithAngle(index: index)
     }
     
-    internal func rotate(itemsCount: Int){
-        let randomIndex = Int.random(in: 1..<itemsCount)
+    internal func rotate(){
+        let randomIndex = Int.random(in: 1..<getItemsCount())
         self.rotateWithAngle(index: randomIndex)
     }
     
@@ -164,31 +172,49 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
      */
     fileprivate func searchAngle(index: Int) ->  Int{
         let angles = self.angles[index]
+            
+        let fullWinnerAngle = 810.0
+        let currentMiddleAngle = newAngle + angles.getMiddleAngle()
+        let result = fullWinnerAngle - currentMiddleAngle
         
-        let rotationCount = Int.random(in: 1..<3)
-        let additionalRotationAngle = 360 * rotationCount
+        return Int(result)
+    }
     
-        let fullWinnerAngle = 90.0
-        let offsetAngle = fullWinnerAngle - angles.getMiddleAngle()
-                
-        return Int(offsetAngle) + additionalRotationAngle
+    fileprivate func getSectorAngle() -> Double{
+        let maxAngle: Double = 360
+        return maxAngle / Double(getItemsCount())
     }
     
     fileprivate func rotateWithAngle(index: Int){
-        let angle = searchAngle(index: index)
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = Double(angle) * Double.pi / 180.0
-        rotateAnimation.duration = 1
-        rotateAnimation.repeatCount = 0
-        rotateAnimation.isRemovedOnCompletion = false
-        rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
-        rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-        rotateAnimation.delegate = self
+        let angle: Double = Double(searchAngle(index: index))
+        let startValue: Double = Double(self.newAngle)
+        let finishValue: Double = Double(self.newAngle + angle)
         
-        self.updateNewAngleValue(angle: Double(angle))
+        self.detectSectorUtil.updateNewAngleValue(newAngle: Double(angle))
         
-        self.layer.add(rotateAnimation, forKey: nil)
+        let valueAnimator = ValueAnimator(from: startValue, to: finishValue, duration: animationDuration) { value in
+            let angle = Double(value) * Double.pi / 180.0
+            self.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+            self.detectSectorUtil.itarate()
+        } onStop: { [weak self] in
+            self?.updateNewAngle(angle: angle)
+            self?.didFoundWinner(value: index)
+        }
+
+        valueAnimator.start()
+        
+    }
+    
+    fileprivate func updateNewAngle(angle: Double){
+        self.newAngle += angle
+                
+        if(self.newAngle > 360){
+            while newAngle > 360 {
+                self.newAngle -= 360
+            }
+        }
+        
+        
     }
     
     fileprivate func drawText(angle: Double, string: NSAttributedString){
@@ -239,30 +265,10 @@ class BaseRotatableView: UIView, CAAnimationDelegate {
         let offset = howMuch < 2 ? 5 : 0
         return CGFloat(maxFontSize - (clearHowMuch * 10)) - CGFloat(offset)
     }
-    
-    fileprivate func updateNewAngleValue(angle: Double){
-        var newAngle = angle
-        while newAngle > 360 {
-            newAngle -= 360
-        }
-        
-        self.newAngle = newAngle
-    }
-    
-    fileprivate func searchWinnerSector() -> Int{
-        let fullWinnerAngle = 90.0
-        let searched = fullWinnerAngle - newAngle
-        let correctAngle = searched < 0 ? searched + 360 : searched
-        
-        var output = 0
-        
-        for i in 0...angles.count - 1{
-            if(angles[i].minAngle < correctAngle && angles[i].maxAngle >= correctAngle){
-                output = i
-                break
-            }
-        }
-        
-        return output
+}
+
+extension BaseRotatableView: DetectSectorUtilDelegate{
+    func onDetectSector() {
+        AudioServicesPlaySystemSoundWithCompletion(1157, nil)
     }
 }

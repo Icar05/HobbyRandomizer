@@ -22,6 +22,8 @@
 		ED4A3CBC2719B26E00084BB8 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */; };
 		ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */; };
 		ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */; };
+		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
+		ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */; };
 		ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DF38827188A83007966EE /* CreateHobbyCell.swift */; };
 		ED5F112C271772E3006454AD /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112B271772E3006454AD /* CasinoView.swift */; };
 		ED5F112E27177470006454AD /* RouleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112D27177470006454AD /* RouleteView.swift */; };
@@ -56,6 +58,8 @@
 		ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
+		ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectSectorUtil.swift; sourceTree = "<group>"; };
 		ED4DF38827188A83007966EE /* CreateHobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyCell.swift; sourceTree = "<group>"; };
 		ED5F112B271772E3006454AD /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		ED5F112D27177470006454AD /* RouleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouleteView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 				ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		ED4A3CC4271A290000084BB8 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
+				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		ED4DF3822718757F007966EE /* viewmodel */ = {
@@ -183,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4DF3832718758E007966EE /* appComponents */,
+				ED4A3CC4271A290000084BB8 /* util */,
 				ED4DF385271875D1007966EE /* extension */,
 				ED4DF384271875C2007966EE /* storyboard */,
 				ED4DF3822718757F007966EE /* viewmodel */,
@@ -296,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
 				ED364259271735980083D578 /* TestViewController.swift in Sources */,
 				ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */,
@@ -305,6 +320,7 @@
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */,
+				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
 				ED364269271757090083D578 /* MainViewModel.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,

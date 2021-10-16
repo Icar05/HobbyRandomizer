@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox.AudioServices
 
 @IBDesignable
 class RouleteView:  UIView {
@@ -67,7 +68,7 @@ class RouleteView:  UIView {
             return
         }
         
-        self.casinoView.rotate(itemsCount: getDataSource().count)
+        self.casinoView.rotate()
     }
     
     func clearTargetIndex(){
