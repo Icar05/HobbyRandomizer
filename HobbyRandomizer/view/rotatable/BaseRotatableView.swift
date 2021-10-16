@@ -8,8 +8,12 @@
 import UIKit
 import AudioToolbox
 
-typealias RandomizerCallback = (_ winner: Int, _ winnerColor: UIColor) -> Void
+typealias RandomizerCallback = (_ model: RandomizerModel) -> Void
 
+struct RandomizerModel {
+    let index: Int
+    let color: UIColor
+}
 
 struct AngleOfSector{
     let minAngle: Double

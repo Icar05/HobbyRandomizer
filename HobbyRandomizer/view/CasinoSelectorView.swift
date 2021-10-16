@@ -80,10 +80,10 @@ class CasinoSelectorView: UIView {
        return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
     }
 
-    func displayWinner(index: Int, color: UIColor){
+    func displayWinner(model: RandomizerModel){
         let y = (Int(viewHeith) / 3 * 2) + 10
-        self.drawCircle(size: 40, color: color, yOffset: y - 20)
-        self.drawText(text: "\(index)")
+        self.drawCircle(size: 40, color: model.color, yOffset: y - 20)
+        self.drawText(text: "\(model.index)")
     }
 
  

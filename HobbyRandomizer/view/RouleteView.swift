@@ -50,8 +50,8 @@ class RouleteView:  UIView {
              UIView.AutoresizingMask.flexibleHeight]
 
         
-        self.casinoView.callback = {(index, color) in
-            self.casinoSelectorView.displayWinner(index: index, color: color)
+        self.casinoView.callback = {(model) in
+            self.casinoSelectorView.displayWinner(model: model)
         }
         
         self.bangBtn.isUserInteractionEnabled = true

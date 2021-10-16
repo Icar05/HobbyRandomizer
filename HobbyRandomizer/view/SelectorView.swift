@@ -119,9 +119,9 @@ class SelectorView: UIView {
        return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
     }
     
-    func displayWinner(index: Int, color: UIColor){
-        self.drawCircle(size: 50, color: color, yOffset: Int(viewHeith) - 70)
-        self.drawText(text: "\(index)")
+    func displayWinner(model: RandomizerModel){
+        self.drawCircle(size: 50, color: model.color, yOffset: Int(viewHeith) - 70)
+        self.drawText(text: "\(model.index + 1)")
     }
     
     func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {

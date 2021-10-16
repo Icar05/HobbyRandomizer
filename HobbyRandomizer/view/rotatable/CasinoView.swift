@@ -137,7 +137,8 @@ class CasinoView: BaseRotatableView {
     override func childSetup(){}
     
     override func didFoundWinner(value: Int) {
-        self.callback?(datasource[value], getSectorColor(index: value))
+        let model = RandomizerModel(index: datasource[value], color: getSectorColor(index: value))
+        self.callback?(model)
     }
     
     fileprivate func getSectorColor(index: Int) -> UIColor{

@@ -22,7 +22,7 @@ class RandomizerUtil: UIView {
         
     @IBOutlet weak var bang: BangButton!
     
-    var delegate: ((_ value: Int) -> Void)? = nil
+    var delegate: ((_ model: RandomizerModel) -> Void)? = nil
     
     
     override init(frame: CGRect) {
@@ -50,9 +50,9 @@ class RandomizerUtil: UIView {
              UIView.AutoresizingMask.flexibleHeight]
 
 
-        randomView.callback = { (index, color) in
-            self.selectorView.displayWinner(index: index + 1, color: color)
-            self.delegate?(index)
+        randomView.callback = { model in
+            self.selectorView.displayWinner(model: model)
+            self.delegate?(model)
         }
         randomView.setData(count: count)
 
