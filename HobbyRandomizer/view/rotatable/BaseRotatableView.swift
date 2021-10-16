@@ -42,7 +42,7 @@ class BaseRotatableView: UIView {
     
     internal var callback: RandomizerCallback? = nil
     
-    fileprivate var animationDuration = 2.0
+    fileprivate var animationDuration = 20.0
     
     fileprivate var detectSectorUtil: DetectSectorUtil = DetectSectorUtil()
     
@@ -307,7 +307,8 @@ extension BaseRotatableView: CAAnimationDelegate{
 }
 
 extension BaseRotatableView: BaseAnimationObserverOnUpdate{
-    func onUpdate(angleFromBegin: Double, angleCurrent: Double) {
-        self.detectSectorUtil.update(currentAngle: angleCurrent)
+    func onUpdate(index: Double, currentAngle: Double) {
+        print(" \(index) -> [\(storedAngle) > \(currentAngle) < \(wantedAngle)]")
+//        self.detectSectorUtil.update(currentAngle: angleCurrent)
     }
 }

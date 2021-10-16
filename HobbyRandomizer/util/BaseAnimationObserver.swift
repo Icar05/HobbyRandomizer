@@ -12,7 +12,7 @@ import Foundation
     @angleCurrent - current offset, changes between wantedAngle and old anlge, where min is storedValue, max: wanted ( new value)
  */
 protocol BaseAnimationObserverOnUpdate {
-    func onUpdate(angleFromBegin: Double, angleCurrent: Double) -> Void
+    func onUpdate(index: Double, currentAngle: Double) -> Void
 }
 
 class BaseAnimationObserver {
@@ -41,14 +41,13 @@ class BaseAnimationObserver {
     private func update() {
         
         self.count += 1
-        let animationStep: Double = count * (newAngle / iterationsCount)
-        let angleChangesStep: Double = ( count * ( (newAngle - oldAngle) / iterationsCount) + oldAngle)
-        
-        if(animationStep > newAngle){
+        let currentStep: Double = ((newAngle / iterationsCount) * count) + oldAngle
+
+        if(currentStep > newAngle){
             return
         }
         
-        self.delegate?.onUpdate(angleFromBegin: animationStep, angleCurrent: angleChangesStep)
+        self.delegate?.onUpdate(index: count, currentAngle: currentStep)
     }
     
     func stop(){
