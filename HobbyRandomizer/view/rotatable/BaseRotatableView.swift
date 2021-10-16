@@ -165,7 +165,7 @@ class BaseRotatableView: UIView {
     }
     
     internal func rotate(){
-        let randomIndex = Int.random(in: 1..<getItemsCount())
+        let randomIndex = Int.random(in: 0..<getItemsCount())
         self.rotateWithAngle(index: randomIndex)
     }
     
