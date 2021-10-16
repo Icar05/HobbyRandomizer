@@ -18,7 +18,7 @@ class CasinoViewController : UIViewController {
     fileprivate var currentSelectedIndex = 0
     
     
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var picker: SilintUIPickerView!
     
     @IBOutlet weak var rouleteView: RouleteView!
     
@@ -36,7 +36,7 @@ class CasinoViewController : UIViewController {
         self.picker.dataSource = self
         self.picker.delegate = self
         self.picker.selectRow(currentSelectedIndex, inComponent: 0, animated: true)
-        
+        self.picker.setSoundsEnabled(false)
         
         rouleteView.isUserInteractionEnabled = true
         

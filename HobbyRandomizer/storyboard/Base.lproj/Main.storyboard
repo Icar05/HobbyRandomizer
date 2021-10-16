@@ -331,7 +331,7 @@
                                     <constraint firstAttribute="height" constant="400" id="uF4-bV-CCE"/>
                                 </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51y-rd-ud1">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51y-rd-ud1" customClass="SilintUIPickerView">
                                 <rect key="frame" x="0.0" y="453" width="414" height="216"/>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-eo-MYV" userLabel="TopView">

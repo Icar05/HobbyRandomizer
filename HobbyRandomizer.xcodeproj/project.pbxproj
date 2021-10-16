@@ -60,6 +60,7 @@
 		ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
 		ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectSectorUtil.swift; sourceTree = "<group>"; };
+		ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HobbyRandomizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED4DF38827188A83007966EE /* CreateHobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyCell.swift; sourceTree = "<group>"; };
 		ED5F112B271772E3006454AD /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		ED5F112D27177470006454AD /* RouleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouleteView.swift; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 				ED5F112F271774E7006454AD /* RouleteView.xib */,
 				ED5F11392717CC15006454AD /* CasinoSelectorView.swift */,
 				ED4DF38827188A83007966EE /* CreateHobbyCell.swift */,
+				ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -267,6 +269,7 @@
 				TargetAttributes = {
 					ED6EEF5B2715C6D200D4EFE9 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -484,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ84GAYU68;
 				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
@@ -494,6 +498,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HobbyRandomizer/view/HobbyRandomizer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -504,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AZ84GAYU68;
 				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
@@ -514,6 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HobbyRandomizer/view/HobbyRandomizer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
