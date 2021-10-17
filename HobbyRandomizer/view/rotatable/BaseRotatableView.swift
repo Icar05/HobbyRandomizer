@@ -10,6 +10,12 @@ import AudioToolbox
 
 typealias RandomizerCallback = (_ model: RandomizerModel) -> Void
 
+struct SoundsForTest{
+    static let picker = 1157
+    static let testing = 1050
+    static let nice = 1057
+}
+
 struct RandomizerModel {
     let index: Int
     let color: UIColor
@@ -41,9 +47,7 @@ class BaseRotatableView: UIView {
     internal  let circlePadding: CGFloat = 10
     
     internal var callback: RandomizerCallback? = nil
-    
-    fileprivate var animationDuration = 20.0
-    
+        
     fileprivate var detectSectorUtil: DetectSectorUtil = DetectSectorUtil()
     
     fileprivate var baseAnimationObserver = BaseAnimationObserver()
@@ -51,6 +55,10 @@ class BaseRotatableView: UIView {
     fileprivate var winnerIndex = 0
     
     fileprivate var wantedAngle: Double = 0
+    
+    fileprivate var animationDuration = 6.0
+    
+    fileprivate var sound: Int = SoundsForTest.nice
     
     
     
@@ -196,12 +204,12 @@ class BaseRotatableView: UIView {
     }
     
     fileprivate func rotateWithAngle(index: Int){
-
         
-        self.wantedAngle = searchAngle(index: index)
+        self.detectSectorUtil.distanceToNearesSector(leftToBorder: searchDistanceToNearestSector())
+        self.wantedAngle =  searchAngle(index: index)
         self.winnerIndex = index
-        self.detectSectorUtil.setNearestSector(nearestSector: searchNearestSector())
-                        
+        
+                
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
             rotateAnimation.fromValue = Double(storedAngle) * Double.pi / 180.0
             rotateAnimation.toValue = Double(storedAngle + wantedAngle) * Double.pi / 180.0
@@ -210,13 +218,42 @@ class BaseRotatableView: UIView {
             rotateAnimation.isRemovedOnCompletion = false
             rotateAnimation.delegate = self
             rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
-            rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+            rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         
         self.layer.add(rotateAnimation, forKey: nil)
     }
     
-    fileprivate func searchNearestSector() -> Double{
-        return  angles.first { angle in angle.minAngle > storedAngle}!.minAngle
+    
+    
+    
+    fileprivate func searchDistanceToNearestSector() -> Double{
+        
+        var nearestDistance: Double = -1
+                
+        for index in stride(from: angles.count - 1, through: 0, by: -1) {
+            let maxValueAngleOfSector = angles[index].maxAngle
+            let withOffset: Double = maxValueAngleOfSector + storedAngle
+            let clearOffset = roundAngleTo360(value: withOffset)
+            
+            if(clearOffset < 90){
+                if(clearOffset > nearestDistance){
+                    nearestDistance = clearOffset
+                }
+            }
+        }
+                
+        return 90 - nearestDistance
+    }
+    
+    fileprivate func roundAngleTo360(value: Double) -> Double{
+        var newValue = value
+        if(newValue > 360 && newValue - 360 > 0.1){
+            while newValue > 360 {
+                newValue -= 360
+            }
+        }
+        
+        return newValue
     }
     
     fileprivate func updateNewAngle(angle: Double){
@@ -281,17 +318,9 @@ class BaseRotatableView: UIView {
 
 extension BaseRotatableView: DetectSectorUtilDelegate{
     func onDetectSector() {
-//        print("sector found: !")
-//        AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(SoundsForTest.testing), nil)
+        AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(sound), nil)
     }
 }
-
-struct SoundsForTest{
-    static let picker = 1148
-    static let testing = 1050
-    static let nice = 1057
-}
-
 
 extension BaseRotatableView: CAAnimationDelegate{
     
@@ -307,8 +336,7 @@ extension BaseRotatableView: CAAnimationDelegate{
 }
 
 extension BaseRotatableView: BaseAnimationObserverOnUpdate{
-    func onUpdate(index: Double, currentAngle: Double) {
-        print(" \(index) -> [\(storedAngle) > \(currentAngle) < \(wantedAngle)]")
-//        self.detectSectorUtil.update(currentAngle: angleCurrent)
+    func onUpdate(index: Double, currentAngle: Double, dirtyAngle: Double) {
+        self.detectSectorUtil.update(currentAngle: dirtyAngle)
     }
 }
