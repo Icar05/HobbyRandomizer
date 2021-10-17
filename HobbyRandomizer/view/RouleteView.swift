@@ -12,7 +12,7 @@ import AudioToolbox.AudioServices
 class RouleteView:  UIView {
     
     
-    
+    fileprivate var isPlaying = false
     
     @IBOutlet var contentView: UIView!
     
@@ -52,6 +52,7 @@ class RouleteView:  UIView {
         
         self.casinoView.callback = {(model) in
             self.casinoSelectorView.updateModel(model: model)
+            self.isPlaying = false
         }
         
         self.bangBtn.isUserInteractionEnabled = true
@@ -64,6 +65,9 @@ class RouleteView:  UIView {
     }
     
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
+        if(isPlaying){
+            return
+        }
         
         if(self.targetIndex != -1){
             self.casinoView.rotate(index: targetIndex)
@@ -73,6 +77,7 @@ class RouleteView:  UIView {
             return
         }
         
+        self.isPlaying = true
         self.casinoView.rotate()
     }
     

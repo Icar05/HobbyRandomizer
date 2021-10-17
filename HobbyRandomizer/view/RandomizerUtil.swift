@@ -14,6 +14,8 @@ class RandomizerUtil: UIView {
     
     fileprivate var count = 7
     
+    fileprivate var isPlaying = false
+    
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var randomView: RandomizerView!
@@ -53,6 +55,7 @@ class RandomizerUtil: UIView {
         randomView.callback = { model in
             self.selectorView.updateModel(model: model)
             self.delegate?(model)
+            self.isPlaying = false
         }
         randomView.setData(count: count)
 
@@ -66,12 +69,18 @@ class RandomizerUtil: UIView {
     }
     
     func setDataSource(count: Int){
-        self.count = count
-        self.randomView.setData(count: count)
+        if(!isPlaying){
+            self.count = count
+            self.randomView.setData(count: count)
+        }
     }
     
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
-        self.randomView.rotate()
+        if(!isPlaying){
+            self.isPlaying = true
+            self.randomView.rotate()
+        }
+        
     }
    
     
