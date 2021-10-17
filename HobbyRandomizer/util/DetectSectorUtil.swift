@@ -15,8 +15,8 @@ class DetectSectorUtil {
     
     
     fileprivate var sectorSize: Double = 0
-    
-    fileprivate var nearestSector: Double = 0
+            
+    fileprivate var leftToBorder: Double = 0
     
     var delegate: DetectSectorUtilDelegate? = nil
 
@@ -25,15 +25,15 @@ class DetectSectorUtil {
         self.sectorSize = sectorSize
     }
     
-    func setNearestSector(nearestSector: Double){
-        self.nearestSector = nearestSector
+    func distanceToNearesSector(leftToBorder: Double){
+        self.leftToBorder = leftToBorder
     }
     
     func update(currentAngle: Double){
-//        if(currentAngle >= nearestSector){
-//            self.delegate?.onDetectSector()
-//            self.nearestSector += sectorSize
-//        }
+        if(currentAngle > leftToBorder){
+            self.delegate?.onDetectSector()
+            self.leftToBorder += sectorSize
+        }
     }
     
 }
