@@ -7,31 +7,37 @@
 
 import Foundation
 
+
 /**
-    @angleFromBegin - changes from 0 ... to wantedAngle
-    @angleCurrent - current offset, changes between wantedAngle and old anlge, where min is storedValue, max: wanted ( new value)
+    currentAngle - angle from last rotation update, to newRotation update, allways from 0 to 360
+     dirty angle - angle from 0 to max value, can be > 360
  */
 protocol BaseAnimationObserverOnUpdate {
-    func onUpdate(index: Double, currentAngle: Double) -> Void
+    func onUpdate(index: Double, currentAngle: Double, dirtyAngle: Double) -> Void
 }
 
 class BaseAnimationObserver {
     
     
     fileprivate var displayLink: CADisplayLink?
-    fileprivate var duration: Double = 0
     fileprivate var iterationsCount: Double = 0
     fileprivate var oldAngle: Double = 0
     fileprivate var newAngle: Double = 0
     fileprivate var count: Double = 0
+    fileprivate var angleCounter: Double = 0.0
+    fileprivate var dirtyAngle: Double = 0.0
+    fileprivate var step = 0.0
     
     var delegate: BaseAnimationObserverOnUpdate? = nil
     
     func start(duration: Double, oldAngle: Double, newAngle: Double){
         self.count = 0.0
+        self.angleCounter = oldAngle
+        self.dirtyAngle = 0
         self.iterationsCount = Double(duration * 60.0)
         self.oldAngle = oldAngle
         self.newAngle = newAngle
+        self.step = newAngle  / iterationsCount
         self.displayLink = CADisplayLink(target: self, selector: #selector(update))
         self.displayLink?.add(to: .current, forMode: .default)
     }
@@ -41,13 +47,14 @@ class BaseAnimationObserver {
     private func update() {
         
         self.count += 1
-        let currentStep: Double = ((newAngle / iterationsCount) * count) + oldAngle
-
-        if(currentStep > newAngle){
-            return
+        self.angleCounter += step
+        self.dirtyAngle += step
+        
+        if(angleCounter > 360){
+            angleCounter -= 360
         }
         
-        self.delegate?.onUpdate(index: count, currentAngle: currentStep)
+        self.delegate?.onUpdate(index: count, currentAngle: angleCounter, dirtyAngle: dirtyAngle)
     }
     
     func stop(){
