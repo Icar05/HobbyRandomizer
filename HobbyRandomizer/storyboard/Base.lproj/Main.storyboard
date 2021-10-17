@@ -92,7 +92,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qAk-u0-hK6">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" image="gearshape.fill" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" image="gear" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <segue destination="pmA-m7-jqA" kind="show" id="Y7d-sI-Agt"/>
@@ -392,7 +392,7 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
