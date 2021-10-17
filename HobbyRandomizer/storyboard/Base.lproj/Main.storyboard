@@ -56,23 +56,23 @@
                                             <outlet property="title" destination="mKC-MJ-OeW" id="eRd-aw-pbG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TC" id="OCU-zC-Nus" customClass="CreateHobbyCell" customModule="HobbyRandomizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TC" rowHeight="170" id="OCU-zC-Nus" customClass="CreateHobbyCell" customModule="HobbyRandomizer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="68" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCU-zC-Nus" id="vMT-Ay-pwb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-9s-6Bi" customClass="CreateIdeaView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sFy-9s-6Bi" firstAttribute="top" secondItem="vMT-Ay-pwb" secondAttribute="top" id="2gu-Ma-PnG"/>
-                                                <constraint firstAttribute="trailing" secondItem="sFy-9s-6Bi" secondAttribute="trailing" id="9gk-iJ-5rS"/>
-                                                <constraint firstAttribute="bottom" secondItem="sFy-9s-6Bi" secondAttribute="bottom" id="hUq-Fb-0WH"/>
-                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="leading" secondItem="vMT-Ay-pwb" secondAttribute="leading" id="kvG-1A-ojO"/>
+                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="leading" secondItem="vMT-Ay-pwb" secondAttribute="leading" id="7Tf-6F-MMe"/>
+                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="trailing" secondItem="vMT-Ay-pwb" secondAttribute="trailing" id="9gk-iJ-5rS"/>
+                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="bottom" secondItem="vMT-Ay-pwb" secondAttribute="bottom" id="hUq-Fb-0WH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -184,21 +184,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Settings" id="mLG-ar-hva" customClass="SettingCell" customModule="HobbyRandomizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="51.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mLG-ar-hva" id="15i-JL-xBy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzA-UT-tvz">
-                                                    <rect key="frame" x="15" y="15" width="33" height="33.5"/>
+                                                    <rect key="frame" x="15" y="15" width="30" height="21.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="1Gn-Uv-RKJ"/>
-                                                        <constraint firstAttribute="width" constant="33" id="1yF-fD-hst"/>
+                                                        <constraint firstAttribute="width" constant="30" id="rNN-7z-GSE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-X3-HCj">
-                                                    <rect key="frame" x="63" y="15" width="336" height="33.5"/>
+                                                    <rect key="frame" x="60" y="15" width="339" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
