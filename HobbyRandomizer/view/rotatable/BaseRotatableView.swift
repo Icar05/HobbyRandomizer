@@ -14,6 +14,7 @@ struct SoundsForTest{
     static let picker = 1157
     static let testing = 1050
     static let nice = 1057
+    static let double = 1160
 }
 
 struct RandomizerModel {

@@ -28,7 +28,7 @@ class RandomViewController: UIViewController {
         
         self.randomizer.delegate = { (model) in
             if(self.content.count > 0){
-                let model = self.content[model.index - 1]
+                let model = self.content[model.index]
                 self.titleLabel.labelText = model.title
                 self.subtitle.labelText = model.description
                 self.showAlert(model: model)
