@@ -65,9 +65,7 @@ class CasinoSelectorView: UIView {
         let start = CGPoint(x: padding, y: y)
         let end = CGPoint(x: Int(viewWidth) - padding, y: y)
         self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 50, color: UIColor.brown)
-        
-        self.drawCircle(size: 16, color: .white, yOffset: Int(viewHeith) / 2 - 26 )
-        
+                
         if(model == nil){
             self.drawCircle(size: 40, color: .orange, yOffset: y - 20)
             self.drawText(text: "?")
