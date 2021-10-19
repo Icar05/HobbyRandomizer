@@ -246,7 +246,7 @@ class BaseRotatableView: UIView {
         self.detectSectorUtil.distanceToNearesSector(leftToBorder: searchDistanceToNearestSector())
         self.wantedAngle =  searchAngle(index: index)
         self.winnerIndex = index
-        self.animationDuration = Double(getItemsCount() / 5)
+        self.animationDuration =  Double(((getItemsCount() / 8 ) * 2 ) + 2)
                 
         let animation = prepareAnimation(startAngle: storedAngle, endAngle: wantedAngle)
             animation.delegate = self

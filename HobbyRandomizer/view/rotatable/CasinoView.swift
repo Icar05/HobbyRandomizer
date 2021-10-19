@@ -47,7 +47,6 @@ class CasinoView: BaseRotatableView {
         self.drawCenter()
     }
     
-    
     fileprivate func drawBall(){
         
         if(self.layerForRotation == nil){
