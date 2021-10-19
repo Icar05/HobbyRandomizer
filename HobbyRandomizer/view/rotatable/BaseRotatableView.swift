@@ -190,13 +190,23 @@ class BaseRotatableView: UIView {
     /**
      PRIVATE ZONE
      */
-    fileprivate func searchAngle(index: Int) ->  Double{
+    internal func searchAngle(index: Int) ->  Double{
         
         let fullWinnerAngle = 810.0
-        let currentMiddleAngle = self.angles[index].getMiddleAngle()
-        let res =  fullWinnerAngle - currentMiddleAngle
+        let currentAngleOfSelectedSector = self.angles[index].getMiddleAngle()
+    
+        let difference =  fullWinnerAngle - currentAngleOfSelectedSector
+        let differenceWithStartOffset = difference - storedAngle
         
-        return res - storedAngle
+        return differenceWithStartOffset
+    }
+    
+    internal func getStoredAngle() -> Double{
+        return storedAngle
+    }
+    
+    internal func getAngles() -> [AngleOfSector]{
+        return self.angles
     }
     
     fileprivate func getSectorAngle() -> Double{
@@ -221,11 +231,13 @@ class BaseRotatableView: UIView {
             rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
             rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         
-        self.layer.add(rotateAnimation, forKey: nil)
+        self.getLayerForRotation().add(rotateAnimation, forKey: nil)
     }
     
     
-    
+    func getLayerForRotation()-> CALayer{
+        return self.layer
+    }
     
     fileprivate func searchDistanceToNearestSector() -> Double{
         

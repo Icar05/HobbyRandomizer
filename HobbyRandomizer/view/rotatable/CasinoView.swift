@@ -11,6 +11,8 @@ import UIKit
 class CasinoView: BaseRotatableView {
     
     
+    fileprivate var layerForRotation: CAShapeLayer? = nil
+    
     fileprivate let path = UIBezierPath()
     
     let datasource = [0, 32,15, 19,4, 21,2, 25, 17, 34, 6, 27, 13, 36, 11, 30,
@@ -25,7 +27,7 @@ class CasinoView: BaseRotatableView {
     
     
     override func draw(_ rect: CGRect) {
-                        
+        
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: outerCircleSize, color: woodColor)
         
@@ -41,9 +43,52 @@ class CasinoView: BaseRotatableView {
 
 
         self.drawCenter()
-        
+        self.drawBall()
     }
     
+    
+    fileprivate func drawBall(){
+        
+        if(self.layerForRotation == nil){
+            self.layerForRotation = CAShapeLayer()
+                    
+            let outherCirclePath = UIBezierPath(ovalIn:CGRect(x: 0, y: 0,  width: self.sizeOfView, height: self.sizeOfView))
+
+            layerForRotation?.path = outherCirclePath.cgPath
+            layerForRotation?.fillColor = UIColor.white.withAlphaComponent(0).cgColor
+            
+            let boulSize: CGFloat = 16
+            let boulX: CGFloat = (self.sizeOfView / 2 ) - (boulSize / 2)
+            let boulY: CGFloat = (self.sizeOfView  ) / 1.32
+          
+            let boulLayer = CAShapeLayer()
+            let boulPath = UIBezierPath(ovalIn:CGRect(x: boulX, y: boulY,  width: boulSize, height: boulSize))
+                boulLayer.path = boulPath.cgPath
+                boulLayer.fillColor = UIColor.white.cgColor
+                boulLayer.strokeColor = UIColor.black.cgColor
+            
+            
+            self.layerForRotation?.bounds = self.layer.bounds
+            self.layerForRotation?.position = CGPoint(x: sizeOfView / 2, y: sizeOfView / 2 )
+            self.layerForRotation?.addSublayer(boulLayer)
+            
+            self.layer.addSublayer(layerForRotation!)
+        }
+       
+    }
+    
+    override func searchAngle(index: Int) -> Double {
+        
+        let angleOfWantedSector = getAngles()[index].getMiddleAngle()
+        let finalPosition = angleOfWantedSector + ( 360 * 2)
+        let currentAngle = getStoredAngle() + 90
+        
+        return finalPosition - currentAngle
+    }
+    
+    override func getLayerForRotation() -> CALayer {
+        return self.layerForRotation!
+    }
     
     fileprivate func drawDividers(color: UIColor){
         for i in 0...datasource.count - 1{
