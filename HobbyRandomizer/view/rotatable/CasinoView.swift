@@ -41,8 +41,6 @@ class CasinoView: BaseRotatableView {
         self.drawCircle(size: (outerCircleSize / 2 - 4), color: UIColor.orange)
         self.drawCircle(size: (outerCircleSize / 5), color: woodColor)
 
-
-        self.drawCenter()
         self.drawBall()
     }
     
@@ -72,7 +70,11 @@ class CasinoView: BaseRotatableView {
             self.layerForRotation?.position = CGPoint(x: sizeOfView / 2, y: sizeOfView / 2 )
             self.layerForRotation?.addSublayer(boulLayer)
             
+            self.layerForRotation?.addSublayer(drawCenter())
+            
+            
             self.layer.addSublayer(layerForRotation!)
+            
         }
        
     }
@@ -124,7 +126,10 @@ class CasinoView: BaseRotatableView {
         return self.datasource.count
     }
     
-    func drawCenter(){
+    func drawCenter() -> CAShapeLayer{
+        
+        let centerLayer = CAShapeLayer()
+        
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: (outerCircleSize / 6), color: UIColor.brown)
         
@@ -136,36 +141,40 @@ class CasinoView: BaseRotatableView {
         var start = CGPoint(x: startX, y: startY)
         var end = CGPoint(x: endX, y: endY)
         
-        self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
+        let horizontalLineLayer = self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
         
+        centerLayer.addSublayer(horizontalLineLayer)
         
          startX = self.sizeOfView / 3
          startY = self.sizeOfView / 2
          endX = (self.sizeOfView / 3 * 2)
          endY = self.sizeOfView / 2
-        
+
          start = CGPoint(x: startX, y: startY)
          end = CGPoint(x: endX, y: endY)
+
+         let verticalLayer = self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
         
-        self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
+        centerLayer.addSublayer(verticalLayer)
+//
+//        let sizeOfCircle = 16
+//        let topCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: Int(self.sizeOfView)/3 - ( sizeOfCircle / 2) )
+//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: topCirclePlace)
+//
+//
+//        let bottomCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: (Int(self.sizeOfView)/3 * 2) - ( sizeOfCircle / 2) )
+//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: bottomCirclePlace)
+//
+//        let leftCirclePlace = CGPoint(x: Int(self.sizeOfView) / 3 - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
+//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: leftCirclePlace)
+//
+//        let rightCirclePlace = CGPoint(x:( (Int(self.sizeOfView) / 3) * 2) - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
+//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: rightCirclePlace)
         
-        let sizeOfCircle = 16
-        let topCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: Int(self.sizeOfView)/3 - ( sizeOfCircle / 2) )
-        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: topCirclePlace)
-        
-        
-        let bottomCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: (Int(self.sizeOfView)/3 * 2) - ( sizeOfCircle / 2) )
-        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: bottomCirclePlace)
-        
-        let leftCirclePlace = CGPoint(x: Int(self.sizeOfView) / 3 - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
-        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: leftCirclePlace)
-        
-        let rightCirclePlace = CGPoint(x:( (Int(self.sizeOfView) / 3) * 2) - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
-        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: rightCirclePlace)
-        
+        return centerLayer
     }
     
-    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
+    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) -> CAShapeLayer {
         let path = UIBezierPath()
         path.move(to: start)
         path.addLine(to: end)
@@ -175,7 +184,7 @@ class CasinoView: BaseRotatableView {
         shapeLayer.strokeColor = color.cgColor
         shapeLayer.lineWidth = lineWidth
         
-        self.layer.addSublayer(shapeLayer)
+        return shapeLayer
         
     }
     
