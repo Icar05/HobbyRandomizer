@@ -52,11 +52,7 @@ class RandomizerUtil: UIView {
              UIView.AutoresizingMask.flexibleHeight]
 
 
-        randomView.callback = { model in
-            self.selectorView.updateModel(model: model)
-            self.delegate?(model)
-            self.isPlaying = false
-        }
+        randomView.callback = self
         randomView.setData(count: count)
 
         bang.isUserInteractionEnabled = true
@@ -82,6 +78,16 @@ class RandomizerUtil: UIView {
         }
         
     }
-   
+}
+
+extension RandomizerUtil: RandomizerCallback{
+    func onWinnerFound(model: RandomizerModel) {
+        self.selectorView.updateModel(model: model)
+        self.delegate?(model)
+        self.isPlaying = false
+    }
     
+    func onAnimatonCanceled() {
+        self.selectorView.clearSelection()
+    }
 }

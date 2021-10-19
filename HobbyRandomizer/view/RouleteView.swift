@@ -50,10 +50,7 @@ class RouleteView:  UIView {
              UIView.AutoresizingMask.flexibleHeight]
 
         
-        self.casinoView.callback = {(model) in
-            self.casinoSelectorView.updateModel(model: model)
-            self.isPlaying = false
-        }
+        self.casinoView.callback = self
         
         self.bangBtn.isUserInteractionEnabled = true
         
@@ -89,4 +86,15 @@ class RouleteView:  UIView {
         return self.casinoView.datasource
     }
     
+}
+
+extension RouleteView: RandomizerCallback{
+    func onWinnerFound(model: RandomizerModel) {
+        self.casinoSelectorView.updateModel(model: model)
+        self.isPlaying = false
+    }
+    
+    func onAnimatonCanceled() {
+        self.casinoSelectorView.clearSelection()
+    }
 }

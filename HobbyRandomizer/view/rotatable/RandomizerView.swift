@@ -50,7 +50,7 @@ class RandomizerView: BaseRotatableView {
     
     override func didFoundWinner(value: Int) {
         let model = RandomizerModel(index: value, color: datasource[value])
-        self.callback?(model)
+        self.callback?.onWinnerFound(model: model)
     }
 
     

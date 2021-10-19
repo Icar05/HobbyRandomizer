@@ -91,6 +91,13 @@ class CasinoSelectorView: UIView {
         self.displayWinner(model: model)
     }
     
+    func clearSelection(){
+        let y = (Int(viewHeith) / 3 * 2) + 10
+        self.model = nil
+        self.drawCircle(size: 40, color: .orange, yOffset: y - 20)
+        self.drawText(text: "?")
+    }
+    
     fileprivate func displayWinner(model: RandomizerModel){
         let y = (Int(viewHeith) / 3 * 2) + 10
         self.drawCircle(size: 40, color: model.color, yOffset: y - 20)

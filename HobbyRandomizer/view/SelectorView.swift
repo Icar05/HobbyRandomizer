@@ -131,6 +131,12 @@ class SelectorView: UIView {
         self.displayWinner(model: model)
     }
     
+    func clearSelection(){
+        self.model = nil
+        self.drawCircle(size: 50, color: .white, yOffset: Int(viewHeith) - 70)
+        self.drawText(text: "?")
+    }
+    
     fileprivate func displayWinner(model: RandomizerModel){
         self.drawCircle(size: 50, color: model.color, yOffset: Int(viewHeith) - 70)
         self.drawText(text: "\(model.index + 1)")

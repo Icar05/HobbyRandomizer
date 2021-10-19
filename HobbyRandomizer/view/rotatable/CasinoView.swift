@@ -78,6 +78,10 @@ class CasinoView: BaseRotatableView {
        
     }
     
+    override func childAnimationsCanceled() {
+        self.centerLayer?.removeAllAnimations()
+    }
+    
     override func startChildAnimation() {
         let storedAngle: Double = 0
         let wantedAngle: Double = 90.0
@@ -214,7 +218,7 @@ class CasinoView: BaseRotatableView {
     
     override func didFoundWinner(value: Int) {
         let model = RandomizerModel(index: datasource[value], color: getSectorColor(index: value))
-        self.callback?(model)
+        self.callback?.onWinnerFound(model: model)
     }
     
     fileprivate func getSectorColor(index: Int) -> UIColor{

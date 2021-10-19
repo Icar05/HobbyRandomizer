@@ -8,7 +8,10 @@
 import UIKit
 import AudioToolbox
 
-typealias RandomizerCallback = (_ model: RandomizerModel) -> Void
+protocol RandomizerCallback {
+    func onWinnerFound(model: RandomizerModel) -> Void
+    func onAnimatonCanceled() -> Void
+}
 
 struct SoundsForTest{
     static let picker = 1157
@@ -147,6 +150,7 @@ class BaseRotatableView: UIView {
     
     internal func prepareSectors(){
         
+        
         let minAngle = 0
         let maxAngle: Double = 360
         let itemsCount = getItemsCount()
@@ -220,6 +224,8 @@ class BaseRotatableView: UIView {
     }
     
     internal func startChildAnimation(){}
+    
+    internal func childAnimationsCanceled(){}
     
     internal func prepareAnimation(startAngle: Double, endAngle: Double) -> CABasicAnimation{
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
@@ -342,6 +348,15 @@ class BaseRotatableView: UIView {
         let offset = howMuch < 2 ? 5 : 0
         return CGFloat(maxFontSize - (clearHowMuch * 10)) - CGFloat(offset)
     }
+    
+    fileprivate func onAnimationCanceled(){
+        self.storedAngle = 0
+        self.getLayerForRotation().removeAllAnimations()
+        self.childAnimationsCanceled()
+        self.callback?.onAnimatonCanceled()
+    }
+    
+   
 }
 
 extension BaseRotatableView: DetectSectorUtilDelegate{
@@ -360,6 +375,10 @@ extension BaseRotatableView: CAAnimationDelegate{
         self.baseAnimationObserver.stop()
         self.didFoundWinner(value: winnerIndex)
         self.updateNewAngle(angle: wantedAngle)
+        
+        if(!flag){
+            onAnimationCanceled()
+        }
     }
 }
 
