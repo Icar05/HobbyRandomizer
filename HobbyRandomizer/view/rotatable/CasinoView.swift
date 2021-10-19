@@ -130,46 +130,54 @@ class CasinoView: BaseRotatableView {
         
         let centerLayer = CAShapeLayer()
         
+        let horizontalLineLayer = self.drawLineFromPointToPoint(
+            start: CGPoint(x: self.sizeOfView / 2, y: self.sizeOfView / 3),
+            end: CGPoint(x: self.sizeOfView / 2, y: (self.sizeOfView / 3 * 2)),
+            lineWidth: 6, color: UIColor.brown)
+        
+            centerLayer.addSublayer(horizontalLineLayer)
+
+         let verticalLayer = self.drawLineFromPointToPoint(
+            start: CGPoint(x: self.sizeOfView / 3, y: self.sizeOfView / 2),
+            end: CGPoint(x: (self.sizeOfView / 3 * 2), y: self.sizeOfView / 2),
+            lineWidth: 6, color: UIColor.brown)
+        
+            centerLayer.addSublayer(verticalLayer)
+        
+        
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: (outerCircleSize / 6), color: UIColor.brown)
-        
-        var startX = self.sizeOfView / 2
-        var startY = self.sizeOfView / 3
-        var endX = self.sizeOfView / 2
-        var endY = (self.sizeOfView / 3 * 2)
-        
-        var start = CGPoint(x: startX, y: startY)
-        var end = CGPoint(x: endX, y: endY)
-        
-        let horizontalLineLayer = self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
-        
-        centerLayer.addSublayer(horizontalLineLayer)
-        
-         startX = self.sizeOfView / 3
-         startY = self.sizeOfView / 2
-         endX = (self.sizeOfView / 3 * 2)
-         endY = self.sizeOfView / 2
 
-         start = CGPoint(x: startX, y: startY)
-         end = CGPoint(x: endX, y: endY)
-
-         let verticalLayer = self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 6, color: UIColor.brown)
+        let sizeOfCircle: CGFloat = 16
         
-        centerLayer.addSublayer(verticalLayer)
-//
-//        let sizeOfCircle = 16
-//        let topCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: Int(self.sizeOfView)/3 - ( sizeOfCircle / 2) )
-//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: topCirclePlace)
-//
-//
-//        let bottomCirclePlace = CGPoint(x: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2), y: (Int(self.sizeOfView)/3 * 2) - ( sizeOfCircle / 2) )
-//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: bottomCirclePlace)
-//
-//        let leftCirclePlace = CGPoint(x: Int(self.sizeOfView) / 3 - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
-//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: leftCirclePlace)
-//
-//        let rightCirclePlace = CGPoint(x:( (Int(self.sizeOfView) / 3) * 2) - (sizeOfCircle / 2), y: Int(self.sizeOfView) / 2 - (sizeOfCircle / 2))
-//        self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: rightCirclePlace)
+        let topCirclePlace = CGPoint(
+            x: (self.sizeOfView / 2) - ( sizeOfCircle / 2) ,
+            y: (self.sizeOfView / 3) - ( sizeOfCircle / 2))
+        let topCircle: CAShapeLayer = self.drawCircle(size: sizeOfCircle, color: UIColor.brown, point: topCirclePlace)
+        
+        centerLayer.addSublayer(topCircle)
+
+
+        let bottomCirclePlace = CGPoint(
+            x: (self.sizeOfView) / 2 - (sizeOfCircle / 2),
+            y: ((self.sizeOfView)/3 * 2) - ( sizeOfCircle / 2) )
+        let bottomCirle: CAShapeLayer = self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: bottomCirclePlace)
+        
+        centerLayer.addSublayer(bottomCirle)
+
+        let leftCirclePlace = CGPoint(
+            x: (self.sizeOfView) / 3 - (sizeOfCircle / 2),
+            y: (self.sizeOfView) / 2 - (sizeOfCircle / 2))
+        let leftCircle: CAShapeLayer = self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: leftCirclePlace)
+        
+        centerLayer.addSublayer(leftCircle)
+
+        let rightCirclePlace = CGPoint(
+            x:  ((self.sizeOfView)/3 * 2) - ( sizeOfCircle / 2),
+            y:  (self.sizeOfView) / 2 - (sizeOfCircle / 2))
+        let rightCircle: CAShapeLayer = self.drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: rightCirclePlace)
+        
+        centerLayer.addSublayer(rightCircle)
         
         return centerLayer
     }

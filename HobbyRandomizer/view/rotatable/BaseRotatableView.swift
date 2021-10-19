@@ -136,8 +136,16 @@ class BaseRotatableView: UIView {
         self.path.fill()
     }
     
+    internal func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
+          let layer = CAShapeLayer()
+          let path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
+              layer.path = path.cgPath
+              layer.fillColor = color.cgColor
+          
+          return layer
+      }
+    
     internal func prepareSectors(){
-        
         
         let minAngle = 0
         let maxAngle: Double = 360
