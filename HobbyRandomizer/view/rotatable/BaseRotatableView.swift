@@ -218,6 +218,21 @@ class BaseRotatableView: UIView {
     internal func getAngles() -> [AngleOfSector]{
         return self.angles
     }
+    
+    internal func startChildAnimation(){}
+    
+    internal func prepareAnimation(startAngle: Double, endAngle: Double) -> CABasicAnimation{
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            rotateAnimation.fromValue = Double(startAngle) * Double.pi / 180.0
+            rotateAnimation.toValue = Double(startAngle + endAngle) * Double.pi / 180.0
+            rotateAnimation.duration = animationDuration
+            rotateAnimation.repeatCount = 0
+            rotateAnimation.isRemovedOnCompletion = false
+            rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
+            rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        
+        return rotateAnimation
+    }
     /**
      PRIVATE ZONE
      */
@@ -233,17 +248,10 @@ class BaseRotatableView: UIView {
         self.winnerIndex = index
         self.animationDuration = Double(getItemsCount() / 5)
                 
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-            rotateAnimation.fromValue = Double(storedAngle) * Double.pi / 180.0
-            rotateAnimation.toValue = Double(storedAngle + wantedAngle) * Double.pi / 180.0
-            rotateAnimation.duration = animationDuration
-            rotateAnimation.repeatCount = 0
-            rotateAnimation.isRemovedOnCompletion = false
-            rotateAnimation.delegate = self
-            rotateAnimation.fillMode = CAMediaTimingFillMode.forwards
-            rotateAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        
-        self.getLayerForRotation().add(rotateAnimation, forKey: nil)
+        let animation = prepareAnimation(startAngle: storedAngle, endAngle: wantedAngle)
+            animation.delegate = self
+        self.getLayerForRotation().add(animation, forKey: nil)
+        self.startChildAnimation()
     }
     
     fileprivate func searchDistanceToNearestSector() -> Double{
