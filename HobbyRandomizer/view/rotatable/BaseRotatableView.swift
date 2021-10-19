@@ -231,7 +231,7 @@ class BaseRotatableView: UIView {
         self.detectSectorUtil.distanceToNearesSector(leftToBorder: searchDistanceToNearestSector())
         self.wantedAngle =  searchAngle(index: index)
         self.winnerIndex = index
-        
+        self.animationDuration = Double(getItemsCount() / 5)
                 
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
             rotateAnimation.fromValue = Double(storedAngle) * Double.pi / 180.0
