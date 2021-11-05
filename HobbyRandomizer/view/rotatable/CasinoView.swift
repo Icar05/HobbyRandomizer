@@ -17,6 +17,7 @@ class CasinoView: BaseRotatableView {
     
     fileprivate let path = UIBezierPath()
     
+    
     let datasource = [0, 32,15, 19,4, 21,2, 25, 17, 34, 6, 27, 13, 36, 11, 30,
                       8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29,
                       7, 28, 12, 35, 3, 26
@@ -91,12 +92,7 @@ class CasinoView: BaseRotatableView {
     }
     
     override func searchAngle(index: Int) -> Double {
-        
-        let angleOfWantedSector = getAngles()[index].getMiddleAngle()
-        let finalPosition = angleOfWantedSector + ( 360 * 2)
-        let currentAngle = getStoredAngle() + 90
-        
-        return finalPosition - currentAngle
+        return self.viewCalculateUtil.searchAngleForCasino(index: index)
     }
     
     override func getLayerForRotation() -> CALayer {
@@ -116,8 +112,8 @@ class CasinoView: BaseRotatableView {
             path.addArc(
                 withCenter: start,
                 radius: CGFloat(radius),
-                startAngle: CGFloat(deg2rad(Double(angle - 1))),
-                endAngle: CGFloat(deg2rad(Double(angle + 1))),
+                startAngle: CGFloat(viewCalculateUtil.deg2rad(Double(angle - 1))),
+                endAngle: CGFloat(viewCalculateUtil.deg2rad(Double(angle + 1))),
                 clockwise: true
             )
             

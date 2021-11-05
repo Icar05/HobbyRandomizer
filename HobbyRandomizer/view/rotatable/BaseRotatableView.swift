@@ -40,11 +40,10 @@ class BaseRotatableView: UIView {
     
     
     
-    fileprivate  var path = UIBezierPath()
     
-    fileprivate var angles = [AngleOfSector]()
+    internal let viewDrawUtil = ViewDrawUtil()
     
-    fileprivate  var storedAngle: Double = 0
+    internal let viewCalculateUtil = ViewCalculateUtil()
     
     internal var sizeOfView: CGFloat = 300
     
@@ -127,25 +126,15 @@ class BaseRotatableView: UIView {
      PARENT METHODS
      */
     internal func drawCircle(size: CGFloat, color: UIColor){
-        color.setFill()
-        let point = (self.sizeOfView - size) / 2
-        self.path = UIBezierPath(ovalIn:CGRect(x: point, y: point, width: size, height: size))
-        self.path.fill()
+        self.viewDrawUtil.drawCircle(size: size, color: color, sizeOfView: sizeOfView)
     }
     
     internal func drawCircle(size: CGFloat, color: UIColor, point: CGPoint){
-        color.setFill()
-        self.path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
-        self.path.fill()
+        self.viewDrawUtil.drawCircleFromPoint(size: size, color: color, point: point)
     }
     
     internal func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
-          let layer = CAShapeLayer()
-          let path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
-              layer.path = path.cgPath
-              layer.fillColor = color.cgColor
-          
-          return layer
+        return self.viewDrawUtil.drawCircle(size: size, color: color, point: point)
       }
     
     internal func prepareSectors(){
@@ -155,7 +144,7 @@ class BaseRotatableView: UIView {
         let maxAngle: Double = 360
         let itemsCount = getItemsCount()
         let sectorAngle: Double = maxAngle / Double(itemsCount)
-        let fontSize = calculateFontSize(itemsCount: itemsCount)
+        let fontSize = self.viewCalculateUtil.calculateFontSize(itemsCount: itemsCount)
         var startAngle: Double = Double(minAngle)
         var endAngle: Double = sectorAngle
         
@@ -164,12 +153,21 @@ class BaseRotatableView: UIView {
         
         for i in 0...itemsCount - 1{
             
-            self.drawSector(startAngle, endAngle,  getColorForSection(sectionId: i))
-            self.angles.append(AngleOfSector(minAngle: startAngle, maxAngle: endAngle))
+            self.viewDrawUtil.drawSector(
+                viewCalculateUtil.deg2rad(startAngle),
+                viewCalculateUtil.deg2rad(endAngle),
+                getColorForSection(sectionId: i),
+                sizeOfView: sizeOfView,
+                circlePadding: circlePadding)
+            
+            let angle = AngleOfSector(minAngle: startAngle, maxAngle: endAngle)
+            self.viewCalculateUtil.appendAngle(angle: angle )
             
             let middleAngle: Double = (startAngle + endAngle) / 2
             let string = getAttributedString(fontSize: fontSize, item: i)
-            drawText(angle: middleAngle, string: string)
+            
+            let angleForText = viewCalculateUtil.deg2rad(middleAngle)
+            self.viewDrawUtil.drawText(angle: angleForText, string: string, sizeOfView: sizeOfView, circlePadding: circlePadding)
             
             //increment next value
             startAngle += sectorAngle
@@ -179,8 +177,7 @@ class BaseRotatableView: UIView {
     }
     
     internal func clearAngles(){
-        self.angles = [AngleOfSector]()
-        self.storedAngle = 0
+        self.viewCalculateUtil.clearAngles()
     }
     
     internal func rotate(index: Int){
@@ -193,11 +190,7 @@ class BaseRotatableView: UIView {
     }
     
     internal func getStartAngle(index: Int) ->  Double{
-        return self.angles[index].minAngle
-    }
-    
-    internal func deg2rad(_ number: Double) -> Double {
-        return number * .pi / 180
+        return self.viewCalculateUtil.getStartAngle(index: index)
     }
     
     internal func getLayerForRotation()-> CALayer{
@@ -205,22 +198,7 @@ class BaseRotatableView: UIView {
     }
     
     internal func searchAngle(index: Int) ->  Double{
-        
-        let fullWinnerAngle = 810.0
-        let currentAngleOfSelectedSector = self.angles[index].getMiddleAngle()
-    
-        let difference =  fullWinnerAngle - currentAngleOfSelectedSector
-        let differenceWithStartOffset = difference - storedAngle
-        
-        return differenceWithStartOffset
-    }
-    
-    internal func getStoredAngle() -> Double{
-        return storedAngle
-    }
-    
-    internal func getAngles() -> [AngleOfSector]{
-        return self.angles
+        return self.viewCalculateUtil.searchAngle(index: index)
     }
     
     internal func startChildAnimation(){}
@@ -248,109 +226,21 @@ class BaseRotatableView: UIView {
     }
     
     fileprivate func rotateWithAngle(index: Int){
-        
-        self.detectSectorUtil.distanceToNearesSector(leftToBorder: searchDistanceToNearestSector())
-        self.wantedAngle =  searchAngle(index: index)
+        let distance = self.viewCalculateUtil.searchDistanceToNearestSector()
+        self.detectSectorUtil.distanceToNearesSector(leftToBorder: distance)
+        self.wantedAngle =  self.searchAngle(index: index)
         self.winnerIndex = index
         self.animationDuration =  Double(((getItemsCount() / 8 ) * 2 ) + 2)
-                
+        
+        let storedAngle = self.viewCalculateUtil.getStoredAngle()
         let animation = prepareAnimation(startAngle: storedAngle, endAngle: wantedAngle)
             animation.delegate = self
         self.getLayerForRotation().add(animation, forKey: nil)
         self.startChildAnimation()
     }
     
-    fileprivate func searchDistanceToNearestSector() -> Double{
-        
-        var nearestDistance: Double = -1
-                
-        for index in stride(from: angles.count - 1, through: 0, by: -1) {
-            let maxValueAngleOfSector = angles[index].maxAngle
-            let withOffset: Double = maxValueAngleOfSector + storedAngle
-            let clearOffset = roundAngleTo360(value: withOffset)
-            
-            if(clearOffset < 90){
-                if(clearOffset > nearestDistance){
-                    nearestDistance = clearOffset
-                }
-            }
-        }
-                
-        return 90 - nearestDistance
-    }
-    
-    fileprivate func roundAngleTo360(value: Double) -> Double{
-        var newValue = value
-        if(newValue > 360 && newValue - 360 > 0.1){
-            while newValue > 360 {
-                newValue -= 360
-            }
-        }
-        
-        return newValue
-    }
-    
-    fileprivate func updateNewAngle(angle: Double){
-        self.storedAngle += angle
-        
-        if(self.storedAngle > 360){
-            while storedAngle > 360 {
-                self.storedAngle -= 360
-            }
-        }
-    }
-    
-    fileprivate func drawText(angle: Double, string: NSAttributedString){
-        let centerPoint = CGPoint(x: self.sizeOfView / 2, y: self.sizeOfView / 2)
-        let textSize: CGSize = string.size()
-        let radius: CGFloat = (self.sizeOfView / 2 ) - textSize.width - (circlePadding * 2)
-        
-        let context: CGContext = UIGraphicsGetCurrentContext()!
-        let t: CGAffineTransform = CGAffineTransform(translationX: centerPoint.x, y: centerPoint.y)
-        
-        let r: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(deg2rad(angle)))
-        context.concatenate(t)
-        context.concatenate(r)
-        
-        let newPoint = CGPoint(x: radius-textSize.width/2, y: -textSize.height/2)
-        string.draw(at: newPoint)
-        
-        context.concatenate(r.inverted())
-        context.concatenate(t.inverted())
-    }
-    
-    fileprivate func drawSector(_ startAngle: Double, _ endAngle: Double, _ color: UIColor){
-        
-        let center = sizeOfView / 2
-        let viewCenter = CGPoint(x: self.sizeOfView / 2, y: self.sizeOfView / 2)
-        let radius = center - (circlePadding * 2) //height of sector
-        
-        color.setFill()
-        
-        self.path = UIBezierPath()
-        self.path.move(to: viewCenter)
-        self.path.addArc(
-            withCenter: viewCenter,
-            radius: CGFloat(radius),
-            startAngle: CGFloat(deg2rad(Double(startAngle))),
-            endAngle: CGFloat(deg2rad(Double(endAngle))),
-            clockwise: true
-        )
-        
-        self.path.close()
-        self.path.fill()
-    }
-    
-    fileprivate func calculateFontSize(itemsCount: Int) ->  CGFloat{
-        let maxFontSize = 30
-        let howMuch = itemsCount / maxFontSize
-        let clearHowMuch = howMuch > 3 ? 3: howMuch
-        let offset = howMuch < 2 ? 5 : 0
-        return CGFloat(maxFontSize - (clearHowMuch * 10)) - CGFloat(offset)
-    }
-    
     fileprivate func onAnimationCanceled(){
-        self.storedAngle = 0
+        self.viewCalculateUtil.clearAngles()
         self.getLayerForRotation().removeAllAnimations()
         self.childAnimationsCanceled()
         self.callback?.onAnimatonCanceled()
@@ -368,13 +258,14 @@ extension BaseRotatableView: DetectSectorUtilDelegate{
 extension BaseRotatableView: CAAnimationDelegate{
     
     func animationDidStart(_ anim: CAAnimation){
+        let storedAngle = self.viewCalculateUtil.getStoredAngle()
         self.baseAnimationObserver.start(duration: animationDuration, oldAngle: storedAngle, newAngle: Double(wantedAngle))
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool){
         self.baseAnimationObserver.stop()
         self.didFoundWinner(value: winnerIndex)
-        self.updateNewAngle(angle: wantedAngle)
+        self.viewCalculateUtil.updateNewAngle(angle: wantedAngle)
         
         if(!flag){
             onAnimationCanceled()

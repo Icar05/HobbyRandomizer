@@ -41,6 +41,8 @@
 		ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */; };
 		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
+		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
+		EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyModel.swift; sourceTree = "<group>"; };
 		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
+		EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCalculateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EDD88CDA27354D150042D406 /* viewUtils */,
 				ED4A3CBF271A0A6B00084BB8 /* cell */,
 				ED5F113127177A06006454AD /* rotatable */,
 				EDA90D3C27167630009BDB20 /* SelectorView.swift */,
@@ -239,6 +244,15 @@
 				ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		EDD88CDA27354D150042D406 /* viewUtils */ = {
+			isa = PBXGroup;
+			children = (
+				EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */,
+				EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */,
+			);
+			path = viewUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +350,8 @@
 				ED36426127173F490083D578 /* HobbyCell.swift in Sources */,
 				ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */,
 				ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */,
+				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
+				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
