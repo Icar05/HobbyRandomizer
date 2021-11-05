@@ -111,13 +111,18 @@ class ViewDrawUtil{
         
     }
     
-    func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
+    func drawCircle(size: CGFloat, color: UIColor, point: CGPoint, strokeColor: UIColor) -> CAShapeLayer{
         let layer = CAShapeLayer()
         let path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
         layer.path = path.cgPath
         layer.fillColor = color.cgColor
+        layer.strokeColor = strokeColor.cgColor
         
         return layer
+    }
+    
+    func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
+        return self.drawCircle(size: size, color: color, point: point, strokeColor: .clear)
     }
     
     func drawCircleFromPoint(size: CGFloat, color: UIColor, point: CGPoint) -> Void{

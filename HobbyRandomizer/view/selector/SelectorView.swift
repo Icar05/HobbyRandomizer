@@ -12,7 +12,7 @@ import UIKit
 class SelectorView: UIView {
     
     
-    
+    fileprivate var viewDrawUtil = ViewDrawUtil()
     
     
     fileprivate var path = UIBezierPath()
@@ -25,7 +25,7 @@ class SelectorView: UIView {
     
     fileprivate let padding = 20
     
-    fileprivate let acsentColor = UIColor.brown
+    fileprivate let acsent = UIColor.brown
     
     fileprivate var textLayer = CATextLayer()
     
@@ -104,7 +104,7 @@ class SelectorView: UIView {
         self.drawLineFromPointToPoint(start: start, end: end, lineWidth: 10)
         
         self.drawCircle(size: 60, color: .white)
-        self.drawCircle(size: 50, color: acsentColor)
+        self.drawCircle(size: 50, color: acsent)
         
         if(model == nil){
             self.drawCircle(size: 50, color: .white, yOffset: Int(viewHeith) - 70)
@@ -142,19 +142,6 @@ class SelectorView: UIView {
         self.drawText(text: "\(model.index + 1)")
     }
     
-    fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
-        self.path = UIBezierPath()
-        path.move(to: start)
-        path.addLine(to: end)
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = color.cgColor
-        shapeLayer.lineWidth = lineWidth
-        
-        self.layer.addSublayer(shapeLayer)
-        
-    }
     
     fileprivate func drawText(text: String){
         
@@ -172,32 +159,22 @@ class SelectorView: UIView {
     }
     
     fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat) {
-        self.drawLineFromPointToPoint(start: start, end: end, lineWidth: lineWidth, color: .black)
+        let shapeLayer = self.viewDrawUtil.drawLineFromPointToPoint(start: start, end: end, lineWidth: lineWidth, color: .black)
+        self.layer.addSublayer(shapeLayer)
     }
     
     
     fileprivate func drawCircle(size: CGFloat, color: UIColor){
-        
-        let point = (viewWidth - size) / 2
-        self.path = UIBezierPath(ovalIn:CGRect(x: point, y: point, width: size, height: size))
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = color.cgColor
-        shapeLayer.strokeColor = UIColor.black.cgColor
-        
-        layer.addSublayer(shapeLayer)
+        let point = CGPoint(x: (viewWidth - size) / 2, y: (viewWidth - size) / 2)
+        let circleLayer = self.viewDrawUtil.drawCircle(size: size, color: color, point: point)
+        self.layer.addSublayer(circleLayer)
     }
     
     fileprivate func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
-        
         circleLayer.removeFromSuperlayer()
         
-        let point = (viewWidth - size) / 2
-        self.path = UIBezierPath(ovalIn:CGRect(x: point, y: CGFloat(yOffset), width: size, height: size))
-        circleLayer.path = path.cgPath
-        circleLayer.fillColor = color.cgColor
-        circleLayer.strokeColor = UIColor.black.cgColor
-        
+        let point = CGPoint(x: (viewWidth - size) / 2, y: CGFloat(yOffset))
+        self.circleLayer = self.viewDrawUtil.drawCircle(size: size, color: color, point: point, strokeColor: .black)
         layer.addSublayer(circleLayer)
     }
     

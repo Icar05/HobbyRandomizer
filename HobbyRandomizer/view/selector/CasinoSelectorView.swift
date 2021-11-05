@@ -14,7 +14,7 @@ class CasinoSelectorView: UIView {
     
     
     
-    fileprivate var path = UIBezierPath()
+    fileprivate var viewDrawUtil = ViewDrawUtil()
     
     fileprivate var viewWidth: CGFloat = 300
     
@@ -124,14 +124,8 @@ class CasinoSelectorView: UIView {
     
     
     fileprivate func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) {
-        self.path = UIBezierPath()
-        path.move(to: start)
-        path.addLine(to: end)
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.strokeColor = color.cgColor
-        shapeLayer.lineWidth = lineWidth
+        let shapeLayer = self.viewDrawUtil.drawLineFromPointToPoint(start: start, end: end, lineWidth: lineWidth, color: color)
         
         self.layer.addSublayer(shapeLayer)
         
@@ -139,12 +133,8 @@ class CasinoSelectorView: UIView {
     
     fileprivate func drawCircle(size: CGFloat, color: UIColor, yOffset: Int){
         
-        let point = (viewWidth - size) / 2
-        let path = UIBezierPath(ovalIn:CGRect(x: point, y: CGFloat(yOffset), width: size, height: size))
-        let circleLayer = CAShapeLayer()
-        circleLayer.path = path.cgPath
-        circleLayer.fillColor = color.cgColor
-        circleLayer.strokeColor = UIColor.black.cgColor
+        let point = CGPoint(x: (viewWidth - size) / 2, y: CGFloat(yOffset))
+        let circleLayer = self.viewDrawUtil.drawCircle(size: size, color: color, point: point, strokeColor: .black)
         
         layer.addSublayer(circleLayer)
     }
