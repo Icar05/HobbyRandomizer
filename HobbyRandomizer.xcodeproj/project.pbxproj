@@ -219,10 +219,10 @@
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				EDD88CDF273573710042D406 /* selector */,
 				EDD88CDA27354D150042D406 /* viewUtils */,
 				ED4A3CBF271A0A6B00084BB8 /* cell */,
 				ED5F113127177A06006454AD /* rotatable */,
-				EDA90D3C27167630009BDB20 /* SelectorView.swift */,
 				ED36424A2717121D0083D578 /* CreateIdeaView.swift */,
 				ED36424C271712BF0083D578 /* CreateIdeaView.xib */,
 				ED36425227171B770083D578 /* RandomizerUtil.swift */,
@@ -231,7 +231,6 @@
 				ED36426227174FE80083D578 /* PrettyLabel.swift */,
 				ED5F112D27177470006454AD /* RouleteView.swift */,
 				ED5F112F271774E7006454AD /* RouleteView.xib */,
-				ED5F11392717CC15006454AD /* CasinoSelectorView.swift */,
 				ED4DF38827188A83007966EE /* CreateHobbyCell.swift */,
 				ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */,
 			);
@@ -253,6 +252,15 @@
 				EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */,
 			);
 			path = viewUtils;
+			sourceTree = "<group>";
+		};
+		EDD88CDF273573710042D406 /* selector */ = {
+			isa = PBXGroup;
+			children = (
+				ED5F11392717CC15006454AD /* CasinoSelectorView.swift */,
+				EDA90D3C27167630009BDB20 /* SelectorView.swift */,
+			);
+			path = selector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

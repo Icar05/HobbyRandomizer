@@ -13,14 +13,112 @@ class ViewDrawUtil{
     fileprivate  var path = UIBezierPath()
     
     
+    func drawRouleteCenter(sizeOfView: CGFloat, circlePadding: CGFloat, bounds: CGRect) -> CAShapeLayer{
+        
+        let centerLayer = CAShapeLayer()
+        
+        let horizontalLineLayer = drawLineFromPointToPoint(
+            start: CGPoint(x: sizeOfView / 2, y: sizeOfView / 3),
+            end: CGPoint(x: sizeOfView / 2, y: ( sizeOfView / 3 * 2)),
+            lineWidth: 6, color: UIColor.brown)
+        
+        centerLayer.addSublayer(horizontalLineLayer)
+        
+        let verticalLayer = drawLineFromPointToPoint(
+            start: CGPoint(x: sizeOfView / 3, y: sizeOfView / 2),
+            end: CGPoint(x: (sizeOfView / 3 * 2), y: sizeOfView / 2),
+            lineWidth: 6, color: UIColor.brown)
+        
+        centerLayer.addSublayer(verticalLayer)
+        
+        
+        let outerCircleSize =  sizeOfView - (2 * circlePadding)
+        drawCircle(size: (outerCircleSize / 6), color: UIColor.brown, sizeOfView: sizeOfView)
+        
+        let sizeOfCircle: CGFloat = 16
+        
+        let topCirclePlace = CGPoint(
+            x: (sizeOfView / 2) - ( sizeOfCircle / 2) ,
+            y: (sizeOfView / 3) - ( sizeOfCircle / 2))
+        let topCircle: CAShapeLayer = drawCircle(size: sizeOfCircle, color: UIColor.brown, point: topCirclePlace)
+        
+        centerLayer.addSublayer(topCircle)
+        
+        
+        let bottomCirclePlace = CGPoint(
+            x: (sizeOfView) / 2 - (sizeOfCircle / 2),
+            y: ((sizeOfView)/3 * 2) - ( sizeOfCircle / 2) )
+        let bottomCirle: CAShapeLayer = drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: bottomCirclePlace)
+        
+        centerLayer.addSublayer(bottomCirle)
+        
+        let leftCirclePlace = CGPoint(
+            x: (sizeOfView) / 3 - (sizeOfCircle / 2),
+            y: (sizeOfView) / 2 - (sizeOfCircle / 2))
+        let leftCircle: CAShapeLayer = drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: leftCirclePlace)
+        
+        centerLayer.addSublayer(leftCircle)
+        
+        let rightCirclePlace = CGPoint(
+            x:  ((sizeOfView)/3 * 2) - ( sizeOfCircle / 2),
+            y:  (sizeOfView) / 2 - (sizeOfCircle / 2))
+        let rightCircle: CAShapeLayer = drawCircle(size: CGFloat(sizeOfCircle), color: UIColor.brown, point: rightCirclePlace)
+        
+        centerLayer.addSublayer(rightCircle)
+        
+        centerLayer.bounds = bounds
+        centerLayer.position = CGPoint(x: sizeOfView / 2, y: sizeOfView / 2 )
+        
+        return centerLayer
+    }
+    
+    func drawBall(sizeOfView: CGFloat, bounds: CGRect) -> CAShapeLayer {
+        let layerForRotation = CAShapeLayer()
+        
+        let outherCirclePath = UIBezierPath(ovalIn:CGRect(x: 0, y: 0,  width: sizeOfView, height: sizeOfView))
+        
+        layerForRotation.path = outherCirclePath.cgPath
+        layerForRotation.fillColor = UIColor.white.withAlphaComponent(0).cgColor
+        
+        let boulSize: CGFloat = 16
+        let boulX: CGFloat = (sizeOfView / 2 ) - (boulSize / 2)
+        let boulY: CGFloat = (sizeOfView) / 1.32
+        
+        let boulLayer = CAShapeLayer()
+        let boulPath = UIBezierPath(ovalIn:CGRect(x: boulX, y: boulY,  width: boulSize, height: boulSize))
+        boulLayer.path = boulPath.cgPath
+        boulLayer.fillColor = UIColor.white.cgColor
+        boulLayer.strokeColor = UIColor.black.cgColor
+        
+        
+        layerForRotation.bounds = bounds
+        layerForRotation.position = CGPoint(x: sizeOfView / 2, y: sizeOfView / 2 )
+        layerForRotation.addSublayer(boulLayer)
+        return layerForRotation
+    }
+    
+    func drawLineFromPointToPoint(start: CGPoint, end: CGPoint, lineWidth: CGFloat, color: UIColor) -> CAShapeLayer {
+        let path = UIBezierPath()
+        path.move(to: start)
+        path.addLine(to: end)
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = lineWidth
+        
+        return shapeLayer
+        
+    }
+    
     func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
-          let layer = CAShapeLayer()
-          let path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
-              layer.path = path.cgPath
-              layer.fillColor = color.cgColor
-          
-          return layer
-      }
+        let layer = CAShapeLayer()
+        let path = UIBezierPath(ovalIn:CGRect(x: point.x, y: point.y, width: size, height: size))
+        layer.path = path.cgPath
+        layer.fillColor = color.cgColor
+        
+        return layer
+    }
     
     func drawCircleFromPoint(size: CGFloat, color: UIColor, point: CGPoint) -> Void{
         color.setFill()

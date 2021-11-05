@@ -7,6 +7,17 @@
 
 import UIKit
 
+struct AngleOfSector{
+    let minAngle: Double
+    let maxAngle: Double
+}
+
+extension AngleOfSector{
+    func getMiddleAngle() -> Double{
+        return  (minAngle + maxAngle) / 2
+    }
+}
+
 class ViewCalculateUtil{
     
     
