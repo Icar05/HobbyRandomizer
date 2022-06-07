@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum ScreenTypes : String, CaseIterable{
+    case Casino, Test, Create, Random, Hobby, WorkInProgress
+}
+
+
 class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     

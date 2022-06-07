@@ -22,7 +22,7 @@ class MenuCell: UICollectionViewCell {
     
     func configure(model: MenuCellModel){
         self.icon.image = model.icon
-        self.label.text = model.title
+        self.label.text = model.type.rawValue
     }
 
 }

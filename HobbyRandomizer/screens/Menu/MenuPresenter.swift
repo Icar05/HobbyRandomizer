@@ -25,12 +25,9 @@ public final class MenuPresenter{
     }
     
     private func prepareDataSource() -> [MenuCellModel]{
-        return [
-            MenuCellModel(icon: nil, title: "title 1"),
-            MenuCellModel(icon: nil, title: "title 2"),
-            MenuCellModel(icon: nil, title: "title 3"),
-            MenuCellModel(icon: nil, title: "title 4"),
-        ]
+        return ScreenTypes.allCases.map{
+            MenuCellModel(icon: nil, type: $0)
+        }
     }
     
 }

@@ -9,5 +9,5 @@ import Foundation
 
 struct MenuCellModel{
     var icon: UIImage?
-    var title: String
+    var type: ScreenTypes
 }
