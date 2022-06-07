@@ -7,18 +7,22 @@
 
 import UIKit
 
-class MenuCell: UITableViewCell {
+class MenuCell: UICollectionViewCell {
 
+    
+    
+    @IBOutlet weak var icon: UIImageView!
+    
+    @IBOutlet weak var label: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     
     func configure(model: MenuCellModel){
-        
+        self.icon.image = model.icon
+        self.label.text = model.title
     }
+
 }

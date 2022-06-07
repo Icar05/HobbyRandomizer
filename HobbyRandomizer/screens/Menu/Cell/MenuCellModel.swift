@@ -7,6 +7,7 @@
 
 import Foundation
 
-class MenuCellModel{
-    
+struct MenuCellModel{
+    var icon: UIImage?
+    var title: String
 }
