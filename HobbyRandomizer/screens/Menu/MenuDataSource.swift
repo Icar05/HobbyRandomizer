@@ -20,7 +20,7 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     
     private let identifier = String(describing: MenuCell.self)
     
-    private let spacing: CGFloat = 14
+    private let spacing: CGFloat = 4
     
     
     
