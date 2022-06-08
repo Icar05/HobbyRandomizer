@@ -56,7 +56,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return indexPath.row == 0 ? 300: 70
+        return indexPath.row == 0 ? 300: 100
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

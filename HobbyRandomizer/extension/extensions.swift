@@ -10,6 +10,8 @@ import UIKit
 
 extension UIColor {
     static let coolGreen = UIColor(hexColor: "349C52")
+    static let coolRed = UIColor(hexColor: "E30002")
+    static let coolOrange = UIColor(hexColor: "FAA602")
     static let colorMain = UIColor(named: "MainColor")
     static let colorBorderGray = UIColor(named: "BorderGray")
 }
@@ -38,6 +40,25 @@ extension UIImageView{
         layer.borderWidth = 1.5
         layer.borderColor = UIColor.colorBorderGray?.cgColor
         layer.cornerRadius = 8
+    }
+}
+
+
+public extension UIImage {
+    convenience init?(source: String, bundle: Bundle) {
+        if #available(iOS 13.0, *) {
+            self.init(named: source, in: bundle, with: .none)
+        } else {
+            self.init(named: source)
+        }
+    }
+}
+
+extension UIImageView{
+    func setImageColor(color: UIColor){
+        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = templateImage
+        self.tintColor = color
     }
 }
 

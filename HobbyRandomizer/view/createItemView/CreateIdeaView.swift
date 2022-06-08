@@ -91,7 +91,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(ItemType.allCases[row])"
+        return ItemType.allCases[row].rawValue
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -100,8 +100,6 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.type =  ItemType.allCases[row]
-
-        print("type: \(type)")
     }
     
     @objc fileprivate func getData(field: UITextField) ->  String?{

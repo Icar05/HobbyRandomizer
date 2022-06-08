@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ItemType: Codable, CaseIterable{
+enum ItemType: String, Codable, CaseIterable{
     case necessary, freetime, workInProgress
 }
 
