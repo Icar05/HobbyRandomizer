@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class CreateViewController: UIViewController {
+public final class CreateViewController: UIViewController, CreateDataSourceDelegate {
     
     
     
@@ -46,10 +46,14 @@ public final class CreateViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func onModelCreated(model: RandItemCellModel){
-//        self.datasource.append(model)
-//        self.presenter.saveModels(models: self.datasource)
-//        self.tableView.reloadData()
+    func onModelCreated(freshModels: [RandItemCellModel]) {
+        self.presenter.saveModels(models: freshModels)
+        self.tableView.reloadData()
+    }
+    
+    func onModelDeleted(freshModels: [RandItemCellModel]) {
+        self.presenter.saveModels(models: freshModels)
+        self.tableView.reloadData()
     }
     
     private func registerCells(){

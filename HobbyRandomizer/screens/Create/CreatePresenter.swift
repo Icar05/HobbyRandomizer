@@ -24,16 +24,12 @@ public final class CreatePresenter {
     }
     
     func viewDidLoad(){
-        self.view.onModelLoaded(models: getMockModels())
+        let data = getModels()
+        self.view.onModelLoaded(models: data)
     }
     
     func saveModels(models: [RandItemCellModel]){
         self.storage.saveModels(models: models)
-    }
-    
-    #warning("todo remove mock")
-    func getMockModels() -> [RandItemCellModel]{
-        return [RandItemCellModel].init(repeating: RandItemCellModel(title: "Title", subTitle: "subtitle"), count: 10)
     }
     
     func getModels() -> [RandItemCellModel]{

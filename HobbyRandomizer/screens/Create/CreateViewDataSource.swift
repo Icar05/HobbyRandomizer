@@ -7,12 +7,18 @@
 
 import Foundation
 
-class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
+protocol CreateDataSourceDelegate: NSObject{
+    func onModelCreated(freshModels: [RandItemCellModel])
+    func onModelDeleted(freshModels: [RandItemCellModel])
+}
+
+class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, CreateViewDelegate {
+    
     
     
     private var dataSourse: [RandItemCellModel] = []
     
-    weak var delegate: CreateViewDelegate? = nil
+    weak var delegate: CreateDataSourceDelegate? = nil
     
     
     func setData(data: [RandItemCellModel]){
@@ -22,7 +28,6 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     func getRandCellIdentifier() -> String{
         return String(describing: RandItemCell.self)
     }
-    
     
     func getCreateItemCellIdentifier() -> String{
         return String(describing: CreateNewItemCell.self)
@@ -38,8 +43,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: getCreateItemCellIdentifier(), for: indexPath) as! CreateNewItemCell
             cell.modify()
-            #warning("todo set delegate")
-            //            cell.setupDelegate{ (model) in self.onModelCreated(model: model)}
+            cell.setupDelegate(delegate: self)
             
             return cell
         }
@@ -61,11 +65,15 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete && indexPath.row > 0 {
-            #warning("todo on remove")
-//            self.dataSourse.remove(at: indexPath.row - 1)
-//            self.presenter.saveModels(models: self.datasource)
-//            tableView.reloadData()
+            self.dataSourse.remove(at: indexPath.row - 1)
+            self.delegate?.onModelDeleted(freshModels: self.dataSourse)
         }
     }
+    
+    func onItemCreated(item: RandItemCellModel) {
+        self.dataSourse.append(item)
+        self.delegate?.onModelCreated(freshModels: self.dataSourse)
+    }
+
     
 }
