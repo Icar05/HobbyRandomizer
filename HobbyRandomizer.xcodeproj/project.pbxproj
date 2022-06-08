@@ -13,17 +13,12 @@
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
 		ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED3642542717209F0083D578 /* RandomizerUtil.xib */; };
 		ED364257271731D70083D578 /* BangButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364256271731D70083D578 /* BangButton.swift */; };
-		ED36425B271735C90083D578 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425A271735C90083D578 /* MainViewController.swift */; };
 		ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425D2717363E0083D578 /* RandomViewController.swift */; };
-		ED36426127173F490083D578 /* HobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426027173F490083D578 /* HobbyCell.swift */; };
 		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
-		ED364269271757090083D578 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* MainViewModel.swift */; };
-		ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */; };
-		ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */; };
+		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
 		ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */; };
-		ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4DF38827188A83007966EE /* CreateHobbyCell.swift */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
 		ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C55284FD0370028BEED /* MenuViewController.xib */; };
@@ -44,10 +39,18 @@
 		ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF652715C6D200D4EFE9 /* Main.storyboard */; };
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
-		ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */; };
 		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
 		ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC028510EEA00DFD78F /* DebugViewController.swift */; };
 		ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC128510EEA00DFD78F /* DebugViewController.xib */; };
+		ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC52851151C00DFD78F /* CreateViewController.swift */; };
+		ED880FC82851151C00DFD78F /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC62851151C00DFD78F /* CreateViewController.xib */; };
+		ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */; };
+		ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */; };
+		ED880FD1285118C500DFD78F /* CreateNewItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */; };
+		ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD2285118E300DFD78F /* RandItemCell.swift */; };
+		ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FD3285118E300DFD78F /* RandItemCell.xib */; };
+		ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD6285118F500DFD78F /* RandItemCellModel.swift */; };
+		ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */; };
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
@@ -64,18 +67,13 @@
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
 		ED3642542717209F0083D578 /* RandomizerUtil.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerUtil.xib; sourceTree = "<group>"; };
 		ED364256271731D70083D578 /* BangButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BangButton.swift; sourceTree = "<group>"; };
-		ED36425A271735C90083D578 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		ED36425D2717363E0083D578 /* RandomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewController.swift; sourceTree = "<group>"; };
-		ED36426027173F490083D578 /* HobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyCell.swift; sourceTree = "<group>"; };
 		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
-		ED364268271757090083D578 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
 		ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectSectorUtil.swift; sourceTree = "<group>"; };
 		ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HobbyRandomizer-Bridging-Header.h"; sourceTree = "<group>"; };
-		ED4DF38827188A83007966EE /* CreateHobbyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHobbyCell.swift; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED5A6C55284FD0370028BEED /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -98,10 +96,18 @@
 		ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HobbyRandomizer/appComponents/Info.plist; sourceTree = SOURCE_ROOT; };
-		ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyModel.swift; sourceTree = "<group>"; };
 		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
 		ED880FC028510EEA00DFD78F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		ED880FC128510EEA00DFD78F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugViewController.xib; sourceTree = "<group>"; };
+		ED880FC52851151C00DFD78F /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		ED880FC62851151C00DFD78F /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
+		ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewItemCell.swift; sourceTree = "<group>"; };
+		ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewItemCell.xib; sourceTree = "<group>"; };
+		ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewItemCellModel.swift; sourceTree = "<group>"; };
+		ED880FD2285118E300DFD78F /* RandItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCell.swift; sourceTree = "<group>"; };
+		ED880FD3285118E300DFD78F /* RandItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandItemCell.xib; sourceTree = "<group>"; };
+		ED880FD6285118F500DFD78F /* RandItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCellModel.swift; sourceTree = "<group>"; };
+		ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewDataSource.swift; sourceTree = "<group>"; };
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
@@ -125,9 +131,7 @@
 		ED36425C2717361D0083D578 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				ED36425A271735C90083D578 /* MainViewController.swift */,
 				ED36425D2717363E0083D578 /* RandomViewController.swift */,
-				ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -140,15 +144,6 @@
 			path = storage;
 			sourceTree = "<group>";
 		};
-		ED4A3CBF271A0A6B00084BB8 /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				ED36426027173F490083D578 /* HobbyCell.swift */,
-				ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
 		ED4A3CC4271A290000084BB8 /* util */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,14 +152,6 @@
 				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
 			);
 			path = util;
-			sourceTree = "<group>";
-		};
-		ED4DF3822718757F007966EE /* viewmodel */ = {
-			isa = PBXGroup;
-			children = (
-				ED364268271757090083D578 /* MainViewModel.swift */,
-			);
-			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		ED4DF3832718758E007966EE /* appComponents */ = {
@@ -209,6 +196,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED880FC4285114FC00DFD78F /* Create */,
 				ED880FBF28510ED100DFD78F /* Debug */,
 				EDD576F42850FEA000DAAEC3 /* Casino */,
 				ED5A6C5F284FE0560028BEED /* Initial */,
@@ -281,10 +269,8 @@
 				ED4A3CC4271A290000084BB8 /* util */,
 				ED4DF385271875D1007966EE /* extension */,
 				ED4DF384271875C2007966EE /* storyboard */,
-				ED4DF3822718757F007966EE /* viewmodel */,
 				ED3642642717536C0083D578 /* storage */,
 				ED36425C2717361D0083D578 /* controller */,
-				ED6EEF742715C74000D4EFE9 /* model */,
 				ED6EEF732715C6FF00D4EFE9 /* view */,
 			);
 			path = HobbyRandomizer;
@@ -293,30 +279,16 @@
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */,
+				ED880FDD2851303E00DFD78F /* useful */,
+				ED880FDC2851302600DFD78F /* rouleteView */,
+				ED880FDB2851301700DFD78F /* randomizerUtil */,
+				ED880FDA2851300100DFD78F /* createItemView */,
 				EDD88CDF273573710042D406 /* selector */,
 				EDD88CDA27354D150042D406 /* viewUtils */,
-				ED4A3CBF271A0A6B00084BB8 /* cell */,
 				ED5F113127177A06006454AD /* rotatable */,
-				ED36424A2717121D0083D578 /* CreateIdeaView.swift */,
-				ED36424C271712BF0083D578 /* CreateIdeaView.xib */,
-				ED36425227171B770083D578 /* RandomizerUtil.swift */,
-				ED3642542717209F0083D578 /* RandomizerUtil.xib */,
-				ED364256271731D70083D578 /* BangButton.swift */,
-				ED36426227174FE80083D578 /* PrettyLabel.swift */,
-				ED5F112D27177470006454AD /* RouleteView.swift */,
-				ED5F112F271774E7006454AD /* RouleteView.xib */,
-				ED4DF38827188A83007966EE /* CreateHobbyCell.swift */,
-				ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		ED6EEF742715C74000D4EFE9 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */,
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		ED880FBF28510ED100DFD78F /* Debug */ = {
@@ -326,6 +298,83 @@
 				ED880FC128510EEA00DFD78F /* DebugViewController.xib */,
 			);
 			path = Debug;
+			sourceTree = "<group>";
+		};
+		ED880FC4285114FC00DFD78F /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				ED880FC92851167400DFD78F /* Cell */,
+				ED364268271757090083D578 /* CreatePresenter.swift */,
+				ED880FC52851151C00DFD78F /* CreateViewController.swift */,
+				ED880FC62851151C00DFD78F /* CreateViewController.xib */,
+				ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		ED880FC92851167400DFD78F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED880FCB2851187900DFD78F /* CreateNewItemCell */,
+				ED880FCA2851186B00DFD78F /* RandItemCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ED880FCA2851186B00DFD78F /* RandItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED880FD2285118E300DFD78F /* RandItemCell.swift */,
+				ED880FD3285118E300DFD78F /* RandItemCell.xib */,
+				ED880FD6285118F500DFD78F /* RandItemCellModel.swift */,
+			);
+			path = RandItemCell;
+			sourceTree = "<group>";
+		};
+		ED880FCB2851187900DFD78F /* CreateNewItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */,
+				ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */,
+				ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */,
+			);
+			path = CreateNewItemCell;
+			sourceTree = "<group>";
+		};
+		ED880FDA2851300100DFD78F /* createItemView */ = {
+			isa = PBXGroup;
+			children = (
+				ED36424A2717121D0083D578 /* CreateIdeaView.swift */,
+				ED36424C271712BF0083D578 /* CreateIdeaView.xib */,
+			);
+			path = createItemView;
+			sourceTree = "<group>";
+		};
+		ED880FDB2851301700DFD78F /* randomizerUtil */ = {
+			isa = PBXGroup;
+			children = (
+				ED36425227171B770083D578 /* RandomizerUtil.swift */,
+				ED3642542717209F0083D578 /* RandomizerUtil.xib */,
+			);
+			path = randomizerUtil;
+			sourceTree = "<group>";
+		};
+		ED880FDC2851302600DFD78F /* rouleteView */ = {
+			isa = PBXGroup;
+			children = (
+				ED5F112D27177470006454AD /* RouleteView.swift */,
+				ED5F112F271774E7006454AD /* RouleteView.xib */,
+			);
+			path = rouleteView;
+			sourceTree = "<group>";
+		};
+		ED880FDD2851303E00DFD78F /* useful */ = {
+			isa = PBXGroup;
+			children = (
+				ED364256271731D70083D578 /* BangButton.swift */,
+				ED36426227174FE80083D578 /* PrettyLabel.swift */,
+			);
+			path = useful;
 			sourceTree = "<group>";
 		};
 		EDD576F42850FEA000DAAEC3 /* Casino */ = {
@@ -416,11 +465,14 @@
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */,
+				ED880FC82851151C00DFD78F /* CreateViewController.xib in Resources */,
 				ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */,
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
+				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
+				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
@@ -440,36 +492,36 @@
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
+				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
+				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
-				ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */,
 				ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */,
-				ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */,
+				ED880FD1285118C500DFD78F /* CreateNewItemCellModel.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
+				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,
 				EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */,
 				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
-				ED364269271757090083D578 /* MainViewModel.swift in Sources */,
+				ED364269271757090083D578 /* CreatePresenter.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
-				ED4DF38927188A83007966EE /* CreateHobbyCell.swift in Sources */,
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
-				ED36426127173F490083D578 /* HobbyCell.swift in Sources */,
 				ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */,
-				ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
+				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
+				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
 				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
-				ED36425B271735C90083D578 /* MainViewController.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,4 +46,11 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
+    func getCreateScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = CreatePresenter(storage: storage)
+        let viewcontroller = CreateViewController(presenter: presenter)
+            presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
 }

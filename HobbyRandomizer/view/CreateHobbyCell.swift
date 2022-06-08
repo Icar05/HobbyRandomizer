@@ -12,7 +12,7 @@ class CreateHobbyCell :UITableViewCell{
     @IBOutlet weak var createHobbyView: CreateIdeaView!
     
     
-    func setupDelegate(_ delegate: @escaping CreateIdeaDelegate){
+    func setupDelegate(_ delegate: @escaping Cr){
         self.createHobbyView.delegate = delegate
     }
 

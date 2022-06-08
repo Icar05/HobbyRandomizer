@@ -10,6 +10,8 @@ import UIKit
 public final class MenuViewController: UIViewController {
     
     
+    
+    
     private let dataSource = MenuDataSource()
     
     private let presenter: MenuPresenter
@@ -33,7 +35,7 @@ public final class MenuViewController: UIViewController {
         super.viewDidLoad()
         
         presenter.viewDidLoad()
-        
+    
         setupUI()
     }
     
@@ -58,7 +60,9 @@ extension MenuViewController: MenuDelegate{
     func onItemSelected(item: ScreenTypes) {
         
         let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
-        guard let destination = getController(item: item, navigator: navigator) else {
+        let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
+        
+        guard let destination = getController(item: item, navigator: navigator, storage: storage) else {
             print("not implemented: \(item)")
             return
         }
@@ -67,11 +71,13 @@ extension MenuViewController: MenuDelegate{
     }
     
     
-    func getController(item: ScreenTypes, navigator: Navigator) -> UIViewController?{
+    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage) -> UIViewController?{
         if(item == .Casino){
             return navigator.getCasinoScreen()
         }else if(item == .Test){
             return navigator.getDebugScreen()
+        }else if(item == .Create){
+            return navigator.getCreateScreen(storage: storage)
         }
         
         return nil

@@ -25,8 +25,8 @@ extension UITableViewCell{
 
 
 extension UIViewController{
-    func showAlert(model: HobbyModel){
-        let alert = UIAlertController(title: model.title, message: model.description, preferredStyle: .alert)
+    func showAlert(model: RandItemCellModel){
+        let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }

@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let navigator: Navigator = NavigatorImpl()
     
+    private let storage: UserDefaultStorage = UserDefaultStorage()
+    
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -27,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func getNavigator() -> Navigator{
         return self.navigator
+    }
+    
+    func getStorage() -> UserDefaultStorage{
+        return self.storage
     }
 
 }

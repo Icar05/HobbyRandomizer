@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-typealias CreateIdeaDelegate = (_ model: HobbyModel) -> Void
+protocol CreateViewDelegate: NSObject{
+    func onItemCreated(item: RandItemCellModel)
+}
 
 @IBDesignable
 class CreateIdeaView: UIView {
@@ -25,7 +27,7 @@ class CreateIdeaView: UIView {
     
     @IBOutlet weak var createBtn: UIImageView!
     
-    var delegate: CreateIdeaDelegate? = nil
+    weak var delegate: CreateViewDelegate? = nil
     
     
     override init(frame: CGRect) {
@@ -67,8 +69,8 @@ class CreateIdeaView: UIView {
         let subtitle: String? = self.getData(field: descTextField)
         
         if(title != nil && subtitle != nil){
-            let model = HobbyModel(id: CACurrentMediaTime(), title: title!, description: subtitle!)
-            self.delegate?(model)
+            let model = RandItemCellModel(title: title!, subTitle: subtitle!)
+            self.delegate?.onItemCreated(item: model)
             self.titleTextField.text = ""
             self.descTextField.text = ""
         }

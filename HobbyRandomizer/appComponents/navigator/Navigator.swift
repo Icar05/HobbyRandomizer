@@ -13,4 +13,5 @@ protocol Navigator{
     func getMenuScreen() -> UIViewController
     func getCasinoScreen() -> UIViewController
     func getDebugScreen() -> UIViewController
+    func getCreateScreen(storage: UserDefaultStorage) -> UIViewController
 }

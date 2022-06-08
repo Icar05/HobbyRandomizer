@@ -12,7 +12,7 @@ class MainViewController: UIViewController  {
         
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate let viewModel = MainViewModel.shared
+    fileprivate let viewModel = CreatePresenter.shared
     
     var datasource: [HobbyModel] = []
     
