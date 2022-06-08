@@ -57,6 +57,7 @@ class RouleteView:  UIView {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bang(tapGestureRecognizer:)))
         self.bangBtn.addGestureRecognizer(tapGesture)
         
+        self.invalidateIntrinsicContentSize()
 
         self.layer.masksToBounds = true
     }

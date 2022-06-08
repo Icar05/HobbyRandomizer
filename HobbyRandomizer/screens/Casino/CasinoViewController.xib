@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CasinoViewController" customModule="HobbyRandomizer" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="f0R-ui-Fp2" id="kVU-Wz-G0p"/>
+                <outlet property="picker" destination="AuJ-HS-qkQ" id="1E1-3K-m6L"/>
+                <outlet property="rouleteView" destination="Wxx-wu-tKg" id="jZC-AA-dtB"/>
+                <outlet property="topView" destination="lcj-kO-i7D" id="R2H-fV-EEw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-wu-tKg" customClass="RouleteView" customModule="HobbyRandomizer" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="400"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="gzR-TK-3MK"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-kO-i7D" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="444" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Ire-PQ-X1m"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuJ-HS-qkQ" customClass="SilintUIPickerView">
+                    <rect key="frame" x="0.0" y="445" width="414" height="216"/>
+                </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-ui-Fp2" userLabel="BottomSeparator">
+                    <rect key="frame" x="0.0" y="661" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="jKZ-zf-WEn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0R-ui-Fp2" secondAttribute="trailing" id="F0I-FJ-h3P"/>
+                <constraint firstItem="AuJ-HS-qkQ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="I2e-t9-E8Q"/>
+                <constraint firstItem="f0R-ui-Fp2" firstAttribute="top" secondItem="AuJ-HS-qkQ" secondAttribute="bottom" id="Jxm-8v-ODf"/>
+                <constraint firstItem="lcj-kO-i7D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NLz-NU-WLD"/>
+                <constraint firstItem="AuJ-HS-qkQ" firstAttribute="top" secondItem="lcj-kO-i7D" secondAttribute="bottom" id="TPZ-8P-kPx"/>
+                <constraint firstItem="AuJ-HS-qkQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UMS-rJ-C2h"/>
+                <constraint firstItem="f0R-ui-Fp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ddM-KI-EiJ"/>
+                <constraint firstItem="Wxx-wu-tKg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fuK-Lk-6FU"/>
+                <constraint firstItem="Wxx-wu-tKg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gb5-kV-b8B"/>
+                <constraint firstItem="lcj-kO-i7D" firstAttribute="top" secondItem="Wxx-wu-tKg" secondAttribute="bottom" id="jMi-5R-1oU"/>
+                <constraint firstItem="Wxx-wu-tKg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wNE-GZ-ZvK"/>
+                <constraint firstItem="lcj-kO-i7D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ySL-45-icA"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

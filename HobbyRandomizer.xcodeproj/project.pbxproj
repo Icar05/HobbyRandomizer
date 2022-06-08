@@ -20,7 +20,6 @@
 		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* MainViewModel.swift */; };
-		ED4A3CBC2719B26E00084BB8 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */; };
 		ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */; };
 		ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
@@ -43,7 +42,6 @@
 		ED5F11382717C963006454AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5F11372717C963006454AD /* Colors.xcassets */; };
 		ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11392717CC15006454AD /* CasinoSelectorView.swift */; };
 		ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */; };
-		ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */; };
 		ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF652715C6D200D4EFE9 /* Main.storyboard */; };
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
@@ -52,6 +50,8 @@
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
+		EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */; };
+		EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */; };
 		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
 		EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */; };
 /* End PBXBuildFile section */
@@ -70,7 +70,6 @@
 		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ED4A3CC0271A0A8900084BB8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		ED5F11392717CC15006454AD /* CasinoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoSelectorView.swift; sourceTree = "<group>"; };
 		ED6EEF5C2715C6D200D4EFE9 /* HobbyRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED6EEF662715C6D200D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +103,8 @@
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
+		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
 		EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCalculateUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +126,6 @@
 				ED364258271735980083D578 /* TestViewController.swift */,
 				ED36425A271735C90083D578 /* MainViewController.swift */,
 				ED36425D2717363E0083D578 /* RandomViewController.swift */,
-				ED4A3CBB2719B26E00084BB8 /* CasinoViewController.swift */,
 				ED4A3CBD271A056000084BB8 /* SettingsViewController.swift */,
 			);
 			path = controller;
@@ -170,10 +169,10 @@
 		ED4DF3832718758E007966EE /* appComponents */ = {
 			isa = PBXGroup;
 			children = (
+				ED5A6C58284FD4C10028BEED /* navigator */,
 				ED6EEF6D2715C6D300D4EFE9 /* Info.plist */,
 				ED5F11372717C963006454AD /* Colors.xcassets */,
 				ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */,
-				ED6EEF612715C6D200D4EFE9 /* SceneDelegate.swift */,
 				ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */,
 			);
 			path = appComponents;
@@ -209,6 +208,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				EDD576F42850FEA000DAAEC3 /* Casino */,
 				ED5A6C5F284FE0560028BEED /* Initial */,
 				ED5A6C53284FD0030028BEED /* Menu */,
 			);
@@ -274,7 +274,6 @@
 		ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */ = {
 			isa = PBXGroup;
 			children = (
-				ED5A6C58284FD4C10028BEED /* navigator */,
 				ED5A6C52284FCFF80028BEED /* screens */,
 				ED4DF3832718758E007966EE /* appComponents */,
 				ED4A3CC4271A290000084BB8 /* util */,
@@ -316,6 +315,15 @@
 				ED6EEF752715C75300D4EFE9 /* HobbyModel.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		EDD576F42850FEA000DAAEC3 /* Casino */ = {
+			isa = PBXGroup;
+			children = (
+				EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */,
+				EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */,
+			);
+			path = Casino;
 			sourceTree = "<group>";
 		};
 		EDD88CDA27354D150042D406 /* viewUtils */ = {
@@ -401,6 +409,7 @@
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
+				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
@@ -424,7 +433,6 @@
 				ED364259271735980083D578 /* TestViewController.swift in Sources */,
 				ED4A3CC1271A0A8900084BB8 /* SettingCell.swift in Sources */,
 				ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */,
-				ED4A3CBC2719B26E00084BB8 /* CasinoViewController.swift in Sources */,
 				ED6EEF762715C75300D4EFE9 /* HobbyModel.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
@@ -439,10 +447,10 @@
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
 				ED36426127173F490083D578 /* HobbyCell.swift in Sources */,
 				ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */,
-				ED6EEF622715C6D200D4EFE9 /* SceneDelegate.swift in Sources */,
 				ED4A3CBE271A056000084BB8 /* SettingsViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
+				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
