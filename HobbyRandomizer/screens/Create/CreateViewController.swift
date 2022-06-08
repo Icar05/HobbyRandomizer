@@ -38,6 +38,7 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
         self.tableView.tableFooterView = UIView()
         self.registerCells()
         
+        self.dataSource.delegate = self
         self.presenter.viewDidLoad()
     }
     

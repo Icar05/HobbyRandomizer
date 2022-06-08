@@ -23,9 +23,9 @@ public final class MenuPresenter{
     
     private func prepareDataSource() -> [MenuCellModel]{
         return [
+            MenuCellModel(icon:  UIImage(systemName: "plus.rectangle.fill.on.folder.fill")!, type: .Create),
             MenuCellModel(icon:  UIImage(systemName: "wrench.fill")!, type: .Test),
             MenuCellModel(icon:  UIImage(systemName: "suit.spade.fill")!, type: .Casino),
-            MenuCellModel(icon:  UIImage(systemName: "plus.rectangle.fill.on.folder.fill")!, type: .Create),
         ]
     }
     

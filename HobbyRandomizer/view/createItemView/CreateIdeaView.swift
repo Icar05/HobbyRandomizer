@@ -65,8 +65,8 @@ class CreateIdeaView: UIView {
     
     
     @objc func grabData(tapGestureRecognizer: UITapGestureRecognizer){
-        let title: String? = self.getData(field: titleTextField)
-        let subtitle: String? = self.getData(field: descTextField)
+        let title: String? = self.getData(field: titleTextField)?.trimmingCharacters(in: .whitespaces)
+        let subtitle: String? = self.getData(field: descTextField)?.trimmingCharacters(in: .whitespaces)
         
         if(title != nil && subtitle != nil){
             let model = RandItemCellModel(title: title!, subTitle: subtitle!)
