@@ -56,6 +56,22 @@ public final class MenuViewController: UIViewController {
 extension MenuViewController: MenuDelegate{
     
     func onItemSelected(item: ScreenTypes) {
-        print("type: \(item)")
+        
+        let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
+        guard let destination = getController(item: item, navigator: navigator) else {
+            print("not implemented: \(item)")
+            return
+        }
+
+        navigator.navigate(start: self, destination: destination)
+    }
+    
+    
+    func getController(item: ScreenTypes, navigator: Navigator) -> UIViewController?{
+        if(item == .Casino){
+            return navigator.getCasinoScreen()
+        }
+        
+        return nil
     }
 }

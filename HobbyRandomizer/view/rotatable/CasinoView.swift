@@ -45,6 +45,7 @@ class CasinoView: BaseRotatableView {
         
         self.drawBall()
         self.drawCenter()
+        self.backgroundColor = UIColor.clear
     }
     
     fileprivate func drawBall(){

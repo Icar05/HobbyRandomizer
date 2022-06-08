@@ -11,4 +11,5 @@ protocol Navigator{
     func setupInitialViewController(window: UIWindow)
     func navigate(start: UIViewController, destination: UIViewController)
     func getMenuScreen() -> UIViewController
+    func getCasinoScreen() -> UIViewController
 }
