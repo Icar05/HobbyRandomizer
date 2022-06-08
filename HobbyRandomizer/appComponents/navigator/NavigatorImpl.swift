@@ -8,12 +8,10 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+  
     
     
-    
-    
-    
-    
+
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
         window.makeKeyAndVisible()
@@ -38,9 +36,13 @@ class NavigatorImpl: Navigator{
         return viewController
     }
     
-    
     func getCasinoScreen() -> UIViewController {
         let viewcontroller = CasinoViewController()
+        return viewcontroller
+    }
+    
+    func getDebugScreen() -> UIViewController {
+        let viewcontroller = DebugViewController()
         return viewcontroller
     }
     

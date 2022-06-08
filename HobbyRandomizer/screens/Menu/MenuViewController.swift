@@ -70,6 +70,8 @@ extension MenuViewController: MenuDelegate{
     func getController(item: ScreenTypes, navigator: Navigator) -> UIViewController?{
         if(item == .Casino){
             return navigator.getCasinoScreen()
+        }else if(item == .Test){
+            return navigator.getDebugScreen()
         }
         
         return nil

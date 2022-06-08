@@ -12,4 +12,5 @@ protocol Navigator{
     func navigate(start: UIViewController, destination: UIViewController)
     func getMenuScreen() -> UIViewController
     func getCasinoScreen() -> UIViewController
+    func getDebugScreen() -> UIViewController
 }

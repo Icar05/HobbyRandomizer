@@ -308,68 +308,6 @@
             </objects>
             <point key="canvasLocation" x="744.92753623188412" y="-595.3125"/>
         </scene>
-        <!--Casino-->
-        <scene sceneID="lrP-YC-CRq">
-            <objects>
-                <viewController storyboardIdentifier="CasinoViewController" id="iUR-TD-pjy" customClass="CasinoViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UgV-PO-NRl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-E6-vng" userLabel="BottomView">
-                                <rect key="frame" x="0.0" y="669" width="414" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="7Od-ev-2t8"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-p1-lIh" customClass="RouleteView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="uF4-bV-CCE"/>
-                                </constraints>
-                            </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51y-rd-ud1">
-                                <rect key="frame" x="0.0" y="453" width="414" height="216"/>
-                            </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Qe-eo-MYV" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="452" width="414" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="gtL-qH-1gR"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="erD-gq-Y9m"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="QCI-E6-vng" firstAttribute="leading" secondItem="erD-gq-Y9m" secondAttribute="leading" id="7vG-Qp-zd1"/>
-                            <constraint firstItem="D0E-p1-lIh" firstAttribute="leading" secondItem="erD-gq-Y9m" secondAttribute="leading" id="K6q-nb-wxF"/>
-                            <constraint firstItem="D0E-p1-lIh" firstAttribute="trailing" secondItem="erD-gq-Y9m" secondAttribute="trailing" id="Kfa-1m-Rpy"/>
-                            <constraint firstItem="51y-rd-ud1" firstAttribute="top" secondItem="9Qe-eo-MYV" secondAttribute="bottom" id="Q0O-H9-RJb"/>
-                            <constraint firstItem="D0E-p1-lIh" firstAttribute="top" secondItem="erD-gq-Y9m" secondAttribute="top" id="U2K-6P-JCu"/>
-                            <constraint firstItem="QCI-E6-vng" firstAttribute="top" secondItem="51y-rd-ud1" secondAttribute="bottom" id="VJl-uv-FFV"/>
-                            <constraint firstItem="9Qe-eo-MYV" firstAttribute="trailing" secondItem="erD-gq-Y9m" secondAttribute="trailing" id="XyL-7a-AMx"/>
-                            <constraint firstItem="9Qe-eo-MYV" firstAttribute="leading" secondItem="erD-gq-Y9m" secondAttribute="leading" id="bJd-Rb-xbV"/>
-                            <constraint firstItem="9Qe-eo-MYV" firstAttribute="top" secondItem="D0E-p1-lIh" secondAttribute="bottom" constant="8" id="cfw-Hq-nXI"/>
-                            <constraint firstItem="51y-rd-ud1" firstAttribute="trailing" secondItem="erD-gq-Y9m" secondAttribute="trailing" id="kkT-Ao-Xur"/>
-                            <constraint firstItem="QCI-E6-vng" firstAttribute="trailing" secondItem="erD-gq-Y9m" secondAttribute="trailing" id="l7t-15-dFd"/>
-                            <constraint firstItem="51y-rd-ud1" firstAttribute="leading" secondItem="erD-gq-Y9m" secondAttribute="leading" id="ryh-Un-Zqp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Casino" id="gOT-LT-vhC"/>
-                    <connections>
-                        <outlet property="bottomView" destination="QCI-E6-vng" id="jcj-Ps-cwy"/>
-                        <outlet property="picker" destination="51y-rd-ud1" id="kkg-vX-FdZ"/>
-                        <outlet property="rouleteView" destination="D0E-p1-lIh" id="3md-jN-2a2"/>
-                        <outlet property="topView" destination="9Qe-eo-MYV" id="Jh5-WB-gJI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EuB-ZY-RBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1648" y="-595"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FVD-5w-vpP">
             <objects>
@@ -401,9 +339,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

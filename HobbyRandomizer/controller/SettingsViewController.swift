@@ -17,10 +17,6 @@ class SettingsViewController: UIViewController {
     
     
     let dataSource = [
-        SettingsModel(
-            image: UIImage(systemName: "wrench.fill")!,
-            title: "Debug",
-            type: TestViewController.self),
         
         SettingsModel(
             image:UIImage(systemName: "suit.spade.fill")!,
