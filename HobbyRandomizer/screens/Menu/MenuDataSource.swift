@@ -11,6 +11,9 @@ enum ScreenTypes : String, CaseIterable{
     case Casino, Test, Create, Random, Hobby, WorkInProgress
 }
 
+protocol MenuDelegate: NSObject{
+    func onItemSelected(item: ScreenTypes)
+}
 
 class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
@@ -22,6 +25,12 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     
     private let spacing: CGFloat = 4
     
+    private weak var delegate: MenuDelegate? = nil
+    
+    
+    func setDelegate(delegate: MenuDelegate){
+        self.delegate = delegate
+    }
     
     
     func setDataSource(dataSource: [MenuCellModel]){
@@ -69,7 +78,7 @@ extension MenuDataSource: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = self.dataSourse[indexPath.row].type
-        print("Got clicked type: \(item)")
+        self.delegate?.onItemSelected(item: item)
     }
     
 }

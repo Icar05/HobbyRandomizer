@@ -49,7 +49,13 @@ public final class MenuViewController: UIViewController {
         self.collectionView?.register(nib, forCellWithReuseIdentifier: identifier)
         self.collectionView.dataSource = dataSource
         self.collectionView.delegate = dataSource
+        self.dataSource.setDelegate(delegate: self)
     }
+}
+
+extension MenuViewController: MenuDelegate{
     
-    
+    func onItemSelected(item: ScreenTypes) {
+        print("type: \(item)")
+    }
 }

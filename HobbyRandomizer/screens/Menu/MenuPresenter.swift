@@ -25,9 +25,11 @@ public final class MenuPresenter{
     }
     
     private func prepareDataSource() -> [MenuCellModel]{
-        return ScreenTypes.allCases.map{
-            MenuCellModel(icon: nil, type: $0)
-        }
+        return [
+            MenuCellModel(icon:  UIImage(systemName: "wrench.fill")!, type: .Test),
+            MenuCellModel(icon:  UIImage(systemName: "suit.spade.fill")!, type: .Casino),
+        ]
     }
+    
     
 }
