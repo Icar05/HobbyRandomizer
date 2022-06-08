@@ -7,7 +7,12 @@
 
 import Foundation
 
+enum ItemType: Codable, CaseIterable{
+    case necessary, freetime, workInProgress
+}
+
 struct RandItemCellModel: Codable{
     var title: String
     var subTitle: String
+    var type: ItemType
 }

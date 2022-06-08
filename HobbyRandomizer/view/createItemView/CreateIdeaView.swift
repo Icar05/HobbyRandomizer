@@ -13,10 +13,12 @@ protocol CreateViewDelegate: NSObject{
 }
 
 @IBDesignable
-class CreateIdeaView: UIView {
+class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+   
     
 
     
+    @IBOutlet weak var picker: UIPickerView!
     
     @IBOutlet weak var contentView: UIView!
     
@@ -24,10 +26,11 @@ class CreateIdeaView: UIView {
     
     @IBOutlet weak var titleTextField: UITextField!
     
-    
     @IBOutlet weak var createBtn: UIImageView!
     
     weak var delegate: CreateViewDelegate? = nil
+    
+    var type: ItemType = .freetime
     
     
     override init(frame: CGRect) {
@@ -58,6 +61,9 @@ class CreateIdeaView: UIView {
         createBtn.isUserInteractionEnabled = true
         createBtn.border()
         
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        self.picker.selectRow(1, inComponent: 0, animated: true)
 
         let gest = UITapGestureRecognizer(target: self, action: #selector(grabData(tapGestureRecognizer:)))
         createBtn.addGestureRecognizer(gest)
@@ -69,15 +75,34 @@ class CreateIdeaView: UIView {
         let subtitle: String? = self.getData(field: descTextField)?.trimmingCharacters(in: .whitespaces)
         
         if(title != nil && subtitle != nil){
-            let model = RandItemCellModel(title: title!, subTitle: subtitle!)
+            let model = RandItemCellModel(title: title!, subTitle: subtitle!, type: type)
             self.delegate?.onItemCreated(item: model)
             self.titleTextField.text = ""
             self.descTextField.text = ""
+            self.picker.selectRow(1, inComponent: 0, animated: true)
         }
         
         contentView.endEditing(true)
     }
     
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(ItemType.allCases[row])"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return ItemType.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.type =  ItemType.allCases[row]
+
+        print("type: \(type)")
+    }
     
     @objc fileprivate func getData(field: UITextField) ->  String?{
         

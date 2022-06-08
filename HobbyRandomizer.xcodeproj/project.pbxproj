@@ -46,7 +46,6 @@
 		ED880FC82851151C00DFD78F /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC62851151C00DFD78F /* CreateViewController.xib */; };
 		ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */; };
 		ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */; };
-		ED880FD1285118C500DFD78F /* CreateNewItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */; };
 		ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD2285118E300DFD78F /* RandItemCell.swift */; };
 		ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FD3285118E300DFD78F /* RandItemCell.xib */; };
 		ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD6285118F500DFD78F /* RandItemCellModel.swift */; };
@@ -103,7 +102,6 @@
 		ED880FC62851151C00DFD78F /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
 		ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewItemCell.swift; sourceTree = "<group>"; };
 		ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewItemCell.xib; sourceTree = "<group>"; };
-		ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewItemCellModel.swift; sourceTree = "<group>"; };
 		ED880FD2285118E300DFD78F /* RandItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCell.swift; sourceTree = "<group>"; };
 		ED880FD3285118E300DFD78F /* RandItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandItemCell.xib; sourceTree = "<group>"; };
 		ED880FD6285118F500DFD78F /* RandItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCellModel.swift; sourceTree = "<group>"; };
@@ -336,7 +334,6 @@
 			children = (
 				ED880FCC285118B500DFD78F /* CreateNewItemCell.swift */,
 				ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */,
-				ED880FD0285118C500DFD78F /* CreateNewItemCellModel.swift */,
 			);
 			path = CreateNewItemCell;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED36425E2717363E0083D578 /* RandomViewController.swift in Sources */,
-				ED880FD1285118C500DFD78F /* CreateNewItemCellModel.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,
