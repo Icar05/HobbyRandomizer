@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,126 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BfW-7r-4B0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HC" id="dNk-wg-Ouh" userLabel="CustomCell" customClass="HobbyCell" customModule="HobbyRandomizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dNk-wg-Ouh" id="TZH-WM-yIA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKC-MJ-OeW">
-                                                    <rect key="frame" x="20" y="5" width="374" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snz-zS-i3X">
-                                                    <rect key="frame" x="20" y="26" width="374" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Snz-zS-i3X" firstAttribute="trailing" secondItem="mKC-MJ-OeW" secondAttribute="trailing" id="17Y-bR-PcG"/>
-                                                <constraint firstItem="mKC-MJ-OeW" firstAttribute="top" secondItem="TZH-WM-yIA" secondAttribute="top" constant="5" id="Hd2-bw-p7a"/>
-                                                <constraint firstItem="Snz-zS-i3X" firstAttribute="leading" secondItem="mKC-MJ-OeW" secondAttribute="leading" id="UU3-XF-ZSp"/>
-                                                <constraint firstItem="Snz-zS-i3X" firstAttribute="top" secondItem="mKC-MJ-OeW" secondAttribute="bottom" id="WrA-M1-Zau"/>
-                                                <constraint firstItem="mKC-MJ-OeW" firstAttribute="leading" secondItem="TZH-WM-yIA" secondAttribute="leading" constant="20" id="m7P-JN-02J"/>
-                                                <constraint firstItem="mKC-MJ-OeW" firstAttribute="trailing" secondItem="TZH-WM-yIA" secondAttribute="trailing" constant="-20" id="qIa-DM-SxW"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="subtitle" destination="Snz-zS-i3X" id="Ct8-C6-sBG"/>
-                                            <outlet property="title" destination="mKC-MJ-OeW" id="eRd-aw-pbG"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TC" rowHeight="170" id="OCU-zC-Nus" customClass="CreateHobbyCell" customModule="HobbyRandomizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="170"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCU-zC-Nus" id="vMT-Ay-pwb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-9s-6Bi" customClass="CreateIdeaView" customModule="HobbyRandomizer" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="top" secondItem="vMT-Ay-pwb" secondAttribute="top" id="2gu-Ma-PnG"/>
-                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="leading" secondItem="vMT-Ay-pwb" secondAttribute="leading" id="7Tf-6F-MMe"/>
-                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="trailing" secondItem="vMT-Ay-pwb" secondAttribute="trailing" id="9gk-iJ-5rS"/>
-                                                <constraint firstItem="sFy-9s-6Bi" firstAttribute="bottom" secondItem="vMT-Ay-pwb" secondAttribute="bottom" id="hUq-Fb-0WH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="createHobbyView" destination="sFy-9s-6Bi" id="C3E-zU-cuP"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="B39-HM-Tbk">
-                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="BfW-7r-4B0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="03w-9M-rJW"/>
-                            <constraint firstItem="BfW-7r-4B0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bdb-nu-Pi0"/>
-                            <constraint firstItem="BfW-7r-4B0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fHz-pX-DXB"/>
-                            <constraint firstItem="BfW-7r-4B0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lsj-Cu-175"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="qAk-u0-hK6">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" image="gear" catalog="system" id="IYK-I8-KC9" userLabel="Settings">
-                            <color key="tintColor" systemColor="labelColor"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Push to random!" id="glo-Cu-3HX">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="x1L-Tx-vWr" kind="show" id="iUI-YY-d2Q"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="BfW-7r-4B0" id="JUg-Ga-AVe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="782.60869565217399" y="70.982142857142847"/>
-        </scene>
         <!--Random View Controller-->
         <scene sceneID="rzj-OD-HSi">
             <objects>
                 <viewController id="x1L-Tx-vWr" customClass="RandomViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJq-xu-Qfo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEY-Is-dwl" customClass="RandomizerUtil" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="vCR-XS-iTn"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HE-V7-Gza" customClass="PrettyLabel" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="460" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="504" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -137,7 +33,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-tZ-jBH" customClass="PrettyLabel" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="500.5" width="314" height="20.5"/>
+                                <rect key="frame" x="50" y="544.5" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -202,7 +98,6 @@
     </scenes>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
         <image name="plus.rectangle.fill.on.folder.fill" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
