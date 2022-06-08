@@ -157,6 +157,7 @@
 		ED4DF3832718758E007966EE /* appComponents */ = {
 			isa = PBXGroup;
 			children = (
+				ED3642642717536C0083D578 /* storage */,
 				ED5A6C58284FD4C10028BEED /* navigator */,
 				ED6EEF6D2715C6D300D4EFE9 /* Info.plist */,
 				ED5F11372717C963006454AD /* Colors.xcassets */,
@@ -269,7 +270,6 @@
 				ED4A3CC4271A290000084BB8 /* util */,
 				ED4DF385271875D1007966EE /* extension */,
 				ED4DF384271875C2007966EE /* storyboard */,
-				ED3642642717536C0083D578 /* storage */,
 				ED36425C2717361D0083D578 /* controller */,
 				ED6EEF732715C6FF00D4EFE9 /* view */,
 			);
