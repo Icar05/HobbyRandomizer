@@ -63,3 +63,13 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     }
     
 }
+
+extension MenuDataSource: UICollectionViewDelegate{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = self.dataSourse[indexPath.row].type
+        print("Got clicked type: \(item)")
+    }
+    
+}
