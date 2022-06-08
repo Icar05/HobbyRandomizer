@@ -184,20 +184,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Settings" id="mLG-ar-hva" customClass="SettingCell" customModule="HobbyRandomizer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="51.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mLG-ar-hva" id="15i-JL-xBy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IzA-UT-tvz">
-                                                    <rect key="frame" x="15" y="15" width="30" height="21.5"/>
+                                                    <rect key="frame" x="15" y="15" width="30" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="rNN-7z-GSE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFB-X3-HCj">
-                                                    <rect key="frame" x="60" y="15" width="339" height="21.5"/>
+                                                    <rect key="frame" x="60" y="15" width="339" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -238,75 +238,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQW-iS-5IV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8.6956521739130448" y="-595.3125"/>
-        </scene>
-        <!--Debug-->
-        <scene sceneID="Y82-UC-8l6">
-            <objects>
-                <viewController storyboardIdentifier="TestViewController" id="cqd-6A-M7L" customClass="TestViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bm0-Xg-MfK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-VM-o1t" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="314" y="494" width="50" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="x57-Fq-gOR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeH-W8-lUY" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="494" width="50" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="pxP-lG-VqU"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e45-sR-REW" customClass="BangButton" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="184" y="494" width="46.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNE-wl-Rcb" customClass="RandomizerUtil" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="CIe-Vc-cpe"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="fJJ-ig-iQh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="e45-sR-REW" firstAttribute="top" secondItem="tNE-wl-Rcb" secondAttribute="bottom" id="337-9a-nLH"/>
-                            <constraint firstItem="LgB-VM-o1t" firstAttribute="trailing" secondItem="tNE-wl-Rcb" secondAttribute="trailing" constant="-50" id="8JB-Yq-6H7"/>
-                            <constraint firstItem="e45-sR-REW" firstAttribute="centerX" secondItem="bm0-Xg-MfK" secondAttribute="centerX" id="EmU-LT-hoL"/>
-                            <constraint firstItem="LgB-VM-o1t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="e45-sR-REW" secondAttribute="trailing" constant="7" id="JjA-t5-VpO"/>
-                            <constraint firstItem="qeH-W8-lUY" firstAttribute="leading" secondItem="tNE-wl-Rcb" secondAttribute="leading" constant="50" id="K9M-nK-I9y"/>
-                            <constraint firstItem="e45-sR-REW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qeH-W8-lUY" secondAttribute="trailing" constant="7" id="Q0k-1t-jD4"/>
-                            <constraint firstItem="tNE-wl-Rcb" firstAttribute="centerX" secondItem="bm0-Xg-MfK" secondAttribute="centerX" id="Vqr-og-Px6"/>
-                            <constraint firstItem="qeH-W8-lUY" firstAttribute="top" secondItem="tNE-wl-Rcb" secondAttribute="bottom" id="bq3-0i-pUL"/>
-                            <constraint firstItem="LgB-VM-o1t" firstAttribute="top" secondItem="tNE-wl-Rcb" secondAttribute="bottom" id="eng-tQ-R45"/>
-                            <constraint firstItem="tNE-wl-Rcb" firstAttribute="leading" secondItem="fJJ-ig-iQh" secondAttribute="leading" id="gNz-64-OqP"/>
-                            <constraint firstItem="tNE-wl-Rcb" firstAttribute="top" secondItem="fJJ-ig-iQh" secondAttribute="top" id="k6J-I5-NKQ"/>
-                            <constraint firstItem="tNE-wl-Rcb" firstAttribute="trailing" secondItem="fJJ-ig-iQh" secondAttribute="trailing" id="sAg-wn-lAv"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Debug" id="LvW-3I-tqn" userLabel="Test"/>
-                    <connections>
-                        <outlet property="countLabel" destination="e45-sR-REW" id="a4A-BK-lc6"/>
-                        <outlet property="decrementLabel" destination="LgB-VM-o1t" id="Qoi-FI-wCB"/>
-                        <outlet property="incrementLabel" destination="qeH-W8-lUY" id="gKX-z5-I7z"/>
-                        <outlet property="randomizer" destination="tNE-wl-Rcb" id="ojQ-3X-6MK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BXk-Cv-8LC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="744.92753623188412" y="-595.3125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FVD-5w-vpP">
