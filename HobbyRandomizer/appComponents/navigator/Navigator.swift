@@ -14,4 +14,5 @@ protocol Navigator{
     func getCasinoScreen() -> UIViewController
     func getDebugScreen() -> UIViewController
     func getCreateScreen(storage: UserDefaultStorage) -> UIViewController
+    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController
 }

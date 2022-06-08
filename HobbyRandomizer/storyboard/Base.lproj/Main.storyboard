@@ -9,64 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Random View Controller-->
-        <scene sceneID="rzj-OD-HSi">
-            <objects>
-                <viewController id="x1L-Tx-vWr" customClass="RandomViewController" customModule="HobbyRandomizer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DJq-xu-Qfo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEY-Is-dwl" customClass="RandomizerUtil" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="450"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="vCR-XS-iTn"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HE-V7-Gza" customClass="PrettyLabel" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="504" width="314" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="?"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9D-tZ-jBH" customClass="PrettyLabel" customModule="HobbyRandomizer" customModuleProvider="target">
-                                <rect key="frame" x="50" y="544.5" width="314" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="?"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="veO-q3-Aoc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="5HE-V7-Gza" firstAttribute="top" secondItem="UEY-Is-dwl" secondAttribute="bottom" constant="10" id="6Jj-bZ-oJf"/>
-                            <constraint firstItem="m9D-tZ-jBH" firstAttribute="top" secondItem="5HE-V7-Gza" secondAttribute="bottom" constant="20" id="G3H-hD-dw2"/>
-                            <constraint firstItem="UEY-Is-dwl" firstAttribute="trailing" secondItem="veO-q3-Aoc" secondAttribute="trailing" id="Mgu-pN-Xgw"/>
-                            <constraint firstItem="m9D-tZ-jBH" firstAttribute="trailing" secondItem="UEY-Is-dwl" secondAttribute="trailing" constant="-50" id="MpU-Zy-Gau"/>
-                            <constraint firstItem="UEY-Is-dwl" firstAttribute="top" secondItem="veO-q3-Aoc" secondAttribute="top" id="fMb-hz-yCH"/>
-                            <constraint firstItem="UEY-Is-dwl" firstAttribute="leading" secondItem="veO-q3-Aoc" secondAttribute="leading" id="jxa-pJ-g3o"/>
-                            <constraint firstItem="m9D-tZ-jBH" firstAttribute="leading" secondItem="UEY-Is-dwl" secondAttribute="leading" constant="50" id="nOX-O3-jrM"/>
-                            <constraint firstItem="5HE-V7-Gza" firstAttribute="leading" secondItem="UEY-Is-dwl" secondAttribute="leading" constant="50" id="uOu-YE-F4Q"/>
-                            <constraint firstItem="5HE-V7-Gza" firstAttribute="trailing" secondItem="UEY-Is-dwl" secondAttribute="trailing" constant="-50" id="xqa-Kp-VLl"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cQS-1f-RZ4"/>
-                    <connections>
-                        <outlet property="randomizer" destination="UEY-Is-dwl" id="lZh-CN-45K"/>
-                        <outlet property="subtitle" destination="m9D-tZ-jBH" id="Ik6-8m-CLj"/>
-                        <outlet property="titleLabel" destination="5HE-V7-Gza" id="wJF-pX-zbR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dX1-J1-LkU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1711.5942028985507" y="68.973214285714278"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="94V-hA-hXK">
             <objects>

@@ -8,8 +8,6 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
-  
-    
     
 
     func setupInitialViewController(window: UIWindow) {
@@ -51,6 +49,11 @@ class NavigatorImpl: Navigator{
         let viewcontroller = CreateViewController(presenter: presenter)
             presenter.set(view: viewcontroller)
         
+        return viewcontroller
+    }
+    
+    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController {
+        let viewcontroller = RandomizerViewController(models: models)
         return viewcontroller
     }
 }

@@ -29,18 +29,7 @@ class RandItemCell: UITableViewCell {
     func configure(model: RandItemCellModel){
         self.title.text = model.title
         self.subTitle.text = model.subTitle
-        self.icon.setImageColor(color: getColorForType(type: model.type))
-    }
-    
-    private func getColorForType(type: ItemType) -> UIColor{
-        switch type {
-        case .necessary:
-            return UIColor.coolRed!
-        case .freetime:
-            return UIColor.coolGreen!
-        case .workInProgress:
-            return UIColor.coolOrange!
-        }
+        self.icon.setImageColor(color: model.getColorForType())
     }
     
 }
