@@ -8,7 +8,7 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
-    
+  
 
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -54,6 +54,14 @@ class NavigatorImpl: Navigator{
     
     func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController {
         let viewcontroller = RandomizerViewController(models: models)
+        return viewcontroller
+    }
+    
+    func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController {
+        let presenter = ShowPresenter(storage: storage, type: type)
+        let viewcontroller = ShowViewController(presenter: presenter)
+            presenter.set(view: viewcontroller)
+        
         return viewcontroller
     }
 }

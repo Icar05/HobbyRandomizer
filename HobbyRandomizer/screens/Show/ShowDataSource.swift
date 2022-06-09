@@ -13,7 +13,9 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     private var dataSourse: [RandItemCellModel] = []
     
-    
+    func getData() -> [RandItemCellModel]{
+        return self.dataSourse
+    }
     
     func setData(data: [RandItemCellModel]){
         self.dataSourse = data

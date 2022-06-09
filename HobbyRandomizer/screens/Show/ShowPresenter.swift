@@ -27,7 +27,7 @@ public final class ShowPresenter{
     
     func viewDidLoad(){
         let content = storage.getModels()?.filter{$0.type == type} ?? []
-        self.view.onDataLoaded(data: content)
+        self.view.onDataLoaded(data: content, type: type)
     }
     
 }

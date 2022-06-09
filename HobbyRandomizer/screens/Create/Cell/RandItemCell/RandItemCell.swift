@@ -29,7 +29,7 @@ class RandItemCell: UITableViewCell {
     func configure(model: RandItemCellModel){
         self.title.text = model.title
         self.subTitle.text = model.subTitle
-        self.icon.setImageColor(color: model.getColorForType())
+        self.icon.setImageColor(color: model.type.getColorForType())
     }
     
 }

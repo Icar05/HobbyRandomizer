@@ -49,7 +49,7 @@ class RandomizerViewController: UIViewController {
                 self.titleLabel.textColor = randModel.color
                 self.subtitle.text = model.subTitle
                 self.status.setImageColor(color: randModel.color )
-                self.icon.setImageColor(color: model.getColorForType())
+                self.icon.setImageColor(color: model.type.getColorForType())
                 self.showAlert(model: model)
             }
         }

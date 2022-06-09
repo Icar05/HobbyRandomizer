@@ -15,4 +15,5 @@ protocol Navigator{
     func getDebugScreen() -> UIViewController
     func getCreateScreen(storage: UserDefaultStorage) -> UIViewController
     func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController
+    func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
 }

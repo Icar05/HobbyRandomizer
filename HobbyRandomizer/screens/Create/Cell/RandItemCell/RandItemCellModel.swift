@@ -17,10 +17,10 @@ struct RandItemCellModel: Codable{
     var type: ItemType
 }
 
-extension RandItemCellModel{
+extension ItemType{
     
     func getColorForType() -> UIColor{
-        switch self.type {
+        switch self {
         case .necessary:
             return UIColor.coolRed!
         case .freetime:

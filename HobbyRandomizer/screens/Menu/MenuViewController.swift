@@ -72,14 +72,20 @@ extension MenuViewController: MenuDelegate{
     
     
     func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage) -> UIViewController?{
-        if(item == .Casino){
-            return navigator.getCasinoScreen()
-        }else if(item == .Test){
-            return navigator.getDebugScreen()
-        }else if(item == .Create){
-            return navigator.getCreateScreen(storage: storage)
-        }
         
-        return nil
+        switch item {
+        case .Casino:
+            return navigator.getCasinoScreen()
+        case .Test:
+            return navigator.getDebugScreen()
+        case .Create:
+            return navigator.getCreateScreen(storage: storage)
+        case .Todo:
+            return navigator.getShowScreen(storage: storage, type: .necessary)
+        case .Hobby:
+            return navigator.getShowScreen(storage: storage, type: .freetime)
+        case .WorkInProgress:
+            return navigator.getShowScreen(storage: storage, type: .workInProgress)
+        }
     }
 }
