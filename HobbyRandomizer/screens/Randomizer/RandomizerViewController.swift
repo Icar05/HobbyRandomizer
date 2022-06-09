@@ -11,15 +11,19 @@ class RandomizerViewController: UIViewController {
     
     
     
+    fileprivate var models = [RandItemCellModel]()
+    
     @IBOutlet weak var status: UIImageView!
     
     @IBOutlet weak var randomizer: RandomizerUtil!
     
-    @IBOutlet weak var subtitle: PrettyLabel!
+    @IBOutlet weak var subtitle: UILabel!
     
-    @IBOutlet weak var titleLabel: PrettyLabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    fileprivate var models = [RandItemCellModel]()
+    @IBOutlet weak var icon: UIImageView!
+    
+   
     
     
     
@@ -37,17 +41,29 @@ class RandomizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.randomizer.delegate = { (model) in
+        self.setupText()
+        self.randomizer.delegate = { (randModel) in
             if(self.models.count > 0){
-                let model = self.models[model.index]
-                self.titleLabel.labelText = model.title
-                self.subtitle.labelText = model.subTitle
-                self.status.setImageColor(color: model.getColorForType())
+                let model = self.models[randModel.index]
+                self.titleLabel.text = model.title
+                self.titleLabel.textColor = randModel.color
+                self.subtitle.text = model.subTitle
+                self.status.setImageColor(color: randModel.color )
+                self.icon.setImageColor(color: model.getColorForType())
                 self.showAlert(model: model)
             }
         }
         
         self.randomizer.setDataSource(count: models.count)
+    }
+    
+    private func setupText(){
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: UIColor.black,
+            .foregroundColor: UIColor.white,
+            .strokeWidth: -3.0
+        ]
+        self.titleLabel.attributedText = NSAttributedString(string: "Title", attributes: strokeTextAttributes)
     }
     
 }
