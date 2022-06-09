@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,6 +24,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-Af-foZ" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="O9Q-WU-o5a"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-zg-VAu" customClass="RandomizerUtil" customModule="HobbyRandomizer" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="450"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,19 +65,32 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-fg-vxB" userLabel="BottomSeparator">
+                    <rect key="frame" x="0.0" y="540" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="INv-Jt-vCS"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
+                <constraint firstItem="dQ8-fg-vxB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="086-26-hmC"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4Sk-88-htE"/>
                 <constraint firstItem="seg-gC-bTM" firstAttribute="top" secondItem="q4h-i4-PTH" secondAttribute="top" id="7iS-H8-mQx"/>
+                <constraint firstItem="dQ8-fg-vxB" firstAttribute="top" secondItem="q4h-i4-PTH" secondAttribute="bottom" constant="15" id="Es7-B4-Cnv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dQ8-fg-vxB" secondAttribute="trailing" id="FeV-a2-3E0"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="leading" secondItem="seg-gC-bTM" secondAttribute="trailing" constant="50" id="L4s-SF-tSm"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Syn-wG-Lum"/>
+                <constraint firstItem="RAW-Af-foZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y6J-1m-dCY"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aNK-e2-7ug"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eZG-5U-W6V"/>
                 <constraint firstItem="4d5-JO-if2" firstAttribute="top" secondItem="q4h-i4-PTH" secondAttribute="top" id="hY3-Lh-RJi"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="top" secondItem="2lN-zg-VAu" secondAttribute="bottom" constant="10" id="njt-5i-WRV"/>
+                <constraint firstItem="RAW-Af-foZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q6F-BW-IdD"/>
                 <constraint firstItem="4d5-JO-if2" firstAttribute="leading" secondItem="q4h-i4-PTH" secondAttribute="trailing" constant="50" id="vWP-uD-n3x"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RAW-Af-foZ" secondAttribute="trailing" id="x6z-jf-BQa"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
@@ -78,5 +99,8 @@
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

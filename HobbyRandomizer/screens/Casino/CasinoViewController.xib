@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,6 +24,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nd-7z-YdX" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="qVx-RZ-krs"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-wu-tKg" customClass="RouleteView" customModule="HobbyRandomizer" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +40,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-kO-i7D" userLabel="TopSeparator">
                     <rect key="frame" x="0.0" y="454" width="414" height="1"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Ire-PQ-X1m"/>
                     </constraints>
@@ -40,9 +48,16 @@
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AuJ-HS-qkQ" customClass="SilintUIPickerView">
                     <rect key="frame" x="0.0" y="455" width="414" height="216"/>
                 </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uM6-hh-tbR" userLabel="BottomView">
+                    <rect key="frame" x="0.0" y="454" width="414" height="1"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="m8u-Yn-W9f"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-ui-Fp2" userLabel="BottomSeparator">
                     <rect key="frame" x="0.0" y="671" width="414" height="1"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="jKZ-zf-WEn"/>
                     </constraints>
@@ -52,15 +67,21 @@
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0R-ui-Fp2" secondAttribute="trailing" id="F0I-FJ-h3P"/>
+                <constraint firstItem="uM6-hh-tbR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Hcg-XK-myw"/>
                 <constraint firstItem="AuJ-HS-qkQ" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="I2e-t9-E8Q"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="top" secondItem="AuJ-HS-qkQ" secondAttribute="bottom" id="Jxm-8v-ODf"/>
                 <constraint firstItem="lcj-kO-i7D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="NLz-NU-WLD"/>
                 <constraint firstItem="AuJ-HS-qkQ" firstAttribute="top" secondItem="lcj-kO-i7D" secondAttribute="bottom" id="TPZ-8P-kPx"/>
                 <constraint firstItem="AuJ-HS-qkQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UMS-rJ-C2h"/>
+                <constraint firstItem="6nd-7z-YdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vvk-4D-tEK"/>
+                <constraint firstItem="6nd-7z-YdX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X2V-Nb-Jey"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ddM-KI-EiJ"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fuK-Lk-6FU"/>
+                <constraint firstItem="uM6-hh-tbR" firstAttribute="top" secondItem="lcj-kO-i7D" secondAttribute="top" id="g5t-f4-nxi"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gb5-kV-b8B"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6nd-7z-YdX" secondAttribute="trailing" id="guI-wn-ltZ"/>
                 <constraint firstItem="lcj-kO-i7D" firstAttribute="top" secondItem="Wxx-wu-tKg" secondAttribute="bottom" constant="10" id="jMi-5R-1oU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uM6-hh-tbR" secondAttribute="trailing" id="pga-1A-PWc"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="wNE-GZ-ZvK"/>
                 <constraint firstItem="lcj-kO-i7D" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ySL-45-icA"/>
             </constraints>
@@ -71,5 +92,8 @@
         <namedColor name="MainColor">
             <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
