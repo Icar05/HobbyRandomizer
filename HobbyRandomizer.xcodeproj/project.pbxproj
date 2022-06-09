@@ -58,6 +58,10 @@
 		EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */; };
 		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
 		EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */; };
+		EDE5483828517A570018A75B /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483628517A570018A75B /* ShowViewController.swift */; };
+		EDE5483928517A570018A75B /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE5483728517A570018A75B /* ShowViewController.xib */; };
+		EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483A28517A990018A75B /* ShowPresenter.swift */; };
+		EDE5483D28517AD30018A75B /* ShowDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483C28517AD30018A75B /* ShowDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +119,10 @@
 		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
 		EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCalculateUtil.swift; sourceTree = "<group>"; };
+		EDE5483628517A570018A75B /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		EDE5483728517A570018A75B /* ShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
+		EDE5483A28517A990018A75B /* ShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPresenter.swift; sourceTree = "<group>"; };
+		EDE5483C28517AD30018A75B /* ShowDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				EDE5483528517A370018A75B /* Show */,
 				ED880FDE28515C9400DFD78F /* Randomizer */,
 				ED880FC4285114FC00DFD78F /* Create */,
 				ED880FBF28510ED100DFD78F /* Debug */,
@@ -404,6 +413,17 @@
 			path = selector;
 			sourceTree = "<group>";
 		};
+		EDE5483528517A370018A75B /* Show */ = {
+			isa = PBXGroup;
+			children = (
+				EDE5483628517A570018A75B /* ShowViewController.swift */,
+				EDE5483728517A570018A75B /* ShowViewController.xib */,
+				EDE5483A28517A990018A75B /* ShowPresenter.swift */,
+				EDE5483C28517AD30018A75B /* ShowDataSource.swift */,
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,6 +490,7 @@
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
+				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
@@ -489,6 +510,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */,
+				EDE5483D28517AD30018A75B /* ShowDataSource.swift in Sources */,
+				EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */,
 				ED5A6C5A284FD4D00028BEED /* Navigator.swift in Sources */,
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
@@ -511,6 +534,7 @@
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
 				ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */,
+				EDE5483828517A570018A75B /* ShowViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
