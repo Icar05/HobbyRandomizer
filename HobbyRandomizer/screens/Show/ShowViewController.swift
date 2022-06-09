@@ -55,6 +55,7 @@ public final class ShowViewController: UIViewController {
         self.dataSource.setData(data: data)
         self.tableView.reloadData()
         self.label.backgroundColor = type.getColorForType()
+        self.imageView.image = type.getImage()
     }
     
     private func navigateToRandom(){

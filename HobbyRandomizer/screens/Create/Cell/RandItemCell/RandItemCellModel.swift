@@ -19,6 +19,17 @@ struct RandItemCellModel: Codable{
 
 extension ItemType{
     
+    func getImage() -> UIImage{
+        switch self {
+        case .necessary:
+            return UIImage(source: "work", bundle: .main)!
+        case .freetime:
+            return UIImage(source: "hobby", bundle: .main)!
+        case .workInProgress:
+            return UIImage(source: "progress", bundle: .main)!
+        }
+    }
+    
     func getColorForType() -> UIColor{
         switch self {
         case .necessary:
