@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UtilView" customModule="HobbyRandomizer" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="4Qg-i3-RPF"/>
+                <outlet property="countLabel" destination="mck-6P-vwr" id="wWU-VS-DBJ"/>
+                <outlet property="randomizer" destination="Pf4-Mk-bFE" id="nwE-5x-Ncj"/>
+                <outlet property="selectorView" destination="0dJ-fL-Rqh" id="30J-Mu-529"/>
+                <outlet property="start" destination="ISM-BS-Utl" id="bUO-xr-Zy3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-Mk-bFE" customClass="RandomizerView" customModule="HobbyRandomizer" customModuleProvider="target">
+                    <rect key="frame" x="50" y="0.0" width="300" height="300"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dJ-fL-Rqh" customClass="SelectorView" customModule="HobbyRandomizer" customModuleProvider="target">
+                    <rect key="frame" x="50" y="0.0" width="300" height="400"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISM-BS-Utl">
+                    <rect key="frame" x="183" y="444" width="34" height="30"/>
+                    <state key="normal" title="Start"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mck-6P-vwr">
+                    <rect key="frame" x="50" y="449" width="46.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpZ-PA-C4q">
+                    <rect key="frame" x="50" y="493" width="59" height="30"/>
+                    <state key="normal" title="Increase"/>
+                    <connections>
+                        <action selector="inCreaseClick:" destination="-1" eventType="touchUpInside" id="NrE-bj-98Q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO4-eW-stq">
+                    <rect key="frame" x="304" y="493" width="65" height="30"/>
+                    <state key="normal" title="Decrease"/>
+                    <connections>
+                        <action selector="decreaseClick:" destination="-1" eventType="touchUpInside" id="NJc-DI-BPu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mck-6P-vwr" firstAttribute="top" secondItem="0dJ-fL-Rqh" secondAttribute="bottom" constant="49" id="2nh-PE-PBC"/>
+                <constraint firstAttribute="bottom" secondItem="Pf4-Mk-bFE" secondAttribute="bottom" constant="300" id="39D-OU-Mc4"/>
+                <constraint firstItem="Pf4-Mk-bFE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="4ge-qE-Djn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eO4-eW-stq" secondAttribute="trailing" constant="31" id="6ZN-gg-vrs"/>
+                <constraint firstItem="0dJ-fL-Rqh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="722-oq-M6f"/>
+                <constraint firstItem="mck-6P-vwr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="96u-lJ-jru"/>
+                <constraint firstItem="Pf4-Mk-bFE" firstAttribute="centerX" secondItem="ISM-BS-Utl" secondAttribute="centerX" id="IKF-aQ-b2g"/>
+                <constraint firstItem="NpZ-PA-C4q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="KJT-R4-BRN"/>
+                <constraint firstItem="0dJ-fL-Rqh" firstAttribute="centerX" secondItem="Pf4-Mk-bFE" secondAttribute="centerX" id="LxL-wn-iYS"/>
+                <constraint firstItem="eO4-eW-stq" firstAttribute="top" secondItem="0dJ-fL-Rqh" secondAttribute="bottom" constant="93" id="UBd-vZ-ffj"/>
+                <constraint firstItem="0dJ-fL-Rqh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZuJ-Gi-NAy"/>
+                <constraint firstItem="Pf4-Mk-bFE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cCT-ir-PhH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Pf4-Mk-bFE" secondAttribute="trailing" constant="50" id="nTs-Q8-fr7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ISM-BS-Utl" secondAttribute="bottom" constant="126" id="t3z-lA-Yl9"/>
+                <constraint firstItem="NpZ-PA-C4q" firstAttribute="top" secondItem="mck-6P-vwr" secondAttribute="bottom" constant="23" id="yHw-aC-Zc6"/>
+                <constraint firstItem="0dJ-fL-Rqh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-100" id="yRt-1P-Z9a"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="105.79710144927537" y="47.544642857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
