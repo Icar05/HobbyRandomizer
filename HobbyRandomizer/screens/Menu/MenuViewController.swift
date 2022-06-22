@@ -61,8 +61,9 @@ extension MenuViewController: MenuDelegate{
         
         let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
         let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
+        let fileUtil = (UIApplication.shared.delegate as! AppDelegate).getFileUtil()
         
-        guard let destination = getController(item: item, navigator: navigator, storage: storage) else {
+        guard let destination = getController(item: item, navigator: navigator, storage: storage, fileUtil: fileUtil) else {
             print("not implemented: \(item)")
             return
         }
@@ -71,7 +72,7 @@ extension MenuViewController: MenuDelegate{
     }
     
     
-    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage) -> UIViewController?{
+    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: TextWriterUtil) -> UIViewController?{
         
         switch item {
         case .Casino:
@@ -86,6 +87,8 @@ extension MenuViewController: MenuDelegate{
             return navigator.getShowScreen(storage: storage, type: .freetime)
         case .WorkInProgress:
             return navigator.getShowScreen(storage: storage, type: .workInProgress)
+        case .Files:
+            return navigator.getFilesScreen(filesUtil: fileUtil)
         }
     }
 }

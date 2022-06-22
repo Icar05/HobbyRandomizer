@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let storage: UserDefaultStorage = UserDefaultStorage()
     
+    private let fileUtil: TextWriterUtil = TextWriterUtil()
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -33,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func getStorage() -> UserDefaultStorage{
         return self.storage
+    }
+    
+    func getFileUtil() -> TextWriterUtil{
+        return fileUtil
     }
 
 }

@@ -9,6 +9,8 @@ import Foundation
 
 class NavigatorImpl: Navigator{
   
+    
+  
 
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -60,6 +62,15 @@ class NavigatorImpl: Navigator{
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController {
         let presenter = ShowPresenter(storage: storage, type: type)
         let viewcontroller = ShowViewController(presenter: presenter)
+            presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    
+    func getFilesScreen(filesUtil: TextWriterUtil) -> UIViewController {
+        let presenter = FilesPresenter(filesUtil: filesUtil)
+        let viewcontroller = FilesViewController(presenter: presenter)
             presenter.set(view: viewcontroller)
         
         return viewcontroller

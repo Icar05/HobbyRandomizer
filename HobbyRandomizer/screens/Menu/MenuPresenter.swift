@@ -29,6 +29,7 @@ public final class MenuPresenter{
             MenuCellModel(icon:  UIImage(systemName: "filemenu.and.cursorarrow")!, type: .Todo),
             MenuCellModel(icon:  UIImage(systemName: "chart.line.uptrend.xyaxis")!, type: .WorkInProgress),
             MenuCellModel(icon:  UIImage(systemName: "gamecontroller.fill")!, type: .Hobby),
+            MenuCellModel(icon:  UIImage(systemName: "folder")!, type: .Files)
         ]
     }
     
