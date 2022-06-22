@@ -39,7 +39,7 @@
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
 		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
-		ED7918982863AE780041D407 /* TextWriterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918972863AE780041D407 /* TextWriterUtil.swift */; };
+		ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918972863AE780041D407 /* FileWriterUtil.swift */; };
 		ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79189A2863C07E0041D407 /* FilesViewController.swift */; };
 		ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED79189B2863C07E0041D407 /* FilesViewController.xib */; };
 		ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79189E2863C08F0041D407 /* FilesPresenter.swift */; };
@@ -47,6 +47,7 @@
 		ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918A42863C1EB0041D407 /* DisplayFileCell.swift */; };
 		ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */; };
 		ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */; };
+		ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AA2863D1CD0041D407 /* TestUtil.swift */; };
 		ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC028510EEA00DFD78F /* DebugViewController.swift */; };
 		ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC128510EEA00DFD78F /* DebugViewController.xib */; };
 		ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC52851151C00DFD78F /* CreateViewController.swift */; };
@@ -109,7 +110,7 @@
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HobbyRandomizer/appComponents/Info.plist; sourceTree = SOURCE_ROOT; };
 		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
-		ED7918972863AE780041D407 /* TextWriterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWriterUtil.swift; sourceTree = "<group>"; };
+		ED7918972863AE780041D407 /* FileWriterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriterUtil.swift; sourceTree = "<group>"; };
 		ED79189A2863C07E0041D407 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		ED79189B2863C07E0041D407 /* FilesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesViewController.xib; sourceTree = "<group>"; };
 		ED79189E2863C08F0041D407 /* FilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPresenter.swift; sourceTree = "<group>"; };
@@ -117,6 +118,7 @@
 		ED7918A42863C1EB0041D407 /* DisplayFileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFileCell.swift; sourceTree = "<group>"; };
 		ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayFileCell.xib; sourceTree = "<group>"; };
 		ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFileCellModel.swift; sourceTree = "<group>"; };
+		ED7918AA2863D1CD0041D407 /* TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
 		ED880FC028510EEA00DFD78F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		ED880FC128510EEA00DFD78F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugViewController.xib; sourceTree = "<group>"; };
 		ED880FC52851151C00DFD78F /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -168,7 +170,8 @@
 				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
 				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
 				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
-				ED7918972863AE780041D407 /* TextWriterUtil.swift */,
+				ED7918972863AE780041D407 /* FileWriterUtil.swift */,
+				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
 				ED364269271757090083D578 /* CreatePresenter.swift in Sources */,
+				ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
@@ -606,7 +610,7 @@
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,
-				ED7918982863AE780041D407 /* TextWriterUtil.swift in Sources */,
+				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

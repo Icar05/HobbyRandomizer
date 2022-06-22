@@ -11,7 +11,7 @@ public final class FilesPresenter{
     
     
     
-    private let filesUtil: TextWriterUtil
+    private let filesUtil: FileWriterUtil
     
     unowned var view: FilesViewController!
     
@@ -19,7 +19,7 @@ public final class FilesPresenter{
         self.view = view
     }
     
-    init(filesUtil: TextWriterUtil){
+    init(filesUtil: FileWriterUtil){
         self.filesUtil = filesUtil
     }
     
@@ -29,8 +29,14 @@ public final class FilesPresenter{
     }
     
     func parseFileData(fileName: String){
-        let content = filesUtil.readFile(fileName: fileName)
-        print("fileName: \(fileName), content: \(content)")
+        
+        guard let models = filesUtil.importModels(fileName: fileName) else{
+            let content = filesUtil.readFile(fileName: fileName)
+            view.displayText(data: content)
+            return
+        }
+       
+        view.displayModels(data: models)
     }
     
 }

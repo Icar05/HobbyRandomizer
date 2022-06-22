@@ -47,6 +47,17 @@ public final class FilesViewController: UIViewController {
         self.dataSource.setData(data: data.map{DisplayFileCellModel(fileName: $0)})
         self.tableView.reloadData()
     }
+    
+    
+    func displayModels(data: [RandItemCellModel]){
+        data.forEach{
+            print("display model -> \($0)")
+        }
+    }
+    
+    func displayText(data: String){
+        print("display text -> \(data)")
+    }
 
     private func registerCells(){
         let randId = self.dataSource.getIdentifier()

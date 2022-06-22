@@ -16,5 +16,5 @@ protocol Navigator{
     func getCreateScreen(storage: UserDefaultStorage) -> UIViewController
     func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
-    func getFilesScreen(filesUtil: TextWriterUtil) -> UIViewController
+    func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController
 }

@@ -68,7 +68,7 @@ class NavigatorImpl: Navigator{
     }
     
     
-    func getFilesScreen(filesUtil: TextWriterUtil) -> UIViewController {
+    func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController {
         let presenter = FilesPresenter(filesUtil: filesUtil)
         let viewcontroller = FilesViewController(presenter: presenter)
             presenter.set(view: viewcontroller)

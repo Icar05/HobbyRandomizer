@@ -72,7 +72,7 @@ extension MenuViewController: MenuDelegate{
     }
     
     
-    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: TextWriterUtil) -> UIViewController?{
+    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController?{
         
         switch item {
         case .Casino:

@@ -14,7 +14,7 @@ import Foundation
  export notes in text
  import notes in text
  */
-class TextWriterUtil{
+class FileWriterUtil{
     
     
     
@@ -22,24 +22,6 @@ class TextWriterUtil{
     
     private let fileName =  "test.txt"
     
-
-    
-    func writeTest(text: String){
-        
-        guard let fileURL = getFileUrl(fileName: fileName) else {
-            printLog("file url is nil !")
-            return
-        }
-       
-        
-        do {
-            try text.write(to: fileURL, atomically: false, encoding: .utf8)
-            printLog("Write: success!")
-        }
-        catch let error {
-            printLog("Error writting: \(error.localizedDescription)")
-        }
-    }
     
     func readFile(fileName: String) -> String{
 
@@ -58,6 +40,41 @@ class TextWriterUtil{
         }
     }
     
+    func writeText(fileName: String, text: String){
+        
+        guard let fileURL = getFileUrl(fileName: fileName) else {
+            printLog("file url is nil !")
+            return
+        }
+        
+        do {
+            try text.write(to: fileURL, atomically: false, encoding: .utf8)
+            printLog("Write: success!")
+        }
+        catch let error {
+            printLog("Error writting: \(error.localizedDescription)")
+        }
+    }
+    
+    func importModels(fileName: String) -> [RandItemCellModel]?{
+        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
+            printLog("can't read data from string ...")
+            return nil
+        }
+        return decodeData(data: data)
+    }
+    
+    func exportModels(fileName: String, models: [RandItemCellModel]){
+        
+        guard let data = encodeData(models: models),
+              let text = String(data: data, encoding: String.Encoding.utf8) else{
+            printLog("trouble with encoding ...")
+            return
+        }
+       
+        self.writeText(fileName: fileName, text: text)
+    }
+    
     func readAllFilenames() -> [String]{
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             printLog("DocumentUrl nil")
@@ -72,6 +89,24 @@ class TextWriterUtil{
             printLog("Error while read directories: \(error.localizedDescription)")
             return []
         }
+    }
+    
+    private func decodeData(data: Data) -> [RandItemCellModel]?{
+        do {
+            return try JSONDecoder().decode([RandItemCellModel].self, from: data)
+        } catch let error{
+            printLog("Error decode data:  (\(error))")
+        }
+        return nil
+    }
+    
+    private func encodeData(models: [RandItemCellModel]) -> Data?{
+        do {
+            return try JSONEncoder().encode(models)
+        } catch let error {
+            printLog("Error encode data:  (\(error))")
+        }
+        return nil
     }
     
     private func getFileUrl(fileName: String) -> URL? {
