@@ -36,6 +36,7 @@ public final class FilesViewController: UIViewController {
         self.tableView.delegate = dataSource
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
+        self.dataSource.delegate = self
         self.registerCells()
 
         self.presenter.viewDidLoad()
@@ -43,7 +44,7 @@ public final class FilesViewController: UIViewController {
     
     
     func onDataLoaded(data: [String]){
-        self.dataSource.setData(data: data.map{DisplayFileCellModel(title: $0)})
+        self.dataSource.setData(data: data.map{DisplayFileCellModel(fileName: $0)})
         self.tableView.reloadData()
     }
 
@@ -55,4 +56,13 @@ public final class FilesViewController: UIViewController {
     }
 
 
+}
+
+extension FilesViewController: FileDataSourceDelegate{
+    
+    func onItemSelected(model: DisplayFileCellModel) {
+        presenter.parseFileData(fileName: model.fileName)
+    }
+    
+    
 }

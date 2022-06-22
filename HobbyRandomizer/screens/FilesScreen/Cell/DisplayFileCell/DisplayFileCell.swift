@@ -21,7 +21,7 @@ class DisplayFileCell: UITableViewCell {
     }
     
     func configure(model: DisplayFileCellModel){
-        self.title.text = model.title
+        self.title.text = model.fileName
     }
     
 }

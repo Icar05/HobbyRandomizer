@@ -26,7 +26,7 @@ class TextWriterUtil{
     
     func writeTest(text: String){
         
-        guard let fileURL = getFileUrl() else {
+        guard let fileURL = getFileUrl(fileName: fileName) else {
             printLog("file url is nil !")
             return
         }
@@ -41,20 +41,20 @@ class TextWriterUtil{
         }
     }
     
-    func readTest(){
-        
-        guard let fileURL = getFileUrl() else {
+    func readFile(fileName: String) -> String{
+
+        guard let fileURL = getFileUrl(fileName: fileName) else {
             printLog("file url is nil !")
-            return
+            return ""
         }
         
         do {
-            let text2 = try String(contentsOf: fileURL, encoding: .utf8)
-            printLog("Read success: Text: \(text2)")
+            return  try String(contentsOf: fileURL, encoding: .utf8)
         }
         
         catch let error{
             printLog("Error reading: \(error.localizedDescription)")
+            return ""
         }
     }
     
@@ -74,7 +74,7 @@ class TextWriterUtil{
         }
     }
     
-    private func getFileUrl() -> URL? {
+    private func getFileUrl(fileName: String) -> URL? {
         guard let dir =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             return nil
         }

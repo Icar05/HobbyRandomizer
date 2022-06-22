@@ -8,5 +8,5 @@
 import Foundation
 
 struct DisplayFileCellModel{
-    var title: String
+    var fileName: String
 }

@@ -7,10 +7,16 @@
 
 import Foundation
 
+protocol FileDataSourceDelegate: NSObject{
+    func onItemSelected(model: DisplayFileCellModel)
+}
+
 class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     private var dataSourse: [DisplayFileCellModel] = []
+    
+    weak var delegate: FileDataSourceDelegate? = nil
     
     func setData(data: [DisplayFileCellModel]){
         self.dataSourse = data
@@ -27,12 +33,16 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! DisplayFileCell
         cell.configure(model: self.dataSourse[indexPath.row])
         cell.modify()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.dataSourse[indexPath.row]
+        self.delegate?.onItemSelected(model: model)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{

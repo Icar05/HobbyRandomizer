@@ -28,4 +28,9 @@ public final class FilesPresenter{
         self.view.onDataLoaded(data: data)
     }
     
+    func parseFileData(fileName: String){
+        let content = filesUtil.readFile(fileName: fileName)
+        print("fileName: \(fileName), content: \(content)")
+    }
+    
 }
