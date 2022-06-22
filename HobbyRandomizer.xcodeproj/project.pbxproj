@@ -48,6 +48,9 @@
 		ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */; };
 		ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */; };
 		ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AA2863D1CD0041D407 /* TestUtil.swift */; };
+		ED7918AF2863DDBA0041D407 /* DisplayDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */; };
+		ED7918B02863DDBA0041D407 /* DisplayDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */; };
+		ED7918B22863DDCC0041D407 /* DisplayDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */; };
 		ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC028510EEA00DFD78F /* DebugViewController.swift */; };
 		ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC128510EEA00DFD78F /* DebugViewController.xib */; };
 		ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC52851151C00DFD78F /* CreateViewController.swift */; };
@@ -119,6 +122,9 @@
 		ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayFileCell.xib; sourceTree = "<group>"; };
 		ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFileCellModel.swift; sourceTree = "<group>"; };
 		ED7918AA2863D1CD0041D407 /* TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
+		ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataViewController.swift; sourceTree = "<group>"; };
+		ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayDataViewController.xib; sourceTree = "<group>"; };
+		ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataPresenter.swift; sourceTree = "<group>"; };
 		ED880FC028510EEA00DFD78F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		ED880FC128510EEA00DFD78F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugViewController.xib; sourceTree = "<group>"; };
 		ED880FC52851151C00DFD78F /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -219,7 +225,8 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				ED7918992863C0450041D407 /* FilesScreen */,
+				ED7918AC2863DD760041D407 /* Displaydata */,
+				ED7918992863C0450041D407 /* Files */,
 				EDE5483528517A370018A75B /* Show */,
 				ED880FDE28515C9400DFD78F /* Randomizer */,
 				ED880FC4285114FC00DFD78F /* Create */,
@@ -315,7 +322,7 @@
 			path = view;
 			sourceTree = "<group>";
 		};
-		ED7918992863C0450041D407 /* FilesScreen */ = {
+		ED7918992863C0450041D407 /* Files */ = {
 			isa = PBXGroup;
 			children = (
 				ED7918A02863C09B0041D407 /* Cell */,
@@ -324,7 +331,7 @@
 				ED79189E2863C08F0041D407 /* FilesPresenter.swift */,
 				ED7918A22863C1030041D407 /* FilesDataSource.swift */,
 			);
-			path = FilesScreen;
+			path = Files;
 			sourceTree = "<group>";
 		};
 		ED7918A02863C09B0041D407 /* Cell */ = {
@@ -343,6 +350,16 @@
 				ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */,
 			);
 			path = DisplayFileCell;
+			sourceTree = "<group>";
+		};
+		ED7918AC2863DD760041D407 /* Displaydata */ = {
+			isa = PBXGroup;
+			children = (
+				ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */,
+				ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */,
+				ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */,
+			);
+			path = Displaydata;
 			sourceTree = "<group>";
 		};
 		ED880FBF28510ED100DFD78F /* Debug */ = {
@@ -545,6 +562,7 @@
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
+				ED7918B02863DDBA0041D407 /* DisplayDataViewController.xib in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
@@ -575,8 +593,10 @@
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
+				ED7918AF2863DDBA0041D407 /* DisplayDataViewController.swift in Sources */,
 				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
+				ED7918B22863DDCC0041D407 /* DisplayDataPresenter.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,

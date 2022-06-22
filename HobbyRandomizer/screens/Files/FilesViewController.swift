@@ -50,13 +50,17 @@ public final class FilesViewController: UIViewController {
     
     
     func displayModels(data: [RandItemCellModel]){
-        data.forEach{
-            print("display model -> \($0)")
-        }
+        let controller = getNavigator().getDisplayDataScreen(data: data)
+        getNavigator().navigate(start: self, destination: controller)
     }
     
     func displayText(data: String){
-        print("display text -> \(data)")
+        let controller = getNavigator().getDisplayDataScreen(data: data)
+        getNavigator().navigate(start: self, destination: controller)
+    }
+    
+    private func getNavigator() -> Navigator{
+        return (UIApplication.shared.delegate as! AppDelegate).getNavigator()
     }
 
     private func registerCells(){

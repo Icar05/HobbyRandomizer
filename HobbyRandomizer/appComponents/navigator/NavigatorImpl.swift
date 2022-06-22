@@ -8,10 +8,8 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
-  
+   
     
-  
-
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
         window.makeKeyAndVisible()
@@ -71,6 +69,23 @@ class NavigatorImpl: Navigator{
     func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController {
         let presenter = FilesPresenter(filesUtil: filesUtil)
         let viewcontroller = FilesViewController(presenter: presenter)
+            presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    
+    func getDisplayDataScreen(data: String) -> UIViewController {
+        let presenter = DisplayDataPresenter(data: data)
+        let viewcontroller = DisplayDataViewController(presenter: presenter)
+            presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    func getDisplayDataScreen(data: [RandItemCellModel]) -> UIViewController {
+        let presenter = DisplayDataPresenter(data: data)
+        let viewcontroller = DisplayDataViewController(presenter: presenter)
             presenter.set(view: viewcontroller)
         
         return viewcontroller
