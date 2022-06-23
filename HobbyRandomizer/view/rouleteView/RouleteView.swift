@@ -23,9 +23,7 @@ class RouleteView:  UIView {
     @IBOutlet weak var casinoSelectorView: CasinoSelectorView!
     
     var targetIndex = -1
-    
-    var shouldCleanTargetIndex = false
-    
+        
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -69,9 +67,7 @@ class RouleteView:  UIView {
         
         if(self.targetIndex != -1){
             self.casinoView.rotate(index: targetIndex)
-            if(shouldCleanTargetIndex){
-                self.clearTargetIndex()
-            }
+            self.clearTargetIndex()
             return
         }
         

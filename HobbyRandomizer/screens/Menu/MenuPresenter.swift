@@ -33,26 +33,26 @@ public final class MenuPresenter{
 //                type: .Test,
 //                title: Translations.Menu.itemTest
 //            ),
-//            MenuCellModel(
-//                icon:  UIImage(systemName: "suit.spade.fill")!,
-//                type: .Casino,
-//                title: Translations.Menu.itemCasino
-//            ),
+            MenuCellModel(
+                icon:  UIImage(systemName: "suit.spade.fill")!,
+                type: .Casino,
+                title: Translations.Menu.itemCasino
+            ),
             MenuCellModel(
                 icon:  UIImage(systemName: "filemenu.and.cursorarrow")!,
                 type: .Todo,
                 title: Translations.Menu.itemTodo
             ),
-//            MenuCellModel(
-//                icon:  UIImage(systemName: "chart.line.uptrend.xyaxis")!,
-//                type: .WorkInProgress,
-//                title: Translations.Menu.itemWorkInProgress
-//            ),
-//            MenuCellModel(
-//                icon:  UIImage(systemName: "gamecontroller.fill")!,
-//                type: .Hobby,
-//                title: Translations.Menu.itemHobby
-//            ),
+            MenuCellModel(
+                icon:  UIImage(systemName: "chart.line.uptrend.xyaxis")!,
+                type: .WorkInProgress,
+                title: Translations.Menu.itemWorkInProgress
+            ),
+            MenuCellModel(
+                icon:  UIImage(systemName: "gamecontroller.fill")!,
+                type: .Hobby,
+                title: Translations.Menu.itemHobby
+            ),
 //            MenuCellModel(
 //                icon:  UIImage(systemName: "folder")!,
 //                type: .Files,

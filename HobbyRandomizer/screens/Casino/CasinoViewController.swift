@@ -8,22 +8,19 @@
 import UIKit
 
 class CasinoViewController: UIViewController {
-
+    
     
     fileprivate var datasourse = [Int]()
     
-    fileprivate var pickerShown = false
-    
     fileprivate var currentSelectedIndex = 0
+    
+    @IBOutlet weak var doneButton: LabelWithCallBack!
     
     @IBOutlet weak var picker: SilintUIPickerView!
     
     @IBOutlet weak var rouleteView: RouleteView!
     
-    @IBOutlet weak var topView: UIView!
-    
-    @IBOutlet weak var bottomView: UIView!
-    
+    @IBOutlet weak var hiddenView: UIView!
     
     
     @available(iOS, unavailable)
@@ -40,7 +37,7 @@ class CasinoViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.changePickerVisibility(visible: self.pickerShown)
+        self.hiddenView.alpha = 0.0
         self.datasourse = rouleteView.getDataSource()
         self.picker.dataSource = self
         self.picker.delegate = self
@@ -50,30 +47,22 @@ class CasinoViewController: UIViewController {
         rouleteView.isUserInteractionEnabled = true
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(CasinoViewController.handleTap(_:)))
-            tapGR.delegate = self
-            tapGR.numberOfTapsRequired = 3
+        tapGR.delegate = self
+        tapGR.numberOfTapsRequired = 3
         rouleteView.addGestureRecognizer(tapGR)
         
-    }
-
-    fileprivate func toggleShowPicker(){
-        self.pickerShown = !self.pickerShown
-        self.changePickerVisibility(visible: self.pickerShown)
-    }
-    
-    fileprivate func changePickerVisibility(visible: Bool){
-        self.picker.isHidden = !visible
-        self.topView.isHidden = !visible
-        self.bottomView.isHidden = !visible
-        self.rouleteView.shouldCleanTargetIndex = !visible
-        
-        
-        if(visible){
+        self.doneButton.callback = {
+            self.showHiddenView(value: true)
             self.rouleteView.targetIndex = self.currentSelectedIndex
         }
+        
     }
-
     
+    private func showHiddenView(value: Bool){
+        UIView.animate(withDuration: 1.0) {
+                self.hiddenView.alpha = !value ? 1.0 : 0.0
+        }
+    }
 }
 
 extension CasinoViewController: UIPickerViewDataSource{
@@ -92,7 +81,7 @@ extension CasinoViewController: UIPickerViewDataSource{
 
 extension CasinoViewController: UIGestureRecognizerDelegate {
     @objc func handleTap(_ gesture: UITapGestureRecognizer){
-        self.toggleShowPicker()
+        self.showHiddenView(value: false)
     }
 }
 
