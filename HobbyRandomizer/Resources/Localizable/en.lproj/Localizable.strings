@@ -7,3 +7,6 @@
 "Translations.Menu.itemWorkInProgress" = "Education";
 "Translations.Menu.itemTodo" = "Affairs";
 "Translations.Menu.itemFiles" = "Files";
+
+/* Show */
+"Translations.Show.startRandom" = "Get random!"; 

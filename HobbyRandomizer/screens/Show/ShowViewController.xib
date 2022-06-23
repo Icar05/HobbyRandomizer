@@ -10,10 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowViewController" customModule="HobbyRandomizer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowViewController" customModule="RS" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="QX5-AD-IJd" id="x8e-hp-gf2"/>
-                <outlet property="label" destination="2Jw-Dx-WmX" id="PRZ-Tc-pio"/>
                 <outlet property="tableView" destination="OdQ-vT-Opf" id="owN-da-7tW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,24 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-AD-IJd">
-                    <rect key="frame" x="0.0" y="44" width="414" height="207"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="QX5-AD-IJd" secondAttribute="height" multiplier="2:1" id="pwB-XL-qmc"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Random!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jw-Dx-WmX" customClass="LabelWithCallBack" customModule="HobbyRandomizer" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="251" width="414" height="48"/>
-                    <color key="backgroundColor" name="AccentColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Mpk-Wt-mc9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-vT-Opf">
-                    <rect key="frame" x="0.0" y="299" width="414" height="563"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -48,25 +30,16 @@
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="OdQ-vT-Opf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Vh-Mw-o1k"/>
-                <constraint firstItem="QX5-AD-IJd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ho1-ZD-0SG"/>
-                <constraint firstItem="OdQ-vT-Opf" firstAttribute="top" secondItem="2Jw-Dx-WmX" secondAttribute="bottom" id="LN7-t1-HdI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Jw-Dx-WmX" secondAttribute="trailing" id="OPZ-Ng-vjd"/>
-                <constraint firstItem="2Jw-Dx-WmX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SLO-PH-8Vp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QX5-AD-IJd" secondAttribute="trailing" id="eeN-6h-0r0"/>
-                <constraint firstItem="2Jw-Dx-WmX" firstAttribute="top" secondItem="QX5-AD-IJd" secondAttribute="bottom" id="kIq-zD-Bp9"/>
-                <constraint firstItem="QX5-AD-IJd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lF5-wz-2PT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OdQ-vT-Opf" secondAttribute="trailing" id="pEl-PU-shK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OdQ-vT-Opf" secondAttribute="bottom" id="qPo-fu-jEJ"/>
+                <constraint firstItem="OdQ-vT-Opf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r0p-pQ-lFR"/>
             </constraints>
             <point key="canvasLocation" x="132" y="63"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

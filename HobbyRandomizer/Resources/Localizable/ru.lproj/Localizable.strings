@@ -8,3 +8,5 @@
 "Translations.Menu.itemTodo" = "Дела";
 "Translations.Menu.itemFiles" = "Файлы";
 
+/* Show */
+"Translations.Show.startRandom" = "Выбрать случайное!"; 

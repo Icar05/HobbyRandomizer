@@ -7,14 +7,27 @@
 
 import Foundation
 
+protocol ShowDataSourceDelegate: NSObject{
+    func startRandomDidClick()
+}
+
 class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
-    
     
     
     private var dataSourse: [RandItemCellModel] = []
     
+    private var type: ItemType = ItemType.necessary
+    
+    weak var delegate: ShowDataSourceDelegate? = nil
+    
+    
+    
     func getData() -> [RandItemCellModel]{
         return self.dataSourse
+    }
+    
+    func setType(type: ItemType){
+        self.type = type
     }
     
     func setData(data: [RandItemCellModel]){
@@ -25,23 +38,32 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
         return String(describing: RandItemCell.self)
     }
     
+    func getTopCellIdentifier() -> String{
+        return String(describing: TopCell.self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count
+        return dataSourse.count + 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: getTopCellIdentifier(), for: indexPath) as! TopCell
+            cell.configure(model: self.type){
+                self.delegate?.startRandomDidClick()
+            }
+            cell.modify()
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-        cell.configure(model: self.dataSourse[indexPath.row])
+        cell.configure(model: self.dataSourse[indexPath.row - 1])
         cell.modify()
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 100
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

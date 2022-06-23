@@ -16,8 +16,6 @@ public final class ShowViewController: UIViewController {
     
     @IBOutlet weak var label: LabelWithCallBack!
     
-    @IBOutlet weak var imageView: UIImageView!
-    
     private let dataSource = ShowDataSource()
     
     private let presenter: ShowPresenter
@@ -41,21 +39,17 @@ public final class ShowViewController: UIViewController {
         self.tableView.delegate = dataSource
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
+        self.dataSource.delegate = self
         self.registerCells()
 
         self.presenter.viewDidLoad()
-        
-        self.label.callback = {
-            self.navigateToRandom()
-        }
     }
     
     
     func onDataLoaded(data: [RandItemCellModel], type: ItemType){
         self.dataSource.setData(data: data)
+        self.dataSource.setType(type: type)
         self.tableView.reloadData()
-        self.label.backgroundColor = type.getColorForType()
-        self.imageView.image = type.getImage()
     }
     
     private func navigateToRandom(){
@@ -67,8 +61,17 @@ public final class ShowViewController: UIViewController {
     private func registerCells(){
         let randId = self.dataSource.getRandCellIdentifier()
         let randNib = UINib(nibName: randId, bundle: nil)
+        let topId = self.dataSource.getTopCellIdentifier()
+        let topNib = UINib(nibName: topId, bundle: nil)
         
         self.tableView?.register(randNib, forCellReuseIdentifier: randId)
+        self.tableView?.register(topNib, forCellReuseIdentifier: topId)
     }
 
+}
+
+extension ShowViewController: ShowDataSourceDelegate{
+    func startRandomDidClick() {
+        self.navigateToRandom()
+    }
 }

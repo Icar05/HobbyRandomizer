@@ -7,3 +7,6 @@
 "Translations.Menu.itemWorkInProgress" = "Розвиток";
 "Translations.Menu.itemTodo" = "Справи";
 "Translations.Menu.itemFiles" = "Файли";
+
+/* Show */
+"Translations.Show.startRandom" = "Обрати випадкове!"; 

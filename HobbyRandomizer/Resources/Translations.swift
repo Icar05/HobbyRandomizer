@@ -8,6 +8,12 @@ import Foundation
 
 struct Translations{
     
+    struct Show{
+        public static var startRandom: String{
+            "Translations.Show.startRandom".localized(Bundle.main)
+        }
+    }
+    
     struct Menu{
         public static var mainTitle: String{
             "Translations.Menu.mainTitle".localized(Bundle.main)
