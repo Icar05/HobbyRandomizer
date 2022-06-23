@@ -10,6 +10,16 @@ import Foundation
 class UserDefaultStorage{
     
     
+    func appendModels(newModels: [RandItemCellModel]) -> Bool{
+        guard var models = getModels() else {
+            return false
+        }
+        
+        models.append(contentsOf: newModels)
+        self.saveModels(models: models)
+        return true
+    }
+    
     func saveModels(models: [RandItemCellModel]){
         do {
             // Create JSON Encoder

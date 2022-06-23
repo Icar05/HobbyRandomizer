@@ -50,13 +50,19 @@ public final class FilesViewController: UIViewController {
     
     
     func displayModels(data: [RandItemCellModel]){
-        let controller = getNavigator().getDisplayDataScreen(data: data)
+        let storage = getStorage()
+        let controller = getNavigator().getDisplayDataScreen(data: data, storage: storage)
         getNavigator().navigate(start: self, destination: controller)
     }
     
     func displayText(data: String){
-        let controller = getNavigator().getDisplayDataScreen(data: data)
+        let storage = getStorage()
+        let controller = getNavigator().getDisplayDataScreen(data: data, storage: storage)
         getNavigator().navigate(start: self, destination: controller)
+    }
+    
+    private func getStorage() -> UserDefaultStorage {
+        return (UIApplication.shared.delegate as! AppDelegate).getStorage()
     }
     
     private func getNavigator() -> Navigator{

@@ -14,6 +14,7 @@ extension UIColor {
     static let coolOrange = UIColor(hexColor: "FAA602")
     static let colorMain = UIColor(named: "MainColor")
     static let colorBorderGray = UIColor(named: "BorderGray")
+    static let colorCappuccino = UIColor(named: "Cappuccino")
 }
 
 extension UITableViewCell{
@@ -29,6 +30,12 @@ extension UITableViewCell{
 extension UIViewController{
     func showAlert(model: RandItemCellModel){
         let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    func showAlert(title: String, subtitle: String){
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }

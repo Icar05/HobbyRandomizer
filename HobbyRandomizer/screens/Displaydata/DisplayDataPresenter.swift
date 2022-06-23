@@ -11,6 +11,8 @@ class DisplayDataPresenter{
     
     
     
+    private let storage: UserDefaultStorage
+    
     private let stringData: String
     
     private let contentData: [RandItemCellModel]
@@ -21,18 +23,25 @@ class DisplayDataPresenter{
         self.view = view
     }
     
-    init(data: String){
+    init(data: String, storage: UserDefaultStorage){
+        self.storage = storage
         self.stringData = data
         self.contentData = []
     }
     
-    init(data: [RandItemCellModel]){
+    init(data: [RandItemCellModel], storage: UserDefaultStorage){
+        self.storage = storage
         self.contentData = data
         self.stringData = ""
     }
     
     func viewDidLoad(){
         contentData.isEmpty ? view.displayData(data: stringData) : view.displayData(data: contentData)
+    }
+    
+    func exportData(){
+        let success = storage.appendModels(newModels: contentData)
+        view.onDataExported(value: success)
     }
     
 }

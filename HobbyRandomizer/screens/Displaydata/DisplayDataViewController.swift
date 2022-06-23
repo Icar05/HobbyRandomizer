@@ -9,6 +9,7 @@ import UIKit
 
 public final class DisplayDataViewController:  UIViewController {
     
+    @IBOutlet weak var exportData: LabelWithCallBack!
     
     @IBOutlet weak var simpleViewLabel: UILabel!
     
@@ -41,10 +42,19 @@ public final class DisplayDataViewController:  UIViewController {
         self.tableView.tableFooterView = UIView()
         self.registerCells()
 
+        self.exportData.callback = {
+            self.presenter.exportData()
+        }
+        
         self.presenter.viewDidLoad()
     }
     
+    func onDataExported(value: Bool){
+        self.showAlert(value: value)
+    }
+    
     func displayData(data: String){
+        self.exportData.isHidden = true
         self.simpleView.isHidden = false
         self.tableView.isHidden = true
         self.simpleViewLabel.text = data
@@ -52,9 +62,16 @@ public final class DisplayDataViewController:  UIViewController {
     
     func displayData(data: [RandItemCellModel]){
         self.dataSource.setData(data: data)
+        self.exportData.isHidden = false
         self.simpleView.isHidden = true
         self.tableView.isHidden = false
         self.tableView.reloadData()
+    }
+    
+    private func showAlert(value: Bool){
+        let title = value ? "Success" : "Failure"
+        let subtitle = value ? "Data has been successfully imported!" : "Something went wrong!"
+        self.showAlert(title: title, subtitle: subtitle)
     }
     
     private func registerCells(){
