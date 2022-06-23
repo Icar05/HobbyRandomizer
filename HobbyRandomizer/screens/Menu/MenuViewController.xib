@@ -39,7 +39,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="Cappuccino"/>
+            <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="84f-H1-Ko9"/>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="top" secondItem="kBK-9d-XVr" secondAttribute="bottom" constant="16" id="I9R-J4-GnJ"/>
@@ -54,8 +54,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="Cappuccino">
-            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="MainColor">
+            <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
