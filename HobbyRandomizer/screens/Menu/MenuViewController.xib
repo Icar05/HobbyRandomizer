@@ -9,9 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="HobbyRandomizer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="Vlb-R9-7Sg" id="UZY-RA-lZ9"/>
+                <outlet property="menuTitle" destination="kBK-9d-XVr" id="79t-l7-ZVd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vlb-R9-7Sg">
-                    <rect key="frame" x="16" y="131" width="382" height="749"/>
+                    <rect key="frame" x="16" y="130.5" width="382" height="749.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ie2-2f-E4e">
                         <size key="itemSize" width="128" height="128"/>
@@ -30,31 +31,31 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome to Hobby Randomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBK-9d-XVr">
-                    <rect key="frame" x="0.0" y="94" width="414" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBK-9d-XVr">
+                    <rect key="frame" x="16" y="94" width="382" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="MainColor"/>
+            <color key="backgroundColor" name="Cappuccino"/>
             <constraints>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="84f-H1-Ko9"/>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="top" secondItem="kBK-9d-XVr" secondAttribute="bottom" constant="16" id="I9R-J4-GnJ"/>
                 <constraint firstItem="kBK-9d-XVr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="LWf-ya-pp9"/>
-                <constraint firstItem="kBK-9d-XVr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cvs-lI-Wm3"/>
-                <constraint firstAttribute="bottom" secondItem="Vlb-R9-7Sg" secondAttribute="bottom" constant="16" id="jJg-7Z-I21"/>
+                <constraint firstItem="kBK-9d-XVr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="cvs-lI-Wm3"/>
+                <constraint firstItem="Vlb-R9-7Sg" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-16" id="jJg-7Z-I21"/>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="top" secondItem="kBK-9d-XVr" secondAttribute="bottom" constant="16" id="r5m-XR-PdI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kBK-9d-XVr" secondAttribute="trailing" id="r65-aW-cdj"/>
-                <constraint firstAttribute="trailing" secondItem="Vlb-R9-7Sg" secondAttribute="trailing" constant="16" id="t4g-ME-YWU"/>
+                <constraint firstItem="kBK-9d-XVr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="r65-aW-cdj"/>
+                <constraint firstItem="Vlb-R9-7Sg" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" constant="-16" id="t4g-ME-YWU"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Cappuccino">
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

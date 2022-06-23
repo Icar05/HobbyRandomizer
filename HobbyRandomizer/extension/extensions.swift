@@ -15,6 +15,7 @@ extension UIColor {
     static let colorMain = UIColor(named: "MainColor")
     static let colorBorderGray = UIColor(named: "BorderGray")
     static let colorCappuccino = UIColor(named: "Cappuccino")
+    static let colorCocoa = UIColor(named: "Cocoa")
 }
 
 extension UITableViewCell{
@@ -30,13 +31,13 @@ extension UITableViewCell{
 extension UIViewController{
     func showAlert(model: RandItemCellModel){
         let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
     
     func showAlert(title: String, subtitle: String){
         let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
 }
@@ -72,36 +73,56 @@ extension UIImageView{
 extension UIColor {
     public convenience init?(hexColor: String){
         var cString:String = hexColor.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-
-           if (cString.hasPrefix("#")) {
-               cString.remove(at: cString.startIndex)
-           }
-
-           if ((cString.count) != 6) {
-               return nil
-           }
-
-           var rgbValue:UInt64 = 0
-           Scanner(string: cString).scanHexInt64(&rgbValue)
-
-            self.init(
-                red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-                green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-                blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-                alpha: CGFloat(1.0)
-            )
-            return
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return nil
+        }
+        
+        var rgbValue:UInt64 = 0
+        Scanner(string: cString).scanHexInt64(&rgbValue)
+        
+        self.init(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+        return
     }
 }
 
 extension String{
     func titleCase() -> String {
-           return self
-               .replacingOccurrences(of: "([A-Z])",
-                                     with: " $1",
-                                     options: .regularExpression,
-                                     range: range(of: self))
-               .trimmingCharacters(in: .whitespacesAndNewlines)
-               .capitalized // If input is in llamaCase
-       }
+        return self
+            .replacingOccurrences(of: "([A-Z])",
+                                  with: " $1",
+                                  options: .regularExpression,
+                                  range: range(of: self))
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .capitalized // If input is in llamaCase
+    }
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "\(self)_comment")
+    }
+    
+    func localized(_ args: [CVarArg]) -> String {
+        return localized(args)
+    }
+    
+    func localized(_ args: CVarArg...) -> String {
+        return String(format: localized, args)
+    }
+}
+
+
+extension Bundle {
+    var displayName: String? {
+        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
+        object(forInfoDictionaryKey: "CFBundleName") as? String
+    }
 }

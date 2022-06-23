@@ -77,6 +77,8 @@
 		EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483A28517A990018A75B /* ShowPresenter.swift */; };
 		EDE5483D28517AD30018A75B /* ShowDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483C28517AD30018A75B /* ShowDataSource.swift */; };
 		EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE5483E2851829A0018A75B /* LabelWithCallback.swift */; };
+		EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A55E2864EEAD00565AAF /* Translations.swift */; };
+		EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5602864EEAD00565AAF /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,7 +110,7 @@
 		ED5F11342717C689006454AD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		ED5F11372717C963006454AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		ED5F11392717CC15006454AD /* CasinoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoSelectorView.swift; sourceTree = "<group>"; };
-		ED6EEF5C2715C6D200D4EFE9 /* HobbyRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HobbyRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6EEF5C2715C6D200D4EFE9 /* RS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED6EEF662715C6D200D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +155,10 @@
 		EDE5483A28517A990018A75B /* ShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPresenter.swift; sourceTree = "<group>"; };
 		EDE5483C28517AD30018A75B /* ShowDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataSource.swift; sourceTree = "<group>"; };
 		EDE5483E2851829A0018A75B /* LabelWithCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithCallback.swift; sourceTree = "<group>"; };
+		EDF8A55E2864EEAD00565AAF /* Translations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		EDF8A5642864EEAD00565AAF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDF8A5692864F27400565AAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDF8A56F2864F3E900565AAF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,7 +299,7 @@
 		ED6EEF5D2715C6D200D4EFE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ED6EEF5C2715C6D200D4EFE9 /* HobbyRandomizer.app */,
+				ED6EEF5C2715C6D200D4EFE9 /* RS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,6 +307,7 @@
 		ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				EDF8A55B2864EEAD00565AAF /* Resources */,
 				ED5A6C52284FCFF80028BEED /* screens */,
 				ED4DF3832718758E007966EE /* appComponents */,
 				ED4A3CC4271A290000084BB8 /* util */,
@@ -509,12 +516,29 @@
 			path = Show;
 			sourceTree = "<group>";
 		};
+		EDF8A55B2864EEAD00565AAF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDF8A55E2864EEAD00565AAF /* Translations.swift */,
+				EDF8A55F2864EEAD00565AAF /* Localizable */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDF8A55F2864EEAD00565AAF /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EDF8A5602864EEAD00565AAF /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ED6EEF5B2715C6D200D4EFE9 /* HobbyRandomizer */ = {
+		ED6EEF5B2715C6D200D4EFE9 /* RS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ED6EEF702715C6D300D4EFE9 /* Build configuration list for PBXNativeTarget "HobbyRandomizer" */;
+			buildConfigurationList = ED6EEF702715C6D300D4EFE9 /* Build configuration list for PBXNativeTarget "RS" */;
 			buildPhases = (
 				ED6EEF582715C6D200D4EFE9 /* Sources */,
 				ED6EEF592715C6D200D4EFE9 /* Frameworks */,
@@ -524,9 +548,9 @@
 			);
 			dependencies = (
 			);
-			name = HobbyRandomizer;
+			name = RS;
 			productName = HobbyRandomizer;
-			productReference = ED6EEF5C2715C6D200D4EFE9 /* HobbyRandomizer.app */;
+			productReference = ED6EEF5C2715C6D200D4EFE9 /* RS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -544,20 +568,22 @@
 					};
 				};
 			};
-			buildConfigurationList = ED6EEF572715C6D200D4EFE9 /* Build configuration list for PBXProject "HobbyRandomizer" */;
+			buildConfigurationList = ED6EEF572715C6D200D4EFE9 /* Build configuration list for PBXProject "RS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				uk,
 			);
 			mainGroup = ED6EEF532715C6D200D4EFE9;
 			productRefGroup = ED6EEF5D2715C6D200D4EFE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ED6EEF5B2715C6D200D4EFE9 /* HobbyRandomizer */,
+				ED6EEF5B2715C6D200D4EFE9 /* RS */,
 			);
 		};
 /* End PBXProject section */
@@ -569,6 +595,7 @@
 			files = (
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
+				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */,
 				ED880FC82851151C00DFD78F /* CreateViewController.xib in Resources */,
 				ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */,
@@ -641,6 +668,7 @@
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
+				EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */,
 				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
@@ -667,6 +695,16 @@
 				ED6EEF6B2715C6D300D4EFE9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDF8A5602864EEAD00565AAF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF8A5642864EEAD00565AAF /* ru */,
+				EDF8A5692864F27400565AAF /* en */,
+				EDF8A56F2864F3E900565AAF /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -838,7 +876,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ED6EEF572715C6D200D4EFE9 /* Build configuration list for PBXProject "HobbyRandomizer" */ = {
+		ED6EEF572715C6D200D4EFE9 /* Build configuration list for PBXProject "RS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED6EEF6E2715C6D300D4EFE9 /* Debug */,
@@ -847,7 +885,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ED6EEF702715C6D300D4EFE9 /* Build configuration list for PBXNativeTarget "HobbyRandomizer" */ = {
+		ED6EEF702715C6D300D4EFE9 /* Build configuration list for PBXNativeTarget "RS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED6EEF712715C6D300D4EFE9 /* Debug */,

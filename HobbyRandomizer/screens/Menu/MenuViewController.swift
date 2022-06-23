@@ -18,6 +18,7 @@ public final class MenuViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var menuTitle: UILabel!
     
     
     @available(iOS, unavailable)
@@ -47,11 +48,15 @@ public final class MenuViewController: UIViewController {
     private func setupUI(){
         let identifier = self.dataSource.getIdentifier()
         let nib = UINib(nibName: identifier, bundle: nil)
+        let appName = Bundle.main.displayName!
+        let title = Translations.Menu.mainTitle.replacingOccurrences(of: "AppName", with: appName)
         
         self.collectionView?.register(nib, forCellWithReuseIdentifier: identifier)
         self.collectionView.dataSource = dataSource
         self.collectionView.delegate = dataSource
         self.dataSource.setDelegate(delegate: self)
+
+        self.menuTitle.text = title
     }
 }
 
