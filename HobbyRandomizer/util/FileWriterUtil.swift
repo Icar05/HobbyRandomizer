@@ -23,6 +23,22 @@ class FileWriterUtil{
     private let fileName =  "test.txt"
     
     
+    func removeItem(fileName: String) -> Bool {
+        guard let fileURL = getFileUrl(fileName: fileName) else {
+            printLog("file url is nil !")
+            return false
+        }
+        
+        do{
+            try FileManager.default.removeItem(at: fileURL)
+            return true
+        } catch let error {
+            printLog("Error while removing file: \(error.localizedDescription)")
+            return false
+        }
+       
+    }
+    
     func readFile(fileName: String) -> String{
 
         guard let fileURL = getFileUrl(fileName: fileName) else {

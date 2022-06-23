@@ -61,6 +61,10 @@ public final class FilesViewController: UIViewController {
         getNavigator().navigate(start: self, destination: controller)
     }
     
+    func didFileRemoved(value: Bool){
+        self.showAlert(value: value)
+    }
+    
     private func getStorage() -> UserDefaultStorage {
         return (UIApplication.shared.delegate as! AppDelegate).getStorage()
     }
@@ -76,10 +80,21 @@ public final class FilesViewController: UIViewController {
         self.tableView?.register(randNib, forCellReuseIdentifier: randId)
     }
 
+    private func showAlert(value: Bool){
+        let title = value ? "Success" : "Failure"
+        let subtitle = value ? "File has been successfully removed!" : "Something went wrong!"
+        self.showAlert(title: title, subtitle: subtitle)
+    }
 
 }
 
 extension FilesViewController: FileDataSourceDelegate{
+    
+    func onItemRemoved(fileName: String) {
+        self.tableView.reloadData()
+        presenter.removeItemByName(fileName: fileName)
+    }
+    
     
     func onItemSelected(model: DisplayFileCellModel) {
         presenter.parseFileData(fileName: model.fileName)

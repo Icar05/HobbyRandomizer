@@ -39,4 +39,9 @@ public final class FilesPresenter{
         view.displayModels(data: models)
     }
     
+    func removeItemByName(fileName: String){
+        let result = filesUtil.removeItem(fileName: fileName)
+        view.didFileRemoved(value: result)
+    }
+    
 }

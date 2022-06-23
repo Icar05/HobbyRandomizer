@@ -9,6 +9,7 @@ import Foundation
 
 protocol FileDataSourceDelegate: NSObject{
     func onItemSelected(model: DisplayFileCellModel)
+    func onItemRemoved(fileName: String)
 }
 
 class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
@@ -50,7 +51,16 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return UITableViewCell.EditingStyle.none
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            
+            let fileName = dataSourse[indexPath.row].fileName
+            self.dataSourse.remove(at: indexPath.row)
+            self.delegate?.onItemRemoved(fileName: fileName)
+        }
     }
     
 }
