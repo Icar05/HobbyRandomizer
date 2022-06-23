@@ -9,7 +9,7 @@ import UIKit
 
 public final class DisplayDataViewController:  UIViewController {
     
-    @IBOutlet weak var exportData: LabelWithCallBack!
+    @IBOutlet weak var importData: LabelWithCallBack!
     
     @IBOutlet weak var simpleViewLabel: UILabel!
     
@@ -42,8 +42,8 @@ public final class DisplayDataViewController:  UIViewController {
         self.tableView.tableFooterView = UIView()
         self.registerCells()
 
-        self.exportData.callback = {
-            self.presenter.exportData()
+        self.importData.callback = {
+            self.presenter.importData()
         }
         
         self.presenter.viewDidLoad()
@@ -54,7 +54,7 @@ public final class DisplayDataViewController:  UIViewController {
     }
     
     func displayData(data: String){
-        self.exportData.isHidden = true
+        self.importData.isHidden = true
         self.simpleView.isHidden = false
         self.tableView.isHidden = true
         self.simpleViewLabel.text = data
@@ -62,7 +62,7 @@ public final class DisplayDataViewController:  UIViewController {
     
     func displayData(data: [RandItemCellModel]){
         self.dataSource.setData(data: data)
-        self.exportData.isHidden = false
+        self.importData.isHidden = false
         self.simpleView.isHidden = true
         self.tableView.isHidden = false
         self.tableView.reloadData()

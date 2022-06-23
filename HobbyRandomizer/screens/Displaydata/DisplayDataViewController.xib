@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisplayDataViewController" customModule="HobbyRandomizer" customModuleProvider="target">
             <connections>
-                <outlet property="exportData" destination="dl9-xP-EeG" id="OMK-Qt-gC9"/>
+                <outlet property="importData" destination="dl9-xP-EeG" id="OMK-Qt-gC9"/>
                 <outlet property="simpleView" destination="UkK-EL-FcQ" id="PFp-hG-egx"/>
                 <outlet property="simpleViewLabel" destination="bzD-Jp-h2S" id="fpH-oF-eJO"/>
                 <outlet property="tableView" destination="oIh-5C-j0g" id="mde-FP-pLL"/>
@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Export Data !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-xP-EeG" customClass="LabelWithCallBack" customModule="HobbyRandomizer" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Data !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-xP-EeG" customClass="LabelWithCallBack" customModule="HobbyRandomizer" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="44" width="414" height="46"/>
                     <color key="backgroundColor" red="0.56078431370000004" green="0.019607843140000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

@@ -39,7 +39,7 @@ class DisplayDataPresenter{
         contentData.isEmpty ? view.displayData(data: stringData) : view.displayData(data: contentData)
     }
     
-    func exportData(){
+    func importData(){
         let success = storage.appendModels(newModels: contentData)
         view.onDataExported(value: success)
     }

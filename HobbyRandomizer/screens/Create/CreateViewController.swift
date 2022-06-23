@@ -60,11 +60,14 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
     private func registerCells(){
         let randId = self.dataSource.getRandCellIdentifier()
         let createId = self.dataSource.getCreateItemCellIdentifier()
+        let exportId = self.dataSource.getExportCellIndifier()
         
         let randNib = UINib(nibName: randId, bundle: nil)
         let createNib = UINib(nibName: createId, bundle: nil)
+        let exportNib = UINib(nibName: exportId, bundle: nil)
         
         self.tableView?.register(randNib, forCellReuseIdentifier: randId)
         self.tableView?.register(createNib, forCellReuseIdentifier: createId)
+        self.tableView?.register(exportNib, forCellReuseIdentifier: exportId)
     }
 }
