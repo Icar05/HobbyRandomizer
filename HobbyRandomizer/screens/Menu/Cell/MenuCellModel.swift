@@ -10,4 +10,5 @@ import Foundation
 struct MenuCellModel{
     var icon: UIImage?
     var type: ScreenTypes
+    var title: String
 }

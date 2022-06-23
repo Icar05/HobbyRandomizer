@@ -1,2 +1,9 @@
 /* Menu */
 "Translations.Menu.mainTitle" = "Wellcome to AppName !";
+"Translations.Menu.itemCasino" = "Casino";
+"Translations.Menu.itemTest" = "Debug";
+"Translations.Menu.itemCreate" = "Creation";
+"Translations.Menu.itemHobby" = "Hobbies";
+"Translations.Menu.itemWorkInProgress" = "Education";
+"Translations.Menu.itemTodo" = "Affairs";
+"Translations.Menu.itemFiles" = "Files";

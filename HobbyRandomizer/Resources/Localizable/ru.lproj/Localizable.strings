@@ -1,2 +1,10 @@
 /* Menu */
 "Translations.Menu.mainTitle" = "Добро пожаловать в AppName !";
+"Translations.Menu.itemCasino" = "Рулетка";
+"Translations.Menu.itemTest" = "Отладка";
+"Translations.Menu.itemCreate" = "Создание";
+"Translations.Menu.itemHobby" = "Увлечения";
+"Translations.Menu.itemWorkInProgress" = "Развитие";
+"Translations.Menu.itemTodo" = "Дела";
+"Translations.Menu.itemFiles" = "Файлы";
+
