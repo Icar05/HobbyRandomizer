@@ -57,6 +57,7 @@ public final class MenuViewController: UIViewController {
         self.dataSource.setDelegate(delegate: self)
 
         self.menuTitle.text = title
+        self.navigationController?.navigationBar.tintColor = .black
     }
 }
 

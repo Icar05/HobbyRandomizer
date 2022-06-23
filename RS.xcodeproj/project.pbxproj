@@ -508,6 +508,7 @@
 		EDE5483528517A370018A75B /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				EDF8A5702865051300565AAF /* Cell */,
 				EDE5483628517A570018A75B /* ShowViewController.swift */,
 				EDE5483728517A570018A75B /* ShowViewController.xib */,
 				EDE5483A28517A990018A75B /* ShowPresenter.swift */,
@@ -531,6 +532,21 @@
 				EDF8A5602864EEAD00565AAF /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		EDF8A5702865051300565AAF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDF8A5712865051E00565AAF /* TopCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EDF8A5712865051E00565AAF /* TopCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TopCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
