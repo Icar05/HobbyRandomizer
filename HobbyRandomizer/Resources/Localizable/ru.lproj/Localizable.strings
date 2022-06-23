@@ -10,3 +10,8 @@
 
 /* Show */
 "Translations.Show.startRandom" = "Выбрать случайное!"; 
+
+/* Casino */
+"Translations.Casino.play" = "Играть!";
+"Translations.Casino.cheat" = "Обмануть!";
+

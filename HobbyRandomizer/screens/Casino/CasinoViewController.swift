@@ -51,6 +51,7 @@ class CasinoViewController: UIViewController {
         tapGR.numberOfTapsRequired = 3
         rouleteView.addGestureRecognizer(tapGR)
         
+        self.doneButton.text = Translations.Casino.cheat
         self.doneButton.callback = {
             self.showHiddenView(value: true)
             self.rouleteView.targetIndex = self.currentSelectedIndex
@@ -59,7 +60,7 @@ class CasinoViewController: UIViewController {
     }
     
     private func showHiddenView(value: Bool){
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 1.5) {
                 self.hiddenView.alpha = !value ? 1.0 : 0.0
         }
     }

@@ -54,6 +54,7 @@ class RouleteView:  UIView {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bang(tapGestureRecognizer:)))
         self.bangBtn.addGestureRecognizer(tapGesture)
+        self.bangBtn.text = Translations.Casino.play
         
         self.invalidateIntrinsicContentSize()
 

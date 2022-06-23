@@ -8,6 +8,16 @@ import Foundation
 
 struct Translations{
     
+    struct Casino{
+        public static var play: String{
+            "Translations.Casino.play".localized(Bundle.main)
+        }
+        
+        public static var cheat: String{
+            "Translations.Casino.cheat".localized(Bundle.main)
+        }
+    }
+    
     struct Show{
         public static var startRandom: String{
             "Translations.Show.startRandom".localized(Bundle.main)
