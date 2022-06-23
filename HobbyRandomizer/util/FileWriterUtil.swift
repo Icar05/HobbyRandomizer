@@ -64,15 +64,16 @@ class FileWriterUtil{
         return decodeData(data: data)
     }
     
-    func exportModels(fileName: String, models: [RandItemCellModel]){
+    func exportModels(fileName: String, models: [RandItemCellModel]) -> Bool{
         
         guard let data = encodeData(models: models),
               let text = String(data: data, encoding: String.Encoding.utf8) else{
             printLog("trouble with encoding ...")
-            return
+            return false
         }
        
         self.writeText(fileName: fileName, text: text)
+        return true
     }
     
     func readAllFilenames() -> [String]{

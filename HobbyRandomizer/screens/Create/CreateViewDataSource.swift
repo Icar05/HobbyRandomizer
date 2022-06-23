@@ -10,6 +10,7 @@ import Foundation
 protocol CreateDataSourceDelegate: NSObject{
     func onModelCreated(freshModels: [RandItemCellModel])
     func onModelDeleted(freshModels: [RandItemCellModel])
+    func onExportDidTap(freshModels: [RandItemCellModel])
 }
 
 class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, CreateViewDelegate {
@@ -51,8 +52,10 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             return cell
         }else if( indexPath.row == dataSourse.count + 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: getExportCellIndifier(), for: indexPath) as! ExportCell
-                cell.modify()
-//            cell.setupDelegate(delegate: self)
+            cell.modify()
+            cell.setupDelegate(callback: {
+                self.delegate?.onExportDidTap(freshModels: self.dataSourse)
+            })
             return cell
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
@@ -60,7 +63,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.modify()
             return cell
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -92,6 +95,6 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         self.dataSourse.append(item)
         self.delegate?.onModelCreated(freshModels: self.dataSourse)
     }
-
+    
     
 }

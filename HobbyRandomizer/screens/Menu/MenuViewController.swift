@@ -80,7 +80,7 @@ extension MenuViewController: MenuDelegate{
         case .Test:
             return navigator.getDebugScreen()
         case .Create:
-            return navigator.getCreateScreen(storage: storage)
+            return navigator.getCreateScreen(storage: storage, fileUtil: fileUtil)
         case .Todo:
             return navigator.getShowScreen(storage: storage, type: .necessary)
         case .Hobby:

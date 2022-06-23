@@ -8,6 +8,7 @@
 import UIKit
 
 public final class CreateViewController: UIViewController, CreateDataSourceDelegate {
+   
     
     
     
@@ -55,6 +56,20 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
     func onModelDeleted(freshModels: [RandItemCellModel]) {
         self.presenter.saveModels(models: freshModels)
         self.tableView.reloadData()
+    }
+    
+    func onExportDidTap(freshModels: [RandItemCellModel]) {
+        self.presenter.exportData(models:freshModels)
+    }
+    
+    func onExportFinished(value: Bool){
+        self.showAlert(value: value)
+    }
+    
+    private func showAlert(value: Bool){
+        let title = value ? "Success" : "Failure"
+        let subtitle = value ? "Data has been successfully exported!" : "Something went wrong!"
+        self.showAlert(title: title, subtitle: subtitle)
     }
     
     private func registerCells(){
