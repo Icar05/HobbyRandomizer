@@ -53,11 +53,11 @@ public final class MenuPresenter{
                 type: .Hobby,
                 title: Translations.Menu.itemHobby
             ),
-//            MenuCellModel(
-//                icon:  UIImage(systemName: "folder")!,
-//                type: .Files,
-//                title: Translations.Menu.itemFiles
-//            )
+            MenuCellModel(
+                icon:  UIImage(systemName: "folder")!,
+                type: .Files,
+                title: Translations.Menu.itemFiles
+            )
         ]
     }
     

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisplayDataViewController" customModule="HobbyRandomizer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisplayDataViewController" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="importData" destination="dl9-xP-EeG" id="OMK-Qt-gC9"/>
                 <outlet property="simpleView" destination="UkK-EL-FcQ" id="PFp-hG-egx"/>
@@ -24,8 +24,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Data !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-xP-EeG" customClass="LabelWithCallBack" customModule="HobbyRandomizer" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="46"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inF-zd-7q1" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dC5-56-8Na"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Import Data !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-xP-EeG" customClass="LabelWithCallBack" customModule="RS" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="45" width="414" height="46"/>
                     <color key="backgroundColor" red="0.56078431370000004" green="0.019607843140000001" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="46" id="vry-PM-iMi"/>
@@ -35,20 +42,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oIh-5C-j0g">
-                    <rect key="frame" x="0.0" y="90" width="414" height="772"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkK-EL-FcQ" userLabel="SimpleView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-Jp-h2S">
-                            <rect key="frame" x="186.5" y="399" width="41.5" height="20.5"/>
+                            <rect key="frame" x="186.5" y="398.5" width="41.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" systemColor="tintColor"/>
                     <constraints>
                         <constraint firstItem="bzD-Jp-h2S" firstAttribute="centerY" secondItem="UkK-EL-FcQ" secondAttribute="centerY" id="4N8-Ml-qZQ"/>
@@ -59,14 +66,17 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
-                <constraint firstItem="dl9-xP-EeG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3qy-jK-WNj"/>
+                <constraint firstItem="dl9-xP-EeG" firstAttribute="top" secondItem="inF-zd-7q1" secondAttribute="bottom" id="3qy-jK-WNj"/>
                 <constraint firstItem="oIh-5C-j0g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="56d-um-gct"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="inF-zd-7q1" secondAttribute="trailing" id="Cqk-DP-5Dg"/>
                 <constraint firstItem="oIh-5C-j0g" firstAttribute="top" secondItem="dl9-xP-EeG" secondAttribute="bottom" id="FLU-qQ-npq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UkK-EL-FcQ" secondAttribute="trailing" id="H2T-Yl-GLP"/>
+                <constraint firstItem="inF-zd-7q1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LyX-sw-I8g"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dl9-xP-EeG" secondAttribute="trailing" id="R3m-Mw-633"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UkK-EL-FcQ" secondAttribute="bottom" id="Ues-i0-g47"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oIh-5C-j0g" secondAttribute="bottom" id="Uw3-XN-QV6"/>
-                <constraint firstItem="UkK-EL-FcQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Z1I-6p-LyB"/>
+                <constraint firstItem="inF-zd-7q1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VVh-Xx-u1m"/>
+                <constraint firstItem="UkK-EL-FcQ" firstAttribute="top" secondItem="inF-zd-7q1" secondAttribute="bottom" id="Z1I-6p-LyB"/>
                 <constraint firstItem="UkK-EL-FcQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gYg-pl-Vvm"/>
                 <constraint firstAttribute="trailing" secondItem="oIh-5C-j0g" secondAttribute="trailing" id="ubF-fw-2gi"/>
                 <constraint firstItem="dl9-xP-EeG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vEv-95-hNw"/>
@@ -76,7 +86,7 @@
     </objects>
     <resources>
         <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

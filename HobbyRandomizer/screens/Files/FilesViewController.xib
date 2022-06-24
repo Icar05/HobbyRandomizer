@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilesViewController" customModule="HobbyRandomizer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilesViewController" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="Mkm-FF-lSP" id="25v-XV-7id"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,8 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-pR-ykq" userLabel="topSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Y9d-1R-0P3"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Mkm-FF-lSP">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
@@ -30,7 +37,10 @@
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Mkm-FF-lSP" secondAttribute="bottom" id="62W-G9-EHG"/>
-                <constraint firstItem="Mkm-FF-lSP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oe7-M3-rOK"/>
+                <constraint firstItem="vyz-pR-ykq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nlw-l8-kvc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vyz-pR-ykq" secondAttribute="trailing" id="iI9-E7-e0O"/>
+                <constraint firstItem="vyz-pR-ykq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ixG-2f-GLf"/>
+                <constraint firstItem="Mkm-FF-lSP" firstAttribute="top" secondItem="vyz-pR-ykq" secondAttribute="bottom" id="oe7-M3-rOK"/>
                 <constraint firstItem="Mkm-FF-lSP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ofO-p0-Who"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mkm-FF-lSP" secondAttribute="trailing" id="yvw-Iz-fjN"/>
             </constraints>
@@ -39,7 +49,7 @@
     </objects>
     <resources>
         <namedColor name="MainColor">
-            <color red="0.99599999189376831" green="0.91399997472763062" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

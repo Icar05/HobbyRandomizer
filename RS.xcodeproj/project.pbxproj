@@ -81,6 +81,7 @@
 		EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5602864EEAD00565AAF /* Localizable.strings */; };
 		EDF8A5742865060300565AAF /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A5722865060300565AAF /* TopCell.swift */; };
 		EDF8A5752865060300565AAF /* TopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5732865060300565AAF /* TopCell.xib */; };
+		EDF8A5792865402E00565AAF /* DisplayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A5782865402E00565AAF /* DisplayDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,7 @@
 		EDF8A56F2864F3E900565AAF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDF8A5722865060300565AAF /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		EDF8A5732865060300565AAF /* TopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCell.xib; sourceTree = "<group>"; };
+		EDF8A5782865402E00565AAF /* DisplayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +375,7 @@
 				ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */,
 				ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */,
 				ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */,
+				EDF8A5782865402E00565AAF /* DisplayDataSource.swift */,
 			);
 			path = Displaydata;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */,
 				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
+				EDF8A5792865402E00565AAF /* DisplayDataSource.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,

@@ -11,10 +11,7 @@ class UserDefaultStorage{
     
     
     func appendModels(newModels: [RandItemCellModel]) -> Bool{
-        guard var models = getModels() else {
-            return false
-        }
-        
+        var models = getModels() ?? []
         models.append(contentsOf: newModels)
         self.saveModels(models: models)
         return true

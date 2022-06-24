@@ -80,6 +80,7 @@ class FileWriterUtil{
         return decodeData(data: data)
     }
     
+    @discardableResult
     func exportModels(fileName: String, models: [RandItemCellModel]) -> Bool{
         
         guard let data = encodeData(models: models),

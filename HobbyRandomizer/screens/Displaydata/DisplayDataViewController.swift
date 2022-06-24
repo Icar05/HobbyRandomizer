@@ -9,6 +9,8 @@ import UIKit
 
 public final class DisplayDataViewController:  UIViewController {
     
+    
+    
     @IBOutlet weak var importData: LabelWithCallBack!
     
     @IBOutlet weak var simpleViewLabel: UILabel!
@@ -17,7 +19,7 @@ public final class DisplayDataViewController:  UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let dataSource = ShowDataSource()
+    private let dataSource = DisplayDataSource()
     
     private let presenter: DisplayDataPresenter
     
