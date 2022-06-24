@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="45" width="414" height="816"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-wu-tKg" customClass="RouleteView" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="45" width="414" height="420"/>
+                    <rect key="frame" x="0.0" y="238" width="414" height="420"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="420" id="gzR-TK-3MK"/>
@@ -121,7 +121,7 @@
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="eUe-1g-lEc"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="f2L-gu-yNb"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fEl-qA-fyw"/>
-                <constraint firstItem="Wxx-wu-tKg" firstAttribute="top" secondItem="6nd-7z-YdX" secondAttribute="bottom" id="fwg-oz-jAB"/>
+                <constraint firstItem="Wxx-wu-tKg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="l8E-R5-dgl"/>
                 <constraint firstItem="Pgu-9P-iP7" firstAttribute="bottom" secondItem="f0R-ui-Fp2" secondAttribute="top" id="rIb-KU-dk4"/>
                 <constraint firstItem="Pgu-9P-iP7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s6p-yn-5jK"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="spN-op-9H5"/>
