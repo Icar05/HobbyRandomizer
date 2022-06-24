@@ -23,7 +23,7 @@ class RandomizerViewController: UIViewController {
     
     @IBOutlet weak var icon: UIImageView!
     
-   
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     
@@ -54,6 +54,9 @@ class RandomizerViewController: UIViewController {
             }
         }
         
+        let type: ItemType = models.first?.type ?? ItemType.necessary
+        self.randomizer.setBangButtonBackgroundColor(color: type.getColorForTypeInversed())
+        self.scrollView.backgroundColor = type.getColorForType()
         self.randomizer.setDataSource(count: models.count)
     }
     

@@ -40,4 +40,15 @@ extension ItemType{
             return UIColor.coolOrange!
         }
     }
+    
+    func getColorForTypeInversed() -> UIColor{
+        switch self {
+        case .necessary:
+            return UIColor.coolGreen!
+        case .freetime:
+            return UIColor.coolOrange!
+        case .workInProgress:
+            return UIColor.coolRed!
+        }
+    }
 }

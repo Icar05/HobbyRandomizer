@@ -64,6 +64,10 @@ class RandomizerUtil: UIView {
         
     }
     
+    func setBangButtonBackgroundColor(color: UIColor){
+        self.bang.backgroundColor = color
+    }
+    
     func setDataSource(count: Int){
         if(!isPlaying){
             self.count = count
