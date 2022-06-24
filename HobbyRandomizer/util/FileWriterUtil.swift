@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PDFKit
 
 
 struct FileInfo{
@@ -25,8 +26,20 @@ class FileWriterUtil{
     
     
     private let log = "TextWritterLog"
+        
     
-    private let fileName =  "test.txt"
+    func readPdf(url: URL){
+        if let pdf = PDFDocument(url: url) {
+            let pageCount = pdf.pageCount
+            let documentContent = NSMutableAttributedString()
+
+            for i in 1 ..< pageCount {
+                guard let page = pdf.page(at: i) else { continue }
+                guard let pageContent = page.attributedString else { continue }
+                documentContent.append(pageContent)
+            }
+        }
+    }
     
     
     func removeItem(fileName: String) -> Bool {
