@@ -12,6 +12,8 @@ class DisplayFileCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var filePathLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

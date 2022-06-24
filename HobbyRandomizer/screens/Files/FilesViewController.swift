@@ -43,8 +43,8 @@ public final class FilesViewController: UIViewController {
     }
     
     
-    func onDataLoaded(data: [String]){
-        self.dataSource.setData(data: data.map{DisplayFileCellModel(fileName: $0)})
+    func onDataLoaded(data: [FileInfo]){
+        self.dataSource.setData(data: data.map{ $0.toDisplayFileCellModel()})
         self.tableView.reloadData()
     }
     

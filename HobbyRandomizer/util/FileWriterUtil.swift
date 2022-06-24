@@ -7,6 +7,12 @@
 
 import Foundation
 
+
+struct FileInfo{
+    var shortName: String
+    var fullName: String
+}
+
 /**
  create /write test
  read test
@@ -93,7 +99,7 @@ class FileWriterUtil{
         return true
     }
     
-    func readAllFilenames() -> [String]{
+    func readAllFilenames() -> [FileInfo]{
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             printLog("DocumentUrl nil")
             return []
@@ -102,7 +108,7 @@ class FileWriterUtil{
         do {
             let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
             
-            return  fileURLs.map{ $0.lastPathComponent}
+            return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
         } catch let error{
             printLog("Error while read directories: \(error.localizedDescription)")
             return []

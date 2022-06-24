@@ -9,4 +9,11 @@ import Foundation
 
 struct DisplayFileCellModel{
     var fileName: String
+    var fileFullName: String
+}
+
+extension FileInfo{
+    func toDisplayFileCellModel() -> DisplayFileCellModel{
+        return DisplayFileCellModel(fileName: self.shortName, fileFullName: self.fullName)
+    }
 }

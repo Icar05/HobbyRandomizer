@@ -46,10 +46,6 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
         self.delegate?.onItemSelected(model: model)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        return 60
-    }
-    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.delete
     }
