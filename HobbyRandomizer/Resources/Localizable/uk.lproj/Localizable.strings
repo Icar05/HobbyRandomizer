@@ -14,3 +14,8 @@
 /* Casino */
 "Translations.Casino.play" = "Грати!";
 "Translations.Casino.cheat" = "Надурити!";
+
+/* Random */
+"Translations.Random.play" = "Грати!";
+"Translations.Random.selectedTitle" = "Тут буде заголовок ...";
+"Translations.Random.selectedDescription" = "Тут буде опис ... ";

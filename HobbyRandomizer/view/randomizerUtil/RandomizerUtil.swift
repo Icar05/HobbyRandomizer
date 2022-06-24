@@ -56,6 +56,7 @@ class RandomizerUtil: UIView {
         randomView.setData(count: count)
 
         bang.isUserInteractionEnabled = true
+        bang.text = Translations.Random.play
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bang(tapGestureRecognizer:)))
         bang.addGestureRecognizer(tapGesture)

@@ -8,6 +8,20 @@ import Foundation
 
 struct Translations{
     
+    struct Random{
+        public static var play: String{
+            "Translations.Random.play".localized(Bundle.main)
+        }
+        
+        public static var selectedTitle: String{
+            "Translations.Random.selectedTitle".localized(Bundle.main)
+        }
+        
+        public static var selectedDescription: String{
+            "Translations.Random.selectedDescription".localized(Bundle.main)
+        }
+    }
+    
     struct Casino{
         public static var play: String{
             "Translations.Casino.play".localized(Bundle.main)

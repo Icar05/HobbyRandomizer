@@ -14,3 +14,8 @@
 /* Casino */
 "Translations.Casino.play" = "Play!";
 "Translations.Casino.cheat" = "Cheat!";
+
+/* Random */
+"Translations.Random.play" = "Play!";
+"Translations.Random.selectedTitle" = "Here will be title ...";
+"Translations.Random.selectedDescription" = "Here will be description ... ";

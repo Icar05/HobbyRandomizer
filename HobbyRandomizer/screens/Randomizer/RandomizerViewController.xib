@@ -54,9 +54,9 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXX-hm-wVA">
-                                    <rect key="frame" x="116" y="10" width="150" height="18"/>
+                                    <rect key="frame" x="91" y="10" width="200" height="18"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="150" id="0su-Dj-0WX"/>
+                                        <constraint firstAttribute="width" constant="200" id="0su-Dj-0WX"/>
                                         <constraint firstAttribute="height" constant="18" id="DMT-vA-gbs"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>

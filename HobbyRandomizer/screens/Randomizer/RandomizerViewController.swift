@@ -42,6 +42,9 @@ class RandomizerViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupText()
+        self.titleLabel.text = Translations.Random.selectedTitle
+        self.subtitle.text = Translations.Random.selectedDescription
+        
         self.randomizer.delegate = { (randModel) in
             if(self.models.count > 0){
                 let model = self.models[randModel.index]

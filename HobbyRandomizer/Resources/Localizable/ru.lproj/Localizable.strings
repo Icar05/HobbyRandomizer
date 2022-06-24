@@ -15,3 +15,8 @@
 "Translations.Casino.play" = "Играть!";
 "Translations.Casino.cheat" = "Обмануть!";
 
+/* Random */
+"Translations.Random.play" = "Играть!";
+"Translations.Random.selectedTitle" = "Здесь будет заголовок ...";
+"Translations.Random.selectedDescription" = "Здесь будет описание ... ";
+
