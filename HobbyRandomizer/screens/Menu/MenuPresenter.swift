@@ -28,11 +28,11 @@ public final class MenuPresenter{
 //                type: .Create,
 //                title: Translations.Menu.itemCreate
 //            ),
-//            MenuCellModel(
-//                icon:  UIImage(systemName: "wrench.fill")!,
-//                type: .Test,
-//                title: Translations.Menu.itemTest
-//            ),
+            MenuCellModel(
+                icon:  UIImage(systemName: "wrench.fill")!,
+                type: .Test,
+                title: Translations.Menu.itemTest
+            ),
             MenuCellModel(
                 icon:  UIImage(systemName: "suit.spade.fill")!,
                 type: .Casino,
