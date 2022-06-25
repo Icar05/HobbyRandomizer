@@ -15,10 +15,7 @@ class TestUtil{
         self.fileUtil = fileUtil
     }
     
-    func startTest(){
-//       writeTest()
-//        writeTestData()
-    }
+    func startTest(){}
     
     private func writeTest(){
         let time = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
