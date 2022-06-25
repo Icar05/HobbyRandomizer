@@ -8,6 +8,12 @@ import Foundation
 
 struct Translations{
     
+    struct Files{
+        public static var noData: String{
+            "Translations.Files.noData".localized(Bundle.main)
+        }
+    }
+    
     struct Random{
         public static var play: String{
             "Translations.Random.play".localized(Bundle.main)

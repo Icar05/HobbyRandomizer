@@ -19,3 +19,6 @@
 "Translations.Random.play" = "Play!";
 "Translations.Random.selectedTitle" = "Here will be title ...";
 "Translations.Random.selectedDescription" = "Here will be description ... ";
+
+/* Files */
+"Translations.Files.noData" = "There is no data yet";

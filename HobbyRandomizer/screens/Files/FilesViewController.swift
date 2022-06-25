@@ -11,11 +11,15 @@ public final class FilesViewController: UIViewController {
     
     
     
-    @IBOutlet weak var tableView: UITableView!
-    
     private let dataSource = FilesDataSource()
     
     private let presenter: FilesPresenter
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var emptyView: UIView!
+    
+    @IBOutlet weak var emptyViewLabel: UILabel!
     
     
     
@@ -38,17 +42,18 @@ public final class FilesViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.dataSource.delegate = self
         self.registerCells()
-
+        self.emptyViewLabel.text = Translations.Files.noData
+        
         self.presenter.viewDidLoad()
     }
     
     
     func onDataLoaded(data: [FileInfo]){
+        self.emptyView.isHidden = !data.isEmpty
         self.dataSource.setData(data: data.map{ $0.toDisplayFileCellModel()})
         self.tableView.reloadData()
     }
-    
-    
+
     func displayModels(data: [RandItemCellModel]){
         let storage = getStorage()
         let controller = getNavigator().getDisplayDataScreen(data: data, storage: storage)
@@ -92,6 +97,7 @@ extension FilesViewController: FileDataSourceDelegate{
     
     func onItemRemoved(fileName: String) {
         self.tableView.reloadData()
+        self.emptyView.isHidden = self.dataSource.isNotEmpty()
         presenter.removeItemByName(fileName: fileName)
     }
     

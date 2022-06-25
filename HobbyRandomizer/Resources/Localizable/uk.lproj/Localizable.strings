@@ -19,3 +19,6 @@
 "Translations.Random.play" = "Грати!";
 "Translations.Random.selectedTitle" = "Тут буде заголовок ...";
 "Translations.Random.selectedDescription" = "Тут буде опис ... ";
+
+/* Files */
+"Translations.Files.noData" = "Файлів ще нема";

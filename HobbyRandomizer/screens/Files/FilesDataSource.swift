@@ -31,6 +31,9 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
         return dataSourse.count
     }
     
+    func isNotEmpty() -> Bool {
+        return self.dataSourse.count > 0
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

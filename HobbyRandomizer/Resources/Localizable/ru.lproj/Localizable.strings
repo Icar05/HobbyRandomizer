@@ -20,3 +20,5 @@
 "Translations.Random.selectedTitle" = "Здесь будет заголовок ...";
 "Translations.Random.selectedDescription" = "Здесь будет описание ... ";
 
+/* Files */
+"Translations.Files.noData" = "Файлов еще нет";

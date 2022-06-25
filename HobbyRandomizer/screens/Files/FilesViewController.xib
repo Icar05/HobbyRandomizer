@@ -6,11 +6,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilesViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="5gp-YG-tZQ" id="K0z-Nc-7a9"/>
+                <outlet property="emptyViewLabel" destination="pMm-G2-JDZ" id="rIZ-NS-ciL"/>
                 <outlet property="tableView" destination="Mkm-FF-lSP" id="25v-XV-7id"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,14 +35,34 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gp-YG-tZQ" userLabel="EmptyView">
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMm-G2-JDZ">
+                            <rect key="frame" x="163" y="398" width="88" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="pMm-G2-JDZ" firstAttribute="centerY" secondItem="5gp-YG-tZQ" secondAttribute="centerY" id="JbL-al-2Cw"/>
+                        <constraint firstItem="pMm-G2-JDZ" firstAttribute="centerX" secondItem="5gp-YG-tZQ" secondAttribute="centerX" id="Vqj-JP-uCA"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
+                <constraint firstItem="5gp-YG-tZQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3hu-Vj-LmC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Mkm-FF-lSP" secondAttribute="bottom" id="62W-G9-EHG"/>
+                <constraint firstItem="5gp-YG-tZQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ANd-Ft-HZs"/>
                 <constraint firstItem="vyz-pR-ykq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nlw-l8-kvc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vyz-pR-ykq" secondAttribute="trailing" id="iI9-E7-e0O"/>
                 <constraint firstItem="vyz-pR-ykq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ixG-2f-GLf"/>
+                <constraint firstItem="5gp-YG-tZQ" firstAttribute="top" secondItem="vyz-pR-ykq" secondAttribute="bottom" id="kZS-xV-Il7"/>
+                <constraint firstItem="5gp-YG-tZQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mud-Vd-d6u"/>
                 <constraint firstItem="Mkm-FF-lSP" firstAttribute="top" secondItem="vyz-pR-ykq" secondAttribute="bottom" id="oe7-M3-rOK"/>
                 <constraint firstItem="Mkm-FF-lSP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ofO-p0-Who"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mkm-FF-lSP" secondAttribute="trailing" id="yvw-Iz-fjN"/>
@@ -49,7 +72,10 @@
     </objects>
     <resources>
         <namedColor name="MainColor">
-            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
