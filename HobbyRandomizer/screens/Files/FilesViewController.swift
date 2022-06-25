@@ -86,8 +86,8 @@ public final class FilesViewController: UIViewController {
     }
 
     private func showAlert(value: Bool){
-        let title = value ? "Success" : "Failure"
-        let subtitle = value ? "File has been successfully removed!" : "Something went wrong!"
+        let title = value ? Translations.Alert.success : Translations.Alert.success
+        let subtitle = value ? Translations.Alert.successRemoveData : Translations.Alert.failureMessage
         self.showAlert(title: title, subtitle: subtitle)
     }
 

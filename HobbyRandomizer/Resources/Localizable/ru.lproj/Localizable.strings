@@ -34,3 +34,11 @@
 "Translations.Create.typeFreetime" = "Увлечения";
 "Translations.Create.typeWorkInProgress" = "Развитие";
 
+/* Alert */
+"Translations.Alert.success" = "Успех";
+"Translations.Alert.failure" = "Неудача";
+"Translations.Alert.successImportMessage" = "Данные были успешно импортированы!";
+"Translations.Alert.failureMessage" = "Что то пошло не так!";
+"Translations.Alert.successRemoveData" = "Файл был успешно удален!";
+"Translations.Alert.successExportMessage" = "Данные были успешно экспортированы!";
+

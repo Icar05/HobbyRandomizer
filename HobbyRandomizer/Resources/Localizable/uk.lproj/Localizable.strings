@@ -33,3 +33,11 @@
 "Translations.Create.typeNecessary" = "Справи";
 "Translations.Create.typeFreetime" = "Захоплення";
 "Translations.Create.typeWorkInProgress" = "Розвиток";
+
+/* Alert */
+"Translations.Alert.success" = "Успіх";
+"Translations.Alert.failure" = "Невдача";
+"Translations.Alert.successImportMessage" = "Дані були успішно імпортовані!";
+"Translations.Alert.failureMessage" = "Щось трилось!";
+"Translations.Alert.successRemoveData" = "Файл був успішно видалений!";
+"Translations.Alert.successExportMessage" = "Дані були успішно експортовані!";

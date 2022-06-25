@@ -24,9 +24,5 @@ public final class InitialViewController: UINavigationController {
         setupUI()
     }
     
-    private func setupUI() {
-//        setNavigationBarHidden(true, animated: false)
-//        navigationBar.barStyle = .black
-//        interactivePopGestureRecognizer?.delegate = self
-    }
+    private func setupUI() {}
 }

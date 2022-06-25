@@ -64,8 +64,8 @@ public final class DisplayDataViewController:  UIViewController {
     }
     
     private func showAlert(value: Bool){
-        let title = value ? "Success" : "Failure"
-        let subtitle = value ? "Data has been successfully imported!" : "Something went wrong!"
+        let title = value ? Translations.Alert.success : Translations.Alert.failure
+        let subtitle = value ? Translations.Alert.successImportMessage : Translations.Alert.failureMessage
         self.showAlert(title: title, subtitle: subtitle)
     }
     

@@ -8,6 +8,33 @@ import Foundation
 
 struct Translations{
     
+    struct Alert{
+        public static var success: String{
+            "Translations.Alert.success".localized(Bundle.main)
+        }
+        
+        public static var failure: String{
+            "Translations.Alert.failure".localized(Bundle.main)
+        }
+        
+        public static var successImportMessage: String{
+            "Translations.Alert.successImportMessage".localized(Bundle.main)
+        }
+        
+        public static var failureMessage: String{
+            "Translations.Alert.failureMessage".localized(Bundle.main)
+        }
+        
+        public static var successRemoveData: String{
+            "Translations.Alert.successRemoveData".localized(Bundle.main)
+        }
+        
+        public static var successExportMessage: String{
+            "Translations.Alert.successExportMessage".localized(Bundle.main)
+        }
+        
+    }
+    
     struct Create{
         public static var makeExport: String{
             "Translations.Create.makeExport".localized(Bundle.main)

@@ -67,8 +67,8 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
     }
     
     private func showAlert(value: Bool){
-        let title = value ? "Success" : "Failure"
-        let subtitle = value ? "Data has been successfully exported!" : "Something went wrong!"
+        let title = value ? Translations.Alert.success : Translations.Alert.failure
+        let subtitle = value ? Translations.Alert.successExportMessage : Translations.Alert.failureMessage
         self.showAlert(title: title, subtitle: subtitle)
     }
     

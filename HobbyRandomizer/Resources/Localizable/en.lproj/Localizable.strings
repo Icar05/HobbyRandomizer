@@ -33,3 +33,11 @@
 "Translations.Create.typeNecessary" = "Affairs";
 "Translations.Create.typeFreetime" = "Hobbies";
 "Translations.Create.typeWorkInProgress" = "Education";
+
+/* Alert */
+"Translations.Alert.success" = "Success";
+"Translations.Alert.failure" = "Failure";
+"Translations.Alert.successImportMessage" = "Data has been successfully imported!";
+"Translations.Alert.failureMessage" = "Something went wrong!";
+"Translations.Alert.successRemoveData" = "File has been successfully removed!";
+"Translations.Alert.successExportMessage" = "Data has been successfully exported!";
