@@ -48,9 +48,9 @@ class CustomDecoder{
         case "Necessary":
             return .necessary
         case "WorkInProgress":
-            return .freetime
-        case "FreeTime":
             return .workInProgress
+        case "FreeTime":
+            return .freetime
         default:
             return nil
         }
