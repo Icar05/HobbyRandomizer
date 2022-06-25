@@ -27,6 +27,7 @@ class FileWriterUtil{
     
     private let log = "TextWritterLog"
     
+    private let decoder = CustomDecoder()
     
     
     func readPdf(url: URL){
@@ -92,12 +93,20 @@ class FileWriterUtil{
         }
     }
     
-    func importModels(fileName: String) -> [RandItemCellModel]?{
+    func importModelsAsJson(fileName: String) -> [RandItemCellModel]?{
         guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
             printLog("can't read data from string ...")
             return nil
         }
         return decodeData(data: data)
+    }
+    
+    func importModelsAsCustom(fileName: String) -> [RandItemCellModel]?{
+        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
+            printLog("can't read data from string ...")
+            return nil
+        }
+        return decoder.decodeString(input: String(data: data, encoding: String.Encoding.utf8)!)
     }
     
     @discardableResult

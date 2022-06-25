@@ -96,6 +96,11 @@ extension UIColor {
 }
 
 extension String{
+    
+    var withoutSpecialCharacters: String {
+        return self.replacingOccurrences(of: "\\s", with: "", options: .regularExpression)
+    }
+    
     func truncate(length: Int, trailing: String = "") -> String {
         if self.count > length {
             return String(self.prefix(length)) + trailing
@@ -132,4 +137,13 @@ extension Bundle {
         return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
         object(forInfoDictionaryKey: "CFBundleName") as? String
     }
+}
+
+
+extension Array {
+
+  var tail: Array {
+    return Array(self.dropFirst())
+  }
+
 }

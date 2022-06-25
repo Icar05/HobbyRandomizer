@@ -30,13 +30,18 @@ public final class FilesPresenter{
     
     func parseFileData(fileName: String){
         
-        guard let models = filesUtil.importModels(fileName: fileName) else{
-            let content = filesUtil.readFile(fileName: fileName)
-            view.displayText(data: content)
+        if let models = filesUtil.importModelsAsJson(fileName: fileName){
+            view.displayModels(data: models)
             return
         }
-       
-        view.displayModels(data: models)
+        
+        if let models = filesUtil.importModelsAsCustom(fileName: fileName){
+            view.displayModels(data: models)
+            return
+        }
+        
+        let content = filesUtil.readFile(fileName: fileName)
+        view.displayText(data: content)
     }
     
     func removeItemByName(fileName: String){
