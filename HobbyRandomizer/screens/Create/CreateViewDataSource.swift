@@ -66,16 +66,6 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        if (indexPath.row == 0){
-            return 300
-        } else if(indexPath.row == self.dataSourse.count + 1){
-            return 60
-        } else{
-            return 100
-        }
-    }
-    
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if(indexPath.row == 0 || indexPath.row > dataSourse.count){
             return UITableViewCell.EditingStyle.none

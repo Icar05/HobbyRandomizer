@@ -12,23 +12,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CreateNewItemCell" customModule="RS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyL-ps-3da" customClass="CreateIdeaView" customModule="RS" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-18-I4O" userLabel="Container">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyL-ps-3da" customClass="CreateIdeaView" customModule="RS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="QFT-r5-V88"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="TyL-ps-3da" firstAttribute="top" secondItem="0Eh-18-I4O" secondAttribute="top" id="1dh-fn-4cd"/>
+                            <constraint firstAttribute="height" constant="300" id="2oe-TZ-oWp"/>
+                            <constraint firstAttribute="trailing" secondItem="TyL-ps-3da" secondAttribute="trailing" id="P4M-7x-KSq"/>
+                            <constraint firstItem="TyL-ps-3da" firstAttribute="leading" secondItem="0Eh-18-I4O" secondAttribute="leading" id="VyH-KA-CPz"/>
+                            <constraint firstAttribute="bottom" secondItem="TyL-ps-3da" secondAttribute="bottom" id="d3B-5P-jWO"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="TyL-ps-3da" secondAttribute="bottom" id="807-iY-147"/>
-                    <constraint firstItem="TyL-ps-3da" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="F4Z-qt-hWE"/>
-                    <constraint firstItem="TyL-ps-3da" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Vaw-S6-UdQ"/>
-                    <constraint firstAttribute="trailing" secondItem="TyL-ps-3da" secondAttribute="trailing" id="ufQ-8p-JhN"/>
+                    <constraint firstItem="0Eh-18-I4O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4TC-OP-yyQ"/>
+                    <constraint firstAttribute="trailing" secondItem="0Eh-18-I4O" secondAttribute="trailing" id="5wu-Ly-04P"/>
+                    <constraint firstItem="0Eh-18-I4O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Hql-yM-Fti"/>
+                    <constraint firstAttribute="bottom" secondItem="0Eh-18-I4O" secondAttribute="bottom" id="Uoe-VX-j3d"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
