@@ -8,6 +8,32 @@ import Foundation
 
 struct Translations{
     
+    struct Create{
+        public static var makeExport: String{
+            "Translations.Create.makeExport".localized(Bundle.main)
+        }
+        
+        public static var newIdeaTitle: String{
+            "Translations.Create.newIdeaTitle".localized(Bundle.main)
+        }
+        
+        public static var newIdeaDescription: String{
+            "Translations.Create.newIdeaDescription".localized(Bundle.main)
+        }
+        
+        public static var typeNecessary: String{
+            "Translations.Create.typeNecessary".localized(Bundle.main)
+        }
+        
+        public static var typeFreetime: String{
+            "Translations.Create.typeFreetime".localized(Bundle.main)
+        }
+        
+        public static var typeWorkInProgress: String{
+            "Translations.Create.typeWorkInProgress".localized(Bundle.main)
+        }
+    }
+    
     struct DisplayData{
         public static var makeImport: String{
             "Translations.DisplayData.makeImport".localized(Bundle.main)

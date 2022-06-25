@@ -25,3 +25,11 @@
 
 /* Display data */
 "Translations.DisplayData.makeImport" = "Import data in application!";
+
+/* Create */
+"Translations.Create.makeExport" = "Export data from application!";
+"Translations.Create.newIdeaTitle" = "New idea title";
+"Translations.Create.newIdeaDescription" = "New idea subtitle";
+"Translations.Create.typeNecessary" = "Affairs";
+"Translations.Create.typeFreetime" = "Hobbies";
+"Translations.Create.typeWorkInProgress" = "Education";

@@ -25,3 +25,12 @@
 
 /* Display data */
 "Translations.DisplayData.makeImport" = "Импортировать данные в приложение!";
+
+/* Create */
+"Translations.Create.makeExport" = "Экспортировать данные из приложения!";
+"Translations.Create.newIdeaTitle" = "Заголовок новой идеи";
+"Translations.Create.newIdeaDescription" = "Описание новой идеи";
+"Translations.Create.typeNecessary" = "Дела";
+"Translations.Create.typeFreetime" = "Увлечения";
+"Translations.Create.typeWorkInProgress" = "Развитие";
+

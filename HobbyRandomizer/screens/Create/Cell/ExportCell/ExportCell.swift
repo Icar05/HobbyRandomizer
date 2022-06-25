@@ -19,6 +19,7 @@ class ExportCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        self.exportData.text = Translations.Create.makeExport
     }
     
     func setupDelegate(callback:  (() -> Void )?){

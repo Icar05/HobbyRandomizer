@@ -25,3 +25,11 @@
 
 /* Display data */
 "Translations.DisplayData.makeImport" = "Імпортувати данні в додаток!";
+
+/* Create */
+"Translations.Create.makeExport" = "Експортувати дані з додатку!";
+"Translations.Create.newIdeaTitle" = "Заголовок нової ідеї";
+"Translations.Create.newIdeaDescription" = "Опис нової ідеї";
+"Translations.Create.typeNecessary" = "Справи";
+"Translations.Create.typeFreetime" = "Захоплення";
+"Translations.Create.typeWorkInProgress" = "Розвиток";

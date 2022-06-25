@@ -67,6 +67,9 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
         let gest = UITapGestureRecognizer(target: self, action: #selector(grabData(tapGestureRecognizer:)))
         createBtn.addGestureRecognizer(gest)
+        
+        titleTextField.placeholder = Translations.Create.newIdeaTitle
+        descTextField.placeholder = Translations.Create.newIdeaDescription
     }
     
     
