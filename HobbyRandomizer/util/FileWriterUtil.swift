@@ -26,7 +26,8 @@ class FileWriterUtil{
     
     
     private let log = "TextWritterLog"
-        
+    
+    
     
     func readPdf(url: URL){
         if let pdf = PDFDocument(url: url) {
@@ -112,14 +113,30 @@ class FileWriterUtil{
         return true
     }
     
+    func readAllAppFilenames() -> [FileInfo]{
+        
+        do {
+            let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .localDomainMask, appropriateFor: nil, create: false)
+            return readAllFilenames(url: url)
+        } catch let error {
+            printLog("Error while reading app url: \(error)")
+            return []
+        }
+    }
+    
     func readAllFilenames() -> [FileInfo]{
+        
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             printLog("DocumentUrl nil")
             return []
         }
         
+        return readAllFilenames(url: documentsURL)
+    }
+    
+    private func readAllFilenames(url: URL) -> [FileInfo]{
         do {
-            let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
             
             return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
         } catch let error{

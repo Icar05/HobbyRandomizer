@@ -19,14 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let fileUtil: FileWriterUtil = FileWriterUtil()
     
+    private var testUtil: TestUtil? = nil
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.navigator.setupInitialViewController(window: window!)
-        self.writeTest()
-        self.writeTestData()
-            
+        self.testUtil = TestUtil(fileUtil: fileUtil)
+        self.testUtil?.startTest()
+        
         return true
     }
     
@@ -40,16 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func getFileUtil() -> FileWriterUtil{
         return fileUtil
-    }
-    
-    func writeTest(){
-        let time = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-        self.fileUtil.writeText(fileName: "test.txt", text: "[ This is a test... \(time) ]")
-    }
-    
-    func writeTestData(){
-        let testObjects = TestUtil().createMockModels()
-        self.fileUtil.exportModels(fileName: "testExport.txt", models: testObjects)
     }
 
 }
