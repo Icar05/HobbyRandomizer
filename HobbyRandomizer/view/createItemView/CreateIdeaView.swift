@@ -94,7 +94,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ItemType.allCases[row].rawValue.titleCase()
+        return ItemType.allCases[row].getTitle()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

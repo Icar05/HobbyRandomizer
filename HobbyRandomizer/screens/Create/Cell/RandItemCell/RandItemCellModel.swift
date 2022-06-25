@@ -19,6 +19,17 @@ struct RandItemCellModel: Codable{
 
 extension ItemType{
     
+    func getTitle() -> String{
+        switch self {
+        case .necessary:
+            return Translations.Create.typeNecessary
+        case .freetime:
+            return Translations.Create.typeFreetime
+        case .workInProgress:
+            return Translations.Create.typeWorkInProgress
+        }
+    }
+    
     func getImage() -> UIImage{
         switch self {
         case .necessary:
