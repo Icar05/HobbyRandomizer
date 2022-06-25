@@ -96,6 +96,14 @@ extension UIColor {
 }
 
 extension String{
+    func truncate(length: Int, trailing: String = "") -> String {
+        if self.count > length {
+            return String(self.prefix(length)) + trailing
+        } else {
+            return self
+        }
+    }
+    
     func titleCase() -> String {
         return self
             .replacingOccurrences(of: "([A-Z])",
@@ -118,7 +126,6 @@ extension String{
         return String(format: localized, args)
     }
 }
-
 
 extension Bundle {
     var displayName: String? {

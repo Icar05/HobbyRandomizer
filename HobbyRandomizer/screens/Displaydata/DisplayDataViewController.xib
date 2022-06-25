@@ -48,8 +48,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkK-EL-FcQ" userLabel="SimpleView">
                     <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-Jp-h2S">
-                            <rect key="frame" x="186.5" y="398.5" width="41.5" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-Jp-h2S">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -58,8 +58,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" systemColor="tintColor"/>
                     <constraints>
-                        <constraint firstItem="bzD-Jp-h2S" firstAttribute="centerY" secondItem="UkK-EL-FcQ" secondAttribute="centerY" id="4N8-Ml-qZQ"/>
-                        <constraint firstItem="bzD-Jp-h2S" firstAttribute="centerX" secondItem="UkK-EL-FcQ" secondAttribute="centerX" id="jle-9n-k7f"/>
+                        <constraint firstAttribute="trailing" secondItem="bzD-Jp-h2S" secondAttribute="trailing" id="Gdc-z9-wLE"/>
+                        <constraint firstItem="bzD-Jp-h2S" firstAttribute="top" secondItem="UkK-EL-FcQ" secondAttribute="top" id="PJ7-H6-eSy"/>
+                        <constraint firstItem="bzD-Jp-h2S" firstAttribute="leading" secondItem="UkK-EL-FcQ" secondAttribute="leading" id="jWn-So-XYf"/>
                     </constraints>
                 </view>
             </subviews>
@@ -86,7 +87,7 @@
     </objects>
     <resources>
         <namedColor name="MainColor">
-            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
