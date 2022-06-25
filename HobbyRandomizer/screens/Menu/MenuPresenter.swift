@@ -23,11 +23,11 @@ public final class MenuPresenter{
     
     private func prepareDataSource() -> [MenuCellModel]{
         return [
-//            MenuCellModel(
-//                icon:UIImage(systemName: "plus.rectangle.fill.on.folder.fill")!,
-//                type: .Create,
-//                title: Translations.Menu.itemCreate
-//            ),
+            MenuCellModel(
+                icon:UIImage(systemName: "plus.rectangle.fill.on.folder.fill")!,
+                type: .Create,
+                title: Translations.Menu.itemCreate
+            ),
             MenuCellModel(
                 icon:  UIImage(systemName: "wrench.fill")!,
                 type: .Test,

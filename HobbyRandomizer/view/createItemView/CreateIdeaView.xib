@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateIdeaView" customModule="HobbyRandomizer" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateIdeaView" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="bsh-Es-R8f"/>
                 <outlet property="createBtn" destination="UZ5-I3-ZdD" id="Azg-F5-mHG"/>
@@ -68,14 +68,14 @@
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAM-CL-SjN" userLabel="BottomSeparator">
                     <rect key="frame" x="0.0" y="289" width="414" height="1"/>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="vMl-ju-DBe"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDf-s2-lsV" userLabel="TopSeparator">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Lpr-RW-ttT"/>
                     </constraints>
@@ -126,9 +126,6 @@
         <image name="save" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
