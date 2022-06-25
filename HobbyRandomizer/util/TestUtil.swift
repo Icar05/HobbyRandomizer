@@ -16,10 +16,8 @@ class TestUtil{
     }
     
     func startTest(){
-        let data = self.fileUtil.readAllAppFilenames()
-        data.forEach{
-            print("file: \($0)")
-        }
+//       writeTest()
+//        writeTestData()
     }
     
     private func writeTest(){

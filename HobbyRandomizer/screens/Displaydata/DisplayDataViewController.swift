@@ -11,8 +11,6 @@ public final class DisplayDataViewController:  UIViewController {
     
     
     
-    @IBOutlet weak var importData: LabelWithCallBack!
-    
     @IBOutlet weak var simpleViewLabel: UILabel!
     
     @IBOutlet weak var simpleView: UIView!
@@ -43,10 +41,7 @@ public final class DisplayDataViewController:  UIViewController {
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
         self.registerCells()
-
-        self.importData.callback = {
-            self.presenter.importData()
-        }
+        self.dataSource.delegate = self
         
         self.presenter.viewDidLoad()
     }
@@ -56,7 +51,6 @@ public final class DisplayDataViewController:  UIViewController {
     }
     
     func displayData(data: String){
-        self.importData.isHidden = true
         self.simpleView.isHidden = false
         self.tableView.isHidden = true
         self.simpleViewLabel.text = data
@@ -64,7 +58,6 @@ public final class DisplayDataViewController:  UIViewController {
     
     func displayData(data: [RandItemCellModel]){
         self.dataSource.setData(data: data)
-        self.importData.isHidden = false
         self.simpleView.isHidden = true
         self.tableView.isHidden = false
         self.tableView.reloadData()
@@ -80,8 +73,18 @@ public final class DisplayDataViewController:  UIViewController {
         let randId = self.dataSource.getRandCellIdentifier()
         let randNib = UINib(nibName: randId, bundle: nil)
         
+        let importId = self.dataSource.getImportCellIdentifier()
+        let importNib = UINib(nibName: importId, bundle: nil)
+        
         self.tableView?.register(randNib, forCellReuseIdentifier: randId)
+        self.tableView?.register(importNib, forCellReuseIdentifier: importId)
     }
 
+}
 
+extension DisplayDataViewController: DisplayDataSourceDelegate{
+    
+    func didImportClick() {
+        self.presenter.importData()
+    }
 }

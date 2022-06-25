@@ -7,10 +7,18 @@
 
 import Foundation
 
+protocol DisplayDataSourceDelegate: NSObject{
+    func didImportClick()
+}
+
 class DisplayDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
+    
     private var dataSourse: [RandItemCellModel] = []
+    
+    weak var delegate: DisplayDataSourceDelegate? = nil
+    
     
     
     func getData() -> [RandItemCellModel]{
@@ -25,18 +33,34 @@ class DisplayDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
         return String(describing: RandItemCell.self)
     }
     
+    func getImportCellIdentifier() -> String{
+        return String(describing: ImportDataCell.self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count
+        return dataSourse.count + 1
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: getImportCellIdentifier(), for: indexPath) as! ImportDataCell
+            cell.modify()
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-        cell.configure(model: self.dataSourse[indexPath.row])
+        cell.configure(model: self.dataSourse[indexPath.row - 1])
         cell.modify()
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            self.delegate?.didImportClick()
+        }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

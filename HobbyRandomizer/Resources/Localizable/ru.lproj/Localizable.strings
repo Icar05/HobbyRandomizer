@@ -22,3 +22,6 @@
 
 /* Files */
 "Translations.Files.noData" = "Файлов еще нет";
+
+/* Display data */
+"Translations.DisplayData.makeImport" = "Импортировать данные в приложение!";

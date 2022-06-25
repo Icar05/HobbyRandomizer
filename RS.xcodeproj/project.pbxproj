@@ -16,6 +16,8 @@
 		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
+		ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4491AB2866938300CCC32D /* ImportDataCell.swift */; };
+		ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4491AC2866938300CCC32D /* ImportDataCell.xib */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
 		ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
@@ -94,6 +96,8 @@
 		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
+		ED4491AB2866938300CCC32D /* ImportDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCell.swift; sourceTree = "<group>"; };
+		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
 		ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectSectorUtil.swift; sourceTree = "<group>"; };
 		ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HobbyRandomizer-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -184,6 +188,23 @@
 				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
 			);
 			path = storage;
+			sourceTree = "<group>";
+		};
+		ED4491A92866935C00CCC32D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED4491AA2866936500CCC32D /* ImportDataCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ED4491AA2866936500CCC32D /* ImportDataCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED4491AB2866938300CCC32D /* ImportDataCell.swift */,
+				ED4491AC2866938300CCC32D /* ImportDataCell.xib */,
+			);
+			path = ImportDataCell;
 			sourceTree = "<group>";
 		};
 		ED4A3CC4271A290000084BB8 /* util */ = {
@@ -372,6 +393,7 @@
 		ED7918AC2863DD760041D407 /* Displaydata */ = {
 			isa = PBXGroup;
 			children = (
+				ED4491A92866935C00CCC32D /* Cell */,
 				ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */,
 				ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */,
 				ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */,
@@ -634,6 +656,7 @@
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
+				ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
@@ -659,6 +682,7 @@
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
+				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,

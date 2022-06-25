@@ -8,6 +8,12 @@ import Foundation
 
 struct Translations{
     
+    struct DisplayData{
+        public static var makeImport: String{
+            "Translations.DisplayData.makeImport".localized(Bundle.main)
+        }
+    }
+    
     struct Files{
         public static var noData: String{
             "Translations.Files.noData".localized(Bundle.main)

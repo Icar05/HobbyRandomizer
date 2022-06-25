@@ -22,3 +22,6 @@
 
 /* Files */
 "Translations.Files.noData" = "Файлів ще нема";
+
+/* Display data */
+"Translations.DisplayData.makeImport" = "Імпортувати данні в додаток!";
