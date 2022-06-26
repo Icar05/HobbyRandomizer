@@ -67,9 +67,9 @@ struct Translations{
         }
     }
     
-    struct Files{
+    struct All{
         public static var noData: String{
-            "Translations.Files.noData".localized(Bundle.main)
+            "Translations.All.noData".localized(Bundle.main)
         }
     }
     

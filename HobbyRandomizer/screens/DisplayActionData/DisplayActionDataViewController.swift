@@ -11,9 +11,10 @@ public final class DisplayActionDataViewController:  UIViewController {
     
     
     
-    @IBOutlet weak var simpleViewLabel: UILabel!
     
-    @IBOutlet weak var simpleView: UIView!
+    @IBOutlet weak var emptyViewLabel: UILabel!
+    
+    @IBOutlet weak var emptyView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,6 +43,7 @@ public final class DisplayActionDataViewController:  UIViewController {
         self.tableView.tableFooterView = UIView()
         self.registerCells()
         self.dataSource.delegate = self
+        self.emptyViewLabel.text = Translations.All.noData
         
         self.presenter.viewDidLoad()
     }
@@ -50,17 +52,11 @@ public final class DisplayActionDataViewController:  UIViewController {
         self.showAlert(value: value)
     }
     
-    func displayData(data: String){
-        self.simpleView.isHidden = false
-        self.tableView.isHidden = true
-        self.simpleViewLabel.text = data
-    }
-    
     func displayData(data: [RandItemCellModel]){
         self.dataSource.setData(data: data)
-        self.simpleView.isHidden = true
         self.tableView.isHidden = false
         self.tableView.reloadData()
+        self.emptyView.isHidden = !data.isEmpty
     }
     
     private func showAlert(value: Bool){

@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DisplayActionDataViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="a1U-7g-3l9" id="u19-Xu-hba"/>
+                <outlet property="emptyViewLabel" destination="PAk-9r-bHf" id="xnD-Zb-ruF"/>
                 <outlet property="tableView" destination="kS0-Kh-Bu7" id="Kql-0f-82f"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,7 +34,7 @@
                     <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-7g-3l9" userLabel="EmptyView">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-7g-3l9" userLabel="EmptyView">
                     <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAk-9r-bHf">

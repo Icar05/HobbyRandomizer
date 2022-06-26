@@ -20,8 +20,8 @@
 "Translations.Random.selectedTitle" = "Here will be title ...";
 "Translations.Random.selectedDescription" = "Here will be description ... ";
 
-/* Files */
-"Translations.Files.noData" = "There is no data yet";
+/* All */
+"Translations.All.noData" = "There is no data yet";
 
 /* Display data */
 "Translations.DisplayData.makeImport" = "Import data in application!";

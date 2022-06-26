@@ -8,9 +8,7 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
-   
     
-   
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -20,7 +18,7 @@ class NavigatorImpl: Navigator{
     func getInitialController() -> InitialViewController{
         let navVc = InitialViewController()
         let menuVc = getMenuScreen()
-            navVc.viewControllers = [menuVc]
+        navVc.viewControllers = [menuVc]
         return navVc
     }
     
@@ -31,7 +29,7 @@ class NavigatorImpl: Navigator{
     func getMenuScreen() -> UIViewController {
         let presenter = MenuPresenter()
         let viewController = MenuViewController(presener: presenter)
-            presenter.set(view: viewController)
+        presenter.set(view: viewController)
         
         return viewController
     }
@@ -49,7 +47,7 @@ class NavigatorImpl: Navigator{
     func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController {
         let presenter = CreatePresenter(storage: storage, fileUtil: fileUtil)
         let viewcontroller = CreateViewController(presenter: presenter)
-            presenter.set(view: viewcontroller)
+        presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
@@ -62,7 +60,7 @@ class NavigatorImpl: Navigator{
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController {
         let presenter = ShowPresenter(storage: storage, type: type)
         let viewcontroller = ShowViewController(presenter: presenter)
-            presenter.set(view: viewcontroller)
+        presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
@@ -71,23 +69,31 @@ class NavigatorImpl: Navigator{
     func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController {
         let presenter = FilesPresenter(filesUtil: filesUtil)
         let viewcontroller = FilesViewController(presenter: presenter)
-            presenter.set(view: viewcontroller)
+        presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getDisplayDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController {
-        let presenter = DisplayDataPresenter(data: data, storage: storage)
-        let viewcontroller = DisplayDataViewController(presenter: presenter)
-            presenter.set(view: viewcontroller)
+    func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController {
+        let presenter = DisplayActionDataPresenter(data: data, storage: storage)
+        let viewcontroller = DisplayActionDataViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getDisplayDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController {
-        let presenter = DisplayDataPresenter(data: data, storage: storage)
-        let viewcontroller = DisplayDataViewController(presenter: presenter)
-            presenter.set(view: viewcontroller)
+    func getDisplayInfoDataScreen(data: [InfoModel], storage: UserDefaultStorage) -> UIViewController {
+        let presenter = DisplayInfoDataPresenter(data: data, storage: storage)
+        let viewcontroller = DisplayInfoDataViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController {
+        let presenter = DisplayRawDataPresenter(data: data, storage: storage)
+        let viewcontroller = DisplayRawDataViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
         
         return viewcontroller
     }

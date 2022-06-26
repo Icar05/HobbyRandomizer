@@ -15,12 +15,12 @@ protocol FileDataSourceDelegate: NSObject{
 class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private var dataSourse: [DisplayFileCellModel] = []
+    private var data: [DisplayFileCellModel] = []
     
     weak var delegate: FileDataSourceDelegate? = nil
     
     func setData(data: [DisplayFileCellModel]){
-        self.dataSourse = data
+        self.data = data
     }
     
     func getIdentifier() -> String{
@@ -28,24 +28,24 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count
+        return data.count
     }
     
     func isNotEmpty() -> Bool {
-        return self.dataSourse.count > 0
+        return self.data.count > 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! DisplayFileCell
-        cell.configure(model: self.dataSourse[indexPath.row])
+        cell.configure(model: self.data[indexPath.row])
         cell.modify()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = self.dataSourse[indexPath.row]
+        let model = self.data[indexPath.row]
         self.delegate?.onItemSelected(model: model)
     }
     
@@ -56,8 +56,8 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             
-            let fileName = dataSourse[indexPath.row].fileName
-            self.dataSourse.remove(at: indexPath.row)
+            let fileName = data[indexPath.row].fileName
+            self.data.remove(at: indexPath.row)
             self.delegate?.onItemRemoved(fileName: fileName)
         }
     }

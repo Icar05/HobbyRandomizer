@@ -15,18 +15,18 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     
     
     
-    private var dataSourse: [RandItemCellModel] = []
+    private var data: [RandItemCellModel] = []
     
     weak var delegate: DisplayActionSourceDelegate? = nil
     
     
     
     func getData() -> [RandItemCellModel]{
-        return self.dataSourse
+        return self.data
     }
     
     func setData(data: [RandItemCellModel]){
-        self.dataSourse = data
+        self.data = data
     }
     
     func getRandCellIdentifier() -> String{
@@ -38,7 +38,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count + 1
+        return data.count + 1
     }
     
     
@@ -51,7 +51,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-        cell.configure(model: self.dataSourse[indexPath.row - 1])
+        cell.configure(model: self.data[indexPath.row - 1])
         cell.modify()
         
         return cell

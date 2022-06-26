@@ -30,8 +30,11 @@
 		ED5361582868652D004F1836 /* DisplayInfoDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5361572868652D004F1836 /* DisplayInfoDataPresenter.swift */; };
 		ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5361592868654E004F1836 /* DisplayActionDataPresenter.swift */; };
 		ED53615C28686580004F1836 /* DisplayRawDataDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53615B28686580004F1836 /* DisplayRawDataDataSourse.swift */; };
-		ED53615E28686594004F1836 /* DisplayInfoDataDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53615D28686594004F1836 /* DisplayInfoDataDataSourse.swift */; };
+		ED53615E28686594004F1836 /* DisplayInfoDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53615D28686594004F1836 /* DisplayInfoDataSourse.swift */; };
 		ED536160286865A6004F1836 /* DisplayActionDataDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53615F286865A6004F1836 /* DisplayActionDataDataSourse.swift */; };
+		ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616328686D73004F1836 /* DisplayRawDataCell.swift */; };
+		ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53616428686D73004F1836 /* DisplayRawDataCell.xib */; };
+		ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
 		ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C55284FD0370028BEED /* MenuViewController.xib */; };
@@ -62,9 +65,6 @@
 		ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */; };
 		ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */; };
 		ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AA2863D1CD0041D407 /* TestUtil.swift */; };
-		ED7918AF2863DDBA0041D407 /* DisplayDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */; };
-		ED7918B02863DDBA0041D407 /* DisplayDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */; };
-		ED7918B22863DDCC0041D407 /* DisplayDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */; };
 		ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B92863EC9E0041D407 /* ExportCell.swift */; };
 		ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918BA2863EC9E0041D407 /* ExportCell.xib */; };
 		ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */; };
@@ -99,7 +99,6 @@
 		EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5602864EEAD00565AAF /* Localizable.strings */; };
 		EDF8A5742865060300565AAF /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A5722865060300565AAF /* TopCell.swift */; };
 		EDF8A5752865060300565AAF /* TopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5732865060300565AAF /* TopCell.xib */; };
-		EDF8A5792865402E00565AAF /* DisplayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A5782865402E00565AAF /* DisplayDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,8 +126,11 @@
 		ED5361572868652D004F1836 /* DisplayInfoDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataPresenter.swift; sourceTree = "<group>"; };
 		ED5361592868654E004F1836 /* DisplayActionDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayActionDataPresenter.swift; sourceTree = "<group>"; };
 		ED53615B28686580004F1836 /* DisplayRawDataDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataDataSourse.swift; sourceTree = "<group>"; };
-		ED53615D28686594004F1836 /* DisplayInfoDataDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataDataSourse.swift; sourceTree = "<group>"; };
+		ED53615D28686594004F1836 /* DisplayInfoDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataSourse.swift; sourceTree = "<group>"; };
 		ED53615F286865A6004F1836 /* DisplayActionDataDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayActionDataDataSourse.swift; sourceTree = "<group>"; };
+		ED53616328686D73004F1836 /* DisplayRawDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCell.swift; sourceTree = "<group>"; };
+		ED53616428686D73004F1836 /* DisplayRawDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataCell.xib; sourceTree = "<group>"; };
+		ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED5A6C55284FD0370028BEED /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -161,9 +163,6 @@
 		ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayFileCell.xib; sourceTree = "<group>"; };
 		ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFileCellModel.swift; sourceTree = "<group>"; };
 		ED7918AA2863D1CD0041D407 /* TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
-		ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataViewController.swift; sourceTree = "<group>"; };
-		ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayDataViewController.xib; sourceTree = "<group>"; };
-		ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataPresenter.swift; sourceTree = "<group>"; };
 		ED7918B92863EC9E0041D407 /* ExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCell.swift; sourceTree = "<group>"; };
 		ED7918BA2863EC9E0041D407 /* ExportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExportCell.xib; sourceTree = "<group>"; };
 		ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionParser.swift; sourceTree = "<group>"; };
@@ -200,7 +199,6 @@
 		EDF8A56F2864F3E900565AAF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDF8A5722865060300565AAF /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		EDF8A5732865060300565AAF /* TopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCell.xib; sourceTree = "<group>"; };
-		EDF8A5782865402E00565AAF /* DisplayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +281,7 @@
 		ED53614628686441004F1836 /* DisplayRawData */ = {
 			isa = PBXGroup;
 			children = (
+				ED53616128686D0E004F1836 /* Cell */,
 				ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */,
 				ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */,
 				ED53615528686507004F1836 /* DisplayRawDataPresenter.swift */,
@@ -297,7 +296,7 @@
 				ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */,
 				ED53614E286864D1004F1836 /* DisplayInfoDataViewController.xib */,
 				ED5361572868652D004F1836 /* DisplayInfoDataPresenter.swift */,
-				ED53615D28686594004F1836 /* DisplayInfoDataDataSourse.swift */,
+				ED53615D28686594004F1836 /* DisplayInfoDataSourse.swift */,
 			);
 			path = DisplayInfoData;
 			sourceTree = "<group>";
@@ -312,6 +311,24 @@
 				ED53615F286865A6004F1836 /* DisplayActionDataDataSourse.swift */,
 			);
 			path = DisplayActionData;
+			sourceTree = "<group>";
+		};
+		ED53616128686D0E004F1836 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED53616228686D14004F1836 /* DisplayRawDataCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		ED53616228686D14004F1836 /* DisplayRawDataCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED53616328686D73004F1836 /* DisplayRawDataCell.swift */,
+				ED53616428686D73004F1836 /* DisplayRawDataCell.xib */,
+				ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */,
+			);
+			path = DisplayRawDataCell;
 			sourceTree = "<group>";
 		};
 		ED5A6C4B284FC8C80028BEED /* Cell */ = {
@@ -330,7 +347,6 @@
 				ED5361482868646C004F1836 /* DisplayActionData */,
 				ED53614728686454004F1836 /* DisplayInfoData */,
 				ED53614628686441004F1836 /* DisplayRawData */,
-				ED7918AC2863DD760041D407 /* Displaydata */,
 				ED7918992863C0450041D407 /* Files */,
 				EDE5483528517A370018A75B /* Show */,
 				ED880FDE28515C9400DFD78F /* Randomizer */,
@@ -456,17 +472,6 @@
 				ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */,
 			);
 			path = DisplayFileCell;
-			sourceTree = "<group>";
-		};
-		ED7918AC2863DD760041D407 /* Displaydata */ = {
-			isa = PBXGroup;
-			children = (
-				ED7918AD2863DDBA0041D407 /* DisplayDataViewController.swift */,
-				ED7918AE2863DDBA0041D407 /* DisplayDataViewController.xib */,
-				ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */,
-				EDF8A5782865402E00565AAF /* DisplayDataSource.swift */,
-			);
-			path = Displaydata;
 			sourceTree = "<group>";
 		};
 		ED7918B82863EC790041D407 /* ExportCell */ = {
@@ -729,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
+				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				ED536150286864D1004F1836 /* DisplayInfoDataViewController.xib in Resources */,
@@ -741,7 +747,6 @@
 				ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
-				ED7918B02863DDBA0041D407 /* DisplayDataViewController.xib in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
@@ -777,10 +782,8 @@
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
-				ED7918AF2863DDBA0041D407 /* DisplayDataViewController.swift in Sources */,
 				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
-				ED7918B22863DDCC0041D407 /* DisplayDataPresenter.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
@@ -812,18 +815,19 @@
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
 				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,
+				ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */,
 				ED53615C28686580004F1836 /* DisplayRawDataDataSourse.swift in Sources */,
-				ED53615E28686594004F1836 /* DisplayInfoDataDataSourse.swift in Sources */,
+				ED53615E28686594004F1836 /* DisplayInfoDataSourse.swift in Sources */,
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
+				ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */,
 				ED5361582868652D004F1836 /* DisplayInfoDataPresenter.swift in Sources */,
 				EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */,
 				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
 				ED53615628686507004F1836 /* DisplayRawDataPresenter.swift in Sources */,
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
-				EDF8A5792865402E00565AAF /* DisplayDataSource.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
 				ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,

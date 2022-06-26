@@ -33,12 +33,18 @@ public final class FilesPresenter{
         let result: Any  = filesUtil.importModels(fileName: fileName) as Any
     
         if(result is [RandItemCellModel]){
-            view.displayModels(data: result as! [RandItemCellModel])
+            view.displayData(data: result as! [RandItemCellModel])
+            return
+        }
+        
+        
+        if(result is [InfoModel]){
+            view.displayData(data: result as! [InfoModel])
             return
         }
         
         if(result is String){
-            view.displayText(data: result as! String)
+            view.displayData(data: result as! String)
         }
         
         return

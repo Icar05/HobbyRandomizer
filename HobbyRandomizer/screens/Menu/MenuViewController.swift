@@ -41,7 +41,7 @@ public final class MenuViewController: UIViewController {
     }
     
     func didDataUpdate(data: [MenuCellModel]){
-        self.dataSource.setDataSource(dataSource: data)
+        self.dataSource.setData(data: data)
         self.collectionView.reloadData()
     }
     

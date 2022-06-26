@@ -14,7 +14,7 @@ protocol ShowDataSourceDelegate: NSObject{
 class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private var dataSourse: [RandItemCellModel] = []
+    private var data: [RandItemCellModel] = []
     
     private var type: ItemType = ItemType.necessary
     
@@ -23,7 +23,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     func getData() -> [RandItemCellModel]{
-        return self.dataSourse
+        return self.data
     }
     
     func setType(type: ItemType){
@@ -31,7 +31,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func setData(data: [RandItemCellModel]){
-        self.dataSourse = data
+        self.data = data
     }
     
     func getRandCellIdentifier() -> String{
@@ -43,7 +43,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count + 1
+        return data.count + 1
     }
     
     
@@ -60,7 +60,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-        cell.configure(model: self.dataSourse[indexPath.row - 1])
+        cell.configure(model: self.data[indexPath.row - 1])
         cell.modify()
         
         return cell

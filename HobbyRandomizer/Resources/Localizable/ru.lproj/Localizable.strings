@@ -20,8 +20,8 @@
 "Translations.Random.selectedTitle" = "Здесь будет заголовок ...";
 "Translations.Random.selectedDescription" = "Здесь будет описание ... ";
 
-/* Files */
-"Translations.Files.noData" = "Файлов еще нет";
+/* All */
+"Translations.All.noData" = "Файлов еще нет";
 
 /* Display data */
 "Translations.DisplayData.makeImport" = "Импортировать данные в приложение!";

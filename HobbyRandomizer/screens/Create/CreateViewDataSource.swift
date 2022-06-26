@@ -17,13 +17,13 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     
     
     
-    private var dataSourse: [RandItemCellModel] = []
+    private var data: [RandItemCellModel] = []
     
     weak var delegate: CreateDataSourceDelegate? = nil
     
     
     func setData(data: [RandItemCellModel]){
-        self.dataSourse = data
+        self.data = data
     }
     
     func getRandCellIdentifier() -> String{
@@ -39,7 +39,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count + 2
+        return data.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,18 +50,18 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.setupDelegate(delegate: self)
             
             return cell
-        }else if( indexPath.row == dataSourse.count + 1) {
+        }else if( indexPath.row == data.count + 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: getExportCellIndifier(), for: indexPath) as! ExportCell
             cell.modify()
             cell.setupDelegate(callback: {
-                self.delegate?.onExportDidTap(freshModels: self.dataSourse)
+                self.delegate?.onExportDidTap(freshModels: self.data)
             })
             
-            cell.isHidden = self.dataSourse.count < 1
+            cell.isHidden = self.data.count < 1
             return cell
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-            cell.configure(model: self.dataSourse[indexPath.row - 1])
+            cell.configure(model: self.data[indexPath.row - 1])
             cell.modify()
             return cell
         }
@@ -69,7 +69,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if(indexPath.row == 0 || indexPath.row > dataSourse.count){
+        if(indexPath.row == 0 || indexPath.row > data.count){
             return UITableViewCell.EditingStyle.none
         }
         
@@ -77,15 +77,15 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete && indexPath.row > 0 && indexPath.row <= dataSourse.count {
-            self.dataSourse.remove(at: indexPath.row - 1)
-            self.delegate?.onModelDeleted(freshModels: self.dataSourse)
+        if editingStyle == UITableViewCell.EditingStyle.delete && indexPath.row > 0 && indexPath.row <= data.count {
+            self.data.remove(at: indexPath.row - 1)
+            self.delegate?.onModelDeleted(freshModels: self.data)
         }
     }
     
     func onItemCreated(item: RandItemCellModel) {
-        self.dataSourse.append(item)
-        self.delegate?.onModelCreated(freshModels: self.dataSourse)
+        self.data.append(item)
+        self.delegate?.onModelCreated(freshModels: self.data)
     }
     
     

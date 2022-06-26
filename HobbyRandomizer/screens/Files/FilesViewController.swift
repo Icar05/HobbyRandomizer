@@ -42,7 +42,7 @@ public final class FilesViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.dataSource.delegate = self
         self.registerCells()
-        self.emptyViewLabel.text = Translations.Files.noData
+        self.emptyViewLabel.text = Translations.All.noData
         
         self.presenter.viewDidLoad()
     }
@@ -53,16 +53,22 @@ public final class FilesViewController: UIViewController {
         self.dataSource.setData(data: data.map{ $0.toDisplayFileCellModel()})
         self.tableView.reloadData()
     }
-
-    func displayModels(data: [RandItemCellModel]){
+    
+    func displayData(data: [InfoModel]){
         let storage = getStorage()
-        let controller = getNavigator().getDisplayDataScreen(data: data, storage: storage)
+        let controller = getNavigator().getDisplayInfoDataScreen(data: data, storage: storage)
+        getNavigator().navigate(start: self, destination: controller)
+    }
+
+    func displayData(data: [RandItemCellModel]){
+        let storage = getStorage()
+        let controller = getNavigator().getDisplayActionDataScreen(data: data, storage: storage)
         getNavigator().navigate(start: self, destination: controller)
     }
     
-    func displayText(data: String){
+    func displayData(data: String){
         let storage = getStorage()
-        let controller = getNavigator().getDisplayDataScreen(data: data, storage: storage)
+        let controller = getNavigator().getDisplayRawDataScreen(data: data, storage: storage)
         getNavigator().navigate(start: self, destination: controller)
     }
     

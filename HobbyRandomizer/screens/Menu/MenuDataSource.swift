@@ -19,7 +19,7 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     
     
     
-    private var dataSourse: [MenuCellModel] = []
+    private var data: [MenuCellModel] = []
     
     private let identifier = String(describing: MenuCell.self)
     
@@ -33,8 +33,8 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     }
     
     
-    func setDataSource(dataSource: [MenuCellModel]){
-        self.dataSourse = dataSource
+    func setData(data: [MenuCellModel]){
+        self.data = data
     }
     
     func getIdentifier() -> String{
@@ -42,14 +42,14 @@ class MenuDataSource: NSObject,  UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataSourse.count
+        return self.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! MenuCell
         
-            cell.configure(model: self.dataSourse[indexPath.row])
+            cell.configure(model: self.data[indexPath.row])
 
         return cell
     }
@@ -77,7 +77,7 @@ extension MenuDataSource: UICollectionViewDelegate{
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = self.dataSourse[indexPath.row].type
+        let item = self.data[indexPath.row].type
         self.delegate?.onItemSelected(item: item)
     }
     

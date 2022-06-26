@@ -1,32 +1,20 @@
 //
-//  DisplayDataSource.swift
+//  DisplayInfoDataDataSourse.swift
 //  RS
 //
-//  Created by ICoon on 24.06.2022.
+//  Created by ICoon on 26.06.2022.
 //
 
 import Foundation
 
-protocol DisplayDataSourceDelegate: NSObject{
-    func didImportClick()
-}
-
-class DisplayDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
+class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     
-    private var dataSourse: [RandItemCellModel] = []
+    private var data: [InfoModel] = []
     
-    weak var delegate: DisplayDataSourceDelegate? = nil
-    
-    
-    
-    func getData() -> [RandItemCellModel]{
-        return self.dataSourse
-    }
-    
-    func setData(data: [RandItemCellModel]){
-        self.dataSourse = data
+    func setData(data: [InfoModel]){
+        self.data = data
     }
     
     func getRandCellIdentifier() -> String{
@@ -38,7 +26,7 @@ class DisplayDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSourse.count + 1
+        return data.count + 1
     }
     
     
@@ -51,22 +39,21 @@ class DisplayDataSource : NSObject, UITableViewDataSource, UITableViewDelegate{
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-        cell.configure(model: self.dataSourse[indexPath.row - 1])
+//        cell.configure(model: self.data[indexPath.row - 1])
         cell.modify()
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 0){
-            self.delegate?.didImportClick()
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if(indexPath.row == 0){
+//            self.delegate?.didImportClick()
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.none
     }
     
 }
-
 
