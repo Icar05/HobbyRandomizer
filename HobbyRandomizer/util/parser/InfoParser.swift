@@ -14,7 +14,44 @@ struct InfoModelDetail{
 
 struct InfoModel{
     let title: String
-    let content: InfoModelDetail
+    let content: [InfoModelDetail]
+}
+
+struct DisplayInfoContentModel{
+    let title: String
+    let isCathegory: Bool
+}
+
+struct DisplayInfoModel{
+    let title: String
+    let content: [DisplayInfoContentModel]
+}
+
+extension InfoModel {
+    func toDisplayInfoModel() -> DisplayInfoModel{
+        
+        let title = self.title
+        var content: [DisplayInfoContentModel] = []
+        
+        self.content.forEach{
+            let model = DisplayInfoContentModel(
+                title: $0.title,
+                isCathegory: true
+            )
+            
+            content.append(model)
+            $0.content.forEach{
+                let model = DisplayInfoContentModel(
+                    title: $0,
+                    isCathegory: false
+                )
+                content.append(model)
+            }
+        }
+        
+        return DisplayInfoModel(title: title, content: content)
+        
+    }
 }
 
 class InfoParser: Parser{
@@ -28,23 +65,30 @@ class InfoParser: Parser{
             let infoTitle = String($0.split(separator: "➫")[0])
                 .trimmingCharacters(in: .whitespacesAndNewlines)
             
-            let items = $0.split(separator: "➫").tail
-                items.forEach{
+            var infoContent: [InfoModelDetail] = []
+            
+            $0.split(separator: "➫").tail.forEach{
+                
+                let content = $0.split(separator: "°")
+                let title = content[0].trimmingCharacters(in: .whitespacesAndNewlines)
+                let children = content.tail.map{String($0)
+                    .trimmingCharacters(in: .whitespacesAndNewlines)}
+                
+                let innerModel = InfoModelDetail(
+                    title: title,
+                    content: children
+                )
+                infoContent.append(innerModel)
+                
+            }
+            
+            let model = InfoModel(
+                title: infoTitle,
+                content: infoContent)
                     
-                    let content = $0.split(separator: "°")
-                    let title = content[0].trimmingCharacters(in: .whitespacesAndNewlines)
-                    let innerModel = InfoModelDetail(
-                        title: title,
-                        content: content.tail.map{String($0)
-                            .trimmingCharacters(in: .whitespacesAndNewlines)}
-                    )
-                    
-                    let model = InfoModel(
-                        title: infoTitle,
-                        content: innerModel)
-                    
-                    models.append(model)
-                }
+            models.append(model)
+            
+            
         }
         
         return models

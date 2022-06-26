@@ -47,21 +47,21 @@ public final class DisplayInfoDataViewController: UIViewController {
     }
     
     func displayData(data: [InfoModel]){
-        self.dataSource.setData(data: data)
+        self.dataSource.setData(data: data.map{$0.toDisplayInfoModel()})
         self.tableView.isHidden = false
         self.tableView.reloadData()
         self.emptyView.isHidden = !data.isEmpty
     }
     
     private func registerCells(){
-        let randId = self.dataSource.getRandCellIdentifier()
-        let randNib = UINib(nibName: randId, bundle: nil)
+        let cathegoryId = self.dataSource.getCathegoryCellIdentifier()
+        let cathegoryNib = UINib(nibName: cathegoryId, bundle: nil)
         
-        let importId = self.dataSource.getImportCellIdentifier()
-        let importNib = UINib(nibName: importId, bundle: nil)
+        let infoDetailId = self.dataSource.getInfoDetailCellIdentifier()
+        let infoDetailNib = UINib(nibName: infoDetailId, bundle: nil)
         
-        self.tableView?.register(randNib, forCellReuseIdentifier: randId)
-        self.tableView?.register(importNib, forCellReuseIdentifier: importId)
+        self.tableView?.register(cathegoryNib, forCellReuseIdentifier: cathegoryId)
+        self.tableView?.register(infoDetailNib, forCellReuseIdentifier: infoDetailId)
     }
     
 }

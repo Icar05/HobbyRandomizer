@@ -86,6 +86,11 @@
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
+		EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */; };
+		EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */; };
+		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
+		EDCFE5ED286921DF00AF3AC4 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5EB286921DF00AF3AC4 /* InfoDetailCell.swift */; };
+		EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5EC286921DF00AF3AC4 /* InfoDetailCell.xib */; };
 		EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */; };
 		EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */; };
 		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
@@ -184,6 +189,11 @@
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryCell.swift; sourceTree = "<group>"; };
+		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
+		EDCFE5EB286921DF00AF3AC4 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
+		EDCFE5EC286921DF00AF3AC4 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
 		EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
@@ -293,6 +303,7 @@
 		ED53614728686454004F1836 /* DisplayInfoData */ = {
 			isa = PBXGroup;
 			children = (
+				EDCFE5D9286909EE00AF3AC4 /* Cell */,
 				ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */,
 				ED53614E286864D1004F1836 /* DisplayInfoDataViewController.xib */,
 				ED5361572868652D004F1836 /* DisplayInfoDataPresenter.swift */,
@@ -600,6 +611,42 @@
 			path = Randomizer;
 			sourceTree = "<group>";
 		};
+		EDCFE5D9286909EE00AF3AC4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFE5EA286921BC00AF3AC4 /* InfoDetailCell */,
+				EDCFE5E12869182C00AF3AC4 /* CathegoryCell */,
+				EDCFE5DA286909F900AF3AC4 /* HeaderCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EDCFE5DA286909F900AF3AC4 /* HeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */,
+			);
+			path = HeaderCell;
+			sourceTree = "<group>";
+		};
+		EDCFE5E12869182C00AF3AC4 /* CathegoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */,
+				EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */,
+			);
+			path = CathegoryCell;
+			sourceTree = "<group>";
+		};
+		EDCFE5EA286921BC00AF3AC4 /* InfoDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDCFE5EB286921DF00AF3AC4 /* InfoDetailCell.swift */,
+				EDCFE5EC286921DF00AF3AC4 /* InfoDetailCell.xib */,
+			);
+			path = InfoDetailCell;
+			sourceTree = "<group>";
+		};
 		EDD576F42850FEA000DAAEC3 /* Casino */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,7 +780,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */,
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
+				EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
@@ -796,6 +845,7 @@
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
 				ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */,
+				EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */,
 				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
 				ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
@@ -823,6 +873,7 @@
 				ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
 				ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */,
+				EDCFE5ED286921DF00AF3AC4 /* InfoDetailCell.swift in Sources */,
 				ED5361582868652D004F1836 /* DisplayInfoDataPresenter.swift in Sources */,
 				EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */,
 				ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */,
@@ -834,6 +885,7 @@
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,
 				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
 				ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */,
+				EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

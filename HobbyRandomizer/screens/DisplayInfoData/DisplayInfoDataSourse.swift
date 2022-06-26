@@ -7,49 +7,111 @@
 
 import Foundation
 
+protocol DisplayInfoDelegate: NSObject{
+    func onCollapsed()
+    func onExpanded()
+}
+
 class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     
-    private var data: [InfoModel] = []
+    var hiddenSections = Set<Int>()
     
-    func setData(data: [InfoModel]){
+    private var data: [DisplayInfoModel] = []
+    
+    
+    
+    func setData(data: [DisplayInfoModel]){
         self.data = data
     }
     
-    func getRandCellIdentifier() -> String{
-        return String(describing: RandItemCell.self)
+    func getCathegoryCellIdentifier() -> String{
+        return String(describing: CathegoryCell.self)
     }
     
-    func getImportCellIdentifier() -> String{
-        return String(describing: ImportDataCell.self)
+    func getInfoDetailCellIdentifier() -> String{
+        return String(describing: InfoDetailCell.self)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.data.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count + 1
+
+        if self.hiddenSections.contains(section) {
+            return 0
+        }
+          
+        return data[section].content.count
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headercell = HeaderCell()
+            headercell.text = data[section].title
+            headercell.callback = {
+                self.sectionDidClick(section: section)
+            }
+        
+        return headercell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 46
+    }
+    
+    private func sectionDidClick(section: Int){
+        print("section did click: \(section)")
+    }
+    
+//    func indexPathsForSection() -> [IndexPath] {
+//        var indexPaths = [IndexPath]()
+//
+//        for row in 0..<self.tableViewData[section].count {
+//            indexPaths.append(IndexPath(row: row,
+//                                        section: section))
+//        }
+//
+//        return indexPaths
+//    }
+    
+    @objc
+    private func hideSection(sender: UIButton) {
+        let section = sender.tag
+          
+//
+//
+//          if self.hiddenSections.contains(section) {
+//              self.hiddenSections.remove(section)
+//              self.tableView.insertRows(at: indexPathsForSection(),
+//                                        with: .fade)
+//          } else {
+//              self.hiddenSections.insert(section)
+//              self.tableView.deleteRows(at: indexPathsForSection(),
+//                                        with: .fade)
+//          }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if(indexPath.row == 0){
-            let cell = tableView.dequeueReusableCell(withIdentifier: getImportCellIdentifier(), for: indexPath) as! ImportDataCell
+        let model = data[indexPath.section].content[indexPath.row]
+        
+        if(model.isCathegory){
+            let cell = tableView.dequeueReusableCell(withIdentifier: getCathegoryCellIdentifier(), for: indexPath) as! CathegoryCell
+            cell.configure(value: model.title)
             cell.modify()
+            
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
-//        cell.configure(model: self.data[indexPath.row - 1])
+        let cell = tableView.dequeueReusableCell(withIdentifier: getInfoDetailCellIdentifier(), for: indexPath) as! InfoDetailCell
+        cell.configure(value: model.title)
         cell.modify()
         
         return cell
+
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if(indexPath.row == 0){
-//            self.delegate?.didImportClick()
-//        }
-//    }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.none
