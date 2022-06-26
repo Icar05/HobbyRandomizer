@@ -56,6 +56,8 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             cell.setupDelegate(callback: {
                 self.delegate?.onExportDidTap(freshModels: self.dataSourse)
             })
+            
+            cell.isHidden = self.dataSourse.count < 1
             return cell
         } else{
             let cell = tableView.dequeueReusableCell(withIdentifier: getRandCellIdentifier(), for: indexPath) as! RandItemCell
