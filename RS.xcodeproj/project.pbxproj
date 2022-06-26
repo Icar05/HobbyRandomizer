@@ -55,6 +55,10 @@
 		ED7918B22863DDCC0041D407 /* DisplayDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */; };
 		ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B92863EC9E0041D407 /* ExportCell.swift */; };
 		ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918BA2863EC9E0041D407 /* ExportCell.xib */; };
+		ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */; };
+		ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF112867E3DD00B5BE46 /* Parser.swift */; };
+		ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF132867E46200B5BE46 /* InfoParser.swift */; };
+		ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF172867E72200B5BE46 /* MainParser.swift */; };
 		ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC028510EEA00DFD78F /* DebugViewController.swift */; };
 		ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FC128510EEA00DFD78F /* DebugViewController.xib */; };
 		ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FC52851151C00DFD78F /* CreateViewController.swift */; };
@@ -70,7 +74,6 @@
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
-		EDCA64462866B52600E79C91 /* CustomDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCA64452866B52600E79C91 /* CustomDecoder.swift */; };
 		EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */; };
 		EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */; };
 		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
@@ -139,6 +142,10 @@
 		ED7918B12863DDCC0041D407 /* DisplayDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayDataPresenter.swift; sourceTree = "<group>"; };
 		ED7918B92863EC9E0041D407 /* ExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCell.swift; sourceTree = "<group>"; };
 		ED7918BA2863EC9E0041D407 /* ExportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExportCell.xib; sourceTree = "<group>"; };
+		ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionParser.swift; sourceTree = "<group>"; };
+		ED7EEF112867E3DD00B5BE46 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		ED7EEF132867E46200B5BE46 /* InfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoParser.swift; sourceTree = "<group>"; };
+		ED7EEF172867E72200B5BE46 /* MainParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainParser.swift; sourceTree = "<group>"; };
 		ED880FC028510EEA00DFD78F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		ED880FC128510EEA00DFD78F /* DebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugViewController.xib; sourceTree = "<group>"; };
 		ED880FC52851151C00DFD78F /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +161,6 @@
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
-		EDCA64452866B52600E79C91 /* CustomDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecoder.swift; sourceTree = "<group>"; };
 		EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
@@ -212,12 +218,10 @@
 		ED4A3CC4271A290000084BB8 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
-				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
-				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
+				ED7EEF162867E4B800B5BE46 /* parser */,
+				ED7EEF152867E4A000B5BE46 /* view */,
 				ED7918972863AE780041D407 /* FileWriterUtil.swift */,
 				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,
-				EDCA64452866B52600E79C91 /* CustomDecoder.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -412,6 +416,27 @@
 				ED7918BA2863EC9E0041D407 /* ExportCell.xib */,
 			);
 			path = ExportCell;
+			sourceTree = "<group>";
+		};
+		ED7EEF152867E4A000B5BE46 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
+				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
+				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		ED7EEF162867E4B800B5BE46 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */,
+				ED7EEF112867E3DD00B5BE46 /* Parser.swift */,
+				ED7EEF132867E46200B5BE46 /* InfoParser.swift */,
+				ED7EEF172867E72200B5BE46 /* MainParser.swift */,
+			);
+			path = parser;
 			sourceTree = "<group>";
 		};
 		ED880FBF28510ED100DFD78F /* Debug */ = {
@@ -686,7 +711,6 @@
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
-				EDCA64462866B52600E79C91 /* CustomDecoder.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
@@ -697,6 +721,7 @@
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
+				ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */,
 				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,
 				EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */,
 				ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */,
@@ -704,6 +729,7 @@
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
 				ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */,
 				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
+				ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
 				ED364269271757090083D578 /* CreatePresenter.swift in Sources */,
 				ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */,
@@ -728,9 +754,11 @@
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
 				EDF8A5792865402E00565AAF /* DisplayDataSource.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
+				ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,
 				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
+				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

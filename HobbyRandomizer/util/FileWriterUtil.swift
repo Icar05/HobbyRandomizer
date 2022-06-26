@@ -27,21 +27,7 @@ class FileWriterUtil{
     
     private let log = "TextWritterLog"
     
-    private let decoder = CustomDecoder()
-    
-    
-    func readPdf(url: URL){
-        if let pdf = PDFDocument(url: url) {
-            let pageCount = pdf.pageCount
-            let documentContent = NSMutableAttributedString()
-
-            for i in 1 ..< pageCount {
-                guard let page = pdf.page(at: i) else { continue }
-                guard let pageContent = page.attributedString else { continue }
-                documentContent.append(pageContent)
-            }
-        }
-    }
+    private let mainParcer = MainParser()
     
     
     func removeItem(fileName: String) -> Bool {
@@ -101,12 +87,9 @@ class FileWriterUtil{
         return decodeData(data: data)
     }
     
-    func importModelsAsCustom(fileName: String) -> [RandItemCellModel]?{
-        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
-            printLog("can't read data from string ...")
-            return nil
-        }
-        return decoder.decodeString(input: String(data: data, encoding: String.Encoding.utf8)!)
+    func importModels(fileName: String) -> Any?{
+        let input = readFile(fileName: fileName)
+        return mainParcer.parseString(input: input)
     }
     
     @discardableResult

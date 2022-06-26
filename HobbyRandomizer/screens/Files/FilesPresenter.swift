@@ -30,18 +30,19 @@ public final class FilesPresenter{
     
     func parseFileData(fileName: String){
         
-        if let models = filesUtil.importModelsAsJson(fileName: fileName){
-            view.displayModels(data: models)
+        let result: Any  = filesUtil.importModels(fileName: fileName) as Any
+    
+        if(result is [RandItemCellModel]){
+            view.displayModels(data: result as! [RandItemCellModel])
             return
         }
         
-        if let models = filesUtil.importModelsAsCustom(fileName: fileName){
-            view.displayModels(data: models)
-            return
+        if(result is String){
+            view.displayText(data: result as! String)
         }
         
-        let content = filesUtil.readFile(fileName: fileName)
-        view.displayText(data: content)
+        return
+        
     }
     
     func removeItemByName(fileName: String){
