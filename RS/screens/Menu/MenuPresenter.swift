@@ -24,17 +24,17 @@ public final class MenuPresenter{
     private func prepareDataSource() -> [MenuCellModel]{
         return [
             MenuCellModel(
-                icon:UIImage(systemName: "plus.rectangle.fill.on.folder.fill")!,
+                icon:UIImage(systemName: "plus.rectangle.on.folder")!,
                 type: .Create,
                 title: Translations.Menu.itemCreate
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "wrench.fill")!,
+                icon:  UIImage(systemName: "wrench")!,
                 type: .Test,
                 title: Translations.Menu.itemTest
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "suit.spade.fill")!,
+                icon:  UIImage(systemName: "suit.spade")!,
                 type: .Casino,
                 title: Translations.Menu.itemCasino
             ),
@@ -49,7 +49,7 @@ public final class MenuPresenter{
                 title: Translations.Menu.itemWorkInProgress
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "gamecontroller.fill")!,
+                icon:  UIImage(systemName: "gamecontroller")!,
                 type: .Hobby,
                 title: Translations.Menu.itemHobby
             ),
