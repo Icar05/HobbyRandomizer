@@ -428,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				ED17A1FC286A4B3D0080DB20 /* RS */,
-				ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */,
 				ED6EEF5D2715C6D200D4EFE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -439,13 +438,6 @@
 				ED6EEF5C2715C6D200D4EFE9 /* RS.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HobbyRandomizer;
 			sourceTree = "<group>";
 		};
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
