@@ -44,7 +44,7 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
         if self.hiddenSections.contains(section) {
             return 0
         }
-        
+
         return data[section].content.count
     }
     

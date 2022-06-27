@@ -43,7 +43,8 @@ public final class DisplayInfoDataViewController: UIViewController {
         self.registerCells()
         self.emptyViewLabel.text = Translations.All.noData
         self.dataSource.delegate = self
-        
+        self.tableView.setValue(0, forKey: "sectionHeaderTopPadding")
+                
         self.presenter.viewDidLoad()
     }
     
