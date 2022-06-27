@@ -16,6 +16,9 @@
 		ED1D33BD286A60C6004F1506 /* SettingsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33BB286A60C6004F1506 /* SettingsHeaderCell.swift */; };
 		ED1D33BE286A60C6004F1506 /* SettingsHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33BC286A60C6004F1506 /* SettingsHeaderCell.xib */; };
 		ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33BF286A60D8004F1506 /* SettingsHeaderCellModel.swift */; };
+		ED1D33C4286A68AD004F1506 /* SettingsSoundEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33C2286A68AD004F1506 /* SettingsSoundEnableCell.swift */; };
+		ED1D33C5286A68AD004F1506 /* SettingsSoundEnableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33C3286A68AD004F1506 /* SettingsSoundEnableCell.xib */; };
+		ED1D33C7286A68C1004F1506 /* SettingsSoundEnableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */; };
 		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
 		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
@@ -124,6 +127,9 @@
 		ED1D33BB286A60C6004F1506 /* SettingsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderCell.swift; sourceTree = "<group>"; };
 		ED1D33BC286A60C6004F1506 /* SettingsHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsHeaderCell.xib; sourceTree = "<group>"; };
 		ED1D33BF286A60D8004F1506 /* SettingsHeaderCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderCellModel.swift; sourceTree = "<group>"; };
+		ED1D33C2286A68AD004F1506 /* SettingsSoundEnableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSoundEnableCell.swift; sourceTree = "<group>"; };
+		ED1D33C3286A68AD004F1506 /* SettingsSoundEnableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSoundEnableCell.xib; sourceTree = "<group>"; };
+		ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSoundEnableCellModel.swift; sourceTree = "<group>"; };
 		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
 		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 		ED1D33B5286A5DD1004F1506 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ED1D33C1286A6882004F1506 /* SettingsSoundEnable */,
 				ED1D33BA286A6097004F1506 /* SettingsHeader */,
 			);
 			path = Cell;
@@ -280,6 +287,16 @@
 				ED1D33BF286A60D8004F1506 /* SettingsHeaderCellModel.swift */,
 			);
 			path = SettingsHeader;
+			sourceTree = "<group>";
+		};
+		ED1D33C1286A6882004F1506 /* SettingsSoundEnable */ = {
+			isa = PBXGroup;
+			children = (
+				ED1D33C2286A68AD004F1506 /* SettingsSoundEnableCell.swift */,
+				ED1D33C3286A68AD004F1506 /* SettingsSoundEnableCell.xib */,
+				ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */,
+			);
+			path = SettingsSoundEnable;
 			sourceTree = "<group>";
 		};
 		ED3642642717536C0083D578 /* storage */ = {
@@ -841,6 +858,7 @@
 				ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */,
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
+				ED1D33C5286A68AD004F1506 /* SettingsSoundEnableCell.xib in Resources */,
 				ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
@@ -916,6 +934,7 @@
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
+				ED1D33C7286A68C1004F1506 /* SettingsSoundEnableCellModel.swift in Sources */,
 				ED1D33BD286A60C6004F1506 /* SettingsHeaderCell.swift in Sources */,
 				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,
 				ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */,
@@ -940,6 +959,7 @@
 				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
 				ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */,
 				EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */,
+				ED1D33C4286A68AD004F1506 /* SettingsSoundEnableCell.swift in Sources */,
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 				ED1D33B8286A5E33004F1506 /* SettingsViewController.swift in Sources */,

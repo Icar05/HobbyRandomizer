@@ -17,15 +17,17 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     
     private let data: [SettingsModel] = [
         SettingsHeaderCellModel(title: "Sound"),
-        SettingsHeaderCellModel(title: "Test"),
+        SettingsSoundEnableCellModel(title: "Sound", enable: true, callback: {
+            print("value: \($0)")
+        })
     ]
     
     func getSettingsHeaderIdentifier() -> String{
         return String(describing: SettingsHeaderCell.self)
     }
     
-    func getImportCellIdentifier() -> String{
-        return String(describing: ImportDataCell.self)
+    func getSettingsSoundEnableIdentifier() -> String{
+        return String(describing: SettingsSoundEnableCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +42,11 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
         if(model is SettingsHeaderCellModel){
             let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsHeaderIdentifier(), for: indexPath) as! SettingsHeaderCell
             cell.configure(model: model as! SettingsHeaderCellModel)
+            cell.modify()
+            return cell
+        } else if(model is SettingsSoundEnableCellModel){
+            let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsSoundEnableIdentifier(), for: indexPath) as! SettingsSoundEnableCell
+            cell.configure(model: model as! SettingsSoundEnableCellModel)
             cell.modify()
             return cell
         }

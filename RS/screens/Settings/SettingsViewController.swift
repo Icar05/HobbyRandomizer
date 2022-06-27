@@ -46,11 +46,11 @@ public final class SettingsViewController: UIViewController {
         let settingsId = self.dataSource.getSettingsHeaderIdentifier()
         let settingsNib = UINib(nibName: settingsId, bundle: nil)
         
-        let importId = self.dataSource.getImportCellIdentifier()
-        let importNib = UINib(nibName: importId, bundle: nil)
+        let soundEnableId = self.dataSource.getSettingsSoundEnableIdentifier()
+        let soundEnableNib = UINib(nibName: soundEnableId, bundle: nil)
         
         self.tableView?.register(settingsNib, forCellReuseIdentifier: settingsId)
-        self.tableView?.register(importNib, forCellReuseIdentifier: importId)
+        self.tableView?.register(soundEnableNib, forCellReuseIdentifier: soundEnableId)
     }
     
 }
