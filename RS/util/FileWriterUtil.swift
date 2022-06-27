@@ -59,7 +59,15 @@ class FileWriterUtil{
     
     func importModels(fileName: String) -> Any?{
         let input = readFile(fileName: fileName)
-        return mainParcer.parseString(input: input)
+        
+        
+        guard let data: Data = input.data(using: String.Encoding.utf8),
+              let result: [RandItemCellModel] = jsonDecoder.decodeData(data: data) else {
+                  
+                  return mainParcer.parseString(input: input)
+              }
+        
+        return result
     }
     
     /**
