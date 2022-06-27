@@ -44,11 +44,6 @@ public final class HeaderCell: UILabel {
         self.backgroundColor = UIColor.colorMain
         self.textColor = UIColor.black
         self.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        self.frame = CGRect(
-            x: 0,
-            y: 0,
-            width: self.frame.width,
-            height: 46)
         
     }
     

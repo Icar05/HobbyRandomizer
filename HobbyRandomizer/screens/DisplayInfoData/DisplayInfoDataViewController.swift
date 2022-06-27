@@ -42,6 +42,7 @@ public final class DisplayInfoDataViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.registerCells()
         self.emptyViewLabel.text = Translations.All.noData
+        self.dataSource.delegate = self
         
         self.presenter.viewDidLoad()
     }
@@ -64,4 +65,15 @@ public final class DisplayInfoDataViewController: UIViewController {
         self.tableView?.register(infoDetailNib, forCellReuseIdentifier: infoDetailId)
     }
     
+}
+
+extension DisplayInfoDataViewController: DisplayInfoDelegate{
+    
+    func onCollapsed(indexPath: [IndexPath]) {
+        self.tableView.deleteRows(at: indexPath, with: .fade)
+    }
+    
+    func onExpanded(indexPath: [IndexPath]) {
+        self.tableView.insertRows(at: indexPath, with: .fade)
+    }
 }

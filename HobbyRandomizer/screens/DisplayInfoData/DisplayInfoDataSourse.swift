@@ -8,18 +8,19 @@
 import Foundation
 
 protocol DisplayInfoDelegate: NSObject{
-    func onCollapsed()
-    func onExpanded()
+    func onCollapsed(indexPath: [IndexPath])
+    func onExpanded(indexPath: [IndexPath])
 }
 
 class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     
-    var hiddenSections = Set<Int>()
+    private var hiddenSections = Set<Int>()
     
     private var data: [DisplayInfoModel] = []
     
+    weak var delegate: DisplayInfoDelegate? = nil
     
     
     func setData(data: [DisplayInfoModel]){
@@ -39,20 +40,20 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         if self.hiddenSections.contains(section) {
             return 0
         }
-          
+        
         return data[section].content.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headercell = HeaderCell()
-            headercell.text = data[section].title
-            headercell.callback = {
-                self.sectionDidClick(section: section)
-            }
+        headercell.text = data[section].title
+        headercell.callback = {
+            self.sectionDidClick(section: section)
+        }
         
         return headercell
     }
@@ -62,36 +63,26 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     }
     
     private func sectionDidClick(section: Int){
-        print("section did click: \(section)")
+        if self.hiddenSections.contains(section) {
+            self.hiddenSections.remove(section)
+            self.delegate?.onExpanded(indexPath: indexPathsForSection(section: section))
+        } else {
+            self.hiddenSections.insert(section)
+            self.delegate?.onCollapsed(indexPath: indexPathsForSection(section: section))
+        }
     }
     
-//    func indexPathsForSection() -> [IndexPath] {
-//        var indexPaths = [IndexPath]()
-//
-//        for row in 0..<self.tableViewData[section].count {
-//            indexPaths.append(IndexPath(row: row,
-//                                        section: section))
-//        }
-//
-//        return indexPaths
-//    }
-    
-    @objc
-    private func hideSection(sender: UIButton) {
-        let section = sender.tag
-          
-//
-//
-//          if self.hiddenSections.contains(section) {
-//              self.hiddenSections.remove(section)
-//              self.tableView.insertRows(at: indexPathsForSection(),
-//                                        with: .fade)
-//          } else {
-//              self.hiddenSections.insert(section)
-//              self.tableView.deleteRows(at: indexPathsForSection(),
-//                                        with: .fade)
-//          }
+    func indexPathsForSection(section: Int) -> [IndexPath] {
+        var indexPaths = [IndexPath]()
+        
+        for row in 0...self.data[section].content.count - 1{
+            indexPaths.append(IndexPath(row: row, section: section))
+        }
+        
+
+        return indexPaths
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -110,7 +101,7 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
         cell.modify()
         
         return cell
-
+        
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
