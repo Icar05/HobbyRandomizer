@@ -222,6 +222,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED17A1FC286A4B3D0080DB20 /* RS */ = {
+			isa = PBXGroup;
+			children = (
+				ED6EEF732715C6FF00D4EFE9 /* view */,
+				ED4DF384271875C2007966EE /* storyboard */,
+				ED4DF385271875D1007966EE /* extension */,
+				ED4A3CC4271A290000084BB8 /* util */,
+				ED4DF3832718758E007966EE /* appComponents */,
+				ED5A6C52284FCFF80028BEED /* screens */,
+				EDF8A55B2864EEAD00565AAF /* Resources */,
+			);
+			path = RS;
+			sourceTree = "<group>";
+		};
 		ED3642642717536C0083D578 /* storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +427,7 @@
 		ED6EEF532715C6D200D4EFE9 = {
 			isa = PBXGroup;
 			children = (
+				ED17A1FC286A4B3D0080DB20 /* RS */,
 				ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */,
 				ED6EEF5D2715C6D200D4EFE9 /* Products */,
 			);
@@ -429,13 +444,6 @@
 		ED6EEF5E2715C6D200D4EFE9 /* HobbyRandomizer */ = {
 			isa = PBXGroup;
 			children = (
-				EDF8A55B2864EEAD00565AAF /* Resources */,
-				ED5A6C52284FCFF80028BEED /* screens */,
-				ED4DF3832718758E007966EE /* appComponents */,
-				ED4A3CC4271A290000084BB8 /* util */,
-				ED4DF385271875D1007966EE /* extension */,
-				ED4DF384271875C2007966EE /* storyboard */,
-				ED6EEF732715C6FF00D4EFE9 /* view */,
 			);
 			path = HobbyRandomizer;
 			sourceTree = "<group>";
