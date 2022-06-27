@@ -85,6 +85,7 @@ class BaseRotatableView: UIView {
         self.childSetup()
         self.detectSectorUtil.delegate = self
         self.baseAnimationObserver.delegate = self
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     
