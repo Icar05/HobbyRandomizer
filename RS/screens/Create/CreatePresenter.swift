@@ -42,7 +42,7 @@ public final class CreatePresenter {
     func exportData(models: [RandItemCellModel]){
         let time = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
         let fileName = "[\(time)].txt"
-        let result = fileUtil.exportModels(fileName: fileName, models: models)
+        let result = fileUtil.exportDataAsJson(fileName: fileName, models: models)
         view.onExportFinished(value: result)
     }
 

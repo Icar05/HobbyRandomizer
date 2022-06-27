@@ -29,8 +29,43 @@ class FileWriterUtil{
     
     private let mainParcer = MainParser()
     
+    private let jsonDecoder = JsonDecoder()
     
-    func removeItem(fileName: String) -> Bool {
+    
+    
+    /**
+     export and import
+     */
+    @discardableResult
+    func exportDataAsJson(fileName: String, models: [RandItemCellModel]) -> Bool{
+        
+        guard let data = jsonDecoder.encodeData(models: models),
+              let text = String(data: data, encoding: String.Encoding.utf8) else{
+                  printLog("trouble with encoding ...")
+                  return false
+              }
+        
+        self.writeFile(fileName: fileName, text: text)
+        return true
+    }
+    
+    func importDataAsJson(fileName: String) -> [RandItemCellModel]?{
+        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
+            printLog("can't read data from string ...")
+            return nil
+        }
+        return jsonDecoder.decodeData(data: data)
+    }
+    
+    func importModels(fileName: String) -> Any?{
+        let input = readFile(fileName: fileName)
+        return mainParcer.parseString(input: input)
+    }
+    
+    /**
+     remove file from folder RS
+     */
+    func removeFileByFileName(fileName: String) -> Bool {
         guard let fileURL = getFileUrl(fileName: fileName) else {
             printLog("file url is nil !")
             return false
@@ -43,11 +78,33 @@ class FileWriterUtil{
             printLog("Error while removing file: \(error.localizedDescription)")
             return false
         }
-       
+        
+    }
+    /**
+     methods for reading all files in directory RS
+     */
+    func readAllFilenames() -> [FileInfo]{
+        
+        guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            printLog("DocumentUrl nil")
+            return []
+        }
+        
+        do {
+            let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
+            
+            return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
+        } catch let error{
+            printLog("Error while read directories: \(error.localizedDescription)")
+            return []
+        }
     }
     
+    /*
+     base read / write methods
+     */
     func readFile(fileName: String) -> String{
-
+        
         guard let fileURL = getFileUrl(fileName: fileName) else {
             printLog("file url is nil !")
             return ""
@@ -63,7 +120,7 @@ class FileWriterUtil{
         }
     }
     
-    func writeText(fileName: String, text: String){
+    func writeFile(fileName: String, text: String){
         
         guard let fileURL = getFileUrl(fileName: fileName) else {
             printLog("file url is nil !")
@@ -79,82 +136,9 @@ class FileWriterUtil{
         }
     }
     
-    func importModelsAsJson(fileName: String) -> [RandItemCellModel]?{
-        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
-            printLog("can't read data from string ...")
-            return nil
-        }
-        return decodeData(data: data)
-    }
-    
-    func importModels(fileName: String) -> Any?{
-        let input = readFile(fileName: fileName)
-        return mainParcer.parseString(input: input)
-    }
-    
-    @discardableResult
-    func exportModels(fileName: String, models: [RandItemCellModel]) -> Bool{
-        
-        guard let data = encodeData(models: models),
-              let text = String(data: data, encoding: String.Encoding.utf8) else{
-            printLog("trouble with encoding ...")
-            return false
-        }
-       
-        self.writeText(fileName: fileName, text: text)
-        return true
-    }
-    
-    func readAllAppFilenames() -> [FileInfo]{
-        
-        do {
-            let url = try FileManager.default.url(for: .applicationSupportDirectory, in: .localDomainMask, appropriateFor: nil, create: false)
-            return readAllFilenames(url: url)
-        } catch let error {
-            printLog("Error while reading app url: \(error)")
-            return []
-        }
-    }
-    
-    func readAllFilenames() -> [FileInfo]{
-        
-        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
-            printLog("DocumentUrl nil")
-            return []
-        }
-        
-        return readAllFilenames(url: documentsURL)
-    }
-    
-    private func readAllFilenames(url: URL) -> [FileInfo]{
-        do {
-            let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
-            
-            return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
-        } catch let error{
-            printLog("Error while read directories: \(error.localizedDescription)")
-            return []
-        }
-    }
-    
-    private func decodeData(data: Data) -> [RandItemCellModel]?{
-        do {
-            return try JSONDecoder().decode([RandItemCellModel].self, from: data)
-        } catch let error{
-            printLog("Error decode data:  (\(error))")
-        }
-        return nil
-    }
-    
-    private func encodeData(models: [RandItemCellModel]) -> Data?{
-        do {
-            return try JSONEncoder().encode(models)
-        } catch let error {
-            printLog("Error encode data:  (\(error))")
-        }
-        return nil
-    }
-    
+    /**
+     base url for RS
+     */
     private func getFileUrl(fileName: String) -> URL? {
         guard let dir =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             return nil

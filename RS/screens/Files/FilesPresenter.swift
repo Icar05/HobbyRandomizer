@@ -52,7 +52,7 @@ public final class FilesPresenter{
     }
     
     func removeItemByName(fileName: String){
-        let result = filesUtil.removeItem(fileName: fileName)
+        let result = filesUtil.removeFileByFileName(fileName: fileName)
         view.didFileRemoved(value: result)
     }
     

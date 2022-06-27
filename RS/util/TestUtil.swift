@@ -19,12 +19,12 @@ class TestUtil{
     
     private func writeTest(){
         let time = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-        self.fileUtil.writeText(fileName: "test.txt", text: "[ This is a test... \(time) ]")
+        self.fileUtil.writeFile(fileName: "test.txt", text: "[ This is a test... \(time) ]")
     }
     
     private func writeTestData(){
         let testObjects = createMockModels()
-        self.fileUtil.exportModels(fileName: "testExport.txt", models: testObjects)
+        self.fileUtil.exportDataAsJson(fileName: "testExport.txt", models: testObjects)
     }
     
     private func createMockModels() -> [RandItemCellModel]{
