@@ -10,6 +10,8 @@ import Foundation
 class NavigatorImpl: Navigator{
     
     
+    
+    
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
         window.makeKeyAndVisible()
@@ -93,6 +95,14 @@ class NavigatorImpl: Navigator{
     func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController {
         let presenter = DisplayRawDataPresenter(data: data, storage: storage)
         let viewcontroller = DisplayRawDataViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    func getSettingScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = SettingsPresenter(storage: storage)
+        let viewcontroller = SettingsViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
         return viewcontroller

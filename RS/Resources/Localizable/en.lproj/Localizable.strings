@@ -41,3 +41,7 @@
 "Translations.Alert.failureMessage" = "Something went wrong!";
 "Translations.Alert.successRemoveData" = "File has been successfully removed!";
 "Translations.Alert.successExportMessage" = "Data has been successfully exported!";
+
+/* Settings */
+"Translations.Settings.settings" = "Settings";
+"Translations.Settings.sound" = "Sound";

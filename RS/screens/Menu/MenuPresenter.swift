@@ -57,6 +57,11 @@ public final class MenuPresenter{
                 icon:  UIImage(systemName: "folder")!,
                 type: .Files,
                 title: Translations.Menu.itemFiles
+            ),
+            MenuCellModel(
+                icon:  UIImage(systemName: "gearshape")!,
+                type: .Settings,
+                title: Translations.Settings.settings
             )
         ]
     }

@@ -95,6 +95,8 @@ extension MenuViewController: MenuDelegate{
             return navigator.getShowScreen(storage: storage, type: .workInProgress)
         case .Files:
             return navigator.getFilesScreen(filesUtil: fileUtil)
+        case .Settings:
+            return navigator.getSettingScreen(storage: storage)
         }
     }
 }

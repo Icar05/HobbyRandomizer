@@ -20,4 +20,5 @@ protocol Navigator{
     func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController
     func getDisplayInfoDataScreen(data: [InfoModel], storage: UserDefaultStorage) -> UIViewController
     func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController
+    func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
 }

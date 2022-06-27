@@ -8,7 +8,7 @@
 import Foundation
 
 enum ScreenTypes : String, CaseIterable{
-    case Casino, Test, Create, Hobby, WorkInProgress, Todo, Files
+    case Casino, Test, Create, Hobby, WorkInProgress, Todo, Files, Settings
 }
 
 protocol MenuDelegate: NSObject{

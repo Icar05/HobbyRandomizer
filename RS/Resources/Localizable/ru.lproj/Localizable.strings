@@ -42,3 +42,6 @@
 "Translations.Alert.successRemoveData" = "Файл был успешно удален!";
 "Translations.Alert.successExportMessage" = "Данные были успешно экспортированы!";
 
+/* Settings */
+"Translations.Settings.settings" = "Настройки";
+"Translations.Settings.sound" = "Звук";

@@ -8,6 +8,16 @@ import Foundation
 
 struct Translations{
     
+    struct Settings{
+        public static var settings: String{
+            "Translations.Settings.settings".localized(Bundle.main)
+        }
+        
+        public static var sound: String{
+            "Translations.Settings.sound".localized(Bundle.main)
+        }
+    }
+    
     struct Alert{
         public static var success: String{
             "Translations.Alert.success".localized(Bundle.main)
