@@ -1054,7 +1054,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.RS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RS/view/RS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1077,7 +1077,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.RS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RS/view/RS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
