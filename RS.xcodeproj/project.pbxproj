@@ -120,7 +120,7 @@
 		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
 		ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectSectorUtil.swift; sourceTree = "<group>"; };
-		ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HobbyRandomizer-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED4A3CCC271A795700084BB8 /* RS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RS-Bridging-Header.h"; sourceTree = "<group>"; };
 		ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataViewController.swift; sourceTree = "<group>"; };
 		ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataViewController.xib; sourceTree = "<group>"; };
 		ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataViewController.swift; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 		ED6EEF732715C6FF00D4EFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				ED4A3CCC271A795700084BB8 /* HobbyRandomizer-Bridging-Header.h */,
+				ED4A3CCC271A795700084BB8 /* RS-Bridging-Header.h */,
 				ED880FDD2851303E00DFD78F /* useful */,
 				ED880FDC2851302600DFD78F /* rouleteView */,
 				ED880FDB2851301700DFD78F /* randomizerUtil */,
@@ -973,7 +973,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				INFOPLIST_FILE = RS/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1029,7 +1029,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				INFOPLIST_FILE = RS/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1048,7 +1048,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M2X2PH6A7;
-				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				INFOPLIST_FILE = RS/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1056,7 +1056,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HobbyRandomizer/view/HobbyRandomizer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RS/view/RS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1071,7 +1071,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5M2X2PH6A7;
-				INFOPLIST_FILE = HobbyRandomizer/appComponents/Info.plist;
+				INFOPLIST_FILE = RS/appComponents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1079,7 +1079,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ipinguin-linuxoid.HobbyRandomizer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "HobbyRandomizer/view/HobbyRandomizer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RS/view/RS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
