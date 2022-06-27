@@ -25,6 +25,7 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func setData(data: [DisplayInfoModel]){
         self.data = data
+        self.hideContent()
     }
     
     func getCathegoryCellIdentifier() -> String{
@@ -106,6 +107,13 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.none
+    }
+    
+    
+    private func hideContent(){
+        for i in 0...data.count - 1{
+            hiddenSections.insert(i)
+        }
     }
     
 }
