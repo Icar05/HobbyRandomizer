@@ -16,8 +16,8 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     
     
     private let data: [SettingsModel] = [
-        SettingsHeaderCellModel(title: "Sound"),
-        SettingsSoundEnableCellModel(title: "Sound", enable: true, callback: {
+        SettingsHeaderCellModel(title: Translations.Settings.sound),
+        SettingsSoundEnableCellModel(title: Translations.Settings.soundEnable, enable: true, callback: {
             print("value: \($0)")
         })
     ]

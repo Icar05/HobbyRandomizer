@@ -16,6 +16,11 @@ struct Translations{
         public static var sound: String{
             "Translations.Settings.sound".localized(Bundle.main)
         }
+        
+        public static var soundEnable: String{
+            "Translations.Settings.soundEnable".localized(Bundle.main)
+        }
+        
     }
     
     struct Alert{
