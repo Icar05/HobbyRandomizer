@@ -16,6 +16,9 @@ extension UIColor {
     static let colorBorderGray = UIColor(named: "BorderGray")
     static let colorCappuccino = UIColor(named: "Cappuccino")
     static let colorCocoa = UIColor(named: "Cocoa")
+    static let topGB = UIColor(hexColor: "#004d38")
+    static let midGB = UIColor(hexColor:  "#117c5e")
+    static let bottomGB = UIColor(hexColor: "#69bb9b")
 }
 
 extension UITableViewCell{
@@ -27,6 +30,21 @@ extension UITableViewCell{
     }
 }
 
+extension UIView{
+    /**
+     just cool view background, i will use it later
+     */
+    func gradient(){
+        let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [colorTop, colorBottom]
+            gradientLayer.locations = [0.0, 1.0]
+            gradientLayer.frame = self.bounds
+        
+        self.layer.insertSublayer(gradientLayer, at:0)
+    }
+}
 
 extension UIViewController{
     func showAlert(model: RandItemCellModel){

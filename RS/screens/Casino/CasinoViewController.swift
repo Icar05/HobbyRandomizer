@@ -24,6 +24,9 @@ public final class CasinoViewController: UIViewController {
     
     @IBOutlet weak var hiddenView: UIView!
     
+    @IBOutlet weak var rouleteDesctop: UIView!
+    
+    
     
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
@@ -61,6 +64,7 @@ public final class CasinoViewController: UIViewController {
         }
         
         self.rouleteView.delegate = self
+        self.setGradientBackground()
         
         self.presenter.viewDidLoad()
     }
@@ -69,6 +73,23 @@ public final class CasinoViewController: UIViewController {
         UIView.animate(withDuration: 1.5) {
                 self.hiddenView.alpha = !value ? 1.0 : 0.0
         }
+    }
+    
+    private func setGradientBackground() {
+        
+        guard let top = UIColor.topGB?.cgColor,
+              let mid = UIColor.midGB?.cgColor,
+              let bot = UIColor.bottomGB?.cgColor
+        else {
+            return
+        }
+        
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [top, mid, bot]
+            gradientLayer.locations = [0.1, 0.5, 1.0]
+            gradientLayer.frame = rouleteDesctop.bounds
+                
+        rouleteDesctop.layer.insertSublayer(gradientLayer, at:0)
     }
 }
 

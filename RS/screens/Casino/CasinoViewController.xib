@@ -14,6 +14,7 @@
                 <outlet property="doneButton" destination="vHY-yJ-Kyv" id="V90-9E-bh8"/>
                 <outlet property="hiddenView" destination="Q7F-Pg-afY" id="Vzg-OP-C4G"/>
                 <outlet property="picker" destination="AuJ-HS-qkQ" id="1E1-3K-m6L"/>
+                <outlet property="rouleteDesctop" destination="PBQ-0O-DhJ" id="VYN-ET-6Dz"/>
                 <outlet property="rouleteView" destination="Wxx-wu-tKg" id="jZC-AA-dtB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,9 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenTable" translatesAutoresizingMaskIntoConstraints="NO" id="Pgu-9P-iP7" userLabel="GreenTable">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-0O-DhJ" userLabel="Roulete Desctop">
                     <rect key="frame" x="0.0" y="45" width="414" height="816"/>
-                </imageView>
+                    <color key="backgroundColor" red="0.047058823529411764" green="0.37647058823529411" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-wu-tKg" customClass="RouleteView" customModule="RS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="238" width="414" height="420"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,27 +115,26 @@
                 <constraint firstItem="Q7F-Pg-afY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AQf-6e-QNL"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="AVA-X0-moy"/>
                 <constraint firstItem="6nd-7z-YdX" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="B1R-vj-WfB"/>
-                <constraint firstItem="Pgu-9P-iP7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="EJa-4B-5wa"/>
                 <constraint firstItem="6nd-7z-YdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HkD-jd-fWH"/>
                 <constraint firstItem="Q7F-Pg-afY" firstAttribute="top" secondItem="6nd-7z-YdX" secondAttribute="bottom" id="UZS-c0-opu"/>
+                <constraint firstItem="PBQ-0O-DhJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YnW-ql-LQt"/>
                 <constraint firstItem="Q7F-Pg-afY" firstAttribute="bottom" secondItem="f0R-ui-Fp2" secondAttribute="top" id="Z8n-Bd-2FZ"/>
                 <constraint firstItem="6nd-7z-YdX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="czs-u7-JgQ"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="eUe-1g-lEc"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="f2L-gu-yNb"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fEl-qA-fyw"/>
+                <constraint firstItem="f0R-ui-Fp2" firstAttribute="top" secondItem="PBQ-0O-DhJ" secondAttribute="bottom" id="kwJ-J5-SCg"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="l8E-R5-dgl"/>
-                <constraint firstItem="Pgu-9P-iP7" firstAttribute="bottom" secondItem="f0R-ui-Fp2" secondAttribute="top" id="rIb-KU-dk4"/>
-                <constraint firstItem="Pgu-9P-iP7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s6p-yn-5jK"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="spN-op-9H5"/>
-                <constraint firstItem="Pgu-9P-iP7" firstAttribute="top" secondItem="6nd-7z-YdX" secondAttribute="bottom" id="xze-YW-5wt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PBQ-0O-DhJ" secondAttribute="trailing" id="taX-Dz-nvE"/>
+                <constraint firstItem="PBQ-0O-DhJ" firstAttribute="top" secondItem="6nd-7z-YdX" secondAttribute="bottom" id="wtS-1o-x4f"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
     </objects>
     <resources>
-        <image name="greenTable" width="284" height="189"/>
         <namedColor name="MainColor">
-            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
