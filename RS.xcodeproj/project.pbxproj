@@ -23,6 +23,8 @@
 		ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */; };
 		ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */; };
 		ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33D7286A9C96004F1506 /* SoundUtil.swift */; };
+		ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33D9286AA2E4004F1506 /* RandomizerViewPresenter.swift */; };
+		ED1D33DC286AA308004F1506 /* CasinoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33DB286AA308004F1506 /* CasinoPresenter.swift */; };
 		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
 		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
@@ -138,6 +140,8 @@
 		ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVolumeCell.swift; sourceTree = "<group>"; };
 		ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVolumeCell.xib; sourceTree = "<group>"; };
 		ED1D33D7286A9C96004F1506 /* SoundUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundUtil.swift; sourceTree = "<group>"; };
+		ED1D33D9286AA2E4004F1506 /* RandomizerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewPresenter.swift; sourceTree = "<group>"; };
+		ED1D33DB286AA308004F1506 /* CasinoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoPresenter.swift; sourceTree = "<group>"; };
 		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
 		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
@@ -692,6 +696,7 @@
 			children = (
 				ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */,
 				ED880FE028515CC600DFD78F /* RandomizerViewController.xib */,
+				ED1D33D9286AA2E4004F1506 /* RandomizerViewPresenter.swift */,
 			);
 			path = Randomizer;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 			children = (
 				EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */,
 				EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */,
+				ED1D33DB286AA308004F1506 /* CasinoPresenter.swift */,
 			);
 			path = Casino;
 			sourceTree = "<group>";
@@ -914,6 +920,7 @@
 				EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */,
 				ED5A6C5A284FD4D00028BEED /* Navigator.swift in Sources */,
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
+				ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
@@ -944,6 +951,7 @@
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
 				ED364269271757090083D578 /* CreatePresenter.swift in Sources */,
 				ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */,
+				ED1D33DC286AA308004F1506 /* CasinoPresenter.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */,
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,

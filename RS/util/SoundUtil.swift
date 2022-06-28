@@ -6,21 +6,20 @@
 //
 
 import Foundation
-//import AudioToolbox.AudioServices
 import AVFoundation
 
 
 struct SoundsForTest{
-    static let picker = 1157
-    static let testing = 1050
-    static let nice = 1057
-    static let double = 1160
+    static let Tink = "/System/Library/Audio/UISounds/Tink.caf"
 }
 
+/**
+  https://github.com/TUNER88/iOSSystemSoundsLibrary
+ */
 class SoundUtil{
     
     
-    fileprivate var sound: Int = SoundsForTest.nice
+    fileprivate var sound: String = SoundsForTest.Tink
     
     private let enable: Bool
     
@@ -32,15 +31,13 @@ class SoundUtil{
     init(enable: Bool, volume: Float){
         self.enable = enable
         self.volume = volume
+        self.initPlayer()
     }
     
     private func initPlayer(){
         if(enable){
-            guard  let scanSoundPath = Bundle.main.path(forResource: "beep", ofType: "caf") else{
-                return
-            }
-            
-            let scanSoundURL = URL(fileURLWithPath: scanSoundPath)
+
+            let scanSoundURL = URL(fileURLWithPath: sound)
             do {
                 self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
                 self.player?.volume = volume

@@ -7,8 +7,10 @@
 
 import UIKit
 
-class CasinoViewController: UIViewController {
+public final class CasinoViewController: UIViewController {
     
+    
+    private let presenter: CasinoPresenter
     
     fileprivate var datasourse = [Int]()
     
@@ -28,12 +30,13 @@ class CasinoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
+    init(presenter: CasinoPresenter) {
+        self.presenter = presenter
+        
         super.init(nibName: "CasinoViewController", bundle: Bundle.main)
     }
     
-    
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         
         super.viewDidLoad()
         
@@ -59,6 +62,7 @@ class CasinoViewController: UIViewController {
         
         self.rouleteView.delegate = self
         
+        self.presenter.viewDidLoad()
     }
     
     private func showHiddenView(value: Bool){
@@ -69,15 +73,15 @@ class CasinoViewController: UIViewController {
 }
 
 extension CasinoViewController: UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return datasourse.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "\(datasourse[row])"
     }
 }
@@ -89,7 +93,7 @@ extension CasinoViewController: UIGestureRecognizerDelegate {
 }
 
 extension CasinoViewController: UIPickerViewDelegate{
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.currentSelectedIndex = row
         self.rouleteView.targetIndex = currentSelectedIndex
     }
@@ -97,6 +101,6 @@ extension CasinoViewController: UIPickerViewDelegate{
 
 extension CasinoViewController: RoleteViewDelegate{
     func onSectorDetected() {
-        print("Need play sound!")
+        presenter.play()
     }
 }

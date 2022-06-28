@@ -7,9 +7,11 @@
 
 import UIKit
 
-class RandomizerViewController: UIViewController {
+public final class RandomizerViewController: UIViewController {
     
     
+    
+    private let presenter: RandomizerViewPresenter
     
     fileprivate var models = [RandItemCellModel]()
     
@@ -32,13 +34,15 @@ class RandomizerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(models: [RandItemCellModel]) {
+    init(models: [RandItemCellModel], presenter: RandomizerViewPresenter) {
+        self.presenter = presenter
         self.models = models
+        
         super.init(nibName: "RandomizerViewController", bundle: Bundle.main)
     }
     
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupText()
@@ -51,6 +55,8 @@ class RandomizerViewController: UIViewController {
         self.randomizer.setBangButtonBackgroundColor(color: type.getColorForTypeInversed())
         self.scrollView.backgroundColor = type.getColorForType()
         self.randomizer.setDataSource(count: models.count)
+        
+        presenter.viewDidLoad()
     }
     
     private func setupText(){
@@ -66,7 +72,7 @@ class RandomizerViewController: UIViewController {
 
 extension RandomizerViewController: RandomizerUtilDelegate{
     func onDetectSector() {
-        print("Need play sound!")
+        presenter.play()
     }
     
     func onModelFound(randModel: RandomizerModel) {

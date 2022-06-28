@@ -54,7 +54,10 @@ public final class ShowViewController: UIViewController {
     
     private func navigateToRandom(){
         let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
-        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData())
+        let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
+        let destination = navigator.getRandomizerScreen(
+            storage: storage,
+            models: self.dataSource.getData())
         navigator.navigate(start: self, destination: destination)
     }
 

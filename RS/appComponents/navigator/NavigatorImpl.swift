@@ -36,8 +36,11 @@ class NavigatorImpl: Navigator{
         return viewController
     }
     
-    func getCasinoScreen() -> UIViewController {
-        let viewcontroller = CasinoViewController()
+    func getCasinoScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = CasinoPresenter(storage: storage)
+        let viewcontroller = CasinoViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
         return viewcontroller
     }
     
@@ -54,8 +57,11 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController {
-        let viewcontroller = RandomizerViewController(models: models)
+    func getRandomizerScreen(storage: UserDefaultStorage, models: [RandItemCellModel]) -> UIViewController {
+        let presenter = RandomizerViewPresenter(storage: storage)
+        let viewcontroller = RandomizerViewController(models: models, presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
         return viewcontroller
     }
     

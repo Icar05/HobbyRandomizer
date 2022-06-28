@@ -82,7 +82,7 @@ extension MenuViewController: MenuDelegate{
         
         switch item {
         case .Casino:
-            return navigator.getCasinoScreen()
+            return navigator.getCasinoScreen(storage: storage)
         case .Test:
             return navigator.getDebugScreen()
         case .Create:
