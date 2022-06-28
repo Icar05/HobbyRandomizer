@@ -14,7 +14,7 @@ struct SoundsForTest{
 }
 
 /**
-  https://github.com/TUNER88/iOSSystemSoundsLibrary
+ https://github.com/TUNER88/iOSSystemSoundsLibrary
  */
 class SoundUtil{
     
@@ -36,19 +36,27 @@ class SoundUtil{
     
     private func initPlayer(){
         if(enable){
-
+            
             let scanSoundURL = URL(fileURLWithPath: sound)
             do {
                 self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
                 self.player?.volume = volume
             } catch let error {
-               print("Player: error: \(error) ")
+                print("Player: error: \(error) ")
             }
         }
     }
     
     func play(){
-        self.player?.play()
+        guard let player = player else {
+            return
+        }
+        
+        if(player.isPlaying){
+            player.stop()
+        }
+        
+        player.play()
     }
     
 }
