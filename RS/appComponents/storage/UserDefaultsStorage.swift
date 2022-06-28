@@ -59,7 +59,7 @@ class UserDefaultStorage{
             }
         }
         
-        return AppPrefferencesModel(isEnabledSound: true, volume: 100)
+        return AppPrefferencesModel(isEnabledSound: true, volume: 1.0)
     }
     
     func saveAppPreferences(model: AppPrefferencesModel){

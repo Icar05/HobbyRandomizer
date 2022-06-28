@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import AudioToolbox.AudioServices
+//import AudioToolbox.AudioServices
+import AVFoundation
 
 
 struct SoundsForTest{
@@ -21,19 +22,36 @@ class SoundUtil{
     
     fileprivate var sound: Int = SoundsForTest.nice
     
-    init(){
-//        AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(sound), nil)
-    }
-//
-//    - (void)initializePlayer
-//    {
-//        NSString *scanSoundPath = [[NSBundle mainBundle] pathForResource:@"beep"
-//                                                          ofType:@"caf"];
-//        NSURL *scanSoundURL = [NSURL fileURLWithPath:scanSoundPath];
-//        self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:scanSoundURL
-//                                                               error:nil];
-//        self.player.volume = 0.5;
-//    }
+    private let enable: Bool
     
+    private let volume: Float
+    
+    private var player: AVAudioPlayer? = nil
+    
+    
+    init(enable: Bool, volume: Float){
+        self.enable = enable
+        self.volume = volume
+    }
+    
+    private func initPlayer(){
+        if(enable){
+            guard  let scanSoundPath = Bundle.main.path(forResource: "beep", ofType: "caf") else{
+                return
+            }
+            
+            let scanSoundURL = URL(fileURLWithPath: scanSoundPath)
+            do {
+                self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
+                self.player?.volume = volume
+            } catch let error {
+               print("Player: error: \(error) ")
+            }
+        }
+    }
+    
+    func play(){
+        self.player?.play()
+    }
     
 }
