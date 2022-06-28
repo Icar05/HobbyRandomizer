@@ -27,6 +27,7 @@ public final class RandomizerViewController: UIViewController {
     
     @IBOutlet weak var scrollView: VerticalScrollView!
     
+    @IBOutlet weak var backgroundView: UIView!
     
     
     @available(iOS, unavailable)
@@ -50,10 +51,7 @@ public final class RandomizerViewController: UIViewController {
         self.subtitle.text = Translations.Random.selectedDescription
         
         self.randomizer.delegate = self
-        
-        let type: ItemType = models.first?.type ?? ItemType.necessary
-        self.randomizer.setBangButtonBackgroundColor(color: type.getColorForTypeInversed())
-        self.scrollView.backgroundColor = type.getColorForType()
+        self.backgroundView.gradientRainbow()
         self.randomizer.setDataSource(count: models.count)
         
         presenter.viewDidLoad()

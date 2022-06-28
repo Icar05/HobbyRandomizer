@@ -6,11 +6,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DebugViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="dWU-oM-Gox" id="W8L-r0-jM9"/>
                 <outlet property="countLabel" destination="q4h-i4-PTH" id="Tnj-Lj-oAH"/>
                 <outlet property="decrementLabel" destination="4d5-JO-if2" id="DyG-yW-gv8"/>
                 <outlet property="incrementLabel" destination="seg-gC-bTM" id="GMQ-2L-vkf"/>
@@ -23,6 +25,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-oM-Gox" userLabel="bgView">
+                    <rect key="frame" x="0.0" y="45" width="414" height="851"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-Af-foZ" userLabel="TopSeparator">
                     <rect key="frame" x="0.0" y="44" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +38,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-zg-VAu" customClass="RandomizerUtil" customModule="RS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="223" width="414" height="450"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="450" id="JAD-4Q-Lom"/>
                     </constraints>
@@ -67,14 +73,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-fg-vxB" userLabel="BottomSeparator">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-fg-vxB" userLabel="BottomSeparator">
                     <rect key="frame" x="0.0" y="673" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="INv-Jt-vCS"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RD-xi-n7Q" userLabel="TopRandSeparator">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RD-xi-n7Q" userLabel="TopRandSeparator">
                     <rect key="frame" x="0.0" y="222" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -90,8 +96,10 @@
                 <constraint firstItem="seg-gC-bTM" firstAttribute="top" secondItem="q4h-i4-PTH" secondAttribute="top" id="7iS-H8-mQx"/>
                 <constraint firstItem="dQ8-fg-vxB" firstAttribute="top" secondItem="2lN-zg-VAu" secondAttribute="bottom" id="Es7-B4-Cnv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dQ8-fg-vxB" secondAttribute="trailing" id="FeV-a2-3E0"/>
+                <constraint firstItem="dWU-oM-Gox" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HSG-Xu-cMW"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="leading" secondItem="seg-gC-bTM" secondAttribute="trailing" constant="50" id="L4s-SF-tSm"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="R0q-yJ-DJl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dWU-oM-Gox" secondAttribute="trailing" id="RN7-uG-re0"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Syn-wG-Lum"/>
                 <constraint firstItem="RAW-Af-foZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y6J-1m-dCY"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eZG-5U-W6V"/>
@@ -99,8 +107,10 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6RD-xi-n7Q" secondAttribute="trailing" id="kVb-H0-jWf"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="top" secondItem="2lN-zg-VAu" secondAttribute="bottom" constant="10" id="njt-5i-WRV"/>
                 <constraint firstItem="RAW-Af-foZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q6F-BW-IdD"/>
+                <constraint firstItem="dWU-oM-Gox" firstAttribute="top" secondItem="RAW-Af-foZ" secondAttribute="bottom" id="rTi-YF-yFT"/>
                 <constraint firstItem="4d5-JO-if2" firstAttribute="leading" secondItem="q4h-i4-PTH" secondAttribute="trailing" constant="50" id="vWP-uD-n3x"/>
                 <constraint firstItem="6RD-xi-n7Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w49-ZN-vUM"/>
+                <constraint firstItem="dWU-oM-Gox" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="wQO-1x-frW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RAW-Af-foZ" secondAttribute="trailing" id="x6z-jf-BQa"/>
                 <constraint firstItem="6RD-xi-n7Q" firstAttribute="bottom" secondItem="2lN-zg-VAu" secondAttribute="top" id="y0G-bf-YIv"/>
             </constraints>
@@ -120,5 +130,8 @@
         <namedColor name="MainColor">
             <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

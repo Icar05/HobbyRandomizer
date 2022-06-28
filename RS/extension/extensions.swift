@@ -34,7 +34,7 @@ extension UIView{
     /**
      just cool view background, i will use it later
      */
-    func gradient(){
+    func gradientOrage(){
         let colorTop =  UIColor(red: 255.0/255.0, green: 149.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         let colorBottom = UIColor(red: 255.0/255.0, green: 94.0/255.0, blue: 58.0/255.0, alpha: 1.0).cgColor
         let gradientLayer = CAGradientLayer()
@@ -42,6 +42,22 @@ extension UIView{
             gradientLayer.locations = [0.0, 1.0]
             gradientLayer.frame = self.bounds
         
+        self.layer.insertSublayer(gradientLayer, at:0)
+    }
+    
+    func gradientRainbow() {
+        guard let top = UIColor.coolRed?.cgColor,
+              let mid = UIColor.coolOrange?.cgColor,
+              let bot = UIColor.coolGreen?.cgColor
+        else {
+            return
+        }
+        
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [top, mid, bot]
+            gradientLayer.locations = [0.1, 0.5, 1.0]
+            gradientLayer.frame = self.bounds
+                
         self.layer.insertSublayer(gradientLayer, at:0)
     }
 }

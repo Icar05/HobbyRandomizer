@@ -23,6 +23,7 @@ class DebugViewController: UIViewController {
     @IBOutlet weak var decrementLabel: BangButton!
     
     
+    @IBOutlet weak var backgroundView: UIView!
     
 
     @available(iOS, unavailable)
@@ -49,7 +50,24 @@ class DebugViewController: UIViewController {
         let decGest = UITapGestureRecognizer(target: self, action: #selector(decrement(tapGestureRecognizer:)))
         self.decrementLabel.addGestureRecognizer(decGest)
         
-        self.randomizer.contentView.gradient()
+        self.setGradientBackground()
+    }
+    
+    private func setGradientBackground() {
+        
+        guard let top = UIColor.coolRed?.cgColor,
+              let mid = UIColor.coolOrange?.cgColor,
+              let bot = UIColor.coolGreen?.cgColor
+        else {
+            return
+        }
+        
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [top, mid, bot]
+            gradientLayer.locations = [0.1, 0.5, 1.0]
+            gradientLayer.frame = backgroundView.bounds
+                
+        backgroundView.layer.insertSublayer(gradientLayer, at:0)
     }
 
     @objc func increment(tapGestureRecognizer: UITapGestureRecognizer){

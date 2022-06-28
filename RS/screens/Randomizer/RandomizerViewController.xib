@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RandomizerViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="DH6-Un-pIf" id="8Mx-sr-ukt"/>
                 <outlet property="icon" destination="hv8-yo-ehm" id="FKi-60-Cph"/>
                 <outlet property="randomizer" destination="d0H-x9-ci2" id="jWX-7Z-9GM"/>
                 <outlet property="scrollView" destination="VEY-7c-c8r" id="xXp-hu-Jml"/>
@@ -32,6 +33,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="nzU-8S-8lZ"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DH6-Un-pIf" userLabel="backgroundView">
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEY-7c-c8r" customClass="VerticalScrollView" customModule="RS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="45" width="414" height="817"/>
@@ -112,12 +117,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DH6-Un-pIf" secondAttribute="trailing" id="DEh-1K-1h5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VEY-7c-c8r" secondAttribute="bottom" id="DaK-Xu-KvE"/>
                 <constraint firstItem="VEY-7c-c8r" firstAttribute="top" secondItem="k3x-Uz-heb" secondAttribute="bottom" id="RnM-cN-hbV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k3x-Uz-heb" secondAttribute="trailing" id="XHe-kZ-IW8"/>
                 <constraint firstItem="VEY-7c-c8r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bCa-xa-BBw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VEY-7c-c8r" secondAttribute="trailing" id="f7k-hX-Ll1"/>
+                <constraint firstItem="DH6-Un-pIf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mdC-IV-PtI"/>
                 <constraint firstItem="k3x-Uz-heb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="okc-PH-eAd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DH6-Un-pIf" secondAttribute="bottom" id="tYU-cB-2dN"/>
+                <constraint firstItem="DH6-Un-pIf" firstAttribute="top" secondItem="k3x-Uz-heb" secondAttribute="bottom" id="wLd-J5-Cou"/>
                 <constraint firstItem="k3x-Uz-heb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wOf-Xi-dbQ"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
