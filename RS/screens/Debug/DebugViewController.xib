@@ -31,14 +31,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2lN-zg-VAu" customClass="RandomizerUtil" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="45" width="414" height="450"/>
+                    <rect key="frame" x="0.0" y="223" width="414" height="450"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="450" id="JAD-4Q-Lom"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4h-i4-PTH" customClass="BangButton" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="182" y="505" width="50" height="21"/>
+                    <rect key="frame" x="182" y="683" width="50" height="21"/>
                     <color key="backgroundColor" name="CoolOrange"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="TMM-Z3-DsM"/>
@@ -48,7 +48,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seg-gC-bTM" customClass="BangButton" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="82" y="505" width="50" height="21"/>
+                    <rect key="frame" x="82" y="683" width="50" height="21"/>
                     <color key="backgroundColor" name="CoolGreen"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="HQA-EI-zbc"/>
@@ -58,7 +58,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4d5-JO-if2" customClass="BangButton" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="282" y="505" width="50" height="21"/>
+                    <rect key="frame" x="282" y="683" width="50" height="21"/>
                     <color key="backgroundColor" name="CoolRed"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="LaV-Vo-ZZ4"/>
@@ -68,10 +68,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-fg-vxB" userLabel="BottomSeparator">
-                    <rect key="frame" x="0.0" y="495" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="673" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="INv-Jt-vCS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RD-xi-n7Q" userLabel="TopRandSeparator">
+                    <rect key="frame" x="0.0" y="222" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="aPk-Fp-ajG"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,15 +91,18 @@
                 <constraint firstItem="dQ8-fg-vxB" firstAttribute="top" secondItem="2lN-zg-VAu" secondAttribute="bottom" id="Es7-B4-Cnv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dQ8-fg-vxB" secondAttribute="trailing" id="FeV-a2-3E0"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="leading" secondItem="seg-gC-bTM" secondAttribute="trailing" constant="50" id="L4s-SF-tSm"/>
+                <constraint firstItem="2lN-zg-VAu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="R0q-yJ-DJl"/>
                 <constraint firstItem="2lN-zg-VAu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Syn-wG-Lum"/>
                 <constraint firstItem="RAW-Af-foZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y6J-1m-dCY"/>
-                <constraint firstItem="2lN-zg-VAu" firstAttribute="top" secondItem="RAW-Af-foZ" secondAttribute="bottom" id="aNK-e2-7ug"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eZG-5U-W6V"/>
                 <constraint firstItem="4d5-JO-if2" firstAttribute="top" secondItem="q4h-i4-PTH" secondAttribute="top" id="hY3-Lh-RJi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6RD-xi-n7Q" secondAttribute="trailing" id="kVb-H0-jWf"/>
                 <constraint firstItem="q4h-i4-PTH" firstAttribute="top" secondItem="2lN-zg-VAu" secondAttribute="bottom" constant="10" id="njt-5i-WRV"/>
                 <constraint firstItem="RAW-Af-foZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="q6F-BW-IdD"/>
                 <constraint firstItem="4d5-JO-if2" firstAttribute="leading" secondItem="q4h-i4-PTH" secondAttribute="trailing" constant="50" id="vWP-uD-n3x"/>
+                <constraint firstItem="6RD-xi-n7Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="w49-ZN-vUM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RAW-Af-foZ" secondAttribute="trailing" id="x6z-jf-BQa"/>
+                <constraint firstItem="6RD-xi-n7Q" firstAttribute="bottom" secondItem="2lN-zg-VAu" secondAttribute="top" id="y0G-bf-YIv"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
@@ -108,7 +118,7 @@
             <color red="0.88999998569488525" green="0.0" blue="0.0080000003799796104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MainColor">
-            <color red="0.77254901960784317" green="0.6705882352941176" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
