@@ -7,7 +7,14 @@
 
 import Foundation
 
+protocol VerticalColecitonViewDelegate: NSObject{
+    func onContentSizeChanged(y: CGFloat)
+}
+
 class VerticalCollectionView: UICollectionView {
+    
+    
+    weak var contentSizeDelegate: VerticalColecitonViewDelegate? = nil
     
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -53,6 +60,7 @@ class VerticalCollectionView: UICollectionView {
         if(parentHeight > contentSize){
             let newTopInset = ((parentHeight - contentSize) / 2)
             self.contentInset.top = newTopInset
+            self.contentSizeDelegate?.onContentSizeChanged(y: newTopInset)
         }
     }
 }

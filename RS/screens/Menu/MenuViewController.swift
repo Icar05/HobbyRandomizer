@@ -10,7 +10,7 @@ import UIKit
 public final class MenuViewController: UIViewController {
     
     
-    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     private let dataSource = MenuDataSource()
     
@@ -54,6 +54,7 @@ public final class MenuViewController: UIViewController {
         self.collectionView?.register(nib, forCellWithReuseIdentifier: identifier)
         self.collectionView.dataSource = dataSource
         self.collectionView.delegate = dataSource
+        self.collectionView.contentSizeDelegate = self
         self.dataSource.setDelegate(delegate: self)
 
         self.menuTitle.text = title
@@ -99,4 +100,12 @@ extension MenuViewController: MenuDelegate{
             return navigator.getSettingScreen(storage: storage)
         }
     }
+}
+
+extension MenuViewController: VerticalColecitonViewDelegate{
+    func onContentSizeChanged(y: CGFloat) {
+        self.bottomConstraint.constant = y - 16
+    }
+    
+    
 }

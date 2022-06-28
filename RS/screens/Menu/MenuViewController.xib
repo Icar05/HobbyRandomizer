@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="why-Xh-LtV" id="DTE-SX-06q"/>
                 <outlet property="collectionView" destination="Vlb-R9-7Sg" id="UZY-RA-lZ9"/>
                 <outlet property="menuTitle" destination="kBK-9d-XVr" id="79t-l7-ZVd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,7 +33,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBK-9d-XVr">
-                    <rect key="frame" x="16" y="60" width="382" height="20.5"/>
+                    <rect key="frame" x="16" y="23.5" width="382" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -47,7 +48,7 @@
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nwv-bn-UNJ"/>
                 <constraint firstItem="kBK-9d-XVr" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-16" id="r65-aW-cdj"/>
                 <constraint firstItem="Vlb-R9-7Sg" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" constant="-16" id="t4g-ME-YWU"/>
-                <constraint firstItem="kBK-9d-XVr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="why-Xh-LtV"/>
+                <constraint firstItem="kBK-9d-XVr" firstAttribute="bottom" secondItem="Vlb-R9-7Sg" secondAttribute="top" id="why-Xh-LtV"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
