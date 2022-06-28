@@ -18,7 +18,10 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     private let data: [SettingsModel] = [
         SettingsHeaderCellModel(title: Translations.Settings.sound),
         SettingsSoundEnableCellModel(title: Translations.Settings.soundEnable, enable: true, callback: {
-            print("value: \($0)")
+            print("isEnable: \($0)")
+        }),
+        SettingsVolumeCellModel(title: Translations.Settings.soundVolume, volume: 20.0, callback: {
+            print("volume: \($0)")
         })
     ]
     
@@ -28,6 +31,10 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     
     func getSettingsSoundEnableIdentifier() -> String{
         return String(describing: SettingsSoundEnableCell.self)
+    }
+    
+    func getSettingsVolumeIdentifier() -> String{
+        return String(describing: SettingsVolumeCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +54,11 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
         } else if(model is SettingsSoundEnableCellModel){
             let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsSoundEnableIdentifier(), for: indexPath) as! SettingsSoundEnableCell
             cell.configure(model: model as! SettingsSoundEnableCellModel)
+            cell.modify()
+            return cell
+        } else if(model is SettingsVolumeCellModel){
+            let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsVolumeIdentifier(), for: indexPath) as! SettingsVolumeCell
+            cell.configure(model: model as! SettingsVolumeCellModel)
             cell.modify()
             return cell
         }

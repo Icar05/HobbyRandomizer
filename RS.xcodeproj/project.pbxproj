@@ -19,6 +19,9 @@
 		ED1D33C4286A68AD004F1506 /* SettingsSoundEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33C2286A68AD004F1506 /* SettingsSoundEnableCell.swift */; };
 		ED1D33C5286A68AD004F1506 /* SettingsSoundEnableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33C3286A68AD004F1506 /* SettingsSoundEnableCell.xib */; };
 		ED1D33C7286A68C1004F1506 /* SettingsSoundEnableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */; };
+		ED1D33CE286A6DF3004F1506 /* SettingsVolumeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */; };
+		ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */; };
+		ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */; };
 		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
 		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
@@ -130,6 +133,9 @@
 		ED1D33C2286A68AD004F1506 /* SettingsSoundEnableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSoundEnableCell.swift; sourceTree = "<group>"; };
 		ED1D33C3286A68AD004F1506 /* SettingsSoundEnableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSoundEnableCell.xib; sourceTree = "<group>"; };
 		ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSoundEnableCellModel.swift; sourceTree = "<group>"; };
+		ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVolumeCellModel.swift; sourceTree = "<group>"; };
+		ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVolumeCell.swift; sourceTree = "<group>"; };
+		ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVolumeCell.xib; sourceTree = "<group>"; };
 		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
 		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 		ED1D33B5286A5DD1004F1506 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ED1D33C8286A6DBC004F1506 /* SettingsVolume */,
 				ED1D33C1286A6882004F1506 /* SettingsSoundEnable */,
 				ED1D33BA286A6097004F1506 /* SettingsHeader */,
 			);
@@ -297,6 +304,16 @@
 				ED1D33C6286A68C1004F1506 /* SettingsSoundEnableCellModel.swift */,
 			);
 			path = SettingsSoundEnable;
+			sourceTree = "<group>";
+		};
+		ED1D33C8286A6DBC004F1506 /* SettingsVolume */ = {
+			isa = PBXGroup;
+			children = (
+				ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */,
+				ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */,
+				ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */,
+			);
+			path = SettingsVolume;
 			sourceTree = "<group>";
 		};
 		ED3642642717536C0083D578 /* storage */ = {
@@ -848,6 +865,7 @@
 				EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */,
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
 				EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */,
+				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
@@ -903,6 +921,7 @@
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */,
+				ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */,
@@ -926,6 +945,7 @@
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
+				ED1D33CE286A6DF3004F1506 /* SettingsVolumeCellModel.swift in Sources */,
 				ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */,
 				EDE5483828517A570018A75B /* ShowViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,

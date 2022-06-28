@@ -46,3 +46,4 @@
 "Translations.Settings.settings" = "Настройки";
 "Translations.Settings.sound" = "Звук";
 "Translations.Settings.soundEnable" = "Включить звук";
+"Translations.Settings.soundVolume" = "Громкость";

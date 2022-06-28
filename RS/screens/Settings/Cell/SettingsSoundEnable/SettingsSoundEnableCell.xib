@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSr-3Z-cWY">
-                                <rect key="frame" x="16" y="12" width="42" height="20"/>
+                                <rect key="frame" x="16" y="12" width="231" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,6 +38,7 @@
                             <constraint firstItem="PSr-3Z-cWY" firstAttribute="top" secondItem="495-nZ-I1Q" secondAttribute="top" constant="12" id="M1P-PG-HJP"/>
                             <constraint firstAttribute="bottom" secondItem="PSr-3Z-cWY" secondAttribute="bottom" constant="12" id="e1i-SI-EQ2"/>
                             <constraint firstItem="PSr-3Z-cWY" firstAttribute="leading" secondItem="495-nZ-I1Q" secondAttribute="leading" constant="16" id="fVS-SD-DdH"/>
+                            <constraint firstItem="265-8w-OsF" firstAttribute="leading" secondItem="PSr-3Z-cWY" secondAttribute="trailing" constant="8" id="nfr-K2-DCg"/>
                             <constraint firstItem="265-8w-OsF" firstAttribute="centerY" secondItem="PSr-3Z-cWY" secondAttribute="centerY" id="zQK-xl-mae"/>
                         </constraints>
                     </view>

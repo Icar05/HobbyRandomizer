@@ -21,6 +21,10 @@ struct Translations{
             "Translations.Settings.soundEnable".localized(Bundle.main)
         }
         
+        public static var soundVolume: String{
+            "Translations.Settings.soundVolume".localized(Bundle.main)
+        }
+        
     }
     
     struct Alert{

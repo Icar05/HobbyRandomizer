@@ -49,8 +49,12 @@ public final class SettingsViewController: UIViewController {
         let soundEnableId = self.dataSource.getSettingsSoundEnableIdentifier()
         let soundEnableNib = UINib(nibName: soundEnableId, bundle: nil)
         
+        let soundVolumeIdentifier = self.dataSource.getSettingsVolumeIdentifier()
+        let soundVolumeNib = UINib(nibName: soundVolumeIdentifier, bundle: nil)
+        
         self.tableView?.register(settingsNib, forCellReuseIdentifier: settingsId)
         self.tableView?.register(soundEnableNib, forCellReuseIdentifier: soundEnableId)
+        self.tableView?.register(soundVolumeNib, forCellReuseIdentifier: soundVolumeIdentifier)
     }
     
 }
