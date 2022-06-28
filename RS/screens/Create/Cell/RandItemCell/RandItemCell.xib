@@ -27,8 +27,8 @@
                                     <constraint firstAttribute="width" constant="15" id="OQ4-tf-Wn2"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVL-EQ-QZu">
-                                <rect key="frame" x="25" y="4.5" width="175" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVL-EQ-QZu">
+                                <rect key="frame" x="25" y="4.5" width="215" height="18"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                             <constraint firstItem="VAR-Xi-RQw" firstAttribute="trailing" secondItem="cDo-Tl-zwy" secondAttribute="trailing" id="5Av-Sy-SVN"/>
                             <constraint firstItem="fmA-Ko-D0d" firstAttribute="top" secondItem="cDo-Tl-zwy" secondAttribute="top" constant="6" id="7Fl-if-qf7"/>
                             <constraint firstItem="cLv-nP-eZZ" firstAttribute="top" secondItem="VAR-Xi-RQw" secondAttribute="bottom" constant="2" id="DCT-D2-hrB"/>
-                            <constraint firstItem="VAR-Xi-RQw" firstAttribute="leading" secondItem="MVL-EQ-QZu" secondAttribute="trailing" constant="50" id="HLl-1b-a3V"/>
+                            <constraint firstItem="VAR-Xi-RQw" firstAttribute="leading" secondItem="MVL-EQ-QZu" secondAttribute="trailing" constant="10" id="HLl-1b-a3V"/>
                             <constraint firstItem="cLv-nP-eZZ" firstAttribute="trailing" secondItem="cDo-Tl-zwy" secondAttribute="trailing" id="KWh-f2-Nit"/>
                             <constraint firstItem="VAR-Xi-RQw" firstAttribute="centerY" secondItem="MVL-EQ-QZu" secondAttribute="centerY" id="NFc-Zu-Lq5"/>
                             <constraint firstItem="MVL-EQ-QZu" firstAttribute="leading" secondItem="fmA-Ko-D0d" secondAttribute="trailing" constant="10" id="Nux-IO-fBu"/>
