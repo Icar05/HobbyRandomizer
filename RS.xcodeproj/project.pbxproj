@@ -22,6 +22,7 @@
 		ED1D33CE286A6DF3004F1506 /* SettingsVolumeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */; };
 		ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */; };
 		ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */; };
+		ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33D7286A9C96004F1506 /* SoundUtil.swift */; };
 		ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36424A2717121D0083D578 /* CreateIdeaView.swift */; };
 		ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED36424C271712BF0083D578 /* CreateIdeaView.xib */; };
 		ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36425227171B770083D578 /* RandomizerUtil.swift */; };
@@ -136,6 +137,7 @@
 		ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVolumeCellModel.swift; sourceTree = "<group>"; };
 		ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVolumeCell.swift; sourceTree = "<group>"; };
 		ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVolumeCell.xib; sourceTree = "<group>"; };
+		ED1D33D7286A9C96004F1506 /* SoundUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundUtil.swift; sourceTree = "<group>"; };
 		ED36424A2717121D0083D578 /* CreateIdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIdeaView.swift; sourceTree = "<group>"; };
 		ED36424C271712BF0083D578 /* CreateIdeaView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateIdeaView.xib; sourceTree = "<group>"; };
 		ED36425227171B770083D578 /* RandomizerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerUtil.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				ED7918972863AE780041D407 /* FileWriterUtil.swift */,
 				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,
 				ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */,
+				ED1D33D7286A9C96004F1506 /* SoundUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				ED536160286865A6004F1836 /* DisplayActionDataDataSourse.swift in Sources */,
 				ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */,
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
+				ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
 				ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */,
 				ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */,

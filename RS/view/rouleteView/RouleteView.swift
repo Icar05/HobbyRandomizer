@@ -6,7 +6,11 @@
 //
 
 import UIKit
-import AudioToolbox.AudioServices
+
+
+protocol RoleteViewDelegate: NSObject{
+    func onSectorDetected()
+}
 
 @IBDesignable
 class RouleteView:  UIView {
@@ -21,6 +25,8 @@ class RouleteView:  UIView {
     @IBOutlet weak var bangBtn: BangButton!
     
     @IBOutlet weak var casinoSelectorView: CasinoSelectorView!
+    
+    weak var delegate: RoleteViewDelegate? = nil
     
     var targetIndex = -1
         
@@ -87,6 +93,12 @@ class RouleteView:  UIView {
 }
 
 extension RouleteView: RandomizerCallback{
+    
+    
+    func onDetectSector() {
+        self.delegate?.onSectorDetected()
+    }
+    
     func onWinnerFound(model: RandomizerModel) {
         self.casinoSelectorView.updateModel(model: model)
         self.isPlaying = false

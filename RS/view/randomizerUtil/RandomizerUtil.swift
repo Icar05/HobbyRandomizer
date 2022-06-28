@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+protocol RandomizerUtilDelegate: NSObject{
+    func onDetectSector()
+    func onModelFound(randModel: RandomizerModel)
+}
+
 @IBDesignable
 class RandomizerUtil: UIView {
     
@@ -24,7 +29,7 @@ class RandomizerUtil: UIView {
         
     @IBOutlet weak var bang: BangButton!
     
-    var delegate: ((_ model: RandomizerModel) -> Void)? = nil
+    weak var delegate: RandomizerUtilDelegate? = nil
     
     
     override init(frame: CGRect) {
@@ -86,9 +91,15 @@ class RandomizerUtil: UIView {
 }
 
 extension RandomizerUtil: RandomizerCallback{
+    
+    
+    func onDetectSector() {
+        self.delegate?.onDetectSector()
+    }
+    
     func onWinnerFound(model: RandomizerModel) {
         self.selectorView.updateModel(model: model)
-        self.delegate?(model)
+        self.delegate?.onModelFound(randModel: model)
         self.isPlaying = false
     }
     

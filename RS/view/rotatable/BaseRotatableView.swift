@@ -11,14 +11,10 @@ import AudioToolbox
 protocol RandomizerCallback {
     func onWinnerFound(model: RandomizerModel) -> Void
     func onAnimatonCanceled() -> Void
+    func onDetectSector() -> Void
 }
 
-struct SoundsForTest{
-    static let picker = 1157
-    static let testing = 1050
-    static let nice = 1057
-    static let double = 1160
-}
+
 
 struct RandomizerModel {
     let index: Int
@@ -49,8 +45,6 @@ class BaseRotatableView: UIView {
     fileprivate var wantedAngle: Double = 0
     
     fileprivate var animationDuration = 6.0
-    
-    fileprivate var sound: Int = SoundsForTest.nice
     
     
     
@@ -241,7 +235,7 @@ class BaseRotatableView: UIView {
 
 extension BaseRotatableView: DetectSectorUtilDelegate{
     func onDetectSector() {
-        AudioServicesPlaySystemSoundWithCompletion(SystemSoundID(sound), nil)
+        self.callback?.onDetectSector()
     }
 }
 

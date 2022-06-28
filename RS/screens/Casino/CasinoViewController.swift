@@ -57,6 +57,8 @@ class CasinoViewController: UIViewController {
             self.rouleteView.targetIndex = self.currentSelectedIndex
         }
         
+        self.rouleteView.delegate = self
+        
     }
     
     private func showHiddenView(value: Bool){
@@ -90,5 +92,11 @@ extension CasinoViewController: UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.currentSelectedIndex = row
         self.rouleteView.targetIndex = currentSelectedIndex
+    }
+}
+
+extension CasinoViewController: RoleteViewDelegate{
+    func onSectorDetected() {
+        print("Need play sound!")
     }
 }

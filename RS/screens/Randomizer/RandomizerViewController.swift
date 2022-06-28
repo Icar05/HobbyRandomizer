@@ -45,17 +45,7 @@ class RandomizerViewController: UIViewController {
         self.titleLabel.text = Translations.Random.selectedTitle
         self.subtitle.text = Translations.Random.selectedDescription
         
-        self.randomizer.delegate = { (randModel) in
-            if(self.models.count > 0){
-                let model = self.models[randModel.index]
-                self.titleLabel.text = model.title
-                self.titleLabel.textColor = randModel.color
-                self.subtitle.text = model.subTitle
-                self.status.setImageColor(color: randModel.color )
-                self.icon.setImageColor(color: model.type.getColorForType())
-                self.showAlert(model: model)
-            }
-        }
+        self.randomizer.delegate = self
         
         let type: ItemType = models.first?.type ?? ItemType.necessary
         self.randomizer.setBangButtonBackgroundColor(color: type.getColorForTypeInversed())
@@ -71,6 +61,26 @@ class RandomizerViewController: UIViewController {
         ]
         self.titleLabel.attributedText = NSAttributedString(string: "Title", attributes: strokeTextAttributes)
     }
+    
+}
+
+extension RandomizerViewController: RandomizerUtilDelegate{
+    func onDetectSector() {
+        print("Need play sound!")
+    }
+    
+    func onModelFound(randModel: RandomizerModel) {
+        if(self.models.count > 0){
+            let model = self.models[randModel.index]
+            self.titleLabel.text = model.title
+            self.titleLabel.textColor = randModel.color
+            self.subtitle.text = model.subTitle
+            self.status.setImageColor(color: randModel.color )
+            self.icon.setImageColor(color: model.type.getColorForType())
+            self.showAlert(model: model)
+        }
+    }
+    
     
 }
 
