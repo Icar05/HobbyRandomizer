@@ -47,3 +47,5 @@
 "Translations.Settings.sound" = "Sound";
 "Translations.Settings.soundEnable" = "Sound enable";
 "Translations.Settings.soundVolume" = "Volume";
+"Translations.Settings.yesNoSectors" = "Sectors in the screen YesNo";
+"Translations.Settings.count" = "Count";

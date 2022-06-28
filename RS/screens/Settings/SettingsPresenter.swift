@@ -10,6 +10,7 @@ import Foundation
 struct AppPrefferencesModel: Codable{
     var isEnabledSound: Bool
     var volume: Float
+    var yesNoCount: Double
 }
 
 
@@ -54,7 +55,18 @@ public final class SettingsPresenter {
                 volume: model.volume,
                 callback: {
                     self.model.volume = $0
-            })]
+            }),
+            SettingsHeaderCellModel(
+                title: Translations.Settings.yesNoSectors
+            ),
+            SettingsYesNoCellModel(
+                title: Translations.Settings.count,
+                value: model.yesNoCount,
+                callback: {
+                    self.model.yesNoCount = $0
+                })
+        
+        ]
     }
   
     

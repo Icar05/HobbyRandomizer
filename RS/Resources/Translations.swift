@@ -9,6 +9,14 @@ import Foundation
 struct Translations{
     
     struct Settings{
+        public static var count: String{
+            "Translations.Settings.count".localized(Bundle.main)
+        }
+        
+        public static var yesNoSectors: String{
+            "Translations.Settings.yesNoSectors".localized(Bundle.main)
+        }
+        
         public static var settings: String{
             "Translations.Settings.settings".localized(Bundle.main)
         }

@@ -47,3 +47,5 @@
 "Translations.Settings.sound" = "Звук";
 "Translations.Settings.soundEnable" = "Вмикнути звук";
 "Translations.Settings.soundVolume" = "Гучність";
+"Translations.Settings.yesNoSectors" = "Сектори в екрані ТакНі";
+"Translations.Settings.count" = "Кількість";
