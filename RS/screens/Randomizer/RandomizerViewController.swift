@@ -25,7 +25,7 @@ public final class RandomizerViewController: UIViewController {
     
     @IBOutlet weak var icon: UIImageView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: VerticalScrollView!
     
     
     

@@ -37,6 +37,7 @@
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
+		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4491AB2866938300CCC32D /* ImportDataCell.swift */; };
 		ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4491AC2866938300CCC32D /* ImportDataCell.xib */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
@@ -158,6 +159,7 @@
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
+		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED4491AB2866938300CCC32D /* ImportDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCell.swift; sourceTree = "<group>"; };
 		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
@@ -559,7 +561,6 @@
 				EDD88CDF273573710042D406 /* selector */,
 				EDD88CDA27354D150042D406 /* viewUtils */,
 				ED5F113127177A06006454AD /* rotatable */,
-				ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -704,9 +705,11 @@
 		ED880FDD2851303E00DFD78F /* useful */ = {
 			isa = PBXGroup;
 			children = (
+				ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */,
 				ED364256271731D70083D578 /* BangButton.swift */,
 				ED36426227174FE80083D578 /* PrettyLabel.swift */,
 				EDE5483E2851829A0018A75B /* LabelWithCallback.swift */,
+				ED435821286BAC3E00F99459 /* VerticalScrollView.swift */,
 			);
 			path = useful;
 			sourceTree = "<group>";
@@ -1009,6 +1012,7 @@
 				ED53615628686507004F1836 /* DisplayRawDataPresenter.swift in Sources */,
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
+				ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */,
 				ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,

@@ -36,8 +36,8 @@ class ActionParser : Parser{
                     
                     let content = $0.split(separator: "°")
                     let model = RandItemCellModel(
-                        title: content[0].trimmingCharacters(in: .whitespaces),
-                        subTitle: content[1].trimmingCharacters(in: .whitespaces),
+                        title: content[0].trimmingCharacters(in: .whitespacesAndNewlines),
+                        subTitle: content[1].trimmingCharacters(in: .whitespacesAndNewlines),
                         type: type)
                     
                     models.append(model)
