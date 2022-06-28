@@ -7,13 +7,25 @@
 
 import Foundation
 
+struct AppPrefferencesModel: Codable{
+    var isEnabledSound: Bool
+    var volume: Float
+}
+
+
 public final class SettingsPresenter {
 
     
     
+    private var data: [SettingsModel] = []
+    
     private let storage: UserDefaultStorage
+    
+    private var model: AppPrefferencesModel
             
     unowned var view: SettingsViewController!
+    
+    
     
     public func set(view: SettingsViewController) {
         self.view = view
@@ -21,22 +33,37 @@ public final class SettingsPresenter {
     
     init(storage: UserDefaultStorage){
         self.storage = storage
+        self.model = storage.getAppPreferences()
+        self.initData()
     }
     
-    private let data: [SettingsModel] = [
-        SettingsHeaderCellModel(title: Translations.Settings.sound),
-        SettingsSoundEnableCellModel(title: Translations.Settings.soundEnable, enable: true, callback: {
-            print("isEnable: \($0)")
-        }),
-        SettingsVolumeCellModel(title: Translations.Settings.soundVolume, volume: 20.0, callback: {
-            print("volume: \($0)")
-        })
-    ]
     
+    func initData(){
+        self.data =  [
+            SettingsHeaderCellModel(
+                title: Translations.Settings.sound
+            ),
+            SettingsSoundEnableCellModel(
+                title: Translations.Settings.soundEnable,
+                enable: model.isEnabledSound,
+                callback: {
+                    self.model.isEnabledSound = $0
+            }),
+            SettingsVolumeCellModel(
+                title: Translations.Settings.soundVolume,
+                volume: model.volume,
+                callback: {
+                    self.model.volume = $0
+            })]
+    }
   
     
     func viewDidLoad(){
         self.view.registerCells(models: data)
+    }
+    
+    func savePreferences(){
+        self.storage.saveAppPreferences(model: model)
     }
     
 }

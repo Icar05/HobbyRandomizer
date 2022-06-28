@@ -41,6 +41,13 @@ public final class SettingsViewController: UIViewController {
     }
     
     
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            self.presenter.savePreferences()
+        }
+    }
+    
     func registerCells(models: [SettingsModel]){
         
         models.forEach{
