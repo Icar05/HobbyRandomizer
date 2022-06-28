@@ -16,7 +16,7 @@ public final class MenuViewController: UIViewController {
     
     private let presenter: MenuPresenter
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: VerticalCollectionView!
     
     @IBOutlet weak var menuTitle: UILabel!
     

@@ -36,6 +36,7 @@
 		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
+		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4491AB2866938300CCC32D /* ImportDataCell.swift */; };
 		ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4491AC2866938300CCC32D /* ImportDataCell.xib */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
@@ -156,6 +157,7 @@
 		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
+		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED4491AB2866938300CCC32D /* ImportDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCell.swift; sourceTree = "<group>"; };
 		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 				EDD88CDF273573710042D406 /* selector */,
 				EDD88CDA27354D150042D406 /* viewUtils */,
 				ED5F113127177A06006454AD /* rotatable */,
+				ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
+				ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
 				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
