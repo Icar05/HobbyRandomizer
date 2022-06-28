@@ -40,14 +40,16 @@ class DebugViewController: UIViewController {
         self.countLabel.text = "\(count)"
         
         
-        incrementLabel.isUserInteractionEnabled = true
-        decrementLabel.isUserInteractionEnabled = true
+        self.incrementLabel.isUserInteractionEnabled = true
+        self.decrementLabel.isUserInteractionEnabled = true
         
         let incGest = UITapGestureRecognizer(target: self, action: #selector(increment(tapGestureRecognizer:)))
-        incrementLabel.addGestureRecognizer(incGest)
+        self.incrementLabel.addGestureRecognizer(incGest)
         
         let decGest = UITapGestureRecognizer(target: self, action: #selector(decrement(tapGestureRecognizer:)))
-        decrementLabel.addGestureRecognizer(decGest)
+        self.decrementLabel.addGestureRecognizer(decGest)
+        
+        self.randomizer.contentView.gradient()
     }
 
     @objc func increment(tapGestureRecognizer: UITapGestureRecognizer){
