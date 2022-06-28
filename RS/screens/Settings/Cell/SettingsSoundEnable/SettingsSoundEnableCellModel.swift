@@ -11,6 +11,7 @@ struct SettingsSoundEnableCellModel: SettingsModel{
    
     
     
+    
     let title: String
     
     let enable: Bool
@@ -25,4 +26,7 @@ struct SettingsSoundEnableCellModel: SettingsModel{
     func getTitle() -> String {
         return title
     }
+        
+    var reuseIdentifier: String = String(describing: SettingsSoundEnableCell.self)
+
 }

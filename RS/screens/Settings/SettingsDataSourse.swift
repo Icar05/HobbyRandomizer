@@ -10,20 +10,23 @@ import Foundation
 protocol SettingsModel{
     func isHeader() -> Bool
     func getTitle() -> String
+    
+    var reuseIdentifier: String { get }
 }
+
+protocol SettingCell: UITableViewCell {
+    func update(with model: SettingsModel)
+}
+
 
 final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private let data: [SettingsModel] = [
-        SettingsHeaderCellModel(title: Translations.Settings.sound),
-        SettingsSoundEnableCellModel(title: Translations.Settings.soundEnable, enable: true, callback: {
-            print("isEnable: \($0)")
-        }),
-        SettingsVolumeCellModel(title: Translations.Settings.soundVolume, volume: 20.0, callback: {
-            print("volume: \($0)")
-        })
-    ]
+    private var data: [SettingsModel] = []
+    
+    func setData(data: [SettingsModel]){
+        self.data = data
+    }
     
     func getSettingsHeaderIdentifier() -> String{
         return String(describing: SettingsHeaderCell.self)
@@ -38,33 +41,19 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return  data.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+   
         let model = data[indexPath.row]
-        
-        if(model is SettingsHeaderCellModel){
-            let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsHeaderIdentifier(), for: indexPath) as! SettingsHeaderCell
-            cell.configure(model: model as! SettingsHeaderCellModel)
+        let id = model.reuseIdentifier
+        let cell = tableView.dequeueReusableCell(withIdentifier: id, for: indexPath)  as! SettingCell
+            cell.update(with: model)
             cell.modify()
+
             return cell
-        } else if(model is SettingsSoundEnableCellModel){
-            let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsSoundEnableIdentifier(), for: indexPath) as! SettingsSoundEnableCell
-            cell.configure(model: model as! SettingsSoundEnableCellModel)
-            cell.modify()
-            return cell
-        } else if(model is SettingsVolumeCellModel){
-            let cell = tableView.dequeueReusableCell(withIdentifier: getSettingsVolumeIdentifier(), for: indexPath) as! SettingsVolumeCell
-            cell.configure(model: model as! SettingsVolumeCellModel)
-            cell.modify()
-            return cell
-        }
-        
-        let cell = UITableViewCell()
-        return cell
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

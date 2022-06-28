@@ -7,7 +7,8 @@
 
 import UIKit
 
-class SettingsHeaderCell: UITableViewCell {
+class SettingsHeaderCell: UITableViewCell, SettingCell {
+   
     
     
     @IBOutlet weak var headerLabel: UILabel!
@@ -20,8 +21,11 @@ class SettingsHeaderCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(model: SettingsHeaderCellModel){
-        self.headerLabel.text = model.title
+    func update(with model: SettingsModel) {
+        guard let m = model as? SettingsHeaderCellModel else {
+            return
+        }
+        self.headerLabel.text = m.title
     }
     
 }

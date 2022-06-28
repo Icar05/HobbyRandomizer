@@ -36,25 +36,19 @@ public final class SettingsViewController: UIViewController {
         self.tableView.delegate = dataSource
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
-        self.registerCells()
         
         self.presenter.viewDidLoad()
     }
     
     
-    private func registerCells(){
-        let settingsId = self.dataSource.getSettingsHeaderIdentifier()
-        let settingsNib = UINib(nibName: settingsId, bundle: nil)
+    func registerCells(models: [SettingsModel]){
         
-        let soundEnableId = self.dataSource.getSettingsSoundEnableIdentifier()
-        let soundEnableNib = UINib(nibName: soundEnableId, bundle: nil)
+        models.forEach{
+            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
+            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
+        }
         
-        let soundVolumeIdentifier = self.dataSource.getSettingsVolumeIdentifier()
-        let soundVolumeNib = UINib(nibName: soundVolumeIdentifier, bundle: nil)
-        
-        self.tableView?.register(settingsNib, forCellReuseIdentifier: settingsId)
-        self.tableView?.register(soundEnableNib, forCellReuseIdentifier: soundEnableId)
-        self.tableView?.register(soundVolumeNib, forCellReuseIdentifier: soundVolumeIdentifier)
+        self.dataSource.setData(data: models)
     }
     
 }

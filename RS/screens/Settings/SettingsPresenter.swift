@@ -10,6 +10,7 @@ import Foundation
 public final class SettingsPresenter {
 
     
+    
     private let storage: UserDefaultStorage
             
     unowned var view: SettingsViewController!
@@ -22,6 +23,20 @@ public final class SettingsPresenter {
         self.storage = storage
     }
     
-    func viewDidLoad(){}
+    private let data: [SettingsModel] = [
+        SettingsHeaderCellModel(title: Translations.Settings.sound),
+        SettingsSoundEnableCellModel(title: Translations.Settings.soundEnable, enable: true, callback: {
+            print("isEnable: \($0)")
+        }),
+        SettingsVolumeCellModel(title: Translations.Settings.soundVolume, volume: 20.0, callback: {
+            print("volume: \($0)")
+        })
+    ]
+    
+  
+    
+    func viewDidLoad(){
+        self.view.registerCells(models: data)
+    }
     
 }

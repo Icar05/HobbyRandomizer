@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SettingsSoundEnableCell: UITableViewCell {
-
+class SettingsSoundEnableCell: UITableViewCell, SettingCell {
+    
     
     
     private var callback: ((_ value: Bool) -> Void)? = nil
@@ -18,20 +18,24 @@ class SettingsSoundEnableCell: UITableViewCell {
     @IBOutlet weak var soundSwitch: UISwitch!
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.soundSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
-
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(model: SettingsSoundEnableCellModel){
-        self.soundLabel.text = model.title
-        self.soundSwitch.isOn = model.enable
-        self.callback = model.callback
+    func update(with model: SettingsModel) {
+        guard let m = model as? SettingsSoundEnableCellModel else {
+            return
+        }
+        
+        self.soundLabel.text = m.title
+        self.soundSwitch.isOn = m.enable
+        self.callback = m.callback
     }
 
     @objc func switchChanged(mySwitch: UISwitch) {

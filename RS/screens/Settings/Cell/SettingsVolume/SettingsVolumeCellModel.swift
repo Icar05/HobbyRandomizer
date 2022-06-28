@@ -8,6 +8,10 @@
 import Foundation
 
 struct SettingsVolumeCellModel: SettingsModel{
+ 
+    
+ 
+
     
     let title: String
     
@@ -23,5 +27,6 @@ struct SettingsVolumeCellModel: SettingsModel{
     func getTitle() -> String {
         return title
     }
-    
+        
+    var reuseIdentifier: String = String(describing: SettingsVolumeCell.self)
 }

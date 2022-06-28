@@ -8,6 +8,8 @@
 import Foundation
 
 struct SettingsHeaderCellModel: SettingsModel{
+
+
     
     let title: String
     
@@ -18,4 +20,6 @@ struct SettingsHeaderCellModel: SettingsModel{
     func getTitle() -> String {
         return self.title
     }
+        
+    var reuseIdentifier: String = String(describing: SettingsHeaderCell.self)
 }

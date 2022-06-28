@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsVolumeCell: UITableViewCell {
+class SettingsVolumeCell: UITableViewCell, SettingCell {
     
     
     private var callback: ((_ value: Float) -> Void)? = nil
@@ -28,10 +28,14 @@ class SettingsVolumeCell: UITableViewCell {
     }
     
     
-    public func configure(model: SettingsVolumeCellModel){
-        self.volumeLabel.text = model.title
-        self.volumeSlider.value  = model.volume
-        self.callback = model.callback
+    func update(with model: SettingsModel) {
+        guard let m = model as? SettingsVolumeCellModel else {
+            return
+        }
+        
+        self.volumeLabel.text = m.title
+        self.volumeSlider.value  = m.volume
+        self.callback = m.callback
     }
     
     @objc func onLuminosityChange(slider: UISlider){
