@@ -8,9 +8,9 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+  
     
-    
-    
+
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -112,6 +112,14 @@ class NavigatorImpl: Navigator{
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController {
         let presenter = SettingsPresenter(storage: storage)
         let viewcontroller = SettingsViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    func getNotesInstructionScreen() -> UIViewController {
+        let presenter = NotesInstructionPresenter()
+        let viewcontroller = NotesInstructionViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
         return viewcontroller

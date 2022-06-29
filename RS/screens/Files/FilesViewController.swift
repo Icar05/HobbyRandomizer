@@ -107,7 +107,9 @@ extension FilesViewController: FileDataSourceDelegate{
     
     
     func onQuestionDidTap() {
-        print("here will be question logic")
+        let navigator = (UIApplication.shared.delegate as! AppDelegate).getNavigator()
+        let notesController = navigator.getNotesInstructionScreen()
+        navigator.navigate(start: self, destination: notesController)
     }
     
     func onItemRemoved(fileName: String) {

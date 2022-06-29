@@ -21,4 +21,5 @@ protocol Navigator{
     func getDisplayInfoDataScreen(data: [InfoModel], storage: UserDefaultStorage) -> UIViewController
     func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
+    func getNotesInstructionScreen() -> UIViewController
 }

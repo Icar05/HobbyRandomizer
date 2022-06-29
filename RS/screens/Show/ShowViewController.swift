@@ -13,9 +13,7 @@ public final class ShowViewController: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var label: LabelWithCallBack!
-    
+        
     private let dataSource = ShowDataSource()
     
     private let presenter: ShowPresenter
