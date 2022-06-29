@@ -56,10 +56,11 @@ class UserDefaultStorage{
                 return try decoder.decode(AppPrefferencesModel.self, from: data)
             } catch {
                 print("Unable to Decode Models (\(error))")
+                return getDefaultAppPrefferences()
             }
         }
         
-        return AppPrefferencesModel(isEnabledSound: true, volume: 1.0, yesNoCount: 10.0)
+        return getDefaultAppPrefferences()
     }
     
     func saveAppPreferences(model: AppPrefferencesModel){
@@ -69,6 +70,16 @@ class UserDefaultStorage{
         } catch {
             print("Unable to Encode Array of Models (\(error))")
         }
+    }
+    
+    private func getDefaultAppPrefferences() -> AppPrefferencesModel{
+        return AppPrefferencesModel(
+            isEnabledSound: true,
+            volume: 1.0,
+            yesNoCount: 10.0,
+            yesColor: Color.init(uiColor: UIColor.red),
+            noColor: Color.init(uiColor: UIColor.orange)
+        )
     }
     
 }

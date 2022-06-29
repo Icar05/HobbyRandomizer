@@ -11,6 +11,8 @@ struct AppPrefferencesModel: Codable{
     var isEnabledSound: Bool
     var volume: Float
     var yesNoCount: Double
+    var yesColor: Color
+    var noColor: Color
 }
 
 
@@ -64,7 +66,12 @@ public final class SettingsPresenter {
                 value: model.yesNoCount,
                 callback: {
                     self.model.yesNoCount = $0
-                })
+                }),
+            SettingsYesNoColorsModel(
+                title: Translations.Settings.colors,
+                yesColor: model.yesColor.uiColor,
+                noColor: model.noColor.uiColor
+            )
         
         ]
     }
