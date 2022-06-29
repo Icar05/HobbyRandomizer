@@ -25,8 +25,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PBQ-0O-DhJ" userLabel="Roulete Desctop">
-                    <rect key="frame" x="0.0" y="45" width="414" height="816"/>
-                    <color key="backgroundColor" red="0.047058823529411764" green="0.37647058823529411" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxx-wu-tKg" customClass="RouleteView" customModule="RS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="238" width="414" height="420"/>
@@ -50,10 +50,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7F-Pg-afY" userLabel="HiddenView">
-                    <rect key="frame" x="0.0" y="45" width="414" height="816"/>
+                    <rect key="frame" x="0.0" y="45" width="414" height="851"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sOV-cB-jEa">
-                            <rect key="frame" x="0.0" y="275.5" width="414" height="265"/>
+                            <rect key="frame" x="0.0" y="293" width="414" height="265"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-kO-i7D" userLabel="TopSeparator">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -99,7 +99,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" name="MainColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.39842648537743169" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="sOV-cB-jEa" firstAttribute="centerY" secondItem="Q7F-Pg-afY" secondAttribute="centerY" id="QpR-p4-GRQ"/>
                         <constraint firstItem="sOV-cB-jEa" firstAttribute="leading" secondItem="Q7F-Pg-afY" secondAttribute="leading" id="iib-bj-f1I"/>
@@ -118,12 +118,12 @@
                 <constraint firstItem="6nd-7z-YdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HkD-jd-fWH"/>
                 <constraint firstItem="Q7F-Pg-afY" firstAttribute="top" secondItem="6nd-7z-YdX" secondAttribute="bottom" id="UZS-c0-opu"/>
                 <constraint firstItem="PBQ-0O-DhJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YnW-ql-LQt"/>
-                <constraint firstItem="Q7F-Pg-afY" firstAttribute="bottom" secondItem="f0R-ui-Fp2" secondAttribute="top" id="Z8n-Bd-2FZ"/>
+                <constraint firstItem="Q7F-Pg-afY" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Z8n-Bd-2FZ"/>
                 <constraint firstItem="6nd-7z-YdX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="czs-u7-JgQ"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="eUe-1g-lEc"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="f2L-gu-yNb"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fEl-qA-fyw"/>
-                <constraint firstItem="f0R-ui-Fp2" firstAttribute="top" secondItem="PBQ-0O-DhJ" secondAttribute="bottom" id="kwJ-J5-SCg"/>
+                <constraint firstItem="PBQ-0O-DhJ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kwJ-J5-SCg"/>
                 <constraint firstItem="Wxx-wu-tKg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="l8E-R5-dgl"/>
                 <constraint firstItem="f0R-ui-Fp2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="spN-op-9H5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PBQ-0O-DhJ" secondAttribute="trailing" id="taX-Dz-nvE"/>
