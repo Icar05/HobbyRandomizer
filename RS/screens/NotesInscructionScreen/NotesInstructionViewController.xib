@@ -22,16 +22,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZpM-rw-vxO">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVi-9b-wNO" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="dpZ-iW-9AW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZpM-rw-vxO" secondAttribute="bottom" id="9wg-Vt-Cik"/>
+                <constraint firstItem="jVi-9b-wNO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AvA-35-e5s"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZpM-rw-vxO" secondAttribute="trailing" id="SxR-rA-Si6"/>
-                <constraint firstItem="ZpM-rw-vxO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="m0f-dn-pOZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jVi-9b-wNO" secondAttribute="trailing" id="WIk-fD-rSs"/>
+                <constraint firstItem="jVi-9b-wNO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bdG-rM-wda"/>
+                <constraint firstItem="ZpM-rw-vxO" firstAttribute="top" secondItem="jVi-9b-wNO" secondAttribute="bottom" id="m0f-dn-pOZ"/>
                 <constraint firstItem="ZpM-rw-vxO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mhT-m7-sya"/>
             </constraints>
             <point key="canvasLocation" x="132" y="63"/>
