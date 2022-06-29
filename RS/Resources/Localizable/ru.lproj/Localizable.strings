@@ -50,3 +50,6 @@
 "Translations.Settings.yesNoSectors" = "Секторы в экране ДаНет";
 "Translations.Settings.count" = "Количество";
 "Translations.Settings.colors" = "Цвета";
+
+/* Files */
+"Translations.Files.howToCreate" = "Как создать импортируемые заметки?";

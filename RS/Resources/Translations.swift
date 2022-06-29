@@ -134,6 +134,12 @@ struct Translations{
         }
     }
     
+    struct Files{
+        public static var howToCreate: String{
+            "Translations.Files.howToCreate".localized(Bundle.main)
+        }
+    }
+    
     struct Menu{
         public static var mainTitle: String{
             "Translations.Menu.mainTitle".localized(Bundle.main)

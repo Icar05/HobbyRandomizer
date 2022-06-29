@@ -85,10 +85,14 @@ public final class FilesViewController: UIViewController {
     }
 
     private func registerCells(){
-        let randId = self.dataSource.getIdentifier()
-        let randNib = UINib(nibName: randId, bundle: nil)
+        let fileId = self.dataSource.getIdentifier()
+        let fileNib = UINib(nibName: fileId, bundle: nil)
         
-        self.tableView?.register(randNib, forCellReuseIdentifier: randId)
+        let questionId = self.dataSource.getQuestionIdentifier()
+        let questionNib = UINib(nibName: questionId, bundle: nil)
+        
+        self.tableView?.register(fileNib, forCellReuseIdentifier: fileId)
+        self.tableView?.register(questionNib, forCellReuseIdentifier: questionId)
     }
 
     private func showAlert(value: Bool){
@@ -100,6 +104,11 @@ public final class FilesViewController: UIViewController {
 }
 
 extension FilesViewController: FileDataSourceDelegate{
+    
+    
+    func onQuestionDidTap() {
+        print("here will be question logic")
+    }
     
     func onItemRemoved(fileName: String) {
         self.tableView.reloadData()
