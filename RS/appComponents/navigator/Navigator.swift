@@ -12,7 +12,7 @@ protocol Navigator{
     func navigate(start: UIViewController, destination: UIViewController)
     func getMenuScreen() -> UIViewController
     func getCasinoScreen(storage: UserDefaultStorage) -> UIViewController
-    func getDebugScreen() -> UIViewController
+    func getDebugScreen(storage: UserDefaultStorage) -> UIViewController
     func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController
     func getRandomizerScreen(storage: UserDefaultStorage, models: [RandItemCellModel]) -> UIViewController
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController

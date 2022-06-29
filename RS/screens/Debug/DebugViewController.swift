@@ -7,10 +7,10 @@
 
 import UIKit
 
-class DebugViewController: UIViewController {
+public final class DebugViewController: UIViewController {
     
     
-    
+    private let presenter: DebugPresenter
     
     fileprivate var count = 7
     
@@ -22,8 +22,9 @@ class DebugViewController: UIViewController {
     
     @IBOutlet weak var decrementLabel: BangButton!
     
-    
     @IBOutlet weak var backgroundView: UIView!
+    
+    
     
 
     @available(iOS, unavailable)
@@ -31,11 +32,13 @@ class DebugViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init() {
+    init(presenter: DebugPresenter) {
+        self.presenter = presenter
+        
         super.init(nibName: "DebugViewController", bundle: Bundle.main)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         
         super.viewDidLoad()
         self.countLabel.text = "\(count)"
@@ -50,6 +53,7 @@ class DebugViewController: UIViewController {
         let decGest = UITapGestureRecognizer(target: self, action: #selector(decrement(tapGestureRecognizer:)))
         self.decrementLabel.addGestureRecognizer(decGest)
         
+        self.randomizer.delegate = self
         self.setGradientBackground()
     }
     
@@ -86,5 +90,14 @@ class DebugViewController: UIViewController {
             self.randomizer.setDataSource(count: count)
         }
     }
+    
+}
+
+extension DebugViewController: RandomizerUtilDelegate{
+    func onDetectSector() {
+        self.presenter.play()
+    }
+    
+    func onModelFound(randModel: RandomizerModel) {}
     
 }

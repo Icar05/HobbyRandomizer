@@ -38,6 +38,7 @@
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
+		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
 		ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4491AB2866938300CCC32D /* ImportDataCell.swift */; };
 		ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4491AC2866938300CCC32D /* ImportDataCell.xib */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
@@ -160,6 +161,7 @@
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
+		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
 		ED4491AB2866938300CCC32D /* ImportDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCell.swift; sourceTree = "<group>"; };
 		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 			children = (
 				ED880FC028510EEA00DFD78F /* DebugViewController.swift */,
 				ED880FC128510EEA00DFD78F /* DebugViewController.xib */,
+				ED435823286BCD6D00F99459 /* DebugPresenter.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				ED5A6C5A284FD4D00028BEED /* Navigator.swift in Sources */,
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */,
+				ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,

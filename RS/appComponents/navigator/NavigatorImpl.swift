@@ -44,8 +44,11 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getDebugScreen() -> UIViewController {
-        let viewcontroller = DebugViewController()
+    func getDebugScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = DebugPresenter(storage: storage)
+        let viewcontroller = DebugViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
         return viewcontroller
     }
     
