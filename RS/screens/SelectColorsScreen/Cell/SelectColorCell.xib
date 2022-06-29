@@ -37,40 +37,50 @@
                                     <constraint firstAttribute="height" constant="1" id="THK-yW-FOt"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-RV-Qlv" userLabel="ViewWithColor">
-                                <rect key="frame" x="0.0" y="47" width="320" height="46"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4p-RV-Qlv" userLabel="Indicator">
+                                <rect key="frame" x="0.0" y="253" width="320" height="46"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="5Ic-2K-KR9"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="az4-po-Mlb" userLabel="BottomSeparator">
-                                <rect key="frame" x="0.0" y="93" width="320" height="1"/>
+                                <rect key="frame" x="0.0" y="252" width="320" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="En6-OJ-a2i"/>
                                 </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uul-4Y-KMv">
-                                <rect key="frame" x="0.0" y="94" width="320" height="206"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uul-4Y-KMv" userLabel="Picker">
+                                <rect key="frame" x="0.0" y="47" width="320" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHV-nD-4rs" userLabel="LastSeparator">
+                                <rect key="frame" x="0.0" y="299" width="320" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="xeh-1d-bbu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
+                            <constraint firstItem="NHV-nD-4rs" firstAttribute="bottom" secondItem="5iE-LL-51E" secondAttribute="bottom" id="14C-fD-gAc"/>
+                            <constraint firstItem="NHV-nD-4rs" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" id="43e-l9-p17"/>
                             <constraint firstItem="rlP-Nx-gty" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" constant="8" id="4Cl-pt-aZg"/>
-                            <constraint firstItem="uul-4Y-KMv" firstAttribute="top" secondItem="az4-po-Mlb" secondAttribute="bottom" id="4ma-wE-a1E"/>
+                            <constraint firstItem="uul-4Y-KMv" firstAttribute="top" secondItem="vDf-81-2L0" secondAttribute="bottom" id="4ma-wE-a1E"/>
                             <constraint firstItem="vDf-81-2L0" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" id="7Jz-9z-nse"/>
                             <constraint firstItem="vDf-81-2L0" firstAttribute="top" secondItem="rlP-Nx-gty" secondAttribute="bottom" id="A1F-l7-vEx"/>
-                            <constraint firstItem="az4-po-Mlb" firstAttribute="top" secondItem="R4p-RV-Qlv" secondAttribute="bottom" id="CUT-Li-yCH"/>
+                            <constraint firstItem="az4-po-Mlb" firstAttribute="top" secondItem="uul-4Y-KMv" secondAttribute="bottom" id="CUT-Li-yCH"/>
                             <constraint firstItem="vDf-81-2L0" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" id="Dln-P5-HnB"/>
                             <constraint firstItem="R4p-RV-Qlv" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" id="IqX-1d-Mei"/>
                             <constraint firstItem="az4-po-Mlb" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" id="KFe-iy-Kem"/>
+                            <constraint firstItem="NHV-nD-4rs" firstAttribute="top" secondItem="R4p-RV-Qlv" secondAttribute="bottom" id="Mkq-PQ-uoi"/>
+                            <constraint firstItem="NHV-nD-4rs" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" id="QI5-Ha-pe9"/>
                             <constraint firstItem="uul-4Y-KMv" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" id="Tvj-bB-ZxQ"/>
                             <constraint firstItem="az4-po-Mlb" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" id="U96-Gl-pXo"/>
-                            <constraint firstItem="R4p-RV-Qlv" firstAttribute="top" secondItem="vDf-81-2L0" secondAttribute="bottom" id="de0-eW-Ghe"/>
+                            <constraint firstItem="R4p-RV-Qlv" firstAttribute="top" secondItem="az4-po-Mlb" secondAttribute="bottom" id="de0-eW-Ghe"/>
                             <constraint firstItem="R4p-RV-Qlv" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" id="kSP-Ph-46W"/>
-                            <constraint firstItem="uul-4Y-KMv" firstAttribute="bottom" secondItem="5iE-LL-51E" secondAttribute="bottom" id="qbw-1n-AIg"/>
                             <constraint firstItem="uul-4Y-KMv" firstAttribute="leading" secondItem="5iE-LL-51E" secondAttribute="leading" id="tXD-cZ-M9X"/>
                             <constraint firstItem="rlP-Nx-gty" firstAttribute="top" secondItem="5iE-LL-51E" secondAttribute="top" id="uRA-jq-8q2"/>
                             <constraint firstItem="rlP-Nx-gty" firstAttribute="trailing" secondItem="5iE-LL-51E" secondAttribute="trailing" constant="-8" id="yQT-xf-V8C"/>
