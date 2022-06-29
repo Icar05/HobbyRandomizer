@@ -42,7 +42,7 @@
                         <constraint firstAttribute="height" constant="1" id="qVx-RZ-krs"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-ui-Fp2" userLabel="BottomCasinoLine">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0R-ui-Fp2" userLabel="BottomCasinoLine">
                     <rect key="frame" x="0.0" y="861" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
