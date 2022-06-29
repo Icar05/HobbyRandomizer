@@ -24,8 +24,8 @@ public final class NotesInstructionPresenter{
 
     private func getModels() -> [NotesInstuctionInfoCellModel]{
         return [
-            NotesInstuctionInfoCellModel(info: "How to create info", type: .info),
-            NotesInstuctionInfoCellModel(info: "How to create action", type: .action)
+            NotesInstuctionInfoCellModel(info: "How to create info", type: .info, data: "some instruction about info"),
+            NotesInstuctionInfoCellModel(info: "How to create action", type: .action, data: "some instructon aout acton")
         ]
     }
     

@@ -10,4 +10,5 @@ import Foundation
 struct NotesInstuctionInfoCellModel{
     var info: String
     var type: NotesType
+    var data: String
 }

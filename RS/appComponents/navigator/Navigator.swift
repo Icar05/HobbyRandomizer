@@ -18,8 +18,8 @@ protocol Navigator{
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
     func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController
     func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController
-    func getDisplayInfoDataScreen(data: [InfoModel], storage: UserDefaultStorage) -> UIViewController
-    func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController
+    func getDisplayInfoDataScreen(data: [InfoModel]) -> UIViewController
+    func getDisplayRawDataScreen(data: String) -> UIViewController
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
     func getNotesInstructionScreen() -> UIViewController
 }

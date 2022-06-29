@@ -72,7 +72,9 @@ public final class NotesInstructionViewController: UIViewController {
 extension NotesInstructionViewController: NotesInstructionDelegate{
     
     func howToCreateNote(model: NotesInstuctionInfoCellModel) {
-        print("need open: \(model.info)")
+        let navigator = (UIApplication.shared.delegate as! AppDelegate).getNavigator()
+        let controller = navigator.getDisplayRawDataScreen(data: model.data)
+        navigator.navigate(start: self, destination: controller)
     }
     
     

@@ -55,8 +55,7 @@ public final class FilesViewController: UIViewController {
     }
     
     func displayData(data: [InfoModel]){
-        let storage = getStorage()
-        let controller = getNavigator().getDisplayInfoDataScreen(data: data, storage: storage)
+        let controller = getNavigator().getDisplayInfoDataScreen(data: data)
         getNavigator().navigate(start: self, destination: controller)
     }
 
@@ -67,8 +66,7 @@ public final class FilesViewController: UIViewController {
     }
     
     func displayData(data: String){
-        let storage = getStorage()
-        let controller = getNavigator().getDisplayRawDataScreen(data: data, storage: storage)
+        let controller = getNavigator().getDisplayRawDataScreen(data: data)
         getNavigator().navigate(start: self, destination: controller)
     }
     

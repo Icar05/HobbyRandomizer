@@ -10,9 +10,6 @@ import Foundation
 public final class DisplayInfoDataPresenter{
     
     
-    
-    private let storage: UserDefaultStorage
-        
     private let contentData: [InfoModel]
     
     unowned var view: DisplayInfoDataViewController!
@@ -21,8 +18,7 @@ public final class DisplayInfoDataPresenter{
         self.view = view
     }
     
-    init(data: [InfoModel], storage: UserDefaultStorage){
-        self.storage = storage
+    init(data: [InfoModel]){
         self.contentData = data
     }
     

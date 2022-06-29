@@ -10,7 +10,6 @@ import Foundation
 public final class DisplayRawDataPresenter {
 
     
-    private let storage: UserDefaultStorage
     
     private let stringData: String
         
@@ -20,8 +19,7 @@ public final class DisplayRawDataPresenter {
         self.view = view
     }
     
-    init(data: String, storage: UserDefaultStorage){
-        self.storage = storage
+    init(data: String){
         self.stringData = data
     }
     

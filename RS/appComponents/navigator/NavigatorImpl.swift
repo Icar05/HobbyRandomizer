@@ -93,16 +93,16 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getDisplayInfoDataScreen(data: [InfoModel], storage: UserDefaultStorage) -> UIViewController {
-        let presenter = DisplayInfoDataPresenter(data: data, storage: storage)
+    func getDisplayInfoDataScreen(data: [InfoModel]) -> UIViewController {
+        let presenter = DisplayInfoDataPresenter(data: data)
         let viewcontroller = DisplayInfoDataViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getDisplayRawDataScreen(data: String, storage: UserDefaultStorage) -> UIViewController {
-        let presenter = DisplayRawDataPresenter(data: data, storage: storage)
+    func getDisplayRawDataScreen(data: String) -> UIViewController {
+        let presenter = DisplayRawDataPresenter(data: data)
         let viewcontroller = DisplayRawDataViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
