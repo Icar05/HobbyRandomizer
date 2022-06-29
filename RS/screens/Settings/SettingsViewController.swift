@@ -36,8 +36,14 @@ public final class SettingsViewController: UIViewController {
         self.tableView.delegate = dataSource
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
-        
-        self.presenter.viewDidLoad()
+
+       
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.presenter.fetchFreshData()
     }
     
     
@@ -63,7 +69,7 @@ public final class SettingsViewController: UIViewController {
         }
         
         self.dataSource.setData(data: models)
+        self.tableView.reloadData()
     }
     
 }
-

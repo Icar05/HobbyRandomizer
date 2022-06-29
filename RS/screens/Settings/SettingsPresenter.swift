@@ -19,15 +19,11 @@ struct AppPrefferencesModel: Codable{
 public final class SettingsPresenter {
 
     
-    
-    private var data: [SettingsModel] = []
-    
     private let storage: UserDefaultStorage
-    
-    private var model: AppPrefferencesModel
             
     unowned var view: SettingsViewController!
     
+    private var model: AppPrefferencesModel
     
     
     public func set(view: SettingsViewController) {
@@ -37,24 +33,46 @@ public final class SettingsPresenter {
     init(storage: UserDefaultStorage){
         self.storage = storage
         self.model = storage.getAppPreferences()
-        self.initData()
+        self.fetchData()
     }
     
     
-    func initData(){
-        self.data =  [
+   
+    
+    private func fetchData(){
+       
+    }
+  
+    
+    func fetchFreshData(){
+        let data = prepareModels(preferences: storage.getAppPreferences())
+        self.view.registerCells(models: data)
+        
+        let noColor = self.model.noColor.getName()
+        print("no color is: \(noColor)")
+    }
+    
+    func savePreferences(){
+        self.storage.saveAppPreferences(model: model)
+    }
+    
+    
+    
+    private func prepareModels(preferences: AppPrefferencesModel) -> [SettingsModel]{
+        self.model = preferences
+        return [
             SettingsHeaderCellModel(
                 title: Translations.Settings.sound
             ),
             SettingsSoundEnableCellModel(
                 title: Translations.Settings.soundEnable,
-                enable: model.isEnabledSound,
+                enable: preferences.isEnabledSound,
                 callback: { [weak self] in
                     self?.model.isEnabledSound = $0
             }),
             SettingsVolumeCellModel(
                 title: Translations.Settings.soundVolume,
-                volume: model.volume,
+                volume: preferences.volume,
                 callback: { [weak self] in
                     self?.model.volume = $0
             }),
@@ -63,28 +81,19 @@ public final class SettingsPresenter {
             ),
             SettingsYesNoCellModel(
                 title: Translations.Settings.count,
-                value: model.yesNoCount,
+                value: preferences.yesNoCount,
                 callback: { [weak self] in
                     self?.model.yesNoCount = $0
                 }),
             SettingsYesNoColorsModel(
                 title: Translations.Settings.colors,
-                yesColor: model.yesColor.uiColor,
-                noColor: model.noColor.uiColor, callback: { [weak self] in
+                yesColor: preferences.yesColor.uiColor,
+                noColor: preferences.noColor.uiColor, callback: { [weak self] in
                     self?.view.navigateToColorSelection()
                 }
             )
         
         ]
-    }
-  
-    
-    func viewDidLoad(){
-        self.view.registerCells(models: data)
-    }
-    
-    func savePreferences(){
-        self.storage.saveAppPreferences(model: model)
     }
     
 }

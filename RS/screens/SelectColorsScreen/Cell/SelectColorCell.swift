@@ -10,6 +10,9 @@ import UIKit
 
 class SelectColorCell: UITableViewCell {
 
+    private var callback: ((_ for: SelectType, _ newColor: Color) -> Void)? = nil
+    
+    private var type: SelectType? = nil
     
     private let colors: [Color] = [
         Color.init(uiColor: UIColor.red),
@@ -29,6 +32,7 @@ class SelectColorCell: UITableViewCell {
     
     @IBOutlet weak var selectColorPicker: UIPickerView!
     
+   
     
     
     override func awakeFromNib() {
@@ -50,6 +54,8 @@ class SelectColorCell: UITableViewCell {
         self.selectColorLabel.text = text
         self.selectColorView.backgroundColor = model.color.uiColor
         self.selectedRow = colors.firstIndex(of: model.color) ?? 0
+        self.callback = model.callback
+        self.type = model.type
     }
     
 }
@@ -71,6 +77,8 @@ extension SelectColorCell: UIPickerViewDataSource{
 
 extension SelectColorCell: UIPickerViewDelegate{
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.selectColorView.backgroundColor = self.colors[row].uiColor
+        let color = self.colors[row]
+        self.selectColorView.backgroundColor = color.uiColor
+        self.callback?(self.type!, color)
     }
 }

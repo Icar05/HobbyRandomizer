@@ -54,11 +54,18 @@ public final class SelectColorsViewController: UIViewController {
         self.tableView?.register(nib, forCellReuseIdentifier: id)
     }
     
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParent {
+            self.presenter.savePreferences()
+        }
+    }
+    
 }
 
 extension SelectColorsViewController: SelectColorsDelegate{
     
     func didColorChange(type: SelectType, color: Color) {
-        print("Color did change: \(color) for: \(type)")
+        presenter.colorDidChange(type: type, color: color)
     }
 }
