@@ -128,6 +128,20 @@ struct Translations{
         }
     }
     
+    struct SelectColor{
+        public static var selectColorTitle: String{
+            "Translations.SelectColor.selectColorTitle".localized(Bundle.main)
+        }
+        
+        public static var yes: String{
+            "Translations.SelectColor.yes".localized(Bundle.main)
+        }
+        
+        public static var no: String{
+            "Translations.SelectColor.no".localized(Bundle.main)
+        }
+    }
+    
     struct Show{
         public static var startRandom: String{
             "Translations.Show.startRandom".localized(Bundle.main)

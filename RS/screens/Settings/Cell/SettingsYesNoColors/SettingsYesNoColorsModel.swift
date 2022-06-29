@@ -15,6 +15,8 @@ struct SettingsYesNoColorsModel: SettingsModel{
         
     var noColor: UIColor
     
+    var callback: () -> Void
+    
     
     func isHeader() -> Bool {
         return false

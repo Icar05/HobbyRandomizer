@@ -72,3 +72,8 @@
  3. Create header for items: For example: \n ➫ Some header  \n
  4. Create subItems. It suggested to have many subitems. Example of subitem: \n  ° Some subitem \n
  When note will be done, you should just put it in RS folder, which is owned by this app. Then you can find this note in Files, and you will have possibility to import or read it.";
+
+/* Select color */
+"Translations.SelectColor.selectColorTitle" = "Select color for: ";
+"Translations.SelectColor.yes" = "Yes";
+"Translations.SelectColor.no" = "No";

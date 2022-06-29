@@ -49,14 +49,14 @@ public final class SettingsPresenter {
             SettingsSoundEnableCellModel(
                 title: Translations.Settings.soundEnable,
                 enable: model.isEnabledSound,
-                callback: {
-                    self.model.isEnabledSound = $0
+                callback: { [weak self] in
+                    self?.model.isEnabledSound = $0
             }),
             SettingsVolumeCellModel(
                 title: Translations.Settings.soundVolume,
                 volume: model.volume,
-                callback: {
-                    self.model.volume = $0
+                callback: { [weak self] in
+                    self?.model.volume = $0
             }),
             SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
@@ -64,13 +64,15 @@ public final class SettingsPresenter {
             SettingsYesNoCellModel(
                 title: Translations.Settings.count,
                 value: model.yesNoCount,
-                callback: {
-                    self.model.yesNoCount = $0
+                callback: { [weak self] in
+                    self?.model.yesNoCount = $0
                 }),
             SettingsYesNoColorsModel(
                 title: Translations.Settings.colors,
                 yesColor: model.yesColor.uiColor,
-                noColor: model.noColor.uiColor
+                noColor: model.noColor.uiColor, callback: { [weak self] in
+                    self?.view.navigateToColorSelection()
+                }
             )
         
         ]

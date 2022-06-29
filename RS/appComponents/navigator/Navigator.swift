@@ -22,4 +22,5 @@ protocol Navigator{
     func getDisplayRawDataScreen(data: String) -> UIViewController
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
     func getNotesInstructionScreen() -> UIViewController
+    func getSelectColorScreen(storage: UserDefaultStorage) -> UIViewController
 }

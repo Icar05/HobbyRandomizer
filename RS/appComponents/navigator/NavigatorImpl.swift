@@ -8,9 +8,8 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+   
   
-    
-
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -124,5 +123,14 @@ class NavigatorImpl: Navigator{
         
         return viewcontroller
     }
+    
+    func getSelectColorScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = SelectColorsPresenter(storage: storage)
+        let viewcontroller = SelectColorsViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
     
 }

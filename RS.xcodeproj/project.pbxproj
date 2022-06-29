@@ -59,6 +59,13 @@
 		ED5135C5286CD1EF00403238 /* NotesInstructionInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135C3286CD1EF00403238 /* NotesInstructionInfoCell.swift */; };
 		ED5135C6286CD1EF00403238 /* NotesInstructionInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5135C4286CD1EF00403238 /* NotesInstructionInfoCell.xib */; };
 		ED5135C8286CD20200403238 /* NotesInstuctionInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135C7286CD20200403238 /* NotesInstuctionInfoCellModel.swift */; };
+		ED5135CC286CF25F00403238 /* SelectColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135CA286CF25F00403238 /* SelectColorsViewController.swift */; };
+		ED5135CD286CF25F00403238 /* SelectColorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5135CB286CF25F00403238 /* SelectColorsViewController.xib */; };
+		ED5135CF286CF3C800403238 /* SelectColorsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135CE286CF3C800403238 /* SelectColorsPresenter.swift */; };
+		ED5135D1286CF3D600403238 /* SelectColorsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135D0286CF3D600403238 /* SelectColorsDataSourse.swift */; };
+		ED5135D5286CF53200403238 /* SelectColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135D3286CF53200403238 /* SelectColorCell.swift */; };
+		ED5135D6286CF53200403238 /* SelectColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5135D4286CF53200403238 /* SelectColorCell.xib */; };
+		ED5135D8286CF54000403238 /* SelectColorCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135D7286CF54000403238 /* SelectColorCellModel.swift */; };
 		ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */; };
 		ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */; };
 		ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */; };
@@ -199,6 +206,13 @@
 		ED5135C3286CD1EF00403238 /* NotesInstructionInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInstructionInfoCell.swift; sourceTree = "<group>"; };
 		ED5135C4286CD1EF00403238 /* NotesInstructionInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesInstructionInfoCell.xib; sourceTree = "<group>"; };
 		ED5135C7286CD20200403238 /* NotesInstuctionInfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInstuctionInfoCellModel.swift; sourceTree = "<group>"; };
+		ED5135CA286CF25F00403238 /* SelectColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorsViewController.swift; sourceTree = "<group>"; };
+		ED5135CB286CF25F00403238 /* SelectColorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorsViewController.xib; sourceTree = "<group>"; };
+		ED5135CE286CF3C800403238 /* SelectColorsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorsPresenter.swift; sourceTree = "<group>"; };
+		ED5135D0286CF3D600403238 /* SelectColorsDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorsDataSourse.swift; sourceTree = "<group>"; };
+		ED5135D3286CF53200403238 /* SelectColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorCell.swift; sourceTree = "<group>"; };
+		ED5135D4286CF53200403238 /* SelectColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorCell.xib; sourceTree = "<group>"; };
+		ED5135D7286CF54000403238 /* SelectColorCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorCellModel.swift; sourceTree = "<group>"; };
 		ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataViewController.swift; sourceTree = "<group>"; };
 		ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataViewController.xib; sourceTree = "<group>"; };
 		ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataViewController.swift; sourceTree = "<group>"; };
@@ -507,6 +521,28 @@
 			path = NoteInfoCell;
 			sourceTree = "<group>";
 		};
+		ED5135C9286CF23300403238 /* SelectColorsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ED5135D2286CF51700403238 /* Cell */,
+				ED5135CA286CF25F00403238 /* SelectColorsViewController.swift */,
+				ED5135CB286CF25F00403238 /* SelectColorsViewController.xib */,
+				ED5135CE286CF3C800403238 /* SelectColorsPresenter.swift */,
+				ED5135D0286CF3D600403238 /* SelectColorsDataSourse.swift */,
+			);
+			path = SelectColorsScreen;
+			sourceTree = "<group>";
+		};
+		ED5135D2286CF51700403238 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ED5135D3286CF53200403238 /* SelectColorCell.swift */,
+				ED5135D4286CF53200403238 /* SelectColorCell.xib */,
+				ED5135D7286CF54000403238 /* SelectColorCellModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		ED53614628686441004F1836 /* DisplayRawData */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +610,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED5135C9286CF23300403238 /* SelectColorsScreen */,
 				ED5135AD286CC94700403238 /* NotesInscructionScreen */,
 				ED1D33AC286A5AE5004F1506 /* Settings */,
 				ED5361482868646C004F1836 /* DisplayActionData */,
@@ -1020,11 +1057,13 @@
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED1D33B9286A5E33004F1506 /* SettingsViewController.xib in Resources */,
 				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
+				ED5135D6286CF53200403238 /* SelectColorCell.xib in Resources */,
 				ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */,
 				ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */,
 				ED5135C0286CD1B100403238 /* NotesInstuctionHeaderCell.xib in Resources */,
 				ED1D33BE286A60C6004F1506 /* SettingsHeaderCell.xib in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
+				ED5135CD286CF25F00403238 /* SelectColorsViewController.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
@@ -1042,6 +1081,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5135CF286CF3C800403238 /* SelectColorsPresenter.swift in Sources */,
 				ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */,
 				ED5135B5286CC9A400403238 /* NotesInstructionDataSource.swift in Sources */,
 				ED1D33E0286AAE64004F1506 /* SettingsYesNoCountCell.swift in Sources */,
@@ -1053,6 +1093,7 @@
 				ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */,
 				ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
+				ED5135D5286CF53200403238 /* SelectColorCell.swift in Sources */,
 				ED7918A62863C1EB0041D407 /* DisplayFileCell.swift in Sources */,
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
@@ -1081,6 +1122,7 @@
 				ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */,
 				ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */,
 				EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */,
+				ED5135D1286CF3D600403238 /* SelectColorsDataSourse.swift in Sources */,
 				ED4A3CCA271A50CB00084BB8 /* DetectSectorUtil.swift in Sources */,
 				ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */,
 				ED5F11352717C689006454AD /* extensions.swift in Sources */,
@@ -1104,6 +1146,7 @@
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				ED1D33E3286AAE74004F1506 /* SettingsYesNoCellModel.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
+				ED5135D8286CF54000403238 /* SelectColorCellModel.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
 				ED1D33C7286A68C1004F1506 /* SettingsSoundEnableCellModel.swift in Sources */,
@@ -1116,6 +1159,7 @@
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */,
+				ED5135CC286CF25F00403238 /* SelectColorsViewController.swift in Sources */,
 				ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
 				ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */,
