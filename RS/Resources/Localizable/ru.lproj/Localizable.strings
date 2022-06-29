@@ -55,21 +55,21 @@
 "Translations.Files.howToCreate" = "Как создать импортируемые заметки?";
 
 /* NotesInstruction */
-"Translations.NotesInstruction.howToCreateHeaderDescription" = "This appliction supports using notes from your iphone. In order to do it, you should format your note in the appropriated way";
-"Translations.NotesInstruction.noteActionTitle" = "How to create note with RS items";
-"Translations.NotesInstruction.noteInfoTitle" = "How to create note with Info";
+"Translations.NotesInstruction.howToCreateHeaderDescription" = "Это приложение поддерживает импорт заметок из твоего iphone. Для того чтобы сделать это, ты должен форматировать заметку в нужный вид";
+"Translations.NotesInstruction.noteActionTitle" = "Как создать заметку RS - модель?";
+"Translations.NotesInstruction.noteInfoTitle" = "Как создать заметку с информацией?";
 
-"Translations.NotesInstruction.noteActionDescription" = "In order to create note with RS itme, you should to do 3 steps: \n
- 1. Create mark to parse. For RS it is \n  圓Action圓. \n
- 2. Create types. There are 3 types: Necessary, WorkInProgress, FreeTime. They should be used as \n  ➦WorkInProgress for example. \n
- 3. Create items. Each items shoud have title and description. Example: \n  ➫ Some title ° Some description.\n
- Also it has type, about type read above. \n
- When note will be done, you should just put it in RS folder, which is owned by this app. Then you can find this note in Files, and you will have possibility to import or read it.";
+"Translations.NotesInstruction.noteActionDescription" = "Для того чтобы создать заметку RS - модель, нужно выполнить 3 шага: \n
+ 1. Создать марку для парсинга. Для RS это \n  圓Action圓. \n
+ 2. Создать типы. Модель поддерживает 3 типа: Necessary, WorkInProgress, FreeTime. Они должны быть использованы как: \n  ➦WorkInProgress например \n
+ 3. Создай сущности. Каждая сущность должна иметь заголовок и описание. Например: \n  ➫ Some title ° Some description.\n
+ Также модель поддерживает тип, о нем есть выше. \n
+ Когда заметка будет готова, нужно просто положить ее в RS папку, Которая пренадлежит этому приложению. После этого можно найти заметку в Файлах, появится возможность прочесть ее или импортировать из нее данные.";
 
-"Translations.NotesInstruction.noteInfoDescription" = "In order to create note with info, you should to do 4 steps: \n
- 1. Create mark to parse. For Info it is \n  圓InfoWithEnumeration圓. \n
- 2. Create cathegory. In cathegory you can have many subitems with header. Example: \n  ➦Some cathegory \n
- 3. Create header for items: For example: \n ➫ Some header  \n
- 4. Create subItems. It suggested to have many subitems. Example of subitem: \n  ° Some subitem \n
- When note will be done, you should just put it in RS folder, which is owned by this app. Then you can find this note in Files, and you will have possibility to import or read it.";
+"Translations.NotesInstruction.noteInfoDescription" = "Для того чтобы создать заметку с информацией, нужно выполнить 4 шага: \n
+ 1. Создать марку для парсинга. Для информации это \n  圓InfoWithEnumeration圓. \n
+ 2. Создать категорию. В каждой категории может быть много подтипов с заголовками. Пример: \n  ➦Some cathegory \n
+ 3. Создать заголовок для подтипов: Пример: \n ➫ Some header  \n
+ 4. Создать подтипы. Предполагается много подтипов. Пример подтипа: \n  ° Some subitem \n
+ Когда заметка будет готова, нужно просто положить ее в RS папку, Которая пренадлежит этому приложению. После этого можно найти заметку в Файлах, появится возможность прочесть ее или импортировать из нее данные.";
 
