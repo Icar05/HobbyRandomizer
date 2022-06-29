@@ -59,6 +59,12 @@ extension UITableViewCell{
 }
 
 extension UIView{
+    
+    func border(color: UIColor){
+        self.layer.borderWidth = 1
+        self.layer.borderColor = color.cgColor
+    }
+    
     /**
      just cool view background, i will use it later
      */

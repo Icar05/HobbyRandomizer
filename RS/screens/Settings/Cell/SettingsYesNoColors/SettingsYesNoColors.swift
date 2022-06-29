@@ -32,6 +32,9 @@ class SettingsYesNoColors: UITableViewCell, SettingCell {
         
         self.yesViewColor.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onColorTapped(_:))))
         self.noViewColor.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onColorTapped(_:))))
+        
+        self.yesViewColor.border(color: UIColor.black)
+        self.noViewColor.border(color: UIColor.black)
     }
     
     
