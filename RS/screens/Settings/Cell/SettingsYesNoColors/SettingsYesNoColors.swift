@@ -47,7 +47,6 @@ class SettingsYesNoColors: UITableViewCell, SettingCell {
     }
     
     @objc func onColorTapped(_ sender: UITapGestureRecognizer? = nil){
-        print("it's work!")
         self.callback?()
     }
     

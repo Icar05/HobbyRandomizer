@@ -21,7 +21,7 @@ class SelectColorCell: UITableViewCell {
         Color.init(uiColor: UIColor.purple),
     ]
     
-    
+    private var selectedRow = 0
     
     @IBOutlet weak var selectColorLabel: UILabel!
     
@@ -39,16 +39,17 @@ class SelectColorCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         self.selectColorPicker.dataSource = self
         self.selectColorPicker.delegate = self
+        self.selectColorPicker.selectRow(selectedRow, inComponent: 0, animated: true)
     }
     
     
     func configure(model: SelectColorCellModel){
         
-        let index = colors.firstIndex{ $0 == model.color } ?? 0
+        let text = "\(Translations.SelectColor.selectColorTitle) \(model.type.getTitle())"
         
-        self.selectColorLabel.text = "\(Translations.SelectColor.selectColorTitle) \(model.type.getTitle())"
+        self.selectColorLabel.text = text
         self.selectColorView.backgroundColor = model.color.uiColor
-        self.selectColorPicker.selectRow(index, inComponent: 0, animated: true)
+        self.selectedRow = colors.firstIndex(of: model.color) ?? 0
     }
     
 }
