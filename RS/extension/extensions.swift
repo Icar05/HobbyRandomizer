@@ -19,6 +19,7 @@ extension UIColor {
     static let topGB = UIColor(hexColor: "#004d38")
     static let midGB = UIColor(hexColor:  "#117c5e")
     static let bottomGB = UIColor(hexColor: "#69bb9b")
+    static let lightBlue = UIColor(hexColor: "#3cdfff")
 }
 
 struct Color : Codable {
@@ -34,7 +35,18 @@ struct Color : Codable {
 }
 
 extension Color: Equatable{
-    
+    func getName() -> String{
+        let names: [UIColor : String ] = [
+            UIColor.red : Translations.Color.red,
+            UIColor.orange: Translations.Color.orange,
+            UIColor.yellow: Translations.Color.yellow,
+            UIColor.green: Translations.Color.green,
+            UIColor.lightBlue!: Translations.Color.blue,
+            UIColor.blue: Translations.Color.systemIndigo,
+            UIColor.purple: Translations.Color.purple
+        ]
+        return names[uiColor]!
+    }
 }
 
 extension UITableViewCell{

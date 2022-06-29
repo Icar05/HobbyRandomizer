@@ -16,8 +16,8 @@ class SelectColorCell: UITableViewCell {
         Color.init(uiColor: UIColor.orange),
         Color.init(uiColor: UIColor.yellow),
         Color.init(uiColor: UIColor.green),
+        Color.init(uiColor: UIColor.lightBlue!),
         Color.init(uiColor: UIColor.blue),
-        Color.init(uiColor: UIColor.systemIndigo),
         Color.init(uiColor: UIColor.purple),
     ]
     
@@ -64,7 +64,7 @@ extension SelectColorCell: UIPickerViewDataSource{
     }
     
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(colors[row])"
+        return "\(colors[row].getName())"
     }
 }
 

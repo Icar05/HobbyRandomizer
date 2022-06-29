@@ -77,3 +77,12 @@
 "Translations.SelectColor.selectColorTitle" = "Select color for: ";
 "Translations.SelectColor.yes" = "Yes";
 "Translations.SelectColor.no" = "No";
+
+/* Color */
+"Translations.Color.red" = "Red";
+"Translations.Color.orange" = "Orange";
+"Translations.Color.yellow" = "Yellow";
+"Translations.Color.green" = "Green";
+"Translations.Color.blue" = "Blue";
+"Translations.Color.systemIndigo" = "Indigo";
+"Translations.Color.purple" = "Purple";

@@ -128,6 +128,37 @@ struct Translations{
         }
     }
     
+    struct Color{
+        
+        public static var red: String{
+            "Translations.Color.red".localized(Bundle.main)
+        }
+        
+        public static var orange: String{
+            "Translations.Color.orange".localized(Bundle.main)
+        }
+        
+        public static var yellow: String{
+            "Translations.Color.yellow".localized(Bundle.main)
+        }
+        
+        public static var green: String{
+            "Translations.Color.green".localized(Bundle.main)
+        }
+        
+        public static var blue: String{
+            "Translations.Color.blue".localized(Bundle.main)
+        }
+        
+        public static var systemIndigo: String{
+            "Translations.Color.systemIndigo".localized(Bundle.main)
+        }
+        
+        public static var purple: String{
+            "Translations.Color.purple".localized(Bundle.main)
+        }
+    }
+    
     struct SelectColor{
         public static var selectColorTitle: String{
             "Translations.SelectColor.selectColorTitle".localized(Bundle.main)
@@ -140,6 +171,7 @@ struct Translations{
         public static var no: String{
             "Translations.SelectColor.no".localized(Bundle.main)
         }
+        
     }
     
     struct Show{

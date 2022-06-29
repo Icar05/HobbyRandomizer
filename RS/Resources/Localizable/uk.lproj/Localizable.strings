@@ -77,3 +77,12 @@
 "Translations.SelectColor.selectColorTitle" = "Обери колір для: ";
 "Translations.SelectColor.yes" = "Так";
 "Translations.SelectColor.no" = "Ні";
+
+/* Color */
+"Translations.Color.red" = "Червоний";
+"Translations.Color.orange" = "Помаранчовий";
+"Translations.Color.yellow" = "Жовтий";
+"Translations.Color.green" = "Зелений";
+"Translations.Color.blue" = "Блакитний";
+"Translations.Color.systemIndigo" = "Синій";
+"Translations.Color.purple" = "Фіолетовий";
