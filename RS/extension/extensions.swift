@@ -33,6 +33,10 @@ struct Color : Codable {
     }
 }
 
+extension Color: Equatable{
+    
+}
+
 extension UITableViewCell{
     func modify(){
         preservesSuperviewLayoutMargins = false
