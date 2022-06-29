@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6O-z5-T9O">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="16" y="8" width="288" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,10 +30,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="N6O-z5-T9O" firstAttribute="top" secondItem="SAA-WY-aF1" secondAttribute="top" id="L6W-9j-Vv9"/>
-                            <constraint firstAttribute="bottom" secondItem="N6O-z5-T9O" secondAttribute="bottom" id="Nch-3Z-mcX"/>
-                            <constraint firstItem="N6O-z5-T9O" firstAttribute="leading" secondItem="SAA-WY-aF1" secondAttribute="leading" id="isP-kE-lcn"/>
-                            <constraint firstAttribute="trailing" secondItem="N6O-z5-T9O" secondAttribute="trailing" id="wxN-A6-hoP"/>
+                            <constraint firstItem="N6O-z5-T9O" firstAttribute="top" secondItem="SAA-WY-aF1" secondAttribute="top" constant="8" id="L6W-9j-Vv9"/>
+                            <constraint firstItem="N6O-z5-T9O" firstAttribute="bottom" secondItem="SAA-WY-aF1" secondAttribute="bottom" constant="-8" id="Nch-3Z-mcX"/>
+                            <constraint firstItem="N6O-z5-T9O" firstAttribute="leading" secondItem="SAA-WY-aF1" secondAttribute="leading" constant="16" id="isP-kE-lcn"/>
+                            <constraint firstAttribute="trailing" secondItem="N6O-z5-T9O" secondAttribute="trailing" constant="16" id="wxN-A6-hoP"/>
                         </constraints>
                     </view>
                 </subviews>

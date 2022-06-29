@@ -134,6 +134,28 @@ struct Translations{
         }
     }
     
+    struct NotesInstruction{
+        public static var howToCreateHeaderDescription: String{
+            "Translations.NotesInstruction.howToCreateHeaderDescription".localized(Bundle.main)
+        }
+        
+        public static var noteActionTitle: String{
+            "Translations.NotesInstruction.noteActionTitle".localized(Bundle.main)
+        }
+        
+        public static var noteActionDescription: String{
+            "Translations.NotesInstruction.noteActionDescription".localized(Bundle.main)
+        }
+        
+        public static var noteInfoTitle: String{
+            "Translations.NotesInstruction.noteInfoTitle".localized(Bundle.main)
+        }
+        
+        public static var noteInfoDescription: String{
+            "Translations.NotesInstruction.noteInfoDescription".localized(Bundle.main)
+        }
+    }
+    
     struct Files{
         public static var howToCreate: String{
             "Translations.Files.howToCreate".localized(Bundle.main)

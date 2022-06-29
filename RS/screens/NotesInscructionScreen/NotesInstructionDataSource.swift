@@ -8,9 +8,7 @@
 
 import Foundation
 
-enum NotesType{
-    case action, info
-}
+
 
 protocol NotesInstructionDelegate: NSObject{
     func howToCreateNote(model: NotesInstuctionInfoCellModel)
@@ -45,7 +43,10 @@ class NotesInstructionDataSource: NSObject, UITableViewDataSource, UITableViewDe
         
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: getNoteInstructionHeaderCellId(), for: indexPath) as! NotesInstuctionHeaderCell
-            cell.configure(model: NotesInstructionHeaderCellModel(info: "Some info"))
+            cell.configure(
+                model: NotesInstructionHeaderCellModel(
+                    info: Translations.NotesInstruction.howToCreateHeaderDescription)
+            )
             cell.modify()
             return cell
         }
