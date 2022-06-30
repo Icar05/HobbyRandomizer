@@ -51,6 +51,7 @@ public final class SettingsViewController: UIViewController {
         super.viewWillDisappear(animated)
         if self.isMovingFromParent {
             self.presenter.savePreferences()
+            self.reLoadNavigationSound()
         }
     }
     

@@ -23,12 +23,13 @@ public final class InitialViewController: UINavigationController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        
+        self.soundUtil = getPlayer(sound: .Lock)
         self.delegate = self
+        
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    func reLoadSound(){
         self.soundUtil = getPlayer(sound: .Lock)
     }
     
