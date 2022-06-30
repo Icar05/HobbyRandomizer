@@ -14,8 +14,8 @@ You can see list of notes, and push random ...
 
 There are also next screens: Yes/No and Casino :)
 
-![alt text](https://github.com/Icar05/RS/blob/main/Casino.jpg)
 ![alt text](https://github.com/Icar05/RS/blob/main/YesNo.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Casino.jpg)
 
 # License
 
