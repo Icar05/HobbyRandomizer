@@ -17,7 +17,9 @@ import AVFoundation
 enum SoundCaf: String{
     case Tink = "/System/Library/Audio/UISounds/Tink.caf"
     case Tock = "/System/Library/Audio/UISounds/Tock.caf"
-    case Lock = "/System/Library/Audio/UISounds/lock.caf"
+    case Beep = "/System/Library/Audio/UISounds/SIMToolkitGeneralBeep.caf"
+    case Negative = "/System/Library/Audio/UISounds/SIMToolkitNegativeACK.caf"
+    case End = "/System/Library/Audio/UISounds/end_record.caf"
 }
 
 class SoundUtil{

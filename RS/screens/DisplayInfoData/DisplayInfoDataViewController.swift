@@ -39,7 +39,7 @@ public final class DisplayInfoDataViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.soundUtil = getPlayer(sound: .Lock)
+        self.soundUtil = getPlayer(sound: .Tock)
     }
     
     public override func viewDidLoad() {
