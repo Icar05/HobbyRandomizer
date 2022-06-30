@@ -4,18 +4,18 @@ This is simple fun  application to choose how to spend time, randomizer
 
 At first, create some variants ... And then you can call randomizer!
 
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/menu.jpg)
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/create.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Menu.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Create.jpg)
 
 You can see list of notes, and push random ... 
 
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/items.jpg)
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/selected.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Show.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Random.jpg)
 
-There are also next screens: Debug and Casino :)
+There are also next screens: Yes/No and Casino :)
 
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/casino.jpg)
-![alt text](https://github.com/Icar05/HobbyRandomizer/blob/main/test.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/Casino.jpg)
+![alt text](https://github.com/Icar05/RS/blob/main/YesNo.jpg)
 
 # License
 
