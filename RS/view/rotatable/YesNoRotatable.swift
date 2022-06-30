@@ -25,7 +25,7 @@ class YesNoRotatable: BaseRotatableView {
     func setPreferences(preferences: AppPrefferencesModel){
         self.acceptedColors = [preferences.yesColor.uiColor, preferences.noColor.uiColor]
         self.count = Int(preferences.yesNoCount)
-        self.setNeedsDisplay()
+        self.setData(count: count)
     }
     
     override  func childSetup() {
@@ -90,7 +90,7 @@ class YesNoRotatable: BaseRotatableView {
         var colors: [UIColor] = [UIColor]()
         
         for i in 0...count - 1{
-            let index = i % 2 == 0 ? 1: 0
+            let index = i % 2 == 0 ? 0 : 1
             colors.append(acceptedColors[index])
             
         }

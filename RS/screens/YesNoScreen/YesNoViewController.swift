@@ -36,6 +36,8 @@ public final class YesNoViewController: UIViewController {
         
         self.randomizer.delegate = self
         self.setGradientBackground()
+        
+        self.presenter.viewDidLoad()
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){

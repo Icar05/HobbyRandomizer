@@ -78,13 +78,6 @@ class YesNoUtil: UIView {
         self.bang.backgroundColor = color
     }
     
-    func setDataSource(count: Int){
-        if(!isPlaying){
-            self.count = count
-            self.randomView.setData(count: count)
-        }
-    }
-    
     @objc func bang(tapGestureRecognizer: UITapGestureRecognizer){
         if(!isPlaying){
             self.isPlaying = true
