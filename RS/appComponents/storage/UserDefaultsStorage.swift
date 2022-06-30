@@ -77,7 +77,7 @@ class UserDefaultStorage{
             isEnabledSound: true,
             volume: 0.3,
             yesNoCount: 10.0,
-            yesColor: Color.init(uiColor: UIColor.red,
+            yesColor: Color.init(uiColor: UIColor.red),
             noColor: Color.init(uiColor: UIColor.yellow)
         )
     }
