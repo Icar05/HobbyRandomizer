@@ -33,6 +33,8 @@ class SelectorView: UIView {
         
     fileprivate var model: RandomizerModel? = nil
     
+    fileprivate var shouldShowYesNo = false
+    
     
     override func prepareForInterfaceBuilder(){
         super.prepareForInterfaceBuilder()
@@ -117,14 +119,18 @@ class SelectorView: UIView {
         
     }
     
-    fileprivate func getAttributedString(input: String) -> NSAttributedString{
+    fileprivate func getAttributedString(input: String, textSize: CGFloat = 25) -> NSAttributedString{
         let dict:NSDictionary = [
             NSAttributedString.Key.foregroundColor : UIColor.white,
             NSAttributedString.Key.strokeWidth: 5,
             NSAttributedString.Key.strokeColor: UIColor.black,
-            NSAttributedString.Key.font: UIFont(name: "EuphemiaUCAS", size: 25)!
+            NSAttributedString.Key.font: UIFont(name: "EuphemiaUCAS", size: textSize)!
         ]
        return NSAttributedString(string: input, attributes: dict as? [NSAttributedString.Key : Any])
+    }
+    
+    func shouldShowYesNo(value: Bool){
+        self.shouldShowYesNo = value
     }
     
     func updateModel(model: RandomizerModel){
@@ -139,19 +145,27 @@ class SelectorView: UIView {
     }
     
     fileprivate func displayWinner(model: RandomizerModel){
+        let number = model.index + 1
+        let text = shouldShowYesNo ? getYesNowString(index: number) : "\(number)"
+        let textSize: CGFloat = shouldShowYesNo ? 18 : 25
+        
         self.drawCircle(size: 50, color: model.color, yOffset: Int(viewHeith) - 70)
-        self.drawText(text: "\(model.index + 1)")
+        self.drawText(text: text, textSize: textSize)
     }
     
+    fileprivate func getYesNowString(index: Int) -> String{
+        let type = index % 2 == 0 ? SelectType.NO : SelectType.YES
+        return type.getTitle()
+    }
     
-    fileprivate func drawText(text: String){
+    fileprivate func drawText(text: String, textSize: CGFloat = 25){
         
         let startX = (viewWidth / 2) - 25
         let startY = Int(viewHeith) - 60
         
         textLayer.removeFromSuperlayer()
         textLayer = CATextLayer()
-        textLayer.string = getAttributedString(input:text)
+        textLayer.string = getAttributedString(input:text, textSize: textSize)
         textLayer.alignmentMode = .center
         textLayer.frame = CGRect(x: Int(startX), y: startY, width: 50, height: 40)
         

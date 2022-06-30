@@ -72,6 +72,7 @@ class YesNoUtil: UIView {
     
     func setPreferences(preferences: AppPrefferencesModel){
         self.randomView.setPreferences(preferences: preferences)
+        self.selectorView.shouldShowYesNo(value: true)
     }
     
     func setBangButtonBackgroundColor(color: UIColor){
