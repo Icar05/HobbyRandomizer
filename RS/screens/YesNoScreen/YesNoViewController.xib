@@ -35,7 +35,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN9-Xa-vUO" customClass="YesNoUtil" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="228.5" width="414" height="450"/>
+                    <rect key="frame" x="0.0" y="228" width="414" height="450"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="450" id="aAQ-p4-p8G"/>
@@ -47,10 +47,9 @@
             <constraints>
                 <constraint firstItem="qK0-B0-bsT" firstAttribute="top" secondItem="06x-28-fav" secondAttribute="bottom" id="7nx-iZ-2xk"/>
                 <constraint firstItem="JN9-Xa-vUO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7tO-Nj-DkV"/>
-                <constraint firstAttribute="trailing" secondItem="06x-28-fav" secondAttribute="trailing" id="A22-PK-lLY"/>
+                <constraint firstItem="06x-28-fav" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="A22-PK-lLY"/>
                 <constraint firstItem="qK0-B0-bsT" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Tm7-y6-ADG"/>
-                <constraint firstItem="JN9-Xa-vUO" firstAttribute="centerY" secondItem="qK0-B0-bsT" secondAttribute="centerY" id="YfE-LC-rKS"/>
-                <constraint firstItem="JN9-Xa-vUO" firstAttribute="centerX" secondItem="qK0-B0-bsT" secondAttribute="centerX" id="cby-gl-rzC"/>
+                <constraint firstItem="JN9-Xa-vUO" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="YfE-LC-rKS"/>
                 <constraint firstItem="qK0-B0-bsT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dru-0p-Zxd"/>
                 <constraint firstItem="qK0-B0-bsT" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lhl-Ft-C11"/>
                 <constraint firstItem="06x-28-fav" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vJD-m8-3hb"/>
