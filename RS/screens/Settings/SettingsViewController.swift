@@ -55,6 +55,8 @@ public final class SettingsViewController: UIViewController {
     }
     
     func navigateToColorSelection(){
+        presenter.savePreferences()
+        
         let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
         let navigator = (UIApplication.shared.delegate as! AppDelegate).getNavigator()
         let destination = navigator.getSelectColorScreen(storage: storage)
