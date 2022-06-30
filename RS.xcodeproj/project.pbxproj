@@ -70,6 +70,8 @@
 		ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5135DB286D1F5D00403238 /* YesNoViewController.xib */; };
 		ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135DE286D1F7000403238 /* YesNoPresenter.swift */; };
 		ED5135E1286D1FFD00403238 /* YesNoRotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135E0286D1FFD00403238 /* YesNoRotatable.swift */; };
+		ED5135E4286D22DA00403238 /* YesNoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5135E3286D22DA00403238 /* YesNoUtil.swift */; };
+		ED5135E6286D22ED00403238 /* YesNoUtil.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5135E5286D22ED00403238 /* YesNoUtil.xib */; };
 		ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */; };
 		ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */; };
 		ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */; };
@@ -221,6 +223,8 @@
 		ED5135DB286D1F5D00403238 /* YesNoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YesNoViewController.xib; sourceTree = "<group>"; };
 		ED5135DE286D1F7000403238 /* YesNoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoPresenter.swift; sourceTree = "<group>"; };
 		ED5135E0286D1FFD00403238 /* YesNoRotatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoRotatable.swift; sourceTree = "<group>"; };
+		ED5135E3286D22DA00403238 /* YesNoUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesNoUtil.swift; sourceTree = "<group>"; };
+		ED5135E5286D22ED00403238 /* YesNoUtil.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YesNoUtil.xib; sourceTree = "<group>"; };
 		ED536149286864B3004F1836 /* DisplayRawDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataViewController.swift; sourceTree = "<group>"; };
 		ED53614A286864B3004F1836 /* DisplayRawDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataViewController.xib; sourceTree = "<group>"; };
 		ED53614D286864D1004F1836 /* DisplayInfoDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayInfoDataViewController.swift; sourceTree = "<group>"; };
@@ -561,6 +565,15 @@
 			path = YesNoScreen;
 			sourceTree = "<group>";
 		};
+		ED5135E2286D228A00403238 /* yesNoUitl */ = {
+			isa = PBXGroup;
+			children = (
+				ED5135E3286D22DA00403238 /* YesNoUtil.swift */,
+				ED5135E5286D22ED00403238 /* YesNoUtil.xib */,
+			);
+			path = yesNoUitl;
+			sourceTree = "<group>";
+		};
 		ED53614628686441004F1836 /* DisplayRawData */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +722,7 @@
 			children = (
 				ED4A3CCC271A795700084BB8 /* RS-Bridging-Header.h */,
 				ED880FDD2851303E00DFD78F /* useful */,
+				ED5135E2286D228A00403238 /* yesNoUitl */,
 				ED880FDC2851302600DFD78F /* rouleteView */,
 				ED880FDB2851301700DFD78F /* randomizerUtil */,
 				ED880FDA2851300100DFD78F /* createItemView */,
@@ -1085,6 +1099,7 @@
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */,
 				ED5135CD286CF25F00403238 /* SelectColorsViewController.xib in Resources */,
+				ED5135E6286D22ED00403238 /* YesNoUtil.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
@@ -1130,6 +1145,7 @@
 				ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */,
 				ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
+				ED5135E4286D22DA00403238 /* YesNoUtil.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */,
 				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,

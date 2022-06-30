@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YesNoUtil" customModule="RS" customModuleProvider="target">
+            <connections>
+                <outlet property="bang" destination="aFq-nS-u30" id="X90-CJ-NJr"/>
+                <outlet property="contentView" destination="aCI-33-wHQ" id="vhO-aA-Iil"/>
+                <outlet property="randomView" destination="Gj4-Ly-db1" id="caN-BS-CMK"/>
+                <outlet property="selectorView" destination="weR-Dz-X0K" id="lMD-ww-oei"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCI-33-wHQ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj4-Ly-db1" customClass="YesNoRotatable" customModule="RS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="300" id="2dZ-hF-fyx"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weR-Dz-X0K" userLabel="Selector" customClass="SelectorView" customModule="RS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="400" id="gSL-At-xC7"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFq-nS-u30" userLabel="Bang" customClass="BangButton" customModule="RS" customModuleProvider="target">
+                            <rect key="frame" x="77" y="410" width="260" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="260" id="f8Q-Fl-4BZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Gj4-Ly-db1" firstAttribute="leading" secondItem="aCI-33-wHQ" secondAttribute="leading" id="LVe-yk-51R"/>
+                        <constraint firstItem="aFq-nS-u30" firstAttribute="centerX" secondItem="aCI-33-wHQ" secondAttribute="centerX" id="Omg-Jv-K9T"/>
+                        <constraint firstItem="weR-Dz-X0K" firstAttribute="trailing" secondItem="Gj4-Ly-db1" secondAttribute="trailing" id="S8X-vo-Sfi"/>
+                        <constraint firstItem="weR-Dz-X0K" firstAttribute="top" secondItem="aCI-33-wHQ" secondAttribute="top" id="VG6-ia-X6g"/>
+                        <constraint firstItem="aFq-nS-u30" firstAttribute="top" secondItem="weR-Dz-X0K" secondAttribute="bottom" constant="10" id="ZpC-Je-dng"/>
+                        <constraint firstItem="Gj4-Ly-db1" firstAttribute="trailing" secondItem="aCI-33-wHQ" secondAttribute="trailing" id="cMD-wf-qb1"/>
+                        <constraint firstItem="Gj4-Ly-db1" firstAttribute="top" secondItem="aCI-33-wHQ" secondAttribute="top" id="le8-dE-p5S"/>
+                        <constraint firstItem="weR-Dz-X0K" firstAttribute="leading" secondItem="Gj4-Ly-db1" secondAttribute="leading" id="xq5-Ei-a7M"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="aCI-33-wHQ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="1HY-ul-q1G"/>
+                <constraint firstItem="aCI-33-wHQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Fh-F0-btV"/>
+                <constraint firstItem="aCI-33-wHQ" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="GQn-OK-mej"/>
+                <constraint firstItem="aCI-33-wHQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vZ4-ad-YvF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132" y="80"/>
+        </view>
+    </objects>
+</document>

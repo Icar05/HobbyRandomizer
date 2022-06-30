@@ -7,23 +7,64 @@
 
 import UIKit
 
-class YesNoViewController: UIViewController {
+public final class YesNoViewController: UIViewController {
+    
+    
+    
+    private let presenter: YesNoPresenter
+    
+    @IBOutlet weak var randomizer: YesNoUtil!
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
+    
+    
 
-    override func viewDidLoad() {
+    @available(iOS, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(presenter: YesNoPresenter) {
+        self.presenter = presenter
+        
+        super.init(nibName: "YesNoViewController", bundle: Bundle.main)
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.randomizer.delegate = self
+        self.setGradientBackground()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
+        self.randomizer.setPreferences(preferences: appPreferences)
     }
-    */
+    
+    private func setGradientBackground() {
+        
+        guard let top = UIColor.coolRed?.cgColor,
+              let mid = UIColor.coolOrange?.cgColor,
+              let bot = UIColor.coolGreen?.cgColor
+        else {
+            return
+        }
+        
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [top, mid, bot]
+            gradientLayer.locations = [0.1, 0.5, 1.0]
+            gradientLayer.frame = backgroundView.bounds
+                
+        backgroundView.layer.insertSublayer(gradientLayer, at:0)
+    }
+}
 
+extension YesNoViewController: RandomizerUtilDelegate{
+    func onDetectSector() {
+        self.presenter.play()
+    }
+    
+    func onModelFound(randModel: RandomizerModel) {}
+    
 }

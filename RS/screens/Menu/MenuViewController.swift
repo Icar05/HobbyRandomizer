@@ -98,6 +98,8 @@ extension MenuViewController: MenuDelegate{
             return navigator.getFilesScreen(filesUtil: fileUtil)
         case .Settings:
             return navigator.getSettingScreen(storage: storage)
+        case .YesNo:
+            return navigator.getYesNoScreen(storage: storage)
         }
     }
 }

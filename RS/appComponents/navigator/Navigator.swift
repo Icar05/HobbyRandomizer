@@ -23,4 +23,5 @@ protocol Navigator{
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
     func getNotesInstructionScreen() -> UIViewController
     func getSelectColorScreen(storage: UserDefaultStorage) -> UIViewController
+    func getYesNoScreen(storage: UserDefaultStorage) -> UIViewController
 }

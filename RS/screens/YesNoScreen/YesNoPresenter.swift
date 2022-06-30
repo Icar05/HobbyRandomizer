@@ -12,23 +12,26 @@ public final class YesNoPresenter{
     
     private let storage: UserDefaultStorage
     
+    private let preferences: AppPrefferencesModel
+    
     private let soundUtil: SoundUtil
     
-    unowned var view: DebugViewController!
+    unowned var view: YesNoViewController!
     
     
-    public func set(view: DebugViewController) {
+    public func set(view: YesNoViewController) {
         self.view = view
     }
     
     init(storage: UserDefaultStorage){
         self.storage = storage
-        
-        let model = storage.getAppPreferences()
-        self.soundUtil = SoundUtil(enable: model.isEnabledSound, volume: model.volume)
+        self.preferences = storage.getAppPreferences()
+        self.soundUtil = SoundUtil(enable: preferences.isEnabledSound, volume: preferences.volume)
     }
     
-    func viewDidLoad(){}
+    func viewDidLoad(){
+        self.view.updateViewWithPreferences(appPreferences: preferences)
+    }
     
     func play(){
         self.soundUtil.play()

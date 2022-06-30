@@ -54,6 +54,11 @@ public final class MenuPresenter{
                 title: Translations.Menu.itemHobby
             ),
             MenuCellModel(
+                icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,
+                type: .YesNo,
+                title: Translations.Menu.itemYesNo
+            ),
+            MenuCellModel(
                 icon:  UIImage(systemName: "folder")!,
                 type: .Files,
                 title: Translations.Menu.itemFiles

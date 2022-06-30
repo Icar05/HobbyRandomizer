@@ -9,7 +9,8 @@ import Foundation
 
 class NavigatorImpl: Navigator{
    
-  
+    
+   
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -132,5 +133,11 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    
+    func getYesNoScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = YesNoPresenter(storage: storage)
+        let viewcontroller = YesNoViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
 }

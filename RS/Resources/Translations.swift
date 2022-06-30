@@ -240,6 +240,10 @@ struct Translations{
         public static var itemFiles: String{
             "Translations.Menu.itemFiles".localized(Bundle.main)
         }
+        
+        public static var itemYesNo: String{
+            "Translations.Menu.itemYesNo".localized(Bundle.main)
+        }
     }
 }
 
