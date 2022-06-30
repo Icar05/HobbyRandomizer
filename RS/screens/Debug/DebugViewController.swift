@@ -12,6 +12,8 @@ public final class DebugViewController: UIViewController {
     
     private let presenter: DebugPresenter
     
+    private var soundUtil: SoundUtil? = nil
+    
     fileprivate var count = 7
     
     @IBOutlet weak var countLabel: BangButton!
@@ -37,6 +39,12 @@ public final class DebugViewController: UIViewController {
         
         super.init(nibName: "DebugViewController", bundle: Bundle.main)
     }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+
+           self.soundUtil = getPlayer(sound: .Tink)
+       }
     
     public override func viewDidLoad() {
         
@@ -95,7 +103,7 @@ public final class DebugViewController: UIViewController {
 
 extension DebugViewController: RandomizerUtilDelegate{
     func onDetectSector() {
-        self.presenter.play()
+        self.soundUtil?.play()
     }
     
     func onModelFound(randModel: RandomizerModel) {}

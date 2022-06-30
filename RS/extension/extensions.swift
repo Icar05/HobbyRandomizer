@@ -108,6 +108,14 @@ extension UIViewController{
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
+    
+    func getPlayer(sound: SoundCaf) -> SoundUtil{
+        return getAppDelegate().getSoundUtil(sound: sound)
+    }
+    
+    func getAppDelegate() -> AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }
 
 extension UIImageView{

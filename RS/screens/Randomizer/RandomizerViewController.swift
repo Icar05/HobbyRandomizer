@@ -13,6 +13,8 @@ public final class RandomizerViewController: UIViewController {
     
     private let presenter: RandomizerViewPresenter
     
+    private var soundUtil: SoundUtil? = nil
+    
     fileprivate var models = [RandItemCellModel]()
     
     @IBOutlet weak var status: UIImageView!
@@ -57,6 +59,12 @@ public final class RandomizerViewController: UIViewController {
         presenter.viewDidLoad()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.soundUtil = getPlayer(sound: .Tink)
+    }
+    
     private func setupText(){
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
             .strokeColor: UIColor.black,
@@ -70,7 +78,7 @@ public final class RandomizerViewController: UIViewController {
 
 extension RandomizerViewController: RandomizerUtilDelegate{
     func onDetectSector() {
-        presenter.play()
+        self.soundUtil?.play()
     }
     
     func onModelFound(randModel: RandomizerModel) {

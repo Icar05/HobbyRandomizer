@@ -12,6 +12,8 @@ public final class CasinoViewController: UIViewController {
     
     private let presenter: CasinoPresenter
     
+    private var soundUtil: SoundUtil? = nil
+    
     fileprivate var datasourse = [Int]()
     
     fileprivate var currentSelectedIndex = 0
@@ -38,6 +40,13 @@ public final class CasinoViewController: UIViewController {
         
         super.init(nibName: "CasinoViewController", bundle: Bundle.main)
     }
+    
+    
+    public override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+
+           self.soundUtil = getPlayer(sound: .Tink)
+       }
     
     public override func viewDidLoad() {
         
@@ -122,6 +131,6 @@ extension CasinoViewController: UIPickerViewDelegate{
 
 extension CasinoViewController: RoleteViewDelegate{
     func onSectorDetected() {
-        presenter.play()
+        self.soundUtil?.play()
     }
 }

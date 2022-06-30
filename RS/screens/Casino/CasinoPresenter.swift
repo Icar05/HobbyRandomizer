@@ -9,12 +9,7 @@ import Foundation
 
 public final class CasinoPresenter{
     
-    
-    private let storage: UserDefaultStorage
-    
-    private let soundUtil: SoundUtil
-    
-    
+            
     unowned var view: CasinoViewController!
     
     
@@ -22,18 +17,9 @@ public final class CasinoPresenter{
         self.view = view
     }
     
-    init(storage: UserDefaultStorage){
-        self.storage = storage
-        
-        let model = storage.getAppPreferences()
-        self.soundUtil = SoundUtil(enable: model.isEnabledSound, volume: model.volume)
-    }
     
     func viewDidLoad(){}
     
-    func play(){
-        self.soundUtil.play()
-    }
     
 }
 

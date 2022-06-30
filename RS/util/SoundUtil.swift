@@ -9,35 +9,40 @@ import Foundation
 import AVFoundation
 
 
-struct SoundsForTest{
-    static let Tink = "/System/Library/Audio/UISounds/Tink.caf"
-}
-
 /**
  https://github.com/TUNER88/iOSSystemSoundsLibrary
+ https://gist.github.com/ParityError/5a691e0cb769b1871f9999293bb22b99
  */
+
+enum SoundCaf: String{
+    case Tink = "/System/Library/Audio/UISounds/Tink.caf"
+    case Tock = "/System/Library/Audio/UISounds/Tock.caf"
+    case Lock = "/System/Library/Audio/UISounds/lock.caf"
+}
+
 class SoundUtil{
     
-    
-    fileprivate var sound: String = SoundsForTest.Tink
-    
+        
     private let enable: Bool
     
     private let volume: Float
     
+    private let sound: SoundCaf
+    
     private var player: AVAudioPlayer? = nil
     
     
-    init(enable: Bool, volume: Float){
+    init(enable: Bool, volume: Float, sound: SoundCaf){
         self.enable = enable
         self.volume = volume
+        self.sound = sound
         self.initPlayer()
     }
     
     private func initPlayer(){
         if(enable){
             
-            let scanSoundURL = URL(fileURLWithPath: sound)
+            let scanSoundURL = URL(fileURLWithPath: sound.rawValue)
             do {
                 self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
                 self.player?.volume = volume

@@ -8,6 +8,8 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+  
+    
    
     
    
@@ -17,7 +19,7 @@ class NavigatorImpl: Navigator{
         window.makeKeyAndVisible()
     }
     
-    func getInitialController() -> InitialViewController{
+    func getInitialController() -> InitialViewController {
         let navVc = InitialViewController()
         let menuVc = getMenuScreen()
         navVc.viewControllers = [menuVc]
@@ -36,16 +38,16 @@ class NavigatorImpl: Navigator{
         return viewController
     }
     
-    func getCasinoScreen(storage: UserDefaultStorage) -> UIViewController {
-        let presenter = CasinoPresenter(storage: storage)
+    func getCasinoScreen() -> UIViewController {
+        let presenter = CasinoPresenter()
         let viewcontroller = CasinoViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getDebugScreen(storage: UserDefaultStorage) -> UIViewController {
-        let presenter = DebugPresenter(storage: storage)
+    func getDebugScreen() -> UIViewController {
+        let presenter = DebugPresenter()
         let viewcontroller = DebugViewController(presenter: presenter)
         presenter.set(view: viewcontroller)
         
@@ -60,8 +62,8 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getRandomizerScreen(storage: UserDefaultStorage, models: [RandItemCellModel]) -> UIViewController {
-        let presenter = RandomizerViewPresenter(storage: storage)
+    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController {
+        let presenter = RandomizerViewPresenter()
         let viewcontroller = RandomizerViewController(models: models, presenter: presenter)
         presenter.set(view: viewcontroller)
         

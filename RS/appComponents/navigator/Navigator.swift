@@ -10,11 +10,12 @@ import Foundation
 protocol Navigator{
     func setupInitialViewController(window: UIWindow)
     func navigate(start: UIViewController, destination: UIViewController)
+    func getInitialController() -> InitialViewController
     func getMenuScreen() -> UIViewController
-    func getCasinoScreen(storage: UserDefaultStorage) -> UIViewController
-    func getDebugScreen(storage: UserDefaultStorage) -> UIViewController
+    func getCasinoScreen() -> UIViewController
+    func getDebugScreen() -> UIViewController
     func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController
-    func getRandomizerScreen(storage: UserDefaultStorage, models: [RandItemCellModel]) -> UIViewController
+    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
     func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController
     func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController

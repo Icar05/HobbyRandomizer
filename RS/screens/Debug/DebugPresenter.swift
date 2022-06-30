@@ -9,10 +9,7 @@ import Foundation
 
 public final class DebugPresenter{
     
-    
-    private let storage: UserDefaultStorage
-    
-    private let soundUtil: SoundUtil
+        
     
     unowned var view: DebugViewController!
     
@@ -21,17 +18,8 @@ public final class DebugPresenter{
         self.view = view
     }
     
-    init(storage: UserDefaultStorage){
-        self.storage = storage
-        
-        let model = storage.getAppPreferences()
-        self.soundUtil = SoundUtil(enable: model.isEnabledSound, volume: model.volume)
-    }
-    
     func viewDidLoad(){}
     
-    func play(){
-        self.soundUtil.play()
-    }
+ 
     
 }
