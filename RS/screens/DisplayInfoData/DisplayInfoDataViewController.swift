@@ -68,7 +68,7 @@ public final class DisplayInfoDataViewController: UIViewController {
     
 }
 
-extension DisplayInfoDataViewController: DisplayInfoDelegate{
+extension DisplayInfoDataViewController: ExpandableDelegate{
     
     func onCollapsed(indexPath: [IndexPath]) {
         self.tableView.deleteRows(at: indexPath, with: .fade)

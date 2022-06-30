@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DisplayInfoDelegate: NSObject{
+protocol ExpandableDelegate: NSObject{
     func onCollapsed(indexPath: [IndexPath])
     func onExpanded(indexPath: [IndexPath])
 }
@@ -20,7 +20,7 @@ class DisplayInfoDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     private var data: [DisplayInfoModel] = []
     
-    weak var delegate: DisplayInfoDelegate? = nil
+    weak var delegate: ExpandableDelegate? = nil
     
     
     func setData(data: [DisplayInfoModel]){

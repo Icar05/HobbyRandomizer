@@ -38,6 +38,7 @@ public final class SelectColorsViewController: UIViewController {
         self.tableView.tableFooterView = UIView()
         self.dataSource.delegate = self
         self.registerCells()
+        self.tableView.setValue(0, forKey: "sectionHeaderTopPadding")
         
         self.presenter.viewDidLoad()
     }
@@ -64,6 +65,16 @@ public final class SelectColorsViewController: UIViewController {
 }
 
 extension SelectColorsViewController: SelectColorsDelegate{
+    
+    
+    func onCollapsed(indexPath: [IndexPath]) {
+        self.tableView.deleteRows(at: indexPath, with: .fade)
+    }
+    
+    func onExpanded(indexPath: [IndexPath]) {
+        self.tableView.insertRows(at: indexPath, with: .fade)
+    }
+    
     
     func didColorChange(type: SelectType, color: Color) {
         presenter.colorDidChange(type: type, color: color)

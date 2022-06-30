@@ -25,9 +25,7 @@ class SelectColorCell: UITableViewCell {
     ]
     
     private var selectedRow = 0
-    
-    @IBOutlet weak var selectColorLabel: UILabel!
-    
+        
     @IBOutlet weak var selectColorView: UIView!
     
     @IBOutlet weak var selectColorPicker: UIPickerView!
@@ -48,10 +46,6 @@ class SelectColorCell: UITableViewCell {
     
     
     func configure(model: SelectColorCellModel){
-        
-        let text = "\(Translations.SelectColor.selectColorTitle) \(model.type.getTitle())"
-        
-        self.selectColorLabel.text = text
         self.selectColorView.backgroundColor = model.color.uiColor
         self.selectedRow = colors.firstIndex(of: model.color) ?? 0
         self.callback = model.callback
