@@ -47,9 +47,6 @@ public final class SettingsPresenter {
     func fetchFreshData(){
         let data = prepareModels(preferences: storage.getAppPreferences())
         self.view.registerCells(models: data)
-        
-        let noColor = self.model.noColor.getName()
-        print("no color is: \(noColor)")
     }
     
     func savePreferences(){
