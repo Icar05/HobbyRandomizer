@@ -22,6 +22,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK0-B0-bsT" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06x-28-fav" userLabel="TopSeparator">
                     <rect key="frame" x="0.0" y="44" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,10 +33,6 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="HXK-yW-MCV"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK0-B0-bsT" userLabel="BackgroundView">
-                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN9-Xa-vUO" customClass="YesNoUtil" customModule="RS" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="228" width="414" height="450"/>

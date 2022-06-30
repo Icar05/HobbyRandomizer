@@ -63,7 +63,7 @@ class SelectorView: UIView {
         self.layer.bounds.size = CGSize(width: CGFloat(viewHeith), height: CGFloat(viewHeith))
         self.layer.masksToBounds = true
         self.backgroundColor = .white.withAlphaComponent(0)
-//        self.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     

@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YesNoUtil" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="bang" destination="aFq-nS-u30" id="X90-CJ-NJr"/>
-                <outlet property="contentView" destination="aCI-33-wHQ" id="vhO-aA-Iil"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="jbv-3w-gX7"/>
                 <outlet property="randomView" destination="Gj4-Ly-db1" id="caN-BS-CMK"/>
                 <outlet property="selectorView" destination="weR-Dz-X0K" id="lMD-ww-oei"/>
             </connections>
@@ -35,6 +35,7 @@
                             <rect key="frame" x="57" y="0.0" width="300" height="400"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="width" constant="400" id="BoL-t0-B1P"/>
                                 <constraint firstAttribute="height" constant="400" id="gSL-At-xC7"/>
                             </constraints>
                         </view>
@@ -52,12 +53,10 @@
                     <constraints>
                         <constraint firstItem="Gj4-Ly-db1" firstAttribute="leading" secondItem="aCI-33-wHQ" secondAttribute="leading" id="LVe-yk-51R"/>
                         <constraint firstItem="aFq-nS-u30" firstAttribute="centerX" secondItem="aCI-33-wHQ" secondAttribute="centerX" id="Omg-Jv-K9T"/>
-                        <constraint firstItem="weR-Dz-X0K" firstAttribute="trailing" secondItem="Gj4-Ly-db1" secondAttribute="trailing" id="S8X-vo-Sfi"/>
                         <constraint firstItem="weR-Dz-X0K" firstAttribute="top" secondItem="aCI-33-wHQ" secondAttribute="top" id="VG6-ia-X6g"/>
                         <constraint firstItem="aFq-nS-u30" firstAttribute="top" secondItem="weR-Dz-X0K" secondAttribute="bottom" constant="10" id="ZpC-Je-dng"/>
                         <constraint firstItem="Gj4-Ly-db1" firstAttribute="trailing" secondItem="aCI-33-wHQ" secondAttribute="trailing" id="cMD-wf-qb1"/>
                         <constraint firstItem="Gj4-Ly-db1" firstAttribute="top" secondItem="aCI-33-wHQ" secondAttribute="top" id="le8-dE-p5S"/>
-                        <constraint firstItem="weR-Dz-X0K" firstAttribute="leading" secondItem="Gj4-Ly-db1" secondAttribute="leading" id="xq5-Ei-a7M"/>
                     </constraints>
                 </view>
             </subviews>
@@ -67,6 +66,7 @@
                 <constraint firstItem="aCI-33-wHQ" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="1HY-ul-q1G"/>
                 <constraint firstItem="aCI-33-wHQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8Fh-F0-btV"/>
                 <constraint firstItem="aCI-33-wHQ" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="GQn-OK-mej"/>
+                <constraint firstItem="weR-Dz-X0K" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="K8p-8c-FDI"/>
                 <constraint firstItem="aCI-33-wHQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vZ4-ad-YvF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
