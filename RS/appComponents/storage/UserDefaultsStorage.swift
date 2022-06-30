@@ -75,10 +75,10 @@ class UserDefaultStorage{
     private func getDefaultAppPrefferences() -> AppPrefferencesModel{
         return AppPrefferencesModel(
             isEnabledSound: true,
-            volume: 1.0,
+            volume: 0.3,
             yesNoCount: 10.0,
-            yesColor: Color.init(uiColor: UIColor.red),
-            noColor: Color.init(uiColor: UIColor.orange)
+            yesColor: Color.init(uiColor: UIColor.red,
+            noColor: Color.init(uiColor: UIColor.yellow)
         )
     }
     
