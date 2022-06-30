@@ -11,6 +11,8 @@ public final class DisplayInfoDataViewController: UIViewController {
     
     
     
+    private var soundUtil: SoundUtil? = nil
+    
     @IBOutlet weak var emptyViewLabel: UILabel!
     
     @IBOutlet weak var emptyView: UIView!
@@ -32,6 +34,12 @@ public final class DisplayInfoDataViewController: UIViewController {
         self.presenter = presenter
         
         super.init(nibName: "DisplayInfoDataViewController", bundle: Bundle.main)
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.soundUtil = getPlayer(sound: .Lock)
     }
     
     public override func viewDidLoad() {
@@ -72,9 +80,11 @@ extension DisplayInfoDataViewController: ExpandableDelegate{
     
     func onCollapsed(indexPath: [IndexPath]) {
         self.tableView.deleteRows(at: indexPath, with: .fade)
+        self.soundUtil?.play()
     }
     
     func onExpanded(indexPath: [IndexPath]) {
         self.tableView.insertRows(at: indexPath, with: .fade)
+        self.soundUtil?.play()
     }
 }

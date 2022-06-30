@@ -11,6 +11,8 @@ public final class SelectColorsViewController: UIViewController {
     
     
     
+    private var soundUtil: SoundUtil? = nil
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let dataSource = SelectColorsDataSourse()
@@ -43,6 +45,12 @@ public final class SelectColorsViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.soundUtil = getPlayer(sound: .Lock)
+    }
+    
     func displayData(data: [SelectColorModel]){
         self.dataSource.setData(data: data)
         self.tableView.reloadData()
@@ -69,10 +77,12 @@ extension SelectColorsViewController: SelectColorsDelegate{
     
     func onCollapsed(indexPath: [IndexPath]) {
         self.tableView.deleteRows(at: indexPath, with: .fade)
+        self.soundUtil?.play()
     }
     
     func onExpanded(indexPath: [IndexPath]) {
         self.tableView.insertRows(at: indexPath, with: .fade)
+        self.soundUtil?.play()
     }
     
     
