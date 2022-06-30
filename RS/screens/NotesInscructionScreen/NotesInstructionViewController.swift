@@ -47,15 +47,6 @@ public final class NotesInstructionViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    //        private func navigateToRandom(){
-    //            let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
-    //            let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
-    //            let destination = navigator.getRandomizerScreen(
-    //                storage: storage,
-    //                models: self.dataSource.getData())
-    //            navigator.navigate(start: self, destination: destination)
-    //        }
-    
     private func registerCells(){
         let headerId = self.dataSource.getNoteInstructionHeaderCellId()
         let headerNib = UINib(nibName: headerId, bundle: nil)
@@ -72,7 +63,7 @@ public final class NotesInstructionViewController: UIViewController {
 extension NotesInstructionViewController: NotesInstructionDelegate{
     
     func howToCreateNote(model: NotesInstuctionInfoCellModel) {
-        let navigator = (UIApplication.shared.delegate as! AppDelegate).getNavigator()
+        let navigator = getNavigator()
         let controller = navigator.getDisplayRawDataScreen(data: model.data)
         navigator.navigate(start: self, destination: controller)
     }

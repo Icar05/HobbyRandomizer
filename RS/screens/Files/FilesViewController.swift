@@ -60,7 +60,7 @@ public final class FilesViewController: UIViewController {
     }
 
     func displayData(data: [RandItemCellModel]){
-        let storage = getStorage()
+        let storage = getAppDelegate().getStorage()
         let controller = getNavigator().getDisplayActionDataScreen(data: data, storage: storage)
         getNavigator().navigate(start: self, destination: controller)
     }
@@ -72,14 +72,6 @@ public final class FilesViewController: UIViewController {
     
     func didFileRemoved(value: Bool){
         self.showAlert(value: value)
-    }
-    
-    private func getStorage() -> UserDefaultStorage {
-        return (UIApplication.shared.delegate as! AppDelegate).getStorage()
-    }
-    
-    private func getNavigator() -> Navigator{
-        return (UIApplication.shared.delegate as! AppDelegate).getNavigator()
     }
 
     private func registerCells(){
@@ -105,7 +97,7 @@ extension FilesViewController: FileDataSourceDelegate{
     
     
     func onQuestionDidTap() {
-        let navigator = (UIApplication.shared.delegate as! AppDelegate).getNavigator()
+        let navigator = getNavigator()
         let notesController = navigator.getNotesInstructionScreen()
         navigator.navigate(start: self, destination: notesController)
     }

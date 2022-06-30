@@ -66,9 +66,9 @@ extension MenuViewController: MenuDelegate{
     
     func onItemSelected(item: ScreenTypes) {
         
-        let navigator =  (UIApplication.shared.delegate as! AppDelegate).getNavigator()
-        let storage = (UIApplication.shared.delegate as! AppDelegate).getStorage()
-        let fileUtil = (UIApplication.shared.delegate as! AppDelegate).getFileUtil()
+        let navigator =  getNavigator()
+        let storage = getAppDelegate().getStorage()
+        let fileUtil = getAppDelegate().getFileUtil()
         
         guard let destination = getController(item: item, navigator: navigator, storage: storage, fileUtil: fileUtil) else {
             print("not implemented: \(item)")

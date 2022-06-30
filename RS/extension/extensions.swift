@@ -113,6 +113,10 @@ extension UIViewController{
         return getAppDelegate().getSoundUtil(sound: sound)
     }
     
+    func getNavigator() -> Navigator{
+        return getAppDelegate().getNavigator()
+    }
+    
     func getAppDelegate() -> AppDelegate{
         return UIApplication.shared.delegate as! AppDelegate
     }
