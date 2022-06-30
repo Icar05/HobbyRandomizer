@@ -9,6 +9,10 @@ import UIKit
 
 public final class InitialViewController: UINavigationController {
     
+    
+    
+    private var isStartedFromInitial = true
+    
     private var soundUtil: SoundUtil?
     
     
@@ -43,8 +47,11 @@ extension InitialViewController: UINavigationControllerDelegate{
      Called just before the navigation controller displays a view controller’s view and navigation item properties.
      */
     public func navigationController(_: UINavigationController, willShow: UIViewController, animated: Bool){
-        self.soundUtil?.play()
-        
+        if(isStartedFromInitial){
+            self.isStartedFromInitial = false
+        }else{
+            self.soundUtil?.play()
+        }
     }
     
     
