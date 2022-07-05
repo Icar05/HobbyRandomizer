@@ -71,7 +71,7 @@ public final class FilesViewController: UIViewController {
     }
     
     func didFileRemoved(value: Bool){
-        self.showAlert(value: value)
+//        self.showAlert(value: value)
     }
 
     private func registerCells(){
