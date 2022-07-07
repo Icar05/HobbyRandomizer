@@ -28,6 +28,7 @@
 "Translations.DisplayData.makeImport" = "Import data in application!";
 
 /* Create */
+"Translations.Create.clearAll" = "Clear all";
 "Translations.Create.makeExport" = "Export data from application!";
 "Translations.Create.newIdeaTitle" = "New idea title";
 "Translations.Create.newIdeaDescription" = "New idea subtitle";
@@ -42,6 +43,7 @@
 "Translations.Alert.failureMessage" = "Something went wrong!";
 "Translations.Alert.successRemoveData" = "File has been successfully removed!";
 "Translations.Alert.successExportMessage" = "Data has been successfully exported!";
+"Translations.Alert.successDeleteMessage" = "Data has been successfully deleted!";
 
 /* Settings */
 "Translations.Settings.settings" = "Settings";

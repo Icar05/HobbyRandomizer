@@ -20,6 +20,11 @@ class UserDefaultStorage{
     private let decoder = JSONDecoder()
     
     
+    func removeAlldData() -> Bool {
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        return  UserDefaults.standard.synchronize()
+    }
     
     func appendModels(newModels: [RandItemCellModel]) -> Bool{
         var models = getModels() ?? []

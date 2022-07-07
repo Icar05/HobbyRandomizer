@@ -58,17 +58,19 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
         self.tableView.reloadData()
     }
     
-    func onExportDidTap(freshModels: [RandItemCellModel]) {
-        self.presenter.exportData(models:freshModels)
+    func onClearDatatDidTap(indexPath: [IndexPath]) {
+        self.tableView.deleteRows(at: indexPath, with: .fade)
+        self.tableView.reloadData()
+        self.presenter.clearData()
     }
     
-    func onExportFinished(value: Bool){
+    func onClearFinished(value: Bool){
         self.showAlert(value: value)
     }
     
     private func showAlert(value: Bool){
         let title = value ? Translations.Alert.success : Translations.Alert.failure
-        let subtitle = value ? Translations.Alert.successExportMessage : Translations.Alert.failureMessage
+        let subtitle = value ? Translations.Alert.successDeleteMessage : Translations.Alert.failureMessage
         self.showAlert(title: title, subtitle: subtitle)
     }
     

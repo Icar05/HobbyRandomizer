@@ -39,11 +39,9 @@ public final class CreatePresenter {
         self.storage.getModels() ?? []
     }
     
-    func exportData(models: [RandItemCellModel]){
-        let time = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
-        let fileName = "[\(time)].txt"
-        let result = fileUtil.exportDataAsJson(fileName: fileName, models: models)
-        view.onExportFinished(value: result)
+    func clearData(){
+        let result = storage.removeAlldData()
+        view.onClearFinished(value: result)
     }
 
 }

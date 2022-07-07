@@ -10,7 +10,7 @@ import Foundation
 protocol CreateDataSourceDelegate: NSObject{
     func onModelCreated(freshModels: [RandItemCellModel])
     func onModelDeleted(freshModels: [RandItemCellModel])
-    func onExportDidTap(freshModels: [RandItemCellModel])
+    func onClearDatatDidTap(indexPath: [IndexPath])
 }
 
 class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, CreateViewDelegate {
@@ -35,7 +35,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     }
     
     func getExportCellIndifier() -> String{
-        return String(describing: ExportCell.self)
+        return String(describing: ActionButtonCell.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,10 +51,12 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             
             return cell
         }else if( indexPath.row == data.count + 1) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: getExportCellIndifier(), for: indexPath) as! ExportCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: getExportCellIndifier(), for: indexPath) as! ActionButtonCell
             cell.modify()
             cell.setupDelegate(callback: {
-                self.delegate?.onExportDidTap(freshModels: self.data)
+                let indexesCount = self.data.count
+                self.data.removeAll()
+                self.delegate?.onClearDatatDidTap(indexPath: self.prepareIndexes(indexesCount: indexesCount))
             })
             
             cell.isHidden = self.data.count < 1
@@ -66,6 +68,10 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             return cell
         }
         
+    }
+    
+    private func prepareIndexes(indexesCount: Int) -> [IndexPath]{
+        return [Int](1...indexesCount).map { IndexPath(row: $0, section: 0)}
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

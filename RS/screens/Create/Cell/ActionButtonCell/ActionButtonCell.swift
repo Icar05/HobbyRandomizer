@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ExportCell: UITableViewCell {
+class ActionButtonCell: UITableViewCell {
     
     
-    @IBOutlet weak var exportData: LabelWithCallBack!
+    @IBOutlet weak var removeData: LabelWithCallBack!
     
     
     override func awakeFromNib() {
@@ -19,11 +19,11 @@ class ExportCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.exportData.text = Translations.Create.makeExport
+        self.removeData.text = Translations.Create.clearAll
     }
     
     func setupDelegate(callback:  (() -> Void )?){
-        self.exportData.callback = callback
+        self.removeData.callback = callback
     }
     
 }

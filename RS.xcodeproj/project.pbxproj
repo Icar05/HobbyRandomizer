@@ -117,8 +117,8 @@
 		ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */; };
 		ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */; };
 		ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918AA2863D1CD0041D407 /* TestUtil.swift */; };
-		ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B92863EC9E0041D407 /* ExportCell.swift */; };
-		ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918BA2863EC9E0041D407 /* ExportCell.xib */; };
+		ED7918BB2863EC9E0041D407 /* ActionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918B92863EC9E0041D407 /* ActionButtonCell.swift */; };
+		ED7918BC2863EC9E0041D407 /* ActionButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7918BA2863EC9E0041D407 /* ActionButtonCell.xib */; };
 		ED7EEF102867E27200B5BE46 /* ActionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */; };
 		ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF112867E3DD00B5BE46 /* Parser.swift */; };
 		ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EEF132867E46200B5BE46 /* InfoParser.swift */; };
@@ -272,8 +272,8 @@
 		ED7918A52863C1EB0041D407 /* DisplayFileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayFileCell.xib; sourceTree = "<group>"; };
 		ED7918A82863C39C0041D407 /* DisplayFileCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayFileCellModel.swift; sourceTree = "<group>"; };
 		ED7918AA2863D1CD0041D407 /* TestUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtil.swift; sourceTree = "<group>"; };
-		ED7918B92863EC9E0041D407 /* ExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportCell.swift; sourceTree = "<group>"; };
-		ED7918BA2863EC9E0041D407 /* ExportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExportCell.xib; sourceTree = "<group>"; };
+		ED7918B92863EC9E0041D407 /* ActionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonCell.swift; sourceTree = "<group>"; };
+		ED7918BA2863EC9E0041D407 /* ActionButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionButtonCell.xib; sourceTree = "<group>"; };
 		ED7EEF0F2867E27200B5BE46 /* ActionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionParser.swift; sourceTree = "<group>"; };
 		ED7EEF112867E3DD00B5BE46 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		ED7EEF132867E46200B5BE46 /* InfoParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoParser.swift; sourceTree = "<group>"; };
@@ -764,13 +764,13 @@
 			path = DisplayFileCell;
 			sourceTree = "<group>";
 		};
-		ED7918B82863EC790041D407 /* ExportCell */ = {
+		ED7918B82863EC790041D407 /* ActionButtonCell */ = {
 			isa = PBXGroup;
 			children = (
-				ED7918B92863EC9E0041D407 /* ExportCell.swift */,
-				ED7918BA2863EC9E0041D407 /* ExportCell.xib */,
+				ED7918B92863EC9E0041D407 /* ActionButtonCell.swift */,
+				ED7918BA2863EC9E0041D407 /* ActionButtonCell.xib */,
 			);
-			path = ExportCell;
+			path = ActionButtonCell;
 			sourceTree = "<group>";
 		};
 		ED7EEF152867E4A000B5BE46 /* view */ = {
@@ -819,7 +819,7 @@
 		ED880FC92851167400DFD78F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				ED7918B82863EC790041D407 /* ExportCell */,
+				ED7918B82863EC790041D407 /* ActionButtonCell */,
 				ED880FCB2851187900DFD78F /* CreateNewItemCell */,
 				ED880FCA2851186B00DFD78F /* RandItemCell */,
 			);
@@ -1082,7 +1082,7 @@
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED1D33C5286A68AD004F1506 /* SettingsSoundEnableCell.xib in Resources */,
-				ED7918BC2863EC9E0041D407 /* ExportCell.xib in Resources */,
+				ED7918BC2863EC9E0041D407 /* ActionButtonCell.xib in Resources */,
 				ED5135AA286CC2D100403238 /* DisplayQuestionCell.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
@@ -1158,7 +1158,7 @@
 				ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */,
 				ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
-				ED7918BB2863EC9E0041D407 /* ExportCell.swift in Sources */,
+				ED7918BB2863EC9E0041D407 /* ActionButtonCell.swift in Sources */,
 				ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */,
 				EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */,
 				ED5135D1286CF3D600403238 /* SelectColorsDataSourse.swift in Sources */,

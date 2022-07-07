@@ -64,9 +64,17 @@ struct Translations{
             "Translations.Alert.successExportMessage".localized(Bundle.main)
         }
         
+        public static var successDeleteMessage: String{
+            "Translations.Alert.successDeleteMessage".localized(Bundle.main)
+        }
+        
     }
     
     struct Create{
+        public static var clearAll: String{
+            "Translations.Create.clearAll".localized(Bundle.main)
+        }
+        
         public static var makeExport: String{
             "Translations.Create.makeExport".localized(Bundle.main)
         }

@@ -28,6 +28,7 @@
 "Translations.DisplayData.makeImport" = "Імпортувати данні в додаток!";
 
 /* Create */
+"Translations.Create.clearAll" = "Видалити все";
 "Translations.Create.makeExport" = "Експортувати дані з додатку!";
 "Translations.Create.newIdeaTitle" = "Заголовок нової ідеї";
 "Translations.Create.newIdeaDescription" = "Опис нової ідеї";
@@ -42,6 +43,7 @@
 "Translations.Alert.failureMessage" = "Щось трилось!";
 "Translations.Alert.successRemoveData" = "Файл був успішно видалений!";
 "Translations.Alert.successExportMessage" = "Дані були успішно експортовані!";
+"Translations.Alert.successDeleteMessage" = "Дані були успішно видалено";
 
 /* Settings */
 "Translations.Settings.settings" = "Налаштування";
