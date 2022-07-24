@@ -44,12 +44,12 @@ public final class MenuPresenter{
                 title: Translations.Menu.itemTodo
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "chart.line.uptrend.xyaxis")!,
+                icon:  UIImage(systemName: "sunset")!,
                 type: .HardDayNight,
                 title: Translations.Menu.itemHardDayNight
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "gamecontroller")!,
+                icon:  UIImage(systemName: "takeoutbag.and.cup.and.straw")!,
                 type: .WeekEnd,
                 title: Translations.Menu.itemWeekend
             ),
