@@ -26,28 +26,17 @@ class RandomParser : Parser{
         
         var models: [RandItemCellModel] = []
         
-//        input.split(separator: "➦").tail.forEach{
-            
-//            let subString = $0.split(separator: "➫")[0]
-            
-//            if  let type = getType(value: String(subString).withoutSpecialCharacters){
-                let items = input.split(separator: "➫").tail
-                items.forEach{
+        let items = input.split(separator: "➫").tail
+            items.forEach{
                     
-                    let content = $0.split(separator: "°")
-                    let model = RandItemCellModel(
-                        title: content[0].trimmingCharacters(in: .whitespacesAndNewlines),
-                        subTitle: content[1].trimmingCharacters(in: .whitespacesAndNewlines),
-                        type: .Random)
+            let content = $0.split(separator: "°")
+            let model = RandItemCellModel(
+                title: content[0].trimmingCharacters(in: .whitespacesAndNewlines),
+                subTitle: content[1].trimmingCharacters(in: .whitespacesAndNewlines),
+                type: .Random)
                     
-                    models.append(model)
-                }
-//            }
-//        else{
-//                print("MainParser: \(String($0)) not type")
-//            }
-            
-//        }
+                models.append(model)
+            }
         
         return models
     }
