@@ -63,7 +63,6 @@ class FileWriterUtil{
         
         guard let data: Data = input.data(using: String.Encoding.utf8),
               let result: [RandItemCellModel] = jsonDecoder.decodeData(data: data) else {
-                  
                   return mainParcer.parseString(input: input)
               }
         

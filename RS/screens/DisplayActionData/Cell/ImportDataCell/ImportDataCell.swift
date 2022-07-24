@@ -14,11 +14,14 @@ class ImportDataCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.exportLabel.text = Translations.DisplayData.makeImport
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func configure(model: ImportDataCellModel){
+        self.exportLabel.text = model.title
     }
     
 }

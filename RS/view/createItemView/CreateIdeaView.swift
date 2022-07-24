@@ -98,7 +98,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return ItemType.allCases.count
+        return ItemType.allCases.count - 1
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

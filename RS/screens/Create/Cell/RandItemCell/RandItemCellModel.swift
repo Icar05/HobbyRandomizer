@@ -8,7 +8,7 @@
 import Foundation
 
 enum ItemType: String, Codable, CaseIterable{
-    case ToDo, HardDayNight, HappyWeekend
+    case ToDo, HardDayNight, HappyWeekend, Random
 }
 
 struct RandItemCellModel: Codable{
@@ -27,6 +27,8 @@ extension ItemType{
             return Translations.Create.typeHardDayNight
         case .HappyWeekend:
             return Translations.Create.typeHappyWeekend
+        case .Random:
+            return ""
         }
     }
     
@@ -38,6 +40,8 @@ extension ItemType{
             return UIImage(source: "party", bundle: .main)!
         case .HappyWeekend:
             return UIImage(source: "weekend", bundle: .main)!
+        case .Random:
+            return UIImage()
         }
     }
     
@@ -49,6 +53,8 @@ extension ItemType{
             return UIColor.colorCoolViolet!
         case .HappyWeekend:
             return UIColor.coolOrange!
+        case .Random:
+            return UIColor.black
         }
     }
 }

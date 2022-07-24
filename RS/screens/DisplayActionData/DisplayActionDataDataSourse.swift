@@ -9,6 +9,7 @@ import Foundation
 
 protocol DisplayActionSourceDelegate: NSObject{
     func didImportClick()
+    func didRandomClick()
 }
 
 class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableViewDelegate{
@@ -46,6 +47,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
         
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: getImportCellIdentifier(), for: indexPath) as! ImportDataCell
+            cell.configure(model: getImportModel())
             cell.modify()
             return cell
         }
@@ -59,12 +61,21 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row == 0){
-            self.delegate?.didImportClick()
+            needImport() ? self.delegate?.didImportClick() : self.delegate?.didRandomClick()
         }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return UITableViewCell.EditingStyle.none
+    }
+    
+    private func getImportModel() -> ImportDataCellModel{
+        let title = needImport() ? Translations.DisplayData.makeImport: Translations.Random.play
+        return ImportDataCellModel(title: title)
+    }
+    
+    private func needImport() -> Bool{
+        return data[1].type != .Random
     }
     
 }

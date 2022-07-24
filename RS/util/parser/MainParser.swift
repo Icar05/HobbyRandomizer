@@ -16,7 +16,7 @@ class MainParser{
     
     private let log = "MainParser"
     
-    private let parsers: [Parser] = [ActionParser(), InfoParser()]
+    private let parsers: [Parser] = [ActionParser(), InfoParser(), RandomParser()]
     
     
     private func searchParcer(key: String) -> Parser?{
@@ -26,7 +26,7 @@ class MainParser{
     func parseString(input: String) -> Any {
         
         guard let key = input.between("圓", "圓"), let parcer = searchParcer(key: key) else{
-            printLog(input: "There is no key!")
+            printLog(input: "There is no key")
             return input
         }
         
@@ -36,12 +36,16 @@ class MainParser{
             let data =   (parcer as! InfoParser).parseData(input: input)
             printLog(input: "InfoParser, data: \(data)")
             return data
+        } else if (parcer is RandomParser){
+            let data =   (parcer as! RandomParser).parseData(input: input)
+            printLog(input: "RandomParser, data: \(data)")
+            return data
         }else{
             printLog(input: "There is no appropriate parcer!")
             return input
         }
     }
-    
+
     
     private func printLog(input: String){
         print("\(log): \(input)")

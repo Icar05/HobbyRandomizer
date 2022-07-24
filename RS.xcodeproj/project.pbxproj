@@ -138,6 +138,8 @@
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
+		EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBA288DEA3000433705 /* RandomParser.swift */; };
+		EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */; };
 		EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */; };
 		EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */; };
 		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
@@ -293,6 +295,8 @@
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
+		EDAA9DBA288DEA3000433705 /* RandomParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomParser.swift; sourceTree = "<group>"; };
+		EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCellModel.swift; sourceTree = "<group>"; };
 		EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryCell.swift; sourceTree = "<group>"; };
 		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
@@ -435,6 +439,7 @@
 			children = (
 				ED4491AB2866938300CCC32D /* ImportDataCell.swift */,
 				ED4491AC2866938300CCC32D /* ImportDataCell.xib */,
+				EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */,
 			);
 			path = ImportDataCell;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 				ED7EEF112867E3DD00B5BE46 /* Parser.swift */,
 				ED7EEF132867E46200B5BE46 /* InfoParser.swift */,
 				ED7EEF172867E72200B5BE46 /* MainParser.swift */,
+				EDAA9DBA288DEA3000433705 /* RandomParser.swift */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -1146,6 +1152,7 @@
 				ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED5135E4286D22DA00403238 /* YesNoUtil.swift in Sources */,
+				EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */,
 				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,
@@ -1198,6 +1205,7 @@
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */,
+				EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */,
 				ED5135CC286CF25F00403238 /* SelectColorsViewController.swift in Sources */,
 				ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,

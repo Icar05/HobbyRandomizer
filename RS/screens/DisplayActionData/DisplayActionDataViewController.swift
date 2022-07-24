@@ -80,6 +80,11 @@ public final class DisplayActionDataViewController:  UIViewController {
 
 extension DisplayActionDataViewController: DisplayActionSourceDelegate{
     
+    func didRandomClick() {
+        print("didRandomClick")
+    }
+    
+    
     func didImportClick() {
         self.presenter.importData()
     }
