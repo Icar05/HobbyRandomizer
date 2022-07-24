@@ -12,6 +12,7 @@ extension UIColor {
     static let coolGreen = UIColor(hexColor: "349C52")
     static let coolRed = UIColor(hexColor: "E30002")
     static let coolOrange = UIColor(hexColor: "FAA602")
+    static let colorCoolViolet = UIColor(named: "ColorCoolViolet")
     static let colorMain = UIColor(named: "MainColor")
     static let colorBorderGray = UIColor(named: "BorderGray")
     static let colorCappuccino = UIColor(named: "Cappuccino")

@@ -44,9 +44,9 @@ extension ItemType{
     func getColorForType() -> UIColor{
         switch self {
         case .ToDo:
-            return UIColor.coolRed!
+            return UIColor.colorCocoa!
         case .HardDayNight:
-            return UIColor.coolGreen!
+            return UIColor.colorCoolViolet!
         case .HappyWeekend:
             return UIColor.coolOrange!
         }
