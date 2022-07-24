@@ -52,8 +52,9 @@ public final class RandomizerViewController: UIViewController {
         self.titleLabel.text = Translations.Random.selectedTitle
         self.subtitle.text = Translations.Random.selectedDescription
         
+        self.backgroundView.backgroundColor = UIColor.white
+        
         self.randomizer.delegate = self
-        self.backgroundView.gradientRainbow()
         self.randomizer.setDataSource(count: models.count)
         
         presenter.viewDidLoad()
