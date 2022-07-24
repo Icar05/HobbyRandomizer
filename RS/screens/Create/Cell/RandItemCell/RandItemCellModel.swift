@@ -35,9 +35,9 @@ extension ItemType{
         case .ToDo:
             return UIImage(source: "work", bundle: .main)!
         case .HardDayNight:
-            return UIImage(source: "hobby", bundle: .main)!
+            return UIImage(source: "party", bundle: .main)!
         case .HappyWeekend:
-            return UIImage(source: "progress", bundle: .main)!
+            return UIImage(source: "weekend", bundle: .main)!
         }
     }
     
