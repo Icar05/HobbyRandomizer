@@ -75,13 +75,19 @@ public final class DisplayActionDataViewController:  UIViewController {
         self.tableView?.register(randNib, forCellReuseIdentifier: randId)
         self.tableView?.register(importNib, forCellReuseIdentifier: importId)
     }
+    
+    private func navigateToRandom(){
+        let navigator =  getNavigator()
+        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData())
+        navigator.navigate(start: self, destination: destination)
+    }
 
 }
 
 extension DisplayActionDataViewController: DisplayActionSourceDelegate{
     
     func didRandomClick() {
-        print("didRandomClick")
+       navigateToRandom()
     }
     
     
