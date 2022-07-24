@@ -56,12 +56,12 @@ class ActionParser : Parser{
         let raw = value.withoutSpecialCharacters
         
         switch raw {
-        case "Necessary":
-            return .necessary
-        case "WorkInProgress":
-            return .workInProgress
-        case "FreeTime":
-            return .freetime
+        case "ToDo":
+            return .ToDo
+        case "HardDayNight":
+            return .HardDayNight
+        case "HappyWeekend":
+            return .HappyWeekend
         default:
             return nil
         }

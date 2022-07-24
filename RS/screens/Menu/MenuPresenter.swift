@@ -45,13 +45,13 @@ public final class MenuPresenter{
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "chart.line.uptrend.xyaxis")!,
-                type: .WorkInProgress,
-                title: Translations.Menu.itemWorkInProgress
+                type: .HardDayNight,
+                title: Translations.Menu.itemHardDayNight
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "gamecontroller")!,
-                type: .Hobby,
-                title: Translations.Menu.itemHobby
+                type: .WeekEnd,
+                title: Translations.Menu.itemWeekend
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,

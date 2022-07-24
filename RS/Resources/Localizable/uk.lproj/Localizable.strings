@@ -3,8 +3,8 @@
 "Translations.Menu.itemCasino" = "Рулетка";
 "Translations.Menu.itemTest" = "Відладка";
 "Translations.Menu.itemCreate" = "Створення";
-"Translations.Menu.itemHobby" = "Захоплення";
-"Translations.Menu.itemWorkInProgress" = "Розвиток";
+"Translations.Menu.itemWeekend" = "Вихідні";
+"Translations.Menu.itemHardDayNight" = "Вечір";
 "Translations.Menu.itemTodo" = "Справи";
 "Translations.Menu.itemFiles" = "Файли";
 "Translations.Menu.itemYesNo" = "ТакНі";
@@ -32,9 +32,9 @@
 "Translations.Create.makeExport" = "Експортувати дані з додатку!";
 "Translations.Create.newIdeaTitle" = "Заголовок нової ідеї";
 "Translations.Create.newIdeaDescription" = "Опис нової ідеї";
-"Translations.Create.typeNecessary" = "Справи";
-"Translations.Create.typeFreetime" = "Захоплення";
-"Translations.Create.typeWorkInProgress" = "Розвиток";
+"Translations.Create.typeTodo" = "Справи";
+"Translations.Create.typeHardDayNight" = "Після важкого дня";
+"Translations.Create.typeHappyWeekend" = "Під час вихідних";
 
 /* Alert */
 "Translations.Alert.success" = "Успіх";
@@ -64,7 +64,7 @@
 
 "Translations.NotesInstruction.noteActionDescription" = "Для того, щоб створити нотатку RS - модель, потрібно виконати 3 кроки: \n
  1. Створити марку для парсингу. Для RS це \n  圓Action圓. \n
- 2. Створити типи. Модель підтримує 3 типи: Necessary, WorkInProgress, FreeTime. Вони мають бути описані як: \n  ➦WorkInProgress наприклад \n
+ 2. Створити типи. Модель підтримує 3 типи: ToDo, HardDayNight, HappyWeekend. Вони мають бути описані як: \n  ➦HardDayNight наприклад \n
  3. Створити підмоделі. Кожна підмодель має мати заголовок та опис. Наприклад: \n  ➫ Some title ° Some description.\n
  Також модель підтримує тип, про нього є вище. \n
  Коли нотатка буде готова, потрібно просто покласти її в RS папку, яка належить цьому додатку. Після цього можно знайти нотатку в  Файлах, буде можливість прочитати її чи імпортувати з неї данні.";

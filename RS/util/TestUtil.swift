@@ -29,9 +29,9 @@ class TestUtil{
     
     private func createMockModels() -> [RandItemCellModel]{
         return [
-            RandItemCellModel(title: "Test 1", subTitle: "Test Item 1", type: .necessary),
-            RandItemCellModel(title: "Test 2", subTitle: "Test Item 2", type: .freetime),
-            RandItemCellModel(title: "Test 3", subTitle: "Test Item 3", type: .workInProgress),
+            RandItemCellModel(title: "Test 1", subTitle: "Test Item 1", type: .ToDo),
+            RandItemCellModel(title: "Test 2", subTitle: "Test Item 2", type: .HardDayNight),
+            RandItemCellModel(title: "Test 3", subTitle: "Test Item 3", type: .HappyWeekend),
         ]
     }
     

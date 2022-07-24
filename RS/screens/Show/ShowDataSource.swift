@@ -16,7 +16,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     private var data: [RandItemCellModel] = []
     
-    private var type: ItemType = ItemType.necessary
+    private var type: ItemType = ItemType.HardDayNight
     
     weak var delegate: ShowDataSourceDelegate? = nil
     

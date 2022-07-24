@@ -3,8 +3,8 @@
 "Translations.Menu.itemCasino" = "Casino";
 "Translations.Menu.itemTest" = "Debug";
 "Translations.Menu.itemCreate" = "Creation";
-"Translations.Menu.itemHobby" = "Hobbies";
-"Translations.Menu.itemWorkInProgress" = "Education";
+"Translations.Menu.itemWeekend" = "Weekend";
+"Translations.Menu.itemHardDayNight" = "Evening";
 "Translations.Menu.itemTodo" = "Affairs";
 "Translations.Menu.itemFiles" = "Files";
 "Translations.Menu.itemYesNo" = "YesNo";
@@ -32,9 +32,9 @@
 "Translations.Create.makeExport" = "Export data from application!";
 "Translations.Create.newIdeaTitle" = "New idea title";
 "Translations.Create.newIdeaDescription" = "New idea subtitle";
-"Translations.Create.typeNecessary" = "Affairs";
-"Translations.Create.typeFreetime" = "Hobbies";
-"Translations.Create.typeWorkInProgress" = "Education";
+"Translations.Create.typeTodo" = "Affairs";
+"Translations.Create.typeHardDayNight" = "After hard day";
+"Translations.Create.typeHappyWeekend" = "In weekend time";
 
 /* Alert */
 "Translations.Alert.success" = "Success";
@@ -64,7 +64,7 @@
 
 "Translations.NotesInstruction.noteActionDescription" = "In order to create note with RS itme, you should to do 3 steps: \n
  1. Create mark to parse. For RS it is \n  圓Action圓. \n
- 2. Create types. There are 3 types: Necessary, WorkInProgress, FreeTime. They should be used as \n  ➦WorkInProgress for example. \n
+ 2. Create types. There are 3 types: ToDo, HardDayNight, HappyWeekend. They should be used as \n  ➦HardDayNight for example. \n
  3. Create items. Each items shoud have title and description. Example: \n  ➫ Some title ° Some description.\n
  Also it has type, about type read above. \n
  When note will be done, you should just put it in RS folder, which is owned by this app. Then you can find this note in Files, and you will have possibility to import or read it.";

@@ -8,7 +8,7 @@
 import Foundation
 
 enum ItemType: String, Codable, CaseIterable{
-    case necessary, freetime, workInProgress
+    case ToDo, HardDayNight, HappyWeekend
 }
 
 struct RandItemCellModel: Codable{
@@ -21,45 +21,34 @@ extension ItemType{
     
     func getTitle() -> String{
         switch self {
-        case .necessary:
-            return Translations.Create.typeNecessary
-        case .freetime:
-            return Translations.Create.typeFreetime
-        case .workInProgress:
-            return Translations.Create.typeWorkInProgress
+        case .ToDo:
+            return Translations.Create.typeTodo
+        case .HardDayNight:
+            return Translations.Create.typeHardDayNight
+        case .HappyWeekend:
+            return Translations.Create.typeHappyWeekend
         }
     }
     
     func getImage() -> UIImage{
         switch self {
-        case .necessary:
+        case .ToDo:
             return UIImage(source: "work", bundle: .main)!
-        case .freetime:
+        case .HardDayNight:
             return UIImage(source: "hobby", bundle: .main)!
-        case .workInProgress:
+        case .HappyWeekend:
             return UIImage(source: "progress", bundle: .main)!
         }
     }
     
     func getColorForType() -> UIColor{
         switch self {
-        case .necessary:
+        case .ToDo:
             return UIColor.coolRed!
-        case .freetime:
+        case .HardDayNight:
             return UIColor.coolGreen!
-        case .workInProgress:
+        case .HappyWeekend:
             return UIColor.coolOrange!
-        }
-    }
-    
-    func getColorForTypeInversed() -> UIColor{
-        switch self {
-        case .necessary:
-            return UIColor.coolGreen!
-        case .freetime:
-            return UIColor.coolOrange!
-        case .workInProgress:
-            return UIColor.coolRed!
         }
     }
 }

@@ -30,7 +30,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     weak var delegate: CreateViewDelegate? = nil
     
-    var type: ItemType = .freetime
+    var type: ItemType = .HardDayNight
     
     
     override init(frame: CGRect) {

@@ -89,11 +89,11 @@ extension MenuViewController: MenuDelegate{
         case .Create:
             return navigator.getCreateScreen(storage: storage, fileUtil: fileUtil)
         case .Todo:
-            return navigator.getShowScreen(storage: storage, type: .necessary)
-        case .Hobby:
-            return navigator.getShowScreen(storage: storage, type: .freetime)
-        case .WorkInProgress:
-            return navigator.getShowScreen(storage: storage, type: .workInProgress)
+            return navigator.getShowScreen(storage: storage, type: .ToDo)
+        case .WeekEnd:
+            return navigator.getShowScreen(storage: storage, type: .HappyWeekend)
+        case .HardDayNight:
+            return navigator.getShowScreen(storage: storage, type: .HardDayNight)
         case .Files:
             return navigator.getFilesScreen(filesUtil: fileUtil)
         case .Settings:

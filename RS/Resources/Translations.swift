@@ -87,17 +87,18 @@ struct Translations{
             "Translations.Create.newIdeaDescription".localized(Bundle.main)
         }
         
-        public static var typeNecessary: String{
-            "Translations.Create.typeNecessary".localized(Bundle.main)
+        public static var typeTodo: String{
+            "Translations.Create.typeTodo".localized(Bundle.main)
         }
         
-        public static var typeFreetime: String{
-            "Translations.Create.typeFreetime".localized(Bundle.main)
+        public static var typeHardDayNight: String{
+            "Translations.Create.typeHardDayNight".localized(Bundle.main)
         }
         
-        public static var typeWorkInProgress: String{
-            "Translations.Create.typeWorkInProgress".localized(Bundle.main)
+        public static var typeHappyWeekend: String{
+            "Translations.Create.typeHappyWeekend".localized(Bundle.main)
         }
+    
     }
     
     struct DisplayData{
@@ -233,12 +234,12 @@ struct Translations{
             "Translations.Menu.itemCreate".localized(Bundle.main)
         }
         
-        public static var itemHobby: String{
-            "Translations.Menu.itemHobby".localized(Bundle.main)
+        public static var itemWeekend: String{
+            "Translations.Menu.itemWeekend".localized(Bundle.main)
         }
         
-        public static var itemWorkInProgress: String{
-            "Translations.Menu.itemWorkInProgress".localized(Bundle.main)
+        public static var itemHardDayNight: String{
+            "Translations.Menu.itemHardDayNight".localized(Bundle.main)
         }
         
         public static var itemTodo: String{

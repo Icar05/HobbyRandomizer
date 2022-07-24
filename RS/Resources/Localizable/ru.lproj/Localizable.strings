@@ -3,8 +3,8 @@
 "Translations.Menu.itemCasino" = "Рулетка";
 "Translations.Menu.itemTest" = "Отладка";
 "Translations.Menu.itemCreate" = "Создание";
-"Translations.Menu.itemHobby" = "Увлечения";
-"Translations.Menu.itemWorkInProgress" = "Развитие";
+"Translations.Menu.itemWeekend" = "Выходные";
+"Translations.Menu.itemHardDayNight" = "Вечер";
 "Translations.Menu.itemTodo" = "Дела";
 "Translations.Menu.itemFiles" = "Файлы";
 "Translations.Menu.itemYesNo" = "ДаНет";
@@ -32,9 +32,9 @@
 "Translations.Create.makeExport" = "Экспортировать данные из приложения!";
 "Translations.Create.newIdeaTitle" = "Заголовок новой идеи";
 "Translations.Create.newIdeaDescription" = "Описание новой идеи";
-"Translations.Create.typeNecessary" = "Дела";
-"Translations.Create.typeFreetime" = "Увлечения";
-"Translations.Create.typeWorkInProgress" = "Развитие";
+"Translations.Create.typeTodo" = "Дела";
+"Translations.Create.typeHardDayNight" = "После трудного дня";
+"Translations.Create.typeHappyWeekend" = "Во время выходных";
 
 /* Alert */
 "Translations.Alert.success" = "Успех";
@@ -64,7 +64,7 @@
 
 "Translations.NotesInstruction.noteActionDescription" = "Для того чтобы создать заметку RS - модель, нужно выполнить 3 шага: \n
  1. Создать марку для парсинга. Для RS это \n  圓Action圓. \n
- 2. Создать типы. Модель поддерживает 3 типа: Necessary, WorkInProgress, FreeTime. Они должны быть использованы как: \n  ➦WorkInProgress например \n
+ 2. Создать типы. Модель поддерживает 3 типа: ToDo, HardDayNight, HappyWeekend. Они должны быть использованы как: \n  ➦HardDayNight например \n
  3. Создай сущности. Каждая сущность должна иметь заголовок и описание. Например: \n  ➫ Some title ° Some description.\n
  Также модель поддерживает тип, о нем есть выше. \n
  Когда заметка будет готова, нужно просто положить ее в RS папку, которая пренадлежит этому приложению. После этого можно найти заметку в Файлах, появится возможность прочесть ее или импортировать из нее данные.";
