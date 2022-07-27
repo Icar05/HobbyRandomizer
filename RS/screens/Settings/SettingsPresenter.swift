@@ -80,6 +80,7 @@ public final class SettingsPresenter {
                 title: Translations.Settings.count,
                 value: preferences.yesNoCount,
                 maxValue: 20.0,
+                minValue: 10.0,
                 callback: { [weak self] in
                     self?.model.yesNoCount = $0
             }),
@@ -104,6 +105,7 @@ public final class SettingsPresenter {
                 title: Translations.Settings.timerMaxLabel,
                 value: 40.0,
                 maxValue: 60.0,
+                minValue: 1.0,
                 callback: { [weak self] in
                     print("new value: \($0)")
             }),
