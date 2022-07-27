@@ -21,7 +21,7 @@ class TimerView: UIView {
     private var actonLabel: UILabel = UILabel()
     
     
-    @IBInspectable var outColor: UIColor  = UIColor.blue {
+    @IBInspectable var outColor: UIColor  = UIColor.black {
         didSet{
             self.updateOutColor()
             self.displayView.updateOutColor(color: outColor)
@@ -84,7 +84,7 @@ class TimerView: UIView {
     }
     
     fileprivate func updateOutColor(){
-        self.actonLabel.textColor = outColor
+        self.actonLabel.attributedText = getActionTextAttributes(text: actonLabel.text!)
         self.clockLabel.textColor = outColor
     }
     
@@ -95,9 +95,17 @@ class TimerView: UIView {
         
         self.actonLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
         self.actonLabel.textAlignment = .center
-        self.actonLabel.textColor = outColor
-        self.actonLabel.font = UIFont(name: "HelveticaNeue-Thin", size: fontSize)
-        self.actonLabel.text = "Start"
+        self.actonLabel.font = UIFont(name: actonLabel.font.familyName, size: fontSize)
+        self.actonLabel.attributedText = getActionTextAttributes(text: "Start")
+    }
+    
+    fileprivate func getActionTextAttributes(text: String) -> NSAttributedString{
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: outColor,
+            .foregroundColor: UIColor.white,
+            .strokeWidth: -5.0
+        ]
+        return NSAttributedString(string: text, attributes: strokeTextAttributes)
     }
 
     fileprivate func setupClockLabel(){
@@ -109,7 +117,7 @@ class TimerView: UIView {
         self.clockLabel.textAlignment = .center
         self.clockLabel.textColor = outColor
         self.clockLabel.font = UIFont(name: "DBLCDTempBlack", size: fontSize)
-        self.clockLabel.text = "20: 20"
+        self.clockLabel.text = "20:20"
     }
     
     fileprivate func setActionLabelPosition(){
