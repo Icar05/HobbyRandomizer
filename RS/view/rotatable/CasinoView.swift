@@ -34,7 +34,7 @@ class CasinoView: BaseRotatableView {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: outerCircleSize, color: woodColor)
         
-        self.prepareSectors()
+        self.drawSectors()
         
         self.drawCircle(size: (outerCircleSize / 1.5) + 4, color: woodColor)
         self.drawCircle(size: (outerCircleSize / 1.5), color: green!)

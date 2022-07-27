@@ -37,7 +37,7 @@ class YesNoRotatable: BaseRotatableView {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         self.drawCircle(size: outerCircleSize, color: UIColor.black)
         
-        self.prepareSectors()
+        self.drawSectors()
         
         self.drawCircle(size: self.sizeOfView / 4, color: .black)
         self.drawCircle(size: self.sizeOfView / 5, color: .white)

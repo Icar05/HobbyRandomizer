@@ -37,8 +37,6 @@ class SettingsSimpleCellTableViewCell: UITableViewCell , SettingCell {
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
-        
-        print("tap!")
         self.callback?()
     }
     

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class TimerDisplayView: UIView {
    
     
@@ -14,9 +15,17 @@ class TimerDisplayView: UIView {
     
     private let viewDrawUtil = ViewDrawUtil()
     
-    private var sizeOfView: CGFloat = 300
+    private let viewCalculateUtil = ViewCalculateUtil()
+    
+    private var sizeOfView: CGFloat = 250
     
     private var circlePadding: CGFloat = 10
+    
+    private var outCircleColor = UIColor.black
+    
+    private var innerCircleColor = UIColor.white
+    
+    private var currentAngle: Double = 225
 
     
     override func prepareForInterfaceBuilder(){
@@ -37,23 +46,35 @@ class TimerDisplayView: UIView {
     }
     
     
-//    override var bounds: CGRect {
-//        didSet {
-//            self.frame = CGRect(x: 0, y: 0, width: sizeOfView, height: sizeOfView)
-//        }
-//    }
+    override var bounds: CGRect {
+        didSet {
+            self.frame = CGRect(x: 0, y: 0, width: sizeOfView, height: sizeOfView)
+        }
+    }
     
     override func draw(_ rect: CGRect) {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
-        self.drawCircle(size: outerCircleSize, color: UIColor.black)
-        
+        let innerCircleSize = outerCircleSize - circlePadding - 3
+        self.drawCircle(size: outerCircleSize, color: outCircleColor)
+        self.drawSector(currentAngle: currentAngle, color: UIColor.red)
+        self.drawCircle(size: innerCircleSize , color: innerCircleColor)
     }
     
+    func updateOutColor(color: UIColor){
+        self.outCircleColor = color
+        self.setNeedsDisplay()
+    }
+    
+    func updateInnerColor(color: UIColor){
+        self.innerCircleColor = color
+        self.setNeedsDisplay()
+    }
     
     fileprivate func setup(){
         self.layer.bounds.size = CGSize(width: CGFloat(sizeOfView), height: CGFloat(sizeOfView))
         self.layer.masksToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = UIColor.clear
     }
     
     private func drawCircle(size: CGFloat, color: UIColor, point: CGPoint) -> CAShapeLayer{
@@ -62,6 +83,18 @@ class TimerDisplayView: UIView {
     
     private func drawCircle(size: CGFloat, color: UIColor){
         self.viewDrawUtil.drawCircle(size: size, color: color, sizeOfView: sizeOfView)
+    }
+    
+    private func drawSector(currentAngle: Double, color: UIColor){
+        
+        let offset: Double = 90
+        
+        self.viewDrawUtil.drawSector(
+            viewCalculateUtil.deg2rad(-offset),
+            viewCalculateUtil.deg2rad(currentAngle - offset),
+            color,
+            sizeOfView: sizeOfView,
+            circlePadding: circlePadding / 2)
     }
     
 }

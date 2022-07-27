@@ -121,7 +121,7 @@ class BaseRotatableView: UIView {
         return self.viewDrawUtil.drawCircle(size: size, color: color, point: point)
       }
     
-    internal func prepareSectors(){
+    internal func drawSectors(){
         
         
         let minAngle = 0
