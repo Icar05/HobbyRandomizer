@@ -106,7 +106,18 @@ class TimerDisplayView: UIView {
         }
 
         let currentAngle: Double = 360 - Double(currentValue * (360 / maxTimeInSeconds))
-        self.drawSector(currentAngle: currentAngle, color: UIColor.red)
+        let color = getColor(angle: currentAngle)
+        self.drawSector(currentAngle: currentAngle, color: color)
+    }
+    
+    private func getColor(angle: Double) -> UIColor{
+        if(angle < 120){
+            return UIColor.coolGreen!
+        }else if (angle < 240){
+            return UIColor.coolOrange!
+        }else{
+            return UIColor.coolRed!
+        }
     }
     
     private func drawSector(currentAngle: Double, color: UIColor){
