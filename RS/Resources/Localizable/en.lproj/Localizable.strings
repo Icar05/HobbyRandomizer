@@ -46,6 +46,10 @@
 "Translations.Alert.successExportMessage" = "Data has been successfully exported!";
 "Translations.Alert.successDeleteMessage" = "Data has been successfully deleted!";
 
+/* Timer */
+"Translations.Timer.startTimerText" = "Start";
+"Translations.Timer.stopTimerText" = "Stop";
+
 /* Settings */
 "Translations.Settings.settings" = "Settings";
 "Translations.Settings.sound" = "Sound";

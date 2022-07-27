@@ -46,6 +46,10 @@
 "Translations.Alert.successExportMessage" = "Дані були успішно експортовані!";
 "Translations.Alert.successDeleteMessage" = "Дані були успішно видалено";
 
+/* Timer */
+"Translations.Timer.startTimerText" = "Старт";
+"Translations.Timer.stopTimerText" = "Стоп";
+
 /* Settings */
 "Translations.Settings.settings" = "Налаштування";
 "Translations.Settings.sound" = "Звук";

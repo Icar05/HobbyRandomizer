@@ -8,6 +8,16 @@ import Foundation
 
 struct Translations{
     
+    struct Timer{
+        public static var startTimerText: String{
+            "Translations.Timer.startTimerText".localized(Bundle.main)
+        }
+        
+        public static var stopTimerText: String{
+            "Translations.Timer.stopTimerText".localized(Bundle.main)
+        }
+    }
+    
     struct Settings{
         public static var startDebug: String{
             "Translations.Settings.startDebug".localized(Bundle.main)
