@@ -12,6 +12,8 @@ struct SettingsYesNoCellModel: SettingsModel{
         let title: String
         
         var value: Double
+    
+        var maxValue: Double
             
         let callback: (_ value: Double) -> Void
         

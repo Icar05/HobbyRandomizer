@@ -79,15 +79,16 @@ public final class SettingsPresenter {
             SettingsYesNoCellModel(
                 title: Translations.Settings.count,
                 value: preferences.yesNoCount,
+                maxValue: 20.0,
                 callback: { [weak self] in
                     self?.model.yesNoCount = $0
-                }),
+            }),
             SettingsYesNoColorsModel(
                 title: Translations.Settings.colors,
                 yesColor: preferences.yesColor.uiColor,
                 noColor: preferences.noColor.uiColor, callback: { [weak self] in
                     self?.view.navigateToColorSelection()
-                }),
+            }),
             SettingsHeaderCellModel(
                 title: Translations.Menu.itemTest
             ),
@@ -95,7 +96,23 @@ public final class SettingsPresenter {
                 title: Translations.Settings.startDebug,
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
-                })
+            }),
+            SettingsHeaderCellModel(
+                title: Translations.Settings.timerLabel
+            ),
+            SettingsYesNoCellModel(
+                title: Translations.Settings.timerMaxLabel,
+                value: 40.0,
+                maxValue: 60.0,
+                callback: { [weak self] in
+                    print("new value: \($0)")
+            }),
+            SettingsSoundEnableCellModel(
+                title: Translations.Settings.singleProgressColor,
+                enable: true,
+                callback: { [weak self] in
+                    print("enalbe: \($0)")
+            })
         
         ]
     }

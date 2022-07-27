@@ -40,6 +40,7 @@ class SettingsYesNoCountCell: UITableViewCell, SettingCell {
         }
         
         let text = Translations.Settings.count + ": \(Int(settingModel.value))"
+        self.yesNoCountStepper.maximumValue = settingModel.maxValue
         self.yesNoCountStepper.value = settingModel.value
         self.yesNoCountLabel.text = text
         self.callback = settingModel.callback
