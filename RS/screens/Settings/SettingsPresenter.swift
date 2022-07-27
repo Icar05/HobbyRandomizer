@@ -13,6 +13,8 @@ struct AppPrefferencesModel: Codable{
     var yesNoCount: Double
     var yesColor: Color
     var noColor: Color
+    var timerMinutes: Int
+    var timerSingleColor: Bool
 }
 
 
@@ -74,6 +76,23 @@ public final class SettingsPresenter {
                     self?.model.volume = $0
             }),
             SettingsHeaderCellModel(
+                title: Translations.Settings.timerLabel
+            ),
+            SettingsSteppperCellModel(
+                title: Translations.Settings.timerMaxLabel,
+                value: Double(preferences.timerMinutes),
+                maxValue: 60.0,
+                minValue: 1.0,
+                callback: { [weak self] in
+                    self?.model.timerMinutes = Int($0)
+            }),
+            SettingsSwichCellModel(
+                title: Translations.Settings.singleProgressColor,
+                enable: preferences.timerSingleColor,
+                callback: { [weak self] in
+                    self?.model.timerSingleColor = $0
+            }),
+            SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
             ),
             SettingsSteppperCellModel(
@@ -97,23 +116,6 @@ public final class SettingsPresenter {
                 title: Translations.Settings.startDebug,
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
-            }),
-            SettingsHeaderCellModel(
-                title: Translations.Settings.timerLabel
-            ),
-            SettingsSteppperCellModel(
-                title: Translations.Settings.timerMaxLabel,
-                value: 40.0,
-                maxValue: 60.0,
-                minValue: 1.0,
-                callback: { [weak self] in
-                    print("new value: \($0)")
-            }),
-            SettingsSwichCellModel(
-                title: Translations.Settings.singleProgressColor,
-                enable: true,
-                callback: { [weak self] in
-                    print("enalbe: \($0)")
             })
         
         ]

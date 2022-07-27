@@ -83,7 +83,9 @@ class UserDefaultStorage{
             volume: 0.3,
             yesNoCount: 10.0,
             yesColor: Color.init(uiColor: UIColor.red),
-            noColor: Color.init(uiColor: UIColor.yellow)
+            noColor: Color.init(uiColor: UIColor.yellow),
+            timerMinutes: 5,
+            timerSingleColor: false
         )
     }
     

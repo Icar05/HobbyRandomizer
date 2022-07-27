@@ -10,7 +10,7 @@ import UIKit
 class SettingsStepperCell: UITableViewCell, SettingCell {
    
     
-
+    private var titleText = ""
     
     private var callback: ((_ value: Double) -> Void)? = nil
     
@@ -29,7 +29,7 @@ class SettingsStepperCell: UITableViewCell, SettingCell {
     }
     
     @objc func onLuminosityChange(stepper: UIStepper){
-        self.title.text = Translations.Settings.count + ": \(Int(stepper.value))"
+        self.title.text = self.titleText + ": \(Int(stepper.value))"
         self.callback?(stepper.value)
     }
     
@@ -39,7 +39,9 @@ class SettingsStepperCell: UITableViewCell, SettingCell {
             return
         }
         
-        let text = settingModel.title + ": \(Int(settingModel.value))"
+        self.titleText = settingModel.title
+        
+        let text = self.titleText + ": \(Int(settingModel.value))"
         self.stepper.maximumValue = settingModel.maxValue
         self.stepper.minimumValue = settingModel.minValue
         self.stepper.value = settingModel.value
