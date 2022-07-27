@@ -25,7 +25,7 @@ class TimerDisplayView: UIView {
     
     private var innerCircleColor = UIColor.white
     
-    private var updaterColor = UIColor.colorMain!
+    private var updaterColor = UIColor.systemGreen
     
     private var currentAngle: Double = 225
     
