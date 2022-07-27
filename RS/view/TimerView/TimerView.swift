@@ -149,9 +149,13 @@ class TimerView: UIView {
 
     fileprivate func updateClocklabel(value: Int){
         let time: (Int, Int) = secondsToHoursMinutesSeconds(value)
-        let minutes = time.0
-        let seconds = time.1 == 0 ? "00" : "\(time.1)"
+        let minutes = numToString(value: time.0)
+        let seconds = numToString(value: time.1)
         self.clockLabel.text = "\(minutes):\(seconds)"
+    }
+    
+    func numToString(value: Int) -> String{
+        return (value < 10) ? "0\(value)" : "\(value)"
     }
     
     func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
@@ -171,10 +175,12 @@ extension TimerView: TimerUtilDelegate{
     
     func onTimerStop() {
         self.updateClocklabel(value: maxTimeInMinutes * 60)
+        self.displayView.updateCurrentValue(value: 0)
     }
     
     func onTimerUpdate(value: Int) {
         self.updateClocklabel(value: value)
+        self.displayView.updateCurrentValue(value: value)
     }
     
     func onTimerFinished() {

@@ -29,6 +29,8 @@ class TimerDisplayView: UIView {
     
     private var maxTimeInSeconds = 0
     
+    private var currentValue = 0
+    
     
 
     
@@ -60,7 +62,7 @@ class TimerDisplayView: UIView {
         let outerCircleSize =  self.sizeOfView - (2 * circlePadding)
         let innerCircleSize = outerCircleSize - circlePadding - 3
         self.drawCircle(size: outerCircleSize, color: outCircleColor)
-        self.drawSector(currentAngle: currentAngle, color: UIColor.red)
+        self.drawSector()
         self.drawCircle(size: innerCircleSize , color: innerCircleColor)
     }
     
@@ -70,6 +72,11 @@ class TimerDisplayView: UIView {
     
     func updateOutColor(color: UIColor){
         self.outCircleColor = color
+        self.setNeedsDisplay()
+    }
+    
+    func updateCurrentValue(value: Int){
+        self.currentValue = value
         self.setNeedsDisplay()
     }
     
@@ -91,6 +98,15 @@ class TimerDisplayView: UIView {
     
     private func drawCircle(size: CGFloat, color: UIColor){
         self.viewDrawUtil.drawCircle(size: size, color: color, sizeOfView: sizeOfView)
+    }
+    
+    private func drawSector(){
+        if(maxTimeInSeconds == 0 || currentValue == 0){
+            return
+        }
+
+        let currentAngle: Double = 360 - Double(currentValue * (360 / maxTimeInSeconds))
+        self.drawSector(currentAngle: currentAngle, color: UIColor.red)
     }
     
     private func drawSector(currentAngle: Double, color: UIColor){
