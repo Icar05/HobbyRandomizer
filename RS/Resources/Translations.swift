@@ -253,6 +253,10 @@ struct Translations{
         public static var itemYesNo: String{
             "Translations.Menu.itemYesNo".localized(Bundle.main)
         }
+        
+        public static var itemTimer: String{
+            "Translations.Menu.itemTimer".localized(Bundle.main)
+        }
     }
 }
 

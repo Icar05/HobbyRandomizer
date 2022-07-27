@@ -8,6 +8,7 @@
 "Translations.Menu.itemTodo" = "Дела";
 "Translations.Menu.itemFiles" = "Файлы";
 "Translations.Menu.itemYesNo" = "ДаНет";
+"Translations.Menu.itemTimer" = "Таймер";
 
 /* Show */
 "Translations.Show.startRandom" = "Выбрать случайное!"; 

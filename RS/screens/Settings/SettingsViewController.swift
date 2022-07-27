@@ -55,6 +55,12 @@ public final class SettingsViewController: UIViewController {
         }
     }
     
+    func navigateToDebug(){
+        let navigator = getNavigator()
+        let destination = navigator.getDebugScreen()
+        navigator.navigate(start: self, destination: destination)
+    }
+    
     func navigateToColorSelection(){
         presenter.savePreferences()
         

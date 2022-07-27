@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
+		ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594528915A9000C77819 /* TimerViewController.swift */; };
+		ED0E594828915A9000C77819 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E594628915A9000C77819 /* TimerViewController.xib */; };
+		ED0E594B28915AC700C77819 /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594A28915AC700C77819 /* TimerDisplayView.swift */; };
+		ED0E594D28915AEC00C77819 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594C28915AEC00C77819 /* TimerView.swift */; };
+		ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594F2891618700C77819 /* SettingsSimpleCellTableViewCell.swift */; };
+		ED0E59522891618700C77819 /* SettingsSimpleCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */; };
+		ED0E59542891619800C77819 /* SettingsSimpleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */; };
 		ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */; };
 		ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */; };
 		ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */; };
@@ -162,6 +169,13 @@
 
 /* Begin PBXFileReference section */
 		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
+		ED0E594528915A9000C77819 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		ED0E594628915A9000C77819 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
+		ED0E594A28915AC700C77819 /* TimerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
+		ED0E594C28915AEC00C77819 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		ED0E594F2891618700C77819 /* SettingsSimpleCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSimpleCellTableViewCell.swift; sourceTree = "<group>"; };
+		ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSimpleCellTableViewCell.xib; sourceTree = "<group>"; };
+		ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSimpleCellModel.swift; sourceTree = "<group>"; };
 		ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourse.swift; sourceTree = "<group>"; };
@@ -330,6 +344,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED0E594428915A7600C77819 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E594528915A9000C77819 /* TimerViewController.swift */,
+				ED0E594628915A9000C77819 /* TimerViewController.xib */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		ED0E594928915A9A00C77819 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E594A28915AC700C77819 /* TimerDisplayView.swift */,
+				ED0E594C28915AEC00C77819 /* TimerView.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
+		ED0E594E2891615B00C77819 /* SettingsSimpleCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED0E594F2891618700C77819 /* SettingsSimpleCellTableViewCell.swift */,
+				ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */,
+				ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */,
+			);
+			path = SettingsSimpleCell;
+			sourceTree = "<group>";
+		};
 		ED17A1FC286A4B3D0080DB20 /* RS */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +401,7 @@
 		ED1D33B5286A5DD1004F1506 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ED0E594E2891615B00C77819 /* SettingsSimpleCell */,
 				ED435825286BCF2300F99459 /* SettingsYesNoColors */,
 				ED1D33DD286AAE44004F1506 /* SettingsYesNoCount */,
 				ED1D33C8286A6DBC004F1506 /* SettingsVolume */,
@@ -646,6 +689,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED0E594428915A7600C77819 /* Timer */,
 				ED5135D9286D1F3800403238 /* YesNoScreen */,
 				ED5135C9286CF23300403238 /* SelectColorsScreen */,
 				ED5135AD286CC94700403238 /* NotesInscructionScreen */,
@@ -726,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4A3CCC271A795700084BB8 /* RS-Bridging-Header.h */,
+				ED0E594928915A9A00C77819 /* TimerView */,
 				ED880FDD2851303E00DFD78F /* useful */,
 				ED5135E2286D228A00403238 /* yesNoUitl */,
 				ED880FDC2851302600DFD78F /* rouleteView */,
@@ -1070,6 +1115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0E594828915A9000C77819 /* TimerViewController.xib in Resources */,
 				ED5135C6286CD1EF00403238 /* NotesInstructionInfoCell.xib in Resources */,
 				EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */,
 				ED1D33E1286AAE64004F1506 /* SettingsYesNoCountCell.xib in Resources */,
@@ -1096,6 +1142,7 @@
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED1D33B9286A5E33004F1506 /* SettingsViewController.xib in Resources */,
+				ED0E59522891618700C77819 /* SettingsSimpleCellTableViewCell.xib in Resources */,
 				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
 				ED5135D6286CF53200403238 /* SelectColorCell.xib in Resources */,
 				ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */,
@@ -1164,6 +1211,7 @@
 				ED5135C2286CD1D200403238 /* NotesInstructionHeaderCellModel.swift in Sources */,
 				ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */,
 				ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */,
+				ED0E594B28915AC700C77819 /* TimerDisplayView.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
 				ED7918BB2863EC9E0041D407 /* ActionButtonCell.swift in Sources */,
 				ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */,
@@ -1179,6 +1227,7 @@
 				ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */,
 				ED435828286BCF4400F99459 /* SettingsYesNoColors.swift in Sources */,
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,
+				ED0E59542891619800C77819 /* SettingsSimpleCellModel.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
 				ED1D33CE286A6DF3004F1506 /* SettingsVolumeCellModel.swift in Sources */,
@@ -1224,6 +1273,7 @@
 				ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */,
 				ED364257271731D70083D578 /* BangButton.swift in Sources */,
 				ED5A6C5E284FD59A0028BEED /* MenuPresenter.swift in Sources */,
+				ED0E594D28915AEC00C77819 /* TimerView.swift in Sources */,
 				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
 				ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */,
 				EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */,
@@ -1231,6 +1281,8 @@
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 				ED1D33B8286A5E33004F1506 /* SettingsViewController.swift in Sources */,
+				ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */,
+				ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

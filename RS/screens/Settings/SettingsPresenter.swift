@@ -87,8 +87,15 @@ public final class SettingsPresenter {
                 yesColor: preferences.yesColor.uiColor,
                 noColor: preferences.noColor.uiColor, callback: { [weak self] in
                     self?.view.navigateToColorSelection()
-                }
-            )
+                }),
+            SettingsHeaderCellModel(
+                title: Translations.Menu.itemTest
+            ),
+            SettingsSimpleCellModel(
+                title: "Change me!",
+                callback: { [weak self] in
+                    self?.view.navigateToDebug()
+                })
         
         ]
     }

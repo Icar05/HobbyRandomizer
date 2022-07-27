@@ -100,6 +100,8 @@ extension MenuViewController: MenuDelegate{
             return navigator.getSettingScreen(storage: storage)
         case .YesNo:
             return navigator.getYesNoScreen(storage: storage)
+        case .Timer:
+            return navigator.getTimerScreen()
         }
     }
 }

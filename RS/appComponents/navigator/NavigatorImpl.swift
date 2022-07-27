@@ -8,10 +8,6 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
-  
-    
-   
-    
    
     
     func setupInitialViewController(window: UIWindow) {
@@ -53,6 +49,12 @@ class NavigatorImpl: Navigator{
         
         return viewcontroller
     }
+    
+    func getTimerScreen() -> UIViewController {
+        let viewController = TimerViewController()
+        return viewController
+    }
+    
     
     func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController {
         let presenter = CreatePresenter(storage: storage, fileUtil: fileUtil)

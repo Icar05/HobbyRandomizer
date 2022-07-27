@@ -8,6 +8,7 @@
 "Translations.Menu.itemTodo" = "Affairs";
 "Translations.Menu.itemFiles" = "Files";
 "Translations.Menu.itemYesNo" = "YesNo";
+"Translations.Menu.itemTimer" = "Timer";
 
 /* Show */
 "Translations.Show.startRandom" = "Get random!"; 

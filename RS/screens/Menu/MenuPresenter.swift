@@ -30,8 +30,8 @@ public final class MenuPresenter{
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "wrench")!,
-                type: .Test,
-                title: Translations.Menu.itemTest
+                type: .Timer,
+                title: Translations.Menu.itemTimer
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "suit.spade")!,
