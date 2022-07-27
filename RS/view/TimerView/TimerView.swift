@@ -29,7 +29,7 @@ class TimerView: UIView {
     
     private var isTimerStarted = false
     
-    private var maxTimeInMinutes = 1
+    private var maxTimeInMinutes = 30
     
     weak var delegate: TimerViewDelegate? = nil
     
