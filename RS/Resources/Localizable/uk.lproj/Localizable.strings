@@ -59,6 +59,9 @@
 "Translations.Settings.count" = "Кількість";
 "Translations.Settings.colors" = "Кольори";
 "Translations.Settings.startDebug" = "Запустити відладку";
+"Translations.Settings.timerLabel" = "Таймер";
+"Translations.Settings.timerMaxLabel" = "Кількість хвилин";
+"Translations.Settings.singleProgressColor" = "Единий колір оновлення";
 
 /* Files */
 "Translations.Files.howToCreate" = "Як створити імпортабельні нотатки?";

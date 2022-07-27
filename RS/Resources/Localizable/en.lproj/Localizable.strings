@@ -59,6 +59,9 @@
 "Translations.Settings.count" = "Count";
 "Translations.Settings.colors" = "Colors";
 "Translations.Settings.startDebug" = "Start debug";
+"Translations.Settings.timerLabel" = "Timer";
+"Translations.Settings.timerMaxLabel" = "Minutes count";
+"Translations.Settings.singleProgressColor" = "Single updating color";
 
 /* Files */
 "Translations.Files.howToCreate" = "How to create importable notes?";

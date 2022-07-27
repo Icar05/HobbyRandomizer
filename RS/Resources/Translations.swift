@@ -19,6 +19,18 @@ struct Translations{
     }
     
     struct Settings{
+        public static var timerLabel: String{
+            "Translations.Settings.timerLabel".localized(Bundle.main)
+        }
+        
+        public static var timerMaxLabel: String{
+            "Translations.Settings.timerMaxLabel".localized(Bundle.main)
+        }
+        
+        public static var singleProgressColor: String{
+            "Translations.Settings.singleProgressColor".localized(Bundle.main)
+        }
+        
         public static var startDebug: String{
             "Translations.Settings.startDebug".localized(Bundle.main)
         }

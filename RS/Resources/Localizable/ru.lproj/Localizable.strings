@@ -59,6 +59,9 @@
 "Translations.Settings.count" = "Количество";
 "Translations.Settings.colors" = "Цвета";
 "Translations.Settings.startDebug" = "Запустить отладку";
+"Translations.Settings.timerLabel" = "Таймер";
+"Translations.Settings.timerMaxLabel" = "Количество минут";
+"Translations.Settings.singleProgressColor" = "Один цвет обновления";
 
 /* Files */
 "Translations.Files.howToCreate" = "Как создать импортируемые заметки?";
