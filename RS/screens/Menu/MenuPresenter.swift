@@ -29,9 +29,9 @@ public final class MenuPresenter{
                 title: Translations.Menu.itemCreate
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "wrench")!,
-                type: .Timer,
-                title: Translations.Menu.itemTimer
+                icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,
+                type: .YesNo,
+                title: Translations.Menu.itemYesNo
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "suit.spade")!,
@@ -54,9 +54,9 @@ public final class MenuPresenter{
                 title: Translations.Menu.itemWeekend
             ),
             MenuCellModel(
-                icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,
-                type: .YesNo,
-                title: Translations.Menu.itemYesNo
+                icon:  UIImage(systemName: "timer")!,
+                type: .Timer,
+                title: Translations.Menu.itemTimer
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "folder")!,
