@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,8 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zS3-oT-gce" userLabel="Container">
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-VB-86B" userLabel="TopDivider">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="xUI-Wj-5d1"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD1-WX-jrS" customClass="TimerView" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="87" y="328" width="240" height="240"/>
+                    <rect key="frame" x="82" y="323" width="250" height="250"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="BQU-ck-anH"/>
@@ -29,15 +41,25 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="MainColor"/>
             <constraints>
+                <constraint firstItem="L4B-VB-86B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2DZ-Rr-ypJ"/>
+                <constraint firstItem="zS3-oT-gce" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="3JQ-cl-ILd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L4B-VB-86B" secondAttribute="trailing" id="LMH-4T-LYr"/>
+                <constraint firstItem="zS3-oT-gce" firstAttribute="top" secondItem="L4B-VB-86B" secondAttribute="bottom" id="MK7-Rk-SoV"/>
+                <constraint firstItem="L4B-VB-86B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ZlI-61-oHJ"/>
                 <constraint firstItem="iD1-WX-jrS" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gvz-lm-mrs"/>
                 <constraint firstItem="iD1-WX-jrS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kme-sc-San"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zS3-oT-gce" secondAttribute="trailing" id="mzQ-mT-Hkw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zS3-oT-gce" secondAttribute="bottom" id="tdf-f2-acG"/>
             </constraints>
             <point key="canvasLocation" x="132" y="80"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="MainColor">
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
