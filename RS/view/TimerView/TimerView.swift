@@ -31,6 +31,8 @@ class TimerView: UIView {
     
     private var maxTimeInMinutes = 30
     
+    private var singleUpdationColor = false
+    
     weak var delegate: TimerViewDelegate? = nil
     
     
@@ -75,6 +77,16 @@ class TimerView: UIView {
         }
     }
     
+    func setPreferences(preferences: AppPrefferencesModel){
+        self.maxTimeInMinutes = preferences.timerMinutes
+        self.singleUpdationColor = preferences.timerSingleColor
+        
+        
+        self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
+        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
+        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
+    }
+    
     
     fileprivate func setup(){
         
@@ -89,7 +101,7 @@ class TimerView: UIView {
         self.addSubview(actonLabel)
         
         self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
-        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes * 60)
+        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
         
         self.setupClockLabel()
         self.setupActionLabel()
@@ -138,7 +150,7 @@ class TimerView: UIView {
         self.clockLabel.textAlignment = .center
         self.clockLabel.textColor = outColor
         self.clockLabel.font = UIFont(name: "DBLCDTempBlack", size: fontSize)
-        self.updateClocklabel(value: maxTimeInMinutes * 60)
+        self.updateClocklabel(value: maxTimeInMinutes.toMinutes())
     }
     
     fileprivate func setActionLabelPosition(){
@@ -174,7 +186,7 @@ extension TimerView: TimerUtilDelegate{
     
     
     func onTimerStop() {
-        self.updateClocklabel(value: maxTimeInMinutes * 60)
+        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
         self.displayView.updateCurrentValue(value: 0)
     }
     

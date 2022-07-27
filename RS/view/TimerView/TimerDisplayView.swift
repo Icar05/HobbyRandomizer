@@ -104,9 +104,10 @@ class TimerDisplayView: UIView {
         if(maxTimeInSeconds == 0 || currentValue == 0){
             return
         }
-
-        let currentAngle: Double = 360 - Double(currentValue * (360 / maxTimeInSeconds))
+        
+        let currentAngle: Double = Double((360 * (maxTimeInSeconds - currentValue)) / maxTimeInSeconds)
         let color = getColor(angle: currentAngle)
+                
         self.drawSector(currentAngle: currentAngle, color: color)
     }
     

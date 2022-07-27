@@ -147,6 +147,22 @@ public extension UIImage {
     }
 }
 
+extension Int{
+    func toSeconds() -> Int{
+        return self * 60
+    }
+    
+    func toMinutes() -> Int{
+        return self / 60
+    }
+}
+
+extension Double{
+    func toSeconds() -> Double{
+        return self * 60
+    }
+}
+
 extension UIImageView{
     func setImageColor(color: UIColor){
         let templateImage = self.image?.withRenderingMode(.alwaysTemplate)

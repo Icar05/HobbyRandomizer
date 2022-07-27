@@ -101,7 +101,7 @@ extension MenuViewController: MenuDelegate{
         case .YesNo:
             return navigator.getYesNoScreen(storage: storage)
         case .Timer:
-            return navigator.getTimerScreen()
+            return navigator.getTimerScreen(storage: storage)
         }
     }
 }

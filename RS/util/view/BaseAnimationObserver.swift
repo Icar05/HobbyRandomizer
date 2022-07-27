@@ -34,7 +34,7 @@ class BaseAnimationObserver {
         self.count = 0.0
         self.angleCounter = oldAngle
         self.dirtyAngle = 0
-        self.iterationsCount = Double(duration * 60.0)
+        self.iterationsCount = Double(duration.toSeconds())
         self.oldAngle = oldAngle
         self.newAngle = newAngle
         self.step = newAngle  / iterationsCount

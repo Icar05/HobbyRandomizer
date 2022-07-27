@@ -148,6 +148,7 @@
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
 		EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBA288DEA3000433705 /* RandomParser.swift */; };
 		EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */; };
+		EDADA0DF2891B408007FDFDC /* TimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */; };
 		EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */; };
 		EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */; };
 		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
@@ -313,6 +314,7 @@
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
 		EDAA9DBA288DEA3000433705 /* RandomParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomParser.swift; sourceTree = "<group>"; };
 		EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCellModel.swift; sourceTree = "<group>"; };
+		EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPresenter.swift; sourceTree = "<group>"; };
 		EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryCell.swift; sourceTree = "<group>"; };
 		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				ED0E594528915A9000C77819 /* TimerViewController.swift */,
 				ED0E594628915A9000C77819 /* TimerViewController.xib */,
+				EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -1174,6 +1177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5135CF286CF3C800403238 /* SelectColorsPresenter.swift in Sources */,
+				EDADA0DF2891B408007FDFDC /* TimerPresenter.swift in Sources */,
 				ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */,
 				ED5135B5286CC9A400403238 /* NotesInstructionDataSource.swift in Sources */,
 				ED1D33E0286AAE64004F1506 /* SettingsStepperCell.swift in Sources */,

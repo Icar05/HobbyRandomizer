@@ -30,7 +30,7 @@ class TimerUtil{
     }
     
     func startTimer(){
-        self.timerValue = getSecondsFromMinutes(minutes: maxTimeInMinutes)
+        self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
@@ -49,9 +49,5 @@ class TimerUtil{
             self.stopTimer()
         }
     }
-           
-
-    private func getSecondsFromMinutes(minutes: Int) -> Int{
-        return minutes * 60
-    }
 }
+

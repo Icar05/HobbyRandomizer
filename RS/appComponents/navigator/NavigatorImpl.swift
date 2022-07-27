@@ -50,8 +50,11 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getTimerScreen() -> UIViewController {
-        let viewController = TimerViewController()
+    func getTimerScreen(storage: UserDefaultStorage) -> UIViewController {
+        let presenter = TimerPresenter(storage: storage)
+        let viewController = TimerViewController(presenter: presenter)
+        presenter.set(view: viewController)
+        
         return viewController
     }
     
