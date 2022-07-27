@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimerViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="timerView" destination="iD1-WX-jrS" id="Amz-pj-Kx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,7 +33,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iD1-WX-jrS" customClass="TimerView" customModule="RS" customModuleProvider="target">
-                    <rect key="frame" x="82" y="323" width="250" height="250"/>
+                    <rect key="frame" x="87" y="328" width="240" height="240"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="BQU-ck-anH"/>

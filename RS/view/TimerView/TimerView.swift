@@ -186,7 +186,7 @@ extension TimerView: TimerUtilDelegate{
     func onTimerFinished() {
         self.isTimerStarted = false
         self.actonLabel.attributedText = getActionTextAttributes()
-        print("onTimerFinished")
+        self.delegate?.onTimeGone()
     }
     
     

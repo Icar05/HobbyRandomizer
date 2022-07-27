@@ -8,11 +8,23 @@
 import UIKit
 
 public final class TimerViewController: UIViewController {
+    
+    
 
+    @IBOutlet weak var timerView: TimerView!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.timerView.delegate = self
     }
 
+}
+
+extension TimerViewController: TimerViewDelegate{
+    
+    public func onTimeGone() {
+        print("onTimerFinished")
+    }
+    
+    
 }
