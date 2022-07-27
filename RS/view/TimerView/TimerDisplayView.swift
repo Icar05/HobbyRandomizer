@@ -26,6 +26,10 @@ class TimerDisplayView: UIView {
     private var innerCircleColor = UIColor.white
     
     private var currentAngle: Double = 225
+    
+    private var maxTimeInSeconds = 0
+    
+    
 
     
     override func prepareForInterfaceBuilder(){
@@ -58,6 +62,10 @@ class TimerDisplayView: UIView {
         self.drawCircle(size: outerCircleSize, color: outCircleColor)
         self.drawSector(currentAngle: currentAngle, color: UIColor.red)
         self.drawCircle(size: innerCircleSize , color: innerCircleColor)
+    }
+    
+    func setMaxTimeInSeconds(maxTimeInSeconds: Int){
+        self.maxTimeInSeconds = maxTimeInSeconds
     }
     
     func updateOutColor(color: UIColor){

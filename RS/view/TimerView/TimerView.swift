@@ -19,6 +19,8 @@ class TimerView: UIView {
     
     private var displayView: TimerDisplayView = TimerDisplayView()
     
+    private let timerUtil: TimerUtil = TimerUtil()
+    
     private var sizeOfView: CGFloat = 250
     
     private var clockLabel: UILabel = UILabel()
@@ -26,6 +28,8 @@ class TimerView: UIView {
     private var actonLabel: UILabel = UILabel()
     
     private var isTimerStarted = false
+    
+    private var maxTimeInMinutes = 1
     
     weak var delegate: TimerViewDelegate? = nil
     
@@ -74,14 +78,18 @@ class TimerView: UIView {
     
     fileprivate func setup(){
         
+        self.timerUtil.delegate = self
+        
         self.backgroundColor = UIColor.clear
-
         self.layer.masksToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.addSubview(displayView)
         self.addSubview(clockLabel)
         self.addSubview(actonLabel)
+        
+        self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
+        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes * 60)
         
         self.setupClockLabel()
         self.setupActionLabel()
@@ -122,7 +130,7 @@ class TimerView: UIView {
     }
 
     fileprivate func setupClockLabel(){
-        let fontSize = sizeOfView / 5
+        let fontSize = sizeOfView / 6
         let clockWidth = sizeOfView / 1.5
         let clockHeight = sizeOfView / 5
         
@@ -130,7 +138,7 @@ class TimerView: UIView {
         self.clockLabel.textAlignment = .center
         self.clockLabel.textColor = outColor
         self.clockLabel.font = UIFont(name: "DBLCDTempBlack", size: fontSize)
-        self.clockLabel.text = "20:20"
+        self.updateClocklabel(value: maxTimeInMinutes * 60)
     }
     
     fileprivate func setActionLabelPosition(){
@@ -139,13 +147,41 @@ class TimerView: UIView {
         self.actonLabel.center.y = self.frame.size.height - marginBottom
     }
 
+    fileprivate func updateClocklabel(value: Int){
+        let time: (Int, Int) = secondsToHoursMinutesSeconds(value)
+        let minutes = time.0
+        let seconds = time.1 == 0 ? "00" : "\(time.1)"
+        self.clockLabel.text = "\(minutes):\(seconds)"
+    }
+    
+    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
+        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
+        self.isTimerStarted ? timerUtil.stopTimer() : timerUtil.startTimer()
         self.isTimerStarted = !isTimerStarted
         self.actonLabel.attributedText = getActionTextAttributes()
-        
-        
-        //todo start timer
     }
+    
+}
+
+extension TimerView: TimerUtilDelegate{
+    
+    
+    func onTimerStop() {
+        self.updateClocklabel(value: maxTimeInMinutes * 60)
+    }
+    
+    func onTimerUpdate(value: Int) {
+        self.updateClocklabel(value: value)
+    }
+    
+    func onTimerFinished() {
+        self.isTimerStarted = false
+        self.actonLabel.attributedText = getActionTextAttributes()
+        print("onTimerFinished")
+    }
+    
     
 }

@@ -15,6 +15,7 @@
 		ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594F2891618700C77819 /* SettingsSimpleCellTableViewCell.swift */; };
 		ED0E59522891618700C77819 /* SettingsSimpleCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */; };
 		ED0E59542891619800C77819 /* SettingsSimpleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */; };
+		ED0E59562891902D00C77819 /* TimerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E59552891902D00C77819 /* TimerUtil.swift */; };
 		ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */; };
 		ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */; };
 		ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */; };
@@ -176,6 +177,7 @@
 		ED0E594F2891618700C77819 /* SettingsSimpleCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSimpleCellTableViewCell.swift; sourceTree = "<group>"; };
 		ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSimpleCellTableViewCell.xib; sourceTree = "<group>"; };
 		ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSimpleCellModel.swift; sourceTree = "<group>"; };
+		ED0E59552891902D00C77819 /* TimerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtil.swift; sourceTree = "<group>"; };
 		ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourse.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				ED0E594A28915AC700C77819 /* TimerDisplayView.swift */,
 				ED0E594C28915AEC00C77819 /* TimerView.swift */,
+				ED0E59552891902D00C77819 /* TimerUtil.swift */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -1245,6 +1248,7 @@
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
 				ED1D33C7286A68C1004F1506 /* SettingsSoundEnableCellModel.swift in Sources */,
+				ED0E59562891902D00C77819 /* TimerUtil.swift in Sources */,
 				ED1D33BD286A60C6004F1506 /* SettingsHeaderCell.swift in Sources */,
 				ED5135B3286CC99200403238 /* NotesInstructionPresenter.swift in Sources */,
 				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,
