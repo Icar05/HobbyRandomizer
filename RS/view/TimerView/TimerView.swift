@@ -30,9 +30,7 @@ class TimerView: UIView {
     private var isTimerStarted = false
     
     private var maxTimeInMinutes = 30
-    
-    private var singleUpdationColor = false
-    
+        
     weak var delegate: TimerViewDelegate? = nil
     
     
@@ -79,11 +77,8 @@ class TimerView: UIView {
     
     func setPreferences(preferences: AppPrefferencesModel){
         self.maxTimeInMinutes = preferences.timerMinutes
-        self.singleUpdationColor = preferences.timerSingleColor
-        
-        
         self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
-        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
+        self.displayView.setPreferences(preferences: preferences)
         self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
     }
     

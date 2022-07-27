@@ -25,9 +25,13 @@ class TimerDisplayView: UIView {
     
     private var innerCircleColor = UIColor.white
     
+    private var updaterColor = UIColor.colorMain!
+    
     private var currentAngle: Double = 225
     
     private var maxTimeInSeconds = 0
+    
+    private var singleUpdaterColor = false
     
     private var currentValue = 0
     
@@ -70,6 +74,11 @@ class TimerDisplayView: UIView {
         self.maxTimeInSeconds = maxTimeInSeconds
     }
     
+    func setPreferences(preferences: AppPrefferencesModel){
+        self.setMaxTimeInSeconds(maxTimeInSeconds: preferences.timerMinutes.toSeconds())
+        self.singleUpdaterColor = preferences.timerSingleColor
+    }
+    
     func updateOutColor(color: UIColor){
         self.outCircleColor = color
         self.setNeedsDisplay()
@@ -107,11 +116,15 @@ class TimerDisplayView: UIView {
         
         let currentAngle: Double = Double((360 * (maxTimeInSeconds - currentValue)) / maxTimeInSeconds)
         let color = getColor(angle: currentAngle)
-                
+    
         self.drawSector(currentAngle: currentAngle, color: color)
     }
     
     private func getColor(angle: Double) -> UIColor{
+        if(singleUpdaterColor) {
+            return updaterColor
+        }
+        
         if(angle < 120){
             return UIColor.coolGreen!
         }else if (angle < 240){
