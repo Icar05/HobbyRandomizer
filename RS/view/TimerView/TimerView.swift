@@ -7,6 +7,11 @@
 
 import UIKit
 
+public protocol TimerViewDelegate: NSObject{
+    func onTimeGone()
+}
+
+
 @IBDesignable
 class TimerView: UIView {
 
@@ -19,6 +24,10 @@ class TimerView: UIView {
     private var clockLabel: UILabel = UILabel()
     
     private var actonLabel: UILabel = UILabel()
+    
+    private var isTimerStarted = false
+    
+    weak var delegate: TimerViewDelegate? = nil
     
     
     @IBInspectable var outColor: UIColor  = UIColor.black {
@@ -84,7 +93,7 @@ class TimerView: UIView {
     }
     
     fileprivate func updateOutColor(){
-        self.actonLabel.attributedText = getActionTextAttributes(text: actonLabel.text!)
+        self.actonLabel.attributedText = getActionTextAttributes()
         self.clockLabel.textColor = outColor
     }
     
@@ -96,10 +105,14 @@ class TimerView: UIView {
         self.actonLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
         self.actonLabel.textAlignment = .center
         self.actonLabel.font = UIFont(name: actonLabel.font.familyName, size: fontSize)
-        self.actonLabel.attributedText = getActionTextAttributes(text: "Start")
+        self.actonLabel.attributedText = getActionTextAttributes()
+        self.actonLabel.isUserInteractionEnabled = true
+        self.actonLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:))))
     }
     
-    fileprivate func getActionTextAttributes(text: String) -> NSAttributedString{
+    fileprivate func getActionTextAttributes() -> NSAttributedString{
+        let text = isTimerStarted ? "Stop" : "Start"
+        
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
             .strokeColor: outColor,
             .foregroundColor: UIColor.white,
@@ -126,4 +139,13 @@ class TimerView: UIView {
         self.actonLabel.center.y = self.frame.size.height - marginBottom
     }
 
+    
+    @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
+        self.isTimerStarted = !isTimerStarted
+        self.actonLabel.attributedText = getActionTextAttributes()
+        
+        
+        //todo start timer
+    }
+    
 }
