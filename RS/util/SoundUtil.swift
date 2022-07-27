@@ -20,6 +20,7 @@ enum SoundCaf: String{
     case Beep = "/System/Library/Audio/UISounds/SIMToolkitGeneralBeep.caf"
     case Negative = "/System/Library/Audio/UISounds/SIMToolkitNegativeACK.caf"
     case End = "/System/Library/Audio/UISounds/end_record.caf"
+    case Timer = "/System/Library/Audio/UISounds/nano/Alarm_Nightstand_Haptic.caf"
 }
 
 class SoundUtil{
@@ -41,13 +42,17 @@ class SoundUtil{
         self.initPlayer()
     }
     
+    private func prepareVolume(value: Float) -> Float{
+        return sound == .Timer ? 1.0 : value
+    }
+    
     private func initPlayer(){
         if(enable){
             
             let scanSoundURL = URL(fileURLWithPath: sound.rawValue)
             do {
                 self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
-                self.player?.volume = volume
+                self.player?.volume = prepareVolume(value: volume)
             } catch let error {
                 print("Player: error: \(error) ")
             }

@@ -10,12 +10,22 @@ import UIKit
 public final class TimerViewController: UIViewController {
     
     
+    
+    private var soundUtil: SoundUtil? = nil
 
     @IBOutlet weak var timerView: TimerView!
+    
+    
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         self.timerView.delegate = self
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.soundUtil = getPlayer(sound: .Timer)
     }
 
 }
@@ -23,8 +33,7 @@ public final class TimerViewController: UIViewController {
 extension TimerViewController: TimerViewDelegate{
     
     public func onTimeGone() {
-        print("onTimerFinished")
+        self.soundUtil?.play()
     }
-    
     
 }
