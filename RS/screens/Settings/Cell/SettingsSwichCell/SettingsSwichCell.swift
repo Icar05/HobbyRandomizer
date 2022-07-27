@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsSoundEnableCell: UITableViewCell, SettingCell {
+class SettingsSwichCell: UITableViewCell, SettingCell {
     
     
     
@@ -29,7 +29,7 @@ class SettingsSoundEnableCell: UITableViewCell, SettingCell {
     }
     
     func update(with model: SettingsModel) {
-        guard let m = model as? SettingsSoundEnableCellModel else {
+        guard let m = model as? SettingsSwichCellModel else {
             return
         }
         

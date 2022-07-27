@@ -61,7 +61,7 @@ public final class SettingsPresenter {
             SettingsHeaderCellModel(
                 title: Translations.Settings.sound
             ),
-            SettingsSoundEnableCellModel(
+            SettingsSwichCellModel(
                 title: Translations.Settings.soundEnable,
                 enable: preferences.isEnabledSound,
                 callback: { [weak self] in
@@ -76,7 +76,7 @@ public final class SettingsPresenter {
             SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
             ),
-            SettingsYesNoCellModel(
+            SettingsSteppperCellModel(
                 title: Translations.Settings.count,
                 value: preferences.yesNoCount,
                 maxValue: 20.0,
@@ -101,7 +101,7 @@ public final class SettingsPresenter {
             SettingsHeaderCellModel(
                 title: Translations.Settings.timerLabel
             ),
-            SettingsYesNoCellModel(
+            SettingsSteppperCellModel(
                 title: Translations.Settings.timerMaxLabel,
                 value: 40.0,
                 maxValue: 60.0,
@@ -109,7 +109,7 @@ public final class SettingsPresenter {
                 callback: { [weak self] in
                     print("new value: \($0)")
             }),
-            SettingsSoundEnableCellModel(
+            SettingsSwichCellModel(
                 title: Translations.Settings.singleProgressColor,
                 enable: true,
                 callback: { [weak self] in

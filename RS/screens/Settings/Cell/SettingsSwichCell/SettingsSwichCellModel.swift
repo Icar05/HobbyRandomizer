@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SettingsSoundEnableCellModel: SettingsModel{
+struct SettingsSwichCellModel: SettingsModel{
    
     
     
@@ -27,6 +27,6 @@ struct SettingsSoundEnableCellModel: SettingsModel{
         return title
     }
         
-    var reuseIdentifier: String = String(describing: SettingsSoundEnableCell.self)
+    var reuseIdentifier: String = String(describing: SettingsSwichCell.self)
 
 }

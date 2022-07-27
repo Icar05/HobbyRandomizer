@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SettingsYesNoCellModel: SettingsModel{
+struct SettingsSteppperCellModel: SettingsModel{
         
         let title: String
         
@@ -28,6 +28,6 @@ struct SettingsYesNoCellModel: SettingsModel{
             return title
         }
             
-        var reuseIdentifier: String = String(describing: SettingsYesNoCountCell.self)
+        var reuseIdentifier: String = String(describing: SettingsStepperCell.self)
 
 }

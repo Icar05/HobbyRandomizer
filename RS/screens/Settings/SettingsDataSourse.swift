@@ -33,7 +33,7 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
     }
     
     func getSettingsSoundEnableIdentifier() -> String{
-        return String(describing: SettingsSoundEnableCell.self)
+        return String(describing: SettingsSwichCell.self)
     }
     
     func getSettingsVolumeIdentifier() -> String{
