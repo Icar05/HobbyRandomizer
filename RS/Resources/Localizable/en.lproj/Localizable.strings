@@ -54,6 +54,7 @@
 "Translations.Settings.yesNoSectors" = "Sectors in the screen YesNo";
 "Translations.Settings.count" = "Count";
 "Translations.Settings.colors" = "Colors";
+"Translations.Settings.startDebug" = "Start debug";
 
 /* Files */
 "Translations.Files.howToCreate" = "How to create importable notes?";

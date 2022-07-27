@@ -92,7 +92,7 @@ public final class SettingsPresenter {
                 title: Translations.Menu.itemTest
             ),
             SettingsSimpleCellModel(
-                title: "Change me!",
+                title: Translations.Settings.startDebug,
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
                 })
