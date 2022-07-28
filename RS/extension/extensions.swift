@@ -97,7 +97,16 @@ extension UIView{
     }
 }
 
+
 extension UIViewController{
+    
+    func blurEffect(){
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurVisualEffectView = UIVisualEffectView(effect: blurEffect)
+            blurVisualEffectView.frame = view.bounds
+        self.view.addSubview(blurVisualEffectView)
+    }
+    
     func showAlert(model: RandItemCellModel){
         let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

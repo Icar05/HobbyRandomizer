@@ -16,6 +16,9 @@ public protocol TimerUtilDelegate: NSObject{
 class TimerUtil{
     
     
+    
+    private let identifier = "TimerNotification"
+    
     private var maxTimeInMinutes = 0
     
     private var timer: Timer? = nil
@@ -24,17 +27,20 @@ class TimerUtil{
     
     weak var delegate: TimerUtilDelegate? = nil
     
+    
    
     func setMaxTime(maxTimeInMinutes: Int){
         self.maxTimeInMinutes = maxTimeInMinutes
     }
     
     func startTimer(){
+        self.registerNotification()
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
+        self.removeNotification()
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()
@@ -47,6 +53,30 @@ class TimerUtil{
         if(timerValue == 0){
             self.delegate?.onTimerFinished()
             self.stopTimer()
+        }
+    }
+    
+    private func removeNotification(){
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+    
+    private func registerNotification(){
+        
+        let time: Double = Double(maxTimeInMinutes.toSeconds())
+        let content =  UNMutableNotificationContent()
+            content.body = "TestBody"
+            content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+             
+        
+        UNUserNotificationCenter.current().add(request) { [self] (error) in
+            if (error != nil) {
+                print("UNUserNotificationCenter: error: \(String(describing: error))")
+            } else {
+                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes)-> Success!")
+            }
         }
     }
 }

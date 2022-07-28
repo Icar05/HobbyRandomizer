@@ -18,6 +18,24 @@ struct Translations{
         }
     }
     
+    struct Permission{
+        public static var permissionTitle: String{
+            "Translations.Permission.permissionTitle".localized(Bundle.main)
+        }
+        
+        public static var permissionSubtitle: String{
+            "Translations.Permission.permissionSubtitle".localized(Bundle.main)
+        }
+        
+        public static var cancel: String{
+            "Translations.Permission.cancel".localized(Bundle.main)
+        }
+        
+        public static var settings: String{
+            "Translations.Permission.settings".localized(Bundle.main)
+        }
+    }
+    
     struct Settings{
         public static var timerLabel: String{
             "Translations.Settings.timerLabel".localized(Bundle.main)

@@ -10,6 +10,12 @@
 "Translations.Menu.itemYesNo" = "YesNo";
 "Translations.Menu.itemTimer" = "Timer";
 
+/* Permission */
+"Translations.Permission.permissionTitle" = "Permission is required";
+"Translations.Permission.permissionSubtitle" = "In order to get notification, this app needs permsission. You can switch it on in settings";
+"Translations.Permission.cancel" = "Cancel";
+"Translations.Permission.settings" = "Settings";
+
 /* Show */
 "Translations.Show.startRandom" = "Get random!"; 
 

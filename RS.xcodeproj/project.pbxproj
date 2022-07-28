@@ -154,6 +154,7 @@
 		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
 		EDCFE5ED286921DF00AF3AC4 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5EB286921DF00AF3AC4 /* InfoDetailCell.swift */; };
 		EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5EC286921DF00AF3AC4 /* InfoDetailCell.xib */; };
+		EDD4C48C28933A6E003A17B8 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4C48B28933A6E003A17B8 /* AlertUtil.swift */; };
 		EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */; };
 		EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */; };
 		EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */; };
@@ -320,6 +321,7 @@
 		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
 		EDCFE5EB286921DF00AF3AC4 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
 		EDCFE5EC286921DF00AF3AC4 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
+		EDD4C48B28933A6E003A17B8 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
 		EDD576F52850FEC400DAAEC3 /* CasinoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoViewController.swift; sourceTree = "<group>"; };
 		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,
 				ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */,
 				ED1D33D7286A9C96004F1506 /* SoundUtil.swift */,
+				EDD4C48B28933A6E003A17B8 /* AlertUtil.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -1204,6 +1207,7 @@
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */,
 				ED1D33D1286A6E10004F1506 /* SettingsVolumeCell.swift in Sources */,
+				EDD4C48C28933A6E003A17B8 /* AlertUtil.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED5135E4286D22DA00403238 /* YesNoUtil.swift in Sources */,
 				EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */,
