@@ -13,7 +13,7 @@ class NotificationUtil{
     
     private let showLogs = true
     
-    private let log = "TBU"
+    private let log = "NotificationUtil"
     
     
     
@@ -35,7 +35,7 @@ class NotificationUtil{
      */
     func checkNotificationPermission(doIfNotPermitted: @escaping () -> Void){
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (bool, error) in
-            self.printLog("UNUserNotificationCenter Permission -> permitted: \(bool), error: \(String(describing: error))")
+            self.printLog("Permission -> permitted: \(bool), error: \(String(describing: error))")
             
             if(!bool){
                doIfNotPermitted()
@@ -69,14 +69,14 @@ class NotificationUtil{
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
         let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
         
-        printLog("sound: \(sound)")
+//        printLog("sound: \(sound)")
              
         
         UNUserNotificationCenter.current().add(request) { [self] (error) in
             if (error != nil) {
-                printLog("UNUserNotificationCenter: error: \(String(describing: error))")
+                printLog("sceduleNotification: error: \(String(describing: error))")
             } else {
-                printLog("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes) minutes -> Success!")
+                printLog("sceduleNotification: time \(maxTimeInMinutes) minutes")
             }
         }
     }

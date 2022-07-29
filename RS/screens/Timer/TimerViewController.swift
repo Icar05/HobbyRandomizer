@@ -56,8 +56,8 @@ public final class TimerViewController: UIViewController {
 
 extension TimerViewController: TimerViewDelegate{
     
-    public func actionButtonDidTap(isTimerStarted: Bool) {
-        isTimerStarted ? timerUtil.stopTimer() : timerUtil.startTimer()
+    public func actionButtonDidTap(needTimerStart: Bool) {
+        needTimerStart ? timerUtil.startTimer() : timerUtil.stopTimer()
     }
     
 }

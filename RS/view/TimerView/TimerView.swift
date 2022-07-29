@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol TimerViewDelegate: NSObject{
-    func actionButtonDidTap(isTimerStarted: Bool)
+    func actionButtonDidTap(needTimerStart: Bool)
 }
 
 let DEFAULT_MAX_TIME = 30
@@ -179,9 +179,9 @@ class TimerView: UIView {
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
-        self.delegate?.actionButtonDidTap(isTimerStarted: isTimerStarted)
         self.isTimerStarted = !isTimerStarted
         self.actonLabel.attributedText = getActionTextAttributes()
+        self.delegate?.actionButtonDidTap(needTimerStart: isTimerStarted)
     }
 }
 
