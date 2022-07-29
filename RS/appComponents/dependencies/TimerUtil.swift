@@ -111,7 +111,6 @@ class TimerUtil{
                 if(self.isTimerStarted()){
                     self.timerHasUpdatedInBackground()
                 }
-                
             }
         })
     }
@@ -120,18 +119,20 @@ class TimerUtil{
     //we don't have any messages
     //timer can be still running, or state can be already handled
     private func timerHasUpdatedInBackground(){
-        printLog("timerHasUpdatedInBackground ( finished )")
-        // can be possible getting there after timer finished work, and it will be handled,
-        // so wanted check if timer is stopped and finished
         
-        // get ellapsed time
-        // update timer util
-        // get callback from timer util to update views
+        let elapsedTime = elapsedTimeUtil.getElapsedTime()
+        self.timerValue = maxTimeInMinutes.toSeconds() - elapsedTime
+        
+        printLog("timerHasUpdatedInBackground ( has not finished ), elapsed: \(elapsedTime)")
+        
+        DispatchQueue.main.async { [self] in
+            self.delegate?.onTimerUpdate(value: self.timerValue)
+        }
     }
     
     //we have delivered message, we have to notify timer about finish
     private func timerHasFinishedInBackground(){
-        printLog("timerHasFinishedInBackground ( did not finished )")
+        printLog("timerHasFinishedInBackground ( has finished)")
         DispatchQueue.main.async {
             self.stopTimer()
             self.notificationUtil.clearDeliveredNotifications()
