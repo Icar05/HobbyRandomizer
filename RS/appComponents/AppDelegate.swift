@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let alertUtil = AlertUtil()
     
-    private let timerBackgroundUtil = TBU()
+    private let notificationUtil = NotificationUtil()
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -55,15 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return fileUtil
     }
     
-    func getTimerBackgroundUtil() -> TBU{
-        return timerBackgroundUtil
+    func getNotificationUtil() -> NotificationUtil{
+        return notificationUtil
     }
    
     /**
         permissions
      */
     private func checkNotificationPermission(){
-        self.timerBackgroundUtil.checkNotificationPermission {
+        self.notificationUtil.checkNotificationPermission {
             DispatchQueue.main.async {
                 self.handleDisabledPermission()
             }

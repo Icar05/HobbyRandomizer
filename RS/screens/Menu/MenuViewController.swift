@@ -69,8 +69,9 @@ extension MenuViewController: MenuDelegate{
         let navigator =  getNavigator()
         let storage = getAppDelegate().getStorage()
         let fileUtil = getAppDelegate().getFileUtil()
+        let notificationUtil = getAppDelegate().getNotificationUtil()
         
-        guard let destination = getController(item: item, navigator: navigator, storage: storage, fileUtil: fileUtil) else {
+        guard let destination = getController(item: item, navigator: navigator, storage: storage, fileUtil: fileUtil, notificationUtil: notificationUtil) else {
             print("not implemented: \(item)")
             return
         }
@@ -79,7 +80,7 @@ extension MenuViewController: MenuDelegate{
     }
     
     
-    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController?{
+    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: FileWriterUtil, notificationUtil: NotificationUtil) -> UIViewController?{
         
         switch item {
         case .Casino:
@@ -101,7 +102,7 @@ extension MenuViewController: MenuDelegate{
         case .YesNo:
             return navigator.getYesNoScreen(storage: storage)
         case .Timer:
-            return navigator.getTimerScreen(storage: storage)
+            return navigator.getTimerScreen(storage: storage, notificationUtil: notificationUtil)
         }
     }
 }

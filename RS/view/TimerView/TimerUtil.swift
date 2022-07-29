@@ -23,7 +23,7 @@ class TimerUtil{
     
     
     
-    private var timerBackgroundUtil = TBU()
+    private var notificationUtil: NotificationUtil
     
     private var maxTimeInMinutes = DEFAULT_MAX_TIME
     
@@ -34,6 +34,10 @@ class TimerUtil{
     weak var delegate: TimerUtilDelegate? = nil
     
     
+    init(notificationUtil: NotificationUtil){
+        self.notificationUtil = notificationUtil
+    }
+    
    
     func setMaxTime(maxTimeInMinutes: Int){
         self.maxTimeInMinutes = maxTimeInMinutes
@@ -41,22 +45,22 @@ class TimerUtil{
     
     #warning("maybe delete later")
     func hasDeliveredNotification(callback: @escaping (_ itHas: Bool) -> Void){
-        self.timerBackgroundUtil.hasDeliveredNotification(callback: callback)
+        self.notificationUtil.hasDeliveredNotification(callback: callback)
     }
     
     #warning("maybe delete later")
     func clearDeliveredNotifications(){
-        self.timerBackgroundUtil.clearDeliveredNotifications()
+        self.notificationUtil.clearDeliveredNotifications()
     }
     
     func startTimer(){
-        self.timerBackgroundUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
+        self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
-        self.timerBackgroundUtil.cancelNotification()
+        self.notificationUtil.cancelNotification()
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()

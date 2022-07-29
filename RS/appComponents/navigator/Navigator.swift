@@ -25,5 +25,5 @@ protocol Navigator{
     func getNotesInstructionScreen() -> UIViewController
     func getSelectColorScreen(storage: UserDefaultStorage) -> UIViewController
     func getYesNoScreen(storage: UserDefaultStorage) -> UIViewController
-    func getTimerScreen(storage: UserDefaultStorage) -> UIViewController
+    func getTimerScreen(storage: UserDefaultStorage, notificationUtil: NotificationUtil) -> UIViewController 
 }
