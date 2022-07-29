@@ -17,21 +17,23 @@ class AppComponent{
     
     private let fileUtil: FileWriterUtil = FileWriterUtil()
     
-    private var testUtil: TestUtil? = nil
-    
     private let alertUtil = AlertUtil()
     
     private let notificationUtil = NotificationUtil()
     
+    private let testUtil: TestUtil
+    
+    private let elapsedTimeUtil : ElapsedTimeUtil
     
     
     
     init(){
         self.testUtil = TestUtil(fileUtil: fileUtil)
+        self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
     }
     
     func getTestUtil() -> TestUtil{
-        return self.testUtil!
+        return self.testUtil
     }
     
     func getSoundUtil(sound: SoundCaf) -> SoundUtil{
@@ -57,5 +59,9 @@ class AppComponent{
     
     func getAlertUtil() -> AlertUtil{
         return alertUtil
+    }
+    
+    func getElapsedTimeUtil() -> ElapsedTimeUtil{
+        return elapsedTimeUtil
     }
 }

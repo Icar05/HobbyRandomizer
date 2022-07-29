@@ -30,7 +30,6 @@ class NotificationUtil{
         }
     }
     
-    
     /**
         check notification permissins
      */
@@ -42,27 +41,6 @@ class NotificationUtil{
                doIfNotPermitted()
             }
         }
-    }
-    
-    /**
-        storage methods , read write time from start timer
-     */
-    func saveStartTimerTime(){
-        #warning("need storage")
-    }
-    
-    func clearStartTimerTime(){
-        #warning("need storage")
-    }
-    
-    func getElapsedTime() -> Int{
-        #warning("need storage")
-        return 0
-    }
-    
-    func isTimerStarted() -> Bool{
-        #warning("need storage")
-        return false
     }
     
     /**

@@ -151,6 +151,7 @@
 		EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */; };
 		EDADA0DF2891B408007FDFDC /* TimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */; };
 		EDB804F728944415004F9899 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB804F628944415004F9899 /* AppComponent.swift */; };
+		EDB804F928944997004F9899 /* ElapsedTimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB804F828944997004F9899 /* ElapsedTimeUtil.swift */; };
 		EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */; };
 		EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */; };
 		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
@@ -320,6 +321,7 @@
 		EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCellModel.swift; sourceTree = "<group>"; };
 		EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPresenter.swift; sourceTree = "<group>"; };
 		EDB804F628944415004F9899 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
+		EDB804F828944997004F9899 /* ElapsedTimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeUtil.swift; sourceTree = "<group>"; };
 		EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryCell.swift; sourceTree = "<group>"; };
 		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
@@ -390,7 +392,6 @@
 				ED6EEF732715C6FF00D4EFE9 /* view */,
 				ED4DF384271875C2007966EE /* storyboard */,
 				ED4DF385271875D1007966EE /* extension */,
-				ED4A3CC4271A290000084BB8 /* util */,
 				ED4DF3832718758E007966EE /* appComponents */,
 				ED5A6C52284FCFF80028BEED /* screens */,
 				EDF8A55B2864EEAD00565AAF /* Resources */,
@@ -463,14 +464,6 @@
 			path = SettingsStepperCell;
 			sourceTree = "<group>";
 		};
-		ED3642642717536C0083D578 /* storage */ = {
-			isa = PBXGroup;
-			children = (
-				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
-			);
-			path = storage;
-			sourceTree = "<group>";
-		};
 		ED435825286BCF2300F99459 /* SettingsYesNoColors */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,25 +492,27 @@
 			path = ImportDataCell;
 			sourceTree = "<group>";
 		};
-		ED4A3CC4271A290000084BB8 /* util */ = {
+		ED4A3CC4271A290000084BB8 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				ED7EEF152867E4A000B5BE46 /* viewUtils */,
 				ED7EEF162867E4B800B5BE46 /* parser */,
-				ED7EEF152867E4A000B5BE46 /* view */,
+				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
 				ED7918972863AE780041D407 /* FileWriterUtil.swift */,
 				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,
 				ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */,
 				ED1D33D7286A9C96004F1506 /* SoundUtil.swift */,
 				EDD4C48B28933A6E003A17B8 /* AlertUtil.swift */,
 				ED73078F2893FE4B005FFAF1 /* NotificationUtil.swift */,
+				EDB804F828944997004F9899 /* ElapsedTimeUtil.swift */,
 			);
-			path = util;
+			path = dependencies;
 			sourceTree = "<group>";
 		};
 		ED4DF3832718758E007966EE /* appComponents */ = {
 			isa = PBXGroup;
 			children = (
-				ED3642642717536C0083D578 /* storage */,
+				ED4A3CC4271A290000084BB8 /* dependencies */,
 				ED5A6C58284FD4C10028BEED /* navigator */,
 				ED6EEF6D2715C6D300D4EFE9 /* Info.plist */,
 				ED5F11372717C963006454AD /* Colors.xcassets */,
@@ -838,14 +833,14 @@
 			path = ActionButtonCell;
 			sourceTree = "<group>";
 		};
-		ED7EEF152867E4A000B5BE46 /* view */ = {
+		ED7EEF152867E4A000B5BE46 /* viewUtils */ = {
 			isa = PBXGroup;
 			children = (
 				ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */,
 				ED4A3CC9271A50CB00084BB8 /* DetectSectorUtil.swift */,
 				ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */,
 			);
-			path = view;
+			path = viewUtils;
 			sourceTree = "<group>";
 		};
 		ED7EEF162867E4B800B5BE46 /* parser */ = {
@@ -1228,6 +1223,7 @@
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
 				ED5135C2286CD1D200403238 /* NotesInstructionHeaderCellModel.swift in Sources */,
 				ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */,
+				EDB804F928944997004F9899 /* ElapsedTimeUtil.swift in Sources */,
 				ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */,
 				ED0E594B28915AC700C77819 /* TimerDisplayView.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
