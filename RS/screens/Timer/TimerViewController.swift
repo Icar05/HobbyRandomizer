@@ -42,10 +42,6 @@ public final class TimerViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.soundUtil = getAppComponent().getSoundUtil(sound: .Timer)
-
-        NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(appGoneToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         self.timerView.delegate = self
         self.timerUtil.delegate = self
@@ -54,44 +50,6 @@ public final class TimerViewController: UIViewController {
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
         self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
         self.timerView.setPreferences(preferences: appPreferences)
-    }
-    
-    @objc func appGoneToBackground() {
-        print("Application: app in background!")
-    }
-    
-    @objc func appCameToForeground() {
-        print("Application: app in foreground!")
-        
-        self.timerUtil.hasDeliveredNotification(callback: {itHas in
-            if(itHas){
-                self.timerDidFinishedInBackground()
-            } else{
-                self.timerDidUpdatedInBackground()
-            }
-        })
-    }
-    
-    //we don't have any messages
-    //timer can be still running, or state can be already handled
-    private func timerDidUpdatedInBackground(){
-        #warning("detect if timer is started (variable?)")
-        
-        // can be possible getting there after timer finished work, and it will be handled,
-        // so wanted check if timer is stopped and finished
-        
-        // get ellapsed time
-        // update timer util
-        // get callback from timer util to update views
-    }
-    
-    
-    //we have delivered message, we have to notify timer about finish
-    private func timerDidFinishedInBackground(){
-        DispatchQueue.main.async {
-            self.timerUtil.stopTimer()
-            self.timerUtil.clearDeliveredNotifications()
-        }
     }
 
 }
