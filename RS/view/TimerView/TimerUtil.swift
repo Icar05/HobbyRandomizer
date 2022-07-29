@@ -72,6 +72,8 @@ class TimerUtil{
         printLog("stopTimer")
     }
     
+    // as more stick alternative you can use notificationUtil.hasPandingNotification
+    // if it' has, timer run. cause after finish it all removed
     func isTimerStarted() -> Bool {
         return self.timer != nil
     }
