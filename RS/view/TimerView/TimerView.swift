@@ -8,9 +8,10 @@
 import UIKit
 
 public protocol TimerViewDelegate: NSObject{
-    func onTimeGone()
+    func actionButtonDidTap(isTimerStarted: Bool)
 }
 
+let DEFAULT_MAX_TIME = 30
 
 @IBDesignable
 class TimerView: UIView {
@@ -18,8 +19,6 @@ class TimerView: UIView {
     
     
     private var displayView: TimerDisplayView = TimerDisplayView()
-    
-    private let timerUtil: TimerUtil = TimerUtil()
     
     private var sizeOfView: CGFloat = 250
     
@@ -29,7 +28,7 @@ class TimerView: UIView {
     
     private var isTimerStarted = false
     
-    private var maxTimeInMinutes = 30
+    private var maxTimeInMinutes = DEFAULT_MAX_TIME
         
     weak var delegate: TimerViewDelegate? = nil
     
@@ -75,22 +74,30 @@ class TimerView: UIView {
         }
     }
     
-    #warning("maybe delete later")
-    func hasDeliveredNotification(callback: @escaping (_ itHas: Bool) -> Void){
-        self.timerUtil.hasDeliveredNotification(callback: callback)
-    }
-    
     func setPreferences(preferences: AppPrefferencesModel){
         self.maxTimeInMinutes = preferences.timerMinutes
-        self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
         self.displayView.setPreferences(preferences: preferences)
         self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
     }
     
+    func onTimerStop() {
+        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
+        self.displayView.updateCurrentValue(value: 0)
+        self.isTimerStarted = false
+        self.actonLabel.attributedText = getActionTextAttributes()
+    }
+    
+    func onTimerUpdate(value: Int) {
+        self.updateClocklabel(value: value)
+        self.displayView.updateCurrentValue(value: value)
+    }
+    
+    func onTimerFinished() {
+        self.isTimerStarted = false
+        self.actonLabel.attributedText = getActionTextAttributes()
+    }
     
     fileprivate func setup(){
-        
-        self.timerUtil.delegate = self
         
         self.backgroundColor = UIColor.clear
         self.layer.masksToBounds = true
@@ -99,10 +106,7 @@ class TimerView: UIView {
         self.addSubview(displayView)
         self.addSubview(clockLabel)
         self.addSubview(actonLabel)
-        
-        self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
-        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
-        
+                
         self.setupClockLabel()
         self.setupActionLabel()
         self.setupDisplayView()
@@ -166,51 +170,18 @@ class TimerView: UIView {
         self.clockLabel.text = "\(minutes):\(seconds)"
     }
     
-    func numToString(value: Int) -> String{
+    fileprivate func numToString(value: Int) -> String{
         return (value < 10) ? "0\(value)" : "\(value)"
     }
     
-    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
+    fileprivate func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
-    func finishFromBackground(){
-        self.timerUtil.stopTimer()
-    }
-    
-    #warning("maybe delete later")
-    func clearDeliveredNotifications(){
-        self.timerUtil.clearDeliveredNotifications()
-    }
-    
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
-        self.isTimerStarted ? timerUtil.stopTimer() : timerUtil.startTimer()
+        self.delegate?.actionButtonDidTap(isTimerStarted: isTimerStarted)
         self.isTimerStarted = !isTimerStarted
         self.actonLabel.attributedText = getActionTextAttributes()
     }
-    
 }
 
-extension TimerView: TimerUtilDelegate{
-    
-    
-    func onTimerStop() {
-        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
-        self.displayView.updateCurrentValue(value: 0)
-        self.isTimerStarted = false
-        self.actonLabel.attributedText = getActionTextAttributes()
-    }
-    
-    func onTimerUpdate(value: Int) {
-        self.updateClocklabel(value: value)
-        self.displayView.updateCurrentValue(value: value)
-    }
-    
-    func onTimerFinished() {
-        self.isTimerStarted = false
-        self.actonLabel.attributedText = getActionTextAttributes()
-        self.delegate?.onTimeGone()
-    }
-    
-    
-}

@@ -11,6 +11,8 @@ public final class TimerViewController: UIViewController {
     
     
     
+    private let timerUtil: TimerUtil = TimerUtil()
+    
     private let presenter: TimerPresenter
     
     private var soundUtil: SoundUtil? = nil
@@ -32,7 +34,6 @@ public final class TimerViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        self.timerView.delegate = self
         
         self.presenter.viewDidLoad()
     }
@@ -45,21 +46,24 @@ public final class TimerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(appGoneToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-              
+        
+        self.timerView.delegate = self
+        self.timerUtil.delegate = self
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
+        self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
         self.timerView.setPreferences(preferences: appPreferences)
     }
     
     @objc func appGoneToBackground() {
-        print("app in background!")
+        print("Application: app in background!")
     }
     
     @objc func appCameToForeground() {
-        print("app in foreground!")
+        print("Application: app in foreground!")
         
-        self.timerView.hasDeliveredNotification(callback: {itHas in
+        self.timerUtil.hasDeliveredNotification(callback: {itHas in
             if(itHas){
                 self.timerDidFinishedInBackground()
             } else{
@@ -85,16 +89,34 @@ public final class TimerViewController: UIViewController {
     //we have delivered message, we have to notify timer about finish
     private func timerDidFinishedInBackground(){
         DispatchQueue.main.async {
-            self.timerView.finishFromBackground()
-            self.timerView.clearDeliveredNotifications()
+            self.timerUtil.stopTimer()
+            self.timerUtil.clearDeliveredNotifications()
         }
     }
 
 }
 
 extension TimerViewController: TimerViewDelegate{
+    
+    public func actionButtonDidTap(isTimerStarted: Bool) {
+        isTimerStarted ? timerUtil.stopTimer() : timerUtil.startTimer()
+    }
+    
+}
 
-    public func onTimeGone() {
+
+extension TimerViewController: TimerUtilDelegate{
+    
+    public func onTimerStop() {
+        self.timerView.onTimerStop()
+    }
+    
+    public func onTimerUpdate(value: Int) {
+        self.timerView.onTimerUpdate(value: value)
+    }
+    
+    public func onTimerFinished() {
+        self.timerView.onTimerFinished()
         self.soundUtil?.play()
     }
     

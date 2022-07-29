@@ -29,7 +29,7 @@ class TimerDisplayView: UIView {
     
     private var currentAngle: Double = 225
     
-    private var maxTimeInSeconds = 0
+    private var maxTimeInSeconds = DEFAULT_MAX_TIME
     
     private var singleUpdaterColor = false
     

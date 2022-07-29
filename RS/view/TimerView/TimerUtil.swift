@@ -25,7 +25,7 @@ class TimerUtil{
     
     private var timerBackgroundUtil = TBU()
     
-    private var maxTimeInMinutes = 0
+    private var maxTimeInMinutes = DEFAULT_MAX_TIME
     
     private var timer: Timer? = nil
     
