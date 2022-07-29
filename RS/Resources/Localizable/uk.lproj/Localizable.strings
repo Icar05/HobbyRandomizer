@@ -55,6 +55,7 @@
 /* Timer */
 "Translations.Timer.startTimerText" = "Старт";
 "Translations.Timer.stopTimerText" = "Стоп";
+"Translations.Timer.timeHasGone" = "Час сплинув"; 
 
 /* Settings */
 "Translations.Settings.settings" = "Налаштування";

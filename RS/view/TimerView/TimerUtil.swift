@@ -66,7 +66,7 @@ class TimerUtil{
     private func registerNotification(){
         let time: Double = Double(maxTimeInMinutes.toSeconds())
         let content =  UNMutableNotificationContent()
-            content.body = "Need text"
+            content.body = Translations.Timer.timeHasGone
             content.sound = .default
                     
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)

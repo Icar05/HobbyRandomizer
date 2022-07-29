@@ -9,6 +9,10 @@ import Foundation
 struct Translations{
     
     struct Timer{
+        public static var timeHasGone: String{
+            "Translations.Timer.timeHasGone".localized(Bundle.main)
+        }
+        
         public static var startTimerText: String{
             "Translations.Timer.startTimerText".localized(Bundle.main)
         }
