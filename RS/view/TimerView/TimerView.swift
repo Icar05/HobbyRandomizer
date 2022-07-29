@@ -26,6 +26,8 @@ class TimerView: UIView {
     
     private var actonLabel: UILabel = UILabel()
     
+    private var elapsedLabel: UILabel = UILabel()
+    
     private var isTimerStarted = false
     
     private var maxTimeInMinutes = DEFAULT_MAX_TIME
@@ -71,6 +73,7 @@ class TimerView: UIView {
             self.displayView.center = self.center
             self.clockLabel.center = self.center
             self.setActionLabelPosition()
+            self.setEllaptionLabelPosition()
         }
     }
     
@@ -106,10 +109,16 @@ class TimerView: UIView {
         self.addSubview(displayView)
         self.addSubview(clockLabel)
         self.addSubview(actonLabel)
+        self.addSubview(elapsedLabel)
                 
         self.setupClockLabel()
         self.setupActionLabel()
         self.setupDisplayView()
+        self.setupElapsedLabel()
+    }
+    
+    func updateElapsedLabel(value: String){
+        self.elapsedLabel.text = value
     }
     
     fileprivate func setupDisplayView(){
@@ -119,6 +128,17 @@ class TimerView: UIView {
     fileprivate func updateOutColor(){
         self.actonLabel.attributedText = getActionTextAttributes()
         self.clockLabel.textColor = outColor
+    }
+    
+    fileprivate func setupElapsedLabel(){
+        let fontSize = sizeOfView / 10
+        let actionWidth = sizeOfView / 3
+        let actionHeight = sizeOfView / 10
+    
+        self.elapsedLabel.textColor = UIColor.red
+        self.elapsedLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
+        self.elapsedLabel.textAlignment = .center
+        self.elapsedLabel.font = UIFont(name: elapsedLabel.font.familyName, size: fontSize)
     }
     
     fileprivate func setupActionLabel(){
@@ -161,6 +181,11 @@ class TimerView: UIView {
         let marginBottom = self.sizeOfView / 4
         self.actonLabel.center.x = self.center.x
         self.actonLabel.center.y = self.frame.size.height - marginBottom
+    }
+    
+    fileprivate func setEllaptionLabelPosition(){
+        self.elapsedLabel.center.x = self.center.x
+        self.elapsedLabel.center.y = self.sizeOfView / 4
     }
 
     fileprivate func updateClocklabel(value: Int){
