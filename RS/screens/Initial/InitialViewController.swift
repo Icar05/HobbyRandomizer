@@ -28,13 +28,13 @@ public final class InitialViewController: UINavigationController {
         super.viewDidLoad()
         setupUI()
         
-        self.soundUtil = getPlayer(sound: .Tock)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Tock)
         self.delegate = self
         
     }
     
     func reLoadSound(){
-        self.soundUtil = getPlayer(sound: .Tock)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Tock)
     }
     
     private func setupUI() {}

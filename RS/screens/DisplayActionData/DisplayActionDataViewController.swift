@@ -77,7 +77,7 @@ public final class DisplayActionDataViewController:  UIViewController {
     }
     
     private func navigateToRandom(){
-        let navigator =  getNavigator()
+        let navigator =  getAppComponent().getNavigator()
         let destination = navigator.getRandomizerScreen(models: self.dataSource.getData())
         navigator.navigate(start: self, destination: destination)
     }

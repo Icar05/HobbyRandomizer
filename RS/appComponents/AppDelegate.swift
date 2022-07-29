@@ -11,59 +11,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
+    
+    
+    private let appComponent = AppComponent()
+    
     var window: UIWindow?
-    
-    private let navigator: Navigator = NavigatorImpl()
-    
-    private let storage: UserDefaultStorage = UserDefaultStorage()
-    
-    private let fileUtil: FileWriterUtil = FileWriterUtil()
-    
-    private var testUtil: TestUtil? = nil
-    
-    private let alertUtil = AlertUtil()
-    
-    private let notificationUtil = NotificationUtil()
+
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-                
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.navigator.setupInitialViewController(window: window!)
-        self.testUtil = TestUtil(fileUtil: fileUtil)
-        self.testUtil?.startTest()
+        self.appComponent.getNavigator().setupInitialViewController(window: window!)
+        self.appComponent.getTestUtil().startTest()
         self.checkNotificationPermission()
-       
         
         return true
     }
     
-    func getSoundUtil(sound: SoundCaf) -> SoundUtil{
-        let model = getStorage().getAppPreferences()
-        return SoundUtil(enable: model.isEnabledSound, volume: model.volume, sound: sound)
-    }
     
-    func getNavigator() -> Navigator{
-        return self.navigator
-    }
-    
-    func getStorage() -> UserDefaultStorage{
-        return self.storage
-    }
-    
-    func getFileUtil() -> FileWriterUtil{
-        return fileUtil
-    }
-    
-    func getNotificationUtil() -> NotificationUtil{
-        return notificationUtil
+    func getAppComponent() -> AppComponent{
+        return appComponent
     }
    
     /**
-        permissions
+        request permissions for notifications
      */
     private func checkNotificationPermission(){
-        self.notificationUtil.checkNotificationPermission {
+        self.appComponent.getNotificationUtil().checkNotificationPermission {
             DispatchQueue.main.async {
                 self.handleDisabledPermission()
             }
@@ -76,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        let alert = self.alertUtil.getAlert()
+        let alert = self.appComponent.getAlertUtil().getAlert()
         rootViewController.blurEffect()
         rootViewController.present(alert, animated: true)
     }

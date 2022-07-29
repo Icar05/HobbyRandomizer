@@ -122,12 +122,8 @@ extension UIViewController{
         self.present(alert, animated: true)
     }
     
-    func getPlayer(sound: SoundCaf) -> SoundUtil{
-        return getAppDelegate().getSoundUtil(sound: sound)
-    }
-    
-    func getNavigator() -> Navigator{
-        return getAppDelegate().getNavigator()
+    func getAppComponent() -> AppComponent{
+        return getAppDelegate().getAppComponent()
     }
     
     func getAppDelegate() -> AppDelegate{

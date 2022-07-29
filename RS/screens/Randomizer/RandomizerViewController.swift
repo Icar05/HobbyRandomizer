@@ -63,7 +63,7 @@ public final class RandomizerViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.soundUtil = getPlayer(sound: .Tink)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Tink)
     }
     
     private func setupText(){

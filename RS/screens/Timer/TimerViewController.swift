@@ -41,7 +41,7 @@ public final class TimerViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.soundUtil = getPlayer(sound: .Timer)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Timer)
 
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         

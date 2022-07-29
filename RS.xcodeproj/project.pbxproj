@@ -150,6 +150,7 @@
 		EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBA288DEA3000433705 /* RandomParser.swift */; };
 		EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */; };
 		EDADA0DF2891B408007FDFDC /* TimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */; };
+		EDB804F728944415004F9899 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB804F628944415004F9899 /* AppComponent.swift */; };
 		EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */; };
 		EDCFE5E82869207300AF3AC4 /* CathegoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */; };
 		EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */; };
@@ -318,6 +319,7 @@
 		EDAA9DBA288DEA3000433705 /* RandomParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomParser.swift; sourceTree = "<group>"; };
 		EDAA9DBC288DF0A300433705 /* ImportDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCellModel.swift; sourceTree = "<group>"; };
 		EDADA0DE2891B407007FDFDC /* TimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPresenter.swift; sourceTree = "<group>"; };
+		EDB804F628944415004F9899 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		EDCFE5DF28690DFC00AF3AC4 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		EDCFE5E62869207300AF3AC4 /* CathegoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathegoryCell.swift; sourceTree = "<group>"; };
 		EDCFE5E72869207300AF3AC4 /* CathegoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CathegoryCell.xib; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				ED5F11372717C963006454AD /* Colors.xcassets */,
 				ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */,
 				ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */,
+				EDB804F628944415004F9899 /* AppComponent.swift */,
 			);
 			path = appComponents;
 			sourceTree = "<group>";
@@ -1213,6 +1216,7 @@
 				EDD4C48C28933A6E003A17B8 /* AlertUtil.swift in Sources */,
 				ED5F112C271772E3006454AD /* CasinoView.swift in Sources */,
 				ED5135E4286D22DA00403238 /* YesNoUtil.swift in Sources */,
+				EDB804F728944415004F9899 /* AppComponent.swift in Sources */,
 				EDAA9DBB288DEA3000433705 /* RandomParser.swift in Sources */,
 				ED36424B2717121D0083D578 /* CreateIdeaView.swift in Sources */,
 				ED7EEF122867E3DD00B5BE46 /* Parser.swift in Sources */,

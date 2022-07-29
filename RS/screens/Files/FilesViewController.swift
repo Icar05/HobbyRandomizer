@@ -55,19 +55,19 @@ public final class FilesViewController: UIViewController {
     }
     
     func displayData(data: [InfoModel]){
-        let controller = getNavigator().getDisplayInfoDataScreen(data: data)
-        getNavigator().navigate(start: self, destination: controller)
+        let controller = getAppComponent().getNavigator().getDisplayInfoDataScreen(data: data)
+        getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
 
     func displayData(data: [RandItemCellModel]){
-        let storage = getAppDelegate().getStorage()
-        let controller = getNavigator().getDisplayActionDataScreen(data: data, storage: storage)
-        getNavigator().navigate(start: self, destination: controller)
+        let storage = getAppComponent().getStorage()
+        let controller = getAppComponent().getNavigator().getDisplayActionDataScreen(data: data, storage: storage)
+        getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
     
     func displayData(data: String){
-        let controller = getNavigator().getDisplayRawDataScreen(data: data)
-        getNavigator().navigate(start: self, destination: controller)
+        let controller = getAppComponent().getNavigator().getDisplayRawDataScreen(data: data)
+        getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
     
     func didFileRemoved(value: Bool){
@@ -97,7 +97,7 @@ extension FilesViewController: FileDataSourceDelegate{
     
     
     func onQuestionDidTap() {
-        let navigator = getNavigator()
+        let navigator = getAppComponent().getNavigator()
         let notesController = navigator.getNotesInstructionScreen()
         navigator.navigate(start: self, destination: notesController)
     }

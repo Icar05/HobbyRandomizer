@@ -56,7 +56,7 @@ public final class SettingsViewController: UIViewController {
     }
     
     func navigateToDebug(){
-        let navigator = getNavigator()
+        let navigator = getAppComponent().getNavigator()
         let destination = navigator.getDebugScreen()
         navigator.navigate(start: self, destination: destination)
     }
@@ -64,8 +64,8 @@ public final class SettingsViewController: UIViewController {
     func navigateToColorSelection(){
         presenter.savePreferences()
         
-        let storage = getAppDelegate().getStorage()
-        let navigator = getNavigator()
+        let storage = getAppComponent().getStorage()
+        let navigator = getAppComponent().getNavigator()
         let destination = navigator.getSelectColorScreen(storage: storage)
         navigator.navigate(start: self, destination: destination)
     }

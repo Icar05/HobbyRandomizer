@@ -10,6 +10,8 @@ import UIKit
 public final class MenuViewController: UIViewController {
     
     
+    
+    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     private let dataSource = MenuDataSource()
@@ -19,6 +21,8 @@ public final class MenuViewController: UIViewController {
     @IBOutlet weak var collectionView: VerticalCollectionView!
     
     @IBOutlet weak var menuTitle: UILabel!
+    
+    
     
     
     @available(iOS, unavailable)
@@ -66,51 +70,48 @@ extension MenuViewController: MenuDelegate{
     
     func onItemSelected(item: ScreenTypes) {
         
-        let navigator =  getNavigator()
-        let storage = getAppDelegate().getStorage()
-        let fileUtil = getAppDelegate().getFileUtil()
-        let notificationUtil = getAppDelegate().getNotificationUtil()
+        let appComponent = getAppDelegate().getAppComponent()
         
-        guard let destination = getController(item: item, navigator: navigator, storage: storage, fileUtil: fileUtil, notificationUtil: notificationUtil) else {
+        guard let destination = getController(item: item, appComponent: appComponent) else {
             print("not implemented: \(item)")
             return
         }
 
-        navigator.navigate(start: self, destination: destination)
+        appComponent.getNavigator().navigate(start: self, destination: destination)
     }
     
     
-    func getController(item: ScreenTypes, navigator: Navigator, storage: UserDefaultStorage, fileUtil: FileWriterUtil, notificationUtil: NotificationUtil) -> UIViewController?{
+    func getController(item: ScreenTypes, appComponent: AppComponent) -> UIViewController?{
         
         switch item {
         case .Casino:
-            return navigator.getCasinoScreen()
+            return appComponent.getNavigator().getCasinoScreen()
         case .Test:
-            return navigator.getDebugScreen()
+            return appComponent.getNavigator().getDebugScreen()
         case .Create:
-            return navigator.getCreateScreen(storage: storage, fileUtil: fileUtil)
+            return appComponent.getNavigator().getCreateScreen(storage: appComponent.getStorage(), fileUtil: appComponent.getFileUtil())
         case .Todo:
-            return navigator.getShowScreen(storage: storage, type: .ToDo)
+            return appComponent.getNavigator().getShowScreen(storage: appComponent.getStorage(), type: .ToDo)
         case .WeekEnd:
-            return navigator.getShowScreen(storage: storage, type: .HappyWeekend)
+            return appComponent.getNavigator().getShowScreen(storage: appComponent.getStorage(), type: .HappyWeekend)
         case .HardDayNight:
-            return navigator.getShowScreen(storage: storage, type: .HardDayNight)
+            return appComponent.getNavigator().getShowScreen(storage: appComponent.getStorage(), type: .HardDayNight)
         case .Files:
-            return navigator.getFilesScreen(filesUtil: fileUtil)
+            return appComponent.getNavigator().getFilesScreen(filesUtil: appComponent.getFileUtil())
         case .Settings:
-            return navigator.getSettingScreen(storage: storage)
+            return appComponent.getNavigator().getSettingScreen(storage: appComponent.getStorage())
         case .YesNo:
-            return navigator.getYesNoScreen(storage: storage)
+            return appComponent.getNavigator().getYesNoScreen(storage: appComponent.getStorage())
         case .Timer:
-            return navigator.getTimerScreen(storage: storage, notificationUtil: notificationUtil)
+            return appComponent.getNavigator().getTimerScreen(storage: appComponent.getStorage(), notificationUtil: appComponent.getNotificationUtil())
         }
     }
 }
 
 extension MenuViewController: VerticalColecitonViewDelegate{
+    
     func onContentSizeChanged(y: CGFloat) {
         self.bottomConstraint.constant = y - 16
     }
-    
     
 }
