@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVKit
 
 public protocol TimerUtilDelegate: NSObject{
     func onTimerUpdate(value: Int)
@@ -13,7 +14,9 @@ public protocol TimerUtilDelegate: NSObject{
     func onTimerStop()
 }
 
-#warning("UIApplication.shared.isIdleTimerDisabled = true")
+/**
+    bad solution:  UIApplication.shared.isIdleTimerDisabled = true
+ */
 class TimerUtil{
     
     
@@ -36,14 +39,12 @@ class TimerUtil{
     
     func startTimer(){
         self.registerNotification()
-//        UIApplication.shared.isIdleTimerDisabled = true
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
         self.removeNotification()
-//        UIApplication.shared.isIdleTimerDisabled = false
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()
@@ -64,13 +65,18 @@ class TimerUtil{
     }
     
     private func registerNotification(){
+        
+        let soundName = UNNotificationSoundName("Tock.caf")
+        let sound = UNNotificationSound(named: soundName)
         let time: Double = Double(maxTimeInMinutes.toSeconds())
         let content =  UNMutableNotificationContent()
             content.body = Translations.Timer.timeHasGone
-            content.sound = .default
+            content.sound = sound
                     
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        print("sound: \(sound)")
              
         
         UNUserNotificationCenter.current().add(request) { [self] (error) in

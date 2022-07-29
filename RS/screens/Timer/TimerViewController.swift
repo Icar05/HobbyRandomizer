@@ -53,7 +53,7 @@ public final class TimerViewController: UIViewController {
 
     @objc func appCameToForeground() {
         UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-            print("count: \(notifications.count)")
+//            print("count: \(notifications.count)")
             if(notifications.count > 0){
                 DispatchQueue.main.async {
                     self.timerView.finishFromBackground()
