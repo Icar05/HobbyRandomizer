@@ -74,11 +74,11 @@ class TimerUtil{
              
         
         UNUserNotificationCenter.current().add(request) { [self] (error) in
-            if (error != nil) {
-                print("UNUserNotificationCenter: error: \(String(describing: error))")
-            } else {
-                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes) minutes -> Success!")
-            }
+//            if (error != nil) {
+//                print("UNUserNotificationCenter: error: \(String(describing: error))")
+//            } else {
+//                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes) minutes -> Success!")
+//            }
         }
     }
 }

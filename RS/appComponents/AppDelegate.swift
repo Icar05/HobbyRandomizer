@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupNotifications(){
         // Setup Notifications
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (bool, error) in
-            print("UNUserNotificationCenter Permission -> permitted: \(bool), error: \(String(describing: error))")
+//            print("UNUserNotificationCenter Permission -> permitted: \(bool), error: \(String(describing: error))")
             
             if(!bool){
                 DispatchQueue.main.async {
