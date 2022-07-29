@@ -43,6 +43,8 @@ public final class TimerViewController: UIViewController {
         self.soundUtil = getPlayer(sound: .Timer)
 
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appGoneToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
               
     }
     
@@ -50,16 +52,41 @@ public final class TimerViewController: UIViewController {
         self.timerView.setPreferences(preferences: appPreferences)
     }
     
-
+    @objc func appGoneToBackground() {
+        print("app in background!")
+    }
+    
     @objc func appCameToForeground() {
-        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-//            print("count: \(notifications.count)")
-            if(notifications.count > 0){
-                DispatchQueue.main.async {
-                    self.timerView.finishFromBackground()
-                    UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-                }
+        print("app in foreground!")
+        
+        self.timerView.hasDeliveredNotification(callback: {itHas in
+            if(itHas){
+                self.timerDidFinishedInBackground()
+            } else{
+                self.timerDidUpdatedInBackground()
             }
+        })
+    }
+    
+    //we don't have any messages
+    //timer can be still running, or state can be already handled
+    private func timerDidUpdatedInBackground(){
+        #warning("detect if timer is started (variable?)")
+        
+        // can be possible getting there after timer finished work, and it will be handled,
+        // so wanted check if timer is stopped and finished
+        
+        // get ellapsed time
+        // update timer util
+        // get callback from timer util to update views
+    }
+    
+    
+    //we have delivered message, we have to notify timer about finish
+    private func timerDidFinishedInBackground(){
+        DispatchQueue.main.async {
+            self.timerView.finishFromBackground()
+            self.timerView.clearDeliveredNotifications()
         }
     }
 

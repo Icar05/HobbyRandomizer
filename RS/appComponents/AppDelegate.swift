@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let alertUtil = AlertUtil()
     
+    private let timerBackgroundUtil = TBU()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
                 
@@ -30,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.navigator.setupInitialViewController(window: window!)
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.testUtil?.startTest()
-        
-        self.setupNotifications()
+        self.checkNotificationPermission()
        
         
         return true
@@ -54,19 +55,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return fileUtil
     }
     
+    func getTimerBackgroundUtil() -> TBU{
+        return timerBackgroundUtil
+    }
    
     /**
-        notifications
+        permissions
      */
-    private func setupNotifications(){
-        // Setup Notifications
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (bool, error) in
-//            print("UNUserNotificationCenter Permission -> permitted: \(bool), error: \(String(describing: error))")
-            
-            if(!bool){
-                DispatchQueue.main.async {
-                    self.handleDisabledPermission()
-                }
+    private func checkNotificationPermission(){
+        self.timerBackgroundUtil.checkNotificationPermission {
+            DispatchQueue.main.async {
+                self.handleDisabledPermission()
             }
         }
     }

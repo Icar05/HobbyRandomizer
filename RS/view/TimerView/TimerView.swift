@@ -75,6 +75,11 @@ class TimerView: UIView {
         }
     }
     
+    #warning("maybe delete later")
+    func hasDeliveredNotification(callback: @escaping (_ itHas: Bool) -> Void){
+        self.timerUtil.hasDeliveredNotification(callback: callback)
+    }
+    
     func setPreferences(preferences: AppPrefferencesModel){
         self.maxTimeInMinutes = preferences.timerMinutes
         self.timerUtil.setMaxTime(maxTimeInMinutes: maxTimeInMinutes)
@@ -171,6 +176,11 @@ class TimerView: UIView {
     
     func finishFromBackground(){
         self.timerUtil.stopTimer()
+    }
+    
+    #warning("maybe delete later")
+    func clearDeliveredNotifications(){
+        self.timerUtil.clearDeliveredNotifications()
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){

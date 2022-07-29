@@ -116,6 +116,7 @@
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
 		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
+		ED7307902893FE4B005FFAF1 /* TBU.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73078F2893FE4B005FFAF1 /* TBU.swift */; };
 		ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918972863AE780041D407 /* FileWriterUtil.swift */; };
 		ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79189A2863C07E0041D407 /* FilesViewController.swift */; };
 		ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED79189B2863C07E0041D407 /* FilesViewController.xib */; };
@@ -283,6 +284,7 @@
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HobbyRandomizer/appComponents/Info.plist; sourceTree = SOURCE_ROOT; };
 		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
+		ED73078F2893FE4B005FFAF1 /* TBU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBU.swift; sourceTree = "<group>"; };
 		ED7918972863AE780041D407 /* FileWriterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriterUtil.swift; sourceTree = "<group>"; };
 		ED79189A2863C07E0041D407 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		ED79189B2863C07E0041D407 /* FilesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesViewController.xib; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */,
 				ED1D33D7286A9C96004F1506 /* SoundUtil.swift */,
 				EDD4C48B28933A6E003A17B8 /* AlertUtil.swift */,
+				ED73078F2893FE4B005FFAF1 /* TBU.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -1247,6 +1250,7 @@
 				ED5135B8286CC9D900403238 /* NotesInstructionViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
 				ED43582B286BCF5A00F99459 /* SettingsYesNoColorsModel.swift in Sources */,
+				ED7307902893FE4B005FFAF1 /* TBU.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,

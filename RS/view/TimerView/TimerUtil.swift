@@ -14,6 +14,8 @@ public protocol TimerUtilDelegate: NSObject{
     func onTimerStop()
 }
 
+let notificationIdentifier = "TimerNotification"
+
 /**
     bad solution:  UIApplication.shared.isIdleTimerDisabled = true
  */
@@ -21,7 +23,7 @@ class TimerUtil{
     
     
     
-    private let identifier = "TimerNotification"
+    private var timerBackgroundUtil = TBU()
     
     private var maxTimeInMinutes = 0
     
@@ -37,14 +39,24 @@ class TimerUtil{
         self.maxTimeInMinutes = maxTimeInMinutes
     }
     
+    #warning("maybe delete later")
+    func hasDeliveredNotification(callback: @escaping (_ itHas: Bool) -> Void){
+        self.timerBackgroundUtil.hasDeliveredNotification(callback: callback)
+    }
+    
+    #warning("maybe delete later")
+    func clearDeliveredNotifications(){
+        self.timerBackgroundUtil.clearDeliveredNotifications()
+    }
+    
     func startTimer(){
-        self.registerNotification()
+        self.timerBackgroundUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
-        self.removeNotification()
+        self.timerBackgroundUtil.cancelNotification()
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()
@@ -59,33 +71,6 @@ class TimerUtil{
             self.stopTimer()
         }
     }
-    
-    private func removeNotification(){
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
-    }
-    
-    private func registerNotification(){
-        
-        let soundName = UNNotificationSoundName("Tock.caf")
-        let sound = UNNotificationSound(named: soundName)
-        let time: Double = Double(maxTimeInMinutes.toSeconds())
-        let content =  UNMutableNotificationContent()
-            content.body = Translations.Timer.timeHasGone
-            content.sound = sound
-                    
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        print("sound: \(sound)")
-             
-        
-        UNUserNotificationCenter.current().add(request) { [self] (error) in
-//            if (error != nil) {
-//                print("UNUserNotificationCenter: error: \(String(describing: error))")
-//            } else {
-//                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes) minutes -> Success!")
-//            }
-        }
-    }
+
 }
 
