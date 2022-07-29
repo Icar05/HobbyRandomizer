@@ -103,7 +103,7 @@ extension MenuViewController: MenuDelegate{
         case .YesNo:
             return appComponent.getNavigator().getYesNoScreen(storage: appComponent.getStorage())
         case .Timer:
-            return appComponent.getNavigator().getTimerScreen(storage: appComponent.getStorage(), notificationUtil: appComponent.getNotificationUtil())
+            return appComponent.getNavigator().getTimerScreen(storage: appComponent.getStorage(), timerUtil: appComponent.getTimerUtil())
         }
     }
 }

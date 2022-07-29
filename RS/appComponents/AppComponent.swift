@@ -25,11 +25,14 @@ class AppComponent{
     
     private let elapsedTimeUtil : ElapsedTimeUtil
     
+    private let timerUtil: TimerUtil
+    
     
     
     init(){
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
+        self.timerUtil = TimerUtil(notificationUtil: notificationUtil)
     }
     
     func getTestUtil() -> TestUtil{
@@ -63,5 +66,9 @@ class AppComponent{
     
     func getElapsedTimeUtil() -> ElapsedTimeUtil{
         return elapsedTimeUtil
+    }
+    
+    func getTimerUtil() -> TimerUtil{
+        return timerUtil
     }
 }

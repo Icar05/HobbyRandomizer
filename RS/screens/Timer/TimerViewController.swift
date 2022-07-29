@@ -26,9 +26,9 @@ public final class TimerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: TimerPresenter, notificationUtil: NotificationUtil) {
+    init(presenter: TimerPresenter, timerUtil: TimerUtil) {
         self.presenter = presenter
-        self.timerUtil = TimerUtil(notificationUtil: notificationUtil)
+        self.timerUtil = timerUtil
         super.init(nibName: "TimerViewController", bundle: Bundle.main)
     }
     
