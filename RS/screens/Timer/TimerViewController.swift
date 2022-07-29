@@ -40,16 +40,21 @@ public final class TimerViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.soundUtil = getPlayer(sound: .Timer)
+//        NotificationCenter.default.addObserver(self, selector: #selector(timerDone(_:)) , name: .timerNotification, object: nil)
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
         self.timerView.setPreferences(preferences: appPreferences)
     }
+    
+    @objc func timerDone(_ notification : NSNotification) {
+        self.timerView.finishFromBackground()
+    }
 
 }
 
 extension TimerViewController: TimerViewDelegate{
-    
+
     public func onTimeGone() {
         self.soundUtil?.play()
     }

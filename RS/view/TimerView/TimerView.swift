@@ -169,6 +169,10 @@ class TimerView: UIView {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
+    func finishFromBackground(){
+        self.timerUtil.stopTimer()
+    }
+    
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
         self.isTimerStarted ? timerUtil.stopTimer() : timerUtil.startTimer()
         self.isTimerStarted = !isTimerStarted
@@ -183,6 +187,8 @@ extension TimerView: TimerUtilDelegate{
     func onTimerStop() {
         self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
         self.displayView.updateCurrentValue(value: 0)
+        self.isTimerStarted = false
+        self.actonLabel.attributedText = getActionTextAttributes()
     }
     
     func onTimerUpdate(value: Int) {

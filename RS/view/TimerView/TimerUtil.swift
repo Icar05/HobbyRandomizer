@@ -34,13 +34,15 @@ class TimerUtil{
     }
     
     func startTimer(){
-        self.registerNotification()
+//        self.registerNotification()
+        UIApplication.shared.isIdleTimerDisabled = true
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
-        self.removeNotification()
+//        self.removeNotification()
+        UIApplication.shared.isIdleTimerDisabled = false
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()
@@ -61,12 +63,11 @@ class TimerUtil{
     }
     
     private func registerNotification(){
-        
         let time: Double = Double(maxTimeInMinutes.toSeconds())
         let content =  UNMutableNotificationContent()
-            content.body = "TestBody"
-            content.sound = UNNotificationSound.default
-        
+            content.body = "Need text"
+            content.sound = .default
+                    
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
              
@@ -75,7 +76,7 @@ class TimerUtil{
             if (error != nil) {
                 print("UNUserNotificationCenter: error: \(String(describing: error))")
             } else {
-                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes)-> Success!")
+                print("UNUserNotificationCenter: Add request with time: \(maxTimeInMinutes) minutes -> Success!")
             }
         }
     }
