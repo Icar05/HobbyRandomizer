@@ -13,6 +13,7 @@ public protocol TimerUtilDelegate: NSObject{
     func onTimerStop()
 }
 
+#warning("UIApplication.shared.isIdleTimerDisabled = true")
 class TimerUtil{
     
     
