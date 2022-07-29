@@ -32,7 +32,7 @@ class ElapsedTimeUtil{
     }
     
     func getElapsedTime() -> Int{
-        return getTime() - self.storage.getTime()
+        return (getTime() - self.storage.getTime() ) / 1000
     }
     
     private func getTime() -> Int {
