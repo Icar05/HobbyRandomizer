@@ -34,7 +34,8 @@ class AppComponent{
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
         self.timerUtil = TimerUtil(
             notificationUtil: notificationUtil,
-            soundUtil: SoundUtil(enable: true, volume: 1.0, sound: .Timer))
+            soundUtil: SoundUtil(enable: true, volume: 1.0, sound: .Timer),
+            elapsedTimeUtil: elapsedTimeUtil)
     }
     
     func getTestUtil() -> TestUtil{

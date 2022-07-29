@@ -10,9 +10,11 @@ import Foundation
 struct UserDefaultConstants{
     public static var models = "Models"
     public static var appPreferences = "AppPreferences"
+    public static var time = "Time"
 }
 
 class UserDefaultStorage{
+    
     
     
     private let encoder = JSONEncoder()
@@ -20,6 +22,29 @@ class UserDefaultStorage{
     private let decoder = JSONDecoder()
     
     
+    
+    /**
+     time
+     */
+    @discardableResult
+    func saveTime(time: Int) -> Bool{
+            UserDefaults.standard.set(time, forKey: UserDefaultConstants.time)
+            return true
+    }
+    
+    func getTime() -> Int{
+        return UserDefaults.standard.integer(forKey: UserDefaultConstants.time)
+    }
+    
+    @discardableResult
+    func clearTime() -> Bool {
+        UserDefaults.standard.set( -1, forKey: UserDefaultConstants.time)
+        return true
+    }
+    
+    /**
+     random models
+     */
     func removeAlldData() -> Bool {
         let domain = Bundle.main.bundleIdentifier!
         UserDefaults.standard.removePersistentDomain(forName: domain)
@@ -29,19 +54,19 @@ class UserDefaultStorage{
     func appendModels(newModels: [RandItemCellModel]) -> Bool{
         var models = getModels() ?? []
             models.append(contentsOf: newModels)
-        self.saveModels(models: models)
-        return true
+        return self.saveModels(models: models)
     }
     
-    func saveModels(models: [RandItemCellModel]){
+    func saveModels(models: [RandItemCellModel]) -> Bool{
         do {
             let data = try encoder.encode(models)
             UserDefaults.standard.set(data, forKey: UserDefaultConstants.models)
+            return true
         } catch {
             print("Unable to Encode Array of Models (\(error))")
+            return false
         }
     }
-    
     
     func getModels() -> [RandItemCellModel]?{
         if let data = UserDefaults.standard.data(forKey: UserDefaultConstants.models) {
@@ -55,6 +80,10 @@ class UserDefaultStorage{
         return nil
     }
     
+    
+    /**
+     all application preferences
+     */
     func getAppPreferences() -> AppPrefferencesModel{
         if let data = UserDefaults.standard.data(forKey: UserDefaultConstants.appPreferences) {
             do {
@@ -68,12 +97,15 @@ class UserDefaultStorage{
         return getDefaultAppPrefferences()
     }
     
-    func saveAppPreferences(model: AppPrefferencesModel){
+    @discardableResult
+    func saveAppPreferences(model: AppPrefferencesModel) -> Bool{
         do {
             let data = try encoder.encode(model)
             UserDefaults.standard.set(data, forKey: UserDefaultConstants.appPreferences)
+            return true
         } catch {
             print("Unable to Encode Array of Models (\(error))")
+            return false
         }
     }
     

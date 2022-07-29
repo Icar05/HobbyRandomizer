@@ -371,7 +371,6 @@
 			children = (
 				ED0E594A28915AC700C77819 /* TimerDisplayView.swift */,
 				ED0E594C28915AEC00C77819 /* TimerView.swift */,
-				ED0E59552891902D00C77819 /* TimerUtil.swift */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -495,8 +494,9 @@
 		ED4A3CC4271A290000084BB8 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				ED7EEF152867E4A000B5BE46 /* viewUtils */,
 				ED7EEF162867E4B800B5BE46 /* parser */,
+				ED7EEF152867E4A000B5BE46 /* viewUtils */,
+				ED0E59552891902D00C77819 /* TimerUtil.swift */,
 				ED364266271755000083D578 /* UserDefaultsStorage.swift */,
 				ED7918972863AE780041D407 /* FileWriterUtil.swift */,
 				ED7918AA2863D1CD0041D407 /* TestUtil.swift */,

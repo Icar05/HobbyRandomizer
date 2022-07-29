@@ -23,9 +23,16 @@ class TimerUtil{
     
     
     
-    private var soundUtil: SoundUtil
     
-    private var notificationUtil: NotificationUtil
+    private let elapsedTimeUtil: ElapsedTimeUtil
+    
+    private let soundUtil: SoundUtil
+    
+    private let notificationUtil: NotificationUtil
+    
+    private let showLogs = true
+    
+    private let log = "TimerUtil"
     
     private var maxTimeInMinutes = DEFAULT_MAX_TIME
     
@@ -33,17 +40,14 @@ class TimerUtil{
     
     private var timerValue = 0
     
-    private let showLogs = true
-    
-    private let log = "TimerUtil"
-    
     weak var delegate: TimerUtilDelegate? = nil
     
     
     
-    init(notificationUtil: NotificationUtil, soundUtil: SoundUtil){
+    init(notificationUtil: NotificationUtil, soundUtil: SoundUtil, elapsedTimeUtil: ElapsedTimeUtil){
         self.notificationUtil = notificationUtil
         self.soundUtil = soundUtil
+        self.elapsedTimeUtil = elapsedTimeUtil
         
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
@@ -59,17 +63,19 @@ class TimerUtil{
         self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
+        self.elapsedTimeUtil.saveStartTimerTime()
         
-        printLog("startTimer")
+        printLog("startTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
     
     func stopTimer(){
         self.notificationUtil.cancelNotification()
         self.timer?.invalidate()
         self.timer = nil
+        self.elapsedTimeUtil.clearStartTimerTime()
         self.delegate?.onTimerStop()
         
-        printLog("stopTimer")
+        printLog("stopTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
     
     // as more stick alternative you can use notificationUtil.hasPandingNotification

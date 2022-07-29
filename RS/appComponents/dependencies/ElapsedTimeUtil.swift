@@ -8,34 +8,35 @@
 import Foundation
 
 
-#warning("need implementation")
+
 class ElapsedTimeUtil{
     
     
     let storage: UserDefaultStorage
     
+    
     init(storage: UserDefaultStorage){
         self.storage = storage
     }
     
-    /**
-        storage methods , read write time from start timer
-     */
     func saveStartTimerTime(){
-       
+        self.storage.saveTime(time: getTime())
     }
     
     func clearStartTimerTime(){
-     
+        self.storage.clearTime()
+    }
+    
+    func getCurrentTime() -> Int{
+        return self.storage.getTime()
     }
     
     func getElapsedTime() -> Int{
-       
-        return 0
+        return getTime() - self.storage.getTime()
     }
     
-    func isTimerStarted() -> Bool{
-      
-        return false
+    private func getTime() -> Int {
+        return Int(Date().timeIntervalSince1970 * 1000)
     }
+    
 }
