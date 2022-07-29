@@ -11,7 +11,7 @@ class NotificationUtil{
     
     
     
-    private let showLogs = true
+    private let showLogs = false
     
     private let log = "NotificationUtil"
     

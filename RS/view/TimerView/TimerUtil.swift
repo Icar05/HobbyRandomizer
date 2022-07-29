@@ -72,6 +72,10 @@ class TimerUtil{
         printLog("stopTimer")
     }
     
+    func isTimerStarted() -> Bool {
+        return self.timer != nil
+    }
+    
     @objc func timerUpdate() {
         
         printLog("timerUpdate")
@@ -96,7 +100,10 @@ class TimerUtil{
             if(itHas){
                 self.timerHasFinishedInBackground()
             } else{
-                self.timerHasUpdatedInBackground()
+                if(self.isTimerStarted()){
+                    self.timerHasUpdatedInBackground()
+                }
+                
             }
         })
     }
@@ -105,9 +112,7 @@ class TimerUtil{
     //we don't have any messages
     //timer can be still running, or state can be already handled
     private func timerHasUpdatedInBackground(){
-        #warning("detect if timer is started (variable?)")
-        
-        printLog("timerHasUpdatedInBackground")
+        printLog("timerHasUpdatedInBackground ( finished )")
         // can be possible getting there after timer finished work, and it will be handled,
         // so wanted check if timer is stopped and finished
         
@@ -118,7 +123,7 @@ class TimerUtil{
     
     //we have delivered message, we have to notify timer about finish
     private func timerHasFinishedInBackground(){
-        printLog("timerHasFinishedInBackground")
+        printLog("timerHasFinishedInBackground ( did not finished )")
         DispatchQueue.main.async {
             self.stopTimer()
             self.notificationUtil.clearDeliveredNotifications()

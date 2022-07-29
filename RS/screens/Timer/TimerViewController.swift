@@ -14,8 +14,6 @@ public final class TimerViewController: UIViewController {
     private let timerUtil: TimerUtil
     
     private let presenter: TimerPresenter
-    
-    
 
     @IBOutlet weak var timerView: TimerView!
     
@@ -46,8 +44,10 @@ public final class TimerViewController: UIViewController {
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
-        self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
-        self.timerView.setPreferences(preferences: appPreferences)
+        if(!self.timerUtil.isTimerStarted()){
+            self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
+            self.timerView.setPreferences(preferences: appPreferences)
+        }
     }
 
 }
