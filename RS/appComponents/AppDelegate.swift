@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        print("app delegate launch")
                 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.navigator.setupInitialViewController(window: window!)
@@ -37,10 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         
         return true
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        self.checkMessages()
     }
     
     func getSoundUtil(sound: SoundCaf) -> SoundUtil{
@@ -61,57 +55,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
    
-
-}
-
-// notifications
-extension AppDelegate: UNUserNotificationCenterDelegate{
-    
-       @available(iOS 10.0, *)
-       func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-           
-           print("UNUserNotificationCenter ->  willPresent notification")
-           completionHandler([.alert,.sound])
-
-       }
-
-       @available(iOS 10.0, *)
-       func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-           
-           print("UNUserNotificationCenter ->  didReceive response")
-           
-           NotificationCenter.default.post(name: .timerNotification , object: nil, userInfo: response.notification.request.content.userInfo)
-           
-           completionHandler()
-       }
-    
+    /**
+        notifications
+     */
     private func setupNotifications(){
         // Setup Notifications
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (bool, error) in
             print("UNUserNotificationCenter Permission -> permitted: \(bool), error: \(String(describing: error))")
             
             if(!bool){
-                
                 DispatchQueue.main.async {
                     self.handleDisabledPermission()
                 }
-                
             }
-        }
-                
-        UNUserNotificationCenter.current().delegate = self
-    }
-    
-    private func checkMessages(){
-        print("check messages...")
-        
-        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-            
-            print("notifications count: \(notifications.count)")
-            if(notifications.count > 0){
-                NotificationCenter.default.post(name: .timerNotification , object: nil, userInfo: nil)
-            }
-
         }
     }
     
@@ -126,3 +82,4 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
         rootViewController.present(alert, animated: true)
     }
 }
+

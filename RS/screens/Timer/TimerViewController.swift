@@ -18,6 +18,7 @@ public final class TimerViewController: UIViewController {
     @IBOutlet weak var timerView: TimerView!
     
     
+    
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,22 +41,25 @@ public final class TimerViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.soundUtil = getPlayer(sound: .Timer)
-        NotificationCenter.default.addObserver(self, selector: #selector(timerDone(_:)) , name: .timerNotification, object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+              
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
         self.timerView.setPreferences(preferences: appPreferences)
     }
     
-    @objc func timerDone(_ notification : NSNotification) {
-        
-        DispatchQueue.main.async {
-            print("call from background")
-            self.timerView.finishFromBackground()
-            
-            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+
+    @objc func appCameToForeground() {
+        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in            
+            if(notifications.count > 0){
+                DispatchQueue.main.async {
+                    self.timerView.finishFromBackground()
+                    UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+                }
+            }
         }
-        
     }
 
 }
