@@ -32,7 +32,9 @@ class AppComponent{
     init(){
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
-        self.timerUtil = TimerUtil(notificationUtil: notificationUtil)
+        self.timerUtil = TimerUtil(
+            notificationUtil: notificationUtil,
+            soundUtil: SoundUtil(enable: true, volume: 1.0, sound: .Timer))
     }
     
     func getTestUtil() -> TestUtil{

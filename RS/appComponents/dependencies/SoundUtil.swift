@@ -42,17 +42,13 @@ class SoundUtil{
         self.initPlayer()
     }
     
-    private func prepareVolume(value: Float) -> Float{
-        return sound == .Timer ? 1.0 : value
-    }
-    
     private func initPlayer(){
         if(enable){
             
             let scanSoundURL = URL(fileURLWithPath: sound.rawValue)
             do {
                 self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
-                self.player?.volume = prepareVolume(value: volume)
+                self.player?.volume = volume
             } catch let error {
                 print("Player: error: \(error) ")
             }

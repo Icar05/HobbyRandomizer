@@ -23,6 +23,8 @@ class TimerUtil{
     
     
     
+    private var soundUtil: SoundUtil
+    
     private var notificationUtil: NotificationUtil
     
     private var maxTimeInMinutes = DEFAULT_MAX_TIME
@@ -39,8 +41,9 @@ class TimerUtil{
     
     
     
-    init(notificationUtil: NotificationUtil){
+    init(notificationUtil: NotificationUtil, soundUtil: SoundUtil){
         self.notificationUtil = notificationUtil
+        self.soundUtil = soundUtil
         
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
@@ -70,16 +73,16 @@ class TimerUtil{
     }
     
     @objc func timerUpdate() {
+        
+        printLog("timerUpdate")
         self.timerValue -= 1
         self.delegate?.onTimerUpdate(value: timerValue)
         
         if(timerValue == 0){
             self.delegate?.onTimerFinished()
             self.stopTimer()
+            self.soundUtil.play()
         }
-        
-        printLog("timerUpdate")
-        
     }
     
     @objc func appGoneToBackground() {

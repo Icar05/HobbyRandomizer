@@ -15,7 +15,7 @@ public final class TimerViewController: UIViewController {
     
     private let presenter: TimerPresenter
     
-    private var soundUtil: SoundUtil? = nil
+    
 
     @IBOutlet weak var timerView: TimerView!
     
@@ -40,8 +40,6 @@ public final class TimerViewController: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.soundUtil = getAppComponent().getSoundUtil(sound: .Timer)
         
         self.timerView.delegate = self
         self.timerUtil.delegate = self
@@ -75,7 +73,8 @@ extension TimerViewController: TimerUtilDelegate{
     
     public func onTimerFinished() {
         self.timerView.onTimerFinished()
-        self.soundUtil?.play()
+        
+        print("ViewController: onTimerFinished")
     }
     
 }
