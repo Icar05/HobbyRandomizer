@@ -35,15 +35,15 @@ class TimerUtil{
     }
     
     func startTimer(){
-//        self.registerNotification()
-        UIApplication.shared.isIdleTimerDisabled = true
+        self.registerNotification()
+//        UIApplication.shared.isIdleTimerDisabled = true
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
     }
     
     func stopTimer(){
-//        self.removeNotification()
-        UIApplication.shared.isIdleTimerDisabled = false
+        self.removeNotification()
+//        UIApplication.shared.isIdleTimerDisabled = false
         self.timer?.invalidate()
         self.timer = nil
         self.delegate?.onTimerStop()

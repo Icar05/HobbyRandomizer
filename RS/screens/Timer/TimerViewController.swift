@@ -40,7 +40,7 @@ public final class TimerViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.soundUtil = getPlayer(sound: .Timer)
-//        NotificationCenter.default.addObserver(self, selector: #selector(timerDone(_:)) , name: .timerNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(timerDone(_:)) , name: .timerNotification, object: nil)
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
@@ -48,7 +48,14 @@ public final class TimerViewController: UIViewController {
     }
     
     @objc func timerDone(_ notification : NSNotification) {
-        self.timerView.finishFromBackground()
+        
+        DispatchQueue.main.async {
+            print("call from background")
+            self.timerView.finishFromBackground()
+            
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+        }
+        
     }
 
 }

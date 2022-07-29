@@ -25,15 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        print("app delegate launch")
                 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.navigator.setupInitialViewController(window: window!)
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.testUtil?.startTest()
         
-//        self.setupNotifications()
+        self.setupNotifications()
+       
         
         return true
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        self.checkMessages()
     }
     
     func getSoundUtil(sound: SoundCaf) -> SoundUtil{
@@ -93,6 +100,19 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
         }
                 
         UNUserNotificationCenter.current().delegate = self
+    }
+    
+    private func checkMessages(){
+        print("check messages...")
+        
+        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
+            
+            print("notifications count: \(notifications.count)")
+            if(notifications.count > 0){
+                NotificationCenter.default.post(name: .timerNotification , object: nil, userInfo: nil)
+            }
+
+        }
     }
     
     private func handleDisabledPermission(){
