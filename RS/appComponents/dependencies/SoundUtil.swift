@@ -19,7 +19,7 @@ enum SoundCaf: String{
     case StandartAlarm = "standart-alarm"
 }
 
-let timerSound = SoundCaf.ModernAlarm
+let timerSound = SoundCaf.StandartAlarm
 
 class SoundUtil{
     

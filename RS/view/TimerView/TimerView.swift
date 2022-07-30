@@ -18,7 +18,7 @@ class TimerView: UIView {
 
     
     
-    private var displayView: TimerDisplay = TimerSquereDisplay()
+    private var displayView: TimerDisplay = TimerDisplayView()
     
     private var sizeOfView: CGFloat = 250
     
@@ -88,14 +88,14 @@ class TimerView: UIView {
     
     func onTimerStop() {
         self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
-        self.displayView.updateCurrentValue(value: 0)
+        self.displayView.updateCurrentValue(current: 0, max: maxTimeInMinutes.toSeconds())
         self.isTimerStarted = false
         self.actonLabel.attributedText = getActionTextAttributes()
     }
     
     func onTimerUpdate(value: Int) {
         self.updateClocklabel(value: value)
-        self.displayView.updateCurrentValue(value: value)
+        self.displayView.updateCurrentValue(current: value, max: maxTimeInMinutes.toSeconds())
     }
     
     func onTimerFinished() {

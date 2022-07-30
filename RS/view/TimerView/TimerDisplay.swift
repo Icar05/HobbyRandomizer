@@ -13,7 +13,7 @@ protocol TimerDisplay: UIView{
     
     func setMaxTimeInSeconds(maxTimeInSeconds: Int)
     
-    func updateCurrentValue(value: Int)
+    func updateCurrentValue(current: Int, max: Int)
     
     func updateInnerColor(color: UIColor)
     

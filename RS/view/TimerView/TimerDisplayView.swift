@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class TimerDisplayView: UIView {
+class TimerDisplayView: UIView, TimerDisplay {
    
     
     
@@ -83,8 +83,8 @@ class TimerDisplayView: UIView {
         self.setNeedsDisplay()
     }
     
-    func updateCurrentValue(value: Int){
-        self.currentValue = value
+    func updateCurrentValue(current: Int, max: Int){
+        self.currentValue = current
         self.setNeedsDisplay()
     }
     

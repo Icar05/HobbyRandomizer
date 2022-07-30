@@ -58,7 +58,7 @@ class TimerSquereDisplay: UIView, TimerDisplay {
         
     }
     
-    func updateCurrentValue(value: Int) {
+    func updateCurrentValue(current: Int, max: Int) {
         
     }
     
