@@ -53,7 +53,9 @@ public final class TimerViewController: UIViewController {
             self.timerUtil.setSingleUpdateColor(value: appPreferences.timerSingleColor)
         }
         
-        self.timerView.restoreState(state: timerUtil.getState())
+        let state = timerUtil.getState()
+        self.timerView.restoreState(model: state)
+        print("state: \(state)")
         
     }
 

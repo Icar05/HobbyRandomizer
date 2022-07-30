@@ -20,7 +20,7 @@ public protocol TimerViewDelegate: NSObject{
 
 @IBDesignable
 class TimerView: UIView {
-
+    
     
     
     private var displayView: TimerDisplay = TimerDisplayView()
@@ -36,7 +36,7 @@ class TimerView: UIView {
     private var state: TimerState = .CLEAR
     
     public var buttonCallback: (() -> Void )?
-        
+    
     weak var delegate: TimerViewDelegate? = nil
     
     
@@ -76,10 +76,17 @@ class TimerView: UIView {
         }
     }
     
-    func restoreState(state: TimerUtilState){
-        self.displayView.setSingleUpdaterColor(value: state.singleUpdateColor)
-        self.state = state.state
-        self.handleState()
+    func restoreState(model: TimerUtilState){
+        self.displayView.setSingleUpdaterColor(value: model.singleUpdateColor)
+        
+        switch model.state{
+            case .STARTED:
+                onTimerStart()
+            case .FINISHED:
+                onTimerFinished(maxValue: model.maxTime.toSeconds())
+            case .CLEAR:
+                onTimerStop(maxValue: model.maxTime.toSeconds())
+        }
     }
     
     func onTimerStart(){
@@ -97,8 +104,8 @@ class TimerView: UIView {
     func onTimerFinished(maxValue: Int) {
         self.state = .FINISHED
         self.handleState()
-        self.updateClocklabel(value: maxValue)
-        self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
+        self.updateClocklabel(value: 0)
+        self.displayView.updateCurrentValue(current: 0, max: maxValue)
     }
     
     func onTimerUpdate(current: Int, max: Int) {
@@ -118,7 +125,7 @@ class TimerView: UIView {
         self.addSubview(clockLabel)
         self.addSubview(actonLabel)
         self.addSubview(elapsedLabel)
-                
+        
         self.setupClockLabel()
         self.setupActionLabel()
         self.setupDisplayView()
@@ -143,7 +150,7 @@ class TimerView: UIView {
         let fontSize = sizeOfView / 20
         let actionWidth = sizeOfView / 1.5
         let actionHeight = sizeOfView / 10
-    
+        
         self.elapsedLabel.textColor = UIColor.red
         self.elapsedLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
         self.elapsedLabel.textAlignment = .center
@@ -163,7 +170,7 @@ class TimerView: UIView {
     }
     
     
-
+    
     fileprivate func setupClockLabel(){
         let fontSize = sizeOfView / 6
         let clockWidth = sizeOfView / 1.5
@@ -186,7 +193,7 @@ class TimerView: UIView {
         self.elapsedLabel.center.x = self.center.x
         self.elapsedLabel.center.y = self.sizeOfView / 4
     }
-
+    
     fileprivate func updateClocklabel(value: Int){
         let time: (Int, Int) = secondsToHoursMinutesSeconds(value)
         let minutes = numToString(value: time.0)
@@ -198,7 +205,7 @@ class TimerView: UIView {
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
         self.buttonCallback?()
     }
-
+    
     private func handleState(){
         switch self.state {
         case .STARTED:
@@ -217,7 +224,7 @@ class TimerView: UIView {
             self.buttonCallback = {
                 self.delegate?.didRefreshClick()
             }
-        
+            
             return
         case .CLEAR:
             self.actonLabel.attributedText = getActionTextAttributes(
