@@ -147,7 +147,7 @@ class TimerView: UIView {
     }
     
     fileprivate func setupActionLabel(){
-        let fontSize = sizeOfView / 10
+        let fontSize = sizeOfView / 14
         let actionWidth = sizeOfView / 3
         let actionHeight = sizeOfView / 10
         

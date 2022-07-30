@@ -84,8 +84,6 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
         let elapsed = max - current
         let percent: Double = Double((elapsed * 100 ) / max)
         progressLayer.strokeEnd = percent * 0.01
-        
-        print("current: \(current), max: \(max), percent: \(percent)")
     }
     
     func updateCircleColor(color: UIColor) {
