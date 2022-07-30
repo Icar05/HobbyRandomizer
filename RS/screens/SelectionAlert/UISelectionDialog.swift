@@ -8,12 +8,12 @@
 import UIKit
 
 struct UISelectionDialogModel{
-    let callback: (String) -> Void
+    let callback: (_ newColor: Color) -> Void
     let title: String
+    let curentColor: Color
 }
 
-
-class UISelectionDialog: UIViewController {
+class UISelectionDialog: BaseDialogViewController {
     
     
     
@@ -30,9 +30,20 @@ class UISelectionDialog: UIViewController {
     @IBOutlet weak var container: UIView!
     
     private let model: UISelectionDialogModel
-    
-    private var completion: ((String)->Void?)? = nil
-    
+   
+    private var callback: ((_ newColor: Color) -> Void)? = nil
+
+    private let colors: [Color] = [
+        Color.init(uiColor: UIColor.red),
+        Color.init(uiColor: UIColor.orange),
+        Color.init(uiColor: UIColor.yellow),
+        Color.init(uiColor: UIColor.green),
+        Color.init(uiColor: UIColor.lightBlue!),
+        Color.init(uiColor: UIColor.blue),
+        Color.init(uiColor: UIColor.purple),
+    ]
+
+    private var selectedRow = 0
     
     
     @available(iOS, unavailable)
@@ -66,26 +77,40 @@ class UISelectionDialog: UIViewController {
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         
-        self.completion = model.callback
+        self.callback = model.callback
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        self.pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
+        
+        
+        self.selectedRow = colors.firstIndex(of: model.curentColor) ?? 0
+        self.callback = model.callback
     }
     
     
-    func setCompletion(completion: @escaping (String)->Void){
-         self.completion = completion
+    func setCompletion(completion: @escaping (_ newColor: Color) -> Void){
+         self.callback = completion
      }
     
 }
 
 extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return colors.count
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(colors[row].getName())"
     }
     
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let color = self.colors[row]
+        self.indicatorView.backgroundColor = color.uiColor
+        self.callback?(color)
     }
-    
-    
 }

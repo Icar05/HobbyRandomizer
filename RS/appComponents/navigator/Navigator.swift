@@ -10,6 +10,7 @@ import Foundation
 protocol Navigator{
     func setupInitialViewController(window: UIWindow)
     func navigate(start: UIViewController, destination: UIViewController)
+    func navigateAlert(start: UIViewController, destination: UIViewController)
     func getInitialController() -> InitialViewController
     func getMenuScreen() -> UIViewController
     func getCasinoScreen() -> UIViewController

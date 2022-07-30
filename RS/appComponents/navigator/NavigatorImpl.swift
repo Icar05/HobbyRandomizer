@@ -24,6 +24,10 @@ class NavigatorImpl: Navigator{
         return navVc
     }
     
+    func navigateAlert(start: UIViewController, destination: UIViewController){
+        start.navigationController?.present(destination, animated: true)
+    }
+    
     func navigate(start: UIViewController, destination: UIViewController){
         start.navigationController?.pushViewController(destination, animated: true)
     }
