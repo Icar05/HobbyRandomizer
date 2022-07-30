@@ -15,7 +15,5 @@ protocol TimerDisplay: UIView{
     
     func updateCurrentValue(current: Int, max: Int)
     
-    func updateInnerColor(color: UIColor)
-    
-    func updateOutColor(color: UIColor)
+    func updateCircleColor(color: UIColor)
 }

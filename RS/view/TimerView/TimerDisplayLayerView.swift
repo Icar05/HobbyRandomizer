@@ -105,7 +105,7 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
         
     }
     
-    func updateOutColor(color: UIColor) {
+    func updateCircleColor(color: UIColor) {
         self.circleColor = color
         self.circleLayer.strokeColor = color.cgColor
     }

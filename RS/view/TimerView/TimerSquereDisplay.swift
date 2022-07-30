@@ -66,7 +66,7 @@ class TimerSquereDisplay: UIView, TimerDisplay {
         
     }
     
-    func updateOutColor(color: UIColor) {
+    func updateCircleColor(color: UIColor) {
         
     }
 }

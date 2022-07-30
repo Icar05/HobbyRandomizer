@@ -38,16 +38,9 @@ class TimerView: UIView {
     @IBInspectable var outColor: UIColor  = UIColor.black {
         didSet{
             self.updateOutColor()
-            self.displayView.updateOutColor(color: outColor)
+            self.displayView.updateCircleColor(color: outColor)
         }
     }
- 
-    @IBInspectable var innerColor: UIColor  = UIColor.white {
-        didSet{
-            self.displayView.updateInnerColor(color: outColor)
-        }
-    }
-
     
     override func prepareForInterfaceBuilder(){
         super.prepareForInterfaceBuilder()
@@ -125,7 +118,7 @@ class TimerView: UIView {
     }
     
     fileprivate func setupDisplayView(){
-        self.displayView.updateOutColor(color: outColor)
+        self.displayView.updateCircleColor(color: outColor)
     }
     
     fileprivate func updateOutColor(){

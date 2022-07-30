@@ -78,7 +78,7 @@ class TimerDisplayView: UIView, TimerDisplay {
         self.singleUpdaterColor = value
     }
     
-    func updateOutColor(color: UIColor){
+    func updateCircleColor(color: UIColor){
         self.outCircleColor = color
         self.setNeedsDisplay()
     }
