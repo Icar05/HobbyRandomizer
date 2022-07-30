@@ -61,11 +61,7 @@ class SoundUtil{
         guard let player = player else {
             return
         }
-        
-        if(player.isPlaying){
-            player.stop()
-        }
-        
+
         player.play()
     }
     
