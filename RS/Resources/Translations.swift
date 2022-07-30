@@ -20,6 +20,10 @@ struct Translations{
         public static var stopTimerText: String{
             "Translations.Timer.stopTimerText".localized(Bundle.main)
         }
+        
+        public static var refreshTimerText: String{
+            "Translations.Timer.refreshTimerText".localized(Bundle.main)
+        }
     }
     
     struct Permission{

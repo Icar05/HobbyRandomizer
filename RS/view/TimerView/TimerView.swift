@@ -92,8 +92,6 @@ class TimerView: UIView {
         self.handleState()
         self.updateClocklabel(value: maxValue)
         self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
-
-        print("on Timer stopped ")
     }
     
     func onTimerUpdate(current: Int, max: Int) {
@@ -104,8 +102,6 @@ class TimerView: UIView {
     func onTimerFinished() {
         self.state = .FINISHED
         self.handleState()
-
-        print("on Timer finished ")
     }
     
     fileprivate func setup(){
@@ -203,8 +199,8 @@ class TimerView: UIView {
         switch self.state {
         case .STARTED:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: "Stop",
-                textColor: UIColor.red
+                text: Translations.Timer.stopTimerText,
+                textColor: UIColor.colorMain!
             )
             self.buttonCallback = {
                 self.delegate?.didStopTimerClick()
@@ -213,8 +209,8 @@ class TimerView: UIView {
             return
         case .FINISHED:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: "Refresh",
-                textColor: UIColor.orange
+                text: Translations.Timer.refreshTimerText,
+                textColor: UIColor.colorMain!
             )
             self.buttonCallback = {
                 self.delegate?.didRefreshClick()
@@ -223,8 +219,8 @@ class TimerView: UIView {
             return
         case .CLEAR:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: "Start",
-                textColor: UIColor.systemGreen
+                text: Translations.Timer.startTimerText,
+                textColor: outColor
             )
             self.buttonCallback = {
                 self.delegate?.didStartTimerClick()

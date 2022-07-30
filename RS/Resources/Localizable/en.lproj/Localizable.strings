@@ -55,6 +55,7 @@
 /* Timer */
 "Translations.Timer.startTimerText" = "Start";
 "Translations.Timer.stopTimerText" = "Stop";
+"Translations.Timer.refreshTimerText" = "Refresh";
 "Translations.Timer.timeHasGone" = "Time has gone"; 
 
 /* Settings */
