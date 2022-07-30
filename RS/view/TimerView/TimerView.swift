@@ -94,15 +94,19 @@ class TimerView: UIView {
         self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
     }
     
+    func onTimerFinished(maxValue: Int) {
+        self.state = .FINISHED
+        self.handleState()
+        self.updateClocklabel(value: maxValue)
+        self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
+    }
+    
     func onTimerUpdate(current: Int, max: Int) {
         self.updateClocklabel(value: current)
         self.displayView.updateCurrentValue(current: current, max: max)
     }
     
-    func onTimerFinished() {
-        self.state = .FINISHED
-        self.handleState()
-    }
+    
     
     fileprivate func setup(){
         

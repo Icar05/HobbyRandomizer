@@ -17,7 +17,7 @@ struct TimerUtilState{
 public protocol TimerUtilDelegate: NSObject{
     func onTimerStart()
     func onTimerUpdate(current: Int, max: Int)
-    func onTimerFinished()
+    func onTimerFinished(maxValue: Int)
     func onTimerStop(maxValue: Int)
     func needDebug(value: String)
 }
@@ -109,7 +109,7 @@ class TimerUtil{
         self.timer?.invalidate()
         self.timer = nil
         self.elapsedTimeUtil.clearStartTimerTime()
-        self.delegate?.onTimerFinished()
+        self.delegate?.onTimerFinished(maxValue: maxTimeInMinutes.toSeconds())
         
         printLog("finishTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
@@ -185,7 +185,7 @@ class TimerUtil{
     //we have delivered message, we have to notify timer about finish
     private func timerHasFinishedInBackground(){
         printLog("timer has finished !")
-        self.stopTimer()
+        self.finishTimer()
         self.notificationUtil.clearDeliveredNotifications()
     }
 

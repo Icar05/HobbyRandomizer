@@ -88,8 +88,8 @@ extension TimerViewController: TimerUtilDelegate{
         self.timerView.onTimerStop(maxValue: maxValue)
     }
     
-    public func onTimerFinished() {
-        self.timerView.onTimerFinished()
+    public func onTimerFinished(maxValue: Int) {
+        self.timerView.onTimerFinished(maxValue: maxValue)
     }
     
     public func onTimerUpdate(current: Int, max: Int) {
