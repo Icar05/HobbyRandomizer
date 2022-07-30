@@ -22,24 +22,41 @@ class UserDefaultStorage{
     private let decoder = JSONDecoder()
     
     
-    
+
     /**
      time
      */
     @discardableResult
-    func saveTime(time: Int) -> Bool{
-            UserDefaults.standard.set(time, forKey: UserDefaultConstants.time)
+    func saveTime(model: ElapsedTimeModel) -> Bool{
+        do {
+            let data = try encoder.encode(model)
+            UserDefaults.standard.set(data, forKey: UserDefaultConstants.time)
             return true
+        } catch {
+            print("Unable to Encode ElapsedTimeModel (\(error))")
+            return false
+        }
     }
     
-    func getTime() -> Int{
-        return UserDefaults.standard.integer(forKey: UserDefaultConstants.time)
+    func getTime() -> ElapsedTimeModel{
+        if let data = UserDefaults.standard.data(forKey: UserDefaultConstants.time) {
+            do {
+                return try decoder.decode(ElapsedTimeModel.self, from: data)
+            } catch {
+                print("Unable to Decode ElapsedTimeModel (\(error))")
+                return getDefaultElapsedTimeModel()
+            }
+        }
+        return getDefaultElapsedTimeModel()
     }
     
     @discardableResult
     func clearTime() -> Bool {
-        UserDefaults.standard.set( -1, forKey: UserDefaultConstants.time)
-        return true
+         return saveTime(model: getDefaultElapsedTimeModel())
+    }
+    
+    private func getDefaultElapsedTimeModel() -> ElapsedTimeModel{
+        return ElapsedTimeModel(startTime: -1, maxTime: -1)
     }
     
     /**
@@ -90,7 +107,7 @@ class UserDefaultStorage{
             do {
                 return try decoder.decode(AppPrefferencesModel.self, from: data)
             } catch {
-                print("Unable to Decode Models (\(error))")
+                print("Unable to Decode AppPrefferencesModel (\(error))")
                 return getDefaultAppPrefferences()
             }
         }
@@ -105,7 +122,7 @@ class UserDefaultStorage{
             UserDefaults.standard.set(data, forKey: UserDefaultConstants.appPreferences)
             return true
         } catch {
-            print("Unable to Encode Array of Models (\(error))")
+            print("Unable to Encode AppPrefferencesModel (\(error))")
             return false
         }
     }

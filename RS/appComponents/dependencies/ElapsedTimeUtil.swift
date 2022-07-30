@@ -7,7 +7,10 @@
 
 import Foundation
 
-
+struct ElapsedTimeModel: Codable{
+    let startTime: Int
+    let maxTime: Int
+}
 
 class ElapsedTimeUtil{
     
@@ -19,20 +22,34 @@ class ElapsedTimeUtil{
         self.storage = storage
     }
     
-    func saveStartTimerTime(){
-        self.storage.saveTime(time: getTime())
+    func saveStartTimerTime(maxTime: Int){
+        self.storage.saveTime(model: ElapsedTimeModel(startTime: getTime(), maxTime: maxTime.toSeconds()))
     }
     
     func clearStartTimerTime(){
         self.storage.clearTime()
     }
     
-    func getCurrentTime() -> Int{
+    func getCurrentTime() -> ElapsedTimeModel{
         return self.storage.getTime()
     }
     
+    func getTimeState() -> (Bool, Int, Int){
+        let model = self.storage.getTime()
+        
+        if(model.maxTime == -1 && model.startTime == -1){
+            return (true, -1, -1)
+        }
+        
+        let elapsed = (getTime() - model.startTime) / 1000
+        let expired = elapsed >= model.maxTime
+        let leftTime = model.maxTime - elapsed
+                
+        return (expired, elapsed, leftTime)
+    }
+    
     func getElapsedTime() -> Int{
-        return (getTime() - self.storage.getTime() ) / 1000
+        return (getTime() - self.storage.getTime().startTime ) / 1000
     }
     
     private func getTime() -> Int {

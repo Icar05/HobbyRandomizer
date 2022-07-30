@@ -90,7 +90,7 @@ class TimerUtil{
         self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
-        self.elapsedTimeUtil.saveStartTimerTime()
+        self.elapsedTimeUtil.saveStartTimerTime(maxTime: maxTimeInMinutes)
         
         printLog("startTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
@@ -133,46 +133,35 @@ class TimerUtil{
     @objc func appCameToForeground() {
         printLog("app in foreground!")
         
-        self.notificationUtil.hasDeliveredNotification(callback: {itHas in
-            
-            DispatchQueue.main.async {
-                self.delegate?.needDebug(value: "Finished: \(itHas)")
-            }
-            
-          
-            
-            if(itHas){
-                self.timerHasFinishedInBackground()
-            } else{
-                if(self.isTimerStarted()){
-                    self.timerHasUpdatedInBackground()
-                }
-            }
-        })
+        
+        let state = self.elapsedTimeUtil.getTimeState()
+        
+        printLog("results: \(state)")
+        
+        self.delegate?.needDebug(value: "expired: \(state.0)")
+        
+        if(state.0){
+            self.timerHasFinishedInBackground()
+        }else{
+            self.timerHasUpdatedInBackground(elapsedTime: state.1, left: state.2)
+        }
+
     }
     
     
     //we don't have any messages
     //timer can be still running, or state can be already handled
-    private func timerHasUpdatedInBackground(){
-        
-        let elapsedTime = elapsedTimeUtil.getElapsedTime()
-        self.timerValue = maxTimeInMinutes.toSeconds() - elapsedTime
-        
-        printLog("timerHasUpdatedInBackground ( has not finished ), elapsed: \(elapsedTime)")
-        
-        DispatchQueue.main.async { [self] in
-            self.delegate?.onTimerUpdate(value: self.timerValue)
-        }
+    private func timerHasUpdatedInBackground(elapsedTime: Int, left: Int){
+        printLog("timer has not finished: \(elapsedTime) / \(maxTimeInMinutes.toSeconds())")
+        self.timerValue = left
+        self.delegate?.onTimerUpdate(value: self.timerValue)
     }
     
     //we have delivered message, we have to notify timer about finish
     private func timerHasFinishedInBackground(){
-        printLog("timerHasFinishedInBackground ( has finished)")
-        DispatchQueue.main.async {
-            self.stopTimer()
-            self.notificationUtil.clearDeliveredNotifications()
-        }
+        printLog("timer has finished !")
+        self.stopTimer()
+        self.notificationUtil.clearDeliveredNotifications()
     }
 
     

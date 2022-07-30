@@ -17,19 +17,6 @@ class NotificationUtil{
     
     
     
-    
-    func hasDeliveredNotification(callback: @escaping (_ itHas: Bool) -> Void){
-        UNUserNotificationCenter.current().getDeliveredNotifications { notifications in
-          
-            let sortedNotification = notifications.filter{ $0.request.identifier == notificationIdentifier }
-            
-            self.printLog("count: raw: \(notifications.count), sorted: \(sortedNotification.count)")
-            
-            callback(sortedNotification.count > 0)
-            
-        }
-    }
-    
     /**
         check notification permissins
      */
