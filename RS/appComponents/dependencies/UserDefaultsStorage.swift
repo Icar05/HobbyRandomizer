@@ -57,6 +57,7 @@ class UserDefaultStorage{
         return self.saveModels(models: models)
     }
     
+    @discardableResult
     func saveModels(models: [RandItemCellModel]) -> Bool{
         do {
             let data = try encoder.encode(models)
