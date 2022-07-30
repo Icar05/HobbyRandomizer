@@ -7,19 +7,35 @@
 
 import UIKit
 
+
+/**
+ thanks to https://cemkazim.medium.com/how-to-create-animated-circular-progress-bar-in-swift-f86c4d22f74b
+ */
 @IBDesignable
 class TimerDisplayLayerView: UIView, TimerDisplay {
-
     
-   
+    
+    
+    
+    private var circleColor = UIColor.black
+        
+    private var progressColor = UIColor.systemGreen
+    
+    private let lineWidth = 8.0
     
     private var circleLayer = CAShapeLayer()
+    
     private var progressLayer = CAShapeLayer()
+    
     private var startPoint = CGFloat(-Double.pi / 2)
-        private var endPoint = CGFloat(3 * Double.pi / 2)
-
+    
+    private var endPoint = CGFloat(3 * Double.pi / 2)
+    
     private var sizeOfView: CGFloat = 250
-
+    
+    private var singleUpdateColor: Bool = false
+    
+    
     
     override func prepareForInterfaceBuilder(){
         super.prepareForInterfaceBuilder()
@@ -44,63 +60,44 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
             self.frame = CGRect(x: 0, y: 0, width: sizeOfView, height: sizeOfView)
         }
     }
-
+    
     
     fileprivate func setup(){
         self.layer.bounds.size = CGSize(width: CGFloat(sizeOfView), height: CGFloat(sizeOfView))
         self.layer.masksToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = UIColor.yellow
-        createCircularPath()
+        self.backgroundColor = UIColor.clear
+        self.createCircularPath()
+    }
+    
+    func createCircularPath() {
+        // created circularPath for circleLayer and progressLayer
+        let radius = (self.sizeOfView / 2) - 10
+        let arcCenter = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
+        let path = UIBezierPath(arcCenter: arcCenter,
+                                        radius: radius,
+                                        startAngle: startPoint,
+                                        endAngle: endPoint,
+                                        clockwise: true)
+        
+        self.setupLayer(currentLayer: circleLayer, path: path, color: circleColor, strokeEnd: 1.0)
+        self.setupLayer(currentLayer: progressLayer, path: path, color: progressColor, strokeEnd: 0)
     }
     
     
-    func progressAnimation(duration: TimeInterval) {
-            // created circularProgressAnimation with keyPath
-            let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
-            // set the end time
-            circularProgressAnimation.duration = duration
-            circularProgressAnimation.toValue = 1.0
-            circularProgressAnimation.fillMode = .forwards
-            circularProgressAnimation.isRemovedOnCompletion = false
-            progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
-        }
-    
-    func createCircularPath() {
-            // created circularPath for circleLayer and progressLayer
-        
-            let arcCenter = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
-            let circularPath = UIBezierPath(arcCenter: arcCenter,
-                                            radius: 80,
-                                            startAngle: startPoint,
-                                            endAngle: endPoint,
-                                            clockwise: true)
-        
-        
-            // circleLayer path defined to circularPath
-            circleLayer.path = circularPath.cgPath
-            // ui edits
-            circleLayer.fillColor = UIColor.clear.cgColor
-            circleLayer.lineCap = .round
-            circleLayer.lineWidth = 20.0
-            circleLayer.strokeEnd = 1.0
-            circleLayer.strokeColor = UIColor.white.cgColor
-            // added circleLayer to layer
-            layer.addSublayer(circleLayer)
-            // progressLayer path defined to circularPath
-            progressLayer.path = circularPath.cgPath
-            // ui edits
-            progressLayer.fillColor = UIColor.clear.cgColor
-            progressLayer.lineCap = .round
-            progressLayer.lineWidth = 10.0
-            progressLayer.strokeEnd = 0
-            progressLayer.strokeColor = UIColor.green.cgColor
-            // added progressLayer to layer
-            layer.addSublayer(progressLayer)
-        }
     
     
     func setSingleUpdaterColor(value: Bool) {
+        self.singleUpdateColor = value
+    }
+    
+    func updateCurrentValue(current: Int, max: Int) {
+        let elapsed = max - current
+        let percent: Double = Double((elapsed * 100 ) / max)
+        progressLayer.strokeEnd = percent * 0.01
+    }
+    
+    func updateInnerColor(color: UIColor) {
         
     }
     
@@ -108,19 +105,20 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
         
     }
     
-    func updateCurrentValue(current: Int, max: Int) {
-//        progressAnimation(duration: 3.0)
-        
-        print("value: \(current), max: \(max)")
-//        progressLayer.strokeEnd = CGFloat(0.5)
-    }
-    
-    func updateInnerColor(color: UIColor) {
-        
-    }
-    
     func updateOutColor(color: UIColor) {
-        
+        self.circleColor = color
+        self.circleLayer.strokeColor = color.cgColor
     }
-
+    
+    
+    private func setupLayer(currentLayer: CAShapeLayer, path: UIBezierPath, color: UIColor, strokeEnd: Double){
+        currentLayer.path = path.cgPath
+        currentLayer.fillColor = UIColor.clear.cgColor
+        currentLayer.lineCap = .round
+        currentLayer.lineWidth = lineWidth
+        currentLayer.strokeEnd = strokeEnd
+        currentLayer.strokeColor = color.cgColor
+        
+        layer.addSublayer(currentLayer)
+    }
 }
