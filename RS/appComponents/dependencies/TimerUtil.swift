@@ -30,7 +30,7 @@ class TimerUtil{
     
     private let notificationUtil: NotificationUtil
     
-    private let showLogs = true
+    private let showLogs = false
     
     private let log = "TimerUtil"
     

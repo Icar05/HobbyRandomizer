@@ -156,12 +156,14 @@ class TimerView: UIView {
     
     fileprivate func getActionTextAttributes() -> NSAttributedString{
         let text = isTimerStarted ? Translations.Timer.stopTimerText: Translations.Timer.startTimerText
+        let textColor = isTimerStarted ? UIColor.colorMain : outColor
         
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: outColor,
+            .strokeColor: textColor ?? outColor,
             .foregroundColor: UIColor.white,
             .strokeWidth: -5.0
         ]
+        
         return NSAttributedString(string: text, attributes: strokeTextAttributes)
     }
 
