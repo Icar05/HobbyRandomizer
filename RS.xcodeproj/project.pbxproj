@@ -121,8 +121,8 @@
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
 		ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF6A2715C6D300D4EFE9 /* LaunchScreen.storyboard */; };
 		ED6EEF782715C7DD00D4EFE9 /* RandomizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */; };
-		ED6FC35028957477003A034A /* TimerDisplayLayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC34F28957477003A034A /* TimerDisplayLayerView.swift */; };
-		ED6FC352289575C8003A034A /* TimerSquereDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC351289575C8003A034A /* TimerSquereDisplay.swift */; };
+		ED6FC35028957477003A034A /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC34F28957477003A034A /* TimerDisplayView.swift */; };
+		ED6FC352289575C8003A034A /* TimerDisplaySquereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC351289575C8003A034A /* TimerDisplaySquereView.swift */; };
 		ED6FC35428957777003A034A /* TimerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC35328957777003A034A /* TimerDisplay.swift */; };
 		ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73078F2893FE4B005FFAF1 /* NotificationUtil.swift */; };
 		ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918972863AE780041D407 /* FileWriterUtil.swift */; };
@@ -299,8 +299,8 @@
 		ED6EEF6B2715C6D300D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED6EEF6D2715C6D300D4EFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HobbyRandomizer/appComponents/Info.plist; sourceTree = SOURCE_ROOT; };
 		ED6EEF772715C7DD00D4EFE9 /* RandomizerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerView.swift; sourceTree = "<group>"; };
-		ED6FC34F28957477003A034A /* TimerDisplayLayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayLayerView.swift; sourceTree = "<group>"; };
-		ED6FC351289575C8003A034A /* TimerSquereDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSquereDisplay.swift; sourceTree = "<group>"; };
+		ED6FC34F28957477003A034A /* TimerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
+		ED6FC351289575C8003A034A /* TimerDisplaySquereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplaySquereView.swift; sourceTree = "<group>"; };
 		ED6FC35328957777003A034A /* TimerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplay.swift; sourceTree = "<group>"; };
 		ED73078F2893FE4B005FFAF1 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		ED7918972863AE780041D407 /* FileWriterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriterUtil.swift; sourceTree = "<group>"; };
@@ -386,8 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				ED0E594C28915AEC00C77819 /* TimerView.swift */,
-				ED6FC34F28957477003A034A /* TimerDisplayLayerView.swift */,
-				ED6FC351289575C8003A034A /* TimerSquereDisplay.swift */,
+				ED6FC34F28957477003A034A /* TimerDisplayView.swift */,
+				ED6FC351289575C8003A034A /* TimerDisplaySquereView.swift */,
 				ED6FC35328957777003A034A /* TimerDisplay.swift */,
 			);
 			path = TimerView;
@@ -1227,7 +1227,7 @@
 				EDF8A5742865060300565AAF /* TopCell.swift in Sources */,
 				EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */,
 				ED5A6C5A284FD4D00028BEED /* Navigator.swift in Sources */,
-				ED6FC352289575C8003A034A /* TimerSquereDisplay.swift in Sources */,
+				ED6FC352289575C8003A034A /* TimerDisplaySquereView.swift in Sources */,
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */,
 				ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */,
@@ -1304,7 +1304,7 @@
 				ED5135B3286CC99200403238 /* NotesInstructionPresenter.swift in Sources */,
 				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,
 				ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */,
-				ED6FC35028957477003A034A /* TimerDisplayLayerView.swift in Sources */,
+				ED6FC35028957477003A034A /* TimerDisplayView.swift in Sources */,
 				ED53615C28686580004F1836 /* DisplayRawDataDataSourse.swift in Sources */,
 				ED53615E28686594004F1836 /* DisplayInfoDataSourse.swift in Sources */,
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,

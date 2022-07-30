@@ -12,7 +12,7 @@ import UIKit
  thanks to https://cemkazim.medium.com/how-to-create-animated-circular-progress-bar-in-swift-f86c4d22f74b
  */
 @IBDesignable
-class TimerDisplayLayerView: UIView, TimerDisplay {
+class TimerDisplayView: UIView, TimerDisplay {
     
     
     

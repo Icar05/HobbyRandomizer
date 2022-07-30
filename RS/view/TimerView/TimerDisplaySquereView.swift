@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class TimerSquereDisplay: UIView, TimerDisplay {
+class TimerDisplaySquereView: UIView, TimerDisplay {
  
     
    
