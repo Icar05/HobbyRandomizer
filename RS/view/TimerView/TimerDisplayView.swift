@@ -74,9 +74,8 @@ class TimerDisplayView: UIView {
         self.maxTimeInSeconds = maxTimeInSeconds
     }
     
-    func setPreferences(preferences: AppPrefferencesModel){
-        self.setMaxTimeInSeconds(maxTimeInSeconds: preferences.timerMinutes.toSeconds())
-        self.singleUpdaterColor = preferences.timerSingleColor
+    func setSingleUpdaterColor(value: Bool){
+        self.singleUpdaterColor = value
     }
     
     func updateOutColor(color: UIColor){

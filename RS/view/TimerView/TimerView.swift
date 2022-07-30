@@ -77,9 +77,12 @@ class TimerView: UIView {
         }
     }
     
-    func setPreferences(preferences: AppPrefferencesModel){
-        self.maxTimeInMinutes = preferences.timerMinutes
-        self.displayView.setPreferences(preferences: preferences)
+    func restoreState(state: TimerUtilState){
+        self.isTimerStarted = state.isStarted
+        self.actonLabel.attributedText = getActionTextAttributes()
+        self.maxTimeInMinutes = state.maxTime
+        self.displayView.setSingleUpdaterColor(value: state.singleUpdateColor)
+        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
         self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
     }
     

@@ -11,7 +11,7 @@ public final class TimerViewController: UIViewController {
     
     
     
-    private let timerUtil: TimerUtil
+    private unowned var timerUtil: TimerUtil
     
     private let presenter: TimerPresenter
 
@@ -44,10 +44,17 @@ public final class TimerViewController: UIViewController {
     }
     
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
+        
+        
+        
         if(!self.timerUtil.isTimerStarted()){
             self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
-            self.timerView.setPreferences(preferences: appPreferences)
+            self.timerUtil.setTimerOnlyForeground(timerOnlyForeground: appPreferences.timerOnlyForeground)
+            self.timerUtil.setSingleUpdateColor(value: appPreferences.timerSingleColor)
         }
+        
+        self.timerView.restoreState(state: timerUtil.getState())
+        
     }
 
 }

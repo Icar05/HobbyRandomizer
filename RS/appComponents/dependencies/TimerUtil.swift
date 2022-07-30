@@ -8,6 +8,12 @@
 import Foundation
 import AVKit
 
+struct TimerUtilState{
+    let isStarted: Bool
+    let maxTime: Int
+    let singleUpdateColor: Bool
+}
+
 public protocol TimerUtilDelegate: NSObject{
     func onTimerUpdate(value: Int)
     func onTimerFinished()
@@ -36,6 +42,10 @@ class TimerUtil{
     
     private var maxTimeInMinutes = DEFAULT_MAX_TIME
     
+    private var timerOnlyForeground = false
+    
+    private var singleUpdateColor = false
+    
     private var timer: Timer? = nil
     
     private var timerValue = 0
@@ -59,7 +69,23 @@ class TimerUtil{
         self.maxTimeInMinutes = maxTimeInMinutes
     }
     
+    func setTimerOnlyForeground(timerOnlyForeground: Bool){
+        self.timerOnlyForeground = timerOnlyForeground
+    }
+    
+    func setSingleUpdateColor(value: Bool){
+        self.singleUpdateColor = value
+    }
+    
+    func getState() -> TimerUtilState{
+        return TimerUtilState(
+            isStarted: isTimerStarted(),
+            maxTime: maxTimeInMinutes,
+            singleUpdateColor: singleUpdateColor)
+    }
+    
     func startTimer(){
+        UIApplication.shared.isIdleTimerDisabled = timerOnlyForeground
         self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
@@ -69,6 +95,7 @@ class TimerUtil{
     }
     
     func stopTimer(){
+        UIApplication.shared.isIdleTimerDisabled = false
         self.notificationUtil.cancelNotification()
         self.timer?.invalidate()
         self.timer = nil
@@ -86,9 +113,10 @@ class TimerUtil{
     
     @objc func timerUpdate() {
         
-        printLog("timerUpdate")
         self.timerValue -= 1
         self.delegate?.onTimerUpdate(value: timerValue)
+        
+        printLog("timerUpdate: \(timerValue)")
         
         if(timerValue == 0){
             self.delegate?.onTimerFinished()
