@@ -12,10 +12,11 @@ enum TimerState{
 }
 
 public protocol TimerViewDelegate: NSObject{
-    func actionButtonDidTap(needTimerStart: Bool)
+    func didStartTimerClick()
+    func didStopTimerClick()
+    func didRefreshClick()
 }
 
-let DEFAULT_MAX_TIME = 30
 
 @IBDesignable
 class TimerView: UIView {
@@ -32,9 +33,9 @@ class TimerView: UIView {
     
     private var elapsedLabel: UILabel = UILabel()
     
-    private var isTimerStarted = false
+    private var state: TimerState = .CLEAR
     
-//    private var maxTimeInMinutes = DEFAULT_MAX_TIME
+    public var buttonCallback: (() -> Void )?
         
     weak var delegate: TimerViewDelegate? = nil
     
@@ -76,18 +77,22 @@ class TimerView: UIView {
     }
     
     func restoreState(state: TimerUtilState){
-        self.isTimerStarted = state.isStarted
-        self.actonLabel.attributedText = getActionTextAttributes()
         self.displayView.setSingleUpdaterColor(value: state.singleUpdateColor)
-        self.updateClocklabel(value: state.maxTime)
+        self.state = state.state
+        self.handleState()
+    }
+    
+    func onTimerStart(){
+        self.state = .STARTED
+        self.handleState()
     }
     
     func onTimerStop(maxValue: Int) {
+        self.state = .CLEAR
+        self.handleState()
         self.updateClocklabel(value: maxValue)
         self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
-        self.isTimerStarted = false
-        self.actonLabel.attributedText = getActionTextAttributes()
-        
+
         print("on Timer stopped ")
     }
     
@@ -97,9 +102,9 @@ class TimerView: UIView {
     }
     
     func onTimerFinished() {
-        self.isTimerStarted = false
-        self.actonLabel.attributedText = getActionTextAttributes()
-        
+        self.state = .FINISHED
+        self.handleState()
+
         print("on Timer finished ")
     }
     
@@ -118,6 +123,8 @@ class TimerView: UIView {
         self.setupActionLabel()
         self.setupDisplayView()
         self.setupElapsedLabel()
+        
+        self.handleState()
     }
     
     func updateElapsedLabel(value: String){
@@ -129,7 +136,6 @@ class TimerView: UIView {
     }
     
     fileprivate func updateOutColor(){
-        self.actonLabel.attributedText = getActionTextAttributes()
         self.clockLabel.textColor = outColor
     }
     
@@ -152,23 +158,11 @@ class TimerView: UIView {
         self.actonLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
         self.actonLabel.textAlignment = .center
         self.actonLabel.font = UIFont(name: actonLabel.font.familyName, size: fontSize)
-        self.actonLabel.attributedText = getActionTextAttributes()
         self.actonLabel.isUserInteractionEnabled = true
         self.actonLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:))))
     }
     
-    fileprivate func getActionTextAttributes() -> NSAttributedString{
-        let text = isTimerStarted ? Translations.Timer.stopTimerText: Translations.Timer.startTimerText
-        let textColor = isTimerStarted ? UIColor.colorMain : outColor
-        
-        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: textColor ?? outColor,
-            .foregroundColor: UIColor.white,
-            .strokeWidth: -5.0
-        ]
-        
-        return NSAttributedString(string: text, attributes: strokeTextAttributes)
-    }
+    
 
     fileprivate func setupClockLabel(){
         let fontSize = sizeOfView / 6
@@ -200,18 +194,61 @@ class TimerView: UIView {
         self.clockLabel.text = "\(minutes):\(seconds)"
     }
     
+    
+    @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
+        self.buttonCallback?()
+    }
+
+    private func handleState(){
+        switch self.state {
+        case .STARTED:
+            self.actonLabel.attributedText = getActionTextAttributes(
+                text: "Stop",
+                textColor: UIColor.red
+            )
+            self.buttonCallback = {
+                self.delegate?.didStopTimerClick()
+            }
+            
+            return
+        case .FINISHED:
+            self.actonLabel.attributedText = getActionTextAttributes(
+                text: "Refresh",
+                textColor: UIColor.orange
+            )
+            self.buttonCallback = {
+                self.delegate?.didRefreshClick()
+            }
+        
+            return
+        case .CLEAR:
+            self.actonLabel.attributedText = getActionTextAttributes(
+                text: "Start",
+                textColor: UIColor.systemGreen
+            )
+            self.buttonCallback = {
+                self.delegate?.didStartTimerClick()
+            }
+            return
+        }
+    }
+    
+    fileprivate func getActionTextAttributes(text: String, textColor: UIColor) -> NSAttributedString{
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: textColor,
+            .foregroundColor: UIColor.white,
+            .strokeWidth: -5.0
+        ]
+        
+        return NSAttributedString(string: text, attributes: strokeTextAttributes)
+    }
+    
     fileprivate func numToString(value: Int) -> String{
         return (value < 10) ? "0\(value)" : "\(value)"
     }
     
     fileprivate func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
-        self.isTimerStarted = !isTimerStarted
-        self.actonLabel.attributedText = getActionTextAttributes()
-        self.delegate?.actionButtonDidTap(needTimerStart: isTimerStarted)
     }
 }
 

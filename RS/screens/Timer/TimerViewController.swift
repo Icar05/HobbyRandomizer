@@ -61,8 +61,17 @@ public final class TimerViewController: UIViewController {
 
 extension TimerViewController: TimerViewDelegate{
     
-    public func actionButtonDidTap(needTimerStart: Bool) {
-        needTimerStart ? timerUtil.startTimer() : timerUtil.stopTimer()
+    
+    public func didStartTimerClick() {
+        timerUtil.startTimer()
+    }
+    
+    public func didStopTimerClick() {
+        timerUtil.stopTimer()
+    }
+    
+    public func didRefreshClick() {
+        timerUtil.refreshTimer()
     }
     
 }
@@ -70,22 +79,25 @@ extension TimerViewController: TimerViewDelegate{
 
 extension TimerViewController: TimerUtilDelegate{
     
-    public func onTimerUpdate(current: Int, max: Int) {
-        self.timerView.onTimerUpdate(current: current, max: max)
-    }
     
+    public func onTimerStart() {
+        self.timerView.onTimerStart()
+    }
+
     public func onTimerStop(maxValue: Int) {
         self.timerView.onTimerStop(maxValue: maxValue)
     }
     
-    public func needDebug(value: String) {
-        self.timerView.updateElapsedLabel(value: value)
-    }
-    
     public func onTimerFinished() {
         self.timerView.onTimerFinished()
-        
-        print("ViewController: onTimerFinished")
+    }
+    
+    public func onTimerUpdate(current: Int, max: Int) {
+        self.timerView.onTimerUpdate(current: current, max: max)
+    }
+    
+    public func needDebug(value: String) {
+        self.timerView.updateElapsedLabel(value: value)
     }
     
 }

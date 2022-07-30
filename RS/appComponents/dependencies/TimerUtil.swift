@@ -9,12 +9,13 @@ import Foundation
 import AVKit
 
 struct TimerUtilState{
-    let isStarted: Bool
+    let state: TimerState
     let maxTime: Int
     let singleUpdateColor: Bool
 }
 
 public protocol TimerUtilDelegate: NSObject{
+    func onTimerStart()
     func onTimerUpdate(current: Int, max: Int)
     func onTimerFinished()
     func onTimerStop(maxValue: Int)
@@ -41,7 +42,7 @@ class TimerUtil{
     
     private let log = "TimerUtil"
     
-    private var maxTimeInMinutes = DEFAULT_MAX_TIME
+    private var maxTimeInMinutes = 30
     
     private var timerOnlyForeground = false
     
@@ -50,6 +51,8 @@ class TimerUtil{
     private var timer: Timer? = nil
     
     private var timerValue = 0
+    
+    private var state: TimerState = .CLEAR
     
     weak var delegate: TimerUtilDelegate? = nil
     
@@ -80,23 +83,41 @@ class TimerUtil{
     
     func getState() -> TimerUtilState{
         return TimerUtilState(
-            isStarted: isTimerStarted(),
+            state: state,
             maxTime: maxTimeInMinutes,
             singleUpdateColor: singleUpdateColor)
     }
     
     func startTimer(){
         UIApplication.shared.isIdleTimerDisabled = timerOnlyForeground
+        
+        self.state = .STARTED
         self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerUpdate), userInfo: nil, repeats: true)
         self.elapsedTimeUtil.saveStartTimerTime(maxTime: maxTimeInMinutes)
+        self.delegate?.onTimerStart()
         
         printLog("startTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
     
+    func finishTimer(){
+        UIApplication.shared.isIdleTimerDisabled = false
+        
+        self.state = .FINISHED
+        self.notificationUtil.cancelNotification()
+        self.timer?.invalidate()
+        self.timer = nil
+        self.elapsedTimeUtil.clearStartTimerTime()
+        self.delegate?.onTimerFinished()
+        
+        printLog("finishTimer, time: \(elapsedTimeUtil.getCurrentTime())")
+    }
+    
     func stopTimer(){
         UIApplication.shared.isIdleTimerDisabled = false
+        
+        self.state = .CLEAR
         self.notificationUtil.cancelNotification()
         self.timer?.invalidate()
         self.timer = nil
@@ -104,6 +125,10 @@ class TimerUtil{
         self.delegate?.onTimerStop(maxValue: maxTimeInMinutes.toSeconds())
         
         printLog("stopTimer, time: \(elapsedTimeUtil.getCurrentTime())")
+    }
+    
+    func refreshTimer(){
+        self.delegate?.onTimerStop(maxValue: maxTimeInMinutes.toSeconds())
     }
     
     // as more stick alternative you can use notificationUtil.hasPandingNotification
@@ -120,8 +145,7 @@ class TimerUtil{
         printLog("timerUpdate: \(timerValue)")
         
         if(timerValue == 0){
-            self.delegate?.onTimerFinished()
-            self.stopTimer()
+            self.finishTimer()
             self.soundUtil.play()
         }
     }
