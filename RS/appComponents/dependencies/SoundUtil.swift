@@ -42,16 +42,13 @@ class SoundUtil{
     
     private func initPlayer(){
         if(enable){
-            
-            let scanSoundURL = URL(fileURLWithPath: sound.rawValue)
-            
-            print("path: \(scanSoundURL)")
-            
+                                    
             do {
                 guard let path = Bundle.main.path(forResource: sound.rawValue, ofType: "mp3") else {
-                         print("Sound file not found")
-                         return
-                       }
+                    print("Sound file not found")
+                    return
+                }
+                
                 let storedURL = URL(fileURLWithPath: path)
                 self.player   = try AVAudioPlayer(contentsOf: storedURL, fileTypeHint: AVFileType.mp3.rawValue)
                 self.player?.volume = volume
