@@ -18,7 +18,7 @@ class TimerView: UIView {
 
     
     
-    private var displayView: TimerDisplayView = TimerDisplayView()
+    private var displayView: TimerDisplay = TimerSquereDisplay()
     
     private var sizeOfView: CGFloat = 250
     
