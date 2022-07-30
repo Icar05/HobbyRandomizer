@@ -58,6 +58,10 @@ class SoundUtil{
         }
     }
     
+    func stop(){
+        player?.stop()
+    }
+    
     func play(){
         guard let player = player else {
             return

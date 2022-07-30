@@ -128,6 +128,7 @@ class TimerUtil{
     }
     
     func refreshTimer(){
+        self.soundUtil.stop()
         self.delegate?.onTimerStop(maxValue: maxTimeInMinutes.toSeconds())
     }
     
@@ -162,7 +163,7 @@ class TimerUtil{
         
         printLog("results: \(state)")
         
-        self.delegate?.needDebug(value: "expired: \(state.0)")
+//        self.delegate?.needDebug(value: "expired: \(state.0)")
         
         if(state.0){
             self.timerHasFinishedInBackground()
