@@ -73,7 +73,7 @@ public final class SettingsViewController: UIViewController {
     func startSelectColorAlert(){
         let model = UISelectionDialogModel(callback: {value  in
             print("value: \(value)")
-        }, title: "Test title", curentColor: Color.init(uiColor: UIColor.yellow))
+        }, title: "Test title", curentColor:  Color.init(uiColor: UIColor.yellow))
         
         let navigator = getAppComponent().getNavigator()
         let destination = navigator.getSelectColorAlert(model: model)

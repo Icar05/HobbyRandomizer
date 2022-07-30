@@ -76,12 +76,17 @@ class UISelectionDialog: BaseDialogViewController {
         self.container.layer.cornerRadius = 10
         self.setupPicker()
         self.setupButtons()
-        self.selectedRow = colors.firstIndex(of: model.curentColor) ?? 0
-        self.callback = model.callback
+        self.setupExtra()
     }
     
+    func setupExtra(){
+        self.indicatorView.backgroundColor = model.curentColor.uiColor
+        self.callback = model.callback
+        self.titleLabel.text =  "\(Translations.SelectColor.selectColorTitle) \(model.title)"
+    }
     
     func setupPicker(){
+        self.selectedRow = colors.firstIndex(of: model.curentColor) ?? 0
         self.pickerView.dataSource = self
         self.pickerView.delegate = self
         self.pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
@@ -129,6 +134,5 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let color = self.colors[row]
         self.indicatorView.backgroundColor = color.uiColor
-//        self.callback?(color)
     }
 }

@@ -13,7 +13,7 @@
 /* Permission */
 "Translations.Permission.permissionTitle" = "Необхіден дозвіл";
 "Translations.Permission.permissionSubtitle" = "Цьому додатку необхідний дозвіл на отримання нагадувать. Його можно вмикнути в налаштуваннях";
-"Translations.Permission.cancel" = "Відміна";
+"Translations.Permission.cancel" = "Скасувати";
 "Translations.Permission.ok" = "Ок";
 "Translations.Permission.settings" = "Налаштування";
 
