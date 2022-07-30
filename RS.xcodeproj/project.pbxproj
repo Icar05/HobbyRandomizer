@@ -109,6 +109,7 @@
 		ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C60284FE0740028BEED /* InitialViewController.swift */; };
 		ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C61284FE0740028BEED /* InitialViewController.xib */; };
 		ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C64284FE8120028BEED /* MenuDataSource.swift */; };
+		ED5BECB62895C4BA00088DCA /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5BECB52895C4BA00088DCA /* AnimationController.swift */; };
 		ED5F112C271772E3006454AD /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112B271772E3006454AD /* CasinoView.swift */; };
 		ED5F112E27177470006454AD /* RouleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F112D27177470006454AD /* RouleteView.swift */; };
 		ED5F1130271774E7006454AD /* RouleteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5F112F271774E7006454AD /* RouleteView.xib */; };
@@ -124,6 +125,9 @@
 		ED6FC35028957477003A034A /* TimerDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC34F28957477003A034A /* TimerDisplayView.swift */; };
 		ED6FC352289575C8003A034A /* TimerDisplaySquereView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC351289575C8003A034A /* TimerDisplaySquereView.swift */; };
 		ED6FC35428957777003A034A /* TimerDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC35328957777003A034A /* TimerDisplay.swift */; };
+		ED6FC35B2895B59B003A034A /* BaseDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC35A2895B59B003A034A /* BaseDialogViewController.swift */; };
+		ED6FC35E2895B657003A034A /* UISelectionDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6FC35C2895B657003A034A /* UISelectionDialog.swift */; };
+		ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED6FC35D2895B657003A034A /* UISelectionDialog.xib */; };
 		ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED73078F2893FE4B005FFAF1 /* NotificationUtil.swift */; };
 		ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7918972863AE780041D407 /* FileWriterUtil.swift */; };
 		ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79189A2863C07E0041D407 /* FilesViewController.swift */; };
@@ -285,6 +289,7 @@
 		ED5A6C60284FE0740028BEED /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		ED5A6C61284FE0740028BEED /* InitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		ED5A6C64284FE8120028BEED /* MenuDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataSource.swift; sourceTree = "<group>"; };
+		ED5BECB52895C4BA00088DCA /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		ED5F112B271772E3006454AD /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
 		ED5F112D27177470006454AD /* RouleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouleteView.swift; sourceTree = "<group>"; };
 		ED5F112F271774E7006454AD /* RouleteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouleteView.xib; sourceTree = "<group>"; };
@@ -302,6 +307,9 @@
 		ED6FC34F28957477003A034A /* TimerDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplayView.swift; sourceTree = "<group>"; };
 		ED6FC351289575C8003A034A /* TimerDisplaySquereView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplaySquereView.swift; sourceTree = "<group>"; };
 		ED6FC35328957777003A034A /* TimerDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDisplay.swift; sourceTree = "<group>"; };
+		ED6FC35A2895B59B003A034A /* BaseDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDialogViewController.swift; sourceTree = "<group>"; };
+		ED6FC35C2895B657003A034A /* UISelectionDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISelectionDialog.swift; sourceTree = "<group>"; };
+		ED6FC35D2895B657003A034A /* UISelectionDialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UISelectionDialog.xib; sourceTree = "<group>"; };
 		ED73078F2893FE4B005FFAF1 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		ED7918972863AE780041D407 /* FileWriterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriterUtil.swift; sourceTree = "<group>"; };
 		ED79189A2863C07E0041D407 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
@@ -730,6 +738,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED6FC3552895B545003A034A /* SelectionAlert */,
 				ED0E594428915A7600C77819 /* Timer */,
 				ED5135D9286D1F3800403238 /* YesNoScreen */,
 				ED5135C9286CF23300403238 /* SelectColorsScreen */,
@@ -822,6 +831,17 @@
 				ED5F113127177A06006454AD /* rotatable */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		ED6FC3552895B545003A034A /* SelectionAlert */ = {
+			isa = PBXGroup;
+			children = (
+				ED6FC35A2895B59B003A034A /* BaseDialogViewController.swift */,
+				ED6FC35D2895B657003A034A /* UISelectionDialog.xib */,
+				ED6FC35C2895B657003A034A /* UISelectionDialog.swift */,
+				ED5BECB52895C4BA00088DCA /* AnimationController.swift */,
+			);
+			path = SelectionAlert;
 			sourceTree = "<group>";
 		};
 		ED7918992863C0450041D407 /* Files */ = {
@@ -1203,6 +1223,7 @@
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
+				ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
 				ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */,
 				EDF8A5752865060300565AAF /* TopCell.xib in Resources */,
@@ -1238,6 +1259,7 @@
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */,
+				ED5BECB62895C4BA00088DCA /* AnimationController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5135C5286CD1EF00403238 /* NotesInstructionInfoCell.swift in Sources */,
 				ED5135C8286CD20200403238 /* NotesInstuctionInfoCellModel.swift in Sources */,
@@ -1264,6 +1286,7 @@
 				ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */,
 				EDB804F928944997004F9899 /* ElapsedTimeUtil.swift in Sources */,
 				ED1D33D8286A9C96004F1506 /* SoundUtil.swift in Sources */,
+				ED6FC35E2895B657003A034A /* UISelectionDialog.swift in Sources */,
 				ED6FC35428957777003A034A /* TimerDisplay.swift in Sources */,
 				ED536153286864ED004F1836 /* DisplayActionDataViewController.swift in Sources */,
 				ED7918BB2863EC9E0041D407 /* ActionButtonCell.swift in Sources */,
@@ -1308,6 +1331,7 @@
 				ED53615C28686580004F1836 /* DisplayRawDataDataSourse.swift in Sources */,
 				ED53615E28686594004F1836 /* DisplayInfoDataSourse.swift in Sources */,
 				ED7918A32863C1030041D407 /* FilesDataSource.swift in Sources */,
+				ED6FC35B2895B59B003A034A /* BaseDialogViewController.swift in Sources */,
 				ED36425327171B770083D578 /* RandomizerUtil.swift in Sources */,
 				ED53615A2868654E004F1836 /* DisplayActionDataPresenter.swift in Sources */,
 				EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */,

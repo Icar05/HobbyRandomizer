@@ -26,4 +26,5 @@ protocol Navigator{
     func getSelectColorScreen(storage: UserDefaultStorage) -> UIViewController
     func getYesNoScreen(storage: UserDefaultStorage) -> UIViewController
     func getTimerScreen(storage: UserDefaultStorage, timerUtil: TimerUtil) -> UIViewController
+    func getSelectColorAlert(model: UISelectionDialogModel) -> UIViewController
 }

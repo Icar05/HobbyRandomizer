@@ -114,7 +114,7 @@ public final class SettingsPresenter {
                 title: Translations.Settings.colors,
                 yesColor: preferences.yesColor.uiColor,
                 noColor: preferences.noColor.uiColor, callback: { [weak self] in
-                    self?.view.navigateToColorSelection()
+                    self?.view.startSelectColorAlert()
             }),
             SettingsHeaderCellModel(
                 title: Translations.Menu.itemTest

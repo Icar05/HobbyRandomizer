@@ -70,6 +70,16 @@ public final class SettingsViewController: UIViewController {
         navigator.navigate(start: self, destination: destination)
     }
     
+    func startSelectColorAlert(){
+        let model = UISelectionDialogModel(callback: {value  in
+            print("value: \(value)")
+        }, title: "Test title")
+        
+        let navigator = getAppComponent().getNavigator()
+        let destination = navigator.getSelectColorAlert(model: model)
+        navigator.navigate(start: self, destination: destination)
+    }
+    
     func registerCells(models: [SettingsModel]){
         
         models.forEach{

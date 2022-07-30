@@ -8,6 +8,8 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+    
+    
    
     
     func setupInitialViewController(window: UIWindow) {
@@ -146,5 +148,9 @@ class NavigatorImpl: Navigator{
         presenter.set(view: viewcontroller)
         
         return viewcontroller
+    }
+    
+    func getSelectColorAlert(model: UISelectionDialogModel) -> UIViewController {
+        return UISelectionDialog(model: model)
     }
 }
