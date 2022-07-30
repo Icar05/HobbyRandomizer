@@ -70,16 +70,16 @@ extension TimerViewController: TimerViewDelegate{
 
 extension TimerViewController: TimerUtilDelegate{
     
+    public func onTimerUpdate(current: Int, max: Int) {
+        self.timerView.onTimerUpdate(current: current, max: max)
+    }
+    
+    public func onTimerStop(maxValue: Int) {
+        self.timerView.onTimerStop(maxValue: maxValue)
+    }
+    
     public func needDebug(value: String) {
         self.timerView.updateElapsedLabel(value: value)
-    }
-    
-    public func onTimerStop() {
-        self.timerView.onTimerStop()
-    }
-    
-    public func onTimerUpdate(value: Int) {
-        self.timerView.onTimerUpdate(value: value)
     }
     
     public func onTimerFinished() {

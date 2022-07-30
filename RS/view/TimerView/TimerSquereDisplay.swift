@@ -54,15 +54,7 @@ class TimerSquereDisplay: UIView, TimerDisplay {
         
     }
     
-    func setMaxTimeInSeconds(maxTimeInSeconds: Int) {
-        
-    }
-    
     func updateCurrentValue(current: Int, max: Int) {
-        
-    }
-    
-    func updateInnerColor(color: UIColor) {
         
     }
     

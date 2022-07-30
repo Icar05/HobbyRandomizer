@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum TimerState{
+    case STARTED, FINISHED, CLEAR
+}
+
 public protocol TimerViewDelegate: NSObject{
     func actionButtonDidTap(needTimerStart: Bool)
 }
@@ -30,9 +34,10 @@ class TimerView: UIView {
     
     private var isTimerStarted = false
     
-    private var maxTimeInMinutes = DEFAULT_MAX_TIME
+//    private var maxTimeInMinutes = DEFAULT_MAX_TIME
         
     weak var delegate: TimerViewDelegate? = nil
+    
     
     
     @IBInspectable var outColor: UIColor  = UIColor.black {
@@ -73,27 +78,29 @@ class TimerView: UIView {
     func restoreState(state: TimerUtilState){
         self.isTimerStarted = state.isStarted
         self.actonLabel.attributedText = getActionTextAttributes()
-        self.maxTimeInMinutes = state.maxTime
         self.displayView.setSingleUpdaterColor(value: state.singleUpdateColor)
-        self.displayView.setMaxTimeInSeconds(maxTimeInSeconds: maxTimeInMinutes.toSeconds())
-        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
+        self.updateClocklabel(value: state.maxTime)
     }
     
-    func onTimerStop() {
-        self.updateClocklabel(value: maxTimeInMinutes.toSeconds())
-        self.displayView.updateCurrentValue(current: 0, max: maxTimeInMinutes.toSeconds())
+    func onTimerStop(maxValue: Int) {
+        self.updateClocklabel(value: maxValue)
+        self.displayView.updateCurrentValue(current: maxValue, max: maxValue)
         self.isTimerStarted = false
         self.actonLabel.attributedText = getActionTextAttributes()
+        
+        print("on Timer stopped ")
     }
     
-    func onTimerUpdate(value: Int) {
-        self.updateClocklabel(value: value)
-        self.displayView.updateCurrentValue(current: value, max: maxTimeInMinutes.toSeconds())
+    func onTimerUpdate(current: Int, max: Int) {
+        self.updateClocklabel(value: current)
+        self.displayView.updateCurrentValue(current: current, max: max)
     }
     
     func onTimerFinished() {
         self.isTimerStarted = false
         self.actonLabel.attributedText = getActionTextAttributes()
+        
+        print("on Timer finished ")
     }
     
     fileprivate func setup(){
@@ -172,7 +179,7 @@ class TimerView: UIView {
         self.clockLabel.textAlignment = .center
         self.clockLabel.textColor = outColor
         self.clockLabel.font = UIFont(name: "DBLCDTempBlack", size: fontSize)
-        self.updateClocklabel(value: maxTimeInMinutes.toMinutes())
+        self.updateClocklabel(value: 0)
     }
     
     fileprivate func setActionLabelPosition(){

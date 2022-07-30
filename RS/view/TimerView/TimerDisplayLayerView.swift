@@ -71,21 +71,10 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
     }
     
     func createCircularPath() {
-        // created circularPath for circleLayer and progressLayer
-        let radius = (self.sizeOfView / 2) - 10
-        let arcCenter = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
-        let path = UIBezierPath(arcCenter: arcCenter,
-                                        radius: radius,
-                                        startAngle: startPoint,
-                                        endAngle: endPoint,
-                                        clockwise: true)
-        
+        let path = getPath()
         self.setupLayer(currentLayer: circleLayer, path: path, color: circleColor, strokeEnd: 1.0)
         self.setupLayer(currentLayer: progressLayer, path: path, color: progressColor, strokeEnd: 0)
     }
-    
-    
-    
     
     func setSingleUpdaterColor(value: Bool) {
         self.singleUpdateColor = value
@@ -95,14 +84,8 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
         let elapsed = max - current
         let percent: Double = Double((elapsed * 100 ) / max)
         progressLayer.strokeEnd = percent * 0.01
-    }
-    
-    func updateInnerColor(color: UIColor) {
         
-    }
-    
-    func setMaxTimeInSeconds(maxTimeInSeconds: Int) {
-        
+        print("current: \(current), max: \(max), percent: \(percent)")
     }
     
     func updateCircleColor(color: UIColor) {
@@ -110,6 +93,13 @@ class TimerDisplayLayerView: UIView, TimerDisplay {
         self.circleLayer.strokeColor = color.cgColor
     }
     
+    
+    private func getPath() -> UIBezierPath{
+        let radius = (self.sizeOfView / 2) - 10
+        let arcCenter = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
+        return UIBezierPath(arcCenter: arcCenter, radius: radius,
+                            startAngle: startPoint, endAngle: endPoint, clockwise: true)
+    }
     
     private func setupLayer(currentLayer: CAShapeLayer, path: UIBezierPath, color: UIColor, strokeEnd: Double){
         currentLayer.path = path.cgPath
