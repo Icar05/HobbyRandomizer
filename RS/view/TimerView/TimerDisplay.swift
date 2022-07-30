@@ -17,7 +17,7 @@ protocol TimerDisplay: UIView{
 }
 
 extension TimerDisplay {
-    private func getColor(percent: Double) -> UIColor{
+    func getColor(percent: Double) -> UIColor{
         if(percent < 33){
             return UIColor.coolGreen!
         }else if (percent < 66){

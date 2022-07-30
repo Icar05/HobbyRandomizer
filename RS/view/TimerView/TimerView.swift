@@ -199,8 +199,7 @@ class TimerView: UIView {
         switch self.state {
         case .STARTED:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: Translations.Timer.stopTimerText,
-                textColor: UIColor.colorMain!
+                text: Translations.Timer.stopTimerText
             )
             self.buttonCallback = {
                 self.delegate?.didStopTimerClick()
@@ -209,8 +208,7 @@ class TimerView: UIView {
             return
         case .FINISHED:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: Translations.Timer.refreshTimerText,
-                textColor: UIColor.colorMain!
+                text: Translations.Timer.refreshTimerText
             )
             self.buttonCallback = {
                 self.delegate?.didRefreshClick()
@@ -219,8 +217,7 @@ class TimerView: UIView {
             return
         case .CLEAR:
             self.actonLabel.attributedText = getActionTextAttributes(
-                text: Translations.Timer.startTimerText,
-                textColor: outColor
+                text: Translations.Timer.startTimerText
             )
             self.buttonCallback = {
                 self.delegate?.didStartTimerClick()
@@ -229,9 +226,9 @@ class TimerView: UIView {
         }
     }
     
-    fileprivate func getActionTextAttributes(text: String, textColor: UIColor) -> NSAttributedString{
+    fileprivate func getActionTextAttributes(text: String) -> NSAttributedString{
         let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: textColor,
+            .strokeColor: outColor,
             .foregroundColor: UIColor.white,
             .strokeWidth: -5.0
         ]
