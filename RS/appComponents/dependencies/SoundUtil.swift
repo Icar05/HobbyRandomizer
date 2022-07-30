@@ -9,19 +9,13 @@ import Foundation
 import AVFoundation
 
 
-/**
- https://github.com/TUNER88/iOSSystemSoundsLibrary
- https://gist.github.com/ParityError/5a691e0cb769b1871f9999293bb22b99
- */
 
 enum SoundCaf: String{
-    case Tink = "/System/Library/Audio/UISounds/Tink.caf"
-    case Tock = "/System/Library/Audio/UISounds/Tock.caf"
-    case Beep = "/System/Library/Audio/UISounds/SIMToolkitGeneralBeep.caf"
-    case Negative = "/System/Library/Audio/UISounds/SIMToolkitNegativeACK.caf"
-    case End = "/System/Library/Audio/UISounds/end_record.caf"
-    case Timer = "/System/Library/Audio/UISounds/nano/Alarm_Nightstand_Haptic.caf"
+    case Open = "Open"
+    case Click = "Click"
 }
+
+let timerSound = SoundCaf.Click
 
 class SoundUtil{
     
@@ -46,8 +40,16 @@ class SoundUtil{
         if(enable){
             
             let scanSoundURL = URL(fileURLWithPath: sound.rawValue)
+            
+            print("path: \(scanSoundURL)")
+            
             do {
-                self.player  = try AVAudioPlayer(contentsOf: scanSoundURL)
+                guard let path = Bundle.main.path(forResource: sound.rawValue, ofType: "mp3") else {
+                         print("Sound file not found")
+                         return
+                       }
+                let storedURL = URL(fileURLWithPath: path)
+                self.player   = try AVAudioPlayer(contentsOf: storedURL, fileTypeHint: AVFileType.mp3.rawValue)
                 self.player?.volume = volume
             } catch let error {
                 print("Player: error: \(error) ")

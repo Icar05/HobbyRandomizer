@@ -95,6 +95,9 @@
 		ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616328686D73004F1836 /* DisplayRawDataCell.swift */; };
 		ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53616428686D73004F1836 /* DisplayRawDataCell.xib */; };
 		ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */; };
+		ED55EA602894CCCC00EDB0A0 /* alarmCar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */; };
+		ED55EA642894D2BE00EDB0A0 /* Open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA622894D2BE00EDB0A0 /* Open.mp3 */; };
+		ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA652894D63700EDB0A0 /* Click.mp3 */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
 		ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C55284FD0370028BEED /* MenuViewController.xib */; };
@@ -263,6 +266,9 @@
 		ED53616328686D73004F1836 /* DisplayRawDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCell.swift; sourceTree = "<group>"; };
 		ED53616428686D73004F1836 /* DisplayRawDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataCell.xib; sourceTree = "<group>"; };
 		ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCellModel.swift; sourceTree = "<group>"; };
+		ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarmCar.mp3; sourceTree = "<group>"; };
+		ED55EA622894D2BE00EDB0A0 /* Open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Open.mp3; sourceTree = "<group>"; };
+		ED55EA652894D63700EDB0A0 /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED5A6C55284FD0370028BEED /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -686,6 +692,16 @@
 			path = DisplayRawDataCell;
 			sourceTree = "<group>";
 		};
+		ED55EA582894C87B00EDB0A0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				ED55EA652894D63700EDB0A0 /* Click.mp3 */,
+				ED55EA622894D2BE00EDB0A0 /* Open.mp3 */,
+				ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		ED5A6C4B284FC8C80028BEED /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,6 +1050,7 @@
 		EDF8A55B2864EEAD00565AAF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED55EA582894C87B00EDB0A0 /* Sounds */,
 				EDF8A55E2864EEAD00565AAF /* Translations.swift */,
 				EDF8A55F2864EEAD00565AAF /* Localizable */,
 			);
@@ -1148,6 +1165,7 @@
 				ED5135AA286CC2D100403238 /* DisplayQuestionCell.xib in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
+				ED55EA602894CCCC00EDB0A0 /* alarmCar.mp3 in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
@@ -1168,7 +1186,9 @@
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
+				ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */,
 				EDF8A5752865060300565AAF /* TopCell.xib in Resources */,
+				ED55EA642894D2BE00EDB0A0 /* Open.mp3 in Resources */,
 				ED5135B9286CC9D900403238 /* NotesInstructionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

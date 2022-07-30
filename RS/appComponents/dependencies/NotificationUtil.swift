@@ -58,8 +58,8 @@ class NotificationUtil{
     }
     
     func sceduleNotification(maxTimeInMinutes: Int){
-        
-        let soundName = UNNotificationSoundName("Tock.caf")
+    
+        let soundName = UNNotificationSoundName("\(timerSound.rawValue).mp3")
         let sound = UNNotificationSound(named: soundName)
         let time: Double = Double(maxTimeInMinutes.toSeconds())
         let content =  UNMutableNotificationContent()
@@ -69,7 +69,7 @@ class NotificationUtil{
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
         let request = UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
         
-//        printLog("sound: \(sound)")
+        printLog("sound: \(sound)")
              
         
         UNUserNotificationCenter.current().add(request) { [self] (error) in

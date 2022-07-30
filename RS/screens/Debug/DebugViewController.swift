@@ -43,7 +43,7 @@ public final class DebugViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
 
-           self.soundUtil = getAppComponent().getSoundUtil(sound: .Tink)
+           self.soundUtil = getAppComponent().getSoundUtil(sound: .Click)
        }
     
     public override func viewDidLoad() {

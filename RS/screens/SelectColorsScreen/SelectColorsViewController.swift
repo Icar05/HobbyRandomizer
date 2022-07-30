@@ -48,7 +48,7 @@ public final class SelectColorsViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.soundUtil = getAppComponent().getSoundUtil(sound: .Tock)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Click)
     }
     
     func displayData(data: [SelectColorModel]){
