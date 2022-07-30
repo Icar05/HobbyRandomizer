@@ -69,6 +69,7 @@
 "Translations.Settings.timerLabel" = "Таймер";
 "Translations.Settings.timerMaxLabel" = "Кількість хвилин";
 "Translations.Settings.singleProgressColor" = "Единий колір оновлення";
+"Translations.Settings.timerOnlyForeground" = "Передній план";
 
 /* Files */
 "Translations.Files.howToCreate" = "Як створити імпортабельні нотатки?";

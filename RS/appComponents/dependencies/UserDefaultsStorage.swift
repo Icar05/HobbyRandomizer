@@ -117,7 +117,8 @@ class UserDefaultStorage{
             yesColor: Color.init(uiColor: UIColor.red),
             noColor: Color.init(uiColor: UIColor.yellow),
             timerMinutes: 5,
-            timerSingleColor: false
+            timerSingleColor: false,
+            timerOnlyForeground: false
         )
     }
     

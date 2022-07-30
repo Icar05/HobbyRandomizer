@@ -69,6 +69,7 @@
 "Translations.Settings.timerLabel" = "Timer";
 "Translations.Settings.timerMaxLabel" = "Minutes count";
 "Translations.Settings.singleProgressColor" = "Single updating color";
+"Translations.Settings.timerOnlyForeground" = "Foreground";
 
 /* Files */
 "Translations.Files.howToCreate" = "How to create importable notes?";

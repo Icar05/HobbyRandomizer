@@ -49,6 +49,10 @@ struct Translations{
             "Translations.Settings.timerMaxLabel".localized(Bundle.main)
         }
         
+        public static var timerOnlyForeground: String{
+            "Translations.Settings.timerOnlyForeground".localized(Bundle.main)
+        }
+        
         public static var singleProgressColor: String{
             "Translations.Settings.singleProgressColor".localized(Bundle.main)
         }

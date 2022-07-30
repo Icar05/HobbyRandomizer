@@ -15,6 +15,7 @@ struct AppPrefferencesModel: Codable{
     var noColor: Color
     var timerMinutes: Int
     var timerSingleColor: Bool
+    var timerOnlyForeground: Bool
 }
 
 
@@ -91,6 +92,12 @@ public final class SettingsPresenter {
                 enable: preferences.timerSingleColor,
                 callback: { [weak self] in
                     self?.model.timerSingleColor = $0
+            }),
+            SettingsSwichCellModel(
+                title: Translations.Settings.timerOnlyForeground,
+                enable: preferences.timerOnlyForeground,
+                callback: { [weak self] in
+                    self?.model.timerOnlyForeground = $0
             }),
             SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
