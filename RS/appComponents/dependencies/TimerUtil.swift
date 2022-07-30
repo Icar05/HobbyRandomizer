@@ -18,6 +18,7 @@ public protocol TimerUtilDelegate: NSObject{
     func onTimerUpdate(value: Int)
     func onTimerFinished()
     func onTimerStop()
+    func needDebug(value: String)
 }
 
 let notificationIdentifier = "TimerNotification"
@@ -133,6 +134,13 @@ class TimerUtil{
         printLog("app in foreground!")
         
         self.notificationUtil.hasDeliveredNotification(callback: {itHas in
+            
+            DispatchQueue.main.async {
+                self.delegate?.needDebug(value: "itHas: \(itHas)")
+            }
+            
+          
+            
             if(itHas){
                 self.timerHasFinishedInBackground()
             } else{

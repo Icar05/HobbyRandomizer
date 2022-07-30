@@ -70,6 +70,10 @@ extension TimerViewController: TimerViewDelegate{
 
 extension TimerViewController: TimerUtilDelegate{
     
+    public func needDebug(value: String) {
+        self.timerView.updateElapsedLabel(value: value)
+    }
+    
     public func onTimerStop() {
         self.timerView.onTimerStop()
     }
