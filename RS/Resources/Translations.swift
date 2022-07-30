@@ -39,6 +39,10 @@ struct Translations{
             "Translations.Permission.cancel".localized(Bundle.main)
         }
         
+        public static var ok: String{
+            "Translations.Permission.ok".localized(Bundle.main)
+        }
+        
         public static var settings: String{
             "Translations.Permission.settings".localized(Bundle.main)
         }

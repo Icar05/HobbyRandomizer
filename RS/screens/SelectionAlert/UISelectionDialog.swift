@@ -74,24 +74,42 @@ class UISelectionDialog: BaseDialogViewController {
     
     func setupView() {
         self.container.layer.cornerRadius = 10
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
-        
-        self.callback = model.callback
-        self.pickerView.dataSource = self
-        self.pickerView.delegate = self
-        self.pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
-        
-        
+        self.setupPicker()
+        self.setupButtons()
         self.selectedRow = colors.firstIndex(of: model.curentColor) ?? 0
         self.callback = model.callback
     }
     
     
+    func setupPicker(){
+        self.pickerView.dataSource = self
+        self.pickerView.delegate = self
+        self.pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
+    }
+    
+    func setupButtons(){
+        self.onButton.text = Translations.Permission.ok
+        self.cancelButton.text = Translations.Permission.cancel
+        self.onButton.isUserInteractionEnabled = true
+        self.cancelButton.isUserInteractionEnabled = true
+        self.onButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onOk(_:))))
+        self.cancelButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onCancel(_:))))
+    }
+    
     func setCompletion(completion: @escaping (_ newColor: Color) -> Void){
          self.callback = completion
      }
     
+    
+    @objc func onCancel(_ sender: UITapGestureRecognizer? = nil){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func onOk(_ sender: UITapGestureRecognizer? = nil){
+        let color = Color.init(uiColor: indicatorView.backgroundColor!)
+        self.callback?(color)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -111,6 +129,6 @@ extension UISelectionDialog : UIPickerViewDelegate, UIPickerViewDataSource {
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let color = self.colors[row]
         self.indicatorView.backgroundColor = color.uiColor
-        self.callback?(color)
+//        self.callback?(color)
     }
 }

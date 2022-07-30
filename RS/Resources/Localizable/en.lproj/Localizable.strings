@@ -14,6 +14,7 @@
 "Translations.Permission.permissionTitle" = "Permission is required";
 "Translations.Permission.permissionSubtitle" = "In order to get notification, this app needs permsission. You can switch it on in settings";
 "Translations.Permission.cancel" = "Cancel";
+"Translations.Permission.ok" = "Ok";
 "Translations.Permission.settings" = "Settings";
 
 /* Show */

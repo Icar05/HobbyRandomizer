@@ -14,6 +14,7 @@
 "Translations.Permission.permissionTitle" = "Небоходимо разрешение";
 "Translations.Permission.permissionSubtitle" = "Этому приложению необходимо разрешение получать уведомление. Его можно включить в настройках";
 "Translations.Permission.cancel" = "Отмена";
+"Translations.Permission.ok" = "ОК";
 "Translations.Permission.settings" = "Настройки";
 
 /* Show */
