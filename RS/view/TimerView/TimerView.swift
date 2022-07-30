@@ -135,7 +135,7 @@ class TimerView: UIView {
     
     fileprivate func setupElapsedLabel(){
         let fontSize = sizeOfView / 20
-        let actionWidth = sizeOfView / 3
+        let actionWidth = sizeOfView / 1.5
         let actionHeight = sizeOfView / 10
     
         self.elapsedLabel.textColor = UIColor.red

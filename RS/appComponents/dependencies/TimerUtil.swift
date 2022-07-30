@@ -136,7 +136,7 @@ class TimerUtil{
         self.notificationUtil.hasDeliveredNotification(callback: {itHas in
             
             DispatchQueue.main.async {
-                self.delegate?.needDebug(value: "itHas: \(itHas)")
+                self.delegate?.needDebug(value: "Finished: \(itHas)")
             }
             
           
