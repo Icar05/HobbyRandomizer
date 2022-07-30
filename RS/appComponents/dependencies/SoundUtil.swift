@@ -13,9 +13,13 @@ import AVFoundation
 enum SoundCaf: String{
     case Open = "Open"
     case Click = "Click"
+    case OldAlarm = "old-alarm"
+    case EvilAlarm = "evil-alarm"
+    case ModernAlarm = "modern-alarm"
+    case StandartAlarm = "standart-alarm"
 }
 
-let timerSound = SoundCaf.Click
+let timerSound = SoundCaf.StandartAlarm
 
 class SoundUtil{
     

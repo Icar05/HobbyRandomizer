@@ -95,9 +95,12 @@
 		ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616328686D73004F1836 /* DisplayRawDataCell.swift */; };
 		ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53616428686D73004F1836 /* DisplayRawDataCell.xib */; };
 		ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */; };
-		ED55EA602894CCCC00EDB0A0 /* alarmCar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */; };
 		ED55EA642894D2BE00EDB0A0 /* Open.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA622894D2BE00EDB0A0 /* Open.mp3 */; };
 		ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA652894D63700EDB0A0 /* Click.mp3 */; };
+		ED55EA6D2894DD6400EDB0A0 /* evil-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA692894DD6400EDB0A0 /* evil-alarm.mp3 */; };
+		ED55EA6E2894DD6400EDB0A0 /* old-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */; };
+		ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */; };
+		ED55EA702894DD6400EDB0A0 /* modern-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
 		ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C55284FD0370028BEED /* MenuViewController.xib */; };
@@ -266,9 +269,12 @@
 		ED53616328686D73004F1836 /* DisplayRawDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCell.swift; sourceTree = "<group>"; };
 		ED53616428686D73004F1836 /* DisplayRawDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataCell.xib; sourceTree = "<group>"; };
 		ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCellModel.swift; sourceTree = "<group>"; };
-		ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarmCar.mp3; sourceTree = "<group>"; };
 		ED55EA622894D2BE00EDB0A0 /* Open.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Open.mp3; sourceTree = "<group>"; };
 		ED55EA652894D63700EDB0A0 /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
+		ED55EA692894DD6400EDB0A0 /* evil-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "evil-alarm.mp3"; sourceTree = "<group>"; };
+		ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "old-alarm.mp3"; sourceTree = "<group>"; };
+		ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "standart-alarm.mp3"; sourceTree = "<group>"; };
+		ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "modern-alarm.mp3"; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED5A6C55284FD0370028BEED /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -695,9 +701,12 @@
 		ED55EA582894C87B00EDB0A0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */,
+				ED55EA692894DD6400EDB0A0 /* evil-alarm.mp3 */,
+				ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */,
+				ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */,
 				ED55EA652894D63700EDB0A0 /* Click.mp3 */,
 				ED55EA622894D2BE00EDB0A0 /* Open.mp3 */,
-				ED55EA5F2894CCCC00EDB0A0 /* alarmCar.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1152,6 +1161,7 @@
 				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
+				ED55EA6D2894DD6400EDB0A0 /* evil-alarm.mp3 in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				ED536150286864D1004F1836 /* DisplayInfoDataViewController.xib in Resources */,
 				EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */,
@@ -1162,10 +1172,11 @@
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED1D33C5286A68AD004F1506 /* SettingsSwichCell.xib in Resources */,
 				ED7918BC2863EC9E0041D407 /* ActionButtonCell.xib in Resources */,
+				ED55EA702894DD6400EDB0A0 /* modern-alarm.mp3 in Resources */,
 				ED5135AA286CC2D100403238 /* DisplayQuestionCell.xib in Resources */,
+				ED55EA6E2894DD6400EDB0A0 /* old-alarm.mp3 in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
-				ED55EA602894CCCC00EDB0A0 /* alarmCar.mp3 in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
@@ -1176,6 +1187,7 @@
 				ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */,
 				ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */,
 				ED5135C0286CD1B100403238 /* NotesInstuctionHeaderCell.xib in Resources */,
+				ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */,
 				ED1D33BE286A60C6004F1506 /* SettingsHeaderCell.xib in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */,
