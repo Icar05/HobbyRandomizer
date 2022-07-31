@@ -16,12 +16,19 @@ class SelectColorCell: UITableViewCell {
     
     private let colors: [Color] = [
         Color.init(uiColor: UIColor.red),
+        Color.init(uiColor: UIColor.coolRed!),
+        Color.init(uiColor: UIColor.coolOrange!),
         Color.init(uiColor: UIColor.orange),
         Color.init(uiColor: UIColor.yellow),
-        Color.init(uiColor: UIColor.systemGreen),
+        Color.init(uiColor: UIColor.lightGreen!),
+        Color.init(uiColor: UIColor.coolGreen!),
         Color.init(uiColor: UIColor.lightBlue!),
         Color.init(uiColor: UIColor.blue),
         Color.init(uiColor: UIColor.purple),
+        Color.init(uiColor: UIColor.colorCoolViolet!),
+        Color.init(uiColor: UIColor.colorBorderGray!),
+        Color.init(uiColor: UIColor.colorCappuccino!),
+        Color.init(uiColor: UIColor.colorCocoa!)
     ]
     
     private var selectedRow = 0

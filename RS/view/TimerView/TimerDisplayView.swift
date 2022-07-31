@@ -19,7 +19,7 @@ class TimerDisplayView: UIView, TimerDisplay {
     
     private var circleColor = UIColor.black
         
-    private var progressColor = UIColor.systemGreen
+    private var progressColor = UIColor.lightGreen
     
     private let lineWidth = 8.0
     
@@ -73,7 +73,7 @@ class TimerDisplayView: UIView, TimerDisplay {
     func createCircularPath() {
         let path = getPath()
         self.setupLayer(currentLayer: circleLayer, path: path, color: circleColor, strokeEnd: 1.0)
-        self.setupLayer(currentLayer: progressLayer, path: path, color: progressColor, strokeEnd: 0)
+        self.setupLayer(currentLayer: progressLayer, path: path, color: progressColor!, strokeEnd: 0)
     }
     
     func setSingleUpdaterColor(value: Bool) {

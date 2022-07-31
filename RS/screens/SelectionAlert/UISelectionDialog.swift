@@ -39,7 +39,7 @@ class UISelectionDialog: BaseDialogViewController {
         Color.init(uiColor: UIColor.coolOrange!),
         Color.init(uiColor: UIColor.orange),
         Color.init(uiColor: UIColor.yellow),
-        Color.init(uiColor: UIColor.systemGreen),
+        Color.init(uiColor: UIColor.lightGreen!),
         Color.init(uiColor: UIColor.coolGreen!),
         Color.init(uiColor: UIColor.lightBlue!),
         Color.init(uiColor: UIColor.blue),

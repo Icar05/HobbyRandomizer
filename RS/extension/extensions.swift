@@ -10,6 +10,7 @@ import UIKit
 
 extension UIColor {
     static let colorMain = UIColor(named: "MainColor")
+    static let lightGreen = UIColor(hexColor: "34C759")
     static let coolGreen = UIColor(hexColor: "349C52")
     static let coolRed = UIColor(hexColor: "E30002")
     static let coolOrange = UIColor(hexColor: "FAA602")
@@ -43,7 +44,7 @@ extension Color: Equatable{
             UIColor.coolOrange!: Translations.Color.customOrange,
             UIColor.orange: Translations.Color.orange,
             UIColor.yellow: Translations.Color.yellow,
-            UIColor.systemGreen: Translations.Color.green,
+            UIColor.lightGreen!: Translations.Color.green,
             UIColor.coolGreen!: Translations.Color.customGreen,
             UIColor.lightBlue!: Translations.Color.blue,
             UIColor.blue: Translations.Color.systemIndigo,
@@ -57,7 +58,7 @@ extension Color: Equatable{
         let name = names[uiColor]
         
         if(name == nil){
-            return "\(uiColor)"
+            return "\(uiColor.hexStringFromColor())"
         }else{
             return name!
         }
@@ -216,6 +217,17 @@ extension UIColor {
         )
         return
     }
+    
+    func hexStringFromColor() -> String {
+        let components = self.cgColor.components
+        let r: CGFloat = components?[0] ?? 0.0
+        let g: CGFloat = components?[1] ?? 0.0
+        let b: CGFloat = components?[2] ?? 0.0
+
+        let hexString = String.init(format: "#%02lX%02lX%02lX", lroundf(Float(r * 255)), lroundf(Float(g * 255)), lroundf(Float(b * 255)))
+        print(hexString)
+        return hexString
+     }
 }
 
 extension String{
