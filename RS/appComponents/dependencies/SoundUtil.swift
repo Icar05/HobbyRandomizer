@@ -20,7 +20,6 @@ enum SoundCaf: String{
     case OldClock = "OldClock"
 }
 
-let timerSound = SoundCaf.OldClock
 
 class SoundUtil{
     
@@ -69,6 +68,10 @@ class SoundUtil{
         }
 
         player.play()
+    }
+    
+    static func getSoundForTimer() -> SoundCaf{
+        return retroStyle ?  SoundCaf.OldClock : SoundCaf.EvilAlarm
     }
     
 }

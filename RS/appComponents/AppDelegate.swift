@@ -7,6 +7,8 @@
 
 import UIKit
 
+let retroStyle = true
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

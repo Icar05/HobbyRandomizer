@@ -24,7 +24,7 @@ class TimerView: UIView {
     
     
     
-    private var displayView: TimerDisplay = TimerDisplaySquereView()
+    private var displayView: TimerDisplay = getDisplay()
     
     private var sizeOfView: CGFloat = 250
     
@@ -137,7 +137,7 @@ class TimerView: UIView {
     }
     
     fileprivate func setupElapsedLabel(){
-        let fontSize = sizeOfView / 12
+        let fontSize = sizeOfView / getFontMultyPlyer()
         let actionWidth = sizeOfView / 1.5
         let actionHeight = sizeOfView / 10
         
@@ -148,7 +148,7 @@ class TimerView: UIView {
     }
     
     fileprivate func setupActionLabel(){
-        let fontSize = sizeOfView / 12
+        let fontSize = sizeOfView / getFontMultyPlyer()
         let actionWidth = sizeOfView / 3
         let actionHeight = sizeOfView / 10
         
@@ -243,6 +243,14 @@ class TimerView: UIView {
     
     fileprivate func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int) {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    fileprivate func getFontMultyPlyer() -> CGFloat{
+        return retroStyle ? 12 : 20
+    }
+    
+    fileprivate static func getDisplay() -> TimerDisplay{
+        return retroStyle ? TimerDisplaySquereView() : TimerDisplayView()
     }
 }
 

@@ -162,7 +162,7 @@ class TimerUtil{
     
     //write debug about expiration
     private func debugExpiredState(elapsedState: (Bool, Int, Int)){
-        if(showLogs){
+        if(retroStyle){
             self.delegate?.needDebug(value: "expired: \(elapsedState.0)")
         }
         
