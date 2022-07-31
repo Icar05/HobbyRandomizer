@@ -13,7 +13,7 @@ protocol TimerDisplay: UIView{
         
     func updateCurrentValue(current: Int, max: Int)
     
-    func updateCircleColor(color: UIColor)
+    func updateProgressColor(color: UIColor)
 }
 
 extension TimerDisplay {

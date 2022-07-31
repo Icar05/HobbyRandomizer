@@ -58,7 +58,7 @@ class TimerDisplaySquereView: UIView, TimerDisplay {
         
     }
     
-    func updateCircleColor(color: UIColor) {
-        
+    func updateProgressColor(color: UIColor) {
+        self.backgroundColor = color
     }
 }

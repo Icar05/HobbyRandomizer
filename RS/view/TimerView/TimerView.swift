@@ -23,6 +23,7 @@ class TimerView: UIView {
     
     
     
+    
     private var displayView: TimerDisplay = TimerDisplayView()
     
     private var sizeOfView: CGFloat = 250
@@ -35,18 +36,13 @@ class TimerView: UIView {
     
     private var state: TimerState = .CLEAR
     
+    private let outColor: UIColor = UIColor.black
+    
     public var buttonCallback: (() -> Void )?
     
     weak var delegate: TimerViewDelegate? = nil
     
-    
-    
-    @IBInspectable var outColor: UIColor  = UIColor.black {
-        didSet{
-            self.updateOutColor()
-            self.displayView.updateCircleColor(color: outColor)
-        }
-    }
+
     
     override func prepareForInterfaceBuilder(){
         super.prepareForInterfaceBuilder()
@@ -89,6 +85,10 @@ class TimerView: UIView {
         }
     }
     
+    func setProgressColor(color: Color){
+        self.displayView.updateProgressColor(color: color.uiColor)
+    }
+    
     func onTimerStart(){
         self.state = .STARTED
         self.handleState()
@@ -128,7 +128,6 @@ class TimerView: UIView {
         
         self.setupClockLabel()
         self.setupActionLabel()
-        self.setupDisplayView()
         self.setupElapsedLabel()
         
         self.handleState()
@@ -136,14 +135,6 @@ class TimerView: UIView {
     
     func updateElapsedLabel(value: String){
         self.elapsedLabel.text = value
-    }
-    
-    fileprivate func setupDisplayView(){
-        self.displayView.updateCircleColor(color: outColor)
-    }
-    
-    fileprivate func updateOutColor(){
-        self.clockLabel.textColor = outColor
     }
     
     fileprivate func setupElapsedLabel(){

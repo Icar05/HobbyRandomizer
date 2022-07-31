@@ -90,9 +90,9 @@ class TimerDisplayView: UIView, TimerDisplay {
         }
     }
     
-    func updateCircleColor(color: UIColor) {
-        self.circleColor = color
-        self.circleLayer.strokeColor = color.cgColor
+    func updateProgressColor(color: UIColor) {
+        self.progressColor = color
+        self.progressLayer.strokeColor = color.cgColor
     }
     
     
