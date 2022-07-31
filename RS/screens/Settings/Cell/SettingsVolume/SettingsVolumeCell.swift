@@ -20,7 +20,7 @@ class SettingsVolumeCell: UITableViewCell, SettingCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.volumeSlider.addTarget(self, action: #selector(onLuminosityChange), for: .valueChanged)
+        self.volumeSlider.addTarget(self, action: #selector(onVolumeChanged), for: .valueChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +38,7 @@ class SettingsVolumeCell: UITableViewCell, SettingCell {
         self.callback = m.callback
     }
     
-    @objc func onLuminosityChange(slider: UISlider){
+    @objc func onVolumeChanged(slider: UISlider){
         self.volumeLabel.text = "\(Translations.Settings.soundVolume) \(getPercent(volume: slider.value)) %"
         self.callback?(slider.value)
     }

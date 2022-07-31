@@ -21,14 +21,14 @@ class SettingsStepperCell: UITableViewCell, SettingCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.stepper.addTarget(self, action: #selector(onLuminosityChange), for: .valueChanged)
+        self.stepper.addTarget(self, action: #selector(onValueChanged), for: .valueChanged)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    @objc func onLuminosityChange(stepper: UIStepper){
+    @objc func onValueChanged(stepper: UIStepper){
         self.title.text = self.titleText + ": \(Int(stepper.value))"
         self.callback?(stepper.value)
     }

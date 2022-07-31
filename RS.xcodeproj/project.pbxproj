@@ -15,6 +15,9 @@
 		ED0E59522891618700C77819 /* SettingsSimpleCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */; };
 		ED0E59542891619800C77819 /* SettingsSimpleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */; };
 		ED0E59562891902D00C77819 /* TimerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E59552891902D00C77819 /* TimerUtil.swift */; };
+		ED11A14428972E4400503BFF /* SettingsTimerMinutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */; };
+		ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */; };
+		ED11A14728972E5600503BFF /* SettingsTimerMinutesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */; };
 		ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */; };
 		ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */; };
 		ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */; };
@@ -195,6 +198,9 @@
 		ED0E59502891618700C77819 /* SettingsSimpleCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSimpleCellTableViewCell.xib; sourceTree = "<group>"; };
 		ED0E59532891619800C77819 /* SettingsSimpleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSimpleCellModel.swift; sourceTree = "<group>"; };
 		ED0E59552891902D00C77819 /* TimerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUtil.swift; sourceTree = "<group>"; };
+		ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimerMinutesCell.swift; sourceTree = "<group>"; };
+		ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTimerMinutesCell.xib; sourceTree = "<group>"; };
+		ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimerMinutesCellModel.swift; sourceTree = "<group>"; };
 		ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourse.swift; sourceTree = "<group>"; };
@@ -413,6 +419,16 @@
 			path = SettingsSimpleCell;
 			sourceTree = "<group>";
 		};
+		ED11A14128972DFC00503BFF /* SettingsTimerMinutesCell */ = {
+			isa = PBXGroup;
+			children = (
+				ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */,
+				ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */,
+				ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */,
+			);
+			path = SettingsTimerMinutesCell;
+			sourceTree = "<group>";
+		};
 		ED17A1FC286A4B3D0080DB20 /* RS */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +457,7 @@
 		ED1D33B5286A5DD1004F1506 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				ED11A14128972DFC00503BFF /* SettingsTimerMinutesCell */,
 				ED0E594E2891615B00C77819 /* SettingsSimpleCell */,
 				ED435825286BCF2300F99459 /* SettingsColorCell */,
 				ED1D33DD286AAE44004F1506 /* SettingsStepperCell */,
@@ -474,9 +491,9 @@
 		ED1D33C8286A6DBC004F1506 /* SettingsVolume */ = {
 			isa = PBXGroup;
 			children = (
-				ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */,
-				ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */,
 				ED1D33CF286A6E10004F1506 /* SettingsVolumeCell.swift */,
+				ED1D33D0286A6E10004F1506 /* SettingsVolumeCell.xib */,
+				ED1D33CD286A6DF3004F1506 /* SettingsVolumeCellModel.swift */,
 			);
 			path = SettingsVolume;
 			sourceTree = "<group>";
@@ -1220,6 +1237,7 @@
 				ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */,
 				ED1D33BE286A60C6004F1506 /* SettingsHeaderCell.xib in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
+				ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */,
 				ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */,
 				ED5135CD286CF25F00403238 /* SelectColorsViewController.xib in Resources */,
 				ED5135E6286D22ED00403238 /* YesNoUtil.xib in Resources */,
@@ -1286,6 +1304,7 @@
 				ED536160286865A6004F1836 /* DisplayActionDataDataSourse.swift in Sources */,
 				ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */,
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
+				ED11A14428972E4400503BFF /* SettingsTimerMinutesCell.swift in Sources */,
 				ED5135C2286CD1D200403238 /* NotesInstructionHeaderCellModel.swift in Sources */,
 				ED5135DF286D1F7000403238 /* YesNoPresenter.swift in Sources */,
 				EDB804F928944997004F9899 /* ElapsedTimeUtil.swift in Sources */,
@@ -1316,6 +1335,7 @@
 				ED5135B8286CC9D900403238 /* NotesInstructionViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
 				ED43582B286BCF5A00F99459 /* SettingsColorCellModel.swift in Sources */,
+				ED11A14728972E5600503BFF /* SettingsTimerMinutesCellModel.swift in Sources */,
 				ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,

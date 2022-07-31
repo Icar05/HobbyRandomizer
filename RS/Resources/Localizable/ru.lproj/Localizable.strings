@@ -69,7 +69,7 @@
 "Translations.Settings.colors" = "Цвета";
 "Translations.Settings.startDebug" = "Запустить отладку";
 "Translations.Settings.timerLabel" = "Таймер";
-"Translations.Settings.timerMaxLabel" = "Количество минут";
+"Translations.Settings.timerMaxLabel" = "Минут";
 "Translations.Settings.singleProgressColor" = "Один цвет обновления";
 "Translations.Settings.timerOnlyForeground" = "Передний план";
 

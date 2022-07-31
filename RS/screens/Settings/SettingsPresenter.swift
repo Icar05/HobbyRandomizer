@@ -77,14 +77,13 @@ public final class SettingsPresenter {
             SettingsHeaderCellModel(
                 title: Translations.Settings.timerLabel
             ),
-            SettingsSteppperCellModel(
+            SettingsTimerMinutesCellModel(
                 title: Translations.Settings.timerMaxLabel,
-                value: Double(preferences.timerMinutes),
-                maxValue: 60.0,
-                minValue: 1.0,
+                minutes: preferences.timerMinutes,
                 callback: { [weak self] in
                     self?.model.timerMinutes = Int($0)
-            }),
+                }
+            ),
             SettingsSwichCellModel(
                 title: Translations.Settings.timerOnlyForeground,
                 enable: preferences.timerOnlyForeground,
@@ -100,13 +99,13 @@ public final class SettingsPresenter {
             SettingsColorCellModel(
                 title: Translations.Settings.timerLabel,
                 currentColor: preferences.timerColor.uiColor,
-                callback: {text,newColor in
-                    self.view.startSelectColorAlert(
-                        title: text,
-                        currentColor: newColor,
-                        callback: { color in
-                            self.model.timerColor = color
-                            self.refresh()
+                callback: { [weak self] in
+                    self?.view.startSelectColorAlert(
+                        title: $0,
+                        currentColor: $1,
+                        callback: { [weak self] in
+                            self?.model.timerColor = $0
+                            self?.refresh()
                         })
                 }),
             SettingsHeaderCellModel(
@@ -123,25 +122,25 @@ public final class SettingsPresenter {
             SettingsColorCellModel(
                 title: Translations.SelectColor.yes,
                 currentColor: preferences.yesColor.uiColor,
-                callback: {text,newColor in
-                    self.view.startSelectColorAlert(
-                        title: text,
-                        currentColor: newColor,
-                        callback: { color in
-                            self.model.yesColor = color
-                            self.refresh()
+                callback: { [weak self] in
+                    self?.view.startSelectColorAlert(
+                        title: $0,
+                        currentColor: $1,
+                        callback: { [weak self] in
+                            self?.model.yesColor = $0
+                            self?.refresh()
                         })
                 }),
             SettingsColorCellModel(
                 title: Translations.SelectColor.no,
                 currentColor: preferences.noColor.uiColor,
-                callback: {text,newColor in
-                    self.view.startSelectColorAlert(
-                        title: text,
-                        currentColor: newColor,
-                        callback: { color in
-                            self.model.noColor = color
-                            self.refresh()
+                callback: { [weak self] in
+                    self?.view.startSelectColorAlert(
+                        title: $0,
+                        currentColor: $1,
+                        callback: { [weak self] in
+                            self?.model.noColor = $0
+                            self?.refresh()
                         })
                 }),
             SettingsHeaderCellModel(
