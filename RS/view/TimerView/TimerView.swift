@@ -18,6 +18,8 @@ public protocol TimerViewDelegate: NSObject{
 }
 
 
+let TIMER_COLOR = UIColor.black
+
 @IBDesignable
 class TimerView: UIView {
     
@@ -36,7 +38,7 @@ class TimerView: UIView {
     
     private var state: TimerState = .CLEAR
     
-    private let outColor: UIColor = UIColor.black
+    private let outColor: UIColor = TIMER_COLOR
     
     public var buttonCallback: (() -> Void )?
     

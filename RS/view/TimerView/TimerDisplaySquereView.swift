@@ -44,9 +44,9 @@ class TimerDisplaySquereView: UIView, TimerDisplay {
         self.layer.bounds.size = CGSize(width: CGFloat(sizeOfView), height: CGFloat(sizeOfView))
         self.layer.masksToBounds = true
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = UIColor.orange
+        self.backgroundColor = TIMER_COLOR
+        self.layer.borderColor = TIMER_COLOR.cgColor
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
     }
     
     
