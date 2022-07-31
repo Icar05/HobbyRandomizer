@@ -13,6 +13,7 @@ struct AppPrefferencesModel: Codable{
     var yesNoCount: Double
     var yesColor: Color
     var noColor: Color
+    var timerColor: Color
     var timerMinutes: Int
     var timerSingleColor: Bool
     var timerOnlyForeground: Bool
@@ -36,16 +37,14 @@ public final class SettingsPresenter {
     init(storage: UserDefaultStorage){
         self.storage = storage
         self.model = storage.getAppPreferences()
-        self.fetchData()
     }
     
-    
-   
-    
-    private func fetchData(){
-       
-    }
   
+    func refresh(){
+        self.storage.saveAppPreferences(model: model)
+        let data = prepareModels(preferences: storage.getAppPreferences())
+        self.view.reloadData(models: data)
+    }
     
     func fetchFreshData(){
         let data = prepareModels(preferences: storage.getAppPreferences())
@@ -55,7 +54,6 @@ public final class SettingsPresenter {
     func savePreferences(){
         self.storage.saveAppPreferences(model: model)
     }
-    
     
     
     private func prepareModels(preferences: AppPrefferencesModel) -> [SettingsModel]{
@@ -88,17 +86,29 @@ public final class SettingsPresenter {
                     self?.model.timerMinutes = Int($0)
             }),
             SettingsSwichCellModel(
-                title: Translations.Settings.singleProgressColor,
-                enable: preferences.timerSingleColor,
-                callback: { [weak self] in
-                    self?.model.timerSingleColor = $0
-            }),
-            SettingsSwichCellModel(
                 title: Translations.Settings.timerOnlyForeground,
                 enable: preferences.timerOnlyForeground,
                 callback: { [weak self] in
                     self?.model.timerOnlyForeground = $0
             }),
+            SettingsSwichCellModel(
+                title: Translations.Settings.singleProgressColor,
+                enable: preferences.timerSingleColor,
+                callback: { [weak self] in
+                    self?.model.timerSingleColor = $0
+            }),
+            SettingsColorCellModel(
+                title: Translations.Settings.timerLabel,
+                currentColor: preferences.timerColor.uiColor,
+                callback: {text,newColor in
+                    self.view.startSelectColorAlert(
+                        title: text,
+                        currentColor: newColor,
+                        callback: { color in
+                            self.model.timerColor = color
+                            self.refresh()
+                        })
+                }),
             SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
             ),
@@ -110,12 +120,30 @@ public final class SettingsPresenter {
                 callback: { [weak self] in
                     self?.model.yesNoCount = $0
             }),
-            SettingsYesNoColorsModel(
-                title: Translations.Settings.colors,
-                yesColor: preferences.yesColor.uiColor,
-                noColor: preferences.noColor.uiColor, callback: { [weak self] in
-                    self?.view.startSelectColorAlert()
-            }),
+            SettingsColorCellModel(
+                title: Translations.SelectColor.yes,
+                currentColor: preferences.yesColor.uiColor,
+                callback: {text,newColor in
+                    self.view.startSelectColorAlert(
+                        title: text,
+                        currentColor: newColor,
+                        callback: { color in
+                            self.model.yesColor = color
+                            self.refresh()
+                        })
+                }),
+            SettingsColorCellModel(
+                title: Translations.SelectColor.no,
+                currentColor: preferences.noColor.uiColor,
+                callback: {text,newColor in
+                    self.view.startSelectColorAlert(
+                        title: text,
+                        currentColor: newColor,
+                        callback: { color in
+                            self.model.noColor = color
+                            self.refresh()
+                        })
+                }),
             SettingsHeaderCellModel(
                 title: Translations.Menu.itemTest
             ),

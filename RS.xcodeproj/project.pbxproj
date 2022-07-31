@@ -46,9 +46,9 @@
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
-		ED435828286BCF4400F99459 /* SettingsYesNoColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435826286BCF4400F99459 /* SettingsYesNoColors.swift */; };
-		ED435829286BCF4400F99459 /* SettingsYesNoColors.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED435827286BCF4400F99459 /* SettingsYesNoColors.xib */; };
-		ED43582B286BCF5A00F99459 /* SettingsYesNoColorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43582A286BCF5A00F99459 /* SettingsYesNoColorsModel.swift */; };
+		ED435828286BCF4400F99459 /* SettingsColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435826286BCF4400F99459 /* SettingsColorCell.swift */; };
+		ED435829286BCF4400F99459 /* SettingsColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED435827286BCF4400F99459 /* SettingsColorCell.xib */; };
+		ED43582B286BCF5A00F99459 /* SettingsColorCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43582A286BCF5A00F99459 /* SettingsColorCellModel.swift */; };
 		ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4491AB2866938300CCC32D /* ImportDataCell.swift */; };
 		ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED4491AC2866938300CCC32D /* ImportDataCell.xib */; };
 		ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */; };
@@ -225,9 +225,9 @@
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
-		ED435826286BCF4400F99459 /* SettingsYesNoColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsYesNoColors.swift; sourceTree = "<group>"; };
-		ED435827286BCF4400F99459 /* SettingsYesNoColors.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsYesNoColors.xib; sourceTree = "<group>"; };
-		ED43582A286BCF5A00F99459 /* SettingsYesNoColorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsYesNoColorsModel.swift; sourceTree = "<group>"; };
+		ED435826286BCF4400F99459 /* SettingsColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsColorCell.swift; sourceTree = "<group>"; };
+		ED435827286BCF4400F99459 /* SettingsColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsColorCell.xib; sourceTree = "<group>"; };
+		ED43582A286BCF5A00F99459 /* SettingsColorCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsColorCellModel.swift; sourceTree = "<group>"; };
 		ED4491AB2866938300CCC32D /* ImportDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportDataCell.swift; sourceTree = "<group>"; };
 		ED4491AC2866938300CCC32D /* ImportDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImportDataCell.xib; sourceTree = "<group>"; };
 		ED4A3CC7271A315500084BB8 /* ValueAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueAnimator.swift; sourceTree = "<group>"; };
@@ -440,7 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				ED0E594E2891615B00C77819 /* SettingsSimpleCell */,
-				ED435825286BCF2300F99459 /* SettingsYesNoColors */,
+				ED435825286BCF2300F99459 /* SettingsColorCell */,
 				ED1D33DD286AAE44004F1506 /* SettingsStepperCell */,
 				ED1D33C8286A6DBC004F1506 /* SettingsVolume */,
 				ED1D33C1286A6882004F1506 /* SettingsSwichCell */,
@@ -489,14 +489,14 @@
 			path = SettingsStepperCell;
 			sourceTree = "<group>";
 		};
-		ED435825286BCF2300F99459 /* SettingsYesNoColors */ = {
+		ED435825286BCF2300F99459 /* SettingsColorCell */ = {
 			isa = PBXGroup;
 			children = (
-				ED435826286BCF4400F99459 /* SettingsYesNoColors.swift */,
-				ED435827286BCF4400F99459 /* SettingsYesNoColors.xib */,
-				ED43582A286BCF5A00F99459 /* SettingsYesNoColorsModel.swift */,
+				ED435826286BCF4400F99459 /* SettingsColorCell.swift */,
+				ED435827286BCF4400F99459 /* SettingsColorCell.xib */,
+				ED43582A286BCF5A00F99459 /* SettingsColorCellModel.swift */,
 			);
-			path = SettingsYesNoColors;
+			path = SettingsColorCell;
 			sourceTree = "<group>";
 		};
 		ED4491A92866935C00CCC32D /* Cell */ = {
@@ -1182,7 +1182,7 @@
 				EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */,
 				ED1D33E1286AAE64004F1506 /* SettingsStepperCell.xib in Resources */,
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
-				ED435829286BCF4400F99459 /* SettingsYesNoColors.xib in Resources */,
+				ED435829286BCF4400F99459 /* SettingsColorCell.xib in Resources */,
 				EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */,
 				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
@@ -1301,7 +1301,7 @@
 				ED1D33DC286AA308004F1506 /* CasinoPresenter.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */,
-				ED435828286BCF4400F99459 /* SettingsYesNoColors.swift in Sources */,
+				ED435828286BCF4400F99459 /* SettingsColorCell.swift in Sources */,
 				EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */,
 				ED0E59542891619800C77819 /* SettingsSimpleCellModel.swift in Sources */,
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
@@ -1311,7 +1311,7 @@
 				EDE5483828517A570018A75B /* ShowViewController.swift in Sources */,
 				ED5135B8286CC9D900403238 /* NotesInstructionViewController.swift in Sources */,
 				EDD88CDC27354D310042D406 /* ViewDrawUtil.swift in Sources */,
-				ED43582B286BCF5A00F99459 /* SettingsYesNoColorsModel.swift in Sources */,
+				ED43582B286BCF5A00F99459 /* SettingsColorCellModel.swift in Sources */,
 				ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,

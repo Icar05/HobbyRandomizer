@@ -7,15 +7,13 @@
 
 import Foundation
 
-struct SettingsYesNoColorsModel: SettingsModel{
+struct SettingsColorCellModel: SettingsModel{
     
     let title: String
     
-    var yesColor: UIColor
+    var currentColor: UIColor
         
-    var noColor: UIColor
-    
-    var callback: () -> Void
+    var callback: ((_ text: String, _ newColor: Color) -> Void)? = nil
     
     
     func isHeader() -> Bool {
@@ -26,6 +24,6 @@ struct SettingsYesNoColorsModel: SettingsModel{
         return title
     }
         
-    var reuseIdentifier: String = String(describing: SettingsYesNoColors.self)
+    var reuseIdentifier: String = String(describing: SettingsColorCell.self)
 
 }
