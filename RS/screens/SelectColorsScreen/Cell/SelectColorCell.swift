@@ -18,7 +18,7 @@ class SelectColorCell: UITableViewCell {
         Color.init(uiColor: UIColor.red),
         Color.init(uiColor: UIColor.orange),
         Color.init(uiColor: UIColor.yellow),
-        Color.init(uiColor: UIColor.green),
+        Color.init(uiColor: UIColor.systemGreen),
         Color.init(uiColor: UIColor.lightBlue!),
         Color.init(uiColor: UIColor.blue),
         Color.init(uiColor: UIColor.purple),

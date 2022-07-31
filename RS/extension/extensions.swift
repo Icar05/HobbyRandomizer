@@ -9,14 +9,14 @@ import UIKit
 
 
 extension UIColor {
+    static let colorMain = UIColor(named: "MainColor")
     static let coolGreen = UIColor(hexColor: "349C52")
     static let coolRed = UIColor(hexColor: "E30002")
     static let coolOrange = UIColor(hexColor: "FAA602")
-    static let colorCoolViolet = UIColor(named: "ColorCoolViolet")
-    static let colorMain = UIColor(named: "MainColor")
-    static let colorBorderGray = UIColor(named: "BorderGray")
-    static let colorCappuccino = UIColor(named: "Cappuccino")
-    static let colorCocoa = UIColor(named: "Cocoa")
+    static let colorCoolViolet = UIColor(hexColor: "633EBF")
+    static let colorBorderGray = UIColor(hexColor: "E5E5EA")
+    static let colorCappuccino = UIColor(hexColor: "C5AB9F")
+    static let colorCocoa = UIColor(hexColor: "775554")
     static let topGB = UIColor(hexColor: "#004d38")
     static let midGB = UIColor(hexColor:  "#117c5e")
     static let bottomGB = UIColor(hexColor: "#69bb9b")
@@ -39,14 +39,28 @@ extension Color: Equatable{
     func getName() -> String{
         let names: [UIColor : String ] = [
             UIColor.red : Translations.Color.red,
+            UIColor.coolRed! : Translations.Color.customRed,
+            UIColor.coolOrange!: Translations.Color.customOrange,
             UIColor.orange: Translations.Color.orange,
             UIColor.yellow: Translations.Color.yellow,
-            UIColor.green: Translations.Color.green,
+            UIColor.systemGreen: Translations.Color.green,
+            UIColor.coolGreen!: Translations.Color.customGreen,
             UIColor.lightBlue!: Translations.Color.blue,
             UIColor.blue: Translations.Color.systemIndigo,
-            UIColor.purple: Translations.Color.purple
+            UIColor.purple: Translations.Color.purple,
+            UIColor.colorCoolViolet!: Translations.Color.customViolet,
+            UIColor.colorCappuccino!: Translations.Color.colorCappuccino,
+            UIColor.colorCocoa!: Translations.Color.colorCocoa,
+            UIColor.colorBorderGray!: Translations.Color.gray
         ]
-        return names[uiColor]!
+        
+        let name = names[uiColor]
+        
+        if(name == nil){
+            return "\(uiColor)"
+        }else{
+            return name!
+        }
     }
 }
 

@@ -203,8 +203,16 @@ struct Translations{
             "Translations.Color.red".localized(Bundle.main)
         }
         
+        public static var customRed: String{
+            "Translations.Color.customRed".localized(Bundle.main)
+        }
+        
         public static var orange: String{
             "Translations.Color.orange".localized(Bundle.main)
+        }
+        
+        public static var customOrange: String{
+            "Translations.Color.customOrange".localized(Bundle.main)
         }
         
         public static var yellow: String{
@@ -213,6 +221,10 @@ struct Translations{
         
         public static var green: String{
             "Translations.Color.green".localized(Bundle.main)
+        }
+        
+        public static var customGreen: String{
+            "Translations.Color.customGreen".localized(Bundle.main)
         }
         
         public static var blue: String{
@@ -225,6 +237,22 @@ struct Translations{
         
         public static var purple: String{
             "Translations.Color.purple".localized(Bundle.main)
+        }
+        
+        public static var customViolet: String{
+            "Translations.Color.customViolet".localized(Bundle.main)
+        }
+        
+        public static var colorCappuccino: String{
+            "Translations.Color.colorCappuccino".localized(Bundle.main)
+        }
+        
+        public static var colorCocoa: String{
+            "Translations.Color.colorCocoa".localized(Bundle.main)
+        }
+        
+        public static var gray: String{
+            "Translations.Color.gray".localized(Bundle.main)
         }
     }
     

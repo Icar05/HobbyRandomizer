@@ -102,10 +102,17 @@
 
 /* Color */
 "Translations.Color.red" = "Красный";
+"Translations.Color.customRed" = "Темно красный";
 "Translations.Color.orange" = "Оранжевый";
+"Translations.Color.customOrange" = "Светло оранжевый";
 "Translations.Color.yellow" = "Желтый";
 "Translations.Color.green" = "Зеленый";
+"Translations.Color.customGreen" = "Темно зеленый";
 "Translations.Color.blue" = "Голубой";
 "Translations.Color.systemIndigo" = "Синий";
 "Translations.Color.purple" = "Фиолетовый";
+"Translations.Color.customViolet" = "Темно фиолетовый";
+"Translations.Color.colorCappuccino" = "Капучино";
+"Translations.Color.colorCocoa" = "Какао";
+"Translations.Color.gray" = "Серый";
 

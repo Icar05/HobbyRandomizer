@@ -102,9 +102,16 @@
 
 /* Color */
 "Translations.Color.red" = "Червоний";
+"Translations.Color.customRed" = "Темно червоний";
 "Translations.Color.orange" = "Помаранчовий";
+"Translations.Color.customOrange" = "Світло помаранчовий";
 "Translations.Color.yellow" = "Жовтий";
 "Translations.Color.green" = "Зелений";
+"Translations.Color.customGreen" = "Темно зелений";
 "Translations.Color.blue" = "Блакитний";
 "Translations.Color.systemIndigo" = "Синій";
 "Translations.Color.purple" = "Фіолетовий";
+"Translations.Color.customViolet" = "Темно фіолетовий";
+"Translations.Color.colorCappuccino" = "Капучино";
+"Translations.Color.colorCocoa" = "Какао";
+"Translations.Color.gray" = "Сірий";

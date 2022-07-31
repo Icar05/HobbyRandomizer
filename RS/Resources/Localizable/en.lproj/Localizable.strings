@@ -102,9 +102,16 @@
 
 /* Color */
 "Translations.Color.red" = "Red";
+"Translations.Color.customRed" = "Dark red";
 "Translations.Color.orange" = "Orange";
+"Translations.Color.customOrange" = "Light orange";
 "Translations.Color.yellow" = "Yellow";
 "Translations.Color.green" = "Green";
+"Translations.Color.customGreen" = "Dark green";
 "Translations.Color.blue" = "Blue";
 "Translations.Color.systemIndigo" = "Indigo";
 "Translations.Color.purple" = "Purple";
+"Translations.Color.customViolet" = "Dark purple";
+"Translations.Color.colorCappuccino" = "Cappuccino";
+"Translations.Color.colorCocoa" = "Cocoa";
+"Translations.Color.gray" = "Gray";
