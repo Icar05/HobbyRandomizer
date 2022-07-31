@@ -46,13 +46,13 @@ public final class TimerViewController: UIViewController {
     func updateViewWithPreferences(appPreferences: AppPrefferencesModel){
         
         if(!self.timerUtil.isTimerStarted()){
-            self.timerView.setProgressColor(color: appPreferences.timerColor)
             self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
             self.timerUtil.setTimerOnlyForeground(timerOnlyForeground: appPreferences.timerOnlyForeground)
             self.timerUtil.setSingleUpdateColor(value: appPreferences.timerSingleColor)
         }
         
         let modelToRestore = timerUtil.getState()
+        self.timerView.setProgressColor(color: appPreferences.timerColor)
         self.timerView.restoreState(model: modelToRestore)
         
     }
