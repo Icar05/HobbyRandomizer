@@ -121,11 +121,10 @@ class TimerUtil{
     
     func refreshTimer(){
         self.soundUtil.stop()
+        self.state = .CLEAR
         self.delegate?.onTimerStop(maxValue: maxTimeInMinutes.toSeconds())
     }
     
-    // as more stick alternative you can use notificationUtil.hasPandingNotification
-    // if it' has, timer run. cause after finish it all removed
     func isTimerStarted() -> Bool {
         return self.timer != nil
     }
