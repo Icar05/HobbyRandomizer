@@ -246,7 +246,7 @@ class TimerView: UIView {
     }
     
     fileprivate func getFontMultyPlyer() -> CGFloat{
-        return retroStyle ? 12 : 20
+        return retroStyle ? 12 : 14
     }
     
     fileprivate static func getDisplay() -> TimerDisplay{

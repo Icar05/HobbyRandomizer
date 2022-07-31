@@ -11,7 +11,7 @@ import UIKit
 class TimerDisplaySquereView: UIView, TimerDisplay {
  
     
-   
+    private var singleUpdateColor: Bool = false
 
     private var sizeOfView: CGFloat = 250
 
@@ -51,11 +51,16 @@ class TimerDisplaySquereView: UIView, TimerDisplay {
     
     
     func setSingleUpdaterColor(value: Bool) {
-        
+        self.singleUpdateColor = value
     }
     
     func updateCurrentValue(current: Int, max: Int) {
+        let elapsed = max - current
+        let percent: Double = Double((elapsed * 100 ) / max)
         
+        if(!singleUpdateColor){
+            self.backgroundColor =  getColor(percent: percent)
+        }
     }
     
     func updateProgressColor(color: UIColor) {
