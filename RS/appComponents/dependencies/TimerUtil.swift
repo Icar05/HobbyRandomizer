@@ -11,7 +11,6 @@ import AVKit
 struct TimerUtilState{
     let state: TimerState
     let maxTime: Int
-    let singleUpdateColor: Bool
 }
 
 public protocol TimerUtilDelegate: NSObject{
@@ -46,8 +45,6 @@ class TimerUtil{
     
     private var timerOnlyForeground = false
     
-    private var singleUpdateColor = false
-    
     private var timer: Timer? = nil
     
     private var timerValue = 0
@@ -77,15 +74,10 @@ class TimerUtil{
         self.timerOnlyForeground = timerOnlyForeground
     }
     
-    func setSingleUpdateColor(value: Bool){
-        self.singleUpdateColor = value
-    }
-    
     func getState() -> TimerUtilState{
         return TimerUtilState(
             state: state,
-            maxTime: maxTimeInMinutes,
-            singleUpdateColor: singleUpdateColor)
+            maxTime: maxTimeInMinutes)
     }
     
     func startTimer(){
@@ -163,7 +155,7 @@ class TimerUtil{
         
         printLog("results: \(state)")
         
-//        self.delegate?.needDebug(value: "expired: \(state.0)")
+        self.delegate?.needDebug(value: "expired: \(state.0)")
         
         if(state.0){
             self.timerHasFinishedInBackground()

@@ -72,9 +72,7 @@ class TimerView: UIView {
         }
     }
     
-    func restoreState(model: TimerUtilState){
-        self.displayView.setSingleUpdaterColor(value: model.singleUpdateColor)
-        
+    func restoreState(model: TimerUtilState){        
         switch model.state{
             case .STARTED:
                 onTimerStart()
@@ -85,8 +83,9 @@ class TimerView: UIView {
         }
     }
     
-    func setProgressColor(color: Color){
+    func setDisplayColorPrefs(color: Color, singleColor: Bool){
         self.displayView.updateProgressColor(color: color.uiColor)
+        self.displayView.setSingleUpdaterColor(value: singleColor)
     }
     
     func onTimerStart(){
