@@ -10,18 +10,20 @@ import UIKit
 class BaseDialogViewController: UIViewController {
 
     
+    
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     
     override init(nibName: String?, bundle: Bundle?){
         super.init(nibName: nibName, bundle: bundle)
-        #warning("fix animation later")
-//        self.providesPresentationContextTransitionStyle = true
-//        self.definesPresentationContext = true
-//        self.modalPresentationStyle = UIModalPresentationStyle.custom
-//        self.transitioningDelegate = self
+
+        self.providesPresentationContextTransitionStyle = true
+        self.definesPresentationContext = true
+        self.modalPresentationStyle = UIModalPresentationStyle.automatic
+        self.transitioningDelegate = self
     }
     
 }

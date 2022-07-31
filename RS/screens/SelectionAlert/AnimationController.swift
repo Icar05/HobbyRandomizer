@@ -47,10 +47,10 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
         }
         
       
-        self.animate(view: targetView!,value: CGFloat(self.isPresenting ? 0.1 : 1.0))
+        self.animate(view: targetView!,value: CGFloat(self.isPresenting ? 0.1 : 0.8))
         
         UIView.animate(withDuration: self.duration, animations: { () -> Void in
-            self.animate(view: targetView!, value: CGFloat(self.isPresenting ? 1.0 : 0.1))
+            self.animate(view: targetView!, value: CGFloat(self.isPresenting ? 0.8 : 0.1))
         }) { (completed: Bool) -> Void in
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         }
