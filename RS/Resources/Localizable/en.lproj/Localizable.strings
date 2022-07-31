@@ -69,7 +69,7 @@
 "Translations.Settings.colors" = "Colors";
 "Translations.Settings.startDebug" = "Start debug";
 "Translations.Settings.timerLabel" = "Timer";
-"Translations.Settings.timerMaxLabel" = "Minutes count";
+"Translations.Settings.timerMaxLabel" = "Minutes";
 "Translations.Settings.singleProgressColor" = "Single updating color";
 "Translations.Settings.timerOnlyForeground" = "Foreground";
 

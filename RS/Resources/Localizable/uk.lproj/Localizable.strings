@@ -69,7 +69,7 @@
 "Translations.Settings.colors" = "Кольори";
 "Translations.Settings.startDebug" = "Запустити відладку";
 "Translations.Settings.timerLabel" = "Таймер";
-"Translations.Settings.timerMaxLabel" = "Кількість хвилин";
+"Translations.Settings.timerMaxLabel" = "Хвилин";
 "Translations.Settings.singleProgressColor" = "Единий колір оновлення";
 "Translations.Settings.timerOnlyForeground" = "Передній план";
 
