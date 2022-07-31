@@ -33,13 +33,18 @@ class SettingsVolumeCell: UITableViewCell, SettingCell {
             return
         }
         
-        self.volumeLabel.text = m.title
+        self.volumeLabel.text = "\(Translations.Settings.soundVolume) \(getPercent(volume: m.volume)) %"
         self.volumeSlider.value  = m.volume
         self.callback = m.callback
     }
     
     @objc func onLuminosityChange(slider: UISlider){
+        self.volumeLabel.text = "\(Translations.Settings.soundVolume) \(getPercent(volume: slider.value)) %"
         self.callback?(slider.value)
+    }
+    
+    private func getPercent(volume: Float) -> Int{
+        return Int(volume * 100)
     }
     
 }
