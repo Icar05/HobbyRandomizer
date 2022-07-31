@@ -149,35 +149,45 @@ class TimerUtil{
     @objc func appCameToForeground() {
         printLog("app in foreground!")
         
+        let elapsedState = self.elapsedTimeUtil.getTimeState()
+        self.debugExpiredState(elapsedState: elapsedState)
         
-        let state = self.elapsedTimeUtil.getTimeState()
-        
-        printLog("results: \(state)")
-        
-//        self.delegate?.needDebug(value: "expired: \(state.0)")
-        
-        if(state.0){
+        if(elapsedState.0){
             self.timerHasFinishedInBackground()
         }else{
-            self.timerHasUpdatedInBackground(elapsedTime: state.1, left: state.2)
+            self.timerHasUpdatedInBackground(elapsedTime: elapsedState.1, left: elapsedState.2)
         }
 
     }
     
+    //write debug about expiration
+    private func debugExpiredState(elapsedState: (Bool, Int, Int)){
+        if(showLogs){
+            self.delegate?.needDebug(value: "expired: \(elapsedState.0)")
+        }
+        
+        printLog("results: \(elapsedState)")
+    }
     
-    //we don't have any messages
-    //timer can be still running, or state can be already handled
+    //timer needs new update
     private func timerHasUpdatedInBackground(elapsedTime: Int, left: Int){
         printLog("timer has not finished: \(elapsedTime) / \(maxTimeInMinutes.toSeconds())")
         self.timerValue = left
         self.delegate?.onTimerUpdate(current: timerValue, max: maxTimeInMinutes.toSeconds())
     }
     
-    //we have delivered message, we have to notify timer about finish
+    // we have to notify timer about finish
     private func timerHasFinishedInBackground(){
         printLog("timer has finished !")
-        self.finishTimer()
-        self.notificationUtil.clearDeliveredNotifications()
+        if(!finishAlreadyHandled()){
+            self.finishTimer()
+            self.notificationUtil.clearDeliveredNotifications()
+        }
+    }
+    
+    //check if state has already been handled, to no needs to hangdle it again
+    private func finishAlreadyHandled() -> Bool{
+        return self.state == .CLEAR || self.state == .FINISHED
     }
 
     
