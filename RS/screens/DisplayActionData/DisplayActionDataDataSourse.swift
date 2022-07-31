@@ -75,7 +75,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     }
     
     private func needImport() -> Bool{
-        return data[1].type != .Random
+        return data.first!.type != .Random
     }
     
 }
