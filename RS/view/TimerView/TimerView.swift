@@ -139,9 +139,9 @@ class TimerView: UIView {
     }
     
     fileprivate func setupElapsedLabel(){
-        let fontSize = sizeOfView / getFontMultyPlyer()
+        let fontSize = sizeOfView / 12
         let actionWidth = sizeOfView / 1.5
-        let actionHeight = sizeOfView / 10
+        let actionHeight = sizeOfView /  getLabelHeightMultyPlyer()
         
         self.elapsedLabel.textColor = UIColor.red
         self.elapsedLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
@@ -151,8 +151,8 @@ class TimerView: UIView {
     
     fileprivate func setupActionLabel(){
         let fontSize = sizeOfView / getFontMultyPlyer()
-        let actionWidth = sizeOfView / 3
-        let actionHeight = sizeOfView / 10
+        let actionWidth = sizeOfView / 1.5
+        let actionHeight = sizeOfView / getLabelHeightMultyPlyer()
         
         self.actonLabel.frame =  CGRect(x: 0, y: 0, width: actionWidth, height: actionHeight)
         self.actonLabel.textAlignment = .center
@@ -251,8 +251,13 @@ class TimerView: UIView {
         return retroStyle ? 9 : 12
     }
     
+    fileprivate func getLabelHeightMultyPlyer() -> CGFloat{
+        return retroStyle ? 8 : 10
+    }
+    
     fileprivate static func getDisplay() -> TimerDisplay{
         return retroStyle ? TimerDisplaySquereView() : TimerDisplayView()
     }
+    
+   
 }
-
