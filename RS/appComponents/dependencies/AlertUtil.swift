@@ -10,7 +10,20 @@ import simd
 
 
 class AlertUtil{
-    func getAlert() -> UIAlertController{
+    
+    func getAlert(model: RandItemCellModel) -> UIAlertController{
+        let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Translations.Permission.ok, style: .default, handler: nil))
+        return alert
+    }
+    
+    func getAlert(title: String, subtitle: String) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Translations.Permission.ok, style: .default, handler: nil))
+        return alert
+    }
+    
+    func getPermissionAlert() -> UIAlertController{
 
         let alertController = UIAlertController(
             title: Translations.Permission.permissionTitle,

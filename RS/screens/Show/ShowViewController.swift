@@ -52,7 +52,8 @@ public final class ShowViewController: UIViewController {
     
     private func navigateToRandom(){
         let navigator =  getAppComponent().getNavigator()
-        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData())
+        let alertUtil = getAppComponent().getAlertUtil()
+        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData(), alertUtil: alertUtil)
         navigator.navigate(start: self, destination: destination)
     }
 

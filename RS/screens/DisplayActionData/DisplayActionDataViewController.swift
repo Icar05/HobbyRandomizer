@@ -22,6 +22,8 @@ public final class DisplayActionDataViewController:  UIViewController {
     
     private let presenter: DisplayActionDataPresenter
     
+    private let alertUtil: AlertUtil
+    
     
     
     @available(iOS, unavailable)
@@ -29,8 +31,9 @@ public final class DisplayActionDataViewController:  UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: DisplayActionDataPresenter) {
+    init(presenter: DisplayActionDataPresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
+        self.alertUtil = alertUtil
         
         super.init(nibName: "DisplayActionDataViewController", bundle: Bundle.main)
     }
@@ -62,7 +65,7 @@ public final class DisplayActionDataViewController:  UIViewController {
     private func showAlert(value: Bool){
         let title = value ? Translations.Alert.success : Translations.Alert.failure
         let subtitle = value ? Translations.Alert.successImportMessage : Translations.Alert.failureMessage
-        self.showAlert(title: title, subtitle: subtitle)
+        self.showAlert(alert: alertUtil.getAlert(title: title, subtitle: subtitle))
     }
     
     private func registerCells(){
@@ -78,7 +81,8 @@ public final class DisplayActionDataViewController:  UIViewController {
     
     private func navigateToRandom(){
         let navigator =  getAppComponent().getNavigator()
-        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData())
+        let alertUtil = getAppComponent().getAlertUtil()
+        let destination = navigator.getRandomizerScreen(models: self.dataSource.getData(), alertUtil: alertUtil)
         navigator.navigate(start: self, destination: destination)
     }
 

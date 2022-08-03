@@ -8,9 +8,9 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+ 
+  
     
-    
-   
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -65,17 +65,17 @@ class NavigatorImpl: Navigator{
     }
     
     
-    func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil) -> UIViewController {
+    func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController {
         let presenter = CreatePresenter(storage: storage, fileUtil: fileUtil)
-        let viewcontroller = CreateViewController(presenter: presenter)
+        let viewcontroller = CreateViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getRandomizerScreen(models: [RandItemCellModel]) -> UIViewController {
+    func getRandomizerScreen(models: [RandItemCellModel], alertUtil: AlertUtil) -> UIViewController {
         let presenter = RandomizerViewPresenter()
-        let viewcontroller = RandomizerViewController(models: models, presenter: presenter)
+        let viewcontroller = RandomizerViewController(models: models, presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
         return viewcontroller
@@ -90,17 +90,17 @@ class NavigatorImpl: Navigator{
     }
     
     
-    func getFilesScreen(filesUtil: FileWriterUtil) -> UIViewController {
+    func getFilesScreen(filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController {
         let presenter = FilesPresenter(filesUtil: filesUtil)
-        let viewcontroller = FilesViewController(presenter: presenter)
+        let viewcontroller = FilesViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
         return viewcontroller
     }
     
-    func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage) -> UIViewController {
+    func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController {
         let presenter = DisplayActionDataPresenter(data: data, storage: storage)
-        let viewcontroller = DisplayActionDataViewController(presenter: presenter)
+        let viewcontroller = DisplayActionDataViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
         return viewcontroller

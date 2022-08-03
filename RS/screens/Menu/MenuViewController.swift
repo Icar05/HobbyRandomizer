@@ -89,7 +89,7 @@ extension MenuViewController: MenuDelegate{
         case .Test:
             return appComponent.getNavigator().getDebugScreen()
         case .Create:
-            return appComponent.getNavigator().getCreateScreen(storage: appComponent.getStorage(), fileUtil: appComponent.getFileUtil())
+            return appComponent.getNavigator().getCreateScreen(storage: appComponent.getStorage(), fileUtil: appComponent.getFileUtil(), alertUtil: appComponent.getAlertUtil())
         case .Todo:
             return appComponent.getNavigator().getShowScreen(storage: appComponent.getStorage(), type: .ToDo)
         case .WeekEnd:
@@ -97,7 +97,7 @@ extension MenuViewController: MenuDelegate{
         case .HardDayNight:
             return appComponent.getNavigator().getShowScreen(storage: appComponent.getStorage(), type: .HardDayNight)
         case .Files:
-            return appComponent.getNavigator().getFilesScreen(filesUtil: appComponent.getFileUtil())
+            return appComponent.getNavigator().getFilesScreen(filesUtil: appComponent.getFileUtil(), alertUtil: appComponent.getAlertUtil())
         case .Settings:
             return appComponent.getNavigator().getSettingScreen(storage: appComponent.getStorage())
         case .YesNo:

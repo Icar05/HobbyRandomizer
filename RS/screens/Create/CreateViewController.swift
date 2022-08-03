@@ -18,6 +18,7 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
     
     fileprivate let dataSource = CreateViewDataSource()
     
+    fileprivate let alertUtil: AlertUtil
 
     
     @available(iOS, unavailable)
@@ -25,8 +26,9 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: CreatePresenter) {
+    init(presenter: CreatePresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
+        self.alertUtil = alertUtil
         super.init(nibName: "CreateViewController", bundle: Bundle.main)
     }
     
@@ -71,7 +73,7 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
     private func showAlert(value: Bool){
         let title = value ? Translations.Alert.success : Translations.Alert.failure
         let subtitle = value ? Translations.Alert.successDeleteMessage : Translations.Alert.failureMessage
-        self.showAlert(title: title, subtitle: subtitle)
+        self.showAlert(alert: alertUtil.getAlert(title: title, subtitle: subtitle))
     }
     
     private func registerCells(){

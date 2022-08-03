@@ -15,6 +15,8 @@ public final class RandomizerViewController: UIViewController {
     
     private var soundUtil: SoundUtil? = nil
     
+    private let alertUtil: AlertUtil
+    
     fileprivate var models = [RandItemCellModel]()
     
     @IBOutlet weak var status: UIImageView!
@@ -37,9 +39,10 @@ public final class RandomizerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(models: [RandItemCellModel], presenter: RandomizerViewPresenter) {
+    init(models: [RandItemCellModel], presenter: RandomizerViewPresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
         self.models = models
+        self.alertUtil = alertUtil
         
         super.init(nibName: "RandomizerViewController", bundle: Bundle.main)
     }
@@ -90,7 +93,7 @@ extension RandomizerViewController: RandomizerUtilDelegate{
             self.subtitle.text = model.subTitle
             self.status.setImageColor(color: randModel.color )
             self.icon.setImageColor(color: model.type.getColorForType())
-            self.showAlert(model: model)
+            self.showAlert(alert: alertUtil.getAlert(model: model))
         }
     }
     

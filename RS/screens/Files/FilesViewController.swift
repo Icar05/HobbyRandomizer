@@ -15,6 +15,8 @@ public final class FilesViewController: UIViewController {
     
     private let presenter: FilesPresenter
     
+    private let alertUtil: AlertUtil
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var emptyView: UIView!
@@ -28,8 +30,9 @@ public final class FilesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: FilesPresenter) {
+    init(presenter: FilesPresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
+        self.alertUtil = alertUtil
         
         super.init(nibName: "FilesViewController", bundle: Bundle.main)
     }
@@ -61,7 +64,8 @@ public final class FilesViewController: UIViewController {
 
     func displayData(data: [RandItemCellModel]){
         let storage = getAppComponent().getStorage()
-        let controller = getAppComponent().getNavigator().getDisplayActionDataScreen(data: data, storage: storage)
+        let alertUtil = getAppComponent().getAlertUtil()
+        let controller = getAppComponent().getNavigator().getDisplayActionDataScreen(data: data, storage: storage, alertUtil: alertUtil)
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
     
@@ -88,7 +92,7 @@ public final class FilesViewController: UIViewController {
     private func showAlert(value: Bool){
         let title = value ? Translations.Alert.success : Translations.Alert.success
         let subtitle = value ? Translations.Alert.successRemoveData : Translations.Alert.failureMessage
-        self.showAlert(title: title, subtitle: subtitle)
+        self.showAlert(alert: alertUtil.getAlert(title: title, subtitle: subtitle))
     }
 
 }

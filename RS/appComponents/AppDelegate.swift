@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
         
-        let alert = self.appComponent.getAlertUtil().getAlert()
+        let alert = self.appComponent.getAlertUtil().getPermissionAlert()
         rootViewController.blurEffect()
         rootViewController.present(alert, animated: true)
     }
