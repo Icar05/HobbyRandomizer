@@ -13,12 +13,14 @@ class AlertUtil{
     
     func getAlert(model: RandItemCellModel) -> UIAlertController{
         let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
         alert.addAction(UIAlertAction(title: Translations.Permission.ok, style: .default, handler: nil))
         return alert
     }
     
     func getAlert(title: String, subtitle: String) -> UIAlertController{
         let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.view.tintColor = UIColor.black
         alert.addAction(UIAlertAction(title: Translations.Permission.ok, style: .default, handler: nil))
         return alert
     }
