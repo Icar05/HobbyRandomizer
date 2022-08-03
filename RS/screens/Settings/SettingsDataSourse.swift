@@ -28,18 +28,6 @@ final class SettingsDataSourse : NSObject, UITableViewDataSource, UITableViewDel
         self.data = data
     }
     
-    func getSettingsHeaderIdentifier() -> String{
-        return String(describing: SettingsHeaderCell.self)
-    }
-    
-    func getSettingsSoundEnableIdentifier() -> String{
-        return String(describing: SettingsSwichCell.self)
-    }
-    
-    func getSettingsVolumeIdentifier() -> String{
-        return String(describing: SettingsVolumeCell.self)
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  data.count
     }
