@@ -1,4 +1,4 @@
-# HobbyRandomizer
+# RS
 
 This is simple fun  application to choose how to spend time, randomizer
 
