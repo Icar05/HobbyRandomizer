@@ -17,6 +17,8 @@ There are also next screens: Yes/No and Casino :)
 ![alt text](https://github.com/Icar05/RS/blob/main/YesNo.jpg)
 ![alt text](https://github.com/Icar05/RS/blob/main/Casino.jpg)
 
+14.10.2021
+
 # License
 
 http://www.apache.org/licenses/LICENSE-2.0
