@@ -18,6 +18,8 @@ enum SoundCaf: String{
     case ModernAlarm = "modern-alarm"
     case StandartAlarm = "standart-alarm"
     case OldClock = "OldClock"
+    case Violin = "Violin"
+    case Guitarra = "Guitarra"
 }
 
 
@@ -71,7 +73,7 @@ class SoundUtil{
     }
     
     static func getSoundForTimer() -> SoundCaf{
-        return retroStyle ?  SoundCaf.OldClock : SoundCaf.StandartAlarm
+        return retroStyle ?  SoundCaf.OldClock : SoundCaf.Guitarra
     }
     
 }

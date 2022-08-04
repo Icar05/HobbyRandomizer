@@ -120,6 +120,8 @@
 		ED5F11352717C689006454AD /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11342717C689006454AD /* extensions.swift */; };
 		ED5F11382717C963006454AD /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5F11372717C963006454AD /* Colors.xcassets */; };
 		ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11392717CC15006454AD /* CasinoSelectorView.swift */; };
+		ED67A335289C5D3E009AFA4C /* Guitarra.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED67A333289C5D3E009AFA4C /* Guitarra.mp3 */; };
+		ED67A336289C5D3E009AFA4C /* Violin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED67A334289C5D3E009AFA4C /* Violin.mp3 */; };
 		ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */; };
 		ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF652715C6D200D4EFE9 /* Main.storyboard */; };
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
@@ -304,6 +306,8 @@
 		ED5F11342717C689006454AD /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		ED5F11372717C963006454AD /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		ED5F11392717CC15006454AD /* CasinoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoSelectorView.swift; sourceTree = "<group>"; };
+		ED67A333289C5D3E009AFA4C /* Guitarra.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guitarra.mp3; sourceTree = "<group>"; };
+		ED67A334289C5D3E009AFA4C /* Violin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Violin.mp3; sourceTree = "<group>"; };
 		ED6EEF5C2715C6D200D4EFE9 /* RS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED6EEF662715C6D200D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -734,6 +738,8 @@
 		ED55EA582894C87B00EDB0A0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				ED67A333289C5D3E009AFA4C /* Guitarra.mp3 */,
+				ED67A334289C5D3E009AFA4C /* Violin.mp3 */,
 				ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */,
 				ED55EA692894DD6400EDB0A0 /* evil-alarm.mp3 */,
 				ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */,
@@ -1244,7 +1250,9 @@
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
+				ED67A335289C5D3E009AFA4C /* Guitarra.mp3 in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
+				ED67A336289C5D3E009AFA4C /* Violin.mp3 in Resources */,
 				ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
 				ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */,
