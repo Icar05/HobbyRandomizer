@@ -119,6 +119,10 @@ class TimerUtil{
         printLog("stopTimer, time: \(elapsedTimeUtil.getCurrentTime())")
     }
     
+    func stopSound(){
+        self.soundUtil.stop()
+    }
+    
     func refreshTimer(){
         self.soundUtil.stop()
         self.state = .CLEAR

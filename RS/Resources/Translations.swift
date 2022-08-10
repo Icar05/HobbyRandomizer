@@ -61,6 +61,10 @@ struct Translations{
             "Translations.Settings.timerOnlyForeground".localized(Bundle.main)
         }
         
+        public static var timerAutoReload: String{
+            "Translations.Settings.timerAutoReload".localized(Bundle.main)
+        }
+        
         public static var singleProgressColor: String{
             "Translations.Settings.singleProgressColor".localized(Bundle.main)
         }

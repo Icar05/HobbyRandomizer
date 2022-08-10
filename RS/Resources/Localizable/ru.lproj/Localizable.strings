@@ -72,6 +72,7 @@
 "Translations.Settings.timerMaxLabel" = "Минут";
 "Translations.Settings.singleProgressColor" = "Один цвет обновления";
 "Translations.Settings.timerOnlyForeground" = "Передний план";
+"Translations.Settings.timerAutoReload" = "Авто перезапуск";
 
 /* Files */
 "Translations.Files.howToCreate" = "Как создать импортируемые заметки?";

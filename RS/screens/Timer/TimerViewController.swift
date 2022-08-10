@@ -14,6 +14,8 @@ public final class TimerViewController: UIViewController {
     private unowned var timerUtil: TimerUtil
     
     private let presenter: TimerPresenter
+    
+    private var autoRelaunch = false
 
     @IBOutlet weak var timerView: TimerView!
     
@@ -53,6 +55,7 @@ public final class TimerViewController: UIViewController {
         let modelToRestore = timerUtil.getState()
         self.timerView.setDisplayColorPrefs(color: appPreferences.timerColor, singleColor: appPreferences.timerSingleColor)
         self.timerView.restoreState(model: modelToRestore)
+        self.autoRelaunch = appPreferences.autoRelaunch
         
     }
 
@@ -62,15 +65,16 @@ extension TimerViewController: TimerViewDelegate{
     
     
     public func didStartTimerClick() {
-        timerUtil.startTimer()
+        self.timerUtil.startTimer()
     }
     
     public func didStopTimerClick() {
-        timerUtil.stopTimer()
+        self.timerUtil.stopTimer()
     }
     
     public func didRefreshClick() {
-        timerUtil.refreshTimer()
+        self.timerUtil.stopSound()
+        self.autoRelaunch ? timerUtil.startTimer() : timerUtil.refreshTimer()
     }
     
 }
