@@ -73,7 +73,7 @@ class SoundUtil{
     }
     
     static func getSoundForTimer() -> SoundCaf{
-        return retroStyle ?  SoundCaf.OldClock : SoundCaf.Guitarra
+        return retroStyle ?  SoundCaf.OldClock : SoundCaf.StandartAlarm
     }
     
 }

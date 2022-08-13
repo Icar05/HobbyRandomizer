@@ -16,7 +16,6 @@ struct AppPrefferencesModel: Codable{
     var timerColor: Color
     var timerMinutes: Int
     var timerSingleColor: Bool
-    var timerOnlyForeground: Bool
     var autoRelaunch: Bool
 }
 
@@ -90,12 +89,6 @@ public final class SettingsPresenter {
                 enable: preferences.autoRelaunch,
                 callback: { [weak self] in
                     self?.model.autoRelaunch = $0
-            }),
-            SettingsSwichCellModel(
-                title: Translations.Settings.timerOnlyForeground,
-                enable: preferences.timerOnlyForeground,
-                callback: { [weak self] in
-                    self?.model.timerOnlyForeground = $0
             }),
             SettingsSwichCellModel(
                 title: Translations.Settings.singleProgressColor,

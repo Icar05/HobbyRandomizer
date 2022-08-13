@@ -23,9 +23,8 @@ public protocol TimerUtilDelegate: NSObject{
 
 let notificationIdentifier = "TimerNotification"
 
-/**
-    bad solution:  UIApplication.shared.isIdleTimerDisabled = true
- */
+
+
 class TimerUtil{
     
     
@@ -42,8 +41,6 @@ class TimerUtil{
     private let log = "TimerUtil"
     
     private var maxTimeInMinutes = 30
-    
-    private var timerOnlyForeground = false
     
     private var timer: Timer? = nil
     
@@ -70,10 +67,6 @@ class TimerUtil{
         self.maxTimeInMinutes = maxTimeInMinutes
     }
     
-    func setTimerOnlyForeground(timerOnlyForeground: Bool){
-        self.timerOnlyForeground = timerOnlyForeground
-    }
-    
     func getState() -> TimerUtilState{
         return TimerUtilState(
             state: state,
@@ -81,8 +74,6 @@ class TimerUtil{
     }
     
     func startTimer(){
-        UIApplication.shared.isIdleTimerDisabled = timerOnlyForeground
-        
         self.state = .STARTED
         self.notificationUtil.sceduleNotification(maxTimeInMinutes: maxTimeInMinutes)
         self.timerValue = maxTimeInMinutes.toSeconds()
@@ -94,8 +85,6 @@ class TimerUtil{
     }
     
     func finishTimer(){
-        UIApplication.shared.isIdleTimerDisabled = false
-        
         self.state = .FINISHED
         self.notificationUtil.cancelNotification()
         self.timer?.invalidate()
@@ -107,8 +96,6 @@ class TimerUtil{
     }
     
     func stopTimer(){
-        UIApplication.shared.isIdleTimerDisabled = false
-        
         self.state = .CLEAR
         self.notificationUtil.cancelNotification()
         self.timer?.invalidate()

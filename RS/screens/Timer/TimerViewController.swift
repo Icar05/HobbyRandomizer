@@ -49,7 +49,6 @@ public final class TimerViewController: UIViewController {
         
         if(!self.timerUtil.isTimerStarted()){
             self.timerUtil.setMaxTime(maxTimeInMinutes: appPreferences.timerMinutes)
-            self.timerUtil.setTimerOnlyForeground(timerOnlyForeground: appPreferences.timerOnlyForeground)
         }
         
         let modelToRestore = timerUtil.getState()
