@@ -57,7 +57,7 @@ public final class SettingsViewController: UIViewController {
     
     func navigateToDebug(){
         let navigator = getAppComponent().getNavigator()
-        let destination = navigator.getDebugScreen()
+        let destination = navigator.getTestScreen()
         navigator.navigate(start: self, destination: destination)
     }
     

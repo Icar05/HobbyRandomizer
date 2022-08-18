@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		ED11A14428972E4400503BFF /* SettingsTimerMinutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */; };
 		ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */; };
 		ED11A14728972E5600503BFF /* SettingsTimerMinutesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */; };
+		ED13A2D528AEDEED002F56B0 /* BLEApi in Frameworks */ = {isa = PBXBuildFile; productRef = ED13A2D428AEDEED002F56B0 /* BLEApi */; };
+		ED13A2D928AEDF22002F56B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13A2D728AEDF22002F56B0 /* TestViewController.swift */; };
+		ED13A2DA28AEDF22002F56B0 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED13A2D828AEDF22002F56B0 /* TestViewController.xib */; };
 		ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */; };
 		ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */; };
 		ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */; };
@@ -203,6 +206,8 @@
 		ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimerMinutesCell.swift; sourceTree = "<group>"; };
 		ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTimerMinutesCell.xib; sourceTree = "<group>"; };
 		ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTimerMinutesCellModel.swift; sourceTree = "<group>"; };
+		ED13A2D728AEDF22002F56B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		ED13A2D828AEDF22002F56B0 /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		ED1D33B1286A5B19004F1506 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		ED1D33B3286A5B3F004F1506 /* SettingsDataSourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDataSourse.swift; sourceTree = "<group>"; };
@@ -367,6 +372,7 @@
 		EDD576F62850FEC400DAAEC3 /* CasinoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasinoViewController.xib; sourceTree = "<group>"; };
 		EDD88CDB27354D310042D406 /* ViewDrawUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDrawUtil.swift; sourceTree = "<group>"; };
 		EDD88CDD27354F810042D406 /* ViewCalculateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCalculateUtil.swift; sourceTree = "<group>"; };
+		EDE0F4F928AEDE8600B507C2 /* BLEApi */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = BLEApi; path = ../BLEApi; sourceTree = "<group>"; };
 		EDE5483628517A570018A75B /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		EDE5483728517A570018A75B /* ShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
 		EDE5483A28517A990018A75B /* ShowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPresenter.swift; sourceTree = "<group>"; };
@@ -386,6 +392,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED13A2D528AEDEED002F56B0 /* BLEApi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +438,22 @@
 				ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */,
 			);
 			path = SettingsTimerMinutesCell;
+			sourceTree = "<group>";
+		};
+		ED13A2D328AEDEED002F56B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED13A2D628AEDF01002F56B0 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				ED13A2D728AEDF22002F56B0 /* TestViewController.swift */,
+				ED13A2D828AEDF22002F56B0 /* TestViewController.xib */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		ED17A1FC286A4B3D0080DB20 /* RS */ = {
@@ -764,6 +787,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED13A2D628AEDF01002F56B0 /* Test */,
 				ED6FC3552895B545003A034A /* SelectionAlert */,
 				ED0E594428915A7600C77819 /* Timer */,
 				ED5135D9286D1F3800403238 /* YesNoScreen */,
@@ -829,8 +853,10 @@
 		ED6EEF532715C6D200D4EFE9 = {
 			isa = PBXGroup;
 			children = (
+				EDE0F4F728AEDE5200B507C2 /* Packages */,
 				ED17A1FC286A4B3D0080DB20 /* RS */,
 				ED6EEF5D2715C6D200D4EFE9 /* Products */,
+				ED13A2D328AEDEED002F56B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1096,6 +1122,14 @@
 			path = selector;
 			sourceTree = "<group>";
 		};
+		EDE0F4F728AEDE5200B507C2 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				EDE0F4F928AEDE8600B507C2 /* BLEApi */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		EDE5483528517A370018A75B /* Show */ = {
 			isa = PBXGroup;
 			children = (
@@ -1159,6 +1193,9 @@
 			dependencies = (
 			);
 			name = RS;
+			packageProductDependencies = (
+				ED13A2D428AEDEED002F56B0 /* BLEApi */,
+			);
 			productName = HobbyRandomizer;
 			productReference = ED6EEF5C2715C6D200D4EFE9 /* RS.app */;
 			productType = "com.apple.product-type.application";
@@ -1246,6 +1283,7 @@
 				ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */,
 				ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */,
 				ED5135CD286CF25F00403238 /* SelectColorsViewController.xib in Resources */,
+				ED13A2DA28AEDF22002F56B0 /* TestViewController.xib in Resources */,
 				ED5135E6286D22ED00403238 /* YesNoUtil.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
@@ -1389,6 +1427,7 @@
 				ED7918982863AE780041D407 /* FileWriterUtil.swift in Sources */,
 				ED53614F286864D1004F1836 /* DisplayInfoDataViewController.swift in Sources */,
 				EDCFE5E028690DFC00AF3AC4 /* HeaderCell.swift in Sources */,
+				ED13A2D928AEDF22002F56B0 /* TestViewController.swift in Sources */,
 				ED1D33C4286A68AD004F1506 /* SettingsSwichCell.swift in Sources */,
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
@@ -1615,6 +1654,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED13A2D428AEDEED002F56B0 /* BLEApi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BLEApi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED6EEF542715C6D200D4EFE9 /* Project object */;
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
- 
-  
+   
     
+
     
     func setupInitialViewController(window: UIWindow) {
         window.rootViewController = getInitialController()
@@ -54,6 +54,10 @@ class NavigatorImpl: Navigator{
         presenter.set(view: viewcontroller)
         
         return viewcontroller
+    }
+    
+    func getTestScreen() -> UIViewController {
+        return TestViewController()
     }
     
     func getTimerScreen(storage: UserDefaultStorage, timerUtil: TimerUtil) -> UIViewController {
