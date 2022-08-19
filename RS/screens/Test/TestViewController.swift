@@ -11,6 +11,10 @@ import BLEApi
 class TestViewController: UIViewController {
     
     
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     private let client = BLEClientImpl()
     
     private var text = ""
@@ -38,6 +42,7 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        
         
         self.client.delegate = self
         
@@ -71,7 +76,9 @@ extension TestViewController: BLEApiListener{
     }
     
     func didError(error: String) {
-        self.errorLabel.text = error
+        print("debug: \(error)")
+        self.errorLabel.text = "TTT"
+//        self.errorLabel.text = error
     }
     
     func didBluetoothStateChanged(value: String) {
