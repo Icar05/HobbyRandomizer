@@ -62,38 +62,48 @@ class TestViewController: UIViewController {
 extension TestViewController: BLEApiListener{
     
     func didStopManager(value: String) {
-        self.text += "\n"
-        self.text += value
-        self.debugLabel.text = text
-        self.stateSwitch.setOn(false, animated: true)
-        self.stateLabel.text = "Start Service"
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text
+            self?.stateSwitch.setOn(false, animated: true)
+            self?.stateLabel.text = "Start Service"
+        }
     }
     
     func didStartManager(value: String) {
-        self.text = ""
-        self.errorText = ""
-        self.text += "\n"
-        self.text += value
-        self.errorLabel.text = ""
-        self.debugLabel.text = text
+        DispatchQueue.main.async { [weak self] in
+            self?.text = ""
+            self?.errorText = ""
+            self?.text += "\n"
+            self?.text += value
+            self?.errorLabel.text = ""
+            self?.debugLabel.text = self?.text
+        }
     }
     
     func didError(error: String) {
-        self.errorText += "\n"
-        self.errorText += error
-        self.errorLabel.text = errorText
+        DispatchQueue.main.async { [weak self] in
+            self?.errorText += "\n"
+            self?.errorText += error
+            self?.errorLabel.text = self?.errorText ?? ""
+        }
     }
     
     func didBluetoothStateChanged(value: String) {
-        self.text += "\n"
-        self.text += value
-        self.debugLabel.text = text
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
     }
     
     func didNotified(value: String) {
-        self.text += "\n"
-        self.text += value
-        self.debugLabel.text = text
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
     }
     
     
