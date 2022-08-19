@@ -13,6 +13,8 @@ class TestViewController: UIViewController {
     
     private let client = BLEClientImpl()
     
+    private var text = ""
+    
     @IBOutlet weak var stateSwitch: UISwitch!
     
     @IBOutlet weak var stateLabel: UILabel!
@@ -52,25 +54,34 @@ class TestViewController: UIViewController {
 
 extension TestViewController: BLEApiListener{
     
-    func didStopManager() {
-//        self.debugLabel.text = "didStopManager"
+    func didStopManager(value: String) {
+        self.text += "\n"
+        self.text += value
+        self.debugLabel.text = text
         self.stateSwitch.setOn(false, animated: true)
+        self.stateLabel.text = "Start Service"
     }
     
-    func didStartManager() {
-        self.debugLabel.text = "didStartManager"
+    func didStartManager(value: String) {
+        self.text += "\n"
+        self.text += value
+        self.debugLabel.text = text
     }
     
     func didError(error: String) {
         self.errorLabel.text = error
     }
     
-    func didBluetoothStateChanged(isEnabled: Bool) {
-        self.debugLabel.text = "didBluetoothStateChanged: \(isEnabled)"
+    func didBluetoothStateChanged(value: String) {
+        self.text += "\n"
+        self.text += value
+        self.debugLabel.text = text
     }
     
     func didNotified(value: String) {
-        self.debugLabel.text = value
+        self.text += "\n"
+        self.text += value
+        self.debugLabel.text = text
     }
     
     
