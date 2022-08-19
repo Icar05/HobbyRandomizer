@@ -60,6 +60,7 @@ extension TestViewController: BLEApiListener{
         self.debugLabel.text = text
         self.stateSwitch.setOn(false, animated: true)
         self.stateLabel.text = "Start Service"
+        self.text = ""
     }
     
     func didStartManager(value: String) {
