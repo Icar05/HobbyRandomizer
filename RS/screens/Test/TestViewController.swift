@@ -19,6 +19,8 @@ class TestViewController: UIViewController {
     
     private var text = ""
     
+    private var errorText = ""
+    
     @IBOutlet weak var stateSwitch: UISwitch!
     
     @IBOutlet weak var stateLabel: UILabel!
@@ -65,20 +67,21 @@ extension TestViewController: BLEApiListener{
         self.debugLabel.text = text
         self.stateSwitch.setOn(false, animated: true)
         self.stateLabel.text = "Start Service"
-        self.text = ""
-        self.errorLabel.text = ""
     }
     
     func didStartManager(value: String) {
+        self.text = ""
+        self.errorText = ""
         self.text += "\n"
         self.text += value
+        self.errorLabel.text = ""
         self.debugLabel.text = text
     }
     
     func didError(error: String) {
-        print("debug: \(error)")
-        self.errorLabel.text = "TTT"
-//        self.errorLabel.text = error
+        self.errorText += "\n"
+        self.errorText += error
+        self.errorLabel.text = errorText
     }
     
     func didBluetoothStateChanged(value: String) {
