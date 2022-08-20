@@ -164,6 +164,7 @@
 		ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */; };
 		ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */; };
 		ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FE028515CC600DFD78F /* RandomizerViewController.xib */; };
+		ED957F7D28B056D300DBA36D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED957F7C28B056D300DBA36D /* AudioManager.swift */; };
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
@@ -354,6 +355,7 @@
 		ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewDataSource.swift; sourceTree = "<group>"; };
 		ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		ED880FE028515CC600DFD78F /* RandomizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
+		ED957F7C28B056D300DBA36D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
@@ -566,6 +568,7 @@
 		ED4A3CC4271A290000084BB8 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				ED957F7C28B056D300DBA36D /* AudioManager.swift */,
 				ED7EEF162867E4B800B5BE46 /* parser */,
 				ED7EEF152867E4A000B5BE46 /* viewUtils */,
 				ED0E59552891902D00C77819 /* TimerUtil.swift */,
@@ -1333,6 +1336,7 @@
 				ED5135C8286CD20200403238 /* NotesInstuctionInfoCellModel.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
 				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
+				ED957F7D28B056D300DBA36D /* AudioManager.swift in Sources */,
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,
 				ED1D33B2286A5B19004F1506 /* SettingsPresenter.swift in Sources */,
