@@ -64,6 +64,41 @@ class TestViewController: UIViewController {
 
 extension TestViewController: BLEApiListener{
     
+    
+    
+    func displayTransportInformation(value: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
+    }
+    
+    func displayConnectionInformation(value: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
+    }
+    
+    func displayDisccoveringInforamtion(value: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
+    }
+    
+    func displayExtraInformation(value: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.text += "\n"
+            self?.text += value
+            self?.debugLabel.text = self?.text ?? ""
+        }
+    }
+    
+    
     func didStopManager(value: String) {
         DispatchQueue.main.async { [weak self] in
             self?.text += "\n"
@@ -100,14 +135,5 @@ extension TestViewController: BLEApiListener{
             self?.debugLabel.text = self?.text ?? ""
         }
     }
-    
-    func didNotified(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
-        }
-    }
-    
     
 }
