@@ -16,11 +16,7 @@ class TestViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     
     private let client = BLEClientImpl()
-    
-    private var text = ""
-    
-    private var errorText = ""
-    
+
     @IBOutlet weak var stateSwitch: UISwitch!
     
     @IBOutlet weak var stateLabel: UILabel!
@@ -45,11 +41,8 @@ class TestViewController: UIViewController {
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
-        
         self.client.delegate = self
-        
         self.stateLabel.text = "Api Disabled"
-        self.debugLabel.text = "Here will be text"
         
         
         self.client.sendString(value: "HAAI Rules!")
@@ -68,42 +61,32 @@ extension TestViewController: BLEApiListener{
     
     func displayTransportInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
+            self?.appendText(newValue: value, color: UIColor.orange)
         }
     }
     
     func displayConnectionInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
+            self?.appendText(newValue: value, color: UIColor.blue)
         }
     }
     
     func displayDisccoveringInforamtion(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
+            self?.appendText(newValue: value, color: UIColor.green)
         }
     }
     
     func displayExtraInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
+            self?.appendText(newValue: value, color: UIColor.brown)
         }
     }
     
     
     func didStopManager(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text
+            self?.appendText(newValue: value, color: UIColor.blue)
             self?.stateSwitch.setOn(false, animated: true)
             self?.stateLabel.text = "Start Service"
         }
@@ -111,29 +94,38 @@ extension TestViewController: BLEApiListener{
     
     func didStartManager(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text = ""
-            self?.errorText = ""
-            self?.text += "\n"
-            self?.text += value
+            self?.debugLabel.attributedText = NSAttributedString(string: "")
             self?.errorLabel.text = ""
-            self?.debugLabel.text = self?.text
+            self?.appendText(newValue: value, color: UIColor.blue)
         }
     }
     
     func displayError(error: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.errorText += "\n"
-            self?.errorText += error
-            self?.errorLabel.text = self?.errorText ?? ""
+            self?.errorLabel.text = error
         }
     }
     
     func didBluetoothStateChanged(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.text += "\n"
-            self?.text += value
-            self?.debugLabel.text = self?.text ?? ""
+            self?.appendText(newValue: value, color: UIColor.blue)
         }
+    }
+    
+    
+    private func appendText(newValue: String, color: UIColor){
+        let combination = NSMutableAttributedString()
+        let prevText = self.debugLabel.attributedText ?? NSAttributedString.init(string: "")
+        let newText = colorString(value: newValue + "\n", color: color)
+        combination.append(prevText)
+        combination.append(newText)
+        self.debugLabel.attributedText = combination
+    }
+    
+    private func colorString(value: String, color: UIColor) -> NSAttributedString{
+        return NSAttributedString(
+            string: value,
+            attributes: [NSAttributedString.Key.foregroundColor : color])
     }
     
 }
