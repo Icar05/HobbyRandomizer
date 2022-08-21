@@ -50,6 +50,9 @@ class TestViewController: UIViewController {
         
         self.stateLabel.text = "Api Disabled"
         self.debugLabel.text = "Here will be text"
+        
+        
+        self.client.sendString(value: "HAAI Rules!")
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
