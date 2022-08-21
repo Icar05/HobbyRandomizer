@@ -19,7 +19,7 @@ class TestViewController: UIViewController {
     
     private let extraInfoColor =  UIColor.systemPurple
     
-    private let tranportInfoColor =  UIColor.systemPink
+    private let tranportInfoColor =  UIColor.systemTeal
     
     @IBOutlet weak var scrollView: UIScrollView!
     
