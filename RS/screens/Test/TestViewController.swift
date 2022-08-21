@@ -11,6 +11,8 @@ import BLEApi
 class TestViewController: UIViewController {
     
     
+    
+    
     private let client = BLEClientImpl()
     
     private let connectionInfoColor = UIColor.blue
@@ -53,7 +55,12 @@ class TestViewController: UIViewController {
         self.stateLabel.text = "Api Disabled"
         
         
-        self.client.sendString(value: "HAAI Rules!")
+        let model = BLEApiData(
+            data: Data("HAAI Rules!".utf8),
+            title: "Chemical brothers remix",
+            info: "String data")
+        
+        self.client.sendData(data: model)
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -66,7 +73,21 @@ class TestViewController: UIViewController {
 extension TestViewController: BLEApiListener{
     
     
+    func displayTransferFinish(data: Data, title: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.appendText(
+                newValue: "data (\(title) has already loaded. Size: \(data.count)",
+                color: self?.connectionInfoColor ?? UIColor.black
+            )
+        }
+    }
     
+    func displayTransferProgress(dataSize: Double, percent: Double, title: String) {
+        DispatchQueue.main.async { [weak self] in
+            self?.appendText(newValue: "Loaded \(percent) % of \(title)", color: self?.tranportInfoColor ?? UIColor.black)
+        }
+    }
+
     func displayTransportInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
             self?.appendText(newValue: value, color: self?.tranportInfoColor ?? UIColor.black)
