@@ -85,7 +85,7 @@ extension TestViewController: BLEApiListener{
         }
     }
     
-    func didError(error: String) {
+    func displayError(error: String) {
         DispatchQueue.main.async { [weak self] in
             self?.errorText += "\n"
             self?.errorText += error
