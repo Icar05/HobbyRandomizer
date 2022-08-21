@@ -11,12 +11,18 @@ import BLEApi
 class TestViewController: UIViewController {
     
     
+    private let client = BLEClientImpl()
     
+    private let connectionInfoColor = UIColor.blue
+    
+    private let discoveringInfoColor = UIColor.systemGreen
+    
+    private let extraInfoColor =  UIColor.systemPurple
+    
+    private let tranportInfoColor =  UIColor.systemPink
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    private let client = BLEClientImpl()
-
     @IBOutlet weak var stateSwitch: UISwitch!
     
     @IBOutlet weak var stateLabel: UILabel!
@@ -24,6 +30,8 @@ class TestViewController: UIViewController {
     @IBOutlet weak var debugLabel: UILabel!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    
     
     
     @available(iOS, unavailable)
@@ -61,32 +69,32 @@ extension TestViewController: BLEApiListener{
     
     func displayTransportInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.orange)
+            self?.appendText(newValue: value, color: self?.tranportInfoColor ?? UIColor.black)
         }
     }
     
     func displayConnectionInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.blue)
+            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
         }
     }
     
     func displayDisccoveringInforamtion(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.green)
+            self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
         }
     }
     
     func displayExtraInformation(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.brown)
+            self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
         }
     }
     
     
     func didStopManager(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.blue)
+            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
             self?.stateSwitch.setOn(false, animated: true)
             self?.stateLabel.text = "Start Service"
         }
@@ -96,19 +104,20 @@ extension TestViewController: BLEApiListener{
         DispatchQueue.main.async { [weak self] in
             self?.debugLabel.attributedText = NSAttributedString(string: "")
             self?.errorLabel.text = ""
-            self?.appendText(newValue: value, color: UIColor.blue)
+            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
         }
     }
     
     func displayError(error: String) {
         DispatchQueue.main.async { [weak self] in
             self?.errorLabel.text = error
+            self?.appendText(newValue: error, color: UIColor.red)
         }
     }
     
     func didBluetoothStateChanged(value: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: UIColor.blue)
+            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
         }
     }
     
