@@ -101,15 +101,15 @@ extension TestViewController: BLEApiListener{
     }
     
     func displayDisccoveringInforamtion(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
-        }
+//        DispatchQueue.main.async { [weak self] in
+//            self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
+//        }
     }
     
     func displayExtraInformation(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
-        }
+//        DispatchQueue.main.async { [weak self] in
+//            self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
+//        }
     }
     
     
