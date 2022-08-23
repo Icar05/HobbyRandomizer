@@ -73,16 +73,16 @@ class TestViewController: UIViewController {
 extension TestViewController: BLEApiListener{
     
     
-    func displayTransferFinish(data: Data, title: String) {
+    func displayTransferFinish(title: String, percent: Double, data: Data) {
         DispatchQueue.main.async { [weak self] in
             self?.appendText(
-                newValue: "data (\(title) has already loaded. Size: \(data.count)",
+                newValue: "data (\(title)) has already loaded. Size: \(data.count)",
                 color: self?.connectionInfoColor ?? UIColor.black
             )
         }
     }
     
-    func displayTransferProgress(dataSize: Int, percent: Double, title: String) {
+    func displayTransferProgress(title: String, percent: Double, size: Double) {
         DispatchQueue.main.async { [weak self] in
             self?.appendText(newValue: "Loaded \(percent) % of \(title)", color: self?.tranportInfoColor ?? UIColor.black)
         }
