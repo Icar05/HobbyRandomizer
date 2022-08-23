@@ -82,7 +82,7 @@ extension TestViewController: BLEApiListener{
         }
     }
     
-    func displayTransferProgress(dataSize: Double, percent: Double, title: String) {
+    func displayTransferProgress(dataSize: Int, percent: Double, title: String) {
         DispatchQueue.main.async { [weak self] in
             self?.appendText(newValue: "Loaded \(percent) % of \(title)", color: self?.tranportInfoColor ?? UIColor.black)
         }
