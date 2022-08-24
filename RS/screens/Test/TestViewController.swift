@@ -51,7 +51,7 @@ class TestViewController: UIViewController {
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
-        self.client.delegate = self
+//        self.client.delegate = self
         self.stateLabel.text = "Api Disabled"
         
         
@@ -60,7 +60,19 @@ class TestViewController: UIViewController {
             title: "Chemical brothers remix",
             info: "String data")
         
-        self.client.sendData(data: model)
+        self.client.sendData(data: model){ status, percent, error, data in
+            
+            self.debugLabel.text = "\(status) : [\(percent)%]"
+            
+            if(error != nil){
+                self.errorLabel.text = error
+            }
+            
+            if(data != nil){
+                self.debugLabel.text = String(data: data!, encoding: .utf8)
+            }
+            
+        }
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -74,72 +86,52 @@ extension TestViewController: BLEApiListener{
     
     
     func displayTransferFinish(title: String, percent: Double, data: Data) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(
-                newValue: "data (\(title)) has already loaded. Size: \(data.count)",
-                color: self?.connectionInfoColor ?? UIColor.black
-            )
-        }
+        self.appendText(
+            newValue: "data (\(title)) has already loaded. Size: \(data.count)",
+            color: self.connectionInfoColor
+        )
     }
     
     func displayTransferProgress(title: String, percent: Double, size: Double) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: "Loaded \(percent) % of \(title)", color: self?.tranportInfoColor ?? UIColor.black)
-        }
+        self.appendText(newValue: "Loaded \(percent) % of \(title)", color: self.tranportInfoColor)
     }
 
     func displayTransportInformation(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.tranportInfoColor ?? UIColor.black)
-        }
+        self.appendText(newValue: value, color: self.tranportInfoColor)
     }
     
     func displayConnectionInformation(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
-        }
+            self.appendText(newValue: value, color: self.connectionInfoColor)
     }
     
     func displayDisccoveringInforamtion(value: String) {
-//        DispatchQueue.main.async { [weak self] in
-//            self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
-//        }
+//     self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
     }
     
     func displayExtraInformation(value: String) {
-//        DispatchQueue.main.async { [weak self] in
-//            self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
-//        }
+//      self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
     }
     
     
     func didStopManager(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
-            self?.stateSwitch.setOn(false, animated: true)
-            self?.stateLabel.text = "Start Service"
-        }
+            self.appendText(newValue: value, color: self.connectionInfoColor )
+            self.stateSwitch.setOn(false, animated: true)
+            self.stateLabel.text = "Start Service"
     }
     
     func didStartManager(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.debugLabel.attributedText = NSAttributedString(string: "")
-            self?.errorLabel.text = ""
-            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
-        }
+            self.debugLabel.attributedText = NSAttributedString(string: "")
+            self.errorLabel.text = ""
+            self.appendText(newValue: value, color: self.connectionInfoColor)
     }
     
     func displayError(error: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.errorLabel.text = error
-            self?.appendText(newValue: error, color: UIColor.red)
-        }
+            self.errorLabel.text = error
+            self.appendText(newValue: error, color: UIColor.red)
     }
     
     func didBluetoothStateChanged(value: String) {
-        DispatchQueue.main.async { [weak self] in
-            self?.appendText(newValue: value, color: self?.connectionInfoColor ?? UIColor.black)
-        }
+            self.appendText(newValue: value, color: self.connectionInfoColor)
     }
     
     
