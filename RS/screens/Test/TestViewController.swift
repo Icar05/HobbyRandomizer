@@ -51,30 +51,30 @@ class TestViewController: UIViewController {
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
-//        self.client.delegate = self
+        self.client.delegate = self
         self.stateLabel.text = "Api Disabled"
         
         
-        let model = BLEApiData(
-            data: Data("HAAI Rules!".utf8),
-            title: "Chemical brothers remix",
-            info: "String data")
-        
-        self.client.sendData(data: model){ status, percent, error, data in
-            
-            self.debugLabel.text = "\(status) : [\(percent)%]"
-            
-            if(error != nil){
-                self.errorLabel.text = error
-                self.stateSwitch.setOn(false, animated: true)
-            }
-            
-            if(data != nil){
-                self.debugLabel.text = String(data: data!, encoding: .utf8)
-                self.stateSwitch.setOn(false, animated: true)
-            }
-            
-        }
+//        let model = BLEApiData(
+//            data: Data("HAAI Rules!".utf8),
+//            title: "Chemical brothers remix",
+//            info: "String data")
+//        
+//        self.client.sendData(data: model){ status, percent, error, data in
+//            
+//            self.debugLabel.text = "\(status) : [\(percent)%]"
+//            
+//            if(error != nil){
+//                self.errorLabel.text = error
+//                self.stateSwitch.setOn(false, animated: true)
+//            }
+//            
+//            if(data != nil){
+//                self.debugLabel.text = String(data: data!, encoding: .utf8)
+//                self.stateSwitch.setOn(false, animated: true)
+//            }
+//            
+//        }
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
