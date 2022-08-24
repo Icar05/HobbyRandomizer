@@ -66,10 +66,12 @@ class TestViewController: UIViewController {
             
             if(error != nil){
                 self.errorLabel.text = error
+                self.stateSwitch.setOn(false, animated: true)
             }
             
             if(data != nil){
                 self.debugLabel.text = String(data: data!, encoding: .utf8)
+                self.stateSwitch.setOn(false, animated: true)
             }
             
         }
