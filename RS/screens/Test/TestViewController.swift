@@ -54,14 +54,9 @@ class TestViewController: UIViewController {
         self.stateLabel.text = "Api Disabled"
         
         
-        let model = BLEApiData(
-            data: Data(Test.getText().utf8),
-            title: "Chemical brothers remix",
-            info: "String data")
-        
-        self.client.sendData(data: model){ status, percent, error, data in
+        self.client.callback =  { status, percent, error, data in
             
-            self.debugLabel.text = "\(status) : [\(percent)%]"
+            self.debugLabel.text = "\(status) : [\(percent)%] "
             
             if(error != nil){
                 self.errorLabel.text = error
@@ -74,6 +69,13 @@ class TestViewController: UIViewController {
             }
             
         }
+        
+        let model = BLEApiData(
+            data: Data(Test.getText().utf8),
+            title: "Chemical brothers remix",
+            info: "String data")
+        
+        self.client.sendData(data: model)
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
