@@ -54,21 +54,42 @@ class TestViewController: UIViewController {
         self.stateLabel.text = "Api Disabled"
         
         
-        self.client.callback =  { status, percent, error, data in
+        self.client.callback = { state in
             
-            self.debugLabel.text = "\(status) : [\(percent)%] "
-            
-            if(error != nil){
-                self.errorLabel.text = error
-                self.stateSwitch.setOn(false, animated: true)
-            }
-            
-            if(data != nil){
-                self.debugLabel.text = String(data: data!, encoding: .utf8)
-                self.stateSwitch.setOn(false, animated: true)
+            switch state {
+            case .transfering(let percent, let title):
+                self.debugLabel.text = "\(state) : [\(percent)%] -> \(title)";
+                break
+            case .connecting(let payload) :
+                self.debugLabel.text = "\(state) : \(payload)";
+                break
+            case .connected:
+                self.debugLabel.text = "\(state)  ";
+                break
+            case .disconnected:
+                self.debugLabel.text = "\(state)  ";
+                break
+            case .finished(data: let data, error: let error):
+                self.debugLabel.text = "\(state)  ";
+                
+                if error != nil {
+                    self.errorLabel.text = error
+                    self.stateSwitch.setOn(false, animated: true)
+                }
+                
+                if(data != nil){
+                    self.debugLabel.text! += "Data received!"
+                    print(String(data: data!, encoding: .utf8)!)
+                    self.stateSwitch.setOn(false, animated: true)
+                }
+                
+                break
+                
             }
             
         }
+        
+        
         
         let model = BLEApiData(
             data: Data(Test.getText().utf8),
@@ -94,36 +115,6 @@ extension TestViewController: BLEApiDelegate{
             color: colors[model.type]!
         )
     }
-    
-    func displayTransportState(state: TransportState) {
-        
-    }
-    
-    func displayApiState(state: BLEApiDeviceState) {
-        
-    }
-    
-//    func didStopManager(value: String) {
-//            self.appendText(newValue: value, color: self.connectionInfoColor )
-//            self.stateSwitch.setOn(false, animated: true)
-//            self.stateLabel.text = "Start Service"
-//    }
-//
-//    func didStartManager(value: String) {
-//            self.debugLabel.attributedText = NSAttributedString(string: "")
-//            self.errorLabel.text = ""
-//            self.appendText(newValue: value, color: self.connectionInfoColor)
-//    }
-//
-//    func displayError(error: String) {
-//            self.errorLabel.text = error
-//            self.appendText(newValue: error, color: UIColor.red)
-//    }
-    
-//    func didBluetoothStateChanged(value: String) {
-//            self.appendText(newValue: value, color: self.connectionInfoColor)
-//    }
-    
     
     private func appendText(newValue: String, color: UIColor){
         let combination = NSMutableAttributedString()
