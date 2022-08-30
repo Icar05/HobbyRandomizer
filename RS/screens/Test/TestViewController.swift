@@ -58,19 +58,20 @@ class TestViewController: UIViewController {
             
             switch state {
             case .transfering(let percent, let title):
-                self.debugLabel.text = "\(state) : [\(percent)%] -> \(title)";
+                self.debugLabel.text = "\(state.stringValue()) : [\(percent)%] -> \(title)";
                 break
             case .connecting(let payload) :
-                self.debugLabel.text = "\(state) : \(payload)";
+                self.debugLabel.text = "\(state.stringValue()) : \(payload)";
                 break
             case .connected:
-                self.debugLabel.text = "\(state)  ";
+                self.debugLabel.text = "\(state.stringValue())  ";
                 break
             case .disconnected:
-                self.debugLabel.text = "\(state)  ";
+                self.debugLabel.text = "\(state.stringValue())  ";
+                self.stateSwitch.setOn(false, animated: true) ;
                 break
             case .finished(data: let data, error: let error):
-                self.debugLabel.text = "\(state)  ";
+                self.debugLabel.text = "\(state.stringValue())  ";
                 
                 if error != nil {
                     self.errorLabel.text = error
