@@ -125,6 +125,7 @@
 		ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5F11392717CC15006454AD /* CasinoSelectorView.swift */; };
 		ED67A335289C5D3E009AFA4C /* Guitarra.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED67A333289C5D3E009AFA4C /* Guitarra.mp3 */; };
 		ED67A336289C5D3E009AFA4C /* Violin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED67A334289C5D3E009AFA4C /* Violin.mp3 */; };
+		ED69550C28B5B84C00678A45 /* TestText.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED69550B28B5B84C00678A45 /* TestText.swift */; };
 		ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */; };
 		ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF652715C6D200D4EFE9 /* Main.storyboard */; };
 		ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED6EEF682715C6D300D4EFE9 /* Assets.xcassets */; };
@@ -314,6 +315,7 @@
 		ED5F11392717CC15006454AD /* CasinoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoSelectorView.swift; sourceTree = "<group>"; };
 		ED67A333289C5D3E009AFA4C /* Guitarra.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Guitarra.mp3; sourceTree = "<group>"; };
 		ED67A334289C5D3E009AFA4C /* Violin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Violin.mp3; sourceTree = "<group>"; };
+		ED69550B28B5B84C00678A45 /* TestText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestText.swift; sourceTree = "<group>"; };
 		ED6EEF5C2715C6D200D4EFE9 /* RS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6EEF5F2715C6D200D4EFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED6EEF662715C6D200D4EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 			children = (
 				ED13A2D728AEDF22002F56B0 /* TestViewController.swift */,
 				ED13A2D828AEDF22002F56B0 /* TestViewController.xib */,
+				ED69550B28B5B84C00678A45 /* TestText.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1414,6 +1417,7 @@
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
 				ED5135E1286D1FFD00403238 /* YesNoRotatable.swift in Sources */,
 				ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */,
+				ED69550C28B5B84C00678A45 /* TestText.swift in Sources */,
 				EDCFE5ED286921DF00AF3AC4 /* InfoDetailCell.swift in Sources */,
 				ED5361582868652D004F1836 /* DisplayInfoDataPresenter.swift in Sources */,
 				EDF8A5672864EEAD00565AAF /* Translations.swift in Sources */,

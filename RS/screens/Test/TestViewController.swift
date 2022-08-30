@@ -11,17 +11,16 @@ import BLEApi
 class TestViewController: UIViewController {
     
     
-    
+    private let colors: [InfoType: UIColor] = [
+        .connection: UIColor.blue,
+        .discovering: UIColor.systemGreen,
+        .extra: UIColor.purple,
+        .error: UIColor.red,
+        .transportOut: UIColor.brown,
+        .transportIn: UIColor.coolOrange!
+    ]
     
     private let client = BLEClientImpl()
-    
-    private let connectionInfoColor = UIColor.blue
-    
-    private let discoveringInfoColor = UIColor.systemGreen
-    
-    private let extraInfoColor =  UIColor.systemPurple
-    
-    private let tranportInfoColor =  UIColor.systemTeal
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -51,30 +50,30 @@ class TestViewController: UIViewController {
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
-        self.client.delegate = self
+//        self.client.delegate = self
         self.stateLabel.text = "Api Disabled"
         
         
-//        let model = BLEApiData(
-//            data: Data("HAAI Rules!".utf8),
-//            title: "Chemical brothers remix",
-//            info: "String data")
-//        
-//        self.client.sendData(data: model){ status, percent, error, data in
-//            
-//            self.debugLabel.text = "\(status) : [\(percent)%]"
-//            
-//            if(error != nil){
-//                self.errorLabel.text = error
-//                self.stateSwitch.setOn(false, animated: true)
-//            }
-//            
-//            if(data != nil){
-//                self.debugLabel.text = String(data: data!, encoding: .utf8)
-//                self.stateSwitch.setOn(false, animated: true)
-//            }
-//            
-//        }
+        let model = BLEApiData(
+            data: Data(Test.getText().utf8),
+            title: "Chemical brothers remix",
+            info: "String data")
+        
+        self.client.sendData(data: model){ status, percent, error, data in
+            
+            self.debugLabel.text = "\(status) : [\(percent)%]"
+            
+            if(error != nil){
+                self.errorLabel.text = error
+                self.stateSwitch.setOn(false, animated: true)
+            }
+            
+            if(data != nil){
+                self.debugLabel.text = String(data: data!, encoding: .utf8)
+                self.stateSwitch.setOn(false, animated: true)
+            }
+            
+        }
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -84,57 +83,44 @@ class TestViewController: UIViewController {
 
 }
 
-extension TestViewController: BLEApiListener{
+extension TestViewController: BLEApiDelegate{
     
     
-    func displayTransferFinish(title: String, percent: Double, data: Data) {
+    func displayInfo(model: InfoData) {
         self.appendText(
-            newValue: "data (\(title)) has already loaded. Size: \(data.count)",
-            color: self.connectionInfoColor
+            newValue: "data (\(title)) has already loaded. Size: \(model.info)",
+            color: colors[model.type]!
         )
     }
     
-    func displayTransferProgress(title: String, percent: Double, size: Double) {
-        self.appendText(newValue: "Loaded \(percent) % of \(title)", color: self.tranportInfoColor)
-    }
-
-    func displayTransportInformation(value: String) {
-        self.appendText(newValue: value, color: self.tranportInfoColor)
+    func displayTransportState(state: TransportState) {
+        
     }
     
-    func displayConnectionInformation(value: String) {
-            self.appendText(newValue: value, color: self.connectionInfoColor)
+    func displayApiState(state: BLEApiDeviceState) {
+        
     }
     
-    func displayDisccoveringInforamtion(value: String) {
-//     self?.appendText(newValue: value, color: self?.discoveringInfoColor ?? UIColor.black)
-    }
+//    func didStopManager(value: String) {
+//            self.appendText(newValue: value, color: self.connectionInfoColor )
+//            self.stateSwitch.setOn(false, animated: true)
+//            self.stateLabel.text = "Start Service"
+//    }
+//
+//    func didStartManager(value: String) {
+//            self.debugLabel.attributedText = NSAttributedString(string: "")
+//            self.errorLabel.text = ""
+//            self.appendText(newValue: value, color: self.connectionInfoColor)
+//    }
+//
+//    func displayError(error: String) {
+//            self.errorLabel.text = error
+//            self.appendText(newValue: error, color: UIColor.red)
+//    }
     
-    func displayExtraInformation(value: String) {
-//      self?.appendText(newValue: value, color: self?.extraInfoColor ?? UIColor.black)
-    }
-    
-    
-    func didStopManager(value: String) {
-            self.appendText(newValue: value, color: self.connectionInfoColor )
-            self.stateSwitch.setOn(false, animated: true)
-            self.stateLabel.text = "Start Service"
-    }
-    
-    func didStartManager(value: String) {
-            self.debugLabel.attributedText = NSAttributedString(string: "")
-            self.errorLabel.text = ""
-            self.appendText(newValue: value, color: self.connectionInfoColor)
-    }
-    
-    func displayError(error: String) {
-            self.errorLabel.text = error
-            self.appendText(newValue: error, color: UIColor.red)
-    }
-    
-    func didBluetoothStateChanged(value: String) {
-            self.appendText(newValue: value, color: self.connectionInfoColor)
-    }
+//    func didBluetoothStateChanged(value: String) {
+//            self.appendText(newValue: value, color: self.connectionInfoColor)
+//    }
     
     
     private func appendText(newValue: String, color: UIColor){
