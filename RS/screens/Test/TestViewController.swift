@@ -88,7 +88,7 @@ extension TestViewController: BLEApiDelegate{
     
     func displayInfo(model: InfoData) {
         self.appendText(
-            newValue: "data (\(title)) has already loaded. Size: \(model.info)",
+            newValue: model.info,
             color: colors[model.type]!
         )
     }
