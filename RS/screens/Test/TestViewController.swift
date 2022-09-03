@@ -50,45 +50,45 @@ class TestViewController: UIViewController {
 
         self.stateSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
         
-//        self.client.delegate = self
+        self.client.delegate = self
         self.stateLabel.text = "Api Disabled"
         
         
-        self.client.callback = { state in
-            
-            switch state {
-            case .transfering(let percent, let title):
-                self.debugLabel.text = "\(state.stringValue()) : [\(percent)%] -> \(title)";
-                break
-            case .connecting(let payload) :
-                self.debugLabel.text = "\(state.stringValue()) : \(payload)";
-                break
-            case .connected:
-                self.debugLabel.text = "\(state.stringValue())  ";
-                break
-            case .disconnected:
-                self.debugLabel.text = "\(state.stringValue())  ";
-                self.stateSwitch.setOn(false, animated: true) ;
-                break
-            case .finished(data: let data, error: let error):
-                self.debugLabel.text = "\(state.stringValue())  ";
-                
-                if error != nil {
-                    self.errorLabel.text = error
-                    self.stateSwitch.setOn(false, animated: true)
-                }
-                
-                if(data != nil){
-                    self.debugLabel.text! += "Data received!"
-                    print(String(data: data!, encoding: .utf8)!)
-                    self.stateSwitch.setOn(false, animated: true)
-                }
-                
-                break
-                
-            }
-            
-        }
+//        self.client.callback = { state in
+//            
+//            switch state {
+//            case .transfering(let percent, let title):
+//                self.debugLabel.text = "\(state.stringValue()) : [\(percent)%] -> \(title)";
+//                break
+//            case .connecting(let payload) :
+//                self.debugLabel.text = "\(state.stringValue()) : \(payload)";
+//                break
+//            case .connected:
+//                self.debugLabel.text = "\(state.stringValue())  ";
+//                break
+//            case .disconnected:
+//                self.debugLabel.text = "\(state.stringValue())  ";
+//                self.stateSwitch.setOn(false, animated: true) ;
+//                break
+//            case .finished(data: let data, error: let error):
+//                self.debugLabel.text = "\(state.stringValue())  ";
+//
+//                if error != nil {
+//                    self.errorLabel.text = error
+//                    self.stateSwitch.setOn(false, animated: true)
+//                }
+//
+//                if(data != nil){
+//                    self.debugLabel.text! += "Data received!"
+//                    print(String(data: data!, encoding: .utf8)!)
+//                    self.stateSwitch.setOn(false, animated: true)
+//                }
+//
+//                break
+//
+//            }
+//
+//        }
         
         
         
@@ -97,7 +97,7 @@ class TestViewController: UIViewController {
             title: "Chemical brothers remix",
             info: "String data")
         
-        self.client.sendData(data: model)
+//        self.client.sendData(data: model)
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -111,6 +111,10 @@ extension TestViewController: BLEApiDelegate{
     
     
     func displayInfo(model: InfoData) {
+        if(model.type == .connection || model.type == .discovering){
+            return
+        }
+        
         self.appendText(
             newValue: model.info,
             color: colors[model.type]!
