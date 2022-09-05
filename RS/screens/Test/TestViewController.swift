@@ -98,7 +98,7 @@ class TestViewController: UIViewController {
             title: "Chemical brothers remix",
             info: "String data")
         
-//        self.client.sendData(data: model)
+        self.client.sendData(data: model)
     }
     
     @objc func switchChanged(mySwitch: UISwitch) {
@@ -112,7 +112,7 @@ extension TestViewController: BLEApiDelegate{
     
     
     func displayInfo(model: InfoData) {
-        if(model.type != .current || model.type != .transportIn || model.type != .transportOut){
+        if(model.type != .current ){
             return
         }
         
