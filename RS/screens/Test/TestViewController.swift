@@ -17,7 +17,8 @@ class TestViewController: UIViewController {
         .extra: UIColor.purple,
         .error: UIColor.red,
         .transportOut: UIColor.brown,
-        .transportIn: UIColor.coolOrange!
+        .transportIn: UIColor.coolOrange!,
+        .current: UIColor.black
     ]
     
     private let client = BLEClientImpl()
@@ -111,7 +112,7 @@ extension TestViewController: BLEApiDelegate{
     
     
     func displayInfo(model: InfoData) {
-        if(model.type == .connection || model.type == .discovering){
+        if(model.type != .current || model.type != .transportIn || model.type != .transportOut){
             return
         }
         
