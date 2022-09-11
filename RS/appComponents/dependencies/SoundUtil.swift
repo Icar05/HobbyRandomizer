@@ -11,7 +11,6 @@ import AVFoundation
 
 
 enum SoundCaf: String{
-    case Open = "Open"
     case Click = "Click"
     case OldAlarm = "old-alarm"
     case EvilAlarm = "evil-alarm"
@@ -20,6 +19,7 @@ enum SoundCaf: String{
     case OldClock = "OldClock"
     case Violin = "Violin"
     case Guitarra = "Guitarra"
+    case NewClick = "NewClick"
 }
 
 
