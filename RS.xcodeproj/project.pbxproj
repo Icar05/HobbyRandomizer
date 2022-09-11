@@ -57,6 +57,8 @@
 		ED384C1828CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1628CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift */; };
 		ED384C1928CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C1728CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib */; };
 		ED384C1B28CE5EEC00AD3ABA /* FileDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */; };
+		ED384C2328CE642A00AD3ABA /* OpenFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */; };
+		ED384C2428CE642A00AD3ABA /* OpenFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
@@ -253,6 +255,8 @@
 		ED384C1628CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailCellTableViewCell.swift; sourceTree = "<group>"; };
 		ED384C1728CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDetailCellTableViewCell.xib; sourceTree = "<group>"; };
 		ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailCellModel.swift; sourceTree = "<group>"; };
+		ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFileViewController.swift; sourceTree = "<group>"; };
+		ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenFileViewController.xib; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
@@ -576,6 +580,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		ED384C1C28CE63BC00AD3ABA /* OpenFile */ = {
+			isa = PBXGroup;
+			children = (
+				ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */,
+				ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */,
+			);
+			path = OpenFile;
+			sourceTree = "<group>";
+		};
 		ED435825286BCF2300F99459 /* SettingsColorCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +842,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED384C1C28CE63BC00AD3ABA /* OpenFile */,
 				ED384C0C28CE52E400AD3ABA /* FilesDetail */,
 				ED13A2D628AEDF01002F56B0 /* Test */,
 				ED6FC3552895B545003A034A /* SelectionAlert */,
@@ -1311,6 +1325,7 @@
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
+				ED384C2428CE642A00AD3ABA /* OpenFileViewController.xib in Resources */,
 				EDFFBDE82896252C0090BC87 /* OldClock.mp3 in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
@@ -1439,6 +1454,7 @@
 				ED5135D8286CF54000403238 /* SelectColorCellModel.swift in Sources */,
 				ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */,
 				ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */,
+				ED384C2328CE642A00AD3ABA /* OpenFileViewController.swift in Sources */,
 				ED1D33C7286A68C1004F1506 /* SettingsSwichCellModel.swift in Sources */,
 				ED0E59562891902D00C77819 /* TimerUtil.swift in Sources */,
 				ED1D33BD286A60C6004F1506 /* SettingsHeaderCell.swift in Sources */,

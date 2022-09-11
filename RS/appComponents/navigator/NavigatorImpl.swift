@@ -8,6 +8,8 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+ 
+    
    
     
   
@@ -169,5 +171,10 @@ class NavigatorImpl: Navigator{
     
     func getSelectColorAlert(model: UISelectionDialogModel) -> UIViewController {
         return UISelectionDialog(model: model)
+    }
+    
+    
+    func getOpenFileScreen() -> UIViewController {
+        return OpenFileViewController()
     }
 }
