@@ -20,6 +20,7 @@ protocol Navigator{
     func getRandomizerScreen(models: [RandItemCellModel], alertUtil: AlertUtil) -> UIViewController
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
     func getFilesScreen(filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController
+    func getFilesDetailScreen(folderName: String, filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController
     func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController
     func getDisplayInfoDataScreen(data: [InfoModel]) -> UIViewController
     func getDisplayRawDataScreen(data: String) -> UIViewController

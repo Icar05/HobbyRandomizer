@@ -1,22 +1,23 @@
 //
-//  FilesDataSource.swift
-//  HobbyRandomizer
+//  FilesDetailDataSource.swift
+//  RS
 //
-//  Created by ICoon on 23.06.2022.
+//  Created by ICoon on 11.09.2022.
 //
 
 import Foundation
 
-protocol FileDataSourceDelegate: NSObject{
+
+protocol FilesDetailDataSourceDelegate: NSObject{
     func onItemSelected(model: DisplayFileCellModel)
 }
 
-class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
+class FilesDetailDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     private var data: [DisplayFileCellModel] = []
     
-    weak var delegate: FileDataSourceDelegate? = nil
+    weak var delegate: FilesDetailDataSourceDelegate? = nil
     
     func setData(data: [DisplayFileCellModel]){
         self.data = data
@@ -57,5 +58,3 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
 }
-
-

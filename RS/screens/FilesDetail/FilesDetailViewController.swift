@@ -1,19 +1,20 @@
 //
-//  FilesViewController.swift
-//  HobbyRandomizer
+//  FilesDetailViewController.swift
+//  RS
 //
-//  Created by ICoon on 23.06.2022.
+//  Created by ICoon on 11.09.2022.
 //
 
 import UIKit
 
-public final class FilesViewController: UIViewController {
+
+public final class FilesDetailViewController: UIViewController {
     
     
     
-    private let dataSource = FilesDataSource()
+    private let dataSource = FilesDetailDataSource()
     
-    private let presenter: FilesPresenter
+    private let presenter: FilesDetailPresenter
     
     private let alertUtil: AlertUtil
     
@@ -30,11 +31,11 @@ public final class FilesViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: FilesPresenter, alertUtil: AlertUtil) {
+    init(presenter: FilesDetailPresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
         self.alertUtil = alertUtil
         
-        super.init(nibName: "FilesViewController", bundle: Bundle.main)
+        super.init(nibName: "FilesDetailViewController", bundle: Bundle.main)
     }
 
     public override func viewDidLoad() {
@@ -74,10 +75,6 @@ public final class FilesViewController: UIViewController {
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
     
-    func didFileRemoved(value: Bool){
-//        self.showAlert(value: value)
-    }
-
     private func registerCells(){
         let fileId = self.dataSource.getIdentifier()
         let fileNib = UINib(nibName: fileId, bundle: nil)
@@ -97,18 +94,11 @@ public final class FilesViewController: UIViewController {
 
 }
 
-extension FilesViewController: FileDataSourceDelegate{
+extension FilesDetailViewController: FilesDetailDataSourceDelegate{
     
+
     func onItemSelected(model: DisplayFileCellModel) {
-        let navigator = getAppComponent().getNavigator()
-        let alertUtil = getAppComponent().getAlertUtil()
-        let fileUtil = getAppComponent().getFileUtil()
-        let notesController = navigator.getFilesDetailScreen(
-            folderName: model.fileName,
-            filesUtil: fileUtil,
-            alertUtil: alertUtil
-        )
-        navigator.navigate(start: self, destination: notesController)
+        presenter.parseFileData(fileName: model.fileName)
     }
     
     

@@ -50,6 +50,10 @@
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
 		ED384C0B28CE47E900AD3ABA /* NewClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */; };
+		ED384C0F28CE531A00AD3ABA /* FilesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */; };
+		ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */; };
+		ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */; };
+		ED384C1428CE533E00AD3ABA /* FilesDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
@@ -239,6 +243,10 @@
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NewClick.mp3; sourceTree = "<group>"; };
+		ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailViewController.swift; sourceTree = "<group>"; };
+		ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesDetailViewController.xib; sourceTree = "<group>"; };
+		ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailPresenter.swift; sourceTree = "<group>"; };
+		ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailDataSource.swift; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
@@ -540,6 +548,17 @@
 			path = SettingsStepperCell;
 			sourceTree = "<group>";
 		};
+		ED384C0C28CE52E400AD3ABA /* FilesDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */,
+				ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */,
+				ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */,
+				ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */,
+			);
+			path = FilesDetail;
+			sourceTree = "<group>";
+		};
 		ED435825286BCF2300F99459 /* SettingsColorCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +812,7 @@
 		ED5A6C52284FCFF80028BEED /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				ED384C0C28CE52E400AD3ABA /* FilesDetail */,
 				ED13A2D628AEDF01002F56B0 /* Test */,
 				ED6FC3552895B545003A034A /* SelectionAlert */,
 				ED0E594428915A7600C77819 /* Timer */,
@@ -1297,6 +1317,7 @@
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED67A335289C5D3E009AFA4C /* Guitarra.mp3 in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
+				ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */,
 				ED67A336289C5D3E009AFA4C /* Violin.mp3 in Resources */,
 				ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
@@ -1392,6 +1413,7 @@
 				ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,
+				ED384C1428CE533E00AD3ABA /* FilesDetailDataSource.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				ED1D33E3286AAE74004F1506 /* SettingsSteppperCellModel.swift in Sources */,
 				ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */,
@@ -1414,6 +1436,7 @@
 				EDAA9DBD288DF0A300433705 /* ImportDataCellModel.swift in Sources */,
 				ED5135CC286CF25F00403238 /* SelectColorsViewController.swift in Sources */,
 				ED1D33B4286A5B3F004F1506 /* SettingsDataSourse.swift in Sources */,
+				ED384C0F28CE531A00AD3ABA /* FilesDetailViewController.swift in Sources */,
 				ED5F11332717823F006454AD /* BaseRotatableView.swift in Sources */,
 				ED5135E1286D1FFD00403238 /* YesNoRotatable.swift in Sources */,
 				ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */,
@@ -1439,6 +1462,7 @@
 				ED1D33C4286A68AD004F1506 /* SettingsSwichCell.swift in Sources */,
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
+				ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */,
 				ED1D33B8286A5E33004F1506 /* SettingsViewController.swift in Sources */,
 				ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */,
 				ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */,

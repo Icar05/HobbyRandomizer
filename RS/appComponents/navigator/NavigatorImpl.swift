@@ -10,6 +10,7 @@ import Foundation
 class NavigatorImpl: Navigator{
    
     
+  
 
     
     func setupInitialViewController(window: UIWindow) {
@@ -97,6 +98,14 @@ class NavigatorImpl: Navigator{
     func getFilesScreen(filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController {
         let presenter = FilesPresenter(filesUtil: filesUtil)
         let viewcontroller = FilesViewController(presenter: presenter, alertUtil: alertUtil)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
+    func getFilesDetailScreen(folderName: String, filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController {
+        let presenter = FilesDetailPresenter(filesUtil: filesUtil, folderName: folderName)
+        let viewcontroller = FilesDetailViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
         return viewcontroller

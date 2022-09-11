@@ -87,6 +87,24 @@ class FileWriterUtil{
         }
         
     }
+    
+    func readAllFileNamesInFolder(folderName: String) -> [FileInfo]{
+            
+        guard let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(folderName) else{
+                printLog("DocumentUrl nil")
+                return []
+            }
+            
+            do {
+                let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
+                
+                return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
+            } catch let error{
+                printLog("Error while read directories: \(error.localizedDescription)")
+                return []
+            }
+    }
+    
     /**
      methods for reading all files in directory RS
      */
