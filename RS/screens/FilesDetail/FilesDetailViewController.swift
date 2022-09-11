@@ -54,7 +54,7 @@ public final class FilesDetailViewController: UIViewController {
     
     func onDataLoaded(data: [FileInfo]){
         self.emptyView.isHidden = !data.isEmpty
-        self.dataSource.setData(data: data.map{ $0.toDisplayFileCellModel()})
+        self.dataSource.setData(data: data.map{ $0.toFileDetailCellModel()})
         self.tableView.reloadData()
     }
     
@@ -78,12 +78,7 @@ public final class FilesDetailViewController: UIViewController {
     private func registerCells(){
         let fileId = self.dataSource.getIdentifier()
         let fileNib = UINib(nibName: fileId, bundle: nil)
-        
-        let questionId = self.dataSource.getQuestionIdentifier()
-        let questionNib = UINib(nibName: questionId, bundle: nil)
-        
         self.tableView?.register(fileNib, forCellReuseIdentifier: fileId)
-        self.tableView?.register(questionNib, forCellReuseIdentifier: questionId)
     }
 
     private func showAlert(value: Bool){
@@ -97,7 +92,7 @@ public final class FilesDetailViewController: UIViewController {
 extension FilesDetailViewController: FilesDetailDataSourceDelegate{
     
 
-    func onItemSelected(model: DisplayFileCellModel) {
+    func onItemSelected(model: FileDetailCellModel) {
         presenter.parseFileData(fileName: model.fileName)
     }
     

@@ -9,27 +9,24 @@ import Foundation
 
 
 protocol FilesDetailDataSourceDelegate: NSObject{
-    func onItemSelected(model: DisplayFileCellModel)
+    func onItemSelected(model: FileDetailCellModel)
 }
 
 class FilesDetailDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private var data: [DisplayFileCellModel] = []
+    private var data: [FileDetailCellModel] = []
     
     weak var delegate: FilesDetailDataSourceDelegate? = nil
     
-    func setData(data: [DisplayFileCellModel]){
+    func setData(data: [FileDetailCellModel]){
         self.data = data
     }
     
     func getIdentifier() -> String{
-        return String(describing: DisplayFileCell.self)
+        return String(describing: FileDetailCellTableViewCell.self)
     }
     
-    func getQuestionIdentifier() -> String{
-        return String(describing: DisplayQuestionCell.self)
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -41,7 +38,7 @@ class FilesDetailDataSource: NSObject, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! DisplayFileCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! FileDetailCellTableViewCell
         cell.configure(model: self.data[indexPath.row])
         cell.modify()
         

@@ -73,20 +73,11 @@ public final class FilesViewController: UIViewController {
         let controller = getAppComponent().getNavigator().getDisplayRawDataScreen(data: data)
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
-    
-    func didFileRemoved(value: Bool){
-//        self.showAlert(value: value)
-    }
 
     private func registerCells(){
         let fileId = self.dataSource.getIdentifier()
         let fileNib = UINib(nibName: fileId, bundle: nil)
-        
-        let questionId = self.dataSource.getQuestionIdentifier()
-        let questionNib = UINib(nibName: questionId, bundle: nil)
-        
         self.tableView?.register(fileNib, forCellReuseIdentifier: fileId)
-        self.tableView?.register(questionNib, forCellReuseIdentifier: questionId)
     }
 
     private func showAlert(value: Bool){

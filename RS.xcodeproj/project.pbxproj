@@ -54,6 +54,9 @@
 		ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */; };
 		ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */; };
 		ED384C1428CE533E00AD3ABA /* FilesDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */; };
+		ED384C1828CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1628CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift */; };
+		ED384C1928CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C1728CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib */; };
+		ED384C1B28CE5EEC00AD3ABA /* FileDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
@@ -247,6 +250,9 @@
 		ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesDetailViewController.xib; sourceTree = "<group>"; };
 		ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailPresenter.swift; sourceTree = "<group>"; };
 		ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailDataSource.swift; sourceTree = "<group>"; };
+		ED384C1628CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailCellTableViewCell.swift; sourceTree = "<group>"; };
+		ED384C1728CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDetailCellTableViewCell.xib; sourceTree = "<group>"; };
+		ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailCellModel.swift; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
@@ -551,12 +557,23 @@
 		ED384C0C28CE52E400AD3ABA /* FilesDetail */ = {
 			isa = PBXGroup;
 			children = (
+				ED384C1528CE5EB700AD3ABA /* Cells */,
 				ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */,
 				ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */,
 				ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */,
 				ED384C1328CE533E00AD3ABA /* FilesDetailDataSource.swift */,
 			);
 			path = FilesDetail;
+			sourceTree = "<group>";
+		};
+		ED384C1528CE5EB700AD3ABA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ED384C1628CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift */,
+				ED384C1728CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib */,
+				ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		ED435825286BCF2300F99459 /* SettingsColorCell */ = {
@@ -1276,6 +1293,7 @@
 				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
+				ED384C1928CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib in Resources */,
 				ED55EA6D2894DD6400EDB0A0 /* evil-alarm.mp3 in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				ED536150286864D1004F1836 /* DisplayInfoDataViewController.xib in Resources */,
@@ -1346,6 +1364,7 @@
 				ED6FC352289575C8003A034A /* TimerDisplaySquereView.swift in Sources */,
 				ED5A6C62284FE0740028BEED /* InitialViewController.swift in Sources */,
 				ED1D33DA286AA2E4004F1506 /* RandomizerViewPresenter.swift in Sources */,
+				ED384C1B28CE5EEC00AD3ABA /* FileDetailCellModel.swift in Sources */,
 				ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */,
 				ED4A3CC8271A315500084BB8 /* ValueAnimator.swift in Sources */,
 				ED5135DC286D1F5D00403238 /* YesNoViewController.swift in Sources */,
@@ -1449,6 +1468,7 @@
 				ED53615628686507004F1836 /* DisplayRawDataPresenter.swift in Sources */,
 				ED5135BF286CD1B100403238 /* NotesInstuctionHeaderCell.swift in Sources */,
 				EDE5483F2851829A0018A75B /* LabelWithCallback.swift in Sources */,
+				ED384C1828CE5EDD00AD3ABA /* FileDetailCellTableViewCell.swift in Sources */,
 				ED79189F2863C08F0041D407 /* FilesPresenter.swift in Sources */,
 				ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */,
 				ED7EEF142867E46200B5BE46 /* InfoParser.swift in Sources */,
