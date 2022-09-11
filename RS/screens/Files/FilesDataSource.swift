@@ -33,7 +33,7 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count + 1
+        return data.count
     }
     
     func isNotEmpty() -> Bool {
@@ -43,41 +43,44 @@ class FilesDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
-        if(indexPath.row == 0){
-            let cell = tableView.dequeueReusableCell(withIdentifier: getQuestionIdentifier(), for: indexPath) as! DisplayQuestionCell
-            cell.configure(model: DisplayQuestionCellModel(text: Translations.Files.howToCreate))
-            cell.modify()
-            return cell
-        }
+//        if(indexPath.row == 0){
+//            let cell = tableView.dequeueReusableCell(withIdentifier: getQuestionIdentifier(), for: indexPath) as! DisplayQuestionCell
+//            cell.configure(model: DisplayQuestionCellModel(text: Translations.Files.howToCreate))
+//            cell.modify()
+//            return cell
+//        }
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! DisplayFileCell
-        cell.configure(model: self.data[indexPath.row - 1])
+        cell.configure(model: self.data[indexPath.row])
         cell.modify()
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 0){
-            self.delegate?.onQuestionDidTap()
-        }else{
-            let model = self.data[indexPath.row - 1]
-            self.delegate?.onItemSelected(model: model)
-        }
+        let model = self.data[indexPath.row]
+        self.delegate?.onItemSelected(model: model)
+        
+//        if(indexPath.row == 0){
+//            self.delegate?.onQuestionDidTap()
+//        }else{
+//            let model = self.data[indexPath.row - 1]
+//            self.delegate?.onItemSelected(model: model)
+//        }
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return indexPath.row == 0 ? UITableViewCell.EditingStyle.none :  UITableViewCell.EditingStyle.delete
+        return UITableViewCell.EditingStyle.none
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete , indexPath.row > 0{
-            let fileName = data[indexPath.row - 1].fileName
-            self.data.remove(at: indexPath.row - 1)
-            self.delegate?.onItemRemoved(fileName: fileName)
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCell.EditingStyle.delete , indexPath.row > 0{
+//            let fileName = data[indexPath.row - 1].fileName
+//            self.data.remove(at: indexPath.row - 1)
+//            self.delegate?.onItemRemoved(fileName: fileName)
+//        }
+//    }
     
 }
 
