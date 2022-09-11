@@ -59,6 +59,10 @@
 		ED384C1B28CE5EEC00AD3ABA /* FileDetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */; };
 		ED384C2328CE642A00AD3ABA /* OpenFileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */; };
 		ED384C2428CE642A00AD3ABA /* OpenFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */; };
+		ED384C2728CE680200AD3ABA /* AppContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2628CE680200AD3ABA /* AppContent.swift */; };
+		ED384C2928CE682800AD3ABA /* ActionContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2828CE682800AD3ABA /* ActionContentObject.swift */; };
+		ED384C2B28CE689C00AD3ABA /* InfoContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2A28CE689C00AD3ABA /* InfoContentObject.swift */; };
+		ED384C2D28CE691100AD3ABA /* PlayContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C2C28CE691100AD3ABA /* PlayContentObject.swift */; };
 		ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */; };
 		ED435822286BAC3E00F99459 /* VerticalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435821286BAC3E00F99459 /* VerticalScrollView.swift */; };
 		ED435824286BCD6D00F99459 /* DebugPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED435823286BCD6D00F99459 /* DebugPresenter.swift */; };
@@ -257,6 +261,10 @@
 		ED384C1A28CE5EEC00AD3ABA /* FileDetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDetailCellModel.swift; sourceTree = "<group>"; };
 		ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFileViewController.swift; sourceTree = "<group>"; };
 		ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpenFileViewController.xib; sourceTree = "<group>"; };
+		ED384C2628CE680200AD3ABA /* AppContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContent.swift; sourceTree = "<group>"; };
+		ED384C2828CE682800AD3ABA /* ActionContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionContentObject.swift; sourceTree = "<group>"; };
+		ED384C2A28CE689C00AD3ABA /* InfoContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoContentObject.swift; sourceTree = "<group>"; };
+		ED384C2C28CE691100AD3ABA /* PlayContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayContentObject.swift; sourceTree = "<group>"; };
 		ED43581F286B4AFC00F99459 /* VerticalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCollectionView.swift; sourceTree = "<group>"; };
 		ED435821286BAC3E00F99459 /* VerticalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalScrollView.swift; sourceTree = "<group>"; };
 		ED435823286BCD6D00F99459 /* DebugPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugPresenter.swift; sourceTree = "<group>"; };
@@ -583,10 +591,22 @@
 		ED384C1C28CE63BC00AD3ABA /* OpenFile */ = {
 			isa = PBXGroup;
 			children = (
+				ED384C2528CE67E400AD3ABA /* Models */,
 				ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */,
 				ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */,
 			);
 			path = OpenFile;
+			sourceTree = "<group>";
+		};
+		ED384C2528CE67E400AD3ABA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED384C2628CE680200AD3ABA /* AppContent.swift */,
+				ED384C2828CE682800AD3ABA /* ActionContentObject.swift */,
+				ED384C2A28CE689C00AD3ABA /* InfoContentObject.swift */,
+				ED384C2C28CE691100AD3ABA /* PlayContentObject.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED435825286BCF2300F99459 /* SettingsColorCell */ = {
@@ -1368,12 +1388,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5135CF286CF3C800403238 /* SelectColorsPresenter.swift in Sources */,
+				ED384C2D28CE691100AD3ABA /* PlayContentObject.swift in Sources */,
 				EDADA0DF2891B408007FDFDC /* TimerPresenter.swift in Sources */,
 				ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */,
 				ED5135B5286CC9A400403238 /* NotesInstructionDataSource.swift in Sources */,
 				ED1D33E0286AAE64004F1506 /* SettingsStepperCell.swift in Sources */,
 				EDE5483D28517AD30018A75B /* ShowDataSource.swift in Sources */,
+				ED384C2B28CE689C00AD3ABA /* InfoContentObject.swift in Sources */,
 				EDF8A5742865060300565AAF /* TopCell.swift in Sources */,
+				ED384C2728CE680200AD3ABA /* AppContent.swift in Sources */,
 				EDE5483B28517A990018A75B /* ShowPresenter.swift in Sources */,
 				ED5A6C5A284FD4D00028BEED /* Navigator.swift in Sources */,
 				ED6FC352289575C8003A034A /* TimerDisplaySquereView.swift in Sources */,
@@ -1499,6 +1522,7 @@
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 				ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */,
+				ED384C2928CE682800AD3ABA /* ActionContentObject.swift in Sources */,
 				ED1D33B8286A5E33004F1506 /* SettingsViewController.swift in Sources */,
 				ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */,
 				ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */,
