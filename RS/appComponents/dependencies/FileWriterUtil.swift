@@ -9,6 +9,13 @@ import Foundation
 import PDFKit
 
 
+enum FolderName: String, CaseIterable{
+    case Action = "Action"
+    case Info = "Info"
+    case Play = "Play"
+}
+
+
 struct FileInfo{
     var shortName: String
     var fullName: String
@@ -164,10 +171,10 @@ class FileWriterUtil{
     
     
     func creatSubFolders(){
-        let folderNames = ["Info", "Action", "Play" ]
+        let folderNames = FolderName.allCases
      
         for item in folderNames{
-            self.createFolderIfNotExist(folderName: item)
+            self.createFolderIfNotExist(folderName: item.rawValue)
         }
         
     }
