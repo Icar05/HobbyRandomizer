@@ -28,8 +28,48 @@ class RandItemCell: UITableViewCell {
     
     func configure(model: RandItemCellModel){
         self.title.text = model.title
-        self.subTitle.text = model.subTitle
         self.icon.setImageColor(color: model.type.getColorForType())
+        
+        model.subTitle.isReachable{ success in
+            if success {
+                self.subTitle.attributedText = model.subTitle.httpString(
+                    color: model.type.getColorForType(),
+                    size: 14
+                )
+            } else {
+                self.subTitle.text = model.subTitle
+            }
+        }
     }
     
+    
+}
+
+extension String{
+    func isReachable(completion: @escaping (Bool) -> ()) {
+        
+        guard let url = URL(string: self) else {
+            completion(false)
+            return
+        }
+        
+        var request = URLRequest(url: url)
+            request.httpMethod = "HEAD"
+        
+        URLSession.shared.dataTask(with: request) { _, response, _ in
+            DispatchQueue.main.async {
+                completion((response as? HTTPURLResponse)?.statusCode == 200)
+            }
+        }.resume()
+    }
+    
+    
+    func httpString(color: UIColor, size: CGFloat) -> NSAttributedString{
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: color,
+            .font: UIFont.boldSystemFont(ofSize: size)
+        ]
+        
+        return NSAttributedString(string: self, attributes: strokeTextAttributes)
+    }
 }
