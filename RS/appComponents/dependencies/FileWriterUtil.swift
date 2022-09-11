@@ -143,6 +143,34 @@ class FileWriterUtil{
         }
     }
     
+    
+    
+    func creatSubFolders(){
+        let folderNames = ["Info", "Action", "Play" ]
+     
+        for item in folderNames{
+            self.createFolderIfNotExist(folderName: item)
+        }
+        
+    }
+    
+    
+    @discardableResult
+    private func createFolderIfNotExist(folderName: String) -> Bool{
+      
+        guard let url: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(folderName) else {
+            return false
+        }
+    
+        if !FileManager.default.fileExists(atPath: url.absoluteString) {
+            try! FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+            return true
+        }
+        
+        return false
+    }
+    
+    
     /**
      base url for RS
      */
