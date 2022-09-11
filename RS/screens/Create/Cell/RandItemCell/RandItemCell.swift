@@ -29,23 +29,13 @@ class RandItemCell: UITableViewCell {
     func configure(model: RandItemCellModel){
         self.title.text = model.title
         self.icon.setImageColor(color: model.type.getColorForType())
+        self.subTitle.text = model.subTitle
         
         model.subTitle.isReachable{ success in
             if success {
-                self.setupSubtitleAsHttp(model: model)
-            } else {
-                self.subTitle.text = model.subTitle
+                self.addOpenLinkAction()
             }
         }
-    }
-    
-    
-    private func setupSubtitleAsHttp(model: RandItemCellModel){
-        self.subTitle.attributedText = model.subTitle.httpString(
-            color: model.type.getColorForType(),
-            size: self.subTitle.font.pointSize
-        )
-        self.addOpenLinkAction()
     }
     
     private func addOpenLinkAction(){
@@ -82,15 +72,5 @@ extension String{
                 completion((response as? HTTPURLResponse)?.statusCode == 200)
             }
         }.resume()
-    }
-    
-    
-    func httpString(color: UIColor, size: CGFloat) -> NSAttributedString{
-        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: color,
-            .font: UIFont.boldSystemFont(ofSize: size)
-        ]
-        
-        return NSAttributedString(string: self, attributes: strokeTextAttributes)
     }
 }
