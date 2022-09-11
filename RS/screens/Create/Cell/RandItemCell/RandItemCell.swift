@@ -32,16 +32,37 @@ class RandItemCell: UITableViewCell {
         
         model.subTitle.isReachable{ success in
             if success {
-                self.subTitle.attributedText = model.subTitle.httpString(
-                    color: model.type.getColorForType(),
-                    size: 14
-                )
+                self.setupSubtitleAsHttp(model: model)
             } else {
                 self.subTitle.text = model.subTitle
             }
         }
     }
     
+    
+    private func setupSubtitleAsHttp(model: RandItemCellModel){
+        self.subTitle.attributedText = model.subTitle.httpString(
+            color: model.type.getColorForType(),
+            size: self.subTitle.font.pointSize
+        )
+        self.addOpenLinkAction()
+    }
+    
+    private func addOpenLinkAction(){
+        self.subTitle.isUserInteractionEnabled = true
+        self.subTitle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.action(_:))))
+    }
+    
+    @objc func action(_ sender: UITapGestureRecognizer? = nil){
+
+        guard let text = self.subTitle.text else {
+            return
+        }
+
+        if let url = URL(string: text), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
     
 }
 
