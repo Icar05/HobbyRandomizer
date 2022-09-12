@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,7 +18,6 @@
 		ED11A14428972E4400503BFF /* SettingsTimerMinutesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14228972E4400503BFF /* SettingsTimerMinutesCell.swift */; };
 		ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED11A14328972E4400503BFF /* SettingsTimerMinutesCell.xib */; };
 		ED11A14728972E5600503BFF /* SettingsTimerMinutesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11A14628972E5600503BFF /* SettingsTimerMinutesCellModel.swift */; };
-		ED13A2D528AEDEED002F56B0 /* BLEApi in Frameworks */ = {isa = PBXBuildFile; productRef = ED13A2D428AEDEED002F56B0 /* BLEApi */; };
 		ED13A2D928AEDF22002F56B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13A2D728AEDF22002F56B0 /* TestViewController.swift */; };
 		ED13A2DA28AEDF22002F56B0 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED13A2D828AEDF22002F56B0 /* TestViewController.xib */; };
 		ED1D33AB286A56C9004F1506 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D33AA286A56C9004F1506 /* JsonDecoder.swift */; };
@@ -422,7 +421,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED13A2D528AEDEED002F56B0 /* BLEApi in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1271,7 +1269,6 @@
 			);
 			name = RS;
 			packageProductDependencies = (
-				ED13A2D428AEDEED002F56B0 /* BLEApi */,
 			);
 			productName = HobbyRandomizer;
 			productReference = ED6EEF5C2715C6D200D4EFE9 /* RS.app */;
@@ -1746,13 +1743,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ED13A2D428AEDEED002F56B0 /* BLEApi */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BLEApi;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED6EEF542715C6D200D4EFE9 /* Project object */;
 }
