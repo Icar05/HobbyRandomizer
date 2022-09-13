@@ -177,6 +177,7 @@
 		ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */; };
 		ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */; };
 		ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FE028515CC600DFD78F /* RandomizerViewController.xib */; };
+		ED8C226128D0FF7F00A4CB24 /* OpenFileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C226028D0FF7F00A4CB24 /* OpenFileUtil.swift */; };
 		ED957F7D28B056D300DBA36D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED957F7C28B056D300DBA36D /* AudioManager.swift */; };
 		ED971FED28D07BF500B965FF /* OpenFilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */; };
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
@@ -384,6 +385,7 @@
 		ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		ED880FE028515CC600DFD78F /* RandomizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
 		ED8C225F28D0F69E00A4CB24 /* RS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RS.entitlements; sourceTree = "<group>"; };
+		ED8C226028D0FF7F00A4CB24 /* OpenFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFileUtil.swift; sourceTree = "<group>"; };
 		ED957F7C28B056D300DBA36D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFilePresenter.swift; sourceTree = "<group>"; };
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 		ED4A3CC4271A290000084BB8 /* dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				ED8C226028D0FF7F00A4CB24 /* OpenFileUtil.swift */,
 				ED957F7C28B056D300DBA36D /* AudioManager.swift */,
 				ED7EEF162867E4B800B5BE46 /* parser */,
 				ED7EEF152867E4A000B5BE46 /* viewUtils */,
@@ -1525,6 +1528,7 @@
 				ED1D33C0286A60D8004F1506 /* SettingsHeaderCellModel.swift in Sources */,
 				ED7EEF182867E72200B5BE46 /* MainParser.swift in Sources */,
 				ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */,
+				ED8C226128D0FF7F00A4CB24 /* OpenFileUtil.swift in Sources */,
 				ED384C2928CE682800AD3ABA /* ActionContentObject.swift in Sources */,
 				ED1D33B8286A5E33004F1506 /* SettingsViewController.swift in Sources */,
 				ED0E59512891618700C77819 /* SettingsSimpleCellTableViewCell.swift in Sources */,

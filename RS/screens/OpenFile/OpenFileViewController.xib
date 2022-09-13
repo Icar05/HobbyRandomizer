@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenFileViewController" customModule="RS" customModuleProvider="target">
             <connections>
+                <outlet property="actionButton" destination="DK7-Wq-HdP" id="Zqx-BE-qRi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,25 +21,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAj-1r-lE7">
+                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK7-Wq-HdP">
-                    <rect key="frame" x="173.5" y="432.5" width="67" height="31"/>
+                    <rect key="frame" x="107" y="423" width="200" height="50"/>
+                    <color key="backgroundColor" name="CoolGreen"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ZOU-aj-NFi"/>
+                        <constraint firstAttribute="width" constant="200" id="oq0-dk-mc8"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                    <connections>
-                        <action selector="actionClick:" destination="-1" eventType="touchUpInside" id="EBG-YU-Gg5"/>
-                    </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-9X-xC4" userLabel="TopSeparator">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bU3-gj-6SW"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="MainColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vAj-1r-lE7" secondAttribute="bottom" id="5i2-B0-QZj"/>
+                <constraint firstItem="MrN-9X-xC4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bmb-50-F8O"/>
+                <constraint firstItem="vAj-1r-lE7" firstAttribute="top" secondItem="MrN-9X-xC4" secondAttribute="bottom" id="FtN-YQ-Gaq"/>
+                <constraint firstItem="vAj-1r-lE7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KZA-NF-h39"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vAj-1r-lE7" secondAttribute="trailing" id="Svv-Vp-sT3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MrN-9X-xC4" secondAttribute="trailing" id="aEZ-JQ-x2z"/>
                 <constraint firstItem="DK7-Wq-HdP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ajJ-jb-Xt9"/>
                 <constraint firstItem="DK7-Wq-HdP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pys-KY-5ne"/>
+                <constraint firstItem="MrN-9X-xC4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uqb-oD-zSi"/>
             </constraints>
             <point key="canvasLocation" x="130" y="-20"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="CoolGreen">
+            <color red="0.20399999618530273" green="0.6119999885559082" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

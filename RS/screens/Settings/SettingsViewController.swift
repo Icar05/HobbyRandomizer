@@ -57,7 +57,10 @@ public final class SettingsViewController: UIViewController {
     
     func navigateToDebug(){
         let navigator = getAppComponent().getNavigator()
-        let destination = navigator.getOpenFileScreen()
+        let alertUtil = getAppComponent().getAlertUtil()
+        let openFileUtil = getAppComponent().getOpenFileUtil()
+        let destination = navigator.getOpenFileScreen(
+            openFileUtil: openFileUtil, alertUtil: alertUtil)
         navigator.navigate(start: self, destination: destination)
     }
     

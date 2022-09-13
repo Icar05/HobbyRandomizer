@@ -27,9 +27,12 @@ class AppComponent{
     
     private let timerUtil: TimerUtil
     
+    private let openFileUtil: OpenFileUtil
+    
     
     
     init(){
+        self.openFileUtil = OpenFileUtil()
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
         self.timerUtil = TimerUtil(
@@ -73,5 +76,9 @@ class AppComponent{
     
     func getTimerUtil() -> TimerUtil{
         return timerUtil
+    }
+    
+    func getOpenFileUtil() -> OpenFileUtil{
+        return self.openFileUtil
     }
 }
