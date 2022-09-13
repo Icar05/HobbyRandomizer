@@ -172,6 +172,10 @@ class NavigatorImpl: Navigator{
     
     
     func getOpenFileScreen() -> UIViewController {
-        return OpenFileViewController()
+        let presenter = OpenFilePresenter()
+        let viewcontroller = OpenFileViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
     }
 }

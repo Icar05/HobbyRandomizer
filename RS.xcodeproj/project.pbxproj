@@ -179,6 +179,8 @@
 		ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */; };
 		ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FE028515CC600DFD78F /* RandomizerViewController.xib */; };
 		ED957F7D28B056D300DBA36D /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED957F7C28B056D300DBA36D /* AudioManager.swift */; };
+		ED971FED28D07BF500B965FF /* OpenFilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */; };
+		ED971FEF28D07CCA00B965FF /* OpenFIleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED971FEE28D07CCA00B965FF /* OpenFIleProvider.swift */; };
 		EDA4EC3B284FED2E00D94753 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA4EC39284FED2E00D94753 /* MenuCell.swift */; };
 		EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDA4EC3A284FED2E00D94753 /* MenuCell.xib */; };
 		EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA90D3C27167630009BDB20 /* SelectorView.swift */; };
@@ -384,6 +386,8 @@
 		ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		ED880FE028515CC600DFD78F /* RandomizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
 		ED957F7C28B056D300DBA36D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFilePresenter.swift; sourceTree = "<group>"; };
+		ED971FEE28D07CCA00B965FF /* OpenFIleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFIleProvider.swift; sourceTree = "<group>"; };
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EDA4EC3A284FED2E00D94753 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		EDA90D3C27167630009BDB20 /* SelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorView.swift; sourceTree = "<group>"; };
@@ -594,6 +598,8 @@
 				ED384C2528CE67E400AD3ABA /* Models */,
 				ED384C2128CE642A00AD3ABA /* OpenFileViewController.swift */,
 				ED384C2228CE642A00AD3ABA /* OpenFileViewController.xib */,
+				ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */,
+				ED971FEE28D07CCA00B965FF /* OpenFIleProvider.swift */,
 			);
 			path = OpenFile;
 			sourceTree = "<group>";
@@ -1411,6 +1417,7 @@
 				ED4491AD2866938300CCC32D /* ImportDataCell.swift in Sources */,
 				ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */,
 				ED435820286B4AFC00F99459 /* VerticalCollectionView.swift in Sources */,
+				ED971FED28D07BF500B965FF /* OpenFilePresenter.swift in Sources */,
 				ED5BECB62895C4BA00088DCA /* AnimationController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
 				ED5135C5286CD1EF00403238 /* NotesInstructionInfoCell.swift in Sources */,
@@ -1480,6 +1487,7 @@
 				ED384C2328CE642A00AD3ABA /* OpenFileViewController.swift in Sources */,
 				ED1D33C7286A68C1004F1506 /* SettingsSwichCellModel.swift in Sources */,
 				ED0E59562891902D00C77819 /* TimerUtil.swift in Sources */,
+				ED971FEF28D07CCA00B965FF /* OpenFIleProvider.swift in Sources */,
 				ED1D33BD286A60C6004F1506 /* SettingsHeaderCell.swift in Sources */,
 				ED5135B3286CC99200403238 /* NotesInstructionPresenter.swift in Sources */,
 				ED880FC72851151C00DFD78F /* CreateViewController.swift in Sources */,

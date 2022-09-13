@@ -8,19 +8,38 @@
 import UIKit
 
 
-class OpenFileViewController: UIViewController {
+public final class OpenFileViewController: UIViewController {
 
     
+    
+    private let presenter: OpenFilePresenter
     
     @IBAction func actionClick(_ sender: Any) {
-        
-        print("action!")
+        self.presenter.showAllFiles()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @available(iOS, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(presenter: OpenFilePresenter) {
+        self.presenter = presenter
+        
+        super.init(nibName: "OpenFileViewController", bundle: Bundle.main)
+    }
 
-        // Do any additional setup after loading the view.
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        self.tableView.delegate = dataSource
+//        self.tableView.dataSource = dataSource
+//        self.tableView.tableFooterView = UIView()
+//        self.dataSource.delegate = self
+//        self.registerCells()
+//        self.emptyViewLabel.text = Translations.All.noData
+//
+//        self.presenter.viewDidLoad()
     }
 
 }
