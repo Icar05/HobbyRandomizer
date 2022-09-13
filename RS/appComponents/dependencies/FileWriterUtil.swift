@@ -19,6 +19,7 @@ enum FolderName: String, CaseIterable{
 struct FileInfo{
     var shortName: String
     var fullName: String
+    var folderName: String
 }
 
 /**
@@ -38,43 +39,7 @@ class FileWriterUtil{
     
     private let jsonDecoder = JsonDecoder()
     
-    
-    
-    /**
-     export and import
-     */
-    @discardableResult
-    func exportDataAsJson(fileName: String, models: [ActionModel]) -> Bool{
-        
-        guard let data = jsonDecoder.encodeData(models: models),
-              let text = String(data: data, encoding: String.Encoding.utf8) else{
-                  printLog("trouble with encoding ...")
-                  return false
-              }
-        
-        self.writeFile(fileName: fileName, text: text)
-        return true
-    }
-    
-    func importDataAsJson(fileName: String) -> [ActionModel]?{
-        guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
-            printLog("can't read data from string ...")
-            return nil
-        }
-        return jsonDecoder.decodeData(data: data)
-    }
-    
-    func importModels(fileName: String) -> Any?{
-        let input = readFile(fileName: fileName)
-        
-        
-        guard let data: Data = input.data(using: String.Encoding.utf8),
-              let result: [ActionModel] = jsonDecoder.decodeData(data: data) else {
-                  return mainParcer.parseString(input: input)
-              }
-        
-        return result
-    }
+
     
     /**
      remove file from folder RS
@@ -105,7 +70,7 @@ class FileWriterUtil{
             do {
                 let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
                 
-                return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
+                return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path, folderName: folderName)}
             } catch let error{
                 printLog("Error while read directories: \(error.localizedDescription)")
                 return []
@@ -125,7 +90,7 @@ class FileWriterUtil{
         do {
             let fileURLs: [URL] = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
             
-            return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path)}
+            return  fileURLs.map{ FileInfo(shortName: $0.lastPathComponent, fullName: $0.path, folderName: "RS")}
         } catch let error{
             printLog("Error while read directories: \(error.localizedDescription)")
             return []
@@ -138,6 +103,22 @@ class FileWriterUtil{
     func readFile(fileName: String) -> String{
         
         guard let fileURL = getFileUrl(fileName: fileName) else {
+            printLog("file url is nil !")
+            return ""
+        }
+        
+        do {
+            return  try String(contentsOf: fileURL, encoding: .utf8)
+        }
+        
+        catch let error{
+            printLog("Error reading: \(error.localizedDescription)")
+            return ""
+        }
+    }
+    
+    func readFile(fileName: String, dirName: String) -> String{
+        guard let fileURL = getFileUrl(fileName: fileName, directoryName: dirName) else {
             printLog("file url is nil !")
             return ""
         }
@@ -221,11 +202,20 @@ class FileWriterUtil{
     /**
      base url for RS
      */
+    
+    
     private func getFileUrl(fileName: String) -> URL? {
         guard let dir =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
             return nil
         }
         return dir.appendingPathComponent(fileName)
+    }
+    
+    private func getFileUrl(fileName: String, directoryName: String) -> URL? {
+        guard let dir =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else{
+            return nil
+        }
+        return dir.appendingPathComponent(directoryName).appendingPathComponent(fileName)
     }
     
     private func printLog(_ value: String){

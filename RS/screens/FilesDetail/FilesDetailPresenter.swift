@@ -13,6 +13,8 @@ public final class FilesDetailPresenter{
     
     private let filesUtil: FileWriterUtil
     
+    private let jsonDecoder: JsonDecoder
+    
     private let folderName: String
     
     unowned var view: FilesDetailViewController!
@@ -21,9 +23,10 @@ public final class FilesDetailPresenter{
         self.view = view
     }
     
-    init(filesUtil: FileWriterUtil, folderName: String){
+    init(filesUtil: FileWriterUtil, folderName: String, jsonDecoder: JsonDecoder){
         self.filesUtil = filesUtil
         self.folderName = folderName
+        self.jsonDecoder = jsonDecoder
     }
     
     func viewDidLoad(){
@@ -31,27 +34,57 @@ public final class FilesDetailPresenter{
         self.view.onDataLoaded(data: data)
     }
     
-    func parseFileData(fileName: String){
+    func parseFileData(file: FileDetailCellModel){
         
-        let result: Any  = filesUtil.importModels(fileName: fileName) as Any
+        
+        guard let data = filesUtil.readFile(fileName: file.fileName, dirName: file.fileName).data(using: .utf8) else {
+            print("enable to parse data")
+            return
+        }
+
+        
+        switch file.folderName{
+            
+            case FolderName.Info.rawValue :
+            self.handleInfo(data: data)
+                break
+                
+            case FolderName.Action.rawValue :
+            self.handleAction(data: data)
+                break
+                
+            case FolderName.Play.rawValue :
+            self.handlePlay(data: data)
+                break
+            
+            default:
+                break
+        }
+        
+    }
     
-        if(result is [ActionModel]){
-            view.displayData(data: result as! [ActionModel])
+    private func handlePlay(data: Data){
+        guard let models: [String] = jsonDecoder.decode(data: data, type: [String].self) else {
             return
         }
         
-        
-        if(result is [InfoModel]){
-            view.displayData(data: result as! [InfoModel])
+        self.view.displayData(data: models)
+    }
+    
+    private func handleAction(data: Data){
+        guard let models: [ActionModel] = jsonDecoder.decode(data: data, type: [ActionModel].self) else {
             return
         }
         
-        if(result is String){
-            view.displayData(data: result as! String)
+        self.view.displayData(data: models)
+    }
+    
+    private func handleInfo(data: Data){
+        guard let models: [InfoModel] = jsonDecoder.decode(data: data, type: [InfoModel].self) else {
+            return
         }
         
-        return
-        
+        self.view.displayData(data: models)
     }
     
 }

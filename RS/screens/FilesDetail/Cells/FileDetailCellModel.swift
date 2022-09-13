@@ -11,11 +11,12 @@ import Foundation
 struct FileDetailCellModel{
     var fileName: String
     var fileFullName: String
+    var folderName: String
 }
 
 
 extension FileInfo{
     func toFileDetailCellModel() -> FileDetailCellModel{
-        return FileDetailCellModel(fileName: self.shortName, fileFullName: self.fullName)
+        return FileDetailCellModel(fileName: self.shortName, fileFullName: self.fullName, folderName: self.folderName)
     }
 }

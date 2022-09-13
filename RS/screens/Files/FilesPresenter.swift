@@ -28,27 +28,4 @@ public final class FilesPresenter{
         self.view.onDataLoaded(data: data)
     }
     
-    func parseFileData(fileName: String){
-        
-        let result: Any  = filesUtil.importModels(fileName: fileName) as Any
-    
-        if(result is [ActionModel]){
-            view.displayData(data: result as! [ActionModel])
-            return
-        }
-        
-        
-        if(result is [InfoModel]){
-            view.displayData(data: result as! [InfoModel])
-            return
-        }
-        
-        if(result is String){
-            view.displayData(data: result as! String)
-        }
-        
-        return
-        
-    }
-    
 }

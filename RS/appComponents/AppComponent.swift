@@ -10,6 +10,7 @@ import Foundation
 class AppComponent{
     
 
+    private let jsonDecoder: JsonDecoder = JsonDecoder()
     
     private let navigator: Navigator = NavigatorImpl()
     
@@ -34,7 +35,7 @@ class AppComponent{
     
     
     init(){
-        self.importUtil = ImportUtil(fileWriteUtil: fileUtil)
+        self.importUtil = ImportUtil(fileWriteUtil: fileUtil, jsonDecoder: jsonDecoder)
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
         self.timerUtil = TimerUtil(
@@ -86,5 +87,9 @@ class AppComponent{
     
     func getImportUtil() -> ImportUtil {
         return self.importUtil
+    }
+    
+    func getJsonDecoder() -> JsonDecoder{
+        return self.jsonDecoder
     }
 }

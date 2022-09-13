@@ -11,10 +11,10 @@ import Foundation
 final class DisplayRawDataDataSourse: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private var data: String = ""
+    private var data: [String] = []
     
     
-    func setData(data: String){
+    func setData(data: [String]){
         self.data = data
     }
     
@@ -27,14 +27,14 @@ final class DisplayRawDataDataSourse: NSObject, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return data.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: getIdentifier(), for: indexPath) as! DisplayRawDataCell
-        cell.configure(model: DisplayRawDataCellModel(data: data))
+        cell.configure(model: DisplayRawDataCellModel(data: data[indexPath.row]))
         cell.modify()
         
         return cell

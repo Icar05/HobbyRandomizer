@@ -13,13 +13,16 @@ public final class ImportUtil{
     
     private let fileWriteUtil: FileWriterUtil
     
-    init(fileWriteUtil: FileWriterUtil){
+    private let jsonDecoder: JsonDecoder
+    
+    init(fileWriteUtil: FileWriterUtil, jsonDecoder: JsonDecoder){
         self.fileWriteUtil = fileWriteUtil
+        self.jsonDecoder = jsonDecoder
     }
     
     
     func importData(data: Data, callback: @escaping (Bool) -> Void){
-        guard let appContent = decode(data: data, type: AppContent.self) else {
+        guard let appContent = jsonDecoder.decode(data: data, type: AppContent.self) else {
             return
         }
         
@@ -32,7 +35,7 @@ public final class ImportUtil{
     
     private func importInfo(_ info: InfoContentObject){
         info.content.forEach{
-            let jsonString = String(data: modelToData(model: $0.models)!, encoding: .utf8)
+            let jsonString = String(data: jsonDecoder.modelToData(model: $0.models)!, encoding: .utf8)
             self.fileWriteUtil.writeFile(
                 fileName: $0.name,
                 text: jsonString!,
@@ -43,7 +46,7 @@ public final class ImportUtil{
     
     private func importAction(_ action: ActionContentObject){
         action.content.forEach{
-            let jsonString = String(data: modelToData(model: $0.models)!, encoding: .utf8)
+            let jsonString = String(data: jsonDecoder.modelToData(model: $0.models)!, encoding: .utf8)
             self.fileWriteUtil.writeFile(
                 fileName: $0.name,
                 text: jsonString!,
@@ -54,7 +57,7 @@ public final class ImportUtil{
     
     private func importPlay(_ play: PlayContentObject){
         play.content.forEach{
-            let jsonString = String(data: modelToData(model: $0.models)!, encoding: .utf8)
+            let jsonString = String(data: jsonDecoder.modelToData(model: $0.models)!, encoding: .utf8)
             self.fileWriteUtil.writeFile(
                 fileName: $0.name,
                 text: jsonString!,
@@ -63,23 +66,5 @@ public final class ImportUtil{
         }
     }
     
-    private func modelToData<T>(model: T) -> Data? where T : Codable{
-        do {
-            return try JSONEncoder().encode(model)
-        } catch let error {
-            print("Error encode data:  (\(error))")
-            return nil
-        }
-    }
-    
-    private func decode<T>(data: Data, type: T.Type) -> T? where T: Codable{
-        do{
-            return  try JSONDecoder().decode(T.self, from: data) as T
-        } catch  {
-            
-            print("error: \(error)")
-            return nil
-        }
-    }
     
 }

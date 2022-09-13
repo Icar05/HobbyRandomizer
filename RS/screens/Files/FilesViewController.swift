@@ -57,22 +57,6 @@ public final class FilesViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func displayData(data: [InfoModel]){
-        let controller = getAppComponent().getNavigator().getDisplayInfoDataScreen(data: data)
-        getAppComponent().getNavigator().navigate(start: self, destination: controller)
-    }
-
-    func displayData(data: [ActionModel]){
-        let storage = getAppComponent().getStorage()
-        let alertUtil = getAppComponent().getAlertUtil()
-        let controller = getAppComponent().getNavigator().getDisplayActionDataScreen(data: data, storage: storage, alertUtil: alertUtil)
-        getAppComponent().getNavigator().navigate(start: self, destination: controller)
-    }
-    
-    func displayData(data: String){
-        let controller = getAppComponent().getNavigator().getDisplayRawDataScreen(data: data)
-        getAppComponent().getNavigator().navigate(start: self, destination: controller)
-    }
 
     private func registerCells(){
         let fileId = self.dataSource.getIdentifier()
@@ -94,10 +78,12 @@ extension FilesViewController: FileDataSourceDelegate{
         let navigator = getAppComponent().getNavigator()
         let alertUtil = getAppComponent().getAlertUtil()
         let fileUtil = getAppComponent().getFileUtil()
+        let jsonDecoder = getAppComponent().getJsonDecoder()
         let notesController = navigator.getFilesDetailScreen(
             folderName: model.fileName,
             filesUtil: fileUtil,
-            alertUtil: alertUtil
+            alertUtil: alertUtil,
+            jsonDecoder: jsonDecoder
         )
         navigator.navigate(start: self, destination: notesController)
     }

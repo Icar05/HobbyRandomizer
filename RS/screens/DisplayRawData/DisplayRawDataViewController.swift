@@ -46,7 +46,7 @@ public final class DisplayRawDataViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
     
-    func displayData(data: String){
+    func displayData(data: [String]){
         self.dataSource.setData(data: data)
         self.tableView.isHidden = false
         self.tableView.reloadData()

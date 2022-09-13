@@ -13,22 +13,23 @@ class JsonDecoder{
     private let log = "JsonDecoder"
     
     
-    func decodeData(data: Data) -> [ActionModel]?{
+    func modelToData<T>(model: T) -> Data? where T : Codable{
         do {
-            return try JSONDecoder().decode([ActionModel].self, from: data)
-        } catch let error{
-            printLog("Error decode data:  (\(error))")
+            return try JSONEncoder().encode(model)
+        } catch let error {
+            print("Error encode data:  (\(error))")
+            return nil
         }
-        return nil
     }
     
-    func encodeData(models: [ActionModel]) -> Data?{
-        do {
-            return try JSONEncoder().encode(models)
-        } catch let error {
-            printLog("Error encode data:  (\(error))")
+    func decode<T>(data: Data, type: T.Type) -> T? where T: Codable{
+        do{
+            return  try JSONDecoder().decode(T.self, from: data) as T
+        } catch  {
+            
+            print("error: \(error)")
+            return nil
         }
-        return nil
     }
     
     

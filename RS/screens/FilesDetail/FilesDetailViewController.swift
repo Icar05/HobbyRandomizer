@@ -70,7 +70,7 @@ public final class FilesDetailViewController: UIViewController {
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
     
-    func displayData(data: String){
+    func displayData(data: [String]){
         let controller = getAppComponent().getNavigator().getDisplayRawDataScreen(data: data)
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
@@ -93,7 +93,7 @@ extension FilesDetailViewController: FilesDetailDataSourceDelegate{
     
 
     func onItemSelected(model: FileDetailCellModel) {
-        presenter.parseFileData(fileName: model.fileName)
+        presenter.parseFileData(file: model)
     }
     
     

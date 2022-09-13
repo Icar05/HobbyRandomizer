@@ -102,8 +102,8 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getFilesDetailScreen(folderName: String, filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController {
-        let presenter = FilesDetailPresenter(filesUtil: filesUtil, folderName: folderName)
+    func getFilesDetailScreen(folderName: String, filesUtil: FileWriterUtil, alertUtil: AlertUtil, jsonDecoder: JsonDecoder) -> UIViewController {
+        let presenter = FilesDetailPresenter(filesUtil: filesUtil, folderName: folderName, jsonDecoder: jsonDecoder)
         let viewcontroller = FilesDetailViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
         
@@ -126,7 +126,7 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getDisplayRawDataScreen(data: String) -> UIViewController {
+    func getDisplayRawDataScreen(data: [String]) -> UIViewController {
         let presenter = DisplayRawDataPresenter(data: data)
         let viewcontroller = DisplayRawDataViewController(presenter: presenter)
         presenter.set(view: viewcontroller)

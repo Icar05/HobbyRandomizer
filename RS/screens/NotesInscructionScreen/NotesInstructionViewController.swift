@@ -64,7 +64,7 @@ extension NotesInstructionViewController: NotesInstructionDelegate{
     
     func howToCreateNote(model: NotesInstuctionInfoCellModel) {
         let navigator = getAppComponent().getNavigator()
-        let controller = navigator.getDisplayRawDataScreen(data: model.data)
+        let controller = navigator.getDisplayRawDataScreen(data: [model.data])
         navigator.navigate(start: self, destination: controller)
     }
     

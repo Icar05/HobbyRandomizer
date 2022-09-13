@@ -22,11 +22,6 @@ class TestUtil{
         self.fileUtil.writeFile(fileName: "test.txt", text: "[ This is a test... \(time) ]")
     }
     
-    private func writeTestData(){
-        let testObjects = createMockModels()
-        self.fileUtil.exportDataAsJson(fileName: "testExport.txt", models: testObjects)
-    }
-    
     private func createMockModels() -> [ActionModel]{
         return [
             ActionModel(title: "Test 1", subTitle: "Test Item 1", type: .ToDo),

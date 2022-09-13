@@ -11,7 +11,7 @@ public final class DisplayRawDataPresenter {
 
     
     
-    private let stringData: String
+    private let stringData: [String]
         
     unowned var view: DisplayRawDataViewController!
     
@@ -19,7 +19,7 @@ public final class DisplayRawDataPresenter {
         self.view = view
     }
     
-    init(data: String){
+    init(data: [String]){
         self.stringData = data
     }
     
