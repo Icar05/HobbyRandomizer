@@ -43,7 +43,7 @@ public final class OpenFileViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.actionButton.setTitle("Open file", for: .normal)
+        self.actionButton.setTitle("#Import", for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
     }
     
