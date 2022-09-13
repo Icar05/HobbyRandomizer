@@ -152,6 +152,23 @@ class FileWriterUtil{
         }
     }
     
+    
+    func writeFile(fileName: String, text: String, directory: String){
+        
+        guard let dir: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(directory) else {
+            return
+        }
+    
+        if !FileManager.default.fileExists(atPath: dir.absoluteString) {
+            try! FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        let fileURL = dir.appendingPathComponent(fileName)
+    
+        self.writeFile(fileURL: fileURL, text: text)
+
+    }
+        
     func writeFile(fileName: String, text: String){
         
         guard let fileURL = getFileUrl(fileName: fileName) else {
@@ -159,6 +176,11 @@ class FileWriterUtil{
             return
         }
         
+        self.writeFile(fileURL: fileURL, text: text)
+       
+    }
+    
+    private func writeFile(fileURL: URL, text: String){
         do {
             try text.write(to: fileURL, atomically: false, encoding: .utf8)
             printLog("Write: success!")
@@ -170,30 +192,30 @@ class FileWriterUtil{
     
     
     
-    func creatSubFolders(){
-        let folderNames = FolderName.allCases
-     
-        for item in folderNames{
-            self.createFolderIfNotExist(folderName: item.rawValue)
-        }
-        
-    }
-    
-    
-    @discardableResult
-    private func createFolderIfNotExist(folderName: String) -> Bool{
-      
-        guard let url: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(folderName) else {
-            return false
-        }
-    
-        if !FileManager.default.fileExists(atPath: url.absoluteString) {
-            try! FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
-            return true
-        }
-        
-        return false
-    }
+//    func creatSubFolders(){
+//        let folderNames = FolderName.allCases
+//
+//        for item in folderNames{
+//            self.createFolderIfNotExist(folderName: item.rawValue)
+//        }
+//
+//    }
+//
+//
+//    @discardableResult
+//    private func createFolderIfNotExist(folderName: String) -> Bool{
+//
+//        guard let url: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(folderName) else {
+//            return false
+//        }
+//
+//        if !FileManager.default.fileExists(atPath: url.absoluteString) {
+//            try! FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+//            return true
+//        }
+//
+//        return false
+//    }
     
     
     /**

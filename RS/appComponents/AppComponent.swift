@@ -21,18 +21,20 @@ class AppComponent{
     
     private let notificationUtil = NotificationUtil()
     
+    private let openFileUtil: OpenFileUtil = OpenFileUtil()
+    
     private let testUtil: TestUtil
     
     private let elapsedTimeUtil : ElapsedTimeUtil
     
     private let timerUtil: TimerUtil
     
-    private let openFileUtil: OpenFileUtil
+    private let importUtil: ImportUtil
     
     
     
     init(){
-        self.openFileUtil = OpenFileUtil()
+        self.importUtil = ImportUtil(fileWriteUtil: fileUtil)
         self.testUtil = TestUtil(fileUtil: fileUtil)
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
         self.timerUtil = TimerUtil(
@@ -80,5 +82,9 @@ class AppComponent{
     
     func getOpenFileUtil() -> OpenFileUtil{
         return self.openFileUtil
+    }
+    
+    func getImportUtil() -> ImportUtil {
+        return self.importUtil
     }
 }

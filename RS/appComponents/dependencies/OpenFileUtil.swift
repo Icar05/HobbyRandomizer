@@ -34,14 +34,11 @@ public final class OpenFileUtil: NSObject{
     override init(){
         if #available(iOS 14, *) {
             // iOS 14 & later
-            let supportedTypes: [UTType] = [UTType.text, UTType.json, UTType.folder]
+            let supportedTypes: [UTType] = [UTType.json]
             documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: supportedTypes)
         } else {
             // iOS 13 or older code
-            let supportedTypes: [String] = [
-                kUTTypeText as String,
-                kUTTypeJSON as String,
-                kUTTypeFolder as String]
+            let supportedTypes: [String] = [kUTTypeJSON as String]
             documentPicker = UIDocumentPickerViewController(documentTypes: supportedTypes, in: .import)
         }
     }

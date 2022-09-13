@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.appComponent.getNavigator().setupInitialViewController(window: window!)
         self.appComponent.getTestUtil().startTest()
         self.checkNotificationPermission()
-        self.appComponent.getFileUtil().creatSubFolders()
         
         return true
     }

@@ -59,8 +59,11 @@ public final class SettingsViewController: UIViewController {
         let navigator = getAppComponent().getNavigator()
         let alertUtil = getAppComponent().getAlertUtil()
         let openFileUtil = getAppComponent().getOpenFileUtil()
+        let importUtil = getAppComponent().getImportUtil()
         let destination = navigator.getOpenFileScreen(
-            openFileUtil: openFileUtil, alertUtil: alertUtil)
+            openFileUtil: openFileUtil,
+            alertUtil: alertUtil,
+            importUtil: importUtil)
         navigator.navigate(start: self, destination: destination)
     }
     

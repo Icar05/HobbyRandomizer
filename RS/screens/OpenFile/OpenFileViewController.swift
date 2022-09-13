@@ -21,6 +21,8 @@ public final class OpenFileViewController: UIViewController {
     
     private let alertUtil: AlertUtil
     
+    private let importUtil: ImportUtil
+    
     @IBOutlet weak var actionButton: UIButton!
     
     
@@ -29,10 +31,11 @@ public final class OpenFileViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(presenter: OpenFilePresenter, alertUtil: AlertUtil, openFileUtil: OpenFileUtil) {
+    init(presenter: OpenFilePresenter, alertUtil: AlertUtil, openFileUtil: OpenFileUtil, importUtil: ImportUtil) {
         self.presenter = presenter
         self.alertUtil = alertUtil
         self.openFileUtil = openFileUtil
+        self.importUtil = importUtil
         
         super.init(nibName: "OpenFileViewController", bundle: Bundle.main)
     }
@@ -42,8 +45,6 @@ public final class OpenFileViewController: UIViewController {
         
         self.actionButton.setTitle("Open file", for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
-        
-        self.makeTest()
     }
     
     @objc func buttonAction(sender: UIButton!) {
@@ -56,29 +57,25 @@ public final class OpenFileViewController: UIViewController {
 
 
 extension OpenFileViewController: OpenFileUtilDelegate{
+    
+    
     func onError(error: Error) {
         let alert = self.alertUtil.getAlert(title: "Error", subtitle: "Error while reading file!")
         present(alert, animated: true)
     }
     
     func onImportFile(file: Data) {
-        let string = String(data: file, encoding: .utf8)
-        print(string)
+        self.importUtil.importData(data: file){ _ in
+            self.showSuccessAlert()
+        }
     }
     
-    private func makeTest(){
-        
-        let appContent = AppContent.getMock()
-        
-        do {
-            let data =  try JSONEncoder().encode(appContent)
-            print(String(data: data, encoding: .utf8))
-            
-        } catch let error {
-            print("Error encode data:  (\(error))")
-        }
-        
+    
+    private func showSuccessAlert(){
+        let alert = alertUtil.getAlert(title: Translations.Alert.success, subtitle: Translations.Alert.successImportMessage)
+        present(alert, animated: true)
     }
+
     
 }
 
