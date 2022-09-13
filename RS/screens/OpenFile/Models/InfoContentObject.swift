@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct InfoContentItemObject{
+struct InfoContentItemObject: Codable{
     let name: String
     let models: [InfoModel]
 }
 
-struct InfoContentObject{
+struct InfoContentObject: Codable{
     let content: [InfoContentItemObject]
 }

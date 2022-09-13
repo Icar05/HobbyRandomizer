@@ -44,7 +44,7 @@ public final class ShowViewController: UIViewController {
     }
     
     
-    func onDataLoaded(data: [RandItemCellModel], type: ItemType){
+    func onDataLoaded(data: [ActionModel], type: ItemType){
         self.dataSource.setData(data: data)
         self.dataSource.setType(type: type)
         self.tableView.reloadData()

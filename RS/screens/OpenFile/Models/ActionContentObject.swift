@@ -9,11 +9,11 @@ import Foundation
 
 
 
-struct ActionContentItemObject{
+struct ActionContentItemObject: Codable{
     let name: String
-    let models: [RandomizerModel]
+    let models: [ActionModel]
 }
 
-struct ActionContentObject{
+struct ActionContentObject: Codable{
     let content: [ActionContentItemObject]
 }

@@ -27,11 +27,11 @@ class TestUtil{
         self.fileUtil.exportDataAsJson(fileName: "testExport.txt", models: testObjects)
     }
     
-    private func createMockModels() -> [RandItemCellModel]{
+    private func createMockModels() -> [ActionModel]{
         return [
-            RandItemCellModel(title: "Test 1", subTitle: "Test Item 1", type: .ToDo),
-            RandItemCellModel(title: "Test 2", subTitle: "Test Item 2", type: .HardDayNight),
-            RandItemCellModel(title: "Test 3", subTitle: "Test Item 3", type: .HappyWeekend),
+            ActionModel(title: "Test 1", subTitle: "Test Item 1", type: .ToDo),
+            ActionModel(title: "Test 2", subTitle: "Test Item 2", type: .HardDayNight),
+            ActionModel(title: "Test 3", subTitle: "Test Item 3", type: .HappyWeekend),
         ]
     }
     

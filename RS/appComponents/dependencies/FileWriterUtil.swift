@@ -44,7 +44,7 @@ class FileWriterUtil{
      export and import
      */
     @discardableResult
-    func exportDataAsJson(fileName: String, models: [RandItemCellModel]) -> Bool{
+    func exportDataAsJson(fileName: String, models: [ActionModel]) -> Bool{
         
         guard let data = jsonDecoder.encodeData(models: models),
               let text = String(data: data, encoding: String.Encoding.utf8) else{
@@ -56,7 +56,7 @@ class FileWriterUtil{
         return true
     }
     
-    func importDataAsJson(fileName: String) -> [RandItemCellModel]?{
+    func importDataAsJson(fileName: String) -> [ActionModel]?{
         guard let data = readFile(fileName: fileName).data(using: String.Encoding.utf8) else {
             printLog("can't read data from string ...")
             return nil
@@ -69,7 +69,7 @@ class FileWriterUtil{
         
         
         guard let data: Data = input.data(using: String.Encoding.utf8),
-              let result: [RandItemCellModel] = jsonDecoder.decodeData(data: data) else {
+              let result: [ActionModel] = jsonDecoder.decodeData(data: data) else {
                   return mainParcer.parseString(input: input)
               }
         

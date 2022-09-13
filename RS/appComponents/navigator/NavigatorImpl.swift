@@ -77,7 +77,7 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getRandomizerScreen(models: [RandItemCellModel], alertUtil: AlertUtil) -> UIViewController {
+    func getRandomizerScreen(models: [ActionModel], alertUtil: AlertUtil) -> UIViewController {
         let presenter = RandomizerViewPresenter()
         let viewcontroller = RandomizerViewController(models: models, presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)
@@ -110,7 +110,7 @@ class NavigatorImpl: Navigator{
         return viewcontroller
     }
     
-    func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController {
+    func getDisplayActionDataScreen(data: [ActionModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController {
         let presenter = DisplayActionDataPresenter(data: data, storage: storage)
         let viewcontroller = DisplayActionDataViewController(presenter: presenter, alertUtil: alertUtil)
         presenter.set(view: viewcontroller)

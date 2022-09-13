@@ -16,17 +16,17 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     
     
     
-    private var data: [RandItemCellModel] = []
+    private var data: [ActionModel] = []
     
     weak var delegate: DisplayActionSourceDelegate? = nil
     
     
     
-    func getData() -> [RandItemCellModel]{
+    func getData() -> [ActionModel]{
         return self.data
     }
     
-    func setData(data: [RandItemCellModel]){
+    func setData(data: [ActionModel]){
         self.data = data
     }
     

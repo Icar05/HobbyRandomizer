@@ -11,7 +11,7 @@ final class DisplayActionDataPresenter{
     
     private let storage: UserDefaultStorage
         
-    private let contentData: [RandItemCellModel]
+    private let contentData: [ActionModel]
     
     unowned var view: DisplayActionDataViewController!
     
@@ -19,7 +19,7 @@ final class DisplayActionDataPresenter{
         self.view = view
     }
     
-    init(data: [RandItemCellModel], storage: UserDefaultStorage){
+    init(data: [ActionModel], storage: UserDefaultStorage){
         self.storage = storage
         self.contentData = data
     }

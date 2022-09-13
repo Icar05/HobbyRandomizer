@@ -35,8 +35,8 @@ public final class FilesDetailPresenter{
         
         let result: Any  = filesUtil.importModels(fileName: fileName) as Any
     
-        if(result is [RandItemCellModel]){
-            view.displayData(data: result as! [RandItemCellModel])
+        if(result is [ActionModel]){
+            view.displayData(data: result as! [ActionModel])
             return
         }
         

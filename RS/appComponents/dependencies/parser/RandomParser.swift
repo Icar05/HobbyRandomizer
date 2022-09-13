@@ -22,15 +22,15 @@ class RandomParser : Parser{
         return key == "Random"
     }
     
-    func parseData(input: String) -> [RandItemCellModel] {
+    func parseData(input: String) -> [ActionModel] {
         
-        var models: [RandItemCellModel] = []
+        var models: [ActionModel] = []
         
         let items = input.split(separator: "➫").tail
             items.forEach{
                     
             let content = $0.split(separator: "°")
-            let model = RandItemCellModel(
+            let model = ActionModel(
                 title: content[0].trimmingCharacters(in: .whitespacesAndNewlines),
                 subTitle: content[1].trimmingCharacters(in: .whitespacesAndNewlines),
                 type: .Random)

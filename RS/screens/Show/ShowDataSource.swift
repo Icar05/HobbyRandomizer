@@ -14,7 +14,7 @@ protocol ShowDataSourceDelegate: NSObject{
 class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
-    private var data: [RandItemCellModel] = []
+    private var data: [ActionModel] = []
     
     private var type: ItemType = ItemType.HardDayNight
     
@@ -22,7 +22,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     
     
-    func getData() -> [RandItemCellModel]{
+    func getData() -> [ActionModel]{
         return self.data
     }
     
@@ -30,7 +30,7 @@ class ShowDataSource: NSObject, UITableViewDataSource, UITableViewDelegate{
         self.type = type
     }
     
-    func setData(data: [RandItemCellModel]){
+    func setData(data: [ActionModel]){
         self.data = data
     }
     

@@ -11,7 +11,7 @@ enum ItemType: String, Codable, CaseIterable{
     case ToDo, HardDayNight, HappyWeekend, Random
 }
 
-struct RandItemCellModel: Codable{
+struct ActionModel: Codable{
     var title: String
     var subTitle: String
     var type: ItemType

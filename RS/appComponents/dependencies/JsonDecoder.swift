@@ -13,16 +13,16 @@ class JsonDecoder{
     private let log = "JsonDecoder"
     
     
-    func decodeData(data: Data) -> [RandItemCellModel]?{
+    func decodeData(data: Data) -> [ActionModel]?{
         do {
-            return try JSONDecoder().decode([RandItemCellModel].self, from: data)
+            return try JSONDecoder().decode([ActionModel].self, from: data)
         } catch let error{
             printLog("Error decode data:  (\(error))")
         }
         return nil
     }
     
-    func encodeData(models: [RandItemCellModel]) -> Data?{
+    func encodeData(models: [ActionModel]) -> Data?{
         do {
             return try JSONEncoder().encode(models)
         } catch let error {

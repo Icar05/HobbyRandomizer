@@ -31,11 +31,11 @@ public final class CreatePresenter {
         self.view.onModelLoaded(models: data)
     }
     
-    func saveModels(models: [RandItemCellModel]){
+    func saveModels(models: [ActionModel]){
         self.storage.saveModels(models: models)
     }
     
-    func getModels() -> [RandItemCellModel]{
+    func getModels() -> [ActionModel]{
         self.storage.getModels() ?? []
     }
     

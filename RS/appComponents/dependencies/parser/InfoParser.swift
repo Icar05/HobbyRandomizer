@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct InfoModelDetail{
+struct InfoModelDetail: Codable{
     let title: String
     let content: [String]
 }
 
-struct InfoModel{
+struct InfoModel: Codable{
     let title: String
     let content: [InfoModelDetail]
 }

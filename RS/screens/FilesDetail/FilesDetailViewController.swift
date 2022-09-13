@@ -63,7 +63,7 @@ public final class FilesDetailViewController: UIViewController {
         getAppComponent().getNavigator().navigate(start: self, destination: controller)
     }
 
-    func displayData(data: [RandItemCellModel]){
+    func displayData(data: [ActionModel]){
         let storage = getAppComponent().getStorage()
         let alertUtil = getAppComponent().getAlertUtil()
         let controller = getAppComponent().getNavigator().getDisplayActionDataScreen(data: data, storage: storage, alertUtil: alertUtil)

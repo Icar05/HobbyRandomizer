@@ -173,7 +173,7 @@
 		ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */; };
 		ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD2285118E300DFD78F /* RandItemCell.swift */; };
 		ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FD3285118E300DFD78F /* RandItemCell.xib */; };
-		ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD6285118F500DFD78F /* RandItemCellModel.swift */; };
+		ED880FD7285118F500DFD78F /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD6285118F500DFD78F /* ActionModel.swift */; };
 		ED880FD928511C5200DFD78F /* CreateViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */; };
 		ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */; };
 		ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED880FE028515CC600DFD78F /* RandomizerViewController.xib */; };
@@ -380,12 +380,13 @@
 		ED880FCD285118B500DFD78F /* CreateNewItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewItemCell.xib; sourceTree = "<group>"; };
 		ED880FD2285118E300DFD78F /* RandItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCell.swift; sourceTree = "<group>"; };
 		ED880FD3285118E300DFD78F /* RandItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandItemCell.xib; sourceTree = "<group>"; };
-		ED880FD6285118F500DFD78F /* RandItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandItemCellModel.swift; sourceTree = "<group>"; };
+		ED880FD6285118F500DFD78F /* ActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModel.swift; sourceTree = "<group>"; };
 		ED880FD828511C5200DFD78F /* CreateViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewDataSource.swift; sourceTree = "<group>"; };
 		ED880FDF28515CC600DFD78F /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
 		ED880FE028515CC600DFD78F /* RandomizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
 		ED8C225F28D0F69E00A4CB24 /* RS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RS.entitlements; sourceTree = "<group>"; };
 		ED8C226028D0FF7F00A4CB24 /* OpenFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFileUtil.swift; sourceTree = "<group>"; };
+		ED8C226228D1150800A4CB24 /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
 		ED957F7C28B056D300DBA36D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFilePresenter.swift; sourceTree = "<group>"; };
 		EDA4EC39284FED2E00D94753 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -610,6 +611,7 @@
 				ED384C2828CE682800AD3ABA /* ActionContentObject.swift */,
 				ED384C2A28CE689C00AD3ABA /* InfoContentObject.swift */,
 				ED384C2C28CE691100AD3ABA /* PlayContentObject.swift */,
+				ED8C226228D1150800A4CB24 /* Directions.geojson */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1078,7 +1080,7 @@
 			children = (
 				ED880FD2285118E300DFD78F /* RandItemCell.swift */,
 				ED880FD3285118E300DFD78F /* RandItemCell.xib */,
-				ED880FD6285118F500DFD78F /* RandItemCellModel.swift */,
+				ED880FD6285118F500DFD78F /* ActionModel.swift */,
 			);
 			path = RandItemCell;
 			sourceTree = "<group>";
@@ -1422,7 +1424,7 @@
 				ED5135C5286CD1EF00403238 /* NotesInstructionInfoCell.swift in Sources */,
 				ED5135C8286CD20200403238 /* NotesInstuctionInfoCellModel.swift in Sources */,
 				ED5F113A2717CC15006454AD /* CasinoSelectorView.swift in Sources */,
-				ED880FD7285118F500DFD78F /* RandItemCellModel.swift in Sources */,
+				ED880FD7285118F500DFD78F /* ActionModel.swift in Sources */,
 				ED957F7D28B056D300DBA36D /* AudioManager.swift in Sources */,
 				ED5A6C65284FE8120028BEED /* MenuDataSource.swift in Sources */,
 				ED880FC228510EEA00DFD78F /* DebugViewController.swift in Sources */,

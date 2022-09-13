@@ -22,9 +22,9 @@ class ActionParser : Parser{
         return key == "Action"
     }
     
-    func parseData(input: String) -> [RandItemCellModel] {
+    func parseData(input: String) -> [ActionModel] {
         
-        var models: [RandItemCellModel] = []
+        var models: [ActionModel] = []
         
         input.split(separator: "➦").tail.forEach{
             
@@ -35,7 +35,7 @@ class ActionParser : Parser{
                 items.forEach{
                     
                     let content = $0.split(separator: "°")
-                    let model = RandItemCellModel(
+                    let model = ActionModel(
                         title: content[0].trimmingCharacters(in: .whitespacesAndNewlines),
                         subTitle: content[1].trimmingCharacters(in: .whitespacesAndNewlines),
                         type: type)

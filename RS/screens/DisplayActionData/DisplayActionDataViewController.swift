@@ -55,7 +55,7 @@ public final class DisplayActionDataViewController:  UIViewController {
         self.showAlert(value: value)
     }
     
-    func displayData(data: [RandItemCellModel]){
+    func displayData(data: [ActionModel]){
         self.dataSource.setData(data: data)
         self.tableView.isHidden = false
         self.tableView.reloadData()

@@ -26,7 +26,7 @@ class RandItemCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(model: RandItemCellModel){
+    func configure(model: ActionModel){
         self.title.text = model.title
         self.icon.setImageColor(color: model.type.getColorForType())
         self.subTitle.text = model.subTitle

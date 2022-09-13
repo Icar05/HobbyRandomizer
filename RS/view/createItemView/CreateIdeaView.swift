@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol CreateViewDelegate: NSObject{
-    func onItemCreated(item: RandItemCellModel)
+    func onItemCreated(item: ActionModel)
 }
 
 @IBDesignable
@@ -78,7 +78,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         let subtitle: String? = self.getData(field: descTextField)?.trimmingCharacters(in: .whitespaces)
         
         if(title != nil && subtitle != nil){
-            let model = RandItemCellModel(title: title!, subTitle: subtitle!, type: type)
+            let model = ActionModel(title: title!, subTitle: subtitle!, type: type)
             self.delegate?.onItemCreated(item: model)
             self.titleTextField.text = ""
             self.descTextField.text = ""

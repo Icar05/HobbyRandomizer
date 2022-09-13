@@ -39,18 +39,21 @@ public final class OpenFileViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.actionButton.setTitle("Open file", for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
-
+        
+        self.makeTest()
     }
     
     @objc func buttonAction(sender: UIButton!) {
         self.openFileUtil.delegate = self
         self.openFileUtil.startPicker(view: self)
     }
-
+    
 }
+
+
 
 extension OpenFileViewController: OpenFileUtilDelegate{
     func onError(error: Error) {
@@ -63,6 +66,19 @@ extension OpenFileViewController: OpenFileUtilDelegate{
         print(string)
     }
     
+    private func makeTest(){
+        
+        let appContent = AppContent.getMock()
+        
+        do {
+            let data =  try JSONEncoder().encode(appContent)
+            print(String(data: data, encoding: .utf8))
+            
+        } catch let error {
+            print("Error encode data:  (\(error))")
+        }
+        
+    }
     
 }
 

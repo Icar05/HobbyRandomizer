@@ -17,7 +17,7 @@ public final class RandomizerViewController: UIViewController {
     
     private let alertUtil: AlertUtil
     
-    fileprivate var models = [RandItemCellModel]()
+    fileprivate var models = [ActionModel]()
     
     @IBOutlet weak var status: UIImageView!
     
@@ -39,7 +39,7 @@ public final class RandomizerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(models: [RandItemCellModel], presenter: RandomizerViewPresenter, alertUtil: AlertUtil) {
+    init(models: [ActionModel], presenter: RandomizerViewPresenter, alertUtil: AlertUtil) {
         self.presenter = presenter
         self.models = models
         self.alertUtil = alertUtil

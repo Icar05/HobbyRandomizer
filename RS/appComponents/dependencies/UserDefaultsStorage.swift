@@ -68,14 +68,14 @@ class UserDefaultStorage{
         return  UserDefaults.standard.synchronize()
     }
     
-    func appendModels(newModels: [RandItemCellModel]) -> Bool{
+    func appendModels(newModels: [ActionModel]) -> Bool{
         var models = getModels() ?? []
             models.append(contentsOf: newModels)
         return self.saveModels(models: models)
     }
     
     @discardableResult
-    func saveModels(models: [RandItemCellModel]) -> Bool{
+    func saveModels(models: [ActionModel]) -> Bool{
         do {
             let data = try encoder.encode(models)
             UserDefaults.standard.set(data, forKey: UserDefaultConstants.models)
@@ -86,10 +86,10 @@ class UserDefaultStorage{
         }
     }
     
-    func getModels() -> [RandItemCellModel]?{
+    func getModels() -> [ActionModel]?{
         if let data = UserDefaults.standard.data(forKey: UserDefaultConstants.models) {
             do {
-                return try decoder.decode([RandItemCellModel].self, from: data)
+                return try decoder.decode([ActionModel].self, from: data)
             } catch {
                 print("Unable to Decode Models (\(error))")
             }

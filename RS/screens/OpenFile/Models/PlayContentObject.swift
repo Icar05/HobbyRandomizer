@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct PlayContentItemObject{
+struct PlayContentItemObject: Codable{
     let name: String
     let models: [String]
 }
 
-struct PlayContentObject{
+struct PlayContentObject: Codable{
     let content: [PlayContentItemObject]
 }

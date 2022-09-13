@@ -11,7 +11,7 @@ import simd
 
 class AlertUtil{
     
-    func getAlert(model: RandItemCellModel) -> UIAlertController{
+    func getAlert(model: ActionModel) -> UIAlertController{
         let alert = UIAlertController(title: model.title, message: model.subTitle, preferredStyle: .alert)
         alert.view.tintColor = UIColor.black
         alert.addAction(UIAlertAction(title: Translations.Permission.ok, style: .default, handler: nil))

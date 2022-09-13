@@ -8,8 +8,8 @@
 import Foundation
 
 protocol CreateDataSourceDelegate: NSObject{
-    func onModelCreated(freshModels: [RandItemCellModel])
-    func onModelDeleted(freshModels: [RandItemCellModel])
+    func onModelCreated(freshModels: [ActionModel])
+    func onModelDeleted(freshModels: [ActionModel])
     func onClearDatatDidTap(indexPath: [IndexPath])
 }
 
@@ -17,12 +17,12 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     
     
     
-    private var data: [RandItemCellModel] = []
+    private var data: [ActionModel] = []
     
     weak var delegate: CreateDataSourceDelegate? = nil
     
     
-    func setData(data: [RandItemCellModel]){
+    func setData(data: [ActionModel]){
         self.data = data
     }
     
@@ -89,7 +89,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
         }
     }
     
-    func onItemCreated(item: RandItemCellModel) {
+    func onItemCreated(item: ActionModel) {
         self.data.append(item)
         self.delegate?.onModelCreated(freshModels: self.data)
     }

@@ -1,0 +1,72 @@
+{ "play":{
+    "content":[
+        { "name":"Play 1",
+            "models":[
+                "Item info 1", "Item info 2"
+            ]
+        }
+    ]},
+    "info":{
+        "content":[
+            {"name":"info1",
+                "models":[
+                    {"title":"Title1",
+                        "content":[
+                            { "title":"Subtitle",
+                                "content":[
+                                    "content1",
+                                    "content1"
+                                ]
+                            }
+                        ]
+                        
+                    }
+                ]
+            },
+            {"name":"info2",
+                "models":[
+                    {"title":"Title2",
+                        "content":[
+                            {"title":"Subtitle2",
+                                "content":[
+                                    "content1",
+                                    "content1"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    
+    "action":{
+        "content":[
+            { "name":"Action random 1",
+                "models":[
+                    {"title":"Action 1",
+                        "subTitle":"Action 1 sub",
+                        "type":"HappyWeekend"
+                    },
+                    {"title":"Action 2",
+                        "subTitle":"Action 3 sub",
+                        "type":"HardDayNight"
+                    }
+                ]
+            },
+            {"name":"Action random 2",
+                "models":[
+                    {"title":"Action 1",
+                        "subTitle":"Action 1 sub",
+                        "type":"HappyWeekend"
+                        
+                    },
+                    {"title":"Action 2",
+                        "subTitle":"Action 3 sub",
+                        "type":"HardDayNight"
+                    }
+                ]
+            }
+        ]
+    }
+}

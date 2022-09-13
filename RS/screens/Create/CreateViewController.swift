@@ -45,17 +45,17 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
         self.presenter.viewDidLoad()
     }
     
-    func onModelLoaded(models: [RandItemCellModel]){
+    func onModelLoaded(models: [ActionModel]){
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
     }
     
-    func onModelCreated(freshModels: [RandItemCellModel]) {
+    func onModelCreated(freshModels: [ActionModel]) {
         self.presenter.saveModels(models: freshModels)
         self.tableView.reloadData()
     }
     
-    func onModelDeleted(freshModels: [RandItemCellModel]) {
+    func onModelDeleted(freshModels: [ActionModel]) {
         self.presenter.saveModels(models: freshModels)
         self.tableView.reloadData()
     }

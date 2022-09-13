@@ -17,11 +17,11 @@ protocol Navigator{
     func getDebugScreen() -> UIViewController
     func getTestScreen() -> UIViewController
     func getCreateScreen(storage: UserDefaultStorage, fileUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController
-    func getRandomizerScreen(models: [RandItemCellModel], alertUtil: AlertUtil) -> UIViewController
+    func getRandomizerScreen(models: [ActionModel], alertUtil: AlertUtil) -> UIViewController
     func getShowScreen(storage: UserDefaultStorage, type: ItemType) -> UIViewController
     func getFilesScreen(filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController
     func getFilesDetailScreen(folderName: String, filesUtil: FileWriterUtil, alertUtil: AlertUtil) -> UIViewController
-    func getDisplayActionDataScreen(data: [RandItemCellModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController
+    func getDisplayActionDataScreen(data: [ActionModel], storage: UserDefaultStorage, alertUtil: AlertUtil) -> UIViewController
     func getDisplayInfoDataScreen(data: [InfoModel]) -> UIViewController
     func getDisplayRawDataScreen(data: String) -> UIViewController
     func getSettingScreen(storage: UserDefaultStorage) -> UIViewController
