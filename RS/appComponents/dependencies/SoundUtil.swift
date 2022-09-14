@@ -12,14 +12,14 @@ import AVFoundation
 
 enum SoundCaf: String{
     case Click = "Click"
+    case NewClick = "NewClick"
+    case OldClock = "OldClock"
     case OldAlarm = "old-alarm"
     case EvilAlarm = "evil-alarm"
     case ModernAlarm = "modern-alarm"
     case StandartAlarm = "standart-alarm"
-    case OldClock = "OldClock"
     case Violin = "Violin"
     case Guitarra = "Guitarra"
-    case NewClick = "NewClick"
 }
 
 
@@ -73,7 +73,7 @@ class SoundUtil{
     }
     
     static func getSoundForTimer() -> SoundCaf{
-        return retroStyle ?  SoundCaf.OldClock : SoundCaf.StandartAlarm
+        return retroStyle ?  SoundCaf.OldClock : SoundCaf.ModernAlarm
     }
     
 }
