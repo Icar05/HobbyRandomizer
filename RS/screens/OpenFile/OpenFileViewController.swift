@@ -52,7 +52,11 @@ public final class OpenFileViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         self.openFileUtil.delegate = self
-        self.openFileUtil.startPicker(view: self)
+        if #available(iOS 14.0, *) {
+            self.openFileUtil.startPicker(view: self)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
 }
