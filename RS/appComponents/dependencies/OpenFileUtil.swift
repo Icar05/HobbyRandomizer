@@ -23,6 +23,7 @@ public final class OpenFileUtil: NSObject{
     weak var delegate: OpenFileUtilDelegate?
     
     
+    @available(iOS 14.0, *)
     func startPicker(view: UIViewController){
         documentPicker.delegate = self
         documentPicker.modalPresentationStyle = .overFullScreen
