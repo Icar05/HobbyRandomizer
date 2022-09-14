@@ -52,6 +52,7 @@
 "Translations.Alert.successRemoveData" = "Файл був успішно видалений!";
 "Translations.Alert.successExportMessage" = "Дані були успішно експортовані!";
 "Translations.Alert.successDeleteMessage" = "Дані були успішно видалено";
+"Translations.Alert.readingFileError"= "Помилка зчитування файлу";
 
 /* Timer */
 "Translations.Timer.startTimerText" = "Старт";
@@ -116,3 +117,7 @@
 "Translations.Color.colorCappuccino" = "Капучино";
 "Translations.Color.colorCocoa" = "Какао";
 "Translations.Color.gray" = "Сірий";
+
+/* Import */
+"Translations.Import.label" = "Імпорт";
+"Translations.Import.buttonLabel" = "Імпортувати данні";

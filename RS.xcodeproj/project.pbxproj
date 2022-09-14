@@ -387,7 +387,6 @@
 		ED880FE028515CC600DFD78F /* RandomizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomizerViewController.xib; sourceTree = "<group>"; };
 		ED8C225F28D0F69E00A4CB24 /* RS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RS.entitlements; sourceTree = "<group>"; };
 		ED8C226028D0FF7F00A4CB24 /* OpenFileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFileUtil.swift; sourceTree = "<group>"; };
-		ED8C226228D1150800A4CB24 /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
 		ED8C226328D1341000A4CB24 /* ImportUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportUtil.swift; sourceTree = "<group>"; };
 		ED957F7C28B056D300DBA36D /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		ED971FEC28D07BF500B965FF /* OpenFilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFilePresenter.swift; sourceTree = "<group>"; };
@@ -613,7 +612,6 @@
 				ED384C2828CE682800AD3ABA /* ActionContentObject.swift */,
 				ED384C2A28CE689C00AD3ABA /* InfoContentObject.swift */,
 				ED384C2C28CE691100AD3ABA /* PlayContentObject.swift */,
-				ED8C226228D1150800A4CB24 /* Directions.geojson */,
 			);
 			path = Models;
 			sourceTree = "<group>";

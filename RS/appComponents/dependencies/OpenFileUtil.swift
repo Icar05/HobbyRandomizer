@@ -58,7 +58,7 @@ extension OpenFileUtil : UIDocumentPickerDelegate{
         guard url.startAccessingSecurityScopedResource() else {
             self.delegate?.onError(
                 error: NSError(domain: #function, code: -1, userInfo: [
-                NSLocalizedDescriptionKey:  "enable start acessing file"
+                    NSLocalizedDescriptionKey:  Translations.Alert.readingFileError
                 ]))
             return
         }

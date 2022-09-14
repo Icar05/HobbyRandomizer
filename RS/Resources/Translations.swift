@@ -132,6 +132,20 @@ struct Translations{
             "Translations.Alert.successDeleteMessage".localized(Bundle.main)
         }
         
+        public static var readingFileError: String{
+            "Translations.Alert.readingFileError".localized(Bundle.main)
+        }
+
+    }
+    
+    struct Import{
+        public static var label: String{
+            "Translations.Import.label".localized(Bundle.main)
+        }
+        
+        public static var buttonLabel: String{
+            "Translations.Import.buttonLabel".localized(Bundle.main)
+        }
     }
     
     struct Create{

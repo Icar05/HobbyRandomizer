@@ -43,7 +43,7 @@ public final class OpenFileViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.actionButton.setTitle("#Import", for: .normal)
+        self.actionButton.setTitle(Translations.Import.buttonLabel, for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
     }
     
@@ -60,7 +60,7 @@ extension OpenFileViewController: OpenFileUtilDelegate{
     
     
     func onError(error: Error) {
-        let alert = self.alertUtil.getAlert(title: "Error", subtitle: "Error while reading file!")
+        let alert = self.alertUtil.getAlert(title: Translations.Alert.failure, subtitle: Translations.Alert.readingFileError)
         present(alert, animated: true)
     }
     

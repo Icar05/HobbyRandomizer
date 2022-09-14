@@ -52,6 +52,7 @@
 "Translations.Alert.successRemoveData" = "Файл был успешно удален!";
 "Translations.Alert.successExportMessage" = "Данные были успешно экспортированы!";
 "Translations.Alert.successDeleteMessage" = "Данные были успешно удалены!!";
+"Translations.Alert.readingFileError"= "Ошибка чтения файла";
 
 /* Timer */
 "Translations.Timer.startTimerText" = "Старт";
@@ -117,3 +118,6 @@
 "Translations.Color.colorCocoa" = "Какао";
 "Translations.Color.gray" = "Серый";
 
+/* Import */
+"Translations.Import.label" = "Импорт";
+"Translations.Import.buttonLabel" = "Импортирвать данные";

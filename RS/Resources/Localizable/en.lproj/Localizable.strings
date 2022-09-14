@@ -52,6 +52,7 @@
 "Translations.Alert.successRemoveData" = "File has been successfully removed!";
 "Translations.Alert.successExportMessage" = "Data has been successfully exported!";
 "Translations.Alert.successDeleteMessage" = "Data has been successfully deleted!";
+"Translations.Alert.readingFileError"= "Error while reading file!";
 
 /* Timer */
 "Translations.Timer.startTimerText" = "Start";
@@ -116,3 +117,7 @@
 "Translations.Color.colorCappuccino" = "Cappuccino";
 "Translations.Color.colorCocoa" = "Cocoa";
 "Translations.Color.gray" = "Gray";
+
+/* Import */
+"Translations.Import.label" = "Import";
+"Translations.Import.buttonLabel" = "Import data";

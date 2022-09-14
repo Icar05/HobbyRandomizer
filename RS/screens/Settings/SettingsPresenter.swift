@@ -107,7 +107,7 @@ public final class SettingsPresenter {
                             self?.model.timerColor = $0
                             self?.refresh()
                         })
-                }),
+            }),
             SettingsHeaderCellModel(
                 title: Translations.Settings.yesNoSectors
             ),
@@ -130,7 +130,7 @@ public final class SettingsPresenter {
                             self?.model.yesColor = $0
                             self?.refresh()
                         })
-                }),
+            }),
             SettingsColorCellModel(
                 title: Translations.SelectColor.no,
                 currentColor: preferences.noColor.uiColor,
@@ -142,7 +142,15 @@ public final class SettingsPresenter {
                             self?.model.noColor = $0
                             self?.refresh()
                         })
-                }),
+            }),
+            SettingsHeaderCellModel(
+                title: Translations.Import.label
+            ),
+            SettingsSimpleCellModel(
+                title: Translations.Import.buttonLabel,
+                callback: { [weak self] in
+                    self?.view.navigateToImport()
+            }),
             SettingsHeaderCellModel(
                 title: Translations.Menu.itemTest
             ),
@@ -150,7 +158,7 @@ public final class SettingsPresenter {
                 title: Translations.Settings.startDebug,
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
-            })
+            }),
         
         ]
     }
