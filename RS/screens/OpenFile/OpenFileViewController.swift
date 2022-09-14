@@ -45,6 +45,9 @@ public final class OpenFileViewController: UIViewController {
         
         self.actionButton.setTitle(Translations.Import.buttonLabel, for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
+        self.actionButton.layer.borderColor = UIColor.black.cgColor
+        self.actionButton.layer.borderWidth = 1
+        self.actionButton.layer.masksToBounds = true
     }
     
     @objc func buttonAction(sender: UIButton!) {
