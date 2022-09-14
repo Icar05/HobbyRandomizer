@@ -37,7 +37,7 @@ public final class FilesDetailPresenter{
     func parseFileData(file: FileDetailCellModel){
         
         
-        guard let data = filesUtil.readFile(fileName: file.fileName, dirName: file.fileName).data(using: .utf8) else {
+        guard let data = filesUtil.readFile(fileName: file.fileName, dirName: file.folderName).data(using: .utf8) else {
             print("enable to parse data")
             return
         }

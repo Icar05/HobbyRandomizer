@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DisplayActionSourceDelegate: NSObject{
-    func didImportClick()
+    func didImportClick(indexPases: [IndexPath])
     func didRandomClick()
 }
 
@@ -30,6 +30,11 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
         self.data = data
     }
     
+    
+    func clearData(){
+        self.data = []
+    }
+    
     func getRandCellIdentifier() -> String{
         return String(describing: RandItemCell.self)
     }
@@ -49,6 +54,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
             let cell = tableView.dequeueReusableCell(withIdentifier: getImportCellIdentifier(), for: indexPath) as! ImportDataCell
             cell.configure(model: getImportModel())
             cell.modify()
+            cell.isHidden = data.count == 0
             return cell
         }
         
@@ -61,7 +67,7 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if(indexPath.row == 0){
-            needImport() ? self.delegate?.didImportClick() : self.delegate?.didRandomClick()
+            needImport() ? self.delegate?.didImportClick(indexPases: prepareIndexes(indexesCount: self.data.count)) : self.delegate?.didRandomClick()
         }
     }
     
@@ -75,7 +81,11 @@ class DisplayActionDataDataSourse : NSObject, UITableViewDataSource, UITableView
     }
     
     private func needImport() -> Bool{
-        return data.first!.type != .Random
+        return data.first?.type != .Random
+    }
+    
+    private func prepareIndexes(indexesCount: Int) -> [IndexPath]{
+        return [Int](1...indexesCount).map { IndexPath(row: $0, section: 0)}
     }
     
 }

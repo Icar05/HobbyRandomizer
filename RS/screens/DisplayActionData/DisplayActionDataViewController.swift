@@ -90,12 +90,18 @@ public final class DisplayActionDataViewController:  UIViewController {
 
 extension DisplayActionDataViewController: DisplayActionSourceDelegate{
     
+    
+    func didImportClick(indexPases: [IndexPath]) {
+        self.presenter.importData()
+        self.dataSource.clearData()
+        self.tableView.deleteRows(at: indexPases, with: .fade)
+        self.tableView.reloadData()
+        self.emptyView.isHidden = dataSource.getData().count > 0
+    }
+    
+    
     func didRandomClick() {
        navigateToRandom()
     }
     
-    
-    func didImportClick() {
-        self.presenter.importData()
-    }
 }
