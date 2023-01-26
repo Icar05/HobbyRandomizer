@@ -53,7 +53,7 @@ public final class RandomReportPresenter {
         let results = self.randomReportUtil.prepareReport(delay: delay)
         
         let shortDelay = Double(round(100 * delay) / 100)
-        let code = "\(results.code) - \(shortDelay)"
+        let code = "#\(results.code) - \(shortDelay)"
         var models: [ReportModel] = [ReportEmptyCellModel()]
         
         models.append(ReportHeaderCellModel(title: results.conclusion))
@@ -63,6 +63,7 @@ public final class RandomReportPresenter {
         
         models.append(ResultCodeCellModel(code: code))
         models.append(ReloadReportCellModel(callback: { [weak self ] in
+            self?.view.playClick()
             self?.view.showInitialState()
         }))
         

@@ -11,6 +11,8 @@ public final class RandomReportViewController: UIViewController {
     
     
     
+    private var soundUtil: SoundUtil? = nil
+    
     private let dataSource = RandomReportDataSource()
     
     private let presenter: RandomReportPresenter
@@ -25,6 +27,7 @@ public final class RandomReportViewController: UIViewController {
     
     @IBAction func didPrepareReportClick(_ sender: Any) {
         self.presenter.prepareReport()
+        self.soundUtil?.play()
     }
     
     @available(iOS, unavailable)
@@ -44,19 +47,20 @@ public final class RandomReportViewController: UIViewController {
         
         
         self.prepareReport.setTitle(Translations.Settings.randomReport, for: .normal)
-        self.setupTableView()
+        self.tableView.dataSource = dataSource
+        self.tableView.tableFooterView = UIView()
         
         self.loader.style = UIActivityIndicatorView.Style.large
         self.loader.color = .colorMain
         
         self.presenter.viewDidLoad()
     }
-
-    private func setupTableView(){
-        self.tableView.dataSource = dataSource
-        self.tableView.tableFooterView = UIView()
-    }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .Click)
+    }
     
     func showLoadingState(){
         self.tableView.isHidden = true
@@ -83,6 +87,10 @@ public final class RandomReportViewController: UIViewController {
         self.loader.isHidden = true
     }
     
+    func playClick(){
+        self.soundUtil?.play()
+    }
+    
     
     private func registerCells(models: [ReportModel]){
         
@@ -93,6 +101,7 @@ public final class RandomReportViewController: UIViewController {
         
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
+        self.soundUtil?.play()
     }
 
 }

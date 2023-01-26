@@ -45,7 +45,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-kc-zmp">
-                                <rect key="frame" x="41" y="0.0" width="34.333333333333343" height="25"/>
+                                <rect key="frame" x="33" y="0.0" width="34.333333333333343" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="cp2-wz-rj0" firstAttribute="centerY" secondItem="S1M-Dr-aOi" secondAttribute="centerY" id="DJI-ut-xbj"/>
                             <constraint firstAttribute="bottom" secondItem="hdQ-kc-zmp" secondAttribute="bottom" id="R6b-hg-cdj"/>
                             <constraint firstItem="cp2-wz-rj0" firstAttribute="top" secondItem="S1M-Dr-aOi" secondAttribute="top" id="bZ6-c1-kbI"/>
-                            <constraint firstItem="hdQ-kc-zmp" firstAttribute="leading" secondItem="cp2-wz-rj0" secondAttribute="trailing" constant="16" id="rw7-Pv-ynt"/>
+                            <constraint firstItem="hdQ-kc-zmp" firstAttribute="leading" secondItem="cp2-wz-rj0" secondAttribute="trailing" constant="8" id="rw7-Pv-ynt"/>
                         </constraints>
                     </view>
                 </subviews>
