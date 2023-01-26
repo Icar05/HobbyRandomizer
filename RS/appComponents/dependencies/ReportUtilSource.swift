@@ -10,7 +10,7 @@ import Foundation
 class ReportUtilSource: RandomReportUtilSource{
     
     
-    var hash: [String : String]  = [
+   private var hash: [String : String]  = [
         "123": "Bingo!",
         "321": "Reversed"
     ]

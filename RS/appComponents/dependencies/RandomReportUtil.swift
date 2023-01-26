@@ -21,8 +21,6 @@ struct RandomReportUtilResultModel{
 protocol RandomReportUtilSource{
     func getCategories() -> [RandomReportUtilModel]
     func getConclusion(input: String) -> String
-    
-    var hash: [String: String] { get }
 }
 
 public final class RandomReportUtil{
