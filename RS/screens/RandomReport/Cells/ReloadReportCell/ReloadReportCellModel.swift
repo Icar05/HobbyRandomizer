@@ -9,6 +9,6 @@ import Foundation
 
 
 struct ReloadReportCellModel: ReportModel{
-    let title: String
+    let callback: () -> Void
     var reuseIdentifier: String = String(describing: ReloadReportCell.self)
 }
