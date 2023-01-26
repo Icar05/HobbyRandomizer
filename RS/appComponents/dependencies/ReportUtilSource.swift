@@ -20,25 +20,25 @@ class ReportUtilSource: RandomReportUtilSource{
     func getCategories() -> [RandomReportUtilModel] {
         return [
             RandomReportUtilModel(
-                category: "category 1",
+                category: "Monday",
                 values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
+                    "9:00",
+                    "14:00",
+                    "18:00",
                 ]),
             RandomReportUtilModel(
-                category: "category 2",
+                category: "Tuesday",
                 values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
+                    "9:00",
+                    "14:00",
+                    "18:00",
                 ]),
             RandomReportUtilModel(
-                category: "category 3",
+                category: "Wednesday",
                 values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
+                    "9:00",
+                    "14:00",
+                    "18:00",
                 ])
             
         ]
