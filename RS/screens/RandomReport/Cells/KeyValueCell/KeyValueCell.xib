@@ -36,7 +36,7 @@
                         <rect key="frame" x="16" y="0.0" width="288" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMk-CN-1yi">
-                                <rect key="frame" x="0.0" y="0.0" width="117" height="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="117" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -63,6 +63,7 @@
                             <constraint firstItem="LdR-S5-NYW" firstAttribute="top" secondItem="MPr-ZQ-RXi" secondAttribute="top" id="cra-5g-b42"/>
                             <constraint firstAttribute="trailing" secondItem="LdR-S5-NYW" secondAttribute="trailing" constant="170" id="iBp-mE-FC7"/>
                             <constraint firstAttribute="trailing" secondItem="8es-VY-fhF" secondAttribute="trailing" id="l7q-nz-oO1"/>
+                            <constraint firstAttribute="bottom" secondItem="LMk-CN-1yi" secondAttribute="bottom" id="msd-fD-jAn"/>
                             <constraint firstAttribute="bottom" secondItem="LdR-S5-NYW" secondAttribute="bottom" id="qga-AH-ZzQ"/>
                             <constraint firstItem="LdR-S5-NYW" firstAttribute="leading" secondItem="LMk-CN-1yi" secondAttribute="trailing" id="uZd-eM-ROJ"/>
                             <constraint firstItem="LMk-CN-1yi" firstAttribute="top" secondItem="8es-VY-fhF" secondAttribute="top" id="viu-aJ-kec"/>
