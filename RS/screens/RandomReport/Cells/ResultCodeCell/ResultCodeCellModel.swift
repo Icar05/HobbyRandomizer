@@ -9,5 +9,6 @@ import Foundation
 
 struct ResultCodeCellModel: ReportModel{
     let code: String
+    let time: String
     var reuseIdentifier: String = String(describing: ResultCodeCell.self)
 }

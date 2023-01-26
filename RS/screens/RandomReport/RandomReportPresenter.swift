@@ -51,9 +51,6 @@ public final class RandomReportPresenter {
 
     private func getReportModels(delay: Double) -> [ReportModel]{
         let results = self.randomReportUtil.prepareReport(delay: delay)
-        
-        let shortDelay = Double(round(100 * delay) / 100)
-        let code = "#\(results.code) - \(shortDelay)"
         var models: [ReportModel] = [ReportEmptyCellModel()]
         
         models.append(ReportHeaderCellModel(title: results.conclusion))
@@ -61,7 +58,7 @@ public final class RandomReportPresenter {
             models.append(KeyValueCellModel(key: $0.category, value: $0.values.first ?? ""))
         }
         
-        models.append(ResultCodeCellModel(code: code))
+        models.append(ResultCodeCellModel(code: "# \(results.code)", time: "\(Double(round(100 * delay) / 100))"))
         models.append(ReloadReportCellModel(callback: { [weak self ] in
             self?.view.playClick()
             self?.view.showInitialState()

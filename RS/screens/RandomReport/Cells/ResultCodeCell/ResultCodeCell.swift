@@ -13,6 +13,7 @@ class ResultCodeCell: UITableViewCell, ReportCell {
     
     @IBOutlet weak var codeLabel: UILabel!
     
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,7 @@ class ResultCodeCell: UITableViewCell, ReportCell {
             return
         }
         self.codeLabel.text = m.code
+        self.timeLabel.text = m.time
     }
     
 }
