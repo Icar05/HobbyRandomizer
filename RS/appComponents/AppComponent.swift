@@ -24,7 +24,7 @@ class AppComponent{
     
     private let openFileUtil: OpenFileUtil = OpenFileUtil()
     
-    private let randomReportUtil: RandomReportUtil = RandomReportUtil()
+    private let randomReportUtil: RandomReportUtil
     
     private let testUtil: TestUtil
     
@@ -34,6 +34,7 @@ class AppComponent{
     
     private let importUtil: ImportUtil
     
+    private let source: RandomReportUtilSource = Debug()
     
     
     init(){
@@ -44,6 +45,7 @@ class AppComponent{
             notificationUtil: notificationUtil,
             soundUtil: SoundUtil(enable: true, volume: 1.0, sound: SoundUtil.getSoundForTimer()),
             elapsedTimeUtil: elapsedTimeUtil)
+        self.randomReportUtil = RandomReportUtil(source: source)
     }
     
     func getTestUtil() -> TestUtil{

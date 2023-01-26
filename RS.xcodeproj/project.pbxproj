@@ -29,6 +29,7 @@
 		7A8F334A29831D5F00DD7981 /* ReportEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */; };
 		7A8F334C29831DA700DD7981 /* ReportEmptyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */; };
 		7A8F334E2983226100DD7981 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334D2983226100DD7981 /* Debug.swift */; };
+		7ADE896F2983386D00D3CDE7 /* ReportUtilSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */; };
 		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
 		ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594528915A9000C77819 /* TimerViewController.swift */; };
 		ED0E594828915A9000C77819 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E594628915A9000C77819 /* TimerViewController.xib */; };
@@ -253,6 +254,7 @@
 		7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportEmptyCell.xib; sourceTree = "<group>"; };
 		7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCellModel.swift; sourceTree = "<group>"; };
 		7A8F334D2983226100DD7981 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUtilSource.swift; sourceTree = "<group>"; };
 		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
 		ED0E594528915A9000C77819 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		ED0E594628915A9000C77819 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 				ED8C226328D1341000A4CB24 /* ImportUtil.swift */,
 				7A8F33442982F5E200DD7981 /* RandomReportUtil.swift */,
 				7A8F334D2983226100DD7981 /* Debug.swift */,
+				7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -1607,6 +1610,7 @@
 				ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,
+				7ADE896F2983386D00D3CDE7 /* ReportUtilSource.swift in Sources */,
 				ED384C1428CE533E00AD3ABA /* FilesDetailDataSource.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				7A8F33402982F36D00DD7981 /* ReloadReportCell.swift in Sources */,

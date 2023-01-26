@@ -18,12 +18,24 @@ struct RandomReportUtilResultModel{
     let data: [RandomReportUtilModel]
 }
 
+protocol RandomReportUtilSource{
+    func getCategories() -> [RandomReportUtilModel]
+    func getConclusion(input: String) -> String
+    
+    var hash: [String: String] { get }
+}
+
 public final class RandomReportUtil{
     
+    private let source: RandomReportUtilSource
     
+    init(source: RandomReportUtilSource){
+        self.source = source
+    }
+        
     func prepareReport(delay: Double) -> RandomReportUtilResultModel{
         
-        let rawData = getRandomCategories()
+        let rawData = self.source.getCategories()
         var code = ""
         let data: [RandomReportUtilModel] = rawData.map{ item in
             
@@ -38,35 +50,9 @@ public final class RandomReportUtil{
         
         return RandomReportUtilResultModel(
             code: code,
-            conclusion: "Conclusions",
+            conclusion: "Failed to instantiate the default view controller for UIMainStoryboardFile 'Main' - perhaps the designated entry point is not set?",
             data: data)
     }
     
-    private func getRandomCategories() -> [RandomReportUtilModel]{
-        return [
-        
-            RandomReportUtilModel(
-                category: "category 1",
-                values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
-                ]),
-            RandomReportUtilModel(
-                category: "category 2",
-                values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
-                ]),
-            RandomReportUtilModel(
-                category: "category 3",
-                values: [
-                    "value 1",
-                    "value 2",
-                    "value 3",
-                ])
-        
-        ]
-    }
+
 }

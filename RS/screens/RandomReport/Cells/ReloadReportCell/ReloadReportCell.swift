@@ -21,8 +21,8 @@ class ReloadReportCell: UITableViewCell, ReportCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.prepareBorder()
-        self.tryAgainLabel.isUserInteractionEnabled = true
-        self.tryAgainLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:))))
+        self.isUserInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onTap(_:))))
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
