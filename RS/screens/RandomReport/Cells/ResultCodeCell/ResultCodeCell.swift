@@ -7,17 +7,26 @@
 
 import UIKit
 
-class ResultCodeCell: UITableViewCell {
-
+class ResultCodeCell: UITableViewCell, ReportCell {
+    
+    
+    
+    @IBOutlet weak var codeLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func update(with model: ReportModel) {
+        guard let m = model as? ResultCodeCellModel else {
+            return
+        }
+        self.codeLabel.text = m.code
     }
     
 }

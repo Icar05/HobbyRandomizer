@@ -56,6 +56,7 @@ public final class RandomReportPresenter {
             KeyValueCellModel(key: "Key 1", value: "Value 1"),
             KeyValueCellModel(key: "Key 1", value: "Value 1"),
             KeyValueCellModel(key: "Key 1", value: "Value 1"),
+            ResultCodeCellModel(code: "121332")
         ]
     }
   

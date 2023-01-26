@@ -8,6 +8,6 @@
 import Foundation
 
 struct ResultCodeCellModel: ReportModel{
-    let title: String
+    let code: String
     var reuseIdentifier: String = String(describing: ResultCodeCell.self)
 }
