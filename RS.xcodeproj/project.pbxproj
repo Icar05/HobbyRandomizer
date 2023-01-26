@@ -25,6 +25,9 @@
 		7A8F33412982F36D00DD7981 /* ReloadReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F333F2982F36D00DD7981 /* ReloadReportCell.xib */; };
 		7A8F33432982F37D00DD7981 /* ReloadReportCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F33422982F37D00DD7981 /* ReloadReportCellModel.swift */; };
 		7A8F33452982F5E200DD7981 /* RandomReportUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F33442982F5E200DD7981 /* RandomReportUtil.swift */; };
+		7A8F334929831D5F00DD7981 /* ReportEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */; };
+		7A8F334A29831D5F00DD7981 /* ReportEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */; };
+		7A8F334C29831DA700DD7981 /* ReportEmptyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */; };
 		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
 		ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594528915A9000C77819 /* TimerViewController.swift */; };
 		ED0E594828915A9000C77819 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E594628915A9000C77819 /* TimerViewController.xib */; };
@@ -245,6 +248,9 @@
 		7A8F333F2982F36D00DD7981 /* ReloadReportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReloadReportCell.xib; sourceTree = "<group>"; };
 		7A8F33422982F37D00DD7981 /* ReloadReportCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadReportCellModel.swift; sourceTree = "<group>"; };
 		7A8F33442982F5E200DD7981 /* RandomReportUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomReportUtil.swift; sourceTree = "<group>"; };
+		7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCell.swift; sourceTree = "<group>"; };
+		7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportEmptyCell.xib; sourceTree = "<group>"; };
+		7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCellModel.swift; sourceTree = "<group>"; };
 		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
 		ED0E594528915A9000C77819 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		ED0E594628915A9000C77819 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
@@ -479,6 +485,7 @@
 		7A8F33272982F25B00DD7981 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				7A8F334629831D4300DD7981 /* ReportEmptyCell */,
 				7A8F332B2982F2B100DD7981 /* ReloadReportCell */,
 				7A8F332A2982F2A500DD7981 /* ResultCodeCell */,
 				7A8F33292982F29700DD7981 /* ReportHeaderCell */,
@@ -525,6 +532,16 @@
 				7A8F33422982F37D00DD7981 /* ReloadReportCellModel.swift */,
 			);
 			path = ReloadReportCell;
+			sourceTree = "<group>";
+		};
+		7A8F334629831D4300DD7981 /* ReportEmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */,
+				7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */,
+				7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */,
+			);
+			path = ReportEmptyCell;
 			sourceTree = "<group>";
 		};
 		ED0E594428915A7600C77819 /* Timer */ = {
@@ -1433,6 +1450,7 @@
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				ED536150286864D1004F1836 /* DisplayInfoDataViewController.xib in Resources */,
 				EDA4EC3C284FED2E00D94753 /* MenuCell.xib in Resources */,
+				7A8F334A29831D5F00DD7981 /* ReportEmptyCell.xib in Resources */,
 				ED880FC82851151C00DFD78F /* CreateViewController.xib in Resources */,
 				ED536154286864ED004F1836 /* DisplayActionDataViewController.xib in Resources */,
 				ED6EEF692715C6D300D4EFE9 /* Assets.xcassets in Resources */,
@@ -1540,6 +1558,7 @@
 				ED880FCE285118B500DFD78F /* CreateNewItemCell.swift in Sources */,
 				EDA90D3D27167630009BDB20 /* SelectorView.swift in Sources */,
 				ED880FE128515CC600DFD78F /* RandomizerViewController.swift in Sources */,
+				7A8F334C29831DA700DD7981 /* ReportEmptyCellModel.swift in Sources */,
 				ED536160286865A6004F1836 /* DisplayActionDataDataSourse.swift in Sources */,
 				ED79189C2863C07E0041D407 /* FilesViewController.swift in Sources */,
 				ED7918A92863C39C0041D407 /* DisplayFileCellModel.swift in Sources */,
@@ -1573,6 +1592,7 @@
 				ED6EEF602715C6D200D4EFE9 /* AppDelegate.swift in Sources */,
 				ED5A6C5C284FD5000028BEED /* NavigatorImpl.swift in Sources */,
 				ED1D33CE286A6DF3004F1506 /* SettingsVolumeCellModel.swift in Sources */,
+				7A8F334929831D5F00DD7981 /* ReportEmptyCell.swift in Sources */,
 				ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */,
 				EDE5483828517A570018A75B /* ShowViewController.swift in Sources */,
 				ED5135B8286CC9D900403238 /* NotesInstructionViewController.swift in Sources */,

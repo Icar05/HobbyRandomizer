@@ -54,8 +54,9 @@ public final class RandomReportPresenter {
         
         let shortDelay = Double(round(100 * delay) / 100)
         let code = "\(results.code) - \(shortDelay)"
-        var models: [ReportModel] = [ReportHeaderCellModel(title: results.conclusion)]
-            
+        var models: [ReportModel] = [ReportEmptyCellModel()]
+        
+        models.append(ReportHeaderCellModel(title: results.conclusion))
         results.data.forEach{
             models.append(KeyValueCellModel(key: $0.category, value: $0.values.first ?? ""))
         }
