@@ -11,6 +11,8 @@ import Foundation
 public final class RandomReportPresenter {
 
     
+    private let maxDelay: Double = 7
+    
     private let randomReportUtil: RandomReportUtil
             
     unowned var view: RandomReportViewController!
@@ -41,26 +43,29 @@ public final class RandomReportPresenter {
     
     
     private func prepareData(callback: @escaping (_ data: [ReportModel]) -> Void){
-        let randomDelay = Double.random(in: 0..<10)
+        let randomDelay = Double.random(in: 0..<maxDelay)
         DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) { [weak self] in
-            print("delay: \(randomDelay)")
-            callback(self?.getReportModels() ?? [])
+            callback(self?.getReportModels(delay: randomDelay) ?? [])
         }
     }
 
-    private func getReportModels() -> [ReportModel]{
-        return [
-            ReportHeaderCellModel(title: "Some Title"),
-            KeyValueCellModel(key: "Key 1", value: "Value 1"),
-            KeyValueCellModel(key: "Key 1", value: "Value 1"),
-            KeyValueCellModel(key: "Key 1", value: "Value 1"),
-            KeyValueCellModel(key: "Key 1", value: "Value 1"),
-            KeyValueCellModel(key: "Key 1", value: "Value 1"),
-            ResultCodeCellModel(code: "121332"),
-            ReloadReportCellModel(callback: { [weak self ] in
-                self?.view.showInitialState()
-            })
-        ]
+    private func getReportModels(delay: Double) -> [ReportModel]{
+        let results = self.randomReportUtil.prepareReport(delay: delay)
+        
+        let shortDelay = Double(round(100 * delay) / 100)
+        let code = "\(results.code) - \(shortDelay)"
+        var models: [ReportModel] = [ReportHeaderCellModel(title: results.conclusion)]
+            
+        results.data.forEach{
+            models.append(KeyValueCellModel(key: $0.category, value: $0.values.first ?? ""))
+        }
+        
+        models.append(ResultCodeCellModel(code: code))
+        models.append(ReloadReportCellModel(callback: { [weak self ] in
+            self?.view.showInitialState()
+        }))
+        
+        return models
     }
   
 }
