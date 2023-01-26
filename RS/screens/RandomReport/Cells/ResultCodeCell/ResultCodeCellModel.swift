@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct ResultCodeCellModel: ReportModel{
+    let title: String
+    var reuseIdentifier: String = String(describing: ResultCodeCell.self)
+}

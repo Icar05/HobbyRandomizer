@@ -7,17 +7,26 @@
 
 import UIKit
 
-class ReportHeaderCell: UITableViewCell {
-
+class ReportHeaderCell: UITableViewCell, ReportCell {
+    
+    
+    @IBOutlet weak var headerLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func update(with model: ReportModel) {
+        guard let m = model as? ReportHeaderCellModel else {
+            return
+        }
+        self.headerLabel.text = m.title
     }
     
 }
+
+

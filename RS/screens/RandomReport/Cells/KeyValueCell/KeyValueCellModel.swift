@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct KeyValueCellModel: ReportModel{
+    let key: String
+    let value: String
+    var reuseIdentifier: String = String(describing: KeyValueCell.self)
+}

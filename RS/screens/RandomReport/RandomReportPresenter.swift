@@ -34,19 +34,29 @@ public final class RandomReportPresenter {
         
         self.view.showLoadingState()
         
-        self.prepareData {
-            self.view.showResultsState()
+        self.prepareData { result in
+            self.view.showResultsState(data: result)
         }
     }
     
     
-    private func prepareData(callback: @escaping () -> Void){
-        let randomDelay = Double.random(in: 0..<20)
-        DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) {
+    private func prepareData(callback: @escaping (_ data: [ReportModel]) -> Void){
+        let randomDelay = Double.random(in: 0..<10)
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) { [weak self] in
             print("delay: \(randomDelay)")
-            callback()
+            callback(self?.getReportModels() ?? [])
         }
     }
 
+    private func getReportModels() -> [ReportModel]{
+        return [
+            ReportHeaderCellModel(title: "Some Title"),
+            KeyValueCellModel(key: "Key 1", value: "Value 1"),
+            KeyValueCellModel(key: "Key 1", value: "Value 1"),
+            KeyValueCellModel(key: "Key 1", value: "Value 1"),
+            KeyValueCellModel(key: "Key 1", value: "Value 1"),
+            KeyValueCellModel(key: "Key 1", value: "Value 1"),
+        ]
+    }
   
 }

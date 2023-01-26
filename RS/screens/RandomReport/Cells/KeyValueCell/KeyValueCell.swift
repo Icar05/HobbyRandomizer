@@ -7,17 +7,27 @@
 
 import UIKit
 
-class KeyValueCell: UITableViewCell {
-
+class KeyValueCell: UITableViewCell, ReportCell {
+    
+    @IBOutlet weak var keyLabel: UILabel!
+    
+    @IBOutlet weak var valueLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func update(with model: ReportModel) {
+        guard let m = model as? KeyValueCellModel else {
+            return
+        }
+        self.keyLabel.text = m.key
+        self.valueLabel.text = m.value
     }
     
 }
+

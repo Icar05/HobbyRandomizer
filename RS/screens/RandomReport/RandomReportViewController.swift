@@ -47,8 +47,10 @@ public final class RandomReportViewController: UIViewController {
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
         
+        self.loader.style = UIActivityIndicatorView.Style.large
+        self.loader.color = .colorMain
+        
         self.presenter.viewDidLoad()
-//        self.registerCells()
     }
 
     
@@ -60,7 +62,8 @@ public final class RandomReportViewController: UIViewController {
         self.loader.isHidden = false
     }
     
-    func showResultsState(){
+    func showResultsState(data: [ReportModel]){
+        self.registerCells(models: data)
         self.loader.stopAnimating()
         self.prepareReport.isHidden = true
         self.loader.isHidden = true
@@ -74,6 +77,18 @@ public final class RandomReportViewController: UIViewController {
         self.emptyView.isHidden = false
         self.prepareReport.isHidden = false
         self.loader.isHidden = true
+    }
+    
+    
+    private func registerCells(models: [ReportModel]){
+        
+        models.forEach{
+            let nib = UINib(nibName: $0.reuseIdentifier, bundle: nil)
+            self.tableView?.register(nib, forCellReuseIdentifier: $0.reuseIdentifier)
+        }
+        
+        self.dataSource.setData(data: models)
+        self.tableView.reloadData()
     }
 
 }
