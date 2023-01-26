@@ -159,6 +159,11 @@ public final class SettingsPresenter {
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
             }),
+            SettingsSimpleCellModel(
+                title: "NEED REPORT TITLE",
+                callback: { [weak self] in
+                    self?.view.navigateToRandomReport()
+            }),
         
         ]
     }

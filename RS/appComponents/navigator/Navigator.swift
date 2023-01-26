@@ -30,5 +30,6 @@ protocol Navigator{
     func getOpenFileScreen(openFileUtil: OpenFileUtil, alertUtil: AlertUtil, importUtil: ImportUtil) -> UIViewController
     func getYesNoScreen(storage: UserDefaultStorage) -> UIViewController
     func getTimerScreen(storage: UserDefaultStorage, timerUtil: TimerUtil) -> UIViewController
-    func getSelectColorAlert(model: UISelectionDialogModel) -> UIViewController    
+    func getSelectColorAlert(model: UISelectionDialogModel) -> UIViewController
+    func getRandomReportScreen(util: RandomReportUtil) -> UIViewController
 }

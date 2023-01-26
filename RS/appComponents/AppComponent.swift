@@ -24,6 +24,8 @@ class AppComponent{
     
     private let openFileUtil: OpenFileUtil = OpenFileUtil()
     
+    private let randomReportUtil: RandomReportUtil = RandomReportUtil()
+    
     private let testUtil: TestUtil
     
     private let elapsedTimeUtil : ElapsedTimeUtil
@@ -83,6 +85,10 @@ class AppComponent{
     
     func getOpenFileUtil() -> OpenFileUtil{
         return self.openFileUtil
+    }
+    
+    func getRandomReportUtil() -> RandomReportUtil{
+        return self.randomReportUtil
     }
     
     func getImportUtil() -> ImportUtil {

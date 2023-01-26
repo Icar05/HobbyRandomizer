@@ -61,6 +61,14 @@ public final class SettingsViewController: UIViewController {
         navigator.navigate(start: self, destination: destination)
     }
     
+    func navigateToRandomReport(){
+        let navigator = getAppComponent().getNavigator()
+        let randomReportUtil = getAppComponent().getRandomReportUtil()
+        let destination = navigator.getRandomReportScreen(util: randomReportUtil)
+        
+        navigator.navigate(start: self, destination: destination)
+    }
+    
     func navigateToImport(){
         let navigator = getAppComponent().getNavigator()
         let alertUtil = getAppComponent().getAlertUtil()

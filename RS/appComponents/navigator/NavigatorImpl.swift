@@ -8,6 +8,7 @@
 import Foundation
 
 class NavigatorImpl: Navigator{
+   
     
   
 
@@ -47,6 +48,15 @@ class NavigatorImpl: Navigator{
         
         return viewcontroller
     }
+    
+    func getRandomReportScreen(util: RandomReportUtil) -> UIViewController {
+        let presenter = RandomReportPresenter(randomReportUtil: util)
+        let viewcontroller = RandomReportViewController(presenter: presenter)
+        presenter.set(view: viewcontroller)
+        
+        return viewcontroller
+    }
+    
     
     func getDebugScreen() -> UIViewController {
         let presenter = DebugPresenter()
