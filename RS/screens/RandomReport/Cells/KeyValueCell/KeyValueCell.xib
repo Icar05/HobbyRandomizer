@@ -36,19 +36,19 @@
                         <rect key="frame" x="16" y="0.0" width="288" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMk-CN-1yi">
-                                <rect key="frame" x="0.0" y="0.0" width="143.66666666666666" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="117" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8es-VY-fhF">
-                                <rect key="frame" x="144.66666666666663" y="0.0" width="143.33333333333337" height="48"/>
+                                <rect key="frame" x="118" y="0.0" width="170" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdR-S5-NYW" userLabel="Divider">
-                                <rect key="frame" x="143.66666666666666" y="0.0" width="1" height="48"/>
+                                <rect key="frame" x="117" y="0.0" width="1" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="ZHk-6k-fBv"/>
@@ -60,14 +60,14 @@
                             <constraint firstAttribute="bottom" secondItem="8es-VY-fhF" secondAttribute="bottom" id="Sf9-Fp-Wqa"/>
                             <constraint firstItem="8es-VY-fhF" firstAttribute="leading" secondItem="LdR-S5-NYW" secondAttribute="trailing" id="VBE-YK-qRT"/>
                             <constraint firstItem="8es-VY-fhF" firstAttribute="top" secondItem="MPr-ZQ-RXi" secondAttribute="top" id="bYJ-1v-Vbb"/>
-                            <constraint firstAttribute="bottom" secondItem="LMk-CN-1yi" secondAttribute="bottom" id="cBm-dU-Fm4"/>
                             <constraint firstItem="LdR-S5-NYW" firstAttribute="top" secondItem="MPr-ZQ-RXi" secondAttribute="top" id="cra-5g-b42"/>
+                            <constraint firstAttribute="trailing" secondItem="LdR-S5-NYW" secondAttribute="trailing" constant="170" id="iBp-mE-FC7"/>
                             <constraint firstAttribute="trailing" secondItem="8es-VY-fhF" secondAttribute="trailing" id="l7q-nz-oO1"/>
                             <constraint firstAttribute="bottom" secondItem="LdR-S5-NYW" secondAttribute="bottom" id="qga-AH-ZzQ"/>
-                            <constraint firstItem="LdR-S5-NYW" firstAttribute="centerX" secondItem="MPr-ZQ-RXi" secondAttribute="centerX" id="rMf-xw-GgS"/>
                             <constraint firstItem="LdR-S5-NYW" firstAttribute="leading" secondItem="LMk-CN-1yi" secondAttribute="trailing" id="uZd-eM-ROJ"/>
-                            <constraint firstItem="LMk-CN-1yi" firstAttribute="top" secondItem="MPr-ZQ-RXi" secondAttribute="top" id="viu-aJ-kec"/>
+                            <constraint firstItem="LMk-CN-1yi" firstAttribute="top" secondItem="8es-VY-fhF" secondAttribute="top" id="viu-aJ-kec"/>
                             <constraint firstItem="LMk-CN-1yi" firstAttribute="leading" secondItem="MPr-ZQ-RXi" secondAttribute="leading" id="wTe-sK-wtK"/>
+                            <constraint firstItem="LMk-CN-1yi" firstAttribute="top" secondItem="8es-VY-fhF" secondAttribute="top" id="x4U-H3-UPj"/>
                         </constraints>
                     </view>
                 </subviews>

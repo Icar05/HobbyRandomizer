@@ -25,7 +25,7 @@ class KeyValueCell: UITableViewCell, ReportCell {
         guard let m = model as? KeyValueCellModel else {
             return
         }
-        self.keyLabel.text = m.key
+        self.keyLabel.text = "\(m.key):"
         self.valueLabel.text = m.value
     }
     
