@@ -48,9 +48,11 @@ public final class RandomReportUtil{
             )
         }
         
+        let conclusion = self.source.getConclusion(input: code)
+        
         return RandomReportUtilResultModel(
             code: code,
-            conclusion: "Failed to instantiate the default view controller for UIMainStoryboardFile 'Main' - perhaps the designated entry point is not set?",
+            conclusion: conclusion,
             data: data)
     }
     
