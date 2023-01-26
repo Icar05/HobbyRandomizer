@@ -42,6 +42,8 @@ public final class RandomReportViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.prepareReport.setTitle(Translations.Settings.randomReport, for: .normal)
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
         
