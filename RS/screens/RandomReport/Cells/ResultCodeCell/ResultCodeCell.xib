@@ -19,6 +19,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B60-G9-xAa" userLabel="RightDivider">
+                        <rect key="frame" x="319" y="0.0" width="1" height="57"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="TQt-ia-gDv"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYg-el-USk" userLabel="LeftDivider">
+                        <rect key="frame" x="0.0" y="0.0" width="1" height="57"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="bjg-on-Lng"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1M-Dr-aOi">
                         <rect key="frame" x="16" y="16" width="288" height="25"/>
                         <subviews>
@@ -53,6 +67,12 @@
                     <constraint firstItem="S1M-Dr-aOi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8MR-WF-B4O"/>
                     <constraint firstItem="S1M-Dr-aOi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="D4H-FQ-IKM"/>
                     <constraint firstAttribute="bottom" secondItem="S1M-Dr-aOi" secondAttribute="bottom" constant="16" id="F56-i9-O3F"/>
+                    <constraint firstAttribute="bottom" secondItem="DYg-el-USk" secondAttribute="bottom" id="Z7J-c5-fFs"/>
+                    <constraint firstAttribute="trailing" secondItem="B60-G9-xAa" secondAttribute="trailing" id="jZN-XU-MuQ"/>
+                    <constraint firstAttribute="bottom" secondItem="B60-G9-xAa" secondAttribute="bottom" id="qtm-xj-daT"/>
+                    <constraint firstItem="B60-G9-xAa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="rs0-OI-clF"/>
+                    <constraint firstItem="DYg-el-USk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wWK-kS-S5H"/>
+                    <constraint firstItem="DYg-el-USk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zDS-jN-Dvg"/>
                     <constraint firstAttribute="trailing" secondItem="S1M-Dr-aOi" secondAttribute="trailing" constant="16" id="zYq-hn-FQH"/>
                 </constraints>
             </tableViewCellContentView>

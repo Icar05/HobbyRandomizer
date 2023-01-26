@@ -18,6 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-GA-hMg" userLabel="RightDivider">
+                        <rect key="frame" x="319" y="0.0" width="1" height="56"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="6Fq-CU-Bps"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njj-VF-4NS" userLabel="LeftDivider">
+                        <rect key="frame" x="0.0" y="0.0" width="1" height="56"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="2W3-RI-pyz"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-ZQ-RXi" userLabel="Container">
                         <rect key="frame" x="16" y="0.0" width="288" height="48"/>
                         <subviews>
@@ -59,9 +73,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="MPr-ZQ-RXi" secondAttribute="bottom" constant="8" id="0gt-lR-Qf3"/>
+                    <constraint firstAttribute="trailing" secondItem="iEa-GA-hMg" secondAttribute="trailing" id="7wH-50-tsL"/>
                     <constraint firstItem="MPr-ZQ-RXi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="L9s-1d-gg0"/>
+                    <constraint firstItem="njj-VF-4NS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YdC-gy-C0p"/>
                     <constraint firstAttribute="trailing" secondItem="MPr-ZQ-RXi" secondAttribute="trailing" constant="16" id="b1U-mk-gFa"/>
                     <constraint firstItem="MPr-ZQ-RXi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hBT-qU-2MI"/>
+                    <constraint firstItem="njj-VF-4NS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oI2-eZ-mAC"/>
+                    <constraint firstAttribute="bottom" secondItem="iEa-GA-hMg" secondAttribute="bottom" id="wM2-1w-021"/>
+                    <constraint firstItem="iEa-GA-hMg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xNF-uy-mDd"/>
+                    <constraint firstAttribute="bottom" secondItem="njj-VF-4NS" secondAttribute="bottom" id="xca-Z1-rbx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

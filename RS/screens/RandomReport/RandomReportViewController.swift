@@ -44,8 +44,7 @@ public final class RandomReportViewController: UIViewController {
         
         
         self.prepareReport.setTitle(Translations.Settings.randomReport, for: .normal)
-        self.tableView.dataSource = dataSource
-        self.tableView.tableFooterView = UIView()
+        self.setupTableView()
         
         self.loader.style = UIActivityIndicatorView.Style.large
         self.loader.color = .colorMain
@@ -53,6 +52,11 @@ public final class RandomReportViewController: UIViewController {
         self.presenter.viewDidLoad()
     }
 
+    private func setupTableView(){
+        self.tableView.dataSource = dataSource
+        self.tableView.tableFooterView = UIView()
+    }
+    
     
     func showLoadingState(){
         self.tableView.isHidden = true

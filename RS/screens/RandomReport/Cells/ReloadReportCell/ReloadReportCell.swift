@@ -42,7 +42,7 @@ class ReloadReportCell: UITableViewCell, ReportCell {
     private func prepareBorder(){
         self.tryAgainView.layer.masksToBounds = true
         self.tryAgainView.translatesAutoresizingMaskIntoConstraints = false
-        self.tryAgainView.layer.borderColor = UIColor.colorMain?.cgColor
+        self.tryAgainView.layer.borderColor = UIColor.lightGray.cgColor
         self.tryAgainView.layer.borderWidth = 1
     }
     

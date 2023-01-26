@@ -24,6 +24,10 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZv-cK-pYl">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-RT-lop">
                     <rect key="frame" x="16" y="75" width="361" height="727"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,9 +62,13 @@
             <color key="backgroundColor" name="MainColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZY0-RT-lop" secondAttribute="bottom" constant="16" id="Dlk-7J-gOC"/>
+                <constraint firstItem="TZv-cK-pYl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JBW-bI-2l8"/>
                 <constraint firstItem="ZY0-RT-lop" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JBZ-cN-rf5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TZv-cK-pYl" secondAttribute="trailing" id="LOa-wI-RkR"/>
                 <constraint firstItem="ZY0-RT-lop" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="QMa-da-o9I"/>
+                <constraint firstItem="TZv-cK-pYl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sxl-W3-EK4"/>
                 <constraint firstItem="mEB-DE-x0e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aJk-Cs-zjH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TZv-cK-pYl" secondAttribute="bottom" id="fKO-NP-Kz1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZY0-RT-lop" secondAttribute="trailing" constant="16" id="nxp-Jm-x5Z"/>
                 <constraint firstItem="mEB-DE-x0e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oih-Q7-AbX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mEB-DE-x0e" secondAttribute="trailing" id="vku-cT-hda"/>

@@ -18,6 +18,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OGD-im-f6J" userLabel="BottomDivider">
+                        <rect key="frame" x="1" y="71" width="318" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="kMo-jK-rXV"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v72-6O-Bt9" userLabel="RightDivider">
+                        <rect key="frame" x="319" y="0.0" width="1" height="72"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="oGZ-IV-7d8"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZj-Py-ttc" userLabel="LeftDivider">
+                        <rect key="frame" x="0.0" y="0.0" width="1" height="72"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="dUS-nR-Y88"/>
+                        </constraints>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-0O-W67" userLabel="Container">
                         <rect key="frame" x="16" y="8" width="288" height="48"/>
                         <subviews>
@@ -53,10 +74,19 @@
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="gZj-Py-ttc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Tb-fW-W2X"/>
                     <constraint firstAttribute="bottom" secondItem="5j3-0O-W67" secondAttribute="bottom" constant="16" id="6W0-t0-Rbu"/>
                     <constraint firstItem="5j3-0O-W67" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="9d9-tZ-iYF"/>
+                    <constraint firstItem="OGD-im-f6J" firstAttribute="leading" secondItem="gZj-Py-ttc" secondAttribute="trailing" id="D1y-ex-iU5"/>
                     <constraint firstItem="5j3-0O-W67" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Jxv-z3-GX0"/>
                     <constraint firstAttribute="trailing" secondItem="5j3-0O-W67" secondAttribute="trailing" constant="16" id="KuE-8j-959"/>
+                    <constraint firstAttribute="bottom" secondItem="gZj-Py-ttc" secondAttribute="bottom" id="M0f-K7-sU2"/>
+                    <constraint firstItem="v72-6O-Bt9" firstAttribute="leading" secondItem="OGD-im-f6J" secondAttribute="trailing" id="V8b-RN-ZJb"/>
+                    <constraint firstAttribute="bottom" secondItem="v72-6O-Bt9" secondAttribute="bottom" id="XNb-yi-ntX"/>
+                    <constraint firstItem="gZj-Py-ttc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ZEJ-ZD-JVb"/>
+                    <constraint firstAttribute="trailing" secondItem="v72-6O-Bt9" secondAttribute="trailing" id="cT6-i8-K3x"/>
+                    <constraint firstItem="v72-6O-Bt9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kAB-9a-yaN"/>
+                    <constraint firstItem="OGD-im-f6J" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" id="vsl-le-R7f"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
