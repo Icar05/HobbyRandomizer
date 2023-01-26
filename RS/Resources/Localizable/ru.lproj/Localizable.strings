@@ -74,6 +74,7 @@
 "Translations.Settings.singleProgressColor" = "Один цвет обновления";
 "Translations.Settings.timerOnlyForeground" = "Передний план";
 "Translations.Settings.timerAutoReload" = "Авто перезапуск";
+"Translations.Settings.randomReport" = "Случайный отчет";
 
 /* Files */
 "Translations.Files.howToCreate" = "Как создать импортируемые заметки?";

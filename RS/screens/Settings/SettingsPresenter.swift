@@ -160,7 +160,7 @@ public final class SettingsPresenter {
                     self?.view.navigateToDebug()
             }),
             SettingsSimpleCellModel(
-                title: "NEED REPORT TITLE",
+                title: Translations.Settings.randomReport,
                 callback: { [weak self] in
                     self?.view.navigateToRandomReport()
             }),

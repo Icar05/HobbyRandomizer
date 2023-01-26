@@ -49,6 +49,10 @@ struct Translations{
     }
     
     struct Settings{
+        public static var randomReport: String{
+            "Translations.Settings.randomReport".localized(Bundle.main)
+        }
+        
         public static var timerLabel: String{
             "Translations.Settings.timerLabel".localized(Bundle.main)
         }
