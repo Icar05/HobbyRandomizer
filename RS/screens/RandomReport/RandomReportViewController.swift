@@ -19,9 +19,13 @@ public final class RandomReportViewController: UIViewController {
     
     @IBOutlet weak var emptyView: UIView!
     
-    @IBOutlet weak var emptyViewLabel: UILabel!
+    @IBOutlet weak var prepareReport: UIButton!
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
+    @IBAction func didPrepareReportClick(_ sender: Any) {
+        self.presenter.prepareReport()
+    }
     
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
@@ -38,12 +42,36 @@ public final class RandomReportViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tableView.delegate = dataSource
-//        self.tableView.dataSource = dataSource
-//        self.tableView.tableFooterView = UIView()
+        self.tableView.dataSource = dataSource
+        self.tableView.tableFooterView = UIView()
+        
+        self.presenter.viewDidLoad()
 //        self.registerCells()
-//        self.emptyViewLabel.text = Translations.All.noData
     }
 
+    
+    func showLoadingState(){
+        self.tableView.isHidden = true
+        self.emptyView.isHidden = false
+        self.prepareReport.isHidden = true
+        self.loader.startAnimating()
+        self.loader.isHidden = false
+    }
+    
+    func showResultsState(){
+        self.loader.stopAnimating()
+        self.prepareReport.isHidden = true
+        self.loader.isHidden = true
+        self.emptyView.isHidden = true
+        self.tableView.isHidden = false
+    }
+    
+    func showInitialState(){
+        self.loader.stopAnimating()
+        self.tableView.isHidden = true
+        self.emptyView.isHidden = false
+        self.prepareReport.isHidden = false
+        self.loader.isHidden = true
+    }
 
 }

@@ -25,5 +25,28 @@ public final class RandomReportPresenter {
         self.randomReportUtil = randomReportUtil
     }
     
+    func viewDidLoad(){
+        self.view.showInitialState()
+    }
+    
+    
+    func prepareReport(){
+        
+        self.view.showLoadingState()
+        
+        self.prepareData {
+            self.view.showResultsState()
+        }
+    }
+    
+    
+    private func prepareData(callback: @escaping () -> Void){
+        let randomDelay = Double.random(in: 0..<20)
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay) {
+            print("delay: \(randomDelay)")
+            callback()
+        }
+    }
+
   
 }
