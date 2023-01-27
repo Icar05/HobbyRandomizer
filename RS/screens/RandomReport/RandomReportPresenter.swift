@@ -58,7 +58,7 @@ public final class RandomReportPresenter {
             models.append(KeyValueCellModel(key: $0.category, value: $0.values.first ?? ""))
         }
         
-        models.append(ResultCodeCellModel(code: "# \(results.code)", time: "\(Double(round(100 * delay) / 100))"))
+        models.append(ResultCodeCellModel(code: "# \(results.code)", time: "🕑 \(Double(round(100 * delay) / 100))"))
         models.append(ReloadReportCellModel(callback: { [weak self ] in
             self?.view.playClick()
             self?.view.showInitialState()
