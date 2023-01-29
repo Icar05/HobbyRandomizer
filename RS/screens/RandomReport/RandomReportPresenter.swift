@@ -36,8 +36,8 @@ public final class RandomReportPresenter {
         
         self.view.showLoadingState()
         
-        self.prepareData { result in
-            self.view.showResultsState(data: result)
+        self.prepareData { [weak self] result in
+            self?.view.showResultsState(data: result)
         }
     }
     
