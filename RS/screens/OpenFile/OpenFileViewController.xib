@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OpenFileViewController" customModule="RS" customModuleProvider="target">
             <connections>
                 <outlet property="actionButton" destination="DK7-Wq-HdP" id="Zqx-BE-qRi"/>
+                <outlet property="importLabel" destination="zcm-SP-aR6" id="FEW-ii-a6e"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,22 +23,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAj-1r-lE7">
-                    <rect key="frame" x="0.0" y="45" width="414" height="817"/>
+                    <rect key="frame" x="0.0" y="49" width="414" height="813"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK7-Wq-HdP">
-                    <rect key="frame" x="107" y="423" width="200" height="50"/>
-                    <color key="backgroundColor" name="MainColor"/>
+                    <rect key="frame" x="157" y="398" width="100" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ZOU-aj-NFi"/>
-                        <constraint firstAttribute="width" constant="200" id="oq0-dk-mc8"/>
+                        <constraint firstAttribute="width" constant="100" id="h3a-xO-hMF"/>
+                        <constraint firstAttribute="height" constant="100" id="krQ-dU-GYN"/>
                     </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                    <state key="normal" backgroundImage="doc.text" catalog="system">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcm-SP-aR6">
+                    <rect key="frame" x="186.5" y="506" width="41.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-9X-xC4" userLabel="TopSeparator">
-                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="bU3-gj-6SW"/>
@@ -50,19 +60,22 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vAj-1r-lE7" secondAttribute="bottom" id="5i2-B0-QZj"/>
                 <constraint firstItem="MrN-9X-xC4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Bmb-50-F8O"/>
                 <constraint firstItem="vAj-1r-lE7" firstAttribute="top" secondItem="MrN-9X-xC4" secondAttribute="bottom" id="FtN-YQ-Gaq"/>
+                <constraint firstItem="zcm-SP-aR6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GKJ-49-Xcc"/>
                 <constraint firstItem="vAj-1r-lE7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KZA-NF-h39"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vAj-1r-lE7" secondAttribute="trailing" id="Svv-Vp-sT3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MrN-9X-xC4" secondAttribute="trailing" id="aEZ-JQ-x2z"/>
                 <constraint firstItem="DK7-Wq-HdP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ajJ-jb-Xt9"/>
                 <constraint firstItem="DK7-Wq-HdP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pys-KY-5ne"/>
+                <constraint firstItem="zcm-SP-aR6" firstAttribute="top" secondItem="DK7-Wq-HdP" secondAttribute="bottom" constant="8" id="tNn-9n-vxh"/>
                 <constraint firstItem="MrN-9X-xC4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uqb-oD-zSi"/>
             </constraints>
             <point key="canvasLocation" x="130" y="-20"/>
         </view>
     </objects>
     <resources>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <namedColor name="MainColor">
-            <color red="0.77300000190734863" green="0.67100000381469727" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20399999618530273" green="0.6119999885559082" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

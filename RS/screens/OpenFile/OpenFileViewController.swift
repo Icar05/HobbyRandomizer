@@ -25,6 +25,7 @@ public final class OpenFileViewController: UIViewController {
     
     @IBOutlet weak var actionButton: UIButton!
     
+    @IBOutlet weak var importLabel: UILabel!
     
     @available(iOS, unavailable)
     required init?(coder: NSCoder) {
@@ -43,11 +44,8 @@ public final class OpenFileViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.actionButton.setTitle(Translations.Import.buttonLabel, for: .normal)
         self.actionButton.addTarget(self,  action: #selector(buttonAction), for: .touchUpInside)
-        self.actionButton.layer.borderColor = UIColor.black.cgColor
-        self.actionButton.layer.borderWidth = 1
-        self.actionButton.layer.masksToBounds = true
+        self.importLabel.text = Translations.Import.buttonLabel
     }
     
     @objc func buttonAction(sender: UIButton!) {
