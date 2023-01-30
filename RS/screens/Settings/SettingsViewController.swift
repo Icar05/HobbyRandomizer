@@ -61,10 +61,15 @@ public final class SettingsViewController: UIViewController {
         navigator.navigate(start: self, destination: destination)
     }
     
-    func navigateToRandomReport(){
+    func navigateToCreate(){
         let navigator = getAppComponent().getNavigator()
-        let randomReportUtil = getAppComponent().getRandomReportUtil()
-        let destination = navigator.getRandomReportScreen(util: randomReportUtil)
+        let storage = getAppComponent().getStorage()
+        let alertUtil = getAppComponent().getAlertUtil()
+        let fileUtil = getAppComponent().getFileUtil()
+        let destination = navigator.getCreateScreen(
+            storage: storage,
+            fileUtil: fileUtil,
+            alertUtil: alertUtil)
         
         navigator.navigate(start: self, destination: destination)
     }

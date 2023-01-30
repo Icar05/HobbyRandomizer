@@ -104,6 +104,8 @@ extension MenuViewController: MenuDelegate{
             return appComponent.getNavigator().getYesNoScreen(storage: appComponent.getStorage())
         case .Timer:
             return appComponent.getNavigator().getTimerScreen(storage: appComponent.getStorage(), timerUtil: appComponent.getTimerUtil())
+        case .RandomReport:
+            return appComponent.getNavigator().getRandomReportScreen(util: appComponent.getRandomReportUtil())
         }
     }
 }

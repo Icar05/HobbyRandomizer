@@ -24,9 +24,9 @@ public final class MenuPresenter{
     private func prepareDataSource() -> [MenuCellModel]{
         return [
             MenuCellModel(
-                icon:UIImage(systemName: "plus.rectangle.on.folder")!,
-                type: .Create,
-                title: Translations.Menu.itemCreate
+                icon:UIImage(systemName: "doc.text")!,
+                type: .RandomReport,
+                title: Translations.Settings.randomReport
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,

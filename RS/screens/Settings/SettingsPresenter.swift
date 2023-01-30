@@ -159,10 +159,13 @@ public final class SettingsPresenter {
                 callback: { [weak self] in
                     self?.view.navigateToDebug()
             }),
+            SettingsHeaderCellModel(
+                title: Translations.Menu.itemCreate
+            ),
             SettingsSimpleCellModel(
-                title: Translations.Settings.randomReport,
+                title: Translations.Menu.itemCreate,
                 callback: { [weak self] in
-                    self?.view.navigateToRandomReport()
+                    self?.view.navigateToCreate()
             }),
         
         ]
