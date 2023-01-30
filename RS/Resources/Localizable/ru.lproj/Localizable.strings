@@ -74,10 +74,13 @@
 "Translations.Settings.singleProgressColor" = "Один цвет обновления";
 "Translations.Settings.timerOnlyForeground" = "Передний план";
 "Translations.Settings.timerAutoReload" = "Авто перезапуск";
-"Translations.Settings.randomReport" = "Случайный отчет";
 
 /* Files */
 "Translations.Files.howToCreate" = "Как создать импортируемые заметки?";
+
+/* Random report */
+"Translations.RandomReport.randomReport" = "Случайный отчет";
+"Translations.RandomReport.randomReportMenuTitle" = "Отчет";
 
 /* NotesInstruction */
 "Translations.NotesInstruction.howToCreateHeaderDescription" = "Это приложение поддерживает импорт заметок из твоего iphone. Для того чтобы сделать это, ты должен форматировать заметку в нужный вид";

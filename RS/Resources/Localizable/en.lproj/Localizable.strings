@@ -74,10 +74,13 @@
 "Translations.Settings.singleProgressColor" = "Single updating color";
 "Translations.Settings.timerOnlyForeground" = "Foreground";
 "Translations.Settings.timerAutoReload" = "Auto relaunch";
-"Translations.Settings.randomReport" = "Random report";
 
 /* Files */
 "Translations.Files.howToCreate" = "How to create importable notes?";
+
+/* Random report */
+"Translations.RandomReport.randomReport" = "Random report";
+"Translations.RandomReport.randomReportMenuTitle" = "Report";
 
 /* NotesInstruction */
 "Translations.NotesInstruction.howToCreateHeaderDescription" = "This appliction supports using notes from your iphone. In order to do it, you should format your note in the appropriated way";

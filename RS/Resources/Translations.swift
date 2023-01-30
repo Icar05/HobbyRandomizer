@@ -49,9 +49,6 @@ struct Translations{
     }
     
     struct Settings{
-        public static var randomReport: String{
-            "Translations.Settings.randomReport".localized(Bundle.main)
-        }
         
         public static var timerLabel: String{
             "Translations.Settings.timerLabel".localized(Bundle.main)
@@ -140,6 +137,17 @@ struct Translations{
             "Translations.Alert.readingFileError".localized(Bundle.main)
         }
 
+    }
+    
+    
+    struct RandomReport{
+        public static var randomReport: String{
+            "Translations.RandomReport.randomReport".localized(Bundle.main)
+        }
+        
+        public static var randomReportMenuTitle: String{
+            "Translations.RandomReport.randomReportMenuTitle".localized(Bundle.main)
+        }
     }
     
     struct Import{
