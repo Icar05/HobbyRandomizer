@@ -26,7 +26,7 @@ public final class MenuPresenter{
             MenuCellModel(
                 icon:UIImage(systemName: "doc.text")!,
                 type: .RandomReport,
-                title: Translations.Settings.randomReport
+                title: Translations.RandomReport.randomReportMenuTitle
             ),
             MenuCellModel(
                 icon:  UIImage(systemName: "flag.filled.and.flag.crossed")!,

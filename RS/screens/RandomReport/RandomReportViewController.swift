@@ -46,7 +46,7 @@ public final class RandomReportViewController: UIViewController {
         super.viewDidLoad()
         
         
-        self.buttonLabel.text = Translations.Settings.randomReport
+        self.buttonLabel.text = Translations.RandomReport.randomReport
         
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()

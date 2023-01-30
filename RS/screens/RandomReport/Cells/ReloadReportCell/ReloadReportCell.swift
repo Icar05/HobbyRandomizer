@@ -34,7 +34,7 @@ class ReloadReportCell: UITableViewCell, ReportCell {
         guard let m = model as? ReloadReportCellModel else {
             return
         }
-        self.tryAgainLabel.text = Translations.Settings.randomReport
+        self.tryAgainLabel.text = Translations.RandomReport.randomReport
         self.callback  = m.callback
     }
     
