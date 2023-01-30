@@ -19,9 +19,9 @@ public final class RandomReportViewController: UIViewController {
         
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var emptyView: UIView!
-    
     @IBOutlet weak var prepareReport: UIButton!
+    
+    @IBOutlet weak var buttonLabel: UILabel!
     
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
@@ -46,7 +46,8 @@ public final class RandomReportViewController: UIViewController {
         super.viewDidLoad()
         
         
-        self.prepareReport.setTitle(Translations.Settings.randomReport, for: .normal)
+        self.buttonLabel.text = Translations.Settings.randomReport
+        
         self.tableView.dataSource = dataSource
         self.tableView.tableFooterView = UIView()
         
@@ -64,8 +65,8 @@ public final class RandomReportViewController: UIViewController {
     
     func showLoadingState(){
         self.tableView.isHidden = true
-        self.emptyView.isHidden = false
         self.prepareReport.isHidden = true
+        self.buttonLabel.isHidden = true
         self.loader.startAnimating()
         self.loader.isHidden = false
     }
@@ -74,16 +75,16 @@ public final class RandomReportViewController: UIViewController {
         self.registerCells(models: data)
         self.loader.stopAnimating()
         self.prepareReport.isHidden = true
+        self.buttonLabel.isHidden = true
         self.loader.isHidden = true
-        self.emptyView.isHidden = true
         self.tableView.isHidden = false
     }
     
     func showInitialState(){
         self.loader.stopAnimating()
         self.tableView.isHidden = true
-        self.emptyView.isHidden = false
         self.prepareReport.isHidden = false
+        self.buttonLabel.isHidden = false
         self.loader.isHidden = true
     }
     

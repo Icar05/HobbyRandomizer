@@ -6,13 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RandomReportViewController" customModule="RS" customModuleProvider="target">
             <connections>
-                <outlet property="emptyView" destination="mEB-DE-x0e" id="As7-2K-fdi"/>
+                <outlet property="buttonLabel" destination="KmL-6x-nMT" id="V2x-YE-iHU"/>
                 <outlet property="loader" destination="15A-kg-djX" id="sK9-wH-6uY"/>
                 <outlet property="prepareReport" destination="KKr-8b-kiU" id="Esc-bq-J7v"/>
                 <outlet property="tableView" destination="ZY0-RT-lop" id="X9T-4M-1j7"/>
@@ -28,35 +27,33 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-RT-lop">
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZY0-RT-lop">
                     <rect key="frame" x="16" y="59" width="361" height="759"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEB-DE-x0e" userLabel="EmptyView">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-8b-kiU" userLabel="PrepareReport">
-                            <rect key="frame" x="159" y="362" width="75" height="35"/>
-                            <color key="backgroundColor" name="MainColor"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            <connections>
-                                <action selector="didPrepareReportClick:" destination="-1" eventType="touchUpInside" id="4Oj-cB-KT2"/>
-                            </connections>
-                        </button>
-                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="15A-kg-djX" userLabel="Loader">
-                            <rect key="frame" x="178" y="361" width="37" height="37"/>
-                        </activityIndicatorView>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-8b-kiU" userLabel="PrepareReport">
+                    <rect key="frame" x="146.66666666666666" y="376.33333333333331" width="100" height="99.666666666666686"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="15A-kg-djX" firstAttribute="centerY" secondItem="mEB-DE-x0e" secondAttribute="centerY" id="CZj-wk-EQW"/>
-                        <constraint firstItem="15A-kg-djX" firstAttribute="centerX" secondItem="mEB-DE-x0e" secondAttribute="centerX" id="NvY-wb-VXc"/>
-                        <constraint firstItem="KKr-8b-kiU" firstAttribute="centerY" secondItem="mEB-DE-x0e" secondAttribute="centerY" id="YvA-9Y-hOU"/>
-                        <constraint firstItem="KKr-8b-kiU" firstAttribute="centerX" secondItem="mEB-DE-x0e" secondAttribute="centerX" id="g15-zt-n7u"/>
+                        <constraint firstAttribute="height" constant="100" id="6Fz-9n-wec"/>
+                        <constraint firstAttribute="width" constant="100" id="iuT-Vv-8aG"/>
                     </constraints>
-                </view>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="doc.text" catalog="system"/>
+                    <connections>
+                        <action selector="didPrepareReportClick:" destination="-1" eventType="touchUpInside" id="4Oj-cB-KT2"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmL-6x-nMT">
+                    <rect key="frame" x="176" y="484" width="41.333333333333343" height="19.333333333333314"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="15A-kg-djX" userLabel="Loader">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="MainColor"/>
@@ -65,24 +62,24 @@
                 <constraint firstItem="TZv-cK-pYl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JBW-bI-2l8"/>
                 <constraint firstItem="ZY0-RT-lop" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="JBZ-cN-rf5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TZv-cK-pYl" secondAttribute="trailing" id="LOa-wI-RkR"/>
+                <constraint firstItem="KKr-8b-kiU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Mz2-7U-svm"/>
+                <constraint firstItem="15A-kg-djX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="NKL-hu-qFL"/>
+                <constraint firstItem="KmL-6x-nMT" firstAttribute="top" secondItem="KKr-8b-kiU" secondAttribute="bottom" constant="8" id="QDI-wW-sSJ"/>
                 <constraint firstItem="TZv-cK-pYl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Sxl-W3-EK4"/>
-                <constraint firstItem="mEB-DE-x0e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aJk-Cs-zjH"/>
+                <constraint firstItem="KmL-6x-nMT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eTJ-zb-vBk"/>
+                <constraint firstItem="KKr-8b-kiU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="evd-jv-ovP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TZv-cK-pYl" secondAttribute="bottom" id="fKO-NP-Kz1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZY0-RT-lop" secondAttribute="trailing" constant="16" id="nxp-Jm-x5Z"/>
-                <constraint firstItem="mEB-DE-x0e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="oih-Q7-AbX"/>
                 <constraint firstItem="ZY0-RT-lop" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r3P-kF-KZb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mEB-DE-x0e" secondAttribute="trailing" id="vku-cT-hda"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mEB-DE-x0e" secondAttribute="bottom" id="zpp-ID-KDF"/>
+                <constraint firstItem="15A-kg-djX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yA1-CR-cnZ"/>
             </constraints>
             <point key="canvasLocation" x="-146" y="21"/>
         </view>
     </objects>
     <resources>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <namedColor name="MainColor">
             <color red="0.20399999618530273" green="0.6119999885559082" blue="0.32199999690055847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
