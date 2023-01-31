@@ -10,9 +10,9 @@ import Foundation
 class ReportUtilSource: RandomReportUtilSource{
     
     
-   private var hash: [String : String]  = [
-        "123": "Bingo!",
-        "321": "Reversed"
+    private var hash: [String : String]  = [ :
+//        "123": "Bingo!",
+//        "321": "Reversed"
     ]
     
     
@@ -20,32 +20,42 @@ class ReportUtilSource: RandomReportUtilSource{
     func getCategories() -> [RandomReportUtilModel] {
         return [
             RandomReportUtilModel(
-                category: "Monday",
-                values: [
-                    "9:00",
-                    "14:00",
-                    "18:00",
-                ]),
+                category: "Year",
+                values: getYearValues()),
             RandomReportUtilModel(
-                category: "Tuesday",
-                values: [
-                    "9:00",
-                    "14:00",
-                    "18:00",
-                ]),
+                category: "Month",
+                values: getMonthValues()),
             RandomReportUtilModel(
-                category: "Wednesday",
-                values: [
-                    "9:00",
-                    "14:00",
-                    "18:00",
-                ])
-            
+                category: "Day",
+                values: getDayValues()),
+            RandomReportUtilModel(
+                category: "Time",
+                values: getTimeValues())
         ]
     }
     
     func getConclusion(input: String) -> String {
         return hash[input] ?? "No conclusions"
+    }
+    
+    
+    private func getDayValues() -> [String]{
+        return (1...28).compactMap{String($0)}
+    }
+    
+    private func getMonthValues() -> [String]{
+        return DateFormatter().monthSymbols
+    }
+    
+    private func getYearValues() -> [String]{
+        return (1946...Calendar.current.component(.year, from: Date())).compactMap{String($0)}
+    }
+    
+    private func getTimeValues() -> [String]{
+        return (1...24)
+            .compactMap{String($0)}
+            .compactMap{ "\($0):\(String(format: "%02d", Int.random(in: 1..<61)))"
+        }
     }
     
     
