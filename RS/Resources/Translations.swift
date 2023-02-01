@@ -229,6 +229,10 @@ struct Translations{
     
     struct Color{
         
+        public static var main: String{
+            "Translations.Color.main".localized(Bundle.main)
+        }
+        
         public static var red: String{
             "Translations.Color.red".localized(Bundle.main)
         }

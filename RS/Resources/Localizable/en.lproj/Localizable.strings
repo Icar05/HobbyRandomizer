@@ -107,6 +107,7 @@
 "Translations.SelectColor.no" = "No";
 
 /* Color */
+"Translations.Color.main" = "Application's color";
 "Translations.Color.red" = "Red";
 "Translations.Color.customRed" = "Dark red";
 "Translations.Color.orange" = "Orange";

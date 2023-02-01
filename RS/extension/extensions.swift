@@ -38,24 +38,25 @@ struct Color : Codable {
 
 extension Color: Equatable{
     func getName() -> String{
-        let names: [UIColor : String ] = [
-            UIColor.red : Translations.Color.red,
-            UIColor.coolRed! : Translations.Color.customRed,
-            UIColor.coolOrange!: Translations.Color.customOrange,
-            UIColor.orange: Translations.Color.orange,
-            UIColor.yellow: Translations.Color.yellow,
-            UIColor.lightGreen!: Translations.Color.green,
-            UIColor.coolGreen!: Translations.Color.customGreen,
-            UIColor.lightBlue!: Translations.Color.blue,
-            UIColor.blue: Translations.Color.systemIndigo,
-            UIColor.purple: Translations.Color.purple,
-            UIColor.colorCoolViolet!: Translations.Color.customViolet,
-            UIColor.colorCappuccino!: Translations.Color.colorCappuccino,
-            UIColor.colorCocoa!: Translations.Color.colorCocoa,
-            UIColor.colorBorderGray!: Translations.Color.gray
+        let names: [String : String ] = [
+            UIColor.red.hexStringFromColor() : Translations.Color.red,
+            UIColor.coolRed!.hexStringFromColor() : Translations.Color.customRed,
+            UIColor.coolOrange!.hexStringFromColor(): Translations.Color.customOrange,
+            UIColor.orange.hexStringFromColor(): Translations.Color.orange,
+            UIColor.yellow.hexStringFromColor(): Translations.Color.yellow,
+            UIColor.lightGreen!.hexStringFromColor(): Translations.Color.green,
+            UIColor.coolGreen!.hexStringFromColor(): Translations.Color.customGreen,
+            UIColor.lightBlue!.hexStringFromColor(): Translations.Color.blue,
+            UIColor.blue.hexStringFromColor(): Translations.Color.systemIndigo,
+            UIColor.purple.hexStringFromColor(): Translations.Color.purple,
+            UIColor.colorCoolViolet!.hexStringFromColor(): Translations.Color.customViolet,
+            UIColor.colorCappuccino!.hexStringFromColor(): Translations.Color.colorCappuccino,
+            UIColor.colorCocoa!.hexStringFromColor(): Translations.Color.colorCocoa,
+            UIColor.colorBorderGray!.hexStringFromColor(): Translations.Color.gray,
+            UIColor.colorMain!.hexStringFromColor(): Translations.Color.main
         ]
         
-        let name = names[uiColor]
+        let name = names[uiColor.hexStringFromColor()]
         
         if(name == nil){
             return "\(uiColor.hexStringFromColor())"

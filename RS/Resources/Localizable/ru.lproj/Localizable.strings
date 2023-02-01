@@ -107,6 +107,7 @@
 "Translations.SelectColor.no" = "Нет";
 
 /* Color */
+"Translations.Color.main" = "Цвет приложения";
 "Translations.Color.red" = "Красный";
 "Translations.Color.customRed" = "Темно красный";
 "Translations.Color.orange" = "Оранжевый";

@@ -107,6 +107,7 @@
 "Translations.SelectColor.no" = "Ні";
 
 /* Color */
+"Translations.Color.main" = "Колір додатку";
 "Translations.Color.red" = "Червоний";
 "Translations.Color.customRed" = "Темно червоний";
 "Translations.Color.orange" = "Помаранчовий";
