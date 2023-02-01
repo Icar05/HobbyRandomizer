@@ -38,6 +38,7 @@ struct Color : Codable {
 
 extension Color: Equatable{
     func getName() -> String{
+        
         let names: [String : String ] = [
             UIColor.red.hexStringFromColor() : Translations.Color.red,
             UIColor.coolRed!.hexStringFromColor() : Translations.Color.customRed,
@@ -52,14 +53,13 @@ extension Color: Equatable{
             UIColor.colorCoolViolet!.hexStringFromColor(): Translations.Color.customViolet,
             UIColor.colorCappuccino!.hexStringFromColor(): Translations.Color.colorCappuccino,
             UIColor.colorCocoa!.hexStringFromColor(): Translations.Color.colorCocoa,
-            UIColor.colorBorderGray!.hexStringFromColor(): Translations.Color.gray,
-            UIColor.colorMain!.hexStringFromColor(): Translations.Color.main
+            UIColor.colorBorderGray!.hexStringFromColor(): Translations.Color.gray
         ]
         
         let name = names[uiColor.hexStringFromColor()]
         
         if(name == nil){
-            return "\(uiColor.hexStringFromColor())"
+            return Translations.Color.main
         }else{
             return name!
         }
