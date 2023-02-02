@@ -88,6 +88,120 @@ public final class EnglishPracticSource: ReportSource{
                 values: [
                     "Begin","Continue","Hate","Intend","Love","Like","Start","Prefer","Advice","Permit"
                 ]),
+            
+            RandomReportModel(
+                category: "Сonditions",
+                values: [
+                    "0 Condition",
+                    "1 Condition",
+                    "2 Condition",
+                    "3 Condition",
+                ]),
+            RandomReportModel(
+                category: "Would rather ( Desigion )",
+                values: [
+                    "Simple",
+                    "Past",
+                    "Negative",
+                ]),
+            
+            RandomReportModel(
+                category: "Had better (Advice)",
+                values: [
+                    "Simple",
+                    "Past",
+                    "Negative",
+                ]),
+            
+            RandomReportModel(
+                category: "Wish ( if only )",
+                values: [
+                    "Regret in present",
+                    "Hope on future",
+                    "Complaining",
+                    "Regret about possibilities",
+                    "Regret in past",
+                ]),
+            
+            RandomReportModel(
+                category: "Modal verb",
+                values: [
+                    "Should ( Advice )", "Must ( from inside )", "Have ( from outide )", "May (permission)", "Might (possibility)", "Could (ability)"
+                ]),
+            
+            RandomReportModel(
+                category: "Modal verb past",
+                values: [
+                    "Should in past", "Should in past negative",
+                    "Would in past", "Would in past negative",
+                    "Could in past", "Could in past negative",
+                ]),
+            
+            RandomReportModel(
+                category: "Indirect question",
+                values: [
+                    "Answer Yes/No",
+                    "Particular answer"
+                ]),
+            
+            RandomReportModel(
+                category: "Quantifiers",
+                values: [
+                    "Many", "Much", "Few", "Little", "A lot of", "lake of countable", "lake of uncountable"
+                ]),
+            
+            RandomReportModel(
+                category: "Comparsion",
+                values: [
+                    "As ... As",
+                    "the more ..., the more"
+                ]),
+            
+            RandomReportModel(
+                category: "Extra rules",
+                values: [
+                    "Opposite prefix",
+                    "Adjective & Adverb",
+                    "But / though",
+                    "Unless = if not",
+                    "Weather = if yes or not together",
+                    "In spite of",
+                    "Despite the smth",
+                    "Although",
+                    "Then / Than",
+                    "Tell vs say",
+                    "Let",
+                    "Suggestions",
+                    "Next period",
+                    "- Start from time, start with something…"
+                ]),
+            
+            
+            RandomReportModel(
+                category: "Extra patterns",
+                values: [
+                    "Likewise",
+                    "Nonetheless",
+                    "Moreover",
+                    "much more",
+                    "most likely -Be likely",
+                    "In most cases",
+                    "Nessesarely",
+                    "Although",
+                    "The best way of…",
+                    "Searching for",
+                    "That much = enought time",
+                    "Unless = if not",
+                    "With = if only",
+                    "Lest ( in order not to)",
+                    "Though ( «but» in the end of sentence )",
+                    "Whatever = ( if yes and not together, in any way )",
+                    "In order to ( for something)",
+                    "vice versa, to the contrary, backwards ",
+                    "Up to down"
+                ]),
+    
+            
         ]
     }
     
