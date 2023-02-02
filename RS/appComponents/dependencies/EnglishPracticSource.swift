@@ -171,7 +171,7 @@ public final class EnglishPracticSource: ReportSource{
                     "Then / Than",
                     "Tell vs say",
                     "Let",
-                    "Suggestions",
+                    "Suggestions / Consider",
                     "Next period",
                     "- Start from time, start with something…"
                 ]),
