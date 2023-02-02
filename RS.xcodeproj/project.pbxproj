@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2D3D75298BF6FD00781ABF /* EnglishPracticSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */; };
 		7A7485AD293BC9380000B8A9 /* blur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A7485AC293BC9380000B8A9 /* blur.mp3 */; };
 		7A8F33212982F22600DD7981 /* RandomReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */; };
 		7A8F33222982F22600DD7981 /* RandomReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F33202982F22600DD7981 /* RandomReportViewController.xib */; };
@@ -28,8 +29,8 @@
 		7A8F334929831D5F00DD7981 /* ReportEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */; };
 		7A8F334A29831D5F00DD7981 /* ReportEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */; };
 		7A8F334C29831DA700DD7981 /* ReportEmptyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */; };
-		7A8F334E2983226100DD7981 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334D2983226100DD7981 /* Debug.swift */; };
-		7ADE896F2983386D00D3CDE7 /* ReportUtilSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */; };
+		7A8F334E2983226100DD7981 /* DebugSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334D2983226100DD7981 /* DebugSource.swift */; };
+		7ADE896F2983386D00D3CDE7 /* ReportDaySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE896E2983386D00D3CDE7 /* ReportDaySource.swift */; };
 		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
 		ED0E594728915A9000C77819 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0E594528915A9000C77819 /* TimerViewController.swift */; };
 		ED0E594828915A9000C77819 /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED0E594628915A9000C77819 /* TimerViewController.xib */; };
@@ -232,6 +233,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticSource.swift; sourceTree = "<group>"; };
 		7A7485AC293BC9380000B8A9 /* blur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blur.mp3; sourceTree = "<group>"; };
 		7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomReportViewController.swift; sourceTree = "<group>"; };
 		7A8F33202982F22600DD7981 /* RandomReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomReportViewController.xib; sourceTree = "<group>"; };
@@ -253,8 +255,8 @@
 		7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCell.swift; sourceTree = "<group>"; };
 		7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportEmptyCell.xib; sourceTree = "<group>"; };
 		7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCellModel.swift; sourceTree = "<group>"; };
-		7A8F334D2983226100DD7981 /* Debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
-		7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUtilSource.swift; sourceTree = "<group>"; };
+		7A8F334D2983226100DD7981 /* DebugSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSource.swift; sourceTree = "<group>"; };
+		7ADE896E2983386D00D3CDE7 /* ReportDaySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDaySource.swift; sourceTree = "<group>"; };
 		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
 		ED0E594528915A9000C77819 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		ED0E594628915A9000C77819 /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
@@ -776,8 +778,9 @@
 				EDB804F828944997004F9899 /* ElapsedTimeUtil.swift */,
 				ED8C226328D1341000A4CB24 /* ImportUtil.swift */,
 				7A8F33442982F5E200DD7981 /* RandomReportUtil.swift */,
-				7A8F334D2983226100DD7981 /* Debug.swift */,
-				7ADE896E2983386D00D3CDE7 /* ReportUtilSource.swift */,
+				7A8F334D2983226100DD7981 /* DebugSource.swift */,
+				7ADE896E2983386D00D3CDE7 /* ReportDaySource.swift */,
+				7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */,
 			);
 			path = dependencies;
 			sourceTree = "<group>";
@@ -1544,6 +1547,7 @@
 				ED971FED28D07BF500B965FF /* OpenFilePresenter.swift in Sources */,
 				ED5BECB62895C4BA00088DCA /* AnimationController.swift in Sources */,
 				ED880FD4285118E300DFD78F /* RandItemCell.swift in Sources */,
+				7A2D3D75298BF6FD00781ABF /* EnglishPracticSource.swift in Sources */,
 				ED5135C5286CD1EF00403238 /* NotesInstructionInfoCell.swift in Sources */,
 				7A8F33262982F25600DD7981 /* RandomReportDataSource.swift in Sources */,
 				ED5135C8286CD20200403238 /* NotesInstuctionInfoCellModel.swift in Sources */,
@@ -1588,7 +1592,7 @@
 				ED7918AB2863D1CD0041D407 /* TestUtil.swift in Sources */,
 				ED1D33DC286AA308004F1506 /* CasinoPresenter.swift in Sources */,
 				7A8F332E2982F2E200DD7981 /* KeyValueCell.swift in Sources */,
-				7A8F334E2983226100DD7981 /* Debug.swift in Sources */,
+				7A8F334E2983226100DD7981 /* DebugSource.swift in Sources */,
 				ED5F112E27177470006454AD /* RouleteView.swift in Sources */,
 				ED53614B286864B3004F1836 /* DisplayRawDataViewController.swift in Sources */,
 				ED435828286BCF4400F99459 /* SettingsColorCell.swift in Sources */,
@@ -1610,7 +1614,7 @@
 				ED7307902893FE4B005FFAF1 /* NotificationUtil.swift in Sources */,
 				EDD88CDE27354F810042D406 /* ViewCalculateUtil.swift in Sources */,
 				ED5135A9286CC2D100403238 /* DisplayQuestionCell.swift in Sources */,
-				7ADE896F2983386D00D3CDE7 /* ReportUtilSource.swift in Sources */,
+				7ADE896F2983386D00D3CDE7 /* ReportDaySource.swift in Sources */,
 				ED384C1428CE533E00AD3ABA /* FilesDetailDataSource.swift in Sources */,
 				EDD576F72850FEC400DAAEC3 /* CasinoViewController.swift in Sources */,
 				7A8F33402982F36D00DD7981 /* ReloadReportCell.swift in Sources */,

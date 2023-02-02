@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RandomReportUtilModel{
+struct RandomReportModel{
     let category: String
     let values: [String]
 }
@@ -15,19 +15,19 @@ struct RandomReportUtilModel{
 struct RandomReportUtilResultModel{
     let code: String
     let conclusion: String
-    let data: [RandomReportUtilModel]
+    let data: [RandomReportModel]
 }
 
-protocol RandomReportUtilSource{
-    func getCategories() -> [RandomReportUtilModel]
+protocol ReportSource{
+    func getCategories() -> [RandomReportModel]
     func getConclusion(input: String) -> String
 }
 
 public final class RandomReportUtil{
     
-    private let source: RandomReportUtilSource
+    private let source: ReportSource
     
-    init(source: RandomReportUtilSource){
+    init(source: ReportSource){
         self.source = source
     }
         
@@ -35,12 +35,12 @@ public final class RandomReportUtil{
         
         let rawData = self.source.getCategories()
         var code = ""
-        let data: [RandomReportUtilModel] = rawData.map{ item in
+        let data: [RandomReportModel] = rawData.map{ item in
             
             let randomIndex = Int.random(in: 0..<item.values.count)
             code += "\(randomIndex + 1)"
             
-            return RandomReportUtilModel(
+            return RandomReportModel(
                 category: item.category,
                 values: [item.values[randomIndex]]
             )

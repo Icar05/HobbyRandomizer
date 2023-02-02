@@ -34,7 +34,7 @@ class AppComponent{
     
     private let importUtil: ImportUtil
     
-    private let source: RandomReportUtilSource = ReportUtilSource()
+    private let source: ReportSource = EnglishPracticSource()
     
     
     init(){

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ReportUtilSource: RandomReportUtilSource{
+class ReportDaySource: ReportSource{
     
     
     private var hash: [String : String]  = [ :
@@ -17,18 +17,18 @@ class ReportUtilSource: RandomReportUtilSource{
     
     
     
-    func getCategories() -> [RandomReportUtilModel] {
+    func getCategories() -> [RandomReportModel] {
         return [
-            RandomReportUtilModel(
+            RandomReportModel(
                 category: "Year",
                 values: getYearValues()),
-            RandomReportUtilModel(
+            RandomReportModel(
                 category: "Month",
                 values: getMonthValues()),
-            RandomReportUtilModel(
+            RandomReportModel(
                 category: "Day",
                 values: getDayValues()),
-            RandomReportUtilModel(
+            RandomReportModel(
                 category: "Time",
                 values: getTimeValues())
         ]
