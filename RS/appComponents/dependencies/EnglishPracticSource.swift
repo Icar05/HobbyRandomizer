@@ -145,6 +145,16 @@ public final class EnglishPracticSource: ReportSource{
                 ]),
             
             RandomReportModel(
+                category: "Tags question",
+                values: [
+                    "Simple tag question",
+                    "I am",
+                    "Let's",
+                    "Order",
+                    "Enyone"
+                ]),
+            
+            RandomReportModel(
                 category: "Quantifiers",
                 values: [
                     "Many", "Much", "Few", "Little", "A lot of", "lake of countable", "lake of uncountable"
@@ -180,11 +190,11 @@ public final class EnglishPracticSource: ReportSource{
             RandomReportModel(
                 category: "Extra patterns",
                 values: [
-                    "Likewise",
+                    "Likewise / Otherwise",
                     "Nonetheless",
-                    "Moreover",
+                    "Moreover, Futhermore",
                     "much more",
-                    "most likely -Be likely",
+                    "Likely ( most likely -Be likely)",
                     "In most cases",
                     "Nessesarely",
                     "Although",
@@ -193,14 +203,19 @@ public final class EnglishPracticSource: ReportSource{
                     "That much = enought time",
                     "Unless = if not",
                     "With = if only",
-                    "Lest ( in order not to)",
                     "Though ( «but» in the end of sentence )",
                     "Whatever = ( if yes and not together, in any way )",
                     "In order to ( for something)",
+                    "Lest ( in order not to)",
                     "vice versa, to the contrary, backwards ",
-                    "Up to down"
+                    "Up to down",
+                    "Feel free",
+                    "Hand on a minute",
+                    "Once",
+                    "Be able",
+                    "How come?",
+                    "To succeed in"
                 ]),
-    
             
         ]
     }
