@@ -157,7 +157,7 @@ public final class EnglishPracticSource: ReportSource{
             RandomReportModel(
                 category: "Quantifiers",
                 values: [
-                    "Many", "Much", "Few", "Little", "A lot of", "lake of countable", "lake of uncountable"
+                    "Many", "Much", "Just Few", "Just Little", "A lot of", "lake of countable", "lake of uncountable"
                 ]),
             
             RandomReportModel(
