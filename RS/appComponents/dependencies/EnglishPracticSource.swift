@@ -116,11 +116,11 @@ public final class EnglishPracticSource: ReportSource{
             RandomReportModel(
                 category: "Wish ( if only )",
                 values: [
-                    "Regret in present",
+                    "Regret in present about general",
                     "Hope on future",
-                    "Complaining",
+                    "Complaining about something",
                     "Regret about possibilities",
-                    "Regret in past",
+                    "Regret about single past action",
                 ]),
             
             RandomReportModel(
