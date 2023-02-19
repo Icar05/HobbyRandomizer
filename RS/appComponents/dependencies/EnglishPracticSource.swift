@@ -214,7 +214,8 @@ public final class EnglishPracticSource: ReportSource{
                     "Once",
                     "Be able",
                     "How come?",
-                    "To succeed in"
+                    "To succeed in",
+                    "to have smth done..."
                 ]),
             
         ]
