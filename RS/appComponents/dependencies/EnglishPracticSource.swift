@@ -83,11 +83,11 @@ public final class EnglishPracticSource: ReportSource{
                     "prove","Refuse","threaten", "wait", "want", "would like"
                 ]),
             
-            RandomReportModel(
-                category: "Gerund & infinitive",
-                values: [
-                    "Begin","Continue","Hate","Intend","Love","Like","Start","Prefer","Advice","Permit"
-                ]),
+//            RandomReportModel(
+//                category: "Gerund & infinitive",
+//                values: [
+//                    "Begin","Continue","Hate","Intend","Love","Like","Start","Prefer","Advice","Permit"
+//                ]),
             
             RandomReportModel(
                 category: "Сonditions",
