@@ -227,6 +227,35 @@ public final class EnglishPracticSource: ReportSource{
                     "to have smth done..."
                 ]),
             
+            RandomReportModel(
+                category: "Frasal verbs",
+                values: [
+                    "Write ( something ) down",
+                    "Go after",
+                    "run near to",
+                    "Turn down",
+                    "get to know",
+                    "Show off",
+                    "I wanted ... smb.. to do smth",
+                    "To try on",
+                    "To help out",
+                    "Walk around",
+                    "distinguish",
+                    "Comes down",
+                    "Coming up",
+                    "Come across",
+                    "to the contrary",
+                    "to go cold turkey",
+                    "knuckle down",
+                    "get round to ",
+                    "Go about",
+                    "Feel free",
+                    "Find out",
+                    "Lay out",
+                    "Be able",
+                    "How come?"
+                ]),
+            
         ]
     }
     
