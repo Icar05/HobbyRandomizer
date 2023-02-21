@@ -168,6 +168,15 @@ public final class EnglishPracticSource: ReportSource{
                 ]),
             
             RandomReportModel(
+                category: "Either / Neither",
+                values: [
+                    "Either .. or simpe",
+                    "Neither .. nor simpe",
+                    "Either .. answer",
+                    "Neither .. answer"
+                ]),
+            
+            RandomReportModel(
                 category: "Extra rules",
                 values: [
                     "Opposite prefix",
