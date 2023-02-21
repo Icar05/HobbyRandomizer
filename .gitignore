@@ -1,3 +1,4 @@
 *.xcuserstate
 .DS_Store
 RS/appComponents/dependencies/Debug.swift
+RS/appComponents/dependencies/DebugSource.swift
