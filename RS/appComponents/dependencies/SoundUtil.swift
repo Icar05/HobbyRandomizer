@@ -20,6 +20,8 @@ enum SoundCaf: String{
     case Violin = "Violin"
     case Guitarra = "Guitarra"
     case Blur = "blur"
+    case birdOne = "birdOne"
+    case birdTwo = "birdTwo"
 }
 
 
@@ -73,7 +75,7 @@ class SoundUtil{
     }
     
     static func getSoundForTimer() -> SoundCaf{
-        return retroStyle ?  SoundCaf.OldClock : SoundCaf.Blur
+        return retroStyle ?  SoundCaf.OldClock : SoundCaf.birdOne
     }
     
 }

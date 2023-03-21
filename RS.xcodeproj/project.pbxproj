@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1D11BC29C9E72200FD4A6A /* birdOne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */; };
+		7A1D11BD29C9E72200FD4A6A /* birdTwo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */; };
 		7A2D3D75298BF6FD00781ABF /* EnglishPracticSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */; };
 		7A7485AD293BC9380000B8A9 /* blur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A7485AC293BC9380000B8A9 /* blur.mp3 */; };
 		7A8F33212982F22600DD7981 /* RandomReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */; };
@@ -233,6 +235,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birdOne.mp3; sourceTree = "<group>"; };
+		7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birdTwo.mp3; sourceTree = "<group>"; };
 		7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticSource.swift; sourceTree = "<group>"; };
 		7A7485AC293BC9380000B8A9 /* blur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blur.mp3; sourceTree = "<group>"; };
 		7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomReportViewController.swift; sourceTree = "<group>"; };
@@ -965,6 +969,8 @@
 		ED55EA582894C87B00EDB0A0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */,
+				7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */,
 				7A7485AC293BC9380000B8A9 /* blur.mp3 */,
 				ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */,
 				ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */,
@@ -1453,6 +1459,7 @@
 				EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */,
 				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
+				7A1D11BC29C9E72200FD4A6A /* birdOne.mp3 in Resources */,
 				7A8F33352982F30E00DD7981 /* ReportHeaderCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
 				ED384C1928CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib in Resources */,
@@ -1475,6 +1482,7 @@
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED384C2428CE642A00AD3ABA /* OpenFileViewController.xib in Resources */,
 				EDFFBDE82896252C0090BC87 /* OldClock.mp3 in Resources */,
+				7A1D11BD29C9E72200FD4A6A /* birdTwo.mp3 in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED1D33B9286A5E33004F1506 /* SettingsViewController.xib in Resources */,
