@@ -11,18 +11,19 @@ public final class DisplayActionDataViewController:  UIViewController {
     
     
     
+    private let dataSource = DisplayActionDataDataSourse()
+    
+    private let presenter: DisplayActionDataPresenter
+    
+    private let alertUtil: AlertUtil
+    
+    private var soundUtil: SoundUtil? = nil
     
     @IBOutlet weak var emptyViewLabel: UILabel!
     
     @IBOutlet weak var emptyView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
-    
-    private let dataSource = DisplayActionDataDataSourse()
-    
-    private let presenter: DisplayActionDataPresenter
-    
-    private let alertUtil: AlertUtil
     
     
     
@@ -85,6 +86,11 @@ public final class DisplayActionDataViewController:  UIViewController {
         let destination = navigator.getRandomizerScreen(models: self.dataSource.getData(), alertUtil: alertUtil)
         navigator.navigate(start: self, destination: destination)
     }
+    
+    private func onButtonDidTap() {
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
+    }
 
 }
 
@@ -92,6 +98,7 @@ extension DisplayActionDataViewController: DisplayActionSourceDelegate{
     
     
     func didImportClick(indexPases: [IndexPath]) {
+        self.onButtonDidTap()
         self.presenter.importData()
         self.dataSource.clearData()
         self.tableView.deleteRows(at: indexPases, with: .fade)
