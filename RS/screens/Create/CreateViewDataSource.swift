@@ -11,6 +11,7 @@ protocol CreateDataSourceDelegate: NSObject{
     func onModelCreated(freshModels: [ActionModel])
     func onModelDeleted(freshModels: [ActionModel])
     func onClearDatatDidTap(indexPath: [IndexPath])
+    func onButtonDidTap()
 }
 
 class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate, CreateViewDelegate {
@@ -54,6 +55,7 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
             let cell = tableView.dequeueReusableCell(withIdentifier: getExportCellIndifier(), for: indexPath) as! ActionButtonCell
             cell.modify()
             cell.setupDelegate(callback: {
+                self.onButtonDidTap()
                 let indexesCount = self.data.count
                 self.data.removeAll()
                 self.delegate?.onClearDatatDidTap(indexPath: self.prepareIndexes(indexesCount: indexesCount))
@@ -92,6 +94,10 @@ class CreateViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate
     func onItemCreated(item: ActionModel) {
         self.data.append(item)
         self.delegate?.onModelCreated(freshModels: self.data)
+    }
+    
+    func onButtonDidTap() {
+        self.delegate?.onButtonDidTap()
     }
     
     

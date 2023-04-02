@@ -10,6 +10,7 @@ import UIKit
 
 protocol CreateViewDelegate: NSObject{
     func onItemCreated(item: ActionModel)
+    func onButtonDidTap()
 }
 
 @IBDesignable
@@ -74,6 +75,7 @@ class CreateIdeaView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     @objc func grabData(tapGestureRecognizer: UITapGestureRecognizer){
+        self.delegate?.onButtonDidTap()
         let title: String? = self.getData(field: titleTextField)?.trimmingCharacters(in: .whitespaces)
         let subtitle: String? = self.getData(field: descTextField)?.trimmingCharacters(in: .whitespaces)
         

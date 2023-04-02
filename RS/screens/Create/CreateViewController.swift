@@ -8,17 +8,18 @@
 import UIKit
 
 public final class CreateViewController: UIViewController, CreateDataSourceDelegate {
+    
    
     
-    
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+    private var soundUtil: SoundUtil? = nil
+
     fileprivate let presenter: CreatePresenter
     
     fileprivate let dataSource = CreateViewDataSource()
     
     fileprivate let alertUtil: AlertUtil
+    
+    @IBOutlet weak var tableView: UITableView!
 
     
     @available(iOS, unavailable)
@@ -64,6 +65,11 @@ public final class CreateViewController: UIViewController, CreateDataSourceDeleg
         self.tableView.deleteRows(at: indexPath, with: .fade)
         self.tableView.reloadData()
         self.presenter.clearData()
+    }
+    
+    func onButtonDidTap() {
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
     }
     
     func onClearFinished(value: Bool){
