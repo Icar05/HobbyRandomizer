@@ -60,7 +60,7 @@ public final class RandomReportViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.soundUtil = getAppComponent().getSoundUtil(sound: .Click)
+        self.soundUtil = getAppComponent().getSoundUtil(sound: .DoubleClick)
     }
     
     func showLoadingState(){
@@ -89,6 +89,7 @@ public final class RandomReportViewController: UIViewController {
     }
     
     func playClick(){
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.responseSound())
         self.soundUtil?.play()
     }
     

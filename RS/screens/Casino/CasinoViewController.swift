@@ -45,7 +45,7 @@ public final class CasinoViewController: UIViewController {
     public override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
 
-           self.soundUtil = getAppComponent().getSoundUtil(sound: .Click)
+           self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.rotationSound())
        }
     
     public override func viewDidLoad() {

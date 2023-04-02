@@ -46,7 +46,7 @@ class NotificationUtil{
     
     func sceduleNotification(maxTimeInMinutes: Int){
     
-        let soundName = UNNotificationSoundName("\(SoundUtil.getSoundForTimer().rawValue).mp3")
+        let soundName = UNNotificationSoundName("\(SoundCaf.timerSound().rawValue).mp3")
         let sound = UNNotificationSound(named: soundName)
         let time: Double = Double(maxTimeInMinutes.toSeconds())
         let content =  UNMutableNotificationContent()

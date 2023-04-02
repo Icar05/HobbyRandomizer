@@ -9,21 +9,25 @@ import Foundation
 import AVFoundation
 
 
-
-enum SoundCaf: String{
-    case Click = "Click"
-    case NewClick = "NewClick"
-    case OldClock = "OldClock"
-    case OldAlarm = "old-alarm"
-    case ModernAlarm = "modern-alarm"
-    case StandartAlarm = "standart-alarm"
-    case Violin = "Violin"
-    case Guitarra = "Guitarra"
-    case Blur = "blur"
-    case birdOne = "birdOne"
-    case birdTwo = "birdTwo"
+ enum SoundCaf: String{
+    case OldRing          =  "OldRing"
+    case StandartAlarm    =  "standart-alarm"
+    case birdOne          =  "birdOne"
+    case birdTwo          =  "birdTwo"
+    
+    case DoubleClick      =  "DoubleClick"
+    case Tap              =  "Tap"
+//    case RecorderClick    =  "RecorderClick"
+    
+    case MouseOff         =  "MouseOff"
+    case MouseOn          =  "MouseOn"
+    case Response         =  "Response"
+    case Ring             =  "Ring"
+    case SimpleResponse   =  "SimpleResponse"
+    case SwitchOff        =  "SwitchOff"
+    case SwitchOn         =  "SwitchOn"
+ 
 }
-
 
 class SoundUtil{
     
@@ -74,8 +78,27 @@ class SoundUtil{
         player.play()
     }
     
-    static func getSoundForTimer() -> SoundCaf{
-        return retroStyle ?  SoundCaf.OldClock : SoundCaf.birdOne
+}
+
+
+extension SoundCaf{
+    static func timerSound() -> SoundCaf{
+        return retroStyle ?  SoundCaf.OldRing : SoundCaf.birdOne
     }
     
+    static func sectionSound() -> SoundCaf{
+        return .DoubleClick 
+    }
+    
+    static func rotationSound() -> SoundCaf{
+        return .Tap
+    }
+    
+    static func transitionSound() -> SoundCaf{
+        return .SwitchOn
+    }
+    
+    static func responseSound() -> SoundCaf {
+        return .Response
+    }
 }

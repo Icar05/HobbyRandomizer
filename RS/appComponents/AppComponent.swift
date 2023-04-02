@@ -43,7 +43,7 @@ class AppComponent{
         self.elapsedTimeUtil = ElapsedTimeUtil(storage: storage)
         self.timerUtil = TimerUtil(
             notificationUtil: notificationUtil,
-            soundUtil: SoundUtil(enable: true, volume: 1.0, sound: SoundUtil.getSoundForTimer()),
+            soundUtil: SoundUtil(enable: true, volume: 1.0, sound: SoundCaf.timerSound()),
             elapsedTimeUtil: elapsedTimeUtil)
         self.randomReportUtil = RandomReportUtil(source: source)
     }

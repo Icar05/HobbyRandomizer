@@ -10,7 +10,6 @@
 		7A1D11BC29C9E72200FD4A6A /* birdOne.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */; };
 		7A1D11BD29C9E72200FD4A6A /* birdTwo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */; };
 		7A2D3D75298BF6FD00781ABF /* EnglishPracticSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */; };
-		7A7485AD293BC9380000B8A9 /* blur.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A7485AC293BC9380000B8A9 /* blur.mp3 */; };
 		7A8F33212982F22600DD7981 /* RandomReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */; };
 		7A8F33222982F22600DD7981 /* RandomReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F33202982F22600DD7981 /* RandomReportViewController.xib */; };
 		7A8F33242982F23800DD7981 /* RandomReportPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F33232982F23800DD7981 /* RandomReportPresenter.swift */; };
@@ -31,6 +30,16 @@
 		7A8F334929831D5F00DD7981 /* ReportEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */; };
 		7A8F334A29831D5F00DD7981 /* ReportEmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */; };
 		7A8F334C29831DA700DD7981 /* ReportEmptyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */; };
+		7ABD68FD29D9FABC0010114C /* RecorderClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F329D9FABC0010114C /* RecorderClick.mp3 */; };
+		7ABD68FE29D9FABC0010114C /* Ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F429D9FABC0010114C /* Ring.mp3 */; };
+		7ABD68FF29D9FABC0010114C /* DoubleClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F529D9FABC0010114C /* DoubleClick.mp3 */; };
+		7ABD690029D9FABC0010114C /* Response.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F629D9FABC0010114C /* Response.mp3 */; };
+		7ABD690129D9FABC0010114C /* MouseOff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F729D9FABC0010114C /* MouseOff.mp3 */; };
+		7ABD690229D9FABC0010114C /* MouseOn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F829D9FABC0010114C /* MouseOn.mp3 */; };
+		7ABD690329D9FABC0010114C /* SwitchOff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68F929D9FABC0010114C /* SwitchOff.mp3 */; };
+		7ABD690429D9FABC0010114C /* SwitchOn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68FA29D9FABC0010114C /* SwitchOn.mp3 */; };
+		7ABD690529D9FABC0010114C /* SimpleResponse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68FB29D9FABC0010114C /* SimpleResponse.mp3 */; };
+		7ABD690629D9FABC0010114C /* Tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7ABD68FC29D9FABC0010114C /* Tap.mp3 */; };
 		7ADE896F2983386D00D3CDE7 /* ReportDaySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE896E2983386D00D3CDE7 /* ReportDaySource.swift */; };
 		7AE6C93229A139F90088DA7B /* DebugSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6C93129A139F90088DA7B /* DebugSource.swift */; };
 		ED025991271AFC8300FC8AD7 /* BaseAnimationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */; };
@@ -139,10 +148,8 @@
 		ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616328686D73004F1836 /* DisplayRawDataCell.swift */; };
 		ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53616428686D73004F1836 /* DisplayRawDataCell.xib */; };
 		ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */; };
-		ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA652894D63700EDB0A0 /* Click.mp3 */; };
-		ED55EA6E2894DD6400EDB0A0 /* old-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */; };
+		ED55EA662894D63700EDB0A0 /* OldClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA652894D63700EDB0A0 /* OldClick.mp3 */; };
 		ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */; };
-		ED55EA702894DD6400EDB0A0 /* modern-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
 		ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED5A6C55284FD0370028BEED /* MenuViewController.xib */; };
@@ -231,14 +238,13 @@
 		EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5602864EEAD00565AAF /* Localizable.strings */; };
 		EDF8A5742865060300565AAF /* TopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF8A5722865060300565AAF /* TopCell.swift */; };
 		EDF8A5752865060300565AAF /* TopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF8A5732865060300565AAF /* TopCell.xib */; };
-		EDFFBDE82896252C0090BC87 /* OldClock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFFBDE72896252C0090BC87 /* OldClock.mp3 */; };
+		EDFFBDE82896252C0090BC87 /* OldRing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EDFFBDE72896252C0090BC87 /* OldRing.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birdOne.mp3; sourceTree = "<group>"; };
 		7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = birdTwo.mp3; sourceTree = "<group>"; };
 		7A2D3D74298BF6FD00781ABF /* EnglishPracticSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticSource.swift; sourceTree = "<group>"; };
-		7A7485AC293BC9380000B8A9 /* blur.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blur.mp3; sourceTree = "<group>"; };
 		7A8F331F2982F22600DD7981 /* RandomReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomReportViewController.swift; sourceTree = "<group>"; };
 		7A8F33202982F22600DD7981 /* RandomReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomReportViewController.xib; sourceTree = "<group>"; };
 		7A8F33232982F23800DD7981 /* RandomReportPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomReportPresenter.swift; sourceTree = "<group>"; };
@@ -259,6 +265,16 @@
 		7A8F334729831D5F00DD7981 /* ReportEmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCell.swift; sourceTree = "<group>"; };
 		7A8F334829831D5F00DD7981 /* ReportEmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportEmptyCell.xib; sourceTree = "<group>"; };
 		7A8F334B29831DA700DD7981 /* ReportEmptyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEmptyCellModel.swift; sourceTree = "<group>"; };
+		7ABD68F329D9FABC0010114C /* RecorderClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RecorderClick.mp3; sourceTree = "<group>"; };
+		7ABD68F429D9FABC0010114C /* Ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ring.mp3; sourceTree = "<group>"; };
+		7ABD68F529D9FABC0010114C /* DoubleClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DoubleClick.mp3; sourceTree = "<group>"; };
+		7ABD68F629D9FABC0010114C /* Response.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Response.mp3; sourceTree = "<group>"; };
+		7ABD68F729D9FABC0010114C /* MouseOff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MouseOff.mp3; sourceTree = "<group>"; };
+		7ABD68F829D9FABC0010114C /* MouseOn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MouseOn.mp3; sourceTree = "<group>"; };
+		7ABD68F929D9FABC0010114C /* SwitchOff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SwitchOff.mp3; sourceTree = "<group>"; };
+		7ABD68FA29D9FABC0010114C /* SwitchOn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SwitchOn.mp3; sourceTree = "<group>"; };
+		7ABD68FB29D9FABC0010114C /* SimpleResponse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SimpleResponse.mp3; sourceTree = "<group>"; };
+		7ABD68FC29D9FABC0010114C /* Tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Tap.mp3; sourceTree = "<group>"; };
 		7ADE896E2983386D00D3CDE7 /* ReportDaySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDaySource.swift; sourceTree = "<group>"; };
 		7AE6C93129A139F90088DA7B /* DebugSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSource.swift; sourceTree = "<group>"; };
 		ED025990271AFC8300FC8AD7 /* BaseAnimationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAnimationObserver.swift; sourceTree = "<group>"; };
@@ -368,10 +384,8 @@
 		ED53616328686D73004F1836 /* DisplayRawDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCell.swift; sourceTree = "<group>"; };
 		ED53616428686D73004F1836 /* DisplayRawDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataCell.xib; sourceTree = "<group>"; };
 		ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCellModel.swift; sourceTree = "<group>"; };
-		ED55EA652894D63700EDB0A0 /* Click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Click.mp3; sourceTree = "<group>"; };
-		ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "old-alarm.mp3"; sourceTree = "<group>"; };
+		ED55EA652894D63700EDB0A0 /* OldClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OldClick.mp3; sourceTree = "<group>"; };
 		ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "standart-alarm.mp3"; sourceTree = "<group>"; };
-		ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "modern-alarm.mp3"; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		ED5A6C55284FD0370028BEED /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
@@ -466,7 +480,7 @@
 		EDF8A56F2864F3E900565AAF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDF8A5722865060300565AAF /* TopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCell.swift; sourceTree = "<group>"; };
 		EDF8A5732865060300565AAF /* TopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopCell.xib; sourceTree = "<group>"; };
-		EDFFBDE72896252C0090BC87 /* OldClock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OldClock.mp3; sourceTree = "<group>"; };
+		EDFFBDE72896252C0090BC87 /* OldRing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OldRing.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -969,15 +983,22 @@
 		ED55EA582894C87B00EDB0A0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				7ABD68F529D9FABC0010114C /* DoubleClick.mp3 */,
+				7ABD68F729D9FABC0010114C /* MouseOff.mp3 */,
+				7ABD68F829D9FABC0010114C /* MouseOn.mp3 */,
+				7ABD68F329D9FABC0010114C /* RecorderClick.mp3 */,
+				7ABD68F629D9FABC0010114C /* Response.mp3 */,
+				7ABD68F429D9FABC0010114C /* Ring.mp3 */,
+				7ABD68FB29D9FABC0010114C /* SimpleResponse.mp3 */,
+				7ABD68F929D9FABC0010114C /* SwitchOff.mp3 */,
+				7ABD68FA29D9FABC0010114C /* SwitchOn.mp3 */,
+				7ABD68FC29D9FABC0010114C /* Tap.mp3 */,
 				7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */,
 				7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */,
-				7A7485AC293BC9380000B8A9 /* blur.mp3 */,
 				ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */,
-				ED55EA6A2894DD6400EDB0A0 /* old-alarm.mp3 */,
-				ED55EA6C2894DD6400EDB0A0 /* modern-alarm.mp3 */,
-				EDFFBDE72896252C0090BC87 /* OldClock.mp3 */,
+				EDFFBDE72896252C0090BC87 /* OldRing.mp3 */,
 				ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */,
-				ED55EA652894D63700EDB0A0 /* Click.mp3 */,
+				ED55EA652894D63700EDB0A0 /* OldClick.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1455,13 +1476,16 @@
 				EDCFE5E92869207300AF3AC4 /* CathegoryCell.xib in Resources */,
 				ED1D33E1286AAE64004F1506 /* SettingsStepperCell.xib in Resources */,
 				ED3642552717209F0083D578 /* RandomizerUtil.xib in Resources */,
+				7ABD690029D9FABC0010114C /* Response.mp3 in Resources */,
 				ED435829286BCF4400F99459 /* SettingsColorCell.xib in Resources */,
 				EDCFE5EE286921DF00AF3AC4 /* InfoDetailCell.xib in Resources */,
+				7ABD690629D9FABC0010114C /* Tap.mp3 in Resources */,
 				ED1D33D2286A6E10004F1506 /* SettingsVolumeCell.xib in Resources */,
 				ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */,
 				7A1D11BC29C9E72200FD4A6A /* birdOne.mp3 in Resources */,
 				7A8F33352982F30E00DD7981 /* ReportHeaderCell.xib in Resources */,
 				ED6EEF6C2715C6D300D4EFE9 /* LaunchScreen.storyboard in Resources */,
+				7ABD68FE29D9FABC0010114C /* Ring.mp3 in Resources */,
 				ED384C1928CE5EDD00AD3ABA /* FileDetailCellTableViewCell.xib in Resources */,
 				EDF8A5682864EEAD00565AAF /* Localizable.strings in Resources */,
 				ED536150286864D1004F1836 /* DisplayInfoDataViewController.xib in Resources */,
@@ -1473,29 +1497,32 @@
 				ED5A6C57284FD0370028BEED /* MenuViewController.xib in Resources */,
 				ED36424D271712BF0083D578 /* CreateIdeaView.xib in Resources */,
 				ED1D33C5286A68AD004F1506 /* SettingsSwichCell.xib in Resources */,
+				7ABD68FF29D9FABC0010114C /* DoubleClick.mp3 in Resources */,
 				ED7918BC2863EC9E0041D407 /* ActionButtonCell.xib in Resources */,
-				ED55EA702894DD6400EDB0A0 /* modern-alarm.mp3 in Resources */,
 				ED5135AA286CC2D100403238 /* DisplayQuestionCell.xib in Resources */,
-				ED55EA6E2894DD6400EDB0A0 /* old-alarm.mp3 in Resources */,
+				7ABD690229D9FABC0010114C /* MouseOn.mp3 in Resources */,
 				ED880FE228515CC600DFD78F /* RandomizerViewController.xib in Resources */,
 				ED7918A72863C1EB0041D407 /* DisplayFileCell.xib in Resources */,
 				EDE5483928517A570018A75B /* ShowViewController.xib in Resources */,
 				ED384C2428CE642A00AD3ABA /* OpenFileViewController.xib in Resources */,
-				EDFFBDE82896252C0090BC87 /* OldClock.mp3 in Resources */,
+				EDFFBDE82896252C0090BC87 /* OldRing.mp3 in Resources */,
+				7ABD690529D9FABC0010114C /* SimpleResponse.mp3 in Resources */,
 				7A1D11BD29C9E72200FD4A6A /* birdTwo.mp3 in Resources */,
 				ED880FC328510EEA00DFD78F /* DebugViewController.xib in Resources */,
 				ED6EEF672715C6D200D4EFE9 /* Main.storyboard in Resources */,
 				ED1D33B9286A5E33004F1506 /* SettingsViewController.xib in Resources */,
 				ED0E59522891618700C77819 /* SettingsSimpleCellTableViewCell.xib in Resources */,
+				7ABD690129D9FABC0010114C /* MouseOff.mp3 in Resources */,
 				ED880FCF285118B500DFD78F /* CreateNewItemCell.xib in Resources */,
 				ED5135D6286CF53200403238 /* SelectColorCell.xib in Resources */,
 				7A8F332F2982F2E200DD7981 /* KeyValueCell.xib in Resources */,
+				7ABD690429D9FABC0010114C /* SwitchOn.mp3 in Resources */,
 				ED53614C286864B3004F1836 /* DisplayRawDataViewController.xib in Resources */,
 				ED4491AE2866938300CCC32D /* ImportDataCell.xib in Resources */,
-				7A7485AD293BC9380000B8A9 /* blur.mp3 in Resources */,
 				ED5135C0286CD1B100403238 /* NotesInstuctionHeaderCell.xib in Resources */,
 				ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */,
 				ED1D33BE286A60C6004F1506 /* SettingsHeaderCell.xib in Resources */,
+				7ABD68FD29D9FABC0010114C /* RecorderClick.mp3 in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				7A8F33412982F36D00DD7981 /* ReloadReportCell.xib in Resources */,
 				ED384C0B28CE47E900AD3ABA /* NewClick.mp3 in Resources */,
@@ -1507,13 +1534,14 @@
 				ED13A2DA28AEDF22002F56B0 /* TestViewController.xib in Resources */,
 				ED5135E6286D22ED00403238 /* YesNoUtil.xib in Resources */,
 				EDD576F82850FEC400DAAEC3 /* CasinoViewController.xib in Resources */,
+				7ABD690329D9FABC0010114C /* SwitchOff.mp3 in Resources */,
 				ED79189D2863C07E0041D407 /* FilesViewController.xib in Resources */,
 				ED5A6C63284FE0740028BEED /* InitialViewController.xib in Resources */,
 				ED5F1130271774E7006454AD /* RouleteView.xib in Resources */,
 				ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */,
 				ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
-				ED55EA662894D63700EDB0A0 /* Click.mp3 in Resources */,
+				ED55EA662894D63700EDB0A0 /* OldClick.mp3 in Resources */,
 				EDF8A5752865060300565AAF /* TopCell.xib in Resources */,
 				ED5135B9286CC9D900403238 /* NotesInstructionViewController.xib in Resources */,
 			);
