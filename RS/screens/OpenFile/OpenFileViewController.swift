@@ -13,7 +13,7 @@ import MobileCoreServices
 public final class OpenFileViewController: UIViewController {
     
     
-    
+    private var soundUtil: SoundUtil? = nil
     
     private let presenter: OpenFilePresenter
     
@@ -49,12 +49,18 @@ public final class OpenFileViewController: UIViewController {
     }
     
     @objc func buttonAction(sender: UIButton!) {
+        self.actionButtonDidTap()
         self.openFileUtil.delegate = self
         if #available(iOS 14.0, *) {
             self.openFileUtil.startPicker(view: self)
         } else {
             // Fallback on earlier versions
         }
+    }
+    
+    private func actionButtonDidTap(){
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
     }
     
 }
