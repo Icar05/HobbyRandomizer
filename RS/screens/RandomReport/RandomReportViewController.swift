@@ -27,7 +27,7 @@ public final class RandomReportViewController: UIViewController {
     
     @IBAction func didPrepareReportClick(_ sender: Any) {
         self.presenter.prepareReport()
-        self.soundUtil?.play()
+        self.playClick()
     }
     
     @available(iOS, unavailable)
@@ -89,10 +89,15 @@ public final class RandomReportViewController: UIViewController {
     }
     
     func playClick(){
-        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.responseSound())
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
         self.soundUtil?.play()
     }
     
+    
+    func playResult(){
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.responseSound())
+        self.soundUtil?.play()
+    }
     
     private func registerCells(models: [ReportModel]){
         
@@ -103,7 +108,7 @@ public final class RandomReportViewController: UIViewController {
         
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
-        self.soundUtil?.play()
+        self.playResult()
     }
 
 }

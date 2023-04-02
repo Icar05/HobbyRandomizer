@@ -83,7 +83,6 @@
 		ED36426327174FE80083D578 /* PrettyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36426227174FE80083D578 /* PrettyLabel.swift */; };
 		ED364267271755000083D578 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364266271755000083D578 /* UserDefaultsStorage.swift */; };
 		ED364269271757090083D578 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED364268271757090083D578 /* CreatePresenter.swift */; };
-		ED384C0B28CE47E900AD3ABA /* NewClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */; };
 		ED384C0F28CE531A00AD3ABA /* FilesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */; };
 		ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */; };
 		ED384C1228CE532C00AD3ABA /* FilesDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */; };
@@ -148,7 +147,6 @@
 		ED53616528686D73004F1836 /* DisplayRawDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616328686D73004F1836 /* DisplayRawDataCell.swift */; };
 		ED53616628686D73004F1836 /* DisplayRawDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED53616428686D73004F1836 /* DisplayRawDataCell.xib */; };
 		ED53616828686D84004F1836 /* DisplayRawDataCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */; };
-		ED55EA662894D63700EDB0A0 /* OldClick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA652894D63700EDB0A0 /* OldClick.mp3 */; };
 		ED55EA6F2894DD6400EDB0A0 /* standart-alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */; };
 		ED5A6C51284FC8F00028BEED /* MenuCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */; };
 		ED5A6C56284FD0370028BEED /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A6C54284FD0370028BEED /* MenuViewController.swift */; };
@@ -318,7 +316,6 @@
 		ED36426227174FE80083D578 /* PrettyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrettyLabel.swift; sourceTree = "<group>"; };
 		ED364266271755000083D578 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		ED364268271757090083D578 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
-		ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NewClick.mp3; sourceTree = "<group>"; };
 		ED384C0D28CE531A00AD3ABA /* FilesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailViewController.swift; sourceTree = "<group>"; };
 		ED384C0E28CE531A00AD3ABA /* FilesDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilesDetailViewController.xib; sourceTree = "<group>"; };
 		ED384C1128CE532C00AD3ABA /* FilesDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDetailPresenter.swift; sourceTree = "<group>"; };
@@ -384,7 +381,6 @@
 		ED53616328686D73004F1836 /* DisplayRawDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCell.swift; sourceTree = "<group>"; };
 		ED53616428686D73004F1836 /* DisplayRawDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayRawDataCell.xib; sourceTree = "<group>"; };
 		ED53616728686D84004F1836 /* DisplayRawDataCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRawDataCellModel.swift; sourceTree = "<group>"; };
-		ED55EA652894D63700EDB0A0 /* OldClick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = OldClick.mp3; sourceTree = "<group>"; };
 		ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "standart-alarm.mp3"; sourceTree = "<group>"; };
 		ED5A6C50284FC8F00028BEED /* MenuCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellModel.swift; sourceTree = "<group>"; };
 		ED5A6C54284FD0370028BEED /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -995,10 +991,8 @@
 				7ABD68FC29D9FABC0010114C /* Tap.mp3 */,
 				7A1D11BA29C9E72100FD4A6A /* birdOne.mp3 */,
 				7A1D11BB29C9E72200FD4A6A /* birdTwo.mp3 */,
-				ED384C0A28CE47E900AD3ABA /* NewClick.mp3 */,
 				EDFFBDE72896252C0090BC87 /* OldRing.mp3 */,
 				ED55EA6B2894DD6400EDB0A0 /* standart-alarm.mp3 */,
-				ED55EA652894D63700EDB0A0 /* OldClick.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -1525,7 +1519,6 @@
 				7ABD68FD29D9FABC0010114C /* RecorderClick.mp3 in Resources */,
 				ED880FD5285118E300DFD78F /* RandItemCell.xib in Resources */,
 				7A8F33412982F36D00DD7981 /* ReloadReportCell.xib in Resources */,
-				ED384C0B28CE47E900AD3ABA /* NewClick.mp3 in Resources */,
 				ED11A14528972E4400503BFF /* SettingsTimerMinutesCell.xib in Resources */,
 				ED5135DD286D1F5D00403238 /* YesNoViewController.xib in Resources */,
 				7A8F333B2982F33600DD7981 /* ResultCodeCell.xib in Resources */,
@@ -1541,7 +1534,6 @@
 				ED384C1028CE531A00AD3ABA /* FilesDetailViewController.xib in Resources */,
 				ED6FC35F2895B657003A034A /* UISelectionDialog.xib in Resources */,
 				ED5F11382717C963006454AD /* Colors.xcassets in Resources */,
-				ED55EA662894D63700EDB0A0 /* OldClick.mp3 in Resources */,
 				EDF8A5752865060300565AAF /* TopCell.xib in Resources */,
 				ED5135B9286CC9D900403238 /* NotesInstructionViewController.xib in Resources */,
 			);

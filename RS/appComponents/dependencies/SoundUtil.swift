@@ -17,7 +17,7 @@ import AVFoundation
     
     case DoubleClick      =  "DoubleClick"
     case Tap              =  "Tap"
-//    case RecorderClick    =  "RecorderClick"
+    case RecorderClick    =  "RecorderClick"
     
     case MouseOff         =  "MouseOff"
     case MouseOn          =  "MouseOn"
@@ -91,14 +91,18 @@ extension SoundCaf{
     }
     
     static func rotationSound() -> SoundCaf{
-        return .Tap
+        return .MouseOff
     }
     
     static func transitionSound() -> SoundCaf{
-        return .SwitchOn
+        return .Tap
     }
     
     static func responseSound() -> SoundCaf {
-        return .Response
+        return .SimpleResponse
+    }
+    
+    static func actionSound() -> SoundCaf{ // mouse off
+        return .MouseOff
     }
 }
