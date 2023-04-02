@@ -66,6 +66,7 @@ public final class SettingsPresenter {
                 title: Translations.Settings.soundEnable,
                 enable: preferences.isEnabledSound,
                 callback: { [weak self] in
+                    self?.view.didSwichChanged()
                     self?.model.isEnabledSound = $0
             }),
             SettingsVolumeCellModel(
@@ -88,18 +89,21 @@ public final class SettingsPresenter {
                 title: Translations.Settings.timerAutoReload,
                 enable: preferences.autoRelaunch,
                 callback: { [weak self] in
+                    self?.view.didSwichChanged()
                     self?.model.autoRelaunch = $0
             }),
             SettingsSwichCellModel(
                 title: Translations.Settings.singleProgressColor,
                 enable: preferences.timerSingleColor,
                 callback: { [weak self] in
+                    self?.view.didSwichChanged()
                     self?.model.timerSingleColor = $0
             }),
             SettingsColorCellModel(
                 title: Translations.Settings.timerLabel,
                 currentColor: preferences.timerColor.uiColor,
                 callback: { [weak self] in
+                    self?.view.didColorSelectorTap()
                     self?.view.startSelectColorAlert(
                         title: $0,
                         currentColor: $1,
@@ -123,6 +127,7 @@ public final class SettingsPresenter {
                 title: Translations.SelectColor.yes,
                 currentColor: preferences.yesColor.uiColor,
                 callback: { [weak self] in
+                    self?.view.didColorSelectorTap()
                     self?.view.startSelectColorAlert(
                         title: $0,
                         currentColor: $1,
@@ -135,6 +140,7 @@ public final class SettingsPresenter {
                 title: Translations.SelectColor.no,
                 currentColor: preferences.noColor.uiColor,
                 callback: { [weak self] in
+                    self?.view.didColorSelectorTap()
                     self?.view.startSelectColorAlert(
                         title: $0,
                         currentColor: $1,

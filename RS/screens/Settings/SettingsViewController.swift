@@ -11,11 +11,15 @@ public final class SettingsViewController: UIViewController {
     
     
     
-    @IBOutlet weak var tableView: UITableView!
+    private var soundUtil: SoundUtil? = nil
     
     private let dataSource = SettingsDataSourse()
     
     private let presenter: SettingsPresenter
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+ 
     
     
     
@@ -120,6 +124,16 @@ public final class SettingsViewController: UIViewController {
         
         self.dataSource.setData(data: models)
         self.tableView.reloadData()
+    }
+    
+    func didColorSelectorTap(){
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.sectionSound())
+        self.soundUtil?.play()
+    }
+    
+    func didSwichChanged() {
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
     }
     
 }
