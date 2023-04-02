@@ -11,6 +11,8 @@ public final class TimerViewController: UIViewController {
     
     
     
+    private var soundUtil: SoundUtil? = nil
+    
     private unowned var timerUtil: TimerUtil
     
     private let presenter: TimerPresenter
@@ -74,6 +76,11 @@ extension TimerViewController: TimerViewDelegate{
     public func didRefreshClick() {
         self.timerUtil.stopSound()
         self.autoRelaunch ? timerUtil.startTimer() : timerUtil.refreshTimer()
+    }
+    
+    public func onButtonDidTap() {
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
     }
     
 }

@@ -15,6 +15,7 @@ public protocol TimerViewDelegate: NSObject{
     func didStartTimerClick()
     func didStopTimerClick()
     func didRefreshClick()
+    func onButtonDidTap()
 }
 
 
@@ -195,6 +196,7 @@ class TimerView: UIView {
     
     
     @objc func onTap(_ sender: UITapGestureRecognizer? = nil){
+        self.delegate?.onButtonDidTap()
         self.buttonCallback?()
     }
     
