@@ -121,6 +121,7 @@ public final class SettingsPresenter {
                 maxValue: 20.0,
                 minValue: 10.0,
                 callback: { [weak self] in
+                    self?.view.didSwichChanged()
                     self?.model.yesNoCount = $0
             }),
             SettingsColorCellModel(

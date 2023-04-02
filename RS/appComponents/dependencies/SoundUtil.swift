@@ -102,7 +102,7 @@ extension SoundCaf{
         return .SimpleResponse
     }
     
-    static func actionSound() -> SoundCaf{ // mouse off
-        return .MouseOff
+    static func actionSound() -> SoundCaf{
+        return .SwitchOn
     }
 }
