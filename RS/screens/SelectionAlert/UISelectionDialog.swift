@@ -30,6 +30,8 @@ class UISelectionDialog: BaseDialogViewController {
     @IBOutlet weak var container: UIView!
     
     private let model: UISelectionDialogModel
+    
+    private var soundUtil: SoundUtil? = nil
    
     private var callback: ((_ newColor: Color) -> Void)? = nil
 
@@ -116,13 +118,20 @@ class UISelectionDialog: BaseDialogViewController {
     
     
     @objc func onCancel(_ sender: UITapGestureRecognizer? = nil){
+        self.didTapButton()
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc func onOk(_ sender: UITapGestureRecognizer? = nil){
+        self.didTapButton()
         let color = Color.init(uiColor: indicatorView.backgroundColor!)
         self.callback?(color)
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func didTapButton() {
+        self.soundUtil = getAppComponent().getSoundUtil(sound: SoundCaf.actionSound())
+        self.soundUtil?.play()
     }
 }
 
