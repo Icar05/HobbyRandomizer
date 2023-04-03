@@ -68,6 +68,7 @@ public final class SettingsPresenter {
                 callback: { [weak self] in
                     self?.view.didSwichChanged()
                     self?.model.isEnabledSound = $0
+                    self?.savePreferences()
             }),
             SettingsVolumeCellModel(
                 title: Translations.Settings.soundVolume,
